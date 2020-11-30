@@ -1,0 +1,498 @@
+@font-face {font-family: 'Trola';src: url('/assets/fonts/trola/34DA2C_2_0.eot');src: url('/wp-content/themes/asterix/fonts/trola/34DA2C_2_0.eot?#iefix') format('embedded-opentype'),url('/wp-content/themes/asterix/fonts/trola/34DA2C_2_0.woff2') format('woff2'),url('/wp-content/themes/asterix/fonts/trola/34DA2C_2_0.woff') format('woff'),url('/wp-content/themes/asterix/fonts/trola/34DA2C_2_0.ttf') format('truetype'),url('/wp-content/themes/asterix/fonts/trola/34DA2C_2_0.svg#wf') format('svg');}
+@font-face {font-family: 'Gotham';src: url('/assets/fonts/gotham/gotham-light-webfont.eot');src: url('/wp-content/themes/asterix/fonts/gotham/gotham-light-webfont.eot?#iefix') format('embedded-opentype'),url('/wp-content/themes/asterix/fonts/gotham/gotham-light-webfont.woff') format('woff'),url('/wp-content/themes/asterix/fonts/gotham/gotham-light-webfont.ttf') format('truetype'),url('/wp-content/themes/asterix/fonts/gotham/gotham-light-webfont.svg#wf') format('svg');}
+
+body {
+  margin: 0;
+  background: #e6e6e6 !important;
+  font-family: "Gotham", sans-serif !important;
+}
+
+input[type=text]::-moz-placeholder, input[type=email]::-moz-placeholder, textarea::-moz-placeholder {
+  font-size: 12px;
+}
+
+input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  font-size: 12px;
+}
+
+input[type=text]::placeholder,
+input[type=email]::placeholder,
+textarea::placeholder {
+  font-size: 12px;
+}
+select option {
+  font-size: 12px !important;
+}
+textarea {
+  width: 100%;
+  min-height: 140px;
+  border-radius: 5px;
+}
+
+.container {
+  position: relative;
+}
+
+.covid {
+  display: block;
+  background: #0088ff;
+  color: #ffffff;
+  height: 43px;
+  text-align: center;
+  padding: 12px;
+  font-size: 13px;
+}
+.covid:hover {
+  text-decoration: none;
+  color: #ffffff;
+  background: #0077ee;
+}
+
+.header {
+  background: #0c4683;
+  height: 111px;
+}
+.header .container {
+  padding: 0;
+}
+.header .container .menu-toggle {
+  display: none;
+}
+.header .container .menu {
+  list-style: none;
+  width: 100%;
+  height: 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, .5);
+  margin: 0 0 8px 0;
+  padding: 0;
+}
+.header .container .menu li {
+  width: auto;
+  float: left;
+}
+.header .container .menu li a {
+  display: inline-block;
+  padding: 9px 12px 6px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 300;
+}
+.header .container .menu li a:hover {
+  text-decoration: none;
+  background: rgba(0, 0, 0, .2);
+}
+.header .container .menu li:nth-child(8),
+.header .container .menu li:nth-child(9),
+.header .container .menu li:nth-child(10),
+.header .container .menu li:nth-child(11),
+.header .container .menu li:nth-child(12) {
+  float: right;
+}
+.header .container .menu li:nth-child(12) a {
+  background: #0088ff;
+  margin: 4px 2px 0;
+  padding: 5px 8px 2px;
+}
+.header .container .menu li:nth-child(12) a:hover {
+  background: #0077ee;
+}
+.header .container .menu li:nth-child(10) a {
+  border-bottom: 3px solid #0088ff;
+  padding: 9px 12px 3px;
+}
+.header .container .logo img {
+  width: 100%;
+  max-width: 355px;
+}
+.header .container .logo {
+  width: 355px;
+  display: block;
+  padding: 0;
+}
+.header.small {
+  height: 52px;
+}
+.header.small .menu {
+  width: auto;
+  display: inline-block;
+  float: right;
+  border-bottom: none;
+  margin-top: 10px;
+}
+.header.small .container .logo {
+  display: block;
+  width: 220px;
+  padding: 7px 0 0;
+}
+
+.carousel#home-carousel,
+.carousel#home-carousel .carousel-inner,
+.carousel#home-carousel .carousel-inner .carousel-item {
+  height: 600px;
+}
+.carousel#home-carousel .carousel-inner .carousel-item .container {
+  position: relative;
+}
+.carousel#home-carousel .carousel-inner .carousel-item .container h4 {
+  font-size: 24px;
+  color: #ffffff;
+  background: #0088ff;
+  display: inline-block;
+  padding: 8px 15px 8px 30px;
+  position: absolute;
+  top: 50px;
+  height: 40px;
+  left: 0;
+}
+.carousel#home-carousel .carousel-inner .carousel-item .container h3 {
+  font-size: 45px;
+  font-family: "Trola", sans-serif;
+  font-weight: 400;
+  background: #ffffff;
+  padding: 2px 12px 4px;
+  left: 30px;
+  top: 90px;
+  display: inline-block;
+  position: absolute;
+}
+.carousel#home-carousel .carousel-inner .carousel-item img {
+  width: 100%;
+}
+.carousel#home-carousel > .container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.carousel#home-carousel > .container .carousel-control-prev,
+.carousel#home-carousel > .container .carousel-control-next {
+  position: absolute;
+  display: inline-block;
+  height: auto;
+  width: auto;
+  padding: 5px 20px;
+  background: #000000;
+  color: #ffffff;
+  opacity: 1;
+  left: auto;
+  top: auto;
+  bottom: auto;
+  right: auto;
+  height: 35px;
+}
+.carousel#home-carousel > .container .carousel-control-prev {
+  right: 100px;
+  top: 255px;
+}
+.carousel#home-carousel > .container .carousel-control-next {
+  right: 0;
+  top: 220px;
+  background: #ffffff;
+  color: #000000;
+}
+
+.search {
+  height: 162px;
+  background: #ffffff;
+  padding: 15px;
+  position: absolute;
+  z-index: 100;
+  transform: translateY(-200px);
+  left: 0;
+  right: 0;
+}
+.search ul {
+  display: block;
+  padding: 0;
+  margin: 6px 0 0;
+  width: 100%;
+  list-style: none;
+}
+.search ul li {
+  width: 20%;
+  display: block;
+  float: left;
+  padding: 0;
+  position: relative;
+  height: 100px;
+}
+.search ul li label,
+.search ul li a {
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 0;
+  left: 8px;
+  right: 8px;
+  bottom: 0;
+  padding: 10px;
+  border: 1px solid #000000;
+  line-height: 1.1rem;
+  color: #0088ff;
+}
+.search ul li span {
+  display: inline-block;
+  position: absolute;
+  left: 20px;
+  top: 30px;
+}
+.search ul li i {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  font-size: 24px;
+}
+.search ul li:first-child label {
+  left: 2px;
+}
+.search ul li:first-child span {
+  left: 15px;
+}
+.search ul li:last-child label {
+  right: 2px;
+}
+.search ul li a {
+  background: #000000;
+  color: #ffffff;
+  bottom: 8px;
+}
+.search ul li a i {
+  right: 10px;
+  bottom: 10px;
+}
+
+.featured {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.featured h4 {
+  text-align: center;
+  color: #0088ff;
+}
+.featured h1 {
+  text-align: center;
+  font-size: 52px;
+  font-weight: 300;
+}
+.featured h1 span {
+  color: #0088ff;
+  padding: 0 10px;
+}
+.featured .featured-text {
+  font-size: 22px;
+  margin: 20px auto 50px;
+  width: 85%;
+  text-align: center;
+}
+.featured .characteristics .col-12 {
+  border-right: 2px solid #dddddd;
+}
+.featured .characteristics .col-12:last-child {
+  border: none;
+}
+.featured .characteristics .col-12 h3 {
+  color: #0088ff;
+  font-size: 48px;
+  font-weight: 300;
+}
+.featured .characteristics .col-12 strong {
+  display: block;
+}
+
+.venues {
+  background: #e6e6e6;
+  padding: 10px 0;
+}
+.venues .venue {
+  background: #ffffff;
+  position: relative;
+  margin-bottom: 40px;
+}
+.venues .venue img {
+  width: 100%;
+  height: 220px;
+}
+.venues .venue .venue-name {
+  position: absolute;
+  top: 150px;
+  line-height: 1.1rem;
+  width: 132px;
+  height: 106px;
+  left: 15px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  padding: 12px;
+  color: #000000;
+}
+.venues .venue .venue-name::after {
+  content: "+";
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+  font-size: 22px;
+}
+.venues .venue .characteristics {
+  margin-top: 50px;
+  padding: 0 15px;
+}
+.venues .venue .characteristics dl {
+  border-bottom: 1px solid #cccccc;
+  padding: 4px 0;
+  overflow: hidden;
+  margin: 0;
+  font-size: 14px;
+}
+.venues .venue .characteristics dl dt {
+  float: left;
+  margin: 0;
+}
+.venues .venue .characteristics dl dd {
+  float: right;
+  margin: 0;
+}
+.venues .venue .characteristics + p {
+  padding: 15px;
+  font-size: 12px;
+}
+.venues .venue .btn {
+  min-width: 150px;
+  margin: 0 0 -20px 15px;
+  text-transform: uppercase;
+}
+
+.clients {
+  background: #ffffff;
+}
+.clients img {
+  width: 100%;
+  margin-top: 50%;
+  transform: translateY(-50%);
+}
+
+.contact {
+  background: #e6e6e6;
+  padding-bottom: 40px;
+}
+.contact form {
+  margin-bottom: 15px;
+}
+.contact form input[type=text],
+.contact form input[type=email] {
+  border: 1px solid #000000;
+  height: 45px;
+}
+.contact form .btn {
+  display: block;
+  width: 100%;
+}
+
+footer {
+  color: #dddddd;
+  background: #292B33;
+  padding: 25px 0;
+  font-size: 13px;
+}
+footer .logo {
+  width: 320px;
+  display: inline-block;
+}
+footer .logo img {
+  width: 100%;
+}
+footer p {
+  position: relative;
+  margin: 10px 0;
+  padding-left: 45px;
+}
+footer p i.fe {
+  position: absolute;
+  left: 5px;
+  top: 4px;
+  font-size: 24px;
+}
+
+.request {
+  position: relative;
+  height: auto;
+}
+.request .stepper {
+  width: auto;
+  min-width: 120px;
+  margin: 40px auto;
+  padding: 0;
+  list-style: none;
+  height: 9px;
+  border-bottom: 1px solid #d0d0d0;
+}
+.request .stepper li {
+  list-style: none;
+  width: 120px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+.request .stepper li:last-child {
+  width: 15px;
+}
+.request .stepper li a {
+  display: block;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #d0d0d0;
+  border: 3px solid #e6e6e6;
+}
+.request .stepper li a.current {
+  border: 3px solid #0088ff;
+  background: #ffffff;
+}
+.request .stepper li a.done {
+  border: 3px solid #0088ff;
+  background: #0088ff;
+}
+.request .request-step {
+  margin: 70px auto 40px;
+}
+.request .request-step h4 {
+  color: #0088ff;
+  font-size: 20px;
+  margin: 20px 0;
+}
+.request .buttons {
+  margin: 60px auto 20px;
+}
+.request .buttons .btn {
+  margin: 4px 6px;
+  min-width: 140px;
+}
+.request .fe-check.round {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 38px;
+  display: block;
+  text-align: center;
+  margin: 0 auto 30px;
+  padding-top: 5px;
+}
+.request .form-group-preview {
+  padding: 10px;
+  background: #d0d0d0;
+  margin: 0 0 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  position: relative;
+}
+.request .form-group-preview small {
+  font-size: 13px;
+  display: block;
+}
+.request .form-group-preview a {
+  position: absolute;
+  right:10px;
+  bottom: 12px;
+  font-size: 10px;
+  color: #BE1197;
+}
