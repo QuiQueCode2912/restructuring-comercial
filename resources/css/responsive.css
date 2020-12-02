@@ -81,10 +81,16 @@
   .search ul li i {
     color: #888888;
   }
-  .search ul li a {
+  .search ul li a[href="#search"] {
     left: 0;
     right: 0;
     bottom: 0;
+  }
+  .search ul li ul {
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 20;
+    border: none;
   }
   .featured h1 {
     font-size: 48px;
@@ -120,5 +126,9 @@
   }
   .contact .container {
     padding: 0 25px;
+  }
+  .daterangepicker {
+    margin-left: -18px !important;
+    width: 70% !important;
   }
 }

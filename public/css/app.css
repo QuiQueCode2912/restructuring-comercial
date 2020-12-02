@@ -7,24 +7,37 @@ body {
   font-family: "Gotham", sans-serif !important;
 }
 
-input[type=text]::-moz-placeholder, input[type=email]::-moz-placeholder, textarea::-moz-placeholder {
+form input[type=text],
+form input[type=email],
+form input[type=datetime-local] {
+  border: 1px solid #000000;
+  height: 45px;
+}
+
+form input[type=text]::-moz-placeholder, form input[type=email]::-moz-placeholder, form input[type=datetime-local]::-moz-placeholder, form textarea::-moz-placeholder {
   font-size: 12px;
 }
 
-input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder, textarea:-ms-input-placeholder {
+form input[type=text]:-ms-input-placeholder, form input[type=email]:-ms-input-placeholder, form input[type=datetime-local]:-ms-input-placeholder, form textarea:-ms-input-placeholder {
   font-size: 12px;
 }
 
-input[type=text]::placeholder,
-input[type=email]::placeholder,
-textarea::placeholder {
+form input[type=text]::placeholder,
+form input[type=email]::placeholder,
+form input[type=datetime-local]::placeholder,
+form textarea::placeholder {
   font-size: 12px;
 }
-select option {
-  font-size: 12px !important;
+form select {
+  border: 1px solid #000000 !important;
+  height: 45px !important;
 }
-textarea {
+form select option {
+  font-size: 12px !important
+}
+form textarea {
   width: 100%;
+  border: 1px solid #000000;
   min-height: 140px;
   border-radius: 5px;
 }
@@ -218,7 +231,7 @@ textarea {
   height: 100px;
 }
 .search ul li label,
-.search ul li a {
+.search ul li a[href="#search"] {
   position: absolute;
   width: auto;
   height: auto;
@@ -231,11 +244,15 @@ textarea {
   line-height: 1.1rem;
   color: #0088ff;
 }
+.search ul li label {
+  cursor: pointer;
+}
 .search ul li span {
   display: inline-block;
   position: absolute;
-  left: 20px;
+  left: 18px;
   top: 30px;
+  cursor: pointer;
 }
 .search ul li i {
   position: absolute;
@@ -252,14 +269,81 @@ textarea {
 .search ul li:last-child label {
   right: 2px;
 }
-.search ul li a {
+.search ul li a[href="#type"],
+.search ul li a[href="#quantity"],
+.search ul li a[href="#date"],
+.search ul li a[href="#how"] {
+  color: #212529;
+  display: block;
+}
+.search ul li a[href="#how"] span {
+  top: 45px;
+}
+.search ul li input[name="daterange"] {
+  position: absolute;
+  top: 47px;
+  left: 18px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  color: #686868;
+}
+.search ul li a[href="#search"] {
   background: #000000;
   color: #ffffff;
   bottom: 8px;
 }
-.search ul li a i {
+.search ul li a[href="#search"]:hover {
+  text-decoration: none;
+}
+.search ul li a[href="#search"] i {
   right: 10px;
   bottom: 10px;
+}
+.search ul li ul {
+  border-top: none;
+  position: absolute;
+  width: auto;
+  left: 8px;
+  right: 8px;
+  top: 80px;
+  background: #ffffff;
+  margin: 0;
+  border: 1px solid #000000;
+  overflow: hidden;
+  border-top: none;
+  padding: 10px 12px 30px;
+  display: none;
+}
+.search ul li.open ul {
+  display: block;
+}
+.search ul li.open a i.fe {
+  transform: rotate(180deg);
+}
+.search ul li:first-child ul {
+  left: 2px;
+  right: 8px;
+}
+.search ul li ul li {
+  width: 100%;
+  background: #ffffff;
+  height: auto;
+}
+.search ul li ul li a {
+  padding: 5px 0;
+  display: block;
+  border-bottom: 1px solid #bcbcbc;
+  color: #212529;
+  font-size: 13px;
+}
+.search ul li ul li a:hover {
+  background: #f2f2f2;
+  text-decoration: none;
+}
+.search ul li ul li:last-child a {
+  border-bottom: none;
 }
 
 .featured {
@@ -377,11 +461,6 @@ textarea {
 .contact form {
   margin-bottom: 15px;
 }
-.contact form input[type=text],
-.contact form input[type=email] {
-  border: 1px solid #000000;
-  height: 45px;
-}
 .contact form .btn {
   display: block;
   width: 100%;
@@ -495,4 +574,15 @@ footer p i.fe {
   bottom: 12px;
   font-size: 10px;
   color: #BE1197;
+}
+
+.daterangepicker {
+  margin-left: -10px;
+  border: 1px solid #000000;
+}
+.daterangepicker::before {
+  border-bottom: 7px solid #000000;
+}
+.daterangepicker .drp-buttons {
+  display: none !important;
 }

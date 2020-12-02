@@ -93,7 +93,35 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+$(document).ready(function () {
+  $('input[name="daterange"]').daterangepicker();
+  $(document).on({
+    click: function click(e) {
+      e.preventDefault();
+      $('input[name="daterange"]').click();
+    }
+  }, '.searcher ul li a[href="#date"]');
+  $(document).on({
+    click: function click(e) {
+      e.preventDefault();
 
+      if ($(this).closest('li').hasClass('open')) {
+        $(this).closest('li').removeClass('open');
+      } else {
+        $(this).closest('li').addClass('open');
+      }
+    }
+  }, '.searcher ul li a[href="#type"], .searcher ul li a[href="#quantity"], .searcher ul li a[href="#how"]');
+  $(document).on({
+    click: function click(e) {
+      e.preventDefault();
+      var label = $(this).text();
+      $(this).closest('li.open').find('a span').html(label);
+      $(this).closest('li.open').find('input').val(label);
+      $(this).closest('li.open').removeClass('open');
+    }
+  }, '.searcher ul li ul li a');
+});
 
 /***/ }),
 
@@ -104,7 +132,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/navi/Work/Sites/ciudaddelsaber.org/eventos/cobertura/resources/js/core.js */"./resources/js/core.js");
+module.exports = __webpack_require__(/*! /Users/navi/Work/Sites/ciudaddelsaber.org/eventos/comercial/resources/js/core.js */"./resources/js/core.js");
 
 
 /***/ })

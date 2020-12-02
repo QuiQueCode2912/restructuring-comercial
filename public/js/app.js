@@ -19395,9 +19395,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/navi/Work/Sites/ciudaddelsaber.org/eventos/cobertura/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /Users/navi/Work/Sites/ciudaddelsaber.org/eventos/cobertura/resources/css/app.css */"./resources/css/app.css");
-module.exports = __webpack_require__(/*! /Users/navi/Work/Sites/ciudaddelsaber.org/eventos/cobertura/resources/css/responsive.css */"./resources/css/responsive.css");
+__webpack_require__(/*! /Users/navi/Work/Sites/ciudaddelsaber.org/eventos/comercial/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Users/navi/Work/Sites/ciudaddelsaber.org/eventos/comercial/resources/css/app.css */"./resources/css/app.css");
+module.exports = __webpack_require__(/*! /Users/navi/Work/Sites/ciudaddelsaber.org/eventos/comercial/resources/css/responsive.css */"./resources/css/responsive.css");
 
 
 /***/ })
