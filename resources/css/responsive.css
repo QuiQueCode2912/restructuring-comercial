@@ -141,4 +141,13 @@
   .venues-list .container .row .col-12.col-md-8 {
     padding: 0 40px;
   }
+  .venue-list .configurations ul {
+    width: 95%;
+  }
+  .venue-list .configurations ul li {
+    padding-top: 50px;
+  }
+  .venue-list .configurations ul + img {
+    width: 100%;
+  }
 }
