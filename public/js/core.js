@@ -95,6 +95,40 @@
 
 $(document).ready(function () {
   $('input[name="daterange"]').daterangepicker();
+
+  if ($('.searcher.aside').length > 0) {
+    $('.searcher.aside').css({
+      left: 'calc(50% + ' + parseInt($('.header .container').width()) * .25 + 'px)'
+    });
+    $('.searcher.aside .search').css({
+      width: parseInt($('.header .container').width()) * .25 + 'px'
+    });
+    $('.searcher.aside').show();
+    window.addEventListener('scroll', function (e) {
+      var scrollY = scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      var scrollTo = parseInt($('.venues-list').height()) + 260 - (parseInt($('.searcher.aside').height()) + 80);
+
+      if (scrollY > 240 && scrollY < scrollTo) {
+        $('.searcher.aside').css({
+          position: 'fixed',
+          top: '20px'
+        });
+      } else {
+        if (scrollY > scrollTo) {
+          $('.searcher.aside').css({
+            position: 'absolute',
+            top: scrollTo + 'px'
+          });
+        } else {
+          $('.searcher.aside').css({
+            position: 'absolute',
+            top: '260px'
+          });
+        }
+      }
+    });
+  }
+
   $(document).on({
     click: function click(e) {
       e.preventDefault();
@@ -121,6 +155,12 @@ $(document).ready(function () {
       $(this).closest('li.open').removeClass('open');
     }
   }, '.searcher ul li ul li a');
+  $(document).on({
+    click: function click(e) {
+      e.preventDefault();
+      document.location.href = '/venues';
+    }
+  }, '.searcher ul li a[href="#search"]');
 });
 
 /***/ }),

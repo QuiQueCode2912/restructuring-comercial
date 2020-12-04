@@ -586,3 +586,149 @@ footer p i.fe {
 .daterangepicker .drp-buttons {
   display: none !important;
 }
+
+.searcher.aside {
+  position: absolute;
+  right: 0;
+  width: auto;
+  left: 75%;
+  top: 260px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-right: none;
+  z-index: 10;
+  display: none;
+}
+.searcher.aside form .search {
+  transform: translateY(0);
+  position: relative;
+  height: auto;
+}
+.searcher.aside form .search > p.text-center {
+  text-align: left !important;
+}
+.searcher.aside form .search ul {
+  margin-bottom: 5px;
+}
+.searcher.aside form .search ul,
+.searcher.aside form .search ul li {
+  width: 100%;
+}
+.searcher.aside form .search ul li {
+  float: none;
+}
+.searcher.aside form .search ul li a label {
+  left: 0;
+}
+.searcher.aside form .search ul li a[href="#search"] {
+  left: 0;
+}
+.searcher.aside form .search ul li ul {
+  z-index: 10;
+  left: 0;
+  width: calc(100% - 8px);
+}
+
+.venues-menu {
+  margin: 0;
+  padding: 15px 0;
+  background: #ffffff;
+  overflow: hidden;
+}
+.venues-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.venues-menu ul li {
+  list-style: none;
+  display: inline-block;
+  float: left;
+  width: calc(16.67% - 1px);
+  padding: 0 10px;
+  min-height: 50px;
+  border-left: 1px solid #aaaaaa;
+}
+.venues-menu ul li:first-child {
+  border-left: none;
+}
+.venues-menu ul li a {
+  font-size: 14px;
+  color: #292B33;
+  display: block;
+  text-align: left;
+}
+.venues-menu ul li a:hover {
+  text-decoration: none;
+}
+.venues-list {
+  background: #ffffff; 
+  box-shadow: 0 2px 6px inset rgba(0, 0, 0, .4);
+  padding-top: 25px;
+}
+.venues-list .lined-box {
+  border: 1px solid #000000;
+  padding: 7px 12px;
+  font-size: 13px;
+  color: #484848;
+}
+.venue-list {
+  margin: 20px 0 80px;
+  font-size: 14px;
+  position: relative;
+}
+.venue-list .row .venue-image {
+  width: 100%;
+  display: block;
+}
+.venue-list .row .venue-image + .btn-primary {
+  width: 150px;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  text-align: center;
+  position: absolute;
+  transform: translateY(-60px) translateX(-50px);
+}
+.venue-list .row dl {
+  border-bottom: 1px solid #cccccc;
+  padding: 4px 0;
+  overflow: hidden;
+  margin: 0;
+}
+.venue-list .row dl dt {
+  float: left;
+  margin: 0;
+}
+.venue-list .row dl dd {
+  float: right;
+  margin: 0;
+}
+.venue-list .row .venue-name {
+  font-size: 18px;
+  display: block;
+  margin-bottom: 15px;
+}
+.venue-list .configurations {
+  margin-top: 20px;
+}
+.venue-list .configurations ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: auto;
+  position: absolute;
+  left: 1.5%;
+  right: 10%;
+}
+.venue-list .configurations ul li {
+  list-style: none;
+  width: 12.5%;
+  display: block;
+  float: left;
+  text-align: center;
+  padding-top: 100px;
+}
+.venue-list .configurations ul li.inactive {
+  background: rgba(255, 255, 255, .65);
+  color: transparent;
+}

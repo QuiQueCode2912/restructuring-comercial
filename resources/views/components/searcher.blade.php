@@ -1,7 +1,7 @@
-<div class="container searcher">
+<div class="container searcher <?php echo $class ?? '' ?>">
   <form method="post">
     <div class="search">
-      <p class="text-center">Qué quieres hacer en Ciudad del Saber</p>
+      <p class="text-center"><?php echo !($class ?? '') ? 'Qué quieres hacer en Ciudad del Saber' : 'Realiza otra búsqueda' ?></p>
       <ul>
         <li>
           <a href="#type">

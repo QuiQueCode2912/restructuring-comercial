@@ -21,4 +21,10 @@ Route::get('/solicitud/{step}', function () {
   return view('index.request');
 });
 
-Route::get('/campaign', 'App\Http\Controllers\IndexController@campaign');
+Route::get('/venues', function () {
+  return view('index.venues');
+});
+
+Route::get('/venue', function () {
+  return view('index.venue');
+});
