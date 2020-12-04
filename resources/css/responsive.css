@@ -131,4 +131,14 @@
     margin-left: -18px !important;
     width: 70% !important;
   }
+  .venue-characteristics,
+  .searcher.aside {
+    display: none !important;
+  }
+  .venue-detail {
+    padding: 0 40px;
+  }
+  .venues-list .container .row .col-12.col-md-8 {
+    padding: 0 40px;
+  }
 }

@@ -17,6 +17,10 @@ Route::get('/', function () {
   return view('index.index');
 });
 
+Route::get('/landing', function () {
+  return view('index.landing');
+});
+
 Route::get('/solicitud/{step}', function () {
   return view('index.request');
 });
