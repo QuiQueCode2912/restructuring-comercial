@@ -4,12 +4,12 @@
       <div class="col-12 col-md-10">
         <i class="fe fe-check round text-white bg-success"></i>
       </div>
-      <p style="font-size:20px; margin:0" class="text-success text-center">Gracias por completar tus datos</p>
-      <p class="text-center" style="margin:0 0 40px">En minutos recibirás un correo con la información ingresada.</p>
+      <p style="font-size:20px; margin:0; font-weight:600" class="text-success text-center">Gracias por completar tus datos</p>
+      <p class="text-center" style="margin:0 0 40px; font-family:'Trola', sans-serif; font-size:18px">En minutos recibirás un correo con la información ingresada.</p>
     </div>
     <div class="row">
       <div class="col-12">
-        <p style="font-size:22px" class="text-center">
+        <p style="font-size:22px; font-family:'Trola', sans-serif; font-weight:600" class="text-center">
         Un miembro del equipo de la Ciudad de Saber se pondrá en contacto 
         contigo para darte la mejor oferta para tu solicitud.
         </p>

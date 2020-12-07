@@ -11,9 +11,10 @@
           se pondrá en contacto contigo para que puedas concretar tu proyecto.
         </p>
         <p>
-          Crea <span style="color:#0088ff">+</span> 
-          Estudia <span style="color:#0088ff">+</span> 
-          Innova <span style="color:#0088ff">+</span> Vive
+          <strong>Crea</strong> <span style="color:#0088ff">+</span> 
+          <strong>Estudia</strong> <span style="color:#0088ff">+</span> 
+          <strong>Innova</strong> <span style="color:#0088ff">+</span> 
+          <strong>Vive</strong>
         </p>
       </div>
       <div class="col-12 col-md-6">

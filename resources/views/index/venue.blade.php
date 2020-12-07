@@ -116,7 +116,7 @@
 
   <div class="row">
     <div class="col-12 col-md-9">
-      <h4 style="margin-bottom:20px">Sitios de interés próximos a Ciudad del Saber</h4>
+      <h4 style="margin-bottom:20px; font-weight:600">Sitios de interés próximos a Ciudad del Saber</h4>
       <ul class="near-by">
         <li>Centro de Visitantes del Canal de Panamá (Miraflores)	 Aeropuerto Marcos Gelabert (vuelos internos)</li>
         <li>Albrook Mall y Terminal de Transporte de Albrook</li> 

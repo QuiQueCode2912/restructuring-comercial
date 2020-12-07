@@ -7,7 +7,7 @@
           Crea<span>+</span>Estudia<span>+</span>Innova<span>+</span>Vive
         </h1>
         <p class="featured-text">
-          Ciudad del Saber es un espacio que inspira y desarrolla 
+          <strong>Ciudad del Saber</strong> es un espacio que inspira y desarrolla 
           nuevas metodologías de trabajo. <br>
           Ubicada estratégicamente en la ciudad de Panamá, 
           te permite crecer a ti y a tu negocio.

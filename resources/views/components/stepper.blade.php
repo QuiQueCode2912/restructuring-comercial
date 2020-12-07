@@ -9,7 +9,7 @@ $current = app('request')->step;
 </ul>
 
 <?php if ($current == 1) : ?>
-<p style="font-size:18px; text-align:center">
+<p style="font-size:20px; text-align:center; font-family:'Trola', sans-serif; font-weight:600">
   Gracias por tu interés. Para poder realizar la cotización debes completar
   los datos requeridos. Sólo te llevará unos pocos minutos. 
 </p>

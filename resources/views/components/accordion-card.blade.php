@@ -12,7 +12,7 @@
     <div class="card-body">
     <div class="row">
         <div class="col-md-1">
-          <span style="font-size:64px; color:#0088ff; line-height:56px">1</span>
+          <span class="large-number">1</span>
         </div>
         <div class="col-md-8">
           <p>
@@ -31,7 +31,7 @@
       <hr style="margin:10px 0 30px" />
       <div class="row">
         <div class="col-md-1">
-          <span style="font-size:64px; color:#0088ff; line-height:56px">2</span>
+          <span class="large-number">2</span>
         </div>
         <div class="col-md-8">
           <p>
