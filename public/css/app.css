@@ -69,6 +69,7 @@ form textarea {
 }
 .covid a {
   color: #ffffff;
+  text-decoration: underline;
 }
 .covid a:hover {
   color: #ffffff;
