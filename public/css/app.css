@@ -49,6 +49,9 @@ form textarea {
 .btn-primary {
   background: #0088ff !important;
 }
+.btn-primary:hover {
+  background: #0056b3 !important;
+}
 
 .container {
   position: relative;
@@ -73,7 +76,7 @@ form textarea {
 
 .header {
   background: #0088ff;
-  height: 111px;
+  height: 116px;
   border-bottom: 1px solid rgba(255, 255, 255, .5);
 }
 .header .container {
