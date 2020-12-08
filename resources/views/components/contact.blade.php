@@ -17,8 +17,8 @@
         </p>
       </div>
       <div class="col-12 col-md-6">
+        <small style="color:#0088ff">* Campos obligatorios</small>
         <form>
-          <a href="#"><small>* Campos obligatorios</small></a>
           <div class="row" style="padding-top:10px">
             <div class="col-12 col-md-6">
               <div class="form-group required">
@@ -55,7 +55,7 @@
             </div>
           </div>
         </form>
-        <p><small>Al hacer clic en el botón de enviar aceptas nuestros <a href="#">Términos de uso y privacidad</a></small></p>
+        <small>Al hacer clic en el botón de enviar aceptas nuestros <a href="#">Términos de uso y privacidad</a></small>
       </div>
     </div>
   </div>

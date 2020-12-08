@@ -564,11 +564,15 @@ form textarea {
 .contact form button {
   font-weight: 700;
   text-transform: uppercase;
+  font-family: "Gotham", sans-serif;
+  font-size: 16px;
+  padding: 10px 0 7px;
 }
-.contact form + p small {
+.contact small {
   font-family: "Roboto", sans-serif;
+
 }
-.contact form + p small a {
+.contact small a {
   text-decoration: underline;
 }
 
