@@ -61,7 +61,7 @@
         </li>
         <li>
           <a href="#search">
-            Mira la disponibilidad
+            Ver ofertas
             <i class="fe fe-arrow-right"></i>
           </a>
         </li>

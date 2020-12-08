@@ -12,7 +12,7 @@
     </dl>
     <dl>
       <dt>Precio por día</dt>
-      <dd>$2200/día</dd>
+      <dd>$2200<span style="color:#0088ff">/*</span></dd>
     </dl>
     <dl>
       <dt>Eventos con alcohol</dt>

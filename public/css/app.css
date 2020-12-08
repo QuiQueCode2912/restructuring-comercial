@@ -1,10 +1,14 @@
-@font-face {font-family: 'Trola';src: url('/assets/fonts/trola/34DA2C_2_0.eot');src: url('/wp-content/themes/asterix/fonts/trola/34DA2C_2_0.eot?#iefix') format('embedded-opentype'),url('/wp-content/themes/asterix/fonts/trola/34DA2C_2_0.woff2') format('woff2'),url('/wp-content/themes/asterix/fonts/trola/34DA2C_2_0.woff') format('woff'),url('/wp-content/themes/asterix/fonts/trola/34DA2C_2_0.ttf') format('truetype'),url('/wp-content/themes/asterix/fonts/trola/34DA2C_2_0.svg#wf') format('svg');}
+@import url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);@font-face {font-family: 'Trola';src: url('/assets/fonts/trola/34DA2C_2_0.eot');src: url('/wp-content/themes/asterix/fonts/trola/34DA2C_2_0.eot?#iefix') format('embedded-opentype'),url('/wp-content/themes/asterix/fonts/trola/34DA2C_2_0.woff2') format('woff2'),url('/wp-content/themes/asterix/fonts/trola/34DA2C_2_0.woff') format('woff'),url('/wp-content/themes/asterix/fonts/trola/34DA2C_2_0.ttf') format('truetype'),url('/wp-content/themes/asterix/fonts/trola/34DA2C_2_0.svg#wf') format('svg');}
 @font-face {font-family: 'Gotham';src: url('/assets/fonts/gotham/gotham-light-webfont.eot');src: url('/wp-content/themes/asterix/fonts/gotham/gotham-light-webfont.eot?#iefix') format('embedded-opentype'),url('/wp-content/themes/asterix/fonts/gotham/gotham-light-webfont.woff') format('woff'),url('/wp-content/themes/asterix/fonts/gotham/gotham-light-webfont.ttf') format('truetype'),url('/wp-content/themes/asterix/fonts/gotham/gotham-light-webfont.svg#wf') format('svg');}
 
 body {
   margin: 0;
-  background: #e6e6e6 !important;
+  background:rgba(230, 230, 230, .5) !important;
   font-family: "Gotham", sans-serif !important;
+}
+
+a {
+  color: #0088ff;
 }
 
 form input[type=text],
@@ -42,28 +46,35 @@ form textarea {
   border-radius: 5px;
 }
 
+.btn-primary {
+  background: #0088ff !important;
+}
+
 .container {
   position: relative;
 }
 
 .covid {
   display: block;
-  background: #0088ff;
+  background: #000000;
   color: #ffffff;
-  height: 43px;
+  height: 40px;
   text-align: center;
   padding: 12px;
-  font-size: 13px;
+  font-size: 12px;
+  font-weight: 600;
 }
-.covid:hover {
-  text-decoration: none;
+.covid a {
   color: #ffffff;
-  background: #0077ee;
+}
+.covid a:hover {
+  color: #ffffff;
 }
 
 .header {
-  background: #0c4683;
+  background: #0088ff;
   height: 111px;
+  border-bottom: 1px solid rgba(255, 255, 255, .5);
 }
 .header .container {
   padding: 0;
@@ -103,15 +114,12 @@ form textarea {
   float: right;
 }
 .header .container .menu li:nth-child(12) a {
-  background: #0088ff;
+  background: #0c4683;
   margin: 4px 2px 0;
   padding: 5px 8px 2px;
 }
-.header .container .menu li:nth-child(12) a:hover {
-  background: #0077ee;
-}
 .header .container .menu li:nth-child(10) a {
-  border-bottom: 3px solid #0088ff;
+  border-bottom: 3px solid #0c4683;
   padding: 9px 12px 3px;
 }
 .header .container .logo img {
@@ -167,7 +175,7 @@ form textarea {
   padding: 2px 12px 4px;
   left: 30px;
   top: 90px;
-  font-weight: 600;
+  font-weight: 900;
   display: inline-block;
   position: absolute;
 }
@@ -405,7 +413,7 @@ form textarea {
 }
 
 .venues {
-  background: #e6e6e6;
+  background: transparent;
   padding: 10px 0;
 }
 .venues .featured h4 {
@@ -436,12 +444,19 @@ form textarea {
   color: #000000;
   font-weight: 600;
 }
+.venues .venue .venue-name:hover {
+  text-decoration: none;
+}
 .venues .venue .venue-name::after {
   content: "+";
   position: absolute;
-  right: 15px;
-  bottom: 10px;
-  font-size: 22px;
+  right: 8px;
+  bottom: 8px;
+  font-size: 30px;
+  font-weight: 100;
+}
+.venues .venue a:not(.venue-name):not(.btn) {
+  text-decoration: underline;
 }
 .venues .venue .characteristics {
   margin-top: 50px;
@@ -473,11 +488,11 @@ form textarea {
   font-size: 12px;
 }
 .venues .venue .btn {
-  min-width: 150px;
+  min-width: 200px;
   margin: 0 0 -20px 15px;
   text-transform: uppercase;
   font-weight: 700;
-  padding-top: 6px;
+  padding: 10px 0 7px;
 }
 
 .clients {
@@ -488,11 +503,19 @@ form textarea {
   margin-top: 50%;
   transform: translateY(-50%);
 }
+.clients .featured {
+  padding-top: 50px;
+  padding-bottom: 0;
+}
+.clients .featured h4 {
+  font-size: 22px;
+}
 
 .contact {
-  background: #e6e6e6;
-  padding-bottom: 40px;
+  background: transparent;
+  padding-bottom: 100px;
   font-family: "Trola", sans-serif;
+  padding-top: 80px;
 }
 .contact h3 {
   font-family: "Trola", sans-serif;
@@ -504,11 +527,49 @@ form textarea {
 }
 .contact form {
   margin-bottom: 15px;
-  font-family: "Gotham", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
 }
 .contact form .btn {
   display: block;
   width: 100%;
+}
+.contact form input {
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  padding-left: 20px;
+}
+.contact form input::-moz-placeholder {
+  color: #000000;
+}
+.contact form input:-ms-input-placeholder {
+  color: #000000;
+}
+.contact form input::placeholder {
+  color: #000000;
+}
+.contact form .form-group.required::before {
+  content: "*";
+  color: #0088ff;
+  position: absolute;
+  top: 13px;
+  left: 27px;
+  display: block;
+  z-index: 10;
+  width: 10px;
+  height: 10px;
+  visibility: visible;
+  opacity: 1;
+}
+.contact form button {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.contact form + p small {
+  font-family: "Roboto", sans-serif;
+}
+.contact form + p small a {
+  text-decoration: underline;
 }
 
 footer {

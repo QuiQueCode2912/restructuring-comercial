@@ -1,6 +1,5 @@
 <div class="contact">
   <div class="container">
-    <br><br><br>
     <div class="row">
       <div class="col-12 col-md-6">
         <h3>¿Quieres realizar algo especial?<br>
@@ -22,18 +21,18 @@
           <a href="#"><small>* Campos obligatorios</small></a>
           <div class="row" style="padding-top:10px">
             <div class="col-12 col-md-6">
-              <div class="form-group">
-                <input type="text" class="form-control" id="name" placeholder="* Nombres y apellidos">
+              <div class="form-group required">
+                <input type="text" class="form-control" id="name" required placeholder="Nombres y apellidos">
               </div>
             </div>
             <div class="col-12 col-md-6">
-              <div class="form-group">
-                <input type="email" class="form-control" id="email" placeholder="* Correo electrónico">
+              <div class="form-group required">
+                <input type="email" class="form-control" id="email" required placeholder="Correo electrónico">
               </div>
             </div>
             <div class="col-12 col-md-6">
-              <div class="form-group">
-                <input type="text" class="form-control" id="phone" placeholder="* Número telefónico">
+              <div class="form-group required">
+                <input type="text" class="form-control" id="phone" required placeholder="Número telefónico">
               </div>
             </div>
             <div class="col-12 col-md-6">
@@ -43,7 +42,7 @@
             </div>
             <div class="col-12 col-md-6">
               <div class="form-group">
-                <input type="text" class="form-control" id="interests" placeholder="* Me interesa">
+                <input type="text" class="form-control" id="interests" placeholder="Me interesa">
               </div>
             </div>
             <div class="col-12 col-md-6">
