@@ -32,6 +32,11 @@
   </p>
 </div>
 
+<div class="container" style="margin:0 auto; padding:0; position:relative">
+  <a href="/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-6-1.jpg" data-lightbox="venue" title="Ateneo" class="gallery">FOTOGALERÍA <span>+</span></a>
+  <a href="/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-7-1.jpg" data-lightbox="venue" title="Aulas 105"></a>
+  <a href="/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-8-1.jpg" data-lightbox="venue" title="Centro de convenciones"></a>
+</div>
 <div id="home-carousel" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">

@@ -218,6 +218,105 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
 .carousel#home-carousel .carousel-inner .carousel-item {
   height: 600px;
 }
+.gallery {
+  position: absolute;
+  background: #ffffff;
+  padding: 4px 10px 6px;
+  display: inline-block;
+  color: #000000;
+  font-family: "Trola", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  top: 100px;
+  z-index: 100;
+  line-height: 20px;
+  right: 0;
+}
+.gallery:hover {
+  color: #000000;
+  text-decoration: none;
+}
+.gallery span {
+  font-size: 22px;
+  font-weight: 100;
+}
+.lb-dataContainer {
+  position: absolute;
+  transform: translateX(-50%);
+  top: -35px;
+  left: 50%;
+}
+.lb-close {
+  opacity: 1 !important;
+  background-size: 15px 15px !important;
+  position: relative;
+}
+.lb-close::before {
+  content: "VOLVER AL VENUE";
+  position: absolute;
+  right: 78%;
+  width: 200px;
+  font-size: 13px;
+  font-family: "Trola", sans-serif;
+  top: 9px;
+}
+.lb-data .lb-details .lb-caption {
+  color: #0088ff;
+  font-size: 20px;
+}
+.lb-nav .lb-prev,
+.lb-nav .lb-next {
+  position: absolute;
+  width: 80px !important;
+  height: 34px !important;
+  opacity: 1 !important;
+  background-image: none !important;
+  background: #ffffff !important;
+  display: block !important;
+  right: 0 !important;
+  left: auto !important;
+  float: none !important;
+  top: calc(50% - 34px);
+  right: -50px !important;
+}
+.lb-nav .lb-prev {
+  background: #000000 !important;
+  right: 0 !important;
+  top: 50%;
+}
+.lb-nav .lb-prev::before,
+.lb-nav .lb-next::before {
+  content: "";
+  height: 17px;
+  border-bottom: 1px solid #ffffff;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+}
+.lb-nav .lb-prev::after,
+.lb-nav .lb-next::after {
+  content: "";
+  height: 9px;
+  width: 9px;
+  border-top: 1px solid #000000;
+  border-right: 1px solid #000000;
+  position: absolute;
+  transform: rotate(45deg);
+  top: 12px;
+  right: 21px;
+}
+.lb-nav .lb-prev::after {
+  border-top: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+  left: 21px;
+  right: auto;
+  transform: rotate(-135deg);
+}
+.lb-nav .lb-next::before {
+  border-bottom: 1px solid #000000 !important;
+}
+
 .carousel#home-carousel .carousel-inner .carousel-item .container {
   position: relative;
 }

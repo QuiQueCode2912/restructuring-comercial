@@ -11,6 +11,11 @@ $(document).ready(function() {
     }
   });
 
+  lightbox.option({
+    albumLabel: "",
+    positionFromTop: 100
+  });
+
   if ($('#home-carousel').length > 0) {
     $('#home-carousel').height((parseInt($(window).height()) - 156) + 'px');
     $('#home-carousel .carousel-inner').height((parseInt($(window).height()) - 156) + 'px');

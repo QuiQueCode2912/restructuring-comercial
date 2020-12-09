@@ -105,6 +105,10 @@ $(document).ready(function () {
       format: 'DD/M/Y hh:mm A'
     }
   });
+  lightbox.option({
+    albumLabel: "",
+    positionFromTop: 100
+  });
 
   if ($('#home-carousel').length > 0) {
     $('#home-carousel').height(parseInt($(window).height()) - 156 + 'px');
