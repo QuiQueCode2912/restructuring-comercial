@@ -7,11 +7,11 @@
 <div class="venue-characteristics">
   <span style="color:#0088ff">Características del venue</span>
   <ul>
-    <li>Centro de conferencias y oficinas</li>
+    <li class="title">Centro de conferencias y oficinas</li>
     <li>Capacidad 32 personas máximo</li>
     <li>7 aulas / salones para eventos</li>
-    <li>96 habitaciones</li>
-    <li>Facilidades</li>
+    <li style="padding-bottom:20px; border-bottom:none">96 habitaciones</li>
+    <li class="title">Facilidades</li>
     <li>Aire acondicionado</li>
     <li>Estacionamiento gratis</li>
     <li>Acceso a internet - Wifi</li>
@@ -20,7 +20,16 @@
     <li>Servicio de catering</li>
   </ul>
   <br />
-  <a href="#">Revisa la política COVID-19 para este venue</a>
+  <i class="fe fe-arrow-right" style="color:#0088ff"></i>
+  <a href="#" style="font-weight:700">Explora nuestros venues en 3D</a>
+  <br /><br />
+  <a href="#" style="color:#000000">Revisa la política COVID-19<br />para este venue</a>
+  <br /><br />
+  <p class="small">
+    <i class="fe fe-alert-triangle"></i><br />
+    Si tu evento requiere de múltiples espacios o excede las 24hs, puedes
+    conectarte con nosotros desde el formulario al pie de la página.
+  </p>
 </div>
 
 <div id="home-carousel" class="carousel slide" data-ride="carousel">
@@ -58,6 +67,19 @@
         <div class="container">
           <div class="row">
             <div class="col-12 col-md-9" style="padding-right:40px; padding-left:0">
+              <div class="row shortcuts">
+                <div class="col-12 col-md-4">
+                  <a href="#description">Aulas / Salones</a>
+                </div>
+                <div class="col-12 col-md-4">
+                  <a href="#menu">Menús</a>
+                </div>
+                <div class="col-12 col-md-4">
+                  <a href="#venue-location">Ubicación</a>
+                </div>
+              </div>
+              <a name="description"></a>
+              
               <h3 style="color:#0088ff; margin:30px 0 5px">Venue: Aulas 105</h3>
               <small>
                 <span style="color:#0088ff">/*</span>
@@ -75,6 +97,7 @@
     </div>
   </div>
 
+  <a name="menu"></a><br />
   <div class="row">
     <div class="col-12 col-md-9">
       <h3 style="color:#0088ff; margin-bottom:20px">Catering: Menús opcionales</h3>
@@ -103,11 +126,11 @@
     </div>
   </div>
 
-  <br /><br /><br />
-
+  <br /><br /><a name="venue-location"></a><br />
   <div class="row">
     <div class="col-12 col-md-9">
-      <h3 style="color:#0088ff; margin-bottom:30px">Ubicación</h3>
+      <a href="#" style="float:right; font-weight:700; text-decoration:underline">Explora nuestros venues en 3D</a>
+      <h3 style="color:#0088ff; margin-bottom:10px">Ubicación</h3>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9234.855855146361!2d-79.58760814660978!3d9.001102129208933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca7b0a46a3bd1%3A0x93b801d16c74cc5c!2sCd%20del%20Saber%2C%20Panam%C3%A1!5e0!3m2!1ses!2sco!4v1590440019299!5m2!1ses!2sco" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
     </div>
   </div>
@@ -118,11 +141,11 @@
     <div class="col-12 col-md-9">
       <h4 style="margin-bottom:20px; font-weight:600">Sitios de interés próximos a Ciudad del Saber</h4>
       <ul class="near-by">
-        <li>Centro de Visitantes del Canal de Panamá (Miraflores)	 Aeropuerto Marcos Gelabert (vuelos internos)</li>
-        <li>Albrook Mall y Terminal de Transporte de Albrook</li> 
-        <li>Casco Antiguo</li>
-        <li>Área Bancaria</li>
-        <li>Museo de la Biodiversidad (en Amador)</li>
+        <li><strong>1 km</strong>Centro de Visitantes del Canal de Panamá (Miraflores)	 Aeropuerto Marcos Gelabert (vuelos internos)</li>
+        <li><strong>3 km</strong>Albrook Mall y Terminal de Transporte de Albrook</li> 
+        <li><strong>7 km</strong>Casco Antiguo</li>
+        <li><strong>10 km</strong>Área Bancaria</li>
+        <li><strong>13 km</strong>Museo de la Biodiversidad (en Amador)</li>
       </ul>
     </div>
   </div>  

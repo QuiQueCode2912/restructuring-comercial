@@ -104,8 +104,23 @@ $(document).ready(function () {
       width: parseInt($('.header .container').width()) * .25 + 'px'
     });
     $('.searcher.aside').show();
-    window.addEventListener('scroll', function (e) {
-      var scrollY = scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  }
+
+  if ($('.venue-characteristics').length > 0) {
+    $('.venue-characteristics').css({
+      left: 'calc(50% + ' + parseInt($('.header .container').width()) * .25 + 'px)',
+      top: $('.venues-list').offset().top
+    });
+    $('.venue-characteristics ul').css({
+      width: parseInt($('.header .container').width()) * .25 + 'px'
+    });
+    $('.venue-characteristics').show();
+  }
+
+  window.addEventListener('scroll', function (e) {
+    var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+    if ($('.searcher.aside').length > 0) {
       var scrollTo = parseInt($('.venues-list').height()) + 260 - (parseInt($('.searcher.aside').height()) + 80);
 
       if (scrollY > 240 && scrollY < scrollTo) {
@@ -126,20 +141,31 @@ $(document).ready(function () {
           });
         }
       }
-    });
-  }
+    }
 
-  if ($('.venue-characteristics').length > 0) {
-    $('.venue-characteristics').css({
-      left: 'calc(50% + ' + parseInt($('.header .container').width()) * .25 + 'px)',
-      top: $('.venues-list').offset().top
-    });
-    $('.venue-characteristics ul').css({
-      width: parseInt($('.header .container').width()) * .25 + 'px'
-    });
-    $('.venue-characteristics').show();
-  }
+    if ($('.venue-characteristics').length > 0) {
+      var scrollTo = parseInt($('.venue-detail').height()) + 260 - parseInt($('.venue-characteristics').height());
 
+      if (scrollY > parseInt($('.venue-detail .shortcuts').offset().top) - 20 && scrollY < scrollTo) {
+        $('.venue-characteristics').css({
+          position: 'fixed',
+          top: '20px'
+        });
+      } else {
+        if (scrollY > scrollTo) {
+          $('.venue-characteristics').css({
+            position: 'absolute',
+            top: scrollTo + 'px'
+          });
+        } else {
+          $('.venue-characteristics').css({
+            position: 'absolute',
+            top: parseInt($('.venue-detail .shortcuts').offset().top) + 'px'
+          });
+        }
+      }
+    }
+  });
   $(document).on({
     click: function click(e) {
       e.preventDefault();

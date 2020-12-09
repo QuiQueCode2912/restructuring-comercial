@@ -911,18 +911,41 @@ footer p i.fe {
   font-family: "Trola", sans-serif;
 }
 .venue-detail .description {
-  font-size: 20px;
+  font-size: 18px;
+}
+.venue-detail .venues-list .shortcuts a {
+  display: block;
+  height: 70px;
+  color: #000000;
+  text-decoration: none;
+  border: 1px solid #000000;
+  font-family: "Gotham", sans-serif;
+  font-weight: 700;
+  padding: 5px 8px;
+  font-size: 14px;
+  position: relative;
+}
+.venue-detail .venues-list .shortcuts a::after {
+  content: "";
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 8px;
+  height: 8px;
+  border-left: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  transform: rotate(-45deg);
 }
 .venue-characteristics {
   position: absolute;
   display: none;
   background: #ffffff;
-  padding: 15px 20px;
+  padding: 23px 25px;
   border: 1px solid #000000;
   border-right: none;
   right: 0;
   z-index: 10;
-  margin-top: 50px;
+  margin-top: 0;
   font-size: 14px;
   padding-bottom: 50px;
 }
@@ -939,8 +962,21 @@ footer p i.fe {
   padding: 5px 0;
   border-bottom: 1px solid #cccccc; 
 }
+.venue-characteristics ul li.title {
+  font-weight: 700;
+}
 .venue-characteristics a {
   font-size: 13px;
+  text-decoration: underline;
+}
+.venue-characteristics p.small {
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.venue-characteristics .fe-alert-triangle {
+  color: #0088ff;
+  font-size: 25px;
 }
 .venue-detail #accordion .card .card-header h5 button {
   display: block;
@@ -995,6 +1031,15 @@ footer p i.fe {
   position: absolute;
   left: 0;
 }
+.venue-detail .testimonial .avatar {
+  position: relative;
+  float: left;
+  margin-top: -8px;
+  margin-right: 15px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+}
 .venue-detail .testimonial span {
   font-family: "Trola", sans-serif;
 }
@@ -1005,7 +1050,11 @@ footer p i.fe {
 }
 .venue-detail .near-by li {
   list-style: none;
-  padding: 4px 0;
+  padding: 7px 0;
   border-bottom: 1px solid #cccccc;
   font-size: 13px;
+}
+.venue-detail .near-by li strong {
+  float: right;
+  font-weight: 700;
 }
