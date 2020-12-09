@@ -42,12 +42,27 @@
             </div>
             <div class="col-12 col-md-6">
               <div class="form-group">
-                <input type="text" class="form-control" id="interests" placeholder="Me interesa">
+                <select id="interests">
+                  <option value="" disabled>Me interesa</option>
+                  <option>Evento presencial</option>
+                  <option>Evento virtual</option>
+                  <option>Evento semi-presencial</option>
+                  <option>Hospedaje</option>
+                  <option>Vivienda</option>
+                  <option>No estoy seguro, necesito asesoramiento</option>
+                </select>
               </div>
             </div>
             <div class="col-12 col-md-6">
               <div class="form-group">
-                <input type="text" class="form-control" id="group-size" placeholder="Tamaño del grupo">
+                <select id="group-size">
+                  <option value="" disabled>Tamaño del grupo</option>
+                  <option>Menos de 50 personas</option>
+                  <option>Entre 51 y 100 personas</option>
+                  <option>Entre 101 y 200 personas</option>
+                  <option>Entre 201 y 500 personas</option>
+                  <option>Más de 500 personas</option>
+                </select>
               </div>
             </div>
             <div class="col-12 col-md-6">

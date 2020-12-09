@@ -26,7 +26,7 @@
   <div class="container">
     <a href="/" class="menu-toggle"><i class="fe fe-arrow-left"></i></a>
     <ul class="menu">
-      <li><a href="/solicitud/1"><i class="fe fe-arrow-left"></i> Volver al inicio</a></li>
+      <li><a href="/solicitud/1"><i class="fe fe-arrow reflect"></i> Volver al inicio</a></li>
     </ul>
     <a href="https://ciudaddelsaber.org" class="logo">
       <img src="/assets/images/logo-white.png" />

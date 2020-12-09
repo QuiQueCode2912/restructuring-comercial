@@ -110,18 +110,19 @@
         </div>
       </div>
       <div class="col-12 col-md-6">
-        <p><small>Puedes compartir la agenda de tu evento,  material 
+        <p style="line-height:1rem; margin-top:47px"><small>Puedes compartir la agenda de tu evento,  material 
           promocional o cualquier otro documento que nos ayude a 
           entender mejor tus necesidades</small></p>
         <div class="form-group-preview">
           globalgame.docx
-          <a href="#">Editar</a>
+          <a href="#" style="margin-right:36px">Borrar</a>
+          <i class="fe fe-upload"></i>
         </div>
       </div>
     </div>
     <div class="row" style="margin-top:40px">
       <div class="col-12 text-center">
-        <p style="color:#0088ff">Esta solicitud está sujeta a la disponibilidad de 
+        <p style="color:#0088ff; font-family:'Roboto', sans-serif; font-size:14px">Esta solicitud está sujeta a la disponibilidad de 
           los espacios al momento de ser procesada 
           por el equipo de la Ciudad del Saber</p>
       </div>

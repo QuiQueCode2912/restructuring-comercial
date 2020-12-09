@@ -3,37 +3,37 @@
     <h4>Cuéntanos algunos datos de tu evento</h4>
     <div class="row">
       <div class="col-12 col-md-6">
-        <div class="form-group">
-          <input type="text" class="form-control" id="name" placeholder="* Nombre del evento">
+        <div class="form-group required">
+          <input type="text" class="form-control" id="name" required placeholder="Nombre del evento">
         </div>
       </div>
       <div class="col-12 col-md-6">
-        <div class="form-group">
-          <select class="form-control" name="type">
-            <option value="">* Tipo de actividad</option>
+        <div class="form-group required">
+          <select class="form-control" name="type" required>
+            <option value="">Tipo de actividad</option>
           </select>
         </div>
       </div>
       <div class="col-12 col-md-6">
-        <div class="form-group">
-          <select class="form-control" name="quantity">
-            <option value="">* Cantidad de personas</option>
+        <div class="form-group required">
+          <select class="form-control" name="quantity" required>
+            <option value="">Cantidad de personas</option>
           </select>
         </div>
       </div>
       <div class="col-12 col-md-6">
-        <div class="form-group">
-          <input type="text" class="form-control" id="how" placeholder="* Cómo imaginas tu actividad">
+        <div class="form-group required">
+          <input type="text" class="form-control" id="how" required placeholder="Cómo imaginas tu actividad">
         </div>
       </div>
       <div class="col-12 col-md-6">
-        <div class="form-group">
-          <input type="datetime-local" class="form-control" id="start-date" placeholder="* Fecha y hora de inicio">
+        <div class="form-group required">
+          <input type="text" class="form-control datetimepicker" required id="start-date" placeholder="Fecha y hora de inicio">
         </div>
       </div>
       <div class="col-12 col-md-6">
-        <div class="form-group">
-          <input type="datetime-local" class="form-control" id="end-date" placeholder="* Fecha y hora de finalización">
+        <div class="form-group required">
+          <input type="text" class="form-control datetimepicker" required id="end-date" placeholder="Fecha y hora de finalización">
         </div>
       </div>
       <div class="col-12 col-md-6">
@@ -68,10 +68,11 @@
         </div>
       </div>
       <div class="col-12 col-md-6">
-        <p style="margin-top:47px"><small>Puedes compartir la agenda de tu evento,  material 
+        <p style="margin:50px 0 0; line-height:1rem"><small>Puedes compartir la agenda de tu evento,  material 
           promocional o cualquier otro documento que nos ayude a 
           entender mejor tus necesidades</small></p>
         <div class="form-group">
+          <i class="fe fe-upload"></i>
           <input type="text" class="form-control" readonly="readonly" id="file" placeholder="Archivos .pdf o .docx - máximo 5MB">
         </div>
       </div>

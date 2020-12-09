@@ -62,7 +62,7 @@
         <li>
           <a href="#search">
             Ver ofertas
-            <i class="fe fe-arrow-right"></i>
+            <i class="fe fe-arrow"></i>
           </a>
         </li>
       </ul>

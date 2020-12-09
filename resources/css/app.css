@@ -15,29 +15,60 @@ a {
 
 form input[type=text],
 form input[type=email],
-form input[type=datetime-local] {
+form input[type="datetime-local"] {
   border: 1px solid #000000;
   height: 45px;
+  font-size: 13px;
+  padding-left: 20px !important;
 }
 
 form input[type=text]::placeholder,
 form input[type=email]::placeholder,
-form input[type=datetime-local]::placeholder,
+form input[type="datetime-local"]::placeholder,
 form textarea::placeholder {
-  font-size: 12px;
+  font-size: 13px;
 }
 form select {
   border: 1px solid #000000 !important;
   height: 45px !important;
-}
-form select option {
-  font-size: 12px !important
+  font-size: 13px !important;
+  padding-left: 15px !important;
+  color: #686868;
 }
 form textarea {
   width: 100%;
   border: 1px solid #000000;
   min-height: 140px;
   border-radius: 5px;
+}
+form .custom-switch {
+  text-align: right !important;
+  padding-right: 60px !important;
+}
+form .custom-switch label::before {
+  right: 0 !important;
+  left: 107% !important;
+  width: 2.8rem !important;
+  height: 1.5rem !important;
+  top: 0 !important;
+  border-radius: .75rem !important;
+}
+form .custom-switch label::after {
+  top: 2px !important;
+  left: calc(107% + 2px) !important;
+  width: calc(1.5rem - 4px) !important;
+  height: calc(1.5rem - 4px) !important;
+  border-radius: .75rem !important;
+}
+form .custom-switch .custom-control-input:checked~.custom-control-label::after {
+  transform: translateX(1.35rem) !important;
+}
+.scroll-down {
+  width: 60px;
+  margin: -50px 0 0;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .btn-primary {
@@ -49,6 +80,37 @@ form textarea {
 
 .container {
   position: relative;
+}
+
+.fe-arrow {
+  display: inline-block;
+  width: 30px;
+  height: 12px;
+  position: relative;
+  transform: translate(8px, 2px);
+}
+.fe-arrow.reflect {
+  transform: rotate(180deg);
+  margin-right: 10px;
+}
+.fe-arrow::before {
+  width: 100%;
+  height: 6px;
+  content: "";
+  border-bottom: 1px solid #ffffff;
+  display: block;
+}
+.fe-arrow::after {
+  width: 9px;
+  height: 9px;
+  content: "";
+  display: block;
+  position: absolute;
+  border-top: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+  right: 2px;
+  top: 1px;
+  transform: rotate(45deg);
 }
 
 .covid {
@@ -315,7 +377,7 @@ form textarea {
   text-decoration: none;
 }
 .search ul li a[href="#search"] i {
-  right: 10px;
+  right: 18px;
   bottom: 10px;
 }
 .search ul li ul {
@@ -535,15 +597,19 @@ form textarea {
   display: block;
   width: 100%;
 }
-.contact form input {
+.contact form select {
+  width: 100%;
+  border-radius: 4px;
+}
+form input {
   font-family: "Roboto", sans-serif;
   font-size: 13px;
   padding-left: 20px;
 }
-.contact form input::placeholder {
+form input::placeholder {
   color: #000000;
 }
-.contact form .form-group.required::before {
+form .form-group.required::before {
   content: "*";
   color: #0088ff;
   position: absolute;
@@ -556,7 +622,7 @@ form textarea {
   visibility: visible;
   opacity: 1;
 }
-.contact form button {
+form button {
   font-weight: 700;
   text-transform: uppercase;
   font-family: "Gotham", sans-serif;
@@ -609,6 +675,10 @@ footer p i.fe {
   height: 9px;
   border-bottom: 1px solid #d0d0d0;
 }
+.request small,
+.request select {
+  font-family: "Roboto", sans-serif;
+}
 .request .stepper li {
   list-style: none;
   width: 120px;
@@ -646,13 +716,15 @@ footer p i.fe {
   font-weight: 600;
 }
 .request .buttons {
-  margin: 60px auto 20px;
+  margin: 40px auto 20px;
 }
 .request .buttons .btn {
   margin: 4px 6px;
   min-width: 140px;
   text-transform: uppercase;
   font-size: 13px;
+  padding: 8px 10px 6px;
+  font-weight: 700;
 }
 .request .fe-check.round {
   width: 50px;
@@ -666,11 +738,12 @@ footer p i.fe {
 }
 .request .form-group-preview {
   padding: 10px;
-  background: #d0d0d0;
+  background: #e2e2e2;
   margin: 0 0 10px;
   border-radius: 4px;
   font-size: 13px;
   position: relative;
+  font-family: "Roboto",sans-serif;
 }
 .request .form-group-preview small {
   font-size: 13px;
@@ -678,11 +751,30 @@ footer p i.fe {
 }
 .request .form-group-preview a {
   position: absolute;
-  right:10px;
-  bottom: 12px;
-  font-size: 10px;
+  right: 10px;
+  bottom: 10px;
+  font-size: 11px;
   color: #BE1197;
 }
+form input[type=text] {
+  padding-left: 20px;
+}
+.request .col-12.col-md-7 {
+  max-width: 68%;
+  flex: 0 0 68%;
+}
+.request .fe-upload {
+  float: right;
+  margin: 0 10px;
+  font-size: 24px;
+  color: #0088ff;
+  transform: translateY(34px);
+}
+.request .form-group-preview .fe-upload {
+  transform: none;
+  margin: 0;
+  margin-top: -2px;
+} 
 
 .daterangepicker {
   margin-left: -10px;

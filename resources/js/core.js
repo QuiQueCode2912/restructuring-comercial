@@ -1,5 +1,20 @@
 $(document).ready(function() {
   $('input[name="daterange"]').daterangepicker();
+  $('input.datepicker').daterangepicker({
+    singleDatePicker:true
+  });
+  $('input.datetimepicker').daterangepicker({
+    singleDatePicker:true,
+    timePicker:true,
+    locale:{
+      format: 'DD/M/Y hh:mm A'
+    }
+  });
+
+  if ($('#home-carousel').length > 0) {
+    $('#home-carousel').height((parseInt($(window).height()) - 156) + 'px');
+    $('#home-carousel .carousel-inner').height((parseInt($(window).height()) - 156) + 'px');
+  }
 
   if ($('.searcher.aside').length > 0) {
     $('.searcher.aside').css({

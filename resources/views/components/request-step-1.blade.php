@@ -3,23 +3,23 @@
     <h4>Comencemos con tus datos de contacto</h4>
     <div class="row">
       <div class="col-12 col-md-6">
-        <div class="form-group">
-          <input type="text" class="form-control" id="first_name" placeholder="* Nombres">
+        <div class="form-group required">
+          <input type="text" class="form-control" required id="first_name" placeholder="Nombres">
         </div>
       </div>
       <div class="col-12 col-md-6">
-        <div class="form-group">
-          <input type="email" class="form-control" id="last_name" placeholder="* Apellidos">
+        <div class="form-group" required>
+          <input type="email" class="form-control" required id="last_name" placeholder="Apellidos">
         </div>
       </div>
       <div class="col-12 col-md-6">
-        <div class="form-group">
-          <input type="text" class="form-control" id="email" placeholder="* Correo electrónico">
+        <div class="form-group required">
+          <input type="text" class="form-control" required id="email" placeholder="Correo electrónico">
         </div>
       </div>
       <div class="col-12 col-md-6">
-        <div class="form-group">
-          <input type="text" class="form-control" id="phone" placeholder="* Número de teléfono">
+        <div class="form-group required">
+          <input type="text" class="form-control" required id="phone" placeholder="Número de teléfono">
         </div>
       </div>
       <div class="col-12 col-md-6">
