@@ -462,7 +462,7 @@ form textarea {
 }
 .venues .venue .characteristics dl:first-child dt,
 .venues .venue .characteristics dl:first-child dd {
-  font-weight: 600;
+  font-weight: 700;
 }
 .venues .venue .characteristics dl {
   border-bottom: 1px solid #cccccc;
@@ -479,11 +479,14 @@ form textarea {
 .venues .venue .characteristics dl dd {
   float: right;
   margin: 0;
-  font-weight: 600;
+  font-weight: 700;
 }
 .venues .venue .characteristics + p {
   padding: 15px;
   font-size: 12px;
+}
+.venues .venue .characteristics + p a {
+  text-decoration: underline;
 }
 .venues .venue .btn {
   min-width: 200px;
@@ -713,7 +716,7 @@ footer p i.fe {
   text-align: left !important;
 }
 .searcher.aside form .search ul {
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 .searcher.aside form .search ul,
 .searcher.aside form .search ul li {
@@ -725,6 +728,9 @@ footer p i.fe {
 .searcher.aside form .search ul li a label {
   left: 0;
 }
+.searcher.aside form .search ul li a span {
+  left: 10px;
+}
 .searcher.aside form .search ul li a[href="#search"] {
   left: 0;
 }
@@ -732,6 +738,15 @@ footer p i.fe {
   z-index: 10;
   left: 0;
   width: calc(100% - 8px);
+}
+.searcher.aside p.small {
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.searcher.aside .fe-alert-triangle {
+  color: #0088ff;
+  font-size: 25px;
 }
 
 .venues-menu {
@@ -749,7 +764,7 @@ footer p i.fe {
   list-style: none;
   display: inline-block;
   float: left;
-  width: calc(16.67% - 1px);
+  width: calc(14.3% - 1px);
   padding: 0 10px;
   min-height: 50px;
   border-left: 1px solid #aaaaaa;
@@ -761,16 +776,29 @@ footer p i.fe {
 .venues-menu ul li a {
   font-size: 14px;
   color: #292B33;
+  height: 50px;
   display: block;
   text-align: left;
 }
-.venues-menu ul li a:hover {
+.venues-menu ul li a:hover,
+.venues-menu ul li a.active {
   text-decoration: none;
+  color: #0088ff;
 }
 .venues-list {
   background: #ffffff; 
   box-shadow: 0 2px 6px inset rgba(0, 0, 0, .4);
   padding-top: 25px;
+}
+.venues-list .venues-availability {
+  padding: 10px 10px 8px;
+  font-family: "Gotham", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  color: #ffffff;
+  background: #0088ff;
+
 }
 .venues-list .lined-box {
   border: 1px solid #000000;
@@ -778,8 +806,8 @@ footer p i.fe {
   font-size: 13px;
   color: #484848;
 }
-.venues-list .btn-primary {
-  font-weight: 600;
+.venues-list .characteristics + p a {
+  text-decoration: underline;
 }
 .venue-list {
   margin: 20px 0 80px;
@@ -788,22 +816,23 @@ footer p i.fe {
 }
 .venue-list .row .venue-image {
   width: 100%;
+  height: 210px;
   display: block;
 }
 .venue-list .row .venue-image + .btn-primary {
-  width: 150px;
   text-transform: uppercase;
-  padding: 5px 10px;
-  font-weight: 600;
   text-align: center;
   position: absolute;
-  transform: translateY(-60px) translateX(-50px);
+  transform: translateY(-50px) translateX(-50px);
+  min-width: 200px;
+  font-weight: 700;
+  padding: 10px 0 7px;
 }
 .venue-list .characteristics dl dt {
   font-weight: 400;
 }
 .venue-list .characteristics dl dd {
-  font-weight: 600;
+  font-weight: 700;
 }
 .venue-list .characteristics + p {
   margin-top: 20px;
@@ -829,7 +858,7 @@ footer p i.fe {
   font-size: 18px;
   display: block;
   margin-bottom: 15px;
-  font-weight: 600;
+  font-weight: 700;
 }
 .venue-list .configurations {
   margin-top: 20px;

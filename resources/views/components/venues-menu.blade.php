@@ -3,6 +3,7 @@
     <div class="row">
       <div class="col-12">
         <ul>
+          <li><a href="#">Inicio</a></li>
           <li><a href="#">Ateneo</a></li>
           <li><a href="#">Centro de convenciones</a></li>
           <li><a href="#">Aulas 105</a></li>

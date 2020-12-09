@@ -66,6 +66,13 @@
           </a>
         </li>
       </ul>
+      <?php if ($class ?? '') : ?>
+      <p class="small">
+        <i class="fe fe-alert-triangle"></i><br />
+        Si tu evento requiere de múltiples espacios o excede las 24hs, puedes
+        conectarte con nosotros desde el formulario al pie de la página.
+      </p>
+      <?php endif ?>
     </div>
   </form>
 </div>

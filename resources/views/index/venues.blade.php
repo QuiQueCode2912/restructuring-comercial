@@ -11,7 +11,7 @@
     <div class="row">
       <div class="col-12 col-md-1"></div>
       <div class="col-12 col-md-8" style="padding-right:40px">
-        <h3 class="btn btn-primary" style="display:block">Disponibilidad para: Formación académica</h3>
+        <h3 class="venues-availability">Disponibilidad para: Formación académica</h3>
         <div class="row">
           <div class="col-12 col-md-7">
             <div class="lined-box">
