@@ -1,7 +1,96 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-@font-face {font-family: 'Trola';src: url('/assets/fonts/trola/34DA2C_2_0.eot');src: url('/assets/fonts/trola/34DA2C_2_0.eot?#iefix') format('embedded-opentype'),url('/assets/fonts/trola/34DA2C_2_0.woff2') format('woff2'),url('/assets/fonts/trola/34DA2C_2_0.woff') format('woff'),url('/assets/fonts/trola/34DA2C_2_0.ttf') format('truetype'),url('/assets/fonts/trola/34DA2C_2_0.svg#wf') format('svg');}
-@font-face {font-family: 'Gotham';src: url('/assets/fonts/gotham/gotham-light-webfont.eot');src: url('/assets/fonts/gotham/gotham-light-webfont.eot?#iefix') format('embedded-opentype'),url('/assets/fonts/gotham/gotham-light-webfont.woff') format('woff'),url('/assets/fonts/gotham/gotham-light-webfont.ttf') format('truetype'),url('/assets/fonts/gotham/gotham-light-webfont.svg#wf') format('svg');}
+@font-face {
+  font-family: 'Trola';
+  font-weight: 300;
+  src: url('/assets/fonts/trola/34DA2C_5_0.eot');
+  src: url('/assets/fonts/trola/34DA2C_5_0.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/trola/34DA2C_5_0.woff2') format('woff2'),
+        url('/assets/fonts/trola/34DA2C_5_0.woff') format('woff'),
+        url('/assets/fonts/trola/34DA2C_5_0.ttf') format('truetype'),
+        url('/assets/fonts/trola/34DA2C_5_0.svg#wf') format('svg');
+}
+
+@font-face {
+  font-family: 'Trola';
+  font-weight: 400;
+  src: url('/assets/fonts/trola/34DA2C_1_0.eot');
+  src: url('/assets/fonts/trola/34DA2C_1_0.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/trola/34DA2C_1_0.woff2') format('woff2'),
+        url('/assets/fonts/trola/34DA2C_1_0.woff') format('woff'),
+        url('/assets/fonts/trola/34DA2C_1_0.ttf') format('truetype'),
+        url('/assets/fonts/trola/34DA2C_1_0.svg#wf') format('svg');
+}
+
+@font-face {
+  font-family: 'Trola';
+  font-weight: 600;
+  src: url('/assets/fonts/trola/34DA2C_2_0.eot');
+  src: url('/assets/fonts/trola/34DA2C_2_0.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/trola/34DA2C_2_0.woff2') format('woff2'),
+        url('/assets/fonts/trola/34DA2C_2_0.woff') format('woff'),
+        url('/assets/fonts/trola/34DA2C_2_0.ttf') format('truetype'),
+        url('/assets/fonts/trola/34DA2C_2_0.svg#wf') format('svg');
+}
+
+@font-face {
+  font-family: 'Trola';
+  font-weight: 700;
+  src: url('/assets/fonts/trola/34DA2C_9_0.eot');
+  src: url('/assets/fonts/trola/34DA2C_9_0.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/trola/34DA2C_9_0.woff2') format('woff2'),
+        url('/assets/fonts/trola/34DA2C_9_0.woff') format('woff'),
+        url('/assets/fonts/trola/34DA2C_9_0.ttf') format('truetype'),
+        url('/assets/fonts/trola/34DA2C_9_0.svg#wf') format('svg');
+}
+
+@font-face {
+  font-family: 'Trola';
+  font-weight: 900;
+  src: url('/assets/fonts/trola/34DA2C_7_0.eot');
+  src: url('/assets/fonts/trola/34DA2C_7_0.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/trola/34DA2C_7_0.woff2') format('woff2'),
+        url('/assets/fonts/trola/34DA2C_7_0.woff') format('woff'),
+        url('/assets/fonts/trola/34DA2C_7_0.ttf') format('truetype'),
+        url('/assets/fonts/trola/34DA2C_7_0.svg#wf') format('svg');
+}
+
+@font-face {
+  font-family: 'Gotham';
+  font-weight: 300;
+  src: url('/assets/fonts/gotham/gotham-light-webfont.eot');
+  src: url('/assets/fonts/gotham/gotham-light-webfont.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/gotham/gotham-light-webfont.woff') format('woff'),
+        url('/assets/fonts/gotham/gotham-light-webfont.ttf') format('truetype'),
+        url('/assets/fonts/gotham/gotham-light-webfont.svg#wf') format('svg');
+}
+
+@font-face {
+  font-family: 'Gotham';
+  font-weight: 400;
+  src: url('/assets/fonts/gotham/Gotham-Book.ttf') format('truetype'),
+        url('/assets/fonts/gotham/Gotham-Book.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gotham';
+  font-weight: 600;
+  src: url('/assets/fonts/gotham/Gotham-Bold.ttf') format('truetype'),
+        url('/assets/fonts/gotham/Gotham-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gotham';
+  font-weight: 700;
+  src: url('/assets/fonts/gotham/Gotham-Black.ttf') format('truetype'),
+        url('/assets/fonts/gotham/Gotham-Black.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gotham';
+  font-weight: 900;
+  src: url('/assets/fonts/gotham/gotham-ultra-webfont.ttf') format('truetype');
+}
 
 body {
   margin: 0;
@@ -239,6 +328,11 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
   transform: translateX(-50%);
   top: -35px;
   left: 50%;
+  bottom: 0;
+}
+.lb-dataContainer .lb-details {
+  top: calc(100% + 15px);
+  position: absolute;
 }
 .lb-close {
   opacity: 1 !important;
@@ -255,7 +349,18 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
   top: 9px;
 }
 .lb-data .lb-details .lb-caption {
-  color: #0088ff;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+}
+.lb-data .lb-details .lb-caption a  {
+  text-decoration: underline;
+}
+.lb-data .lb-details .lb-caption strong  {
+  font-weight: 600;
+}
+.lb-data .lb-details .lb-caption h3  {
+  font-weight: 600;
   font-size: 20px;
 }
 .lb-nav .lb-prev,
@@ -695,6 +800,7 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
 .contact form .btn {
   display: block;
   width: 100%;
+  font-weight: 600;
 }
 .contact form select {
   width: 100%;
