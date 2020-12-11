@@ -92,8 +92,15 @@
 
 body {
   margin: 0;
-  background:rgba(230, 230, 230, .5) !important;
+  background: #333333;
   font-family: "Gotham", sans-serif !important;
+}
+
+body .main-container {
+  max-width: 90rem;
+  padding: 0;
+  margin: 0 auto;
+  background: #e6e6e6;
 }
 
 a {
@@ -249,6 +256,44 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
   width: auto;
   float: left;
 }
+.header .container .menu li.has-childs {
+  position: relative;
+}
+.header .container .menu li.has-childs ul {
+  position: absolute;
+  background: #ffffff;
+  width: 200px;
+  padding: 4px 8px;
+  list-style: none;
+  display: none;
+  margin: 0;
+  z-index: 200;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .4);
+}
+.header .container .menu li.has-childs:hover ul {
+  display: block;
+}
+.header .container .menu li.has-childs ul li {
+  padding: 0;
+  margin: 0;
+  display: block;
+  width: 100%;
+}
+.header .container .menu li.has-childs ul li a {
+  display: block;
+  width: 100%;
+  padding: 6px;
+  border-bottom: 1px dotted #cccccc;
+  color: #989898;
+  text-transform: none;
+  font-size: 13px;
+}
+.header .container .menu li.has-childs ul li a:hover {
+  background: #f2f2f2;
+}
+.header .container .menu li.has-childs ul li:last-child a {
+  border-bottom: none;
+}
 .header .container .menu li a {
   display: inline-block;
   padding: 9px 12px 6px;
@@ -306,14 +351,6 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
 .carousel#home-carousel .carousel-inner,
 .carousel#home-carousel .carousel-inner .carousel-item {
   height: 600px;
-}
-.carousel#home-carousel {
-  background: #333;
-}
-.carousel#home-carousel .carousel-inner {
-  max-width: 90rem;
-  padding: 0;
-  margin: 0 auto;
 }
 .gallery {
   position: absolute;
@@ -376,6 +413,14 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
 }
 .lb-data .lb-details .lb-caption strong  {
   font-weight: 600;
+}
+.lb-data .lb-details .lb-caption h1 {
+  font-weight: 700;
+  color: #0088ff;
+  font-size: 24px;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 .lb-data .lb-details .lb-caption h3  {
   font-weight: 600;
@@ -1332,20 +1377,15 @@ form input[type=text] {
 .venue-detail #accordion .card {
   border-radius: 0;
   border: 1px solid #000000;
-  border-bottom: none;
-  border-top: none;
+  margin-bottom: 10px;
 }
 .venue-detail #accordion .card:last-child {
   border-bottom: 1px solid #000000;
-}
-.venue-detail #accordion .card:first-child .card-header {
-  border-top: 1px solid #000000;
 }
 .venue-detail #accordion .card .card-header {
   background: #ffffff;
   border: none;
   border-radius: 0;
-  border-bottom: 1px solid #000000;
   padding: 0;
 }
 .venue-detail #accordion .card .card-header h5 {
@@ -1353,10 +1393,15 @@ form input[type=text] {
 }
 .venue-detail #accordion .card .card-header h5 button {
   font-weight: 600;
+  outline: none;
+  box-shadow: none;
 }
 .venue-detail #accordion .card .card-header h5 button small {
   display: inline-block;
   padding-top: 4px;
+}
+.venue-detail #accordion .card .collapse {
+  border-top: 1px solid #000000;
 }
 .venue-detail #accordion .card .large-number {
   font-size: 64px;

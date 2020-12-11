@@ -15,7 +15,7 @@ class IndexController extends Controller
 
   public function ateneo(Request $request)
   {
-    return view('index.venue', [
+    return view('venues.ateneo', [
       'page_title' => 'Servicios - Ateneo',
       'venue' => 'ateneo',
       'venueName' => 'Ateneo',
@@ -24,7 +24,7 @@ class IndexController extends Controller
 
   public function centroConvenciones(Request $request)
   {
-    return view('index.venue', [
+    return view('venues.centro-convenciones', [
       'page_title' => 'Servicios - Centro de Convenciones',
       'venue' => 'centro-convenciones',
       'venueName' => 'Centro de convenciones',
@@ -33,7 +33,7 @@ class IndexController extends Controller
 
   public function aulas105(Request $request)
   {
-    return view('index.venue', [
+    return view('venues.aulas-105', [
       'page_title' => 'Servicios - Aulas 105',
       'venue' => 'aulas-105',
       'venueName' => 'Aulas 105',
@@ -42,7 +42,7 @@ class IndexController extends Controller
 
   public function aulas220(Request $request)
   {
-    return view('index.venue', [
+    return view('venues.aulas-220', [
       'page_title' => 'Servicios - Aulas 220',
       'venue' => 'aulas-220',
       'venueName' => 'Aulas 220',
@@ -51,7 +51,7 @@ class IndexController extends Controller
 
   public function complejoHospedaje(Request $request)
   {
-    return view('index.venue', [
+    return view('venues.complejo-hospedaje', [
       'page_title' => 'Servicios - Complejo de Hospedaje',
       'venue' => 'complejo-hospedaje',
       'venueName' => 'Complejo de hospedaje',
@@ -60,7 +60,7 @@ class IndexController extends Controller
 
   public function residencias(Request $request)
   {
-    return view('index.venue', [
+    return view('venues.residencias', [
       'page_title' => 'Servicios - Residencias',
       'venue' => 'residencias',
       'venueName' => 'Residencias',

@@ -35,14 +35,14 @@
 </div>
 
 <div class="container" style="margin:0 auto; padding:0; position:relative">
-  <a href="/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-6-1.jpg" data-lightbox="venue" title="Los salones tienen capacidad para hasta 24 personas, en formato aula de clases; ideales para reuniones corporativas o académicas.<br><br><a href='#'>Revisa la política COVID para este venue</a>" class="gallery">FOTOGALERÍA <span>+</span></a>
+  <a href="/assets/images/residencias.png" data-lightbox="venue" title="<h1>Residencias</h1>Los salones tienen capacidad para hasta 24 personas, en formato aula de clases; ideales para reuniones corporativas o académicas.<br><br><a href='#'>Revisa la política COVID para este venue</a>" class="gallery">FOTOGALERÍA <span>+</span></a>
   <a href="/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-7-1.jpg" data-lightbox="venue" title="<h3>Aula / Salón 101</h3><br>Mínimo 1 persona, máximo 32 personas. Desde $300* por hora.<br><strong>$300*</strong> por medio día / <strong>$400*</strong> por día entero<br><br><a href='#' class='btn btn-primary'>Cotizar</a><br><br><a href='#'>Revisa la política COVID para este venue</a>"></a>
   <a href="/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-8-1.jpg" data-lightbox="venue" title="Los salones tienen capacidad para hasta 24 personas, en formato aula de clases; ideales para reuniones corporativas o académicas.<br><br><a href='#'>Revisa la política COVID para este venue</a>"></a>
 </div>
 <div id="home-carousel" class="carousel slide venue-main-image" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-6-1.jpg" class="d-block" alt="...">
+      <img src="/assets/images/residencias.png" class="d-block" alt="...">
     </div>
   </div>
 </div>
@@ -50,20 +50,14 @@
 <div class="container venue-detail">
   <div class="row">
     <div class="col-12">
-      <h6>Aulas 220 - Coworking</h6>
-      <h1>Innova y crea valor</h1>
+      <h6>Residencias</h6>
+      <h1>Vive con la naturaleza</h1>
       <p class="description">
-        Las Aulas 220 (antiguamente sede del TEC de Monterrey) están 
-        estratégicamente ubicadas en el área que recorre el Parque de los 
-        Pagos. Su infraestructura resalta el patrimonio histórico del campus. 
-        Diseñadas para realizar actividades de formación académica, cuentan con 
-        salones remodelados para eventos y talleres.
+      Las residencias son un agradable lugar para vivir, gracias a su ambiente tranquilo y seguro. Contamos con una oferta residencial formada por 147 viviendas, que van desde 151mts2 a 446mts2 (considerando el área cerrada y abierta).
       </p>
-      <p><span style="color:#0088ff">/ Fácil y rápido acceso /</span> 
-        Ciudad del Saber tiene en su periferia la  terminal de transbordo que 
-        te conecta con el campus por la red de Metro Bus. Gracias a su localización 
-        frente al Canal es posible, en pocos minutos, estar en el centro de Panamá 
-        y disfrutar su casco antiguo.
+      <p><span style="color:#0088ff">/ Viviendas para alquiler /</span> 
+      Si buscas tranquilidad, seguridad y plenitud rodeado de naturaleza, 
+¡es tu oportunidad para alquilar dentro de su campus! Conectado con la terminal de Albrook, puedes viajar por el resto de la red de transporte público.
       </p>
     </div>
   </div>
