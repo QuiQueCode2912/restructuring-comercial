@@ -3,7 +3,7 @@
 @section('content')
 <x-covid />
 <x-header menu="true" />
-<x-venues-menu />
+<x-venues-menu venue="{{ $venue }}" />
 
 <div class="venue-characteristics">
   <span style="color:#0088ff">Características del venue</span>
@@ -26,8 +26,9 @@
   <br /><br />
   <a href="#" style="color:#000000">Revisa la política COVID-19<br />para este venue</a>
   <br /><br />
-  <p class="small">
-    <i class="fe fe-alert-triangle"></i><br />
+  <p class="small" style="max-width:270px">
+    <img src="/assets/images/halt-hand.png" width="30" style="margin-bottom:5px" />
+    <br />
     Si tu evento requiere de múltiples espacios o excede las 24hs, puedes
     conectarte con nosotros desde el formulario al pie de la página.
   </p>

@@ -2,275 +2,103 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request,
-  Bashy\CampaignMonitor\Facades\CampaignMonitor;
+use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
-    public function campaign(Request $request)
-    {
-      /*
-      $list = 'e2381c5b4f9dc1934e6fa64ca96d677a';
-      $testList = '9f008e09cf952b393be331db273052d6';
+  public function index(Request $request)
+  {
+    return view('index.index', [
+      'page_title' => 'Servicios'
+    ]);
+  }
 
-      $infrastructures = [
-        "A-Antena",
-        "Bohío",
-        "Cancha",
-        "D-200C",
-        "E-100",
-        "E-101",
-        "E-102",
-        "E-103",
-        "E-104",
-        "E-105",
-        "E-106",
-        "E-107",
-        "E-108",
-        "E-109",
-        "E-126",
-        "E-128",
-        "E-129",
-        "E-130",
-        "E-157A",
-        "E-157B",
-        "E-158A",
-        "E-158B",
-        "E-182",
-        "E-183",
-        "E-184",
-        "E-185A",
-        "E-200",
-        "E-201",
-        "E-202",
-        "E-203",
-        "E-204",
-        "E-205",
-        "E-206",
-        "E-207",
-        "E-210",
-        "E-220",
-        "E-221",
-        "E-222",
-        "E-223",
-        "E-224",
-        "E-225",
-        "E-227",
-        "E-228",
-        "E-229",
-        "E-230",
-        "E-231",
-        "E-232",
-        "E-233",
-        "E-234",
-        "E-235",
-        "E-237",
-        "E-238",
-        "E-239",
-        "E-240",
-        "E-242",
-        "E-249",
-        "E-253",
-        "E-300",
-        "E-369B",
-        "Edificio de Pruebas FSL",
-        "ES-369C",
-        "ES-369D",
-        "G-214ABC",
-        "G-214D",
-        "G-214E",
-        "G-215",
-        "G-216",
-        "G-217",
-        "G-218",
-        "G-219",
-        "G-243",
-        "G-244",
-        "G-245",
-        "G-246",
-        "G-247",
-        "G-248A",
-        "G-248B",
-        "HA-214F",
-        "H-Lote127",
-        "L-110",
-        "L-111",
-        "L-112",
-        "L-113",
-        "L-114",
-        "L-115",
-        "L-116",
-        "L-117",
-        "L-118",
-        "L-119",
-        "L-120",
-        "L-121",
-        "L-122",
-        "L-123",
-        "L-124",
-        "L-125",
-        "L-131",
-        "L-132",
-        "L-133",
-        "L-134",
-        "L-135",
-        "L-136",
-        "L-137",
-        "L-138",
-        "L-139",
-        "L-140",
-        "L-141",
-        "L-142",
-        "L-143",
-        "L-144",
-        "L-145",
-        "L-146",
-        "L-147",
-        "L-148",
-        "L-150",
-        "L-161",
-        "L-162",
-        "L-163",
-        "L-164",
-        "L-165",
-        "L-166",
-        "L-167",
-        "L-168",
-        "L-169",
-        "L-170",
-        "L-171",
-        "L-172",
-        "L-173",
-        "L-174",
-        "L-175",
-        "L-176",
-        "L-177",
-        "L-178",
-        "L-179",
-        "L-180",
-        "L-181",
-        "L-200B",
-        "L-341",
-        "L-342",
-        "L-343",
-        "L-347",
-        "L-348",
-        "PA-999",
-        "Parque de los Lagos",
-        "Parque Innova",
-        "R-301",
-        "R-302",
-        "R-303",
-        "R-304",
-        "R-305",
-        "R-306",
-        "R-307",
-        "R-308",
-        "R-309",
-        "R-310",
-        "R-311",
-        "R-312",
-        "R-313",
-        "R-314",
-        "R-315",
-        "R-316",
-        "R-318",
-        "R-319",
-        "R-320",
-        "R-321",
-        "R-322",
-        "R-323",
-        "R-325",
-        "R-326",
-        "R-327",
-        "R-328",
-        "R-329",
-        "R-330",
-        "R-331",
-        "R-332",
-        "R-333",
-        "R-334",
-        "R-335",
-        "R-336",
-        "R-337",
-        "R-338",
-        "R-339",
-        "R-340",
-        "R-352",
-        "R-353",
-        "R-354",
-        "R-355",
-        "R-356",
-        "R-357",
-        "R-358",
-        "R-359",
-        "R-360",
-        "R-361",
-        "R-362",
-        "R-363",
-        "R-364",
-        "R-365",
-        "R-366",
-        "R-367",
-        "R-368",
-        "R-371",
-        "R-372",
-        "R-373",
-        "R-374",
-        "R-375",
-        "R-376",
-        "R-377",
-        "R-378",
-        "R-379",
-        "R-380",
-        "R-381",
-        "R-382",
-        "R-383",
-        "R-384",
-        "R-385",
-        "R-386",
-        "R-387",
-        "R-388",
-        "R-389",
-        "R-390",
-        "R-391",
-        "R-392",
-        "R-393",
-        "R-394",
-        "R-395",
-        "R-396",
-        "R-397",
-        "R-398",
-        "V-149",
-        "V-151",
-        "V-152",
-        "V-153",
-        "V-154",
-        "V-155",
-        "V-159",
-        "V-160"
-      ];
+  public function ateneo(Request $request)
+  {
+    return view('index.venue', [
+      'page_title' => 'Servicios - Ateneo',
+      'venue' => 'ateneo',
+      'venueName' => 'Ateneo',
+    ]);
+  }
 
-      $i = 0;
-      foreach ($infrastructures as $infrastructure) {
-        $result = CampaignMonitor::segments()->create($list, 
-          array(
-            'Title' => 'Infraestructura - ' . $infrastructure,
-            'RuleGroups' => array(
-              array(
-                'Rules' => array(
-                  array(
-                    'RuleType' => 'Tags',
-                    'Clause' => 'CONTAINS ' . $infrastructure
-                  )
-                )
-              )
-            )
-          ));
-        $i++;
-      }
+  public function centroConvenciones(Request $request)
+  {
+    return view('index.venue', [
+      'page_title' => 'Servicios - Centro de Convenciones',
+      'venue' => 'centro-convenciones',
+      'venueName' => 'Centro de convenciones',
+    ]);
+  }
 
-      echo 'Terminó';
-      */
+  public function aulas105(Request $request)
+  {
+    return view('index.venue', [
+      'page_title' => 'Servicios - Aulas 105',
+      'venue' => 'aulas-105',
+      'venueName' => 'Aulas 105',
+    ]);
+  }
+
+  public function aulas220(Request $request)
+  {
+    return view('index.venue', [
+      'page_title' => 'Servicios - Aulas 220',
+      'venue' => 'aulas-220',
+      'venueName' => 'Aulas 220',
+    ]);
+  }
+
+  public function complejoHospedaje(Request $request)
+  {
+    return view('index.venue', [
+      'page_title' => 'Servicios - Complejo de Hospedaje',
+      'venue' => 'complejo-hospedaje',
+      'venueName' => 'Complejo de hospedaje',
+    ]);
+  }
+
+  public function residencias(Request $request)
+  {
+    return view('index.venue', [
+      'page_title' => 'Servicios - Residencias',
+      'venue' => 'residencias',
+      'venueName' => 'Residencias',
+    ]);
+  }
+
+  public function oferta(Request $request)
+  {
+    return view('index.venues', [
+      'page_title' => 'Servicios - Oferta',
+      'venue' => 'inicio',
+      'venueName' => 'Oferta',
+    ]);
+  }
+
+  public function venue(Request $request)
+  {
+    return view('index.venue', [
+      'page_title' => 'Servicios - Venue',
+      'venue' => 'inicio',
+    ]);
+  }
+
+  public function request(Request $request)
+  {
+    $step = $request->step;
+    $stepName = 'Solicitud de cotización';
+
+    switch ($step) {
+      case 1: $stepName = 'Datos de contacto'; break;
+      case 2: $stepName = 'Datos de tu evento'; break;
+      case 3: $stepName = 'Resumen'; break;
+      case 4: $stepName = 'Finalizada'; break;
     }
+
+    return view('index.request', [
+      'page_title' => 'Servicios - Cotización - ' . $stepName,
+      'step' => $step,
+    ]);
+  }
 }

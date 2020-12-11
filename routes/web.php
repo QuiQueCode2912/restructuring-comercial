@@ -13,21 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-  return view('index.index');
-});
+Route::get('/', 'App\Http\Controllers\IndexController@index');
 
-Route::get('/solicitud/{step}', function () {
-  return view('index.request');
-});
-
-Route::get('/ateneo', function () { return view('index.venues'); });
-Route::get('/centro-convenciones', function () { return view('index.venues'); });
-Route::get('/aulas-105', function () { return view('index.venues'); });
-Route::get('/aulas-220', function () { return view('index.venues'); });
-Route::get('/complejo-hospedaje', function () { return view('index.venues'); });
-Route::get('/residencias', function () { return view('index.venues'); });
-
-Route::get('/venue', function () {
-  return view('index.venue');
-});
+Route::get('/oferta', 'App\Http\Controllers\IndexController@oferta');
+Route::get('/ateneo', 'App\Http\Controllers\IndexController@ateneo');
+Route::get('/centro-convenciones', 'App\Http\Controllers\IndexController@centroConvenciones');
+Route::get('/aulas-105', 'App\Http\Controllers\IndexController@aulas105');
+Route::get('/aulas-220', 'App\Http\Controllers\IndexController@aulas220');
+Route::get('/complejo-hospedaje', 'App\Http\Controllers\IndexController@complejoHospedaje');
+Route::get('/residencias', 'App\Http\Controllers\IndexController@residencias');
+Route::get('/solicitud/{step}', 'App\Http\Controllers\IndexController@request');

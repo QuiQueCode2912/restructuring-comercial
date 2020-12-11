@@ -11,7 +11,7 @@
         <div class="col-12 col-md-7">
           <x-stepper total="3" />
           <?php 
-          switch (app('request')->step) {
+          switch ($step) {
             case 2 : ?><x-request-step-2 /><?php break;
             case 3 : ?><x-request-step-3 /><?php break;
             case 4 : ?><x-request-step-4 /><?php break;

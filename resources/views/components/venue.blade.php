@@ -1,6 +1,6 @@
 <div class="venue">
   <img src="{{ $image }}">
-  <a href="/venue" class="venue-name">{{ $name }}</a>
+  <a href="{{ $url }}" class="venue-name">{{ $name }}</a>
   <div class="characteristics">
     <dl>
       <dt>Espacio para</dt>

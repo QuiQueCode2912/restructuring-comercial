@@ -3,7 +3,7 @@
 @section('content')
 <x-covid />
 <x-header menu="true" />
-<x-venues-menu />
+<x-venues-menu venue="{{ $venue }}" />
 <x-searcher class="aside" />
 
 <div class="venues-list">
@@ -11,7 +11,7 @@
     <div class="row">
       <div class="col-12 col-md-1"></div>
       <div class="col-12 col-md-8" style="padding-right:40px">
-        <h3 class="venues-availability">Disponibilidad para: Formación académica</h3>
+        <h3 class="venues-availability">Disponibilidad para: <?php echo $venueName ?></h3>
         <div class="row">
           <div class="col-12 col-md-7">
             <div class="lined-box">

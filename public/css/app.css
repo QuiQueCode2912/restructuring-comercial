@@ -212,10 +212,10 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
   display: block;
   background: #000000;
   color: #ffffff;
-  height: 40px;
+  height: 30px;
   text-align: center;
-  padding: 12px;
-  font-size: 12px;
+  padding: 7px;
+  font-size: 11px;
   font-weight: 600;
 }
 .covid a {
@@ -307,16 +307,24 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
 .carousel#home-carousel .carousel-inner .carousel-item {
   height: 600px;
 }
+.carousel#home-carousel {
+  background: #333;
+}
+.carousel#home-carousel .carousel-inner {
+  max-width: 90rem;
+  padding: 0;
+  margin: 0 auto;
+}
 .gallery {
   position: absolute;
   background: #ffffff;
-  padding: 4px 10px 6px;
+  padding: 7px 14px 8px;
   display: inline-block;
   color: #000000;
   font-family: "Trola", sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
-  top: 100px;
+  top: 150px;
   z-index: 100;
   line-height: 20px;
   right: 0;
@@ -359,8 +367,12 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
   font-size: 14px;
   font-weight: 400;
 }
-.lb-data .lb-details .lb-caption a  {
+.lb-data .lb-details .lb-caption a:not(.btn)  {
   text-decoration: underline;
+  color: #0088ff;
+}
+.lb-data .lb-details .lb-caption a:not(.btn):hover {
+  color: #0056b3;
 }
 .lb-data .lb-details .lb-caption strong  {
   font-weight: 600;
@@ -373,6 +385,10 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
   text-decoration: none;
   color: #ffffff;
   font-weight: 600;
+}
+.lb-image {
+  border: none !important;
+  border-radius: 0 !important;
 }
 .lb-nav .lb-prev,
 .lb-nav .lb-next {

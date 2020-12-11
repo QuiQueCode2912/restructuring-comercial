@@ -13,12 +13,14 @@ $(document).ready(function() {
 
   lightbox.option({
     albumLabel: "",
-    positionFromTop: 100
+    showImageNumberLabel: false,
+    positionFromTop: 100,
+    maxHeight: (parseInt($(window).height()) - 350)
   });
 
   if ($('#home-carousel').length > 0) {
     var height = (parseInt($(window).height()) - 156);
-    if (height <= $('#home-carousel').hasClass('venue-main-image') ? 480 : 630) {
+    if (height <= ($('#home-carousel').hasClass('venue-main-image') ? 480 : 630)) {
       $('#home-carousel').height(height + 'px');
       $('#home-carousel .carousel-inner').height(height + 'px');
     }
@@ -124,7 +126,15 @@ $(document).ready(function() {
   $(document).on({
     click: function(e) {
       e.preventDefault();
-      document.location.href = '/venues';
+      document.location.href = '/oferta';
     }
   }, '.searcher ul li a[href="#search"]');
+
+  $(document).on({
+    click: function(e) {
+      e.preventDefault();
+      var top = parseInt($('a[name="' + $(this).attr('href').substr(1) + '"]').offset().top);
+      $('html, body').stop().animate({ scrollTop:top + 'px'}, 350);
+    }
+  }, '.shortcuts a');
 });
