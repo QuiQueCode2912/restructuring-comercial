@@ -363,6 +363,11 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
   font-weight: 600;
   font-size: 20px;
 }
+.lb-data .lb-details .lb-caption .btn-primary {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+}
 .lb-nav .lb-prev,
 .lb-nav .lb-next {
   position: absolute;
@@ -1066,6 +1071,7 @@ form input[type=text] {
   min-height: 50px;
   border-left: 1px solid #aaaaaa;
   font-weight: 600;
+  position: relative;
 }
 .venues-menu ul li:first-child {
   border-left: none;
@@ -1078,9 +1084,19 @@ form input[type=text] {
   text-align: left;
 }
 .venues-menu ul li a:hover,
-.venues-menu ul li a.active {
+.venues-menu ul li a.active,
+.venues-menu ul li.active a {
   text-decoration: none;
   color: #0088ff;
+}
+.venues-menu ul li.active::after {
+  content: "";
+  position: absolute;
+  background: #0088ff;
+  height: 8px;
+  left: 0;
+  right: 0;
+  bottom: -15px;
 }
 .venues-list {
   background: #ffffff; 

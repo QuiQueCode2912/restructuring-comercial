@@ -3,6 +3,7 @@
 @section('content')
 <x-covid />
 <x-header menu="true" />
+<x-venues-menu />
 
 <div class="venue-characteristics">
   <span style="color:#0088ff">Características del venue</span>
@@ -21,7 +22,7 @@
   </ul>
   <br />
   <i class="fe fe-arrow-right" style="color:#0088ff"></i>
-  <a href="#" style="font-weight:700">Explora nuestros venues en 3D</a>
+  <a href="https://ciudaddelsaber.hauzd.com" style="font-weight:700">Explora nuestros venues en 3D</a>
   <br /><br />
   <a href="#" style="color:#000000">Revisa la política COVID-19<br />para este venue</a>
   <br /><br />
@@ -34,10 +35,10 @@
 
 <div class="container" style="margin:0 auto; padding:0; position:relative">
   <a href="/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-6-1.jpg" data-lightbox="venue" title="Los salones tienen capacidad para hasta 24 personas, en formato aula de clases; ideales para reuniones corporativas o académicas.<br><br><a href='#'>Revisa la política COVID para este venue</a>" class="gallery">FOTOGALERÍA <span>+</span></a>
-  <a href="/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-7-1.jpg" data-lightbox="venue" title="<h3>Aula / Salón 101</h3><br>Mínimo 1 persona, máximo 32 personas. Desde $300* por hora.<br><strong>$300*</strong> por medio día / <strong>$400*</strong> por día entero<br><br><a href='#'>Revisa la política COVID para este venue</a>"></a>
+  <a href="/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-7-1.jpg" data-lightbox="venue" title="<h3>Aula / Salón 101</h3><br>Mínimo 1 persona, máximo 32 personas. Desde $300* por hora.<br><strong>$300*</strong> por medio día / <strong>$400*</strong> por día entero<br><br><a href='#' class='btn btn-primary'>Cotizar</a><br><br><a href='#'>Revisa la política COVID para este venue</a>"></a>
   <a href="/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-8-1.jpg" data-lightbox="venue" title="Los salones tienen capacidad para hasta 24 personas, en formato aula de clases; ideales para reuniones corporativas o académicas.<br><br><a href='#'>Revisa la política COVID para este venue</a>"></a>
 </div>
-<div id="home-carousel" class="carousel slide" data-ride="carousel">
+<div id="home-carousel" class="carousel slide venue-main-image" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-6-1.jpg" class="d-block" alt="...">
@@ -134,7 +135,7 @@
   <br /><br /><a name="venue-location"></a><br />
   <div class="row">
     <div class="col-12 col-md-9">
-      <a href="#" style="float:right; font-weight:700; text-decoration:underline">Explora nuestros venues en 3D</a>
+      <a href="https://ciudaddelsaber.hauzd.com" style="float:right; font-weight:700; text-decoration:underline">Explora nuestros venues en 3D</a>
       <h3 style="color:#0088ff; margin-bottom:10px">Ubicación</h3>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9234.855855146361!2d-79.58760814660978!3d9.001102129208933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca7b0a46a3bd1%3A0x93b801d16c74cc5c!2sCd%20del%20Saber%2C%20Panam%C3%A1!5e0!3m2!1ses!2sco!4v1590440019299!5m2!1ses!2sco" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
     </div>

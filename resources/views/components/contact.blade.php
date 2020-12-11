@@ -18,7 +18,7 @@
       </div>
       <div class="col-12 col-md-6">
         <small style="color:#0088ff">* Campos obligatorios</small>
-        <form>
+        <form action="/solicitud/1">
           <div class="row" style="padding-top:10px">
             <div class="col-12 col-md-6">
               <div class="form-group required">

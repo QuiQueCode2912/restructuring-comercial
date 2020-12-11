@@ -111,8 +111,12 @@ $(document).ready(function () {
   });
 
   if ($('#home-carousel').length > 0) {
-    $('#home-carousel').height(parseInt($(window).height()) - 156 + 'px');
-    $('#home-carousel .carousel-inner').height(parseInt($(window).height()) - 156 + 'px');
+    var height = parseInt($(window).height()) - 156;
+
+    if (height <= $('#home-carousel').hasClass('venue-main-image') ? 480 : 630) {
+      $('#home-carousel').height(height + 'px');
+      $('#home-carousel .carousel-inner').height(height + 'px');
+    }
   }
 
   if ($('.searcher.aside').length > 0) {

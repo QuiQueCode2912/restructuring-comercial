@@ -13,7 +13,7 @@ $hollow_square = rand(0, 10) * 5;
   <div class="row">
     <div class="col-12 col-md-6">
       <img src="{{ $image }}" class="venue-image">
-      <a href="#" class="btn btn-primary btn-sm">Cotizar</a>
+      <a href="/solicitud/1" class="btn btn-primary btn-sm">Cotizar</a>
     </div>
     <div class="col-12 col-md-6">
       <a href="#" class="venue-name">{{ $name }}</a>

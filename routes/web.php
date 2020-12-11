@@ -17,17 +17,16 @@ Route::get('/', function () {
   return view('index.index');
 });
 
-Route::get('/landing', function () {
-  return view('index.landing');
-});
-
 Route::get('/solicitud/{step}', function () {
   return view('index.request');
 });
 
-Route::get('/venues', function () {
-  return view('index.venues');
-});
+Route::get('/ateneo', function () { return view('index.venues'); });
+Route::get('/centro-convenciones', function () { return view('index.venues'); });
+Route::get('/aulas-105', function () { return view('index.venues'); });
+Route::get('/aulas-220', function () { return view('index.venues'); });
+Route::get('/complejo-hospedaje', function () { return view('index.venues'); });
+Route::get('/residencias', function () { return view('index.venues'); });
 
 Route::get('/venue', function () {
   return view('index.venue');
