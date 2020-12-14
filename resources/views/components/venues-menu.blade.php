@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-12">
         <ul>
-          <li <?php echo $venue == 'inicio' ? 'class="active"' : '' ?>><a href="/oferta">Inicio</a></li>
+          <li <?php echo $venue == 'inicio' ? 'class="active"' : '' ?>><a href="/">Inicio</a></li>
           <li <?php echo $venue == 'ateneo' ? 'class="active"' : '' ?>><a href="/ateneo">Ateneo</a></li>
           <li <?php echo $venue == 'centro-convenciones' ? 'class="active"' : '' ?>><a href="/centro-convenciones">Centro de convenciones</a></li>
           <li <?php echo $venue == 'aulas-105' ? 'class="active"' : '' ?>><a href="/aulas-105">Aulas 105</a></li>

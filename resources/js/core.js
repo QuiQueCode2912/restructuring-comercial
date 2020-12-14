@@ -79,9 +79,25 @@ $(document).ready(function() {
             position: 'fixed',
             top: '20px'
           });
+          if ($('.fixed-shortcuts').length == 0) {
+            $('body').append('<div class="row fixed-shortcuts">' + $('.shortcuts').html() + '</div>');
+            $('.fixed-shortcuts').css({
+              width: parseInt($('.venue-detail .shortcuts').width()) + 102,
+              left: parseInt($('.venue-detail .shortcuts').offset().left) - 35
+            });
+          } else {
+            $('.fixed-shortcuts').css({
+              position: 'fixed',
+              top: 0
+            });
+          }
       } else {
         if (scrollY > scrollTo) {
           $('.venue-characteristics').css({
+            position: 'absolute',
+            top: scrollTo + 'px'
+          });
+          $('.fixed-shortcuts').css({
             position: 'absolute',
             top: scrollTo + 'px'
           });
@@ -89,7 +105,11 @@ $(document).ready(function() {
           $('.venue-characteristics').css({
             position: 'absolute',
             top: parseInt($('.venue-detail .shortcuts').offset().top) + 'px'
-          });          
+          });   
+          $('.fixed-shortcuts').css({
+            position: 'absolute',
+            top: (parseInt($('.venue-detail .shortcuts').offset().top) - 20) + 'px'
+          });     
         }
       }
     }
@@ -136,5 +156,5 @@ $(document).ready(function() {
       var top = parseInt($('a[name="' + $(this).attr('href').substr(1) + '"]').offset().top);
       $('html, body').stop().animate({ scrollTop:top + 'px'}, 350);
     }
-  }, '.shortcuts a');
+  }, '.shortcuts a, .fixed-shortcuts a');
 });

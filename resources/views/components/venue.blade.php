@@ -1,5 +1,5 @@
 <div class="venue">
-  <img src="{{ $image }}">
+<a href="{{ $url }}"><img src="{{ $image }}"></a>
   <a href="{{ $url }}" class="venue-name">{{ $name }}</a>
   <div class="characteristics">
     <dl>

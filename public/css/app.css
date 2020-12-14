@@ -1299,6 +1299,7 @@ form input[type=text] {
 .venue-detail .description {
   font-size: 18px;
 }
+.fixed-shortcuts a,
 .venue-detail .venues-list .shortcuts a {
   display: block;
   height: 70px;
@@ -1311,6 +1312,7 @@ form input[type=text] {
   font-size: 14px;
   position: relative;
 }
+.fixed-shortcuts a::after,
 .venue-detail .venues-list .shortcuts a::after {
   content: "";
   position: absolute;
@@ -1443,4 +1445,11 @@ form input[type=text] {
 .venue-detail .near-by li strong {
   float: right;
   font-weight: 700;
+}
+
+.fixed-shortcuts {
+  position: fixed;
+  top: 0;
+  padding: 20px 52px;
+  background: #ffffff;
 }
