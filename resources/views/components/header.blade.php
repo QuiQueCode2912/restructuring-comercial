@@ -6,7 +6,7 @@
       <li><a href="#">Nosotros</a></li>
       <li><a href="#">Visítanos</a></li>
       <li class="has-childs">
-        <a href="#">Servicios</a>
+        <a href="/">Servicios</a>
         <ul>
           <li><a href="/ateneo">Ateneo</a></li>
           <li><a href="/centro-convenciones">Centro de convenciones</a></li>

@@ -90,10 +90,22 @@ class IndexController extends Controller
     $stepName = 'Solicitud de cotización';
 
     switch ($step) {
-      case 1: $stepName = 'Datos de contacto'; break;
-      case 2: $stepName = 'Datos de tu evento'; break;
-      case 3: $stepName = 'Resumen'; break;
-      case 4: $stepName = 'Finalizada'; break;
+      case 'datos-contacto': 
+        $step = 1;
+        $stepName = 'Datos de contacto'; 
+        break;
+      case 'datos-evento': 
+        $step = 2;
+        $stepName = 'Datos de tu evento'; 
+        break;
+      case 'vista-previa': 
+        $step = 3;
+        $stepName = 'Vista previa'; 
+        break;
+      case 'solicitud-enviada': 
+        $step = 4;
+        $stepName = 'Solicitud enviada'; 
+        break;
     }
 
     return view('index.request', [

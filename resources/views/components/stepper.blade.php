@@ -1,6 +1,11 @@
 <?php 
 $total = $total ? $total : 3;
-$current = app('request')->step;
+switch (app('request')->step) {
+  case 'datos-contacto':    $current = 1; break;
+  case 'datos-evento':      $current = 2; break;
+  case 'vista-previa':      $current = 3; break;
+  case 'solicitud-enviada': $current = 4; break;
+}
 ?>
 <ul class="stepper" style="width:<?php echo (($total - 1) * 120) + 15 ?>px">
 <?php for ($i = 1; $i <= $total; $i++) : ?>

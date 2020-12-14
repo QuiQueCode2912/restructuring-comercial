@@ -90,6 +90,10 @@
   src: url('/assets/fonts/gotham/gotham-ultra-webfont.ttf') format('truetype');
 }
 
+.lightboxOverlay#lightboxOverlay {
+  opacity: 0.95;
+}
+
 body {
   margin: 0;
   background: #333333;
@@ -1021,7 +1025,7 @@ footer p i.fe {
 }
 .request .form-group-preview {
   padding: 10px;
-  background: #e2e2e2;
+  background: #dddddd;
   margin: 0 0 10px;
   border-radius: 4px;
   font-size: 13px;

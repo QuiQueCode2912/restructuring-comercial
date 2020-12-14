@@ -24,5 +24,5 @@
     </dl>
   </div>
   <p><a href="#">Revisa la política Covid para este venue</a></p>
-  <a href="/solicitud/1" class="btn btn-primary btn-sm">Cotizar</a>
+  <a href="/cotizacion/datos-contacto" class="btn btn-primary btn-sm">Cotizar</a>
 </div>

@@ -39,7 +39,7 @@
     <div class="row buttons">
       <div class="col-12 text-center">
         <a href="javascript:;" class="btn btn-primary disabled">Anterior</a>
-        <a href="/solicitud/2" class="btn btn-primary">Siguiente</a>
+        <a href="/cotizacion/datos-evento" class="btn btn-primary">Siguiente</a>
       </div>
     </div>
   </div>

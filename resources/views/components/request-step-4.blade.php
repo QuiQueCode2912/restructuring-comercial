@@ -17,7 +17,7 @@
     </div>
     <div class="row buttons">
       <div class="col-12 text-center">
-        <a href="/solicitud/1" class="btn btn-primary">Ok</a>
+        <a href="/cotizacion/datos-contacto" class="btn btn-primary">Ok</a>
       </div>
     </div>
   </div>

@@ -36,7 +36,7 @@
 
 <div class="container" style="margin:0 auto; padding:0; position:relative">
   <a href="/assets/images/complejo-hospedaje.png" data-lightbox="venue" title="<h1>Complejo de hospedaje</h1>Los salones tienen capacidad para hasta 24 personas, en formato aula de clases; ideales para reuniones corporativas o académicas.<br><br><a href='#'>Revisa la política COVID para este venue</a>" class="gallery">FOTOGALERÍA <span>+</span></a>
-  <a href="/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-7-1.jpg" data-lightbox="venue" title="<h3>Aula / Salón 101</h3><br>Mínimo 1 persona, máximo 32 personas. Desde $300* por hora.<br><strong>$300*</strong> por medio día / <strong>$400*</strong> por día entero<br><br><a href='#' class='btn btn-primary'>Cotizar</a><br><br><a href='#'>Revisa la política COVID para este venue</a>"></a>
+  <a href="/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-7-1.jpg" data-lightbox="venue" title="<h3>Aula / Salón 101</h3><br>Mínimo 1 persona, máximo 32 personas. Desde $300* por hora.<br><strong>$300*</strong> por medio día / <strong>$400*</strong> por día entero<br><br><a href='/cotizacion/datos-contacto' class='btn btn-primary'>Cotizar</a><br><br><a href='#'>Revisa la política COVID para este venue</a>"></a>
   <a href="/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-8-1.jpg" data-lightbox="venue" title="Los salones tienen capacidad para hasta 24 personas, en formato aula de clases; ideales para reuniones corporativas o académicas.<br><br><a href='#'>Revisa la política COVID para este venue</a>"></a>
 </div>
 <div id="home-carousel" class="carousel slide venue-main-image" data-ride="carousel">
