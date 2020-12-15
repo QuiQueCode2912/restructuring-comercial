@@ -2,7 +2,9 @@
 $total = $total ? $total : 3;
 switch (app('request')->step) {
   case 'datos-contacto':    $current = 1; break;
-  case 'datos-evento':      $current = 2; break;
+  case 'datos-evento':
+  case 'datos-residencia':
+  case 'datos-hospedaje':   $current = 2; break;
   case 'vista-previa':      $current = 3; break;
   case 'solicitud-enviada': $current = 4; break;
 }

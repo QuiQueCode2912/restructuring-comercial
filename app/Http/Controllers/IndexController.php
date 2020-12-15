@@ -106,6 +106,14 @@ class IndexController extends Controller
         $step = 4;
         $stepName = 'Solicitud enviada'; 
         break;
+      case 'datos-hospedaje': 
+        $step = 5;
+        $stepName = 'Datos de tu hospedaje'; 
+        break;
+      case 'datos-residencia': 
+        $step = 6;
+        $stepName = 'Datos de tu residencia'; 
+        break;
     }
 
     return view('index.request', [

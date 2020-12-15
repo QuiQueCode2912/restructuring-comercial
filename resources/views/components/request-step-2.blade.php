@@ -4,36 +4,36 @@
     <div class="row">
       <div class="col-12 col-md-6">
         <div class="form-group required">
-          <input type="text" class="form-control" id="name" required placeholder="Nombre del evento">
+          <input type="text" class="form-control" id="name" placeholder="Nombre del evento">
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group required">
-          <select class="form-control" name="type" required>
+          <select class="form-control" id="type" name="type">
             <option value="">Tipo de actividad</option>
           </select>
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group required">
-          <select class="form-control" name="quantity" required>
+          <select class="form-control" id="quantity" name="quantity">
             <option value="">Cantidad de personas</option>
           </select>
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group required">
-          <input type="text" class="form-control" id="how" required placeholder="Cómo imaginas tu actividad">
+          <input type="text" class="form-control" id="how" placeholder="Cómo imaginas tu actividad">
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group required">
-          <input type="text" class="form-control datetimepicker" required id="start-date" placeholder="Fecha y hora de inicio">
+          <input type="text" class="form-control datetimepicker" id="start-date" placeholder="Fecha y hora de inicio">
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group required">
-          <input type="text" class="form-control datetimepicker" required id="end-date" placeholder="Fecha y hora de finalización">
+          <input type="text" class="form-control datetimepicker" id="end-date" placeholder="Fecha y hora de finalización">
         </div>
       </div>
       <div class="col-12 col-md-6">
@@ -80,7 +80,7 @@
     <div class="row buttons">
       <div class="col-12 text-center">
         <a href="/cotizacion/datos-contacto" class="btn btn-primary">Anterior</a>
-        <a href="/cotizacion/vista-previa" class="btn btn-primary">Siguiente</a>
+        <a href="/cotizacion/vista-previa" class="btn btn-primary submit-form">Siguiente</a>
       </div>
     </div>
   </div>

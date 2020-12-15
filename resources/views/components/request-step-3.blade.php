@@ -129,7 +129,7 @@
     </div>
     <div class="row buttons">
       <div class="col-12 text-center">
-        <a href="/cotizacion/solicitud-enviada" class="btn btn-primary">Confirmar</a>
+        <a href="/cotizacion/solicitud-enviada" class="btn btn-primary submit-form">Confirmar</a>
       </div>
     </div>
   </div>

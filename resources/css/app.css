@@ -140,6 +140,7 @@ form textarea {
   border: 1px solid #000000;
   min-height: 140px;
   border-radius: 5px;
+  padding: 10px;
 }
 form .custom-switch {
   text-align: right !important;
@@ -1031,8 +1032,30 @@ footer p i.fe {
   font-size: 11px;
   color: #BE1197;
 }
+form .form-error-message {
+  color: #cc0000;
+  font-size: 12px;
+  margin-bottom: 10px;
+  display: none;
+}
+form.invalid .form-error-message {
+  display: block;
+}
+form.invalid .form-group.required::before {
+  color: #cc0000;
+}
 form input[type=text] {
   padding-left: 20px;
+}
+form input.invalid,
+form select.invalid {
+  border-color: #cc0000 !important;
+}
+form input.invalid::placeholder,
+form input.invalid.datetimepicker,
+form input.invalid.datepicker,
+form select.invalid {
+  color: #cc0000 !important;
 }
 .request .col-12.col-md-7 {
   max-width: 68%;

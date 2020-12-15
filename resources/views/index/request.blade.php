@@ -6,7 +6,7 @@
 
 <div class="request">
   <div class="container">
-    <form method="post">
+    <form>
       <div class="row justify-content-md-center">
         <div class="col-12 col-md-7">
           <x-stepper total="3" />
@@ -15,6 +15,8 @@
             case 2 : ?><x-request-step-2 /><?php break;
             case 3 : ?><x-request-step-3 /><?php break;
             case 4 : ?><x-request-step-4 /><?php break;
+            case 5 : ?><x-request-step-2-lodging /><?php break;
+            case 6 : ?><x-request-step-2-residency /><?php break;
             default : ?><x-request-step-1 /><?php break;
           }
           ?>
