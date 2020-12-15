@@ -1,6 +1,9 @@
 <div class="request-step">
   <div class="container">
     <h4>Cuéntanos algunos datos de tu hospedaje</h4>
+    <div class="row form-error-message">
+      <div class="col-12">Sólo tienes que completar los datos que faltan</div>
+    </div>
     <div class="row">
       <div class="col-12 col-md-6">
         <div class="form-group required">
