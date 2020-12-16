@@ -188,14 +188,19 @@
   .venues-list > .container > .row > .col-12.col-md-9 {
     padding-right: 0 !important;
   }
+  .venue-list .configurations {
+    overflow: auto;
+    height: 130px;
+  }
   .venue-list .configurations ul {
-    width: 95%;
+    width: 615px;
+    margin-left: 6px;
   }
   .venue-list .configurations ul li {
-    padding-top: 50px;
+    padding-top: 90px;
   }
   .venue-list .configurations ul + img {
-    width: 100%;
+    width: 600px;
   }
   .lb-nav .lb-next {
     right: 0 !important;
@@ -215,6 +220,13 @@
     margin-bottom: 0;
     padding-bottom: 40px;
   }
+  .venues-menu {
+    overflow: auto;
+  }
+  .venues-menu ul {
+    min-width: 1020px;
+  }
+  /*
   .venues-menu ul {
     display: none;
   }
@@ -262,6 +274,7 @@
   .venues-menu ul.show {
     display: block;
   }
+  */
   .gallery {
     top: 50px;
   }

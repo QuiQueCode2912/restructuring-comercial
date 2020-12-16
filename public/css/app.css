@@ -1283,7 +1283,7 @@ form select.invalid {
   font-weight: 700;
 }
 .venue-list .configurations {
-  margin-top: 20px;
+  margin-top: 0;
   font-weight: 600;
 }
 .venue-list .configurations ul {

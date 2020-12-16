@@ -38,9 +38,13 @@ $hollow_square = rand(0, 10) * 5;
       <p><a href="#">Revisa la política Covid para este venue</a></p>
     </div>
   </div>
+  <div class="row" style="margin-top:20px; margin-bottom:0 !important">
+    <div class="col-12">
+      <strong>Configuración del Aula / Salón</strong>
+    </div>
+  </div>
   <div class="row configurations">
     <div class="col-12">
-      Configuración del Aula / Salón<br />
       <ul>
         <li <?php echo !$theater ? 'class="inactive"' : '' ?>><?php echo $theater ?></li>
         <li <?php echo !$classroom ? 'class="inactive"' : '' ?>><?php echo $classroom ?></li>

@@ -2,6 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
+        <!--
         <a href="#" class="toggle-venue-menu">
         <?php
         switch ($venue) {
@@ -15,6 +16,7 @@
         }
         ?>
         </a>
+        -->
         <ul>
           <li <?php echo $venue == 'inicio' ? 'class="active"' : '' ?>><a href="/">Inicio</a></li>
           <li <?php echo $venue == 'ateneo' ? 'class="active"' : '' ?>><a href="/ateneo">Ateneo</a></li>
