@@ -1163,6 +1163,9 @@ form select.invalid {
   background: #ffffff;
   overflow: hidden;
 }
+.venues-menu .toggle-venue-menu {
+  display: none;
+}
 .venues-menu ul {
   margin: 0;
   padding: 0;

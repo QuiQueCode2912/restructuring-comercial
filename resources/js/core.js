@@ -14,8 +14,8 @@ $(document).ready(function() {
   lightbox.option({
     albumLabel: "",
     showImageNumberLabel: false,
-    positionFromTop: 100,
-    maxHeight: (parseInt($(window).height()) - 350)
+    positionFromTop: $(window).width() < 600 ? 50 : 100,
+    maxHeight: (parseInt($(window).height()) - ($(window).width() < 600 ? 0 : 350))
   });
 
   if ($('#home-carousel').length > 0) {
@@ -118,9 +118,39 @@ $(document).ready(function() {
   $(document).on({
     click: function(e) {
       e.preventDefault();
+      if ($('.menu').hasClass('show')) {
+        $('.menu').removeClass('show');
+      } else {
+        $('.menu').addClass('show');
+      }
+    }
+  }, '.menu-toggle');
+
+  $(document).on({
+    click: function(e) {
+      e.preventDefault();
       $('input[name="daterange"]').click();
     }
   }, '.searcher ul li a[href="#date"]');
+
+  $(document).on({
+    click: function(e) {
+      if ($(window).width() < 600) {
+        e.preventDefault();
+      }
+    }
+  }, '.menu li.has-childs > a');
+
+  $(document).on({
+    click: function(e) {
+      e.preventDefault();
+      if ($('.venues-menu ul').hasClass('show')) {
+        $('.venues-menu ul').removeClass('show');
+      } else {
+        $('.venues-menu ul').addClass('show');
+      }
+    }
+  }, '.venues-menu .toggle-venue-menu');
 
   $(document).on({
     click: function(e) {
