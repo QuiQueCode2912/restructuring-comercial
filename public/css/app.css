@@ -143,10 +143,13 @@ form select {
 }
 form textarea {
   width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
   border: 1px solid #000000;
   min-height: 140px;
   border-radius: 5px;
   padding: 10px;
+  color: #495057;
 }
 form .custom-switch {
   text-align: right !important;

@@ -23,3 +23,4 @@ Route::get('/aulas-220', 'App\Http\Controllers\IndexController@aulas220');
 Route::get('/complejo-hospedaje', 'App\Http\Controllers\IndexController@complejoHospedaje');
 Route::get('/residencias', 'App\Http\Controllers\IndexController@residencias');
 Route::get('/cotizacion/{step}', 'App\Http\Controllers\IndexController@request');
+Route::post('/cotizacion/{step}', 'App\Http\Controllers\IndexController@request');

@@ -102,7 +102,7 @@ $(document).ready(function () {
     singleDatePicker: true,
     timePicker: true,
     locale: {
-      format: 'DD/M/Y hh:mm A'
+      format: 'YYYY-MM-DD HH:mm'
     }
   });
   lightbox.option({

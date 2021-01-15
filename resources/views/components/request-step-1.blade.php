@@ -7,32 +7,32 @@
     <div class="row">
       <div class="col-12 col-md-6">
         <div class="form-group required">
-          <input type="text" class="form-control" id="first_name" placeholder="Nombres">
+          <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Nombres" value="<?php echo session()->get('first_name') ?>">
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group" required>
-          <input type="email" class="form-control" id="last_name" placeholder="Apellidos">
+          <input type="email" class="form-control" name="last_name" id="last_name" placeholder="Apellidos" value="<?php echo session()->get('last_name') ?>">
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group required">
-          <input type="text" class="form-control" id="email" placeholder="Correo electrónico">
+          <input type="text" class="form-control" name="email" id="email" placeholder="Correo electrónico" value="<?php echo session()->get('email') ?>">
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group required">
-          <input type="text" class="form-control" id="phone" placeholder="Número de teléfono">
+          <input type="text" class="form-control" name="phone" id="phone" placeholder="Número de teléfono" value="<?php echo session()->get('phone') ?>">
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group">
-          <input type="text" class="form-control" id="company" placeholder="Organización">
+          <input type="text" class="form-control" name="company" id="company" placeholder="Organización" value="<?php echo session()->get('company') ?>">
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group">
-          <input type="text" class="form-control" id="identification" placeholder="RUC (Número de identificación fiscal)">
+          <input type="text" class="form-control" name="00N3m00000QQOde" id="identification" placeholder="RUC (Número de identificación fiscal)" value="<?php echo session()->get('00N3m00000QQOde') ?>">
         </div>
       </div>
       <div class="col-12">
@@ -42,7 +42,7 @@
     <div class="row buttons">
       <div class="col-12 text-center">
         <a href="javascript:;" class="btn btn-primary disabled">Anterior</a>
-        <a href="/cotizacion/datos-evento" class="btn btn-primary submit-form">Siguiente</a>
+        <button type="submit" class="btn btn-primary submit-form">Siguiente</button>
       </div>
     </div>
   </div>

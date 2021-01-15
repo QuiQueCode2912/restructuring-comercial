@@ -5,110 +5,109 @@
     <div class="row">
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
-          Nombre: Ana María
-          <a href="#">Editar</a>
+          Nombre: <?php echo session()->get('first_name') ?>
+          <a href="/cotizacion/datos-contacto#first_name">Editar</a>
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
-          Apellidos: López Orozco
-          <a href="#">Editar</a>
+          Apellidos: <?php echo session()->get('last_name') ?>
+          <a href="/cotizacion/datos-contacto#last_name">Editar</a>
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
-          Correo: anamarialopezo@gmail.com
-          <a href="#">Editar</a>
+          Correo: <?php echo session()->get('email') ?>
+          <a href="/cotizacion/datos-contacto#email">Editar</a>
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
-          Teléfono: 64500656
-          <a href="#">Editar</a>
+          Teléfono: <?php echo session()->get('phone') ?>
+          <a href="/cotizacion/datos-contacto#phone">Editar</a>
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
-          Organización: Euromeeting Panamá
-          <a href="#">Editar</a>
+          Organización: <?php echo session()->get('company') ?>
+          <a href="/cotizacion/datos-contacto#company">Editar</a>
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
-          RUC: 123456789
-          <a href="#">Editar</a>
+          RUC: <?php echo session()->get('00N3m00000QQOde') ?>
+          <a href="/cotizacion/datos-contacto#identification">Editar</a>
         </div>
       </div>
     </div>
     <div class="row" style="margin-top:40px">
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
-          Evento: Global Game Panamá
-          <a href="#">Editar</a>
+          Evento: <?php echo session()->get('00N3m00000QQOdA') ?>
+          <a href="/cotizacion/datos-evento#name">Editar</a>
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
-          Tipo de actividad: Conferencia
-          <a href="#">Editar</a>
+          Tipo de actividad: <?php echo session()->get('00N3m00000QMsCF') ?>
+          <a href="/cotizacion/datos-evento#type">Editar</a>
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
-          Cantidad de personas: 25
-          <a href="#">Editar</a>
+          Cantidad de personas: <?php echo session()->get('00N3m00000QMsCA') ?>
+          <a href="/cotizacion/datos-evento#quantity">Editar</a>
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
-          Actividad Presencial
-          <a href="#">Editar</a>
+        <?php echo session()->get('00N3m00000QMsC5') ?>
+          <a href="/cotizacion/datos-evento#how">Editar</a>
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
-          Desde: Viernes Enero 29, 2020 – 18 hs
-          <a href="#">Editar</a>
+          Desde: <?php echo session()->get('00N3m00000QQoZw') ?>
+          <a href="/cotizacion/datos-evento#start-date">Editar</a>
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
-          Hasta: Viernes Enero 31, 2020 – 18 hs
-          <a href="#">Editar</a>
+          Hasta: <?php echo session()->get('00N3m00000QQoa1') ?>
+          <a href="/cotizacion/datos-evento#end-date">Editar</a>
         </div>
       </div>
       <div class="col-12 col-md-6">
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
-          Mis fechas NO son flexibles
-          <a href="#">Editar</a>
+          Mis fechas <?php echo session()->get('00N3m00000QQOdy') == 1 ? 'SI' : 'NO' ?> son flexibles
+          <a href="/cotizacion/datos-evento#variable-dates">Editar</a>
         </div>
       </div>
     </div>
     <div class="row" style="margin-top:40px">
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
-          NO necesito hospedaje
-          <a href="#">Editar</a>
+          <?php echo session()->get('00N3m00000QMsCK') == 'Si' ? 'SI' : 'NO' ?> necesito hospedaje
+          <a href="/cotizacion/datos-evento#lodging">Editar</a>
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
-          SI necesito catering
-          <a href="#">Editar</a>
+          <?php echo session()->get('00N3m00000QMsCP') == 'Si' ? 'SI' : 'NO' ?> necesito catering
+          <a href="/cotizacion/datos-evento#catering">Editar</a>
         </div>
       </div>
-      <div class="col-12 col-md-6">
+      <div class="col-12">
         <div class="form-group-preview">
           <small>Describe tu evento</small>
-          Global Game Panamá: El evento será en relación 
-          a juegos en línea alrededor del mundo donde desarrolladores intercambian información durante 
-          48 hs.
+          <?php echo session()->get('description') ?>
           <br /><br /><br />
-          <a href="#">Editar</a>
+          <a href="/cotizacion/datos-evento#description">Editar</a>
         </div>
       </div>
+      <!--
       <div class="col-12 col-md-6">
         <p style="line-height:1rem; margin-top:47px"><small>Puedes compartir la agenda de tu evento,  material 
           promocional o cualquier otro documento que nos ayude a 
@@ -119,6 +118,7 @@
           <i class="fe fe-upload"></i>
         </div>
       </div>
+      -->
     </div>
     <div class="row" style="margin-top:40px">
       <div class="col-12 text-center">
@@ -129,7 +129,30 @@
     </div>
     <div class="row buttons">
       <div class="col-12 text-center">
-        <a href="/cotizacion/solicitud-enviada" class="btn btn-primary submit-form">Confirmar</a>
+        <?php 
+        $from_date = str_replace(' ', 'T', session()->get('00N3m00000QQoZw')) . ':00.000Z';
+        $to_date   = str_replace(' ', 'T', session()->get('00N3m00000QQoa1')) . ':00.000Z';
+        ?>
+        <input type=hidden name="oid" value="00D1N000002MAgJ">
+        <input type=hidden name="retURL" value="https://comercial.ciudaddelsaber.org/cotizacion/solicitud-enviada"> 
+        <input type="hidden" value="<?php echo session()->get('first_name') ?>" name="first_name" />
+        <input type="hidden" value="<?php echo session()->get('last_name') ?>" name="last_name" />
+        <input type="hidden" value="<?php echo session()->get('email') ?>" name="email" />
+        <input type="hidden" value="<?php echo session()->get('phone') ?>" name="phone" />
+        <input type="hidden" value="<?php echo session()->get('company') ?>" name="company" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000QQOde') ?>" name="00N3m00000QQOde" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000QQOdA') ?>" name="00N3m00000QQOdA" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000QMsCF') ?>" name="00N3m00000QMsCF" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000QMsCA') ?>" name="00N3m00000QMsCA" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000QMsC5') ?>" name="00N3m00000QMsC5" />
+        <input type="hidden" value="<?php echo $from_date ?>" name="00N3m00000QQoZw" />
+        <input type="hidden" value="<?php echo $to_date ?>" name="00N3m00000QQoa1" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000QQOdy') ?>" name="00N3m00000QQOdy" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000QMsCK') ?>" name="00N3m00000QMsCK" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000QMsCP') ?>" name="00N3m00000QMsCP" />
+        <input type="hidden" value="<?php echo session()->get('description') ?>" name="description" />
+        <input type="hidden" value="<?php echo session()->get('recordType') ?>" name="recordType" />
+        <button type="submit" class="btn btn-primary submit-form">Confirmar</button>
       </div>
     </div>
   </div>

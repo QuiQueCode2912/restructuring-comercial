@@ -6,7 +6,8 @@
 
 <div class="request">
   <div class="container">
-    <form>
+    <form method="post" action="<?php echo $form_url ?>">
+      @csrf
       <div class="row justify-content-md-center">
         <div class="col-12 col-md-7">
           <x-stepper total="3" />

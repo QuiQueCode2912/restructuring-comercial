@@ -88,21 +88,60 @@ class IndexController extends Controller
   {
     $step = $request->step;
     $stepName = 'Solicitud de cotización';
-
+    $form_url = '';
+    
     switch ($step) {
       case 'datos-contacto': 
         $step = 1;
         $stepName = 'Datos de contacto'; 
+
+        if ($request->isMethod('post')) {
+          $inputs = $request->validate([
+            'first_name' => 'required|string',
+            'last_name' => 'nullable|string',
+            'email' => 'required|string|email',
+            'phone' => 'required|string',
+            'company' => 'nullable|string',
+            '00N3m00000QQOde' => 'nullable|string',
+          ]);
+
+          session($inputs);
+
+          return redirect()->to('/cotizacion/datos-evento');
+        } 
+
         break;
       case 'datos-evento': 
         $step = 2;
         $stepName = 'Datos de tu evento'; 
+
+        if ($request->isMethod('post')) {
+          $inputs = $request->validate([
+            '00N3m00000QQOdA' => 'required|string',
+            '00N3m00000QMsCF' => 'required|string',
+            '00N3m00000QMsCA' => 'required|string',
+            '00N3m00000QMsC5' => 'required|string',
+            '00N3m00000QQoZw' => 'required|string',
+            '00N3m00000QQoa1' => 'required|string',
+            '00N3m00000QQOdy' => 'nullable|string',
+            '00N3m00000QMsCK' => 'required|string',
+            '00N3m00000QMsCP' => 'required|string',
+            'description' => 'required|string',
+          ]);
+
+          $inputs['recordType'] = '0123m0000012tH4';
+          
+          session($inputs);
+          return redirect()->to('/cotizacion/vista-previa');
+        } 
         break;
       case 'vista-previa': 
         $step = 3;
         $stepName = 'Vista previa'; 
+        $form_url = 'https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
         break;
       case 'solicitud-enviada': 
+        session()->flush();
         $step = 4;
         $stepName = 'Solicitud enviada'; 
         break;
@@ -119,6 +158,7 @@ class IndexController extends Controller
     return view('index.request', [
       'page_title' => 'Servicios - Cotización - ' . $stepName,
       'step' => $step,
+      'form_url' => $form_url
     ]);
   }
 }
