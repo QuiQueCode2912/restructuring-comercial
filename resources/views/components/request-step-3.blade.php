@@ -130,8 +130,8 @@
     <div class="row buttons">
       <div class="col-12 text-center">
         <?php 
-        $from_date = str_replace(' ', 'T', session()->get('00N3m00000QMwta')) . ':00Z';
-        $to_date   = str_replace(' ', 'T', session()->get('00N3m00000QMwtf')) . ':00Z';
+        $from_date = session()->get('00N3m00000QMwta') . ':00';
+        $to_date   = session()->get('00N3m00000QMwtf') . ':00';
         ?>
         <input type=hidden name="oid" value="00D1N000002MAgJ">
         <input type=hidden name="retURL" value="https://comercial.ciudaddelsaber.org/cotizacion/solicitud-enviada"> 
