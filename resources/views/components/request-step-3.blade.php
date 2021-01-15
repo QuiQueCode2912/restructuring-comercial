@@ -61,19 +61,19 @@
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
-        <?php echo session()->get('00N3m00000QMsC5') ?>
+          Cómo imaginas tu actividad: <?php echo session()->get('00N3m00000QMsC5') ?>
           <a href="/cotizacion/datos-evento#how">Editar</a>
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
-          Desde: <?php echo session()->get('00N3m00000QQoZw') ?>
+          Desde: <?php echo session()->get('00N3m00000QMwta') ?>
           <a href="/cotizacion/datos-evento#start-date">Editar</a>
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
-          Hasta: <?php echo session()->get('00N3m00000QQoa1') ?>
+          Hasta: <?php echo session()->get('00N3m00000QMwtf') ?>
           <a href="/cotizacion/datos-evento#end-date">Editar</a>
         </div>
       </div>
@@ -130,28 +130,28 @@
     <div class="row buttons">
       <div class="col-12 text-center">
         <?php 
-        $from_date = str_replace(' ', 'T', session()->get('00N3m00000QQoZw')) . ':00.000Z';
-        $to_date   = str_replace(' ', 'T', session()->get('00N3m00000QQoa1')) . ':00.000Z';
+        $from_date = str_replace(' ', 'T', session()->get('00N3m00000QMwta')) . ':00Z';
+        $to_date   = str_replace(' ', 'T', session()->get('00N3m00000QMwtf')) . ':00Z';
         ?>
         <input type=hidden name="oid" value="00D1N000002MAgJ">
         <input type=hidden name="retURL" value="https://comercial.ciudaddelsaber.org/cotizacion/solicitud-enviada"> 
-        <input type="hidden" value="<?php echo session()->get('first_name') ?>" name="first_name" />
-        <input type="hidden" value="<?php echo session()->get('last_name') ?>" name="last_name" />
-        <input type="hidden" value="<?php echo session()->get('email') ?>" name="email" />
-        <input type="hidden" value="<?php echo session()->get('phone') ?>" name="phone" />
-        <input type="hidden" value="<?php echo session()->get('company') ?>" name="company" />
-        <input type="hidden" value="<?php echo session()->get('00N3m00000QQOde') ?>" name="00N3m00000QQOde" />
-        <input type="hidden" value="<?php echo session()->get('00N3m00000QQOdA') ?>" name="00N3m00000QQOdA" />
-        <input type="hidden" value="<?php echo session()->get('00N3m00000QMsCF') ?>" name="00N3m00000QMsCF" />
-        <input type="hidden" value="<?php echo session()->get('00N3m00000QMsCA') ?>" name="00N3m00000QMsCA" />
-        <input type="hidden" value="<?php echo session()->get('00N3m00000QMsC5') ?>" name="00N3m00000QMsC5" />
-        <input type="hidden" value="<?php echo $from_date ?>" name="00N3m00000QQoZw" />
-        <input type="hidden" value="<?php echo $to_date ?>" name="00N3m00000QQoa1" />
-        <input type="hidden" value="<?php echo session()->get('00N3m00000QQOdy') ?>" name="00N3m00000QQOdy" />
-        <input type="hidden" value="<?php echo session()->get('00N3m00000QMsCK') ?>" name="00N3m00000QMsCK" />
-        <input type="hidden" value="<?php echo session()->get('00N3m00000QMsCP') ?>" name="00N3m00000QMsCP" />
-        <input type="hidden" value="<?php echo session()->get('description') ?>" name="description" />
-        <input type="hidden" value="<?php echo session()->get('recordType') ?>" name="recordType" />
+        <input type="hidden" value="<?php echo session()->get('first_name') ?>" name="first_name" id="first_name" />
+        <input type="hidden" value="<?php echo session()->get('last_name') ?>" name="last_name" id="last_name" />
+        <input type="hidden" value="<?php echo session()->get('email') ?>" name="email" id="email" />
+        <input type="hidden" value="<?php echo session()->get('phone') ?>" name="phone" id="phone" />
+        <input type="hidden" value="<?php echo session()->get('company') ?>" name="company" id="company" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000QQOde') ?>" name="00N3m00000QQOde" id="00N3m00000QQOde" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000QQOdA') ?>" name="00N3m00000QQOdA" id="00N3m00000QQOdA" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000QMsCF') ?>" name="00N3m00000QMsCF" id="00N3m00000QMsCF" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000QMsCA') ?>" name="00N3m00000QMsCA" id="00N3m00000QMsCA" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000QMsC5') ?>" name="00N3m00000QMsC5" id="00N3m00000QMsC5" />
+        <input type="hidden" value="<?php echo $from_date ?>" name="00N3m00000QMwta" id="00N3m00000QMwta" />
+        <input type="hidden" value="<?php echo $to_date ?>" name="00N3m00000QMwtf" id="00N3m00000QMwtf" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000QQOdy') ?>" name="00N3m00000QQOdy" id="00N3m00000QQOdy" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000QMsCK') ?>" name="00N3m00000QMsCK" id="00N3m00000QMsCK" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000QMsCP') ?>" name="00N3m00000QMsCP" id="00N3m00000QMsCP" />
+        <input type="hidden" value="<?php echo session()->get('description') ?>" name="description" id="description" />
+        <input type="hidden" value="<?php echo session()->get('recordType') ?>" name="recordType" id="recordType" />
         <button type="submit" class="btn btn-primary submit-form">Confirmar</button>
       </div>
     </div>

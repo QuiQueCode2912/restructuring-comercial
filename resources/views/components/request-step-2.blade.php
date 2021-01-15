@@ -51,12 +51,12 @@
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group required">
-          <input type="text" class="form-control datetimepicker" name="00N3m00000QQoZw" id="start-date" placeholder="Fecha y hora de inicio" value="<?php echo session()->get('00N3m00000QQoZw') ?>">
+          <input type="text" class="form-control datetimepicker" name="00N3m00000QMwta" id="start-date" placeholder="Fecha y hora de inicio" value="<?php echo session()->get('00N3m00000QMwta') ?>">
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group required">
-          <input type="text" class="form-control datetimepicker" name="00N3m00000QQoa1" id="end-date" placeholder="Fecha y hora de finalización" value="<?php echo session()->get('00N3m00000QQoa1') ?>">
+          <input type="text" class="form-control datetimepicker" name="00N3m00000QMwtf" id="end-date" placeholder="Fecha y hora de finalización" value="<?php echo session()->get('00N3m00000QMwtf') ?>">
         </div>
       </div>
       <div class="col-12 col-md-6">

@@ -11,7 +11,14 @@ switch (app('request')->step) {
 ?>
 <ul class="stepper" style="width:<?php echo (($total - 1) * 120) + 15 ?>px">
 <?php for ($i = 1; $i <= $total; $i++) : ?>
-  <li><a href="/solicitud/<?php echo $i ?>" class="<?php echo $i < $current ? 'done' : ($i == $current ? 'current' : '') ?>"></a></li>
+  <?php
+  switch ($i) {
+    case 1 : $path = 'datos-contacto'; break;
+    case 2 : $path = 'datos-evento'; break;
+    case 3 : $path = 'vista-previa'; break;
+  }
+  ?>
+  <li><a href="/cotizacion/<?php echo $path ?>" class="<?php echo $i < $current ? 'done' : ($i == $current ? 'current' : '') ?>"></a></li>
 <?php endfor ?>
 </ul>
 
