@@ -102,12 +102,14 @@ class IndexController extends Controller
             'email' => 'required|string|email',
             'phone' => 'required|string',
             'company' => 'nullable|string',
+            'country_code' => 'nullable|string',
+            'want_to_do' => 'nullable|string',
             '00N3m00000QQOde' => 'nullable|string',
           ]);
 
           session($inputs);
 
-          return redirect()->to('/cotizacion/datos-evento');
+          return redirect()->to($inputs['want_to_do'] == 'event' ? '/cotizacion/datos-evento' : '/cotizacion/datos-residencia');
         } 
 
         break;
@@ -126,6 +128,7 @@ class IndexController extends Controller
             '00N3m00000QQOdy' => 'nullable|string',
             '00N3m00000QMsCK' => 'required|string',
             '00N3m00000QMsCP' => 'required|string',
+            '00N3m00000QMzL7' => 'nullable|string',
             'description' => 'required|string',
           ]);
 
@@ -152,6 +155,24 @@ class IndexController extends Controller
       case 'datos-residencia': 
         $step = 6;
         $stepName = 'Datos de tu residencia'; 
+
+        if ($request->isMethod('post')) {
+          $inputs = $request->validate([
+            '00N3m00000QMzL7' => 'required|string',
+            '00N3m00000QMzLH' => 'required|string',
+            '00N3m00000QMwta' => 'required|string',
+            '00N3m00000QMzLC' => 'required|string',
+            'work-in-campus' => 'required|string',
+            '00N3m00000QMzLM' => 'nullable|string',
+            '00N3m00000QMzLR' => 'nullable|string',
+            '00N3m00000QMzLW' => 'nullable|string',
+          ]);
+
+          $inputs['recordType'] = '0121N000001AmUK';
+          
+          session($inputs);
+          return redirect()->to('/cotizacion/vista-previa');
+        } 
         break;
     }
 

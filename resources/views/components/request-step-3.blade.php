@@ -40,6 +40,8 @@
         </div>
       </div>
     </div>
+
+    <?php if (session()->get('recordType') == '0123m0000012tH4') : ?>
     <div class="row" style="margin-top:40px">
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
@@ -99,6 +101,12 @@
           <a href="/cotizacion/datos-evento#catering">Editar</a>
         </div>
       </div>
+      <div class="col-12 col-md-6" style="margin-bottom:20px; display:<?php echo session()->get('00N3m00000QMsCK') == 'Si' ? 'block': 'none' ?>">
+        <div class="form-group-preview">
+          <?php echo session()->get('00N3m00000QMzL7') ?> persona<?php echo session()->get('00N3m00000QMzL7') != 1 ? 's' : '' ?> se hospedarán
+          <a href="/cotizacion/datos-evento#lodging-quantity">Editar</a>
+        </div>
+      </div>
       <div class="col-12">
         <div class="form-group-preview">
           <small>Describe tu evento</small>
@@ -120,6 +128,62 @@
       </div>
       -->
     </div>
+    <?php else : ?>
+    <div class="row" style="margin-top:40px">
+      <div class="col-12 col-md-6" style="display:<?php echo session()->get('00N3m00000QMsCK') == 'Si' ? 'block': 'none' ?>">
+        <div class="form-group-preview">
+          <?php echo session()->get('00N3m00000QMzL7') ?> persona<?php echo session()->get('00N3m00000QMzL7') != 1 ? 's' : '' ?> se mudarán a CDS
+          <a href="/cotizacion/datos-residencia#quantity">Editar</a>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="form-group-preview">
+          <?php echo session()->get('00N3m00000QMzLH') == 'Si' ? 'SI' : 'NO' ?> tenemos mascotas
+          <a href="/cotizacion/datos-residencia#pets">Editar</a>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="form-group-preview">
+          Fecha de instalación: <?php echo session()->get('00N3m00000QMwta') ?>
+          <a href="/cotizacion/datos-residencia#start-date">Editar</a>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="form-group-preview">
+          Estadía: <?php echo session()->get('00N3m00000QMzLC') ?> año<?php echo session()->get('00N3m00000QMzLC') != 1 ? 's' : '' ?>
+          <a href="/cotizacion/datos-residencia#duration">Editar</a>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="form-group-preview">
+          <?php echo session()->get('work-in-campus') == 'Si' ? 'SI' : 'NO' ?> trabajo en una organización del campus
+          <a href="/cotizacion/datos-residencia#work-in-campus">Editar</a>
+        </div>
+      </div>
+      <div class="col-12 col-md-6" style="margin-bottom:20px; display:<?php echo session()->get('work-in-campus') == 'Si' ? 'block': 'none' ?>">
+        <div class="form-group-preview">
+          Organización: <?php echo session()->get('00N3m00000QMzLM') ?>
+          <a href="/cotizacion/datos-residencia#campus-organization">Editar</a>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="form-group-preview">
+          <small>¿Por qué elegiste CDS para rentar vivienda?</small>
+          <?php echo session()->get('00N3m00000QMzLR') ?>
+          <br /><br /><br />
+          <a href="/cotizacion/datos-residencia#why-cds">Editar</a>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="form-group-preview">
+          <small>Actividades a realizar en CDS</small>
+          <?php echo session()->get('00N3m00000QMzLW') ?>
+          <br /><br /><br />
+          <a href="/cotizacion/datos-residencia#to-do-cds">Editar</a>
+        </div>
+      </div>
+    </div>
+    <?php endif ?>
     <div class="row" style="margin-top:40px">
       <div class="col-12 text-center">
         <p style="color:#0088ff; font-family:'Roboto', sans-serif; font-size:14px">Esta solicitud está sujeta a la disponibilidad de 
@@ -150,6 +214,12 @@
         <input type="hidden" value="<?php echo session()->get('00N3m00000QQOdy') ?>" name="00N3m00000QQOdy" id="00N3m00000QQOdy" />
         <input type="hidden" value="<?php echo session()->get('00N3m00000QMsCK') ?>" name="00N3m00000QMsCK" id="00N3m00000QMsCK" />
         <input type="hidden" value="<?php echo session()->get('00N3m00000QMsCP') ?>" name="00N3m00000QMsCP" id="00N3m00000QMsCP" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000QMzL7') ?>" name="00N3m00000QMzL7" id="00N3m00000QMzL7" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000QMzLC') ?>" name="00N3m00000QMzLC" id="00N3m00000QMzLC" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000QMzLH') ?>" name="00N3m00000QMzLH" id="00N3m00000QMzLH" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000QMzLM') ?>" name="00N3m00000QMzLM" id="00N3m00000QMzLM" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000QMzLR') ?>" name="00N3m00000QMzLR" id="00N3m00000QMzLR" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000QMzLW') ?>" name="00N3m00000QMzLW" id="00N3m00000QMzLW" />
         <input type="hidden" value="<?php echo session()->get('description') ?>" name="description" id="description" />
         <input type="hidden" value="<?php echo session()->get('recordType') ?>" name="recordType" id="recordType" />
         <button type="submit" class="btn btn-primary submit-form">Confirmar</button>

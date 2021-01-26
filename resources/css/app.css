@@ -876,7 +876,7 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
   width: 100%;
   font-weight: 600;
 }
-.contact form select {
+select {
   width: 100%;
   border-radius: 4px;
 }

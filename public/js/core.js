@@ -311,6 +311,24 @@ $(document).ready(function () {
       validateFormFields($(this).closest('form'), $(this).attr('id'));
     }
   }, '.request input[type=text], .request input[type=email]');
+  $(document).on({
+    change: function change() {
+      if ($(this).val() == 'Si') {
+        $('.lodging-quantity').show();
+      } else {
+        $('.lodging-quantity').hide();
+      }
+    }
+  }, '.request-step #lodging');
+  $(document).on({
+    change: function change() {
+      if ($(this).val() == 'Si') {
+        $('.work-in-campus').show();
+      } else {
+        $('.work-in-campus').hide();
+      }
+    }
+  }, '.request-step #work-in-campus');
 });
 
 var validateFormFields = function validateFormFields(form, field) {

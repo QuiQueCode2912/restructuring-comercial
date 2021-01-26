@@ -43,8 +43,6 @@
             <option <?php echo session()->get('00N3m00000QMsC5') == 'Presencial' ? 'selected="selected"' : '' ?> value="Presencial">Evento presencial</option>
             <option <?php echo session()->get('00N3m00000QMsC5') == 'Virtual' ? 'selected="selected"' : '' ?> value="Virtual">Evento virtual</option>
             <option <?php echo session()->get('00N3m00000QMsC5') == 'Semi-presencial' ? 'selected="selected"' : '' ?> value="Semi-presencial">Evento semi-presencial</option>
-            <option <?php echo session()->get('00N3m00000QMsC5') == 'Hospedaje' ? 'selected="selected"' : '' ?> value="Hospedaje">Hospedaje</option>
-            <option <?php echo session()->get('00N3m00000QMsC5') == 'Vivienda' ? 'selected="selected"' : '' ?> value="Vivienda">Vivienda</option>
             <option <?php echo session()->get('00N3m00000QMsC5') == 'No estoy seguro, necesito asesoramiento' ? 'selected="selected"' : '' ?> value="No estoy seguro, necesito asesoramiento">No estoy seguro, necesito asesoramiento</option>
           </select>
         </div>
@@ -87,6 +85,16 @@
             <option <?php echo session()->get('00N3m00000QMsCP') == 'No' ? 'selected="selected"' : '' ?>>No</option>
           </select>
         </div>
+      </div>
+      <div class="col-12 col-md-6 lodging-quantity" style="margin-bottom:20px; display:<?php echo session()->get('00N3m00000QMsCK') == 'Si' ? 'block' : 'none' ?>">
+        <select class="form-control" id="logding-quantity" name="00N3m00000QMzL7">
+          <option value="">¿Cuántas personas se hospedarán?</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5+">5+</option>
+        </select>
       </div>
       <div class="col-12">
         <div class="form-group">
