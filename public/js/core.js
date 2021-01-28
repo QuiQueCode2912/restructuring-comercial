@@ -96,7 +96,10 @@
 $(document).ready(function () {
   $('input[name="daterange"]').daterangepicker();
   $('input.datepicker').daterangepicker({
-    singleDatePicker: true
+    singleDatePicker: true,
+    locale: {
+      format: 'YYYY-MM-DD'
+    }
   });
   $('input.datetimepicker').daterangepicker({
     singleDatePicker: true,

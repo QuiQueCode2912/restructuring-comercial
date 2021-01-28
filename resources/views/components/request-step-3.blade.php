@@ -130,7 +130,7 @@
     </div>
     <?php else : ?>
     <div class="row" style="margin-top:40px">
-      <div class="col-12 col-md-6" style="display:<?php echo session()->get('00N3m00000QMsCK') == 'Si' ? 'block': 'none' ?>">
+      <div class="col-12 col-md-6">
         <div class="form-group-preview">
           <?php echo session()->get('00N3m00000QMzL7') ?> persona<?php echo session()->get('00N3m00000QMzL7') != 1 ? 's' : '' ?> se mudarán a CDS
           <a href="/cotizacion/datos-residencia#quantity">Editar</a>
@@ -194,8 +194,16 @@
     <div class="row buttons">
       <div class="col-12 text-center">
         <?php 
-        $from_date = session()->get('00N3m00000QMwta') . ':00';
-        $to_date   = session()->get('00N3m00000QMwtf') . ':00';
+        $from_date = null;
+        $to_date = null;
+        if (session()->get('00N3m00000QMwta')) {
+          $from_date = new DateTime(session()->get('00N3m00000QMwta'));
+        }
+        if (session()->get('00N3m00000QMwtf')) {
+          $from_date = new DateTime(session()->get('00N3m00000QMwtf'));
+        } else {
+          $to_date = $from_date;
+        }
         ?>
         <input type=hidden name="oid" value="00D1N000002MAgJ">
         <input type=hidden name="retURL" value="https://comercial.ciudaddelsaber.org/cotizacion/solicitud-enviada"> 
@@ -204,13 +212,14 @@
         <input type="hidden" value="<?php echo session()->get('email') ?>" name="email" id="email" />
         <input type="hidden" value="<?php echo session()->get('phone') ?>" name="phone" id="phone" />
         <input type="hidden" value="<?php echo session()->get('company') ?>" name="company" id="company" />
+        <input type="hidden" value="<?php echo session()->get('country_code') ?>" name="country_code" id="country_code" />
         <input type="hidden" value="<?php echo session()->get('00N3m00000QQOde') ?>" name="00N3m00000QQOde" id="00N3m00000QQOde" />
         <input type="hidden" value="<?php echo session()->get('00N3m00000QQOdA') ?>" name="00N3m00000QQOdA" id="00N3m00000QQOdA" />
         <input type="hidden" value="<?php echo session()->get('00N3m00000QMsCF') ?>" name="00N3m00000QMsCF" id="00N3m00000QMsCF" />
         <input type="hidden" value="<?php echo session()->get('00N3m00000QMsCA') ?>" name="00N3m00000QMsCA" id="00N3m00000QMsCA" />
         <input type="hidden" value="<?php echo session()->get('00N3m00000QMsC5') ?>" name="00N3m00000QMsC5" id="00N3m00000QMsC5" />
-        <input type="hidden" value="<?php echo $from_date ?>" name="00N3m00000QMwta" id="00N3m00000QMwta" />
-        <input type="hidden" value="<?php echo $to_date ?>" name="00N3m00000QMwtf" id="00N3m00000QMwtf" />
+        <input type="hidden" value="<?php echo $from_date ? $from_date->format('Y-m-d H:i:s') : '' ?>" name="00N3m00000QMwta" id="00N3m00000QMwta" />
+        <input type="hidden" value="<?php echo $to_date ? $to_date->format('Y-m-d H:i:s') : '' ?>" name="00N3m00000QMwtf" id="00N3m00000QMwtf" />
         <input type="hidden" value="<?php echo session()->get('00N3m00000QQOdy') ?>" name="00N3m00000QQOdy" id="00N3m00000QQOdy" />
         <input type="hidden" value="<?php echo session()->get('00N3m00000QMsCK') ?>" name="00N3m00000QMsCK" id="00N3m00000QMsCK" />
         <input type="hidden" value="<?php echo session()->get('00N3m00000QMsCP') ?>" name="00N3m00000QMsCP" id="00N3m00000QMsCP" />

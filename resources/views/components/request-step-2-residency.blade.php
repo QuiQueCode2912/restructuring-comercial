@@ -52,7 +52,7 @@
           </select>
         </div>
       </div>
-      <div class="col-12 col-md-6 work-in-campus" style="display:display:<?php echo session()->get('00N3m00000QMzLM') == 'Si' ? 'block' : 'none' ?>">
+      <div class="col-12 col-md-6 work-in-campus" style="display:<?php echo session()->get('work-in-campus') == 'Si' ? 'block' : 'none' ?>">
         <div class="form-group">
           <input class="form-control" id="campus-organization" maxlength="100" name="00N3m00000QMzLM" size="20" type="text" placeholder="Organización donde trabajas" value="<?php echo session()->get('00N3m00000QMzLM') ?>" />
         </div>
