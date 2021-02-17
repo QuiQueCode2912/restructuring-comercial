@@ -89,11 +89,11 @@
       <div class="col-12 col-md-6 lodging-quantity" style="margin-bottom:20px; display:<?php echo session()->get('00N3m00000QMsCK') == 'Si' ? 'block' : 'none' ?>">
         <select class="form-control" id="logding-quantity" name="00N3m00000QMzL7">
           <option value="">¿Cuántas personas se hospedarán?</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5+">5+</option>
+          <option value="1" <?php echo session()->get('00N3m00000QMzL7') == "1" ? 'selected="selected"' : '' ?>>1</option>
+          <option value="2" <?php echo session()->get('00N3m00000QMzL7') == "2" ? 'selected="selected"' : '' ?>>2</option>
+          <option value="3" <?php echo session()->get('00N3m00000QMzL7') == "3" ? 'selected="selected"' : '' ?>>3</option>
+          <option value="4" <?php echo session()->get('00N3m00000QMzL7') == "4" ? 'selected="selected"' : '' ?>>4</option>
+          <option value="5+" <?php echo session()->get('00N3m00000QMzL7') == "5+" ? 'selected="selected"' : '' ?>>5+</option>
         </select>
       </div>
       <div class="col-12">

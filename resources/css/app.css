@@ -1084,9 +1084,6 @@ form select.invalid {
 .daterangepicker::before {
   border-bottom: 7px solid #000000;
 }
-.daterangepicker .drp-buttons {
-  display: none !important;
-}
 
 .searcher.aside {
   position: absolute;
