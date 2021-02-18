@@ -449,9 +449,10 @@
           $from_date = new DateTime(session()->get('00N3m00000QMwta'));
         }
         if (session()->get('00N3m00000QMwtf')) {
-          $from_date = new DateTime(session()->get('00N3m00000QMwtf'));
+          $to_date = new DateTime(session()->get('00N3m00000QMwtf'));
         } else {
           $to_date = $from_date;
+          $to_date->add(new DateInterval('PT1H'));
         }
         ?>
         <input type=hidden name="oid" value="00D1N000002MAgJ">
