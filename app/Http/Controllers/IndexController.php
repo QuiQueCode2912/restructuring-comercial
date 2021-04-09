@@ -2,19 +2,81 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Http\Request,
+  App\Models\Venue,
+  Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
   public function index(Request $request)
   {
+    $parents = [
+      '02i3m0000092sG3AAI',
+      '02i3m0000092sJSAAY',
+      '02i3m0000092sEkAAI',
+      '02i3m0000092rzDAAQ'
+    ];
+
+    $venues = Venue::whereIn('id', $parents)->get();
+
+    $fixedVenues = [];
+    if ($venues) {
+      foreach ($venues as $venue) {
+        switch ($venue->id) {
+          case '02i3m0000092sG3AAI' :
+            $name = 'Centro de convenciones';
+            $url = '/centro-convenciones';
+            $image = '/assets/images/centro-convenciones.png';
+            break;
+          case '02i3m0000092sJSAAY' :
+            $name = 'Aulas 105';
+            $url = '/aulas-105';
+            $image = '/assets/images/aulas-105.png';
+            break;
+          case '02i3m0000092sEkAAI' :
+            $name = 'Aulas 220';
+            $url = '/aulas-220';
+            $image = '/assets/images/aula220-201.jpg';
+            break;
+          case '02i3m0000092rzDAAQ' :
+            $name = 'Complejo de hospedaje';
+            $url = '/complejo-hospedaje';
+            $image = '/assets/images/complejo-hospedaje.png';
+            break;
+        }
+
+        $subvenues = Venue::where('parent_id', '=', $venue->id)
+          ->get();
+        $designs = [];
+        if ($subvenues) {
+          foreach ($subvenues as $subvenue) {
+            $ds = $subvenue->designs()->get();
+            if ($ds) {
+              foreach ($ds as $d) {
+                $designs[] = $d;
+              }
+            }
+          }
+        }
+        
+        $fixedVenues[] = [
+          'name' => $name,
+          'url' => $url,
+          'image' => $image,
+          'venues' => $subvenues,
+          'designs' => $designs,
+        ];
+      }
+    }
+
     return view('index.index', [
-      'page_title' => 'Servicios'
+      'page_title' => 'Servicios',
+      'venues' => $fixedVenues,
     ]);
   }
 
   public function ateneo(Request $request)
-  {
+  { 
     return view('venues.ateneo', [
       'page_title' => 'Servicios - Ateneo',
       'venue' => 'ateneo',
@@ -24,46 +86,161 @@ class IndexController extends Controller
 
   public function centroConvenciones(Request $request)
   {
-    return view('venues.centro-convenciones', [
+    $parent = Venue::find('02i3m0000092sG3AAI');
+    $venues = Venue::where('parent_id', '=', $parent->id)
+      ->get();
+    
+    $max_pax = 0;
+    if ($venues) {
+      foreach ($venues as $venue) {
+        $venue_max_pax = $venue->designs()->max('max_pax');
+        $max_pax = $venue_max_pax > $max_pax ? $venue_max_pax : $max_pax;
+      }
+      $facilities = $venues[0]->facilities;
+    }
+
+    $images = ['/assets/images/centro-convenciones.png',
+      '/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-7-1.jpg',
+      '/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-8-1.jpg'];
+
+    return view('venues.venue', [
       'page_title' => 'Servicios - Centro de Convenciones',
       'venue' => 'centro-convenciones',
       'venueName' => 'Centro de convenciones',
+      'subtitle' => 'Amplía tus posibilidades',
+      'parent' => $parent,
+      'venues' => $venues,
+      'images' => $images,
+      'facilities' => $facilities,
+      'max_pax' => $max_pax
     ]);
   }
 
   public function aulas105(Request $request)
   {
-    return view('venues.aulas-105', [
+    $parent = Venue::find('02i3m0000092sJSAAY');
+    $venues = Venue::where('parent_id', '=', $parent->id)
+      ->get();
+    
+    $max_pax = 0;
+    if ($venues) {
+      foreach ($venues as $venue) {
+        $venue_max_pax = $venue->designs()->max('max_pax');
+        $max_pax = $venue_max_pax > $max_pax ? $venue_max_pax : $max_pax;
+      }
+      $facilities = $venues[0]->facilities;
+    }
+    
+    $images = ['/assets/images/aulas-105.png',
+      '/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-7-1.jpg',
+      '/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-8-1.jpg'];
+    
+    return view('venues.venue', [
       'page_title' => 'Servicios - Aulas 105',
       'venue' => 'aulas-105',
       'venueName' => 'Aulas 105',
+      'subtitle' => 'Estudia y mejora el futuro',
+      'parent' => $parent,
+      'venues' => $venues,
+      'images' => $images,
+      'facilities' => $facilities,
+      'max_pax' => $max_pax
     ]);
   }
 
   public function aulas220(Request $request)
   {
-    return view('venues.aulas-220', [
+    $parent = Venue::find('02i3m0000092sEkAAI');
+    $venues = Venue::where('parent_id', '=', $parent->id)
+      ->get();
+    
+    $max_pax = 0;
+    if ($venues) {
+      foreach ($venues as $venue) {
+        $venue_max_pax = $venue->designs()->max('max_pax');
+        $max_pax = $venue_max_pax > $max_pax ? $venue_max_pax : $max_pax;
+      }
+      $facilities = $venues[0]->facilities;
+    }
+
+    $images = ['/assets/images/aula220-201.jpg',
+      '/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-7-1.jpg',
+      '/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-8-1.jpg'];
+
+    return view('venues.venue', [
       'page_title' => 'Servicios - Aulas 220',
       'venue' => 'aulas-220',
       'venueName' => 'Aulas 220',
+      'subtitle' => 'Innova y crea valor',
+      'parent' => $parent,
+      'venues' => $venues,
+      'images' => $images,
+      'facilities' => $facilities,
+      'max_pax' => $max_pax
     ]);
   }
 
   public function complejoHospedaje(Request $request)
   {
-    return view('venues.complejo-hospedaje', [
+    $parent = Venue::find('02i3m0000092rzDAAQ');
+    $venues = Venue::where('parent_id', '=', $parent->id)
+      ->get();
+    
+    $max_pax = 0;
+    if ($venues) {
+      foreach ($venues as $venue) {
+        $venue_max_pax = $venue->designs()->max('max_pax');
+        $max_pax = $venue_max_pax > $max_pax ? $venue_max_pax : $max_pax;
+      }
+      $facilities = $venues[0]->facilities;
+    }
+
+    $images = ['/assets/images/complejo-hospedaje.png',
+      '/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-7-1.jpg',
+      '/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-8-1.jpg'];
+
+    return view('venues.venue', [
       'page_title' => 'Servicios - Complejo de Hospedaje',
       'venue' => 'complejo-hospedaje',
       'venueName' => 'Complejo de hospedaje',
+      'subtitle' => 'Descansa, sueña y crea',
+      'parent' => $parent,
+      'venues' => $venues,
+      'images' => $images,
+      'facilities' => $facilities,
+      'max_pax' => $max_pax
     ]);
   }
 
   public function residencias(Request $request)
   {
-    return view('venues.residencias', [
+    $parent = Venue::find('02i3m0000092rzDAAQ');
+    $venues = Venue::where('parent_id', '=', $parent->id)
+      ->get();
+    
+    $max_pax = 0;
+    if ($venues) {
+      foreach ($venues as $venue) {
+        $venue_max_pax = $venue->designs()->max('max_pax');
+        $max_pax = $venue_max_pax > $max_pax ? $venue_max_pax : $max_pax;
+      }
+      $facilities = $venues[0]->facilities;
+    }
+
+    $images = ['/assets/images/complejo-hospedaje.png',
+      '/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-7-1.jpg',
+      '/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-8-1.jpg'];
+
+    return view('venues.venue', [
       'page_title' => 'Servicios - Residencias',
       'venue' => 'residencias',
       'venueName' => 'Residencias',
+      'subtitle' => 'Vive con la naturaleza',
+      'parent' => $parent,
+      'venues' => $venues,
+      'images' => $images,
+      'facilities' => $facilities,
+      'max_pax' => $max_pax
     ]);
   }
 
@@ -181,5 +358,50 @@ class IndexController extends Controller
       'step' => $step,
       'form_url' => $form_url
     ]);
+  }
+
+  public function docuSignPayment (Request $request) 
+  {
+    if ($request->isMethod('get')) {
+      // Get document Info
+      require_once ('Soapclient/SforceEnterpriseClient.php');
+
+      $mySFC = new \SforceEnterpriseClient();
+      $mySFC->createConnection(__DIR__ . '/Soapclient/enterprise.wsdl.xml');
+      $mySFC->login(
+          env('SALESFORCE_USERNAME'),
+          env('SALESFORCE_PASSWORD') .
+          env('SALESFORCE_SECURITY_TOKEN')
+      );
+
+      $query = 'SELECT Id, Name, Type, AccountNumber FROM ACCOUNT LIMIT 10';
+      $result = $mySFC->query($query);
+
+      // Paguelo fácil
+      $endpoint = 'https://secure.paguelofacil.com/LinkDeamon.cfm';
+      $params = [
+          'CCLW' => '588BA57F825D6D9F6E230C2F39C94ACE84369A887E899DE043924E0122C38FF6',
+          'CMTN' => 100.00,
+          'CDSC' => 'Reserva de evento',
+          'RETURN_URL' => bin2hex(url('/confirmacion-pago')),
+          'PARM_1' => 'TokenEvento',
+        ];
+      
+      $redirect = $endpoint . '?' . http_build_query($params);
+      dd($redirect);
+      //return redirect()->to($redirect);
+    }
+
+    return response('<h3>Solicitud inválida</h3>
+      El pago no puede ser procesado.
+      <br><br>
+      Por favor comuníquese con el área comercial y notifique esta incidencia.
+      <br>
+      O visite <a href="https://ciudaddelsaber.org">www.ciudaddelsaber.org</a> para más información.', 421);
+  }
+
+  public function paymentConfirmation(Request $request) 
+  {
+    return view('index.payment-confirmation');
   }
 }

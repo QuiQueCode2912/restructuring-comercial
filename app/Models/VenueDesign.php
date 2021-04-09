@@ -13,4 +13,9 @@ class VenueDesign extends Model
     protected $fillable = [
       'id', 'venue_id', 'layout', 'max_pax', 'min_pax', 'url'
     ];
+
+    public function venue()
+    {
+        return $this->belongsTo('App\Models\Venue', 'venue_id');
+    }
 }

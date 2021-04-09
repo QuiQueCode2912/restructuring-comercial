@@ -24,3 +24,7 @@ Route::get('/complejo-hospedaje', 'App\Http\Controllers\IndexController@complejo
 Route::get('/residencias', 'App\Http\Controllers\IndexController@residencias');
 Route::get('/cotizacion/{step}', 'App\Http\Controllers\IndexController@request');
 Route::post('/cotizacion/{step}', 'App\Http\Controllers\IndexController@request');
+
+Route::get('/confirmacion-pago', 'App\Http\Controllers\IndexController@paymentConfirmation');
+Route::get('/ds/paguelo-facil', 'App\Http\Controllers\IndexController@docuSignPayment');
+Route::post('/ds/paguelo-facil', 'App\Http\Controllers\IndexController@docuSignPayment');
