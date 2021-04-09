@@ -20,7 +20,7 @@
     </div>
     <div class="row" style="margin-top:40px">
       <div class="col-12 col-md-4">
-        <x-venue image="/assets/images/220-101.jpg" name="Ateneo" url="/ateneo" />
+        <x-venue image="/assets/images/ateneo.png" name="Ateneo" url="/ateneo" />
       </div>
 
       <?php if ($venues) : ?>
