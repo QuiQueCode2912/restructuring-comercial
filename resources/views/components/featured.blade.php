@@ -2,14 +2,14 @@
   <div class="container featured">
     <div class="row">
       <div class="col-12">
-        <h4>Se parte de una comunidad innovadora</h4>
+        <h4>Sé parte de una comunidad innovadora</h4>
         <h1>
-          Crea<span>+</span>Estudia<span>+</span>Innova<span>+</span>Vive
+          Crea<span>+</span>Estudia<span>+</span>Trabaja<span>+</span>Vive
         </h1>
         <p class="featured-text">
-          <strong>Ciudad del Saber</strong> es un espacio que inspira y desarrolla 
-          nuevas metodologías de trabajo. <br>
-          Ubicada estratégicamente en la ciudad de Panamá, 
+          <strong>Ciudad del Saber</strong> es un espacio inspirador en el que se 
+          desarrollan nuevas metodologías de colaboración. <br>
+          Ubicada frente al Canal de Panamá, Ciudad del saber 
           te permite crecer a ti y a tu negocio.
         </p>
       </div>
@@ -19,8 +19,7 @@
         <h3>6</h3>
         <p>
           <strong>MODERNOS EDIFICIOS</strong>
-          Dentro del Parque tecnológico y empresarial con vistas hacia 
-          las Esclusas de Miraflores.
+          Dentro del tecnoparque, un espacio donde convergen patrimonio e innovación.
         </p>
       </div>
       <div class="col-12 col-md-3">
@@ -35,7 +34,7 @@
         <h3>96</h3>
         <p>
           <strong>CÓMODAS HABITACIONES</strong>
-          Complejo habitacional con diseño bioclimático para 
+          Complejo de hospedaje con amenidades ideales para 
           estadías académicas.
         </p>
       </div>
@@ -44,7 +43,7 @@
         <p>
           <strong>ESPACIOSAS VIVIENDAS</strong>
           Comodidad adaptada para disfrutar de la naturaleza
-          en un entorno sustentable.
+          en un ambiente apacible.
         </p>
       </div>
     </div>

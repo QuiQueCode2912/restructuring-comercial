@@ -14,7 +14,7 @@
       <div class="col-12">
         <h4>Mira nuestra oferta de servicios</h4>
         <h1>
-          Un venue para cada necesidad
+          Un espacio para cada necesidad
         </h1>
       </div>
     </div>

@@ -51,22 +51,18 @@
   <div class="row">
     <div class="col-12">
       <h6>Ateneo</h6>
-      <h1>Conecta con las audiencias</h1>
+      <h1>Conecta con tus audiencias</h1>
       <p class="description">
-      El Ateneo está estratégicamente pensado como un auditorio para cine, 
-      artes escénicas, conferencias y otras presentaciones. Está equipado 
-      con tecnología audiovisual de vanguardia y cuenta con un amplio 
-      espacio de 700 butacas.
+      El Ateneo está pensado como un auditorio para conciertos, presentaciones de películas, 
+      artes escénicas, conferencias y congresos, entre otros. Está equipado 
+      con tecnología audiovisual y cuenta con un aforo para 700 personas.
       </p>
       <p><span style="color:#0088ff">/ Espacio cultural /</span> 
-        Funciona en el antiguo edificio del cine de Clayton (construido en 1935 
-        por la armada de los Estados Unidos). Es considerado un ejemplo de 
-        arquitectura bellavistina y fue rehabilitado recientemente por la 
-        Fundación Ciudad del Saber.<br><br>
-        Se ha puesto en marcha una estrategia de actuación en materia cultural 
-        que incluye una  variada oferta de actividades artísticas en el Campus, 
-        como por ejemplo algunos proyectos dirigidos a resaltar los valores 
-        históricos y patrimoniales del sitio.
+        Funciona en el antiguo edificio del cine de Clayton (construido en 1935)
+        y rehabilitado en 2011 por la Fundación Ciudad del Saber. 
+        Es considerado un ejemplo de 
+        arquitectura bellavistina y en él se ofrece a lo largo edl año una variada 
+        programación de actividades artísticas, científicas y académicas.
       </p>
     </div>
   </div>

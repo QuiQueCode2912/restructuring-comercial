@@ -5,14 +5,14 @@
         <h3>¿Quieres realizar algo especial?<br>
         Podemos ayudarte</h3><br>
         <p>
-        Si necesitas contratar espacios múltiples o eventos que duren más de 
-          un día, estamos aquí para ayudarte a planificarlo. Por favor completa este formulario de contacto y un miembro del equipo de la Ciudad del Saber
+          Si necesitas reservar espacios múltiples u organizar eventos que duren más de 
+          un día, estamos aquí para ayudarte a planificarlo. Por favor completa este formulario y un miembro del equipo de Ciudad del Saber
           se pondrá en contacto contigo para que puedas concretar tu proyecto.
         </p>
         <p>
           <strong>Crea</strong> <span style="color:#0088ff">+</span> 
           <strong>Estudia</strong> <span style="color:#0088ff">+</span> 
-          <strong>Innova</strong> <span style="color:#0088ff">+</span> 
+          <strong>Trabaja</strong> <span style="color:#0088ff">+</span> 
           <strong>Vive</strong>
         </p>
       </div>

@@ -3,7 +3,7 @@
     <div class="carousel-item active">
       <div class="container">
         <h4>Aula 220 - Coworking</h4>
-        <h3>Innova y crea valor</h3>
+        <h3>Espacio colaborativo genera valor</h3>
       </div>
       <img src="/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-6-1.jpg" class="d-block" alt="...">
     </div>
@@ -17,7 +17,7 @@
     <div class="carousel-item">
       <div class="container">
         <h4>Aula 222 - Coworking</h4>
-        <h3>Innova y crea valor</h3>
+        <h3>Espacio colaborativo genera valor</h3>
       </div>
       <img src="/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-8-1.jpg" class="d-block" alt="...">
     </div>
