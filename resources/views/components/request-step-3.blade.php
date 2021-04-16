@@ -1,7 +1,7 @@
 <div class="request-step">
   <div class="container">
-    <h4>Estás a punto de terminar, <br>
-      por favor verifica que los datos sean correctos</h4>
+    <h4>Estás a punto de completar tu solicitud. <br>
+      Por favor verifica que los datos sean correctos</h4>
     <div class="row">
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
@@ -435,9 +435,9 @@
     <?php endif ?>
     <div class="row" style="margin-top:40px">
       <div class="col-12 text-center">
-        <p style="color:#0088ff; font-family:'Roboto', sans-serif; font-size:14px">Esta solicitud está sujeta a la disponibilidad de 
-          los espacios al momento de ser procesada 
-          por el equipo de la Ciudad del Saber</p>
+        <p style="color:#0088ff; font-family:'Roboto', sans-serif; font-size:14px">
+        Esta solicitud está sujeta a la disponibilidad de los espacios al 
+        momento de ser procesada por el equipo de Ciudad del Saber.</p>
       </div>
     </div>
     <div class="row buttons">

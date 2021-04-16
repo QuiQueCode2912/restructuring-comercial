@@ -22,4 +22,9 @@ class Venue extends Model
     {
         return $this->hasMany('App\Models\VenueDesign');
     }
+
+    public function files()
+    {
+        return $this->hasMany('App\Models\VenueFile');
+    }
 }

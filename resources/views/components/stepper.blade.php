@@ -24,7 +24,8 @@ switch (app('request')->step) {
 
 <?php if ($current == 1) : ?>
 <p style="font-size:20px; text-align:center; font-family:'Trola', sans-serif; font-weight:600">
-  Gracias por tu interés. Para poder realizar la cotización debes completar
-  los datos requeridos. Sólo te llevará unos pocos minutos. 
+Gracias por tu interés en reservar un espacio/ organizar tu evento / hospedarte en 
+Ciudad del Saber. Para solicitar la cotización, debes completar los datos requeridos. 
+Esto te tomará unos pocos minutos.
 </p>
 <?php endif ?>

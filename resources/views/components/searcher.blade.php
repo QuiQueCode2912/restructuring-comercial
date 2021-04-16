@@ -6,10 +6,10 @@
         <li>
           <a href="#type">
             <label for="activity-type">Tipo de actividad</label>
-            <span>Elije tu opción</span>
+            <span><?php echo isset($_GET['type']) ? $_GET['type'] : 'Elije tu opción' ?></span>
             <i class="fe fe-chevron-down"></i>
           </a>
-          <input type="hidden" name="type" value="" />
+          <input type="hidden" name="type" value="<?php echo isset($_GET['type']) ? $_GET['type'] : '' ?>" />
           <ul>
             <li><a href="#">Convención</a></li>
             <li><a href="#">Conferencia</a></li>
@@ -23,10 +23,10 @@
         <li>
           <a href="#quantity">
             <label for="activity-quantity">Cantidad de personas</label>
-            <span>Cuántos son</span>
+            <span><?php echo isset($_GET['quantity']) ? $_GET['quantity'] : 'Cuántos son' ?></span>
             <i class="fe fe-chevron-down"></i>
           </a>
-          <input type="hidden" name="quantity" value="" />
+          <input type="hidden" name="quantity" value="<?php echo isset($_GET['quantity']) ? $_GET['quantity'] : '' ?>" />
           <ul>
             <li><a href="#">Menos de 50 personas</a></li>
             <li><a href="#">Entre 51 y 100 personas</a></li>
@@ -47,7 +47,7 @@
           <a href="#how">
             <label for="activity-description">Cómo imaginas tu actividad</label>
             <i class="fe fe-chevron-down"></i>
-            <span></span>
+            <span><?php echo isset($_GET['how']) ? $_GET['how'] : '' ?></span>
           </a>
           <input type="hidden" name="how" value="" />
           <ul>

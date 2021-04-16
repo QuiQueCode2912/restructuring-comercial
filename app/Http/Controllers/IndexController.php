@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request,
   App\Models\Venue,
+  App\Models\VenueFile,
+  Str,
+  Illuminate\Support\Facades\Storage,
   Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
@@ -26,24 +29,23 @@ class IndexController extends Controller
           case '02i3m0000092sG3AAI' :
             $name = 'Centro de convenciones';
             $url = '/centro-convenciones';
-            $image = '/assets/images/centro-convenciones.png';
             break;
           case '02i3m0000092sJSAAY' :
             $name = 'Aulas 105';
             $url = '/aulas-105';
-            $image = '/assets/images/aulas-105.png';
             break;
           case '02i3m0000092sEkAAI' :
             $name = 'Aulas 220';
             $url = '/aulas-220';
-            $image = '/assets/images/aula220-201.jpg';
             break;
           case '02i3m0000092rzDAAQ' :
             $name = 'Complejo de hospedaje';
             $url = '/complejo-hospedaje';
-            $image = '/assets/images/complejo-hospedaje.png';
             break;
         }
+
+        $venue_image = VenueFile::where('venue_id', $venue->id)->first();
+        $image = $venue_image ? url('storage/venues/' . $venue_image->path) : '/assets/images/placeholder-image.jpg';
 
         $subvenues = Venue::where('parent_id', '=', $venue->id)
           ->get();
@@ -99,9 +101,15 @@ class IndexController extends Controller
       $facilities = $venues[0]->facilities;
     }
 
-    $images = ['/assets/images/centro-convenciones.png',
-      '/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-7-1.jpg',
-      '/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-8-1.jpg'];
+    $venue_images = VenueFile::where('venue_id', $parent->id)->get();
+    $images = [];
+    if ($venue_images->count() > 0) {
+      foreach ($venue_images as $image) {
+        $images[] = url('storage/venues/' . $image->path);
+      }
+    } else {
+      $images[] = '/assets/images/placeholder-image.jpg';
+    }
 
     return view('venues.venue', [
       'page_title' => 'Servicios - Centro de Convenciones',
@@ -131,9 +139,15 @@ class IndexController extends Controller
       $facilities = $venues[0]->facilities;
     }
     
-    $images = ['/assets/images/aulas-105.png',
-      '/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-7-1.jpg',
-      '/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-8-1.jpg'];
+    $venue_images = VenueFile::where('venue_id', $parent->id)->get();
+    $images = [];
+    if ($venue_images->count() > 0) {
+      foreach ($venue_images as $image) {
+        $images[] = url('storage/venues/' . $image->path);
+      }
+    } else {
+      $images[] = '/assets/images/placeholder-image.jpg';
+    }
     
     return view('venues.venue', [
       'page_title' => 'Servicios - Aulas 105',
@@ -163,9 +177,15 @@ class IndexController extends Controller
       $facilities = $venues[0]->facilities;
     }
 
-    $images = ['/assets/images/aula220-201.jpg',
-      '/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-7-1.jpg',
-      '/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-8-1.jpg'];
+    $venue_images = VenueFile::where('venue_id', $parent->id)->get();
+    $images = [];
+    if ($venue_images->count() > 0) {
+      foreach ($venue_images as $image) {
+        $images[] = url('storage/venues/' . $image->path);
+      }
+    } else {
+      $images[] = '/assets/images/placeholder-image.jpg';
+    }
 
     return view('venues.venue', [
       'page_title' => 'Servicios - Aulas 220',
@@ -195,9 +215,15 @@ class IndexController extends Controller
       $facilities = $venues[0]->facilities;
     }
 
-    $images = ['/assets/images/complejo-hospedaje.png',
-      '/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-7-1.jpg',
-      '/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-8-1.jpg'];
+    $venue_images = VenueFile::where('venue_id', $parent->id)->get();
+    $images = [];
+    if ($venue_images->count() > 0) {
+      foreach ($venue_images as $image) {
+        $images[] = url('storage/venues/' . $image->path);
+      }
+    } else {
+      $images[] = '/assets/images/placeholder-image.jpg';
+    }
 
     return view('venues.venue', [
       'page_title' => 'Servicios - Complejo de Hospedaje',
@@ -227,9 +253,15 @@ class IndexController extends Controller
       $facilities = $venues[0]->facilities;
     }
 
-    $images = ['/assets/images/complejo-hospedaje.png',
-      '/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-7-1.jpg',
-      '/assets/images/oficinas-administrativas-de-la-fundacion-ciudad-del-saber-8470-8-1.jpg'];
+    $venue_images = VenueFile::where('venue_id', $parent->id)->get();
+    $images = [];
+    if ($venue_images->count() > 0) {
+      foreach ($venue_images as $image) {
+        $images[] = url('storage/venues/' . $image->path);
+      }
+    } else {
+      $images = ['/assets/images/placeholder-image.jpg'];
+    }
 
     return view('venues.venue', [
       'page_title' => 'Servicios - Residencias',
@@ -246,10 +278,13 @@ class IndexController extends Controller
 
   public function oferta(Request $request)
   {
+    $venues = [];
+
     return view('index.venues', [
       'page_title' => 'Servicios - Oferta',
       'venue' => 'inicio',
       'venueName' => 'Oferta',
+      'venues' => $venues,
     ]);
   }
 
@@ -403,5 +438,65 @@ class IndexController extends Controller
   public function paymentConfirmation(Request $request) 
   {
     return view('index.payment-confirmation');
+  }
+
+  public function gallery(Request $request) 
+  {
+    $venue = $request->venue;
+    $venue = Venue::where('id', $venue)->first();
+
+    if (is_null($venue)) {
+      return redirect()->to('/');
+    }
+
+    if ($request->isMethod('post')) {
+      $file = $request->file('file');
+      if ($file) {
+        $filepath = hash('sha256', (Str::random(60) . microtime()));
+        $filename = $filepath . '.' . $file->getClientOriginalExtension();
+        
+        $venue_file = new VenueFile([
+          'venue_id' => $venue->id,
+          'token' => $filepath,
+          'name' => $file->getClientOriginalName(),
+          'path' => $filename,
+          'size' => $file->getSize(),
+          'type' => 'image',
+          'mime_type' => $file->getMimeType(),
+          'sort' => VenueFile::where('venue_id', $venue->id)->count()
+        ]);
+        $venue_file->save();
+
+        $file->storeAs('public/venues', $filename);
+      }
+
+      return redirect()->to('/galeria/' . $venue->id);
+    }
+
+    $images = VenueFile::where('venue_id', $venue->id)->get();
+
+    return view('venues.gallery', [
+      'images' => $images,
+      'venue' => $venue,
+    ]);
+  }
+
+  public function deleteImage(Request $request) 
+  {
+    $venue = $request->venue;
+    $token = $request->token;
+    $venue = Venue::where('id', $venue)->first();
+
+    if (is_null($venue)) {
+      return redirect()->to('/');
+    }
+
+    $image = VenueFile::where('token', $token)->first();
+    if ($image) {
+      Storage::delete('public/venues/' . $image->path);
+      $image->delete();
+    }
+
+    return redirect()->to('/galeria/' . $venue->id);
   }
 }

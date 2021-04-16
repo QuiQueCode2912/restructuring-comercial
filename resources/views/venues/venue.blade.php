@@ -61,7 +61,8 @@
               </small>
               <?php if ($venues) : ?>
               <?php foreach ($venues as $venue) : ?>
-                <x-venue-list image="/assets/images/220-101.jpg" name="{{ $venue->name }}" designs="{{ $venue->designs }}" type="{{ $venue->type }}" hourfee="{{ $venue->hour_fee }}" middayfee="{{ $venue->mid_day_fee }}" alldayfee="{{ $venue->all_day_fee }}" />
+                <?php $venue_image = $venue->files()->count() > 0 ? url('storage/venues/' . $venue->files()->first()->path) : '/assets/images/placeholder-image.jpg' ?>
+                <x-venue-list image="{{ $venue_image }}" name="{{ $venue->name }}" designs="{{ $venue->designs }}" type="{{ $venue->type }}" hourfee="{{ $venue->hour_fee }}" middayfee="{{ $venue->mid_day_fee }}" alldayfee="{{ $venue->all_day_fee }}" />
               <?php endforeach ?>
               <?php endif ?>
             </div>
@@ -84,8 +85,8 @@
     </div>
   </div>
 
+  <!--
   <br /><br /><br />
-
   <div class="row">
     <div class="col-12 col-md-9">
       <h3 style="color:#0088ff; margin-bottom:30px">Experiencias compartidas</h3>
@@ -99,13 +100,15 @@
       </div>
     </div>
   </div>
+  -->
 
   <br /><br /><a name="venue-location"></a><br />
   <div class="row">
     <div class="col-12 col-md-9">
       <a href="https://ciudaddelsaber.hauzd.com" style="float:right; font-weight:700; text-decoration:underline">Explora nuestros venues en 3D</a>
       <h3 style="color:#0088ff; margin-bottom:10px">Ubicación</h3>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9234.855855146361!2d-79.58760814660978!3d9.001102129208933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca7b0a46a3bd1%3A0x93b801d16c74cc5c!2sCd%20del%20Saber%2C%20Panam%C3%A1!5e0!3m2!1ses!2sco!4v1590440019299!5m2!1ses!2sco" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7918.400021473715!2d<?php echo $parent->longitude ?>!3d<?php echo $parent->latitude ?>!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwNTknNTYuMiJOIDc5wrAzNScwMC4xIlc!5e0!3m2!1ses!2sco!4v1618496938772!5m2!1ses!2sco" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9234.855855146361!2d<?php echo $parent->longitude ?>!3d<?php echo $parent->latitude ?>!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca7b0a46a3bd1%3A0x93b801d16c74cc5c!2sCd%20del%20Saber%2C%20Panam%C3%A1!5e0!3m2!1ses!2sco!4v1590440019299!5m2!1ses!2sco" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>-->
     </div>
   </div>
 
