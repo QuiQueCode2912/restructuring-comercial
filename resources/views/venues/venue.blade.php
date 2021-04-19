@@ -62,7 +62,7 @@
               <?php if ($venues) : ?>
               <?php foreach ($venues as $venue) : ?>
                 <?php $venue_image = $venue->files()->count() > 0 ? url('storage/venues/' . $venue->files()->first()->path) : '/assets/images/placeholder-image.jpg' ?>
-                <x-venue-list image="{{ $venue_image }}" name="{{ $venue->name }}" designs="{{ $venue->designs }}" type="{{ $venue->type }}" hourfee="{{ $venue->hour_fee }}" middayfee="{{ $venue->mid_day_fee }}" alldayfee="{{ $venue->all_day_fee }}" />
+                <x-venue-list image="{{ $venue_image }}" id="{{ $venue->id }}" name="{{ $venue->name }}" designs="{{ $venue->designs }}" type="{{ $venue->type }}" hourfee="{{ $venue->hour_fee }}" middayfee="{{ $venue->mid_day_fee }}" alldayfee="{{ $venue->all_day_fee }}" />
               <?php endforeach ?>
               <?php endif ?>
             </div>

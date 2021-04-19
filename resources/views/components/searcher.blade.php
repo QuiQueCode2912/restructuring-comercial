@@ -1,5 +1,5 @@
 <div class="container searcher <?php echo $class ?? '' ?>">
-  <form method="post">
+  <form method="get" action="/oferta">
     <div class="search">
       <p class="text-center"><?php echo !($class ?? '') ? 'Qué quieres hacer en Ciudad del Saber' : 'Realiza otra búsqueda' ?></p>
       <ul>

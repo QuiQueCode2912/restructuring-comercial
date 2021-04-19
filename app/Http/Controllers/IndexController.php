@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request,
   App\Models\Venue,
   App\Models\VenueFile,
+  App\Models\VenueDesign,
   Str,
   Illuminate\Support\Facades\Storage,
   Illuminate\Support\Facades\DB;
@@ -278,13 +279,75 @@ class IndexController extends Controller
 
   public function oferta(Request $request)
   {
+    $type = $request->type;
+    $quantity = $request->quantity;
+    $daterange = $request->daterange;
+    $how = $request->how;
+
+    $quantities = [];
+    switch ($quantity) {
+      case 'Menos de 50 personas' : $quantities = [0, 50]; break;
+      case 'Entre 51 y 100 personas' : $quantities = [51, 100]; break;
+      case 'Entre 101 y 200 personas' : $quantities = [101, 200]; break;
+      case 'Entre 201 y 500 personas' : $quantities = [201, 500]; break;
+      case 'Más de 500 personas' : $quantities = [500, 'Más']; break;
+    }
+
+    $from = new \DateTime(substr($daterange, 0, 10));
+    $to   = new \DateTime(substr($daterange, -10));
+
+    $ids = [];
+    $designs = DB::table('venues_designs')
+      ->select('venues.id')
+      ->join('venues', 'venues.id', '=', 'venues_designs.venue_id');
+
+    $event_type = [];
+    switch ($type) {
+      case 'Convención' : 
+      case 'Evento' : 
+      case 'Seminario' : 
+      case 'Conferencia' :
+      case 'Cocktail' : $event_type = ['Salas de eventos']; break;
+      case 'Coworking' : $event_type = ['Salas de reuniones']; break;
+      case 'Formación académica' : $event_type = ['Salas de reuniones', 'Salas de eventos']; break;
+    }
+    
+    if ($event_type) {
+      $designs->whereIn('venues.type', $event_type);
+    }
+
+    if ($quantities) {
+      $designs->where('venues_designs.max_pax', '>=', $quantities[0]);
+      if ($quantities[0] != 500) {
+        $designs->where('venues_designs.max_pax', '<=', $quantities[1]);
+      }
+    }
+    $designs = $designs->get();
+
+    if ($designs->count() > 0) {
+      foreach ($designs as $design) {
+        if (!in_array($design->id, $ids)) {
+          $ids[] = $design->id;
+        }
+      }
+    }
+
     $venues = [];
+    if (count($ids) > 0) {
+      $venues = Venue::whereIn('id', $ids)->get();
+    }
 
     return view('index.venues', [
       'page_title' => 'Servicios - Oferta',
       'venue' => 'inicio',
       'venueName' => 'Oferta',
       'venues' => $venues,
+      'type' => $type,
+      'quantity' => implode(' - ', $quantities),
+      'daterange' => $daterange,
+      'from' => $from->format('d-m-Y'),
+      'to' => $to->format('d-m-Y'),
+      'how' => $how
     ]);
   }
 

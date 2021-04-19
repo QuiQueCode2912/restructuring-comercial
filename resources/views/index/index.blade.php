@@ -20,7 +20,7 @@
     </div>
     <div class="row" style="margin-top:40px">
       <div class="col-12 col-md-4">
-        <x-venue image="/assets/images/ateneo.png" name="Ateneo" url="/ateneo" />
+        <x-venue image="/assets/images/ateneo.png" name="Ateneo" url="/ateneo" id="ateneo" />
       </div>
 
       <?php if ($venues) : ?>
@@ -66,7 +66,7 @@
           </dl>
         </div>
         <p><a href="#">Revisa la política Covid para este venue</a></p>
-        <a href="/cotizacion/datos-contacto" class="btn btn-primary btn-sm">Cotizar</a>
+        <a href="<?php echo $venue['url'] ?>" class="btn btn-primary btn-sm">Cotizar</a>
       </div>
       </div>
       <?php endforeach ?>

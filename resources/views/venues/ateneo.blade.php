@@ -91,7 +91,7 @@
                 <span style="color:#0088ff">/*</span>
                 Los precios no incluyen catering ni impuestos locales
               </small>
-              <x-venue-list image="/assets/images/ateneo.png" name="Ateneo" />
+              <x-venue-list image="/assets/images/ateneo.png" id="ateneo" name="Ateneo" />
             </div>
           </div>
         </div>

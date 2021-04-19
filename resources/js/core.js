@@ -201,7 +201,7 @@ $(document).ready(function() {
   $(document).on({
     click: function(e) {
       e.preventDefault();
-      document.location.href = '/oferta';
+      $('.searcher form').submit();
     }
   }, '.searcher ul li a[href="#search"]');
 

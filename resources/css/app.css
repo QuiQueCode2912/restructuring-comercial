@@ -1134,6 +1134,15 @@ form select.invalid {
   font-weight: 400;
   margin-bottom: 10px;
 }
+.searcher form .search ul li input[name="daterange"] {
+  left: 0;
+  width: 85%;
+}
+.searcher.aside form .search ul li input[name="daterange"] {
+  width: 75%;
+  padding: 0 !important;
+  left: 10px;
+}
 .searcher.aside .fe-alert-triangle {
   color: #0088ff;
   font-size: 25px;
