@@ -505,11 +505,25 @@ class IndexController extends Controller
 
   public function gallery(Request $request) 
   {
+    $secret_key = "9537642792179615";
+    $method = "aes128";
+    $iv_length = openssl_cipher_iv_length($method);
+    $iv = openssl_random_pseudo_bytes($iv_length);
+    
+    $sessionId = $request->sessionid;
+    $decrypted_message = openssl_decrypt($sessionId, $method, $secret_key, 0, $iv);
+    $venue_id = substr($decrypted_message, -32, 18);
+    
     $venue = $request->venue;
+
+    if ($venue != $venue_id) {
+      return abort(404);
+    }
+
     $venue = Venue::where('id', $venue)->first();
 
     if (is_null($venue)) {
-      return redirect()->to('/');
+      return abort(404);
     }
 
     if ($request->isMethod('post')) {
@@ -546,6 +560,21 @@ class IndexController extends Controller
 
   public function deleteImage(Request $request) 
   {
+    $secret_key = "9537642792179615";
+    $method = "aes128";
+    $iv_length = openssl_cipher_iv_length($method);
+    $iv = openssl_random_pseudo_bytes($iv_length);
+    
+    $sessionId = $request->sessionid;
+    $decrypted_message = openssl_decrypt($sessionId, $method, $secret_key, 0, $iv);
+    $venue_id = substr($decrypted_message, -32, 18);
+    
+    $venue = $request->venue;
+
+    if ($venue != $venue_id) {
+      return abort(404);
+    }
+    
     $venue = $request->venue;
     $token = $request->token;
     $venue = Venue::where('id', $venue)->first();
