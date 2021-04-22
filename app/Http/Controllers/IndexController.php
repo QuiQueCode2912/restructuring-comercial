@@ -241,12 +241,13 @@ class IndexController extends Controller
 
   public function residencias(Request $request)
   {
-    $parent = Venue::find('02i3m0000092rzDAAQ');
-    $venues = Venue::where('parent_id', '=', $parent->id)
+    $venues = Venue::where('type', '=', 'Vivienda')
       ->get();
     
+    $parent = null;
     $max_pax = 0;
     if ($venues) {
+      $parent = $venues[0];
       foreach ($venues as $venue) {
         $venue_max_pax = $venue->designs()->max('max_pax');
         $max_pax = $venue_max_pax > $max_pax ? $venue_max_pax : $max_pax;
