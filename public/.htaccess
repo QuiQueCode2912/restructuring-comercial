@@ -1,6 +1,3 @@
-Header Set Access-Control-Allow-Origin "https://fcds.lightning.force.com"
-Header always append X-Frame-Options ALLOW-FROM https://fcds.lightning.force.com
-
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
