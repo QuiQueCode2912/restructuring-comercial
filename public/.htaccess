@@ -1,4 +1,4 @@
-Header Set Access-Control-Allow-Origin "*"
+Header Set Access-Control-Allow-Origin "https://fcds.lightning.force.com"
 
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
