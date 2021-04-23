@@ -1,6 +1,7 @@
 <?php
 
 header('Access-Control-Allow-Origin: https://fcds.lightning.force.com');
+header('X-Frame-Options: ALLOW-FROM https://fcds.lightning.force.com');
 
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
