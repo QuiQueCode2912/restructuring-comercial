@@ -464,6 +464,24 @@ var validateFormFields = function validateFormFields(form, field) {
   return formValid;
 };
 
+setTimeout(function () {
+  twttr.widgets.createTimeline({
+    sourceType: "url",
+    url: "https://twitter.com/CiudaddelSaber"
+  }, document.getElementById("twitter-timeline"));
+  twttr.events.bind('rendered', function (event) {
+    var twitterContent = $('footer #twitter-timeline iframe').contents().find("body").html();
+    $('footer #twitter-timeline').html('<div class="twitter-embed-header">ÚLTIMOS TWEETS</div>' + twitterContent);
+    $.each($('footer #twitter-timeline .timeline-Widget .timeline-Body .timeline-Viewport .timeline-TweetList .timeline-TweetList-tweet'), function (index, element) {
+      if (index > 2) {
+        $(element).addClass('twitter-remove-element');
+      }
+    });
+    $('footer #twitter-timeline .twitter-remove-element').remove();
+    $('footer #twitter-timeline').show();
+  });
+}, 2000);
+
 /***/ }),
 
 /***/ 1:

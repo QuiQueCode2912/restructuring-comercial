@@ -32,3 +32,7 @@ Route::post('/ds/paguelo-facil', 'App\Http\Controllers\IndexController@docuSignP
 Route::get('/galeria/{venue}', 'App\Http\Controllers\IndexController@gallery');
 Route::post('/galeria/{venue}', 'App\Http\Controllers\IndexController@gallery');
 Route::get('/galeria/{venue}/eliminar/{token}', 'App\Http\Controllers\IndexController@deleteImage');
+
+Route::get('/email/quote', function() {
+  return view('email.quote');
+});

@@ -27,10 +27,10 @@
       <h6>{{ $venueName }}</h6>
       <h1>{{ $subtitle }}</h1>
       <p class="description">
-      <?php echo $parent->main_text ?>
+      <?php echo $parent ? $parent->main_text : '' ?>
       </p>
       <p>
-      <?php echo $parent->secondary_text ?>
+      <?php echo $parent ? $parent->secondary_text : '' ?>
       </p>
     </div>
   </div>
@@ -54,7 +54,7 @@
               </div>
               <a name="description"></a>
               
-              <h3 style="color:#0088ff; margin:30px 0 5px">Venue: <?php echo $parent->name ?></h3>
+              <h3 style="color:#0088ff; margin:30px 0 5px">Venue: <?php echo $parent ? $parent->name : '' ?></h3>
               <small>
                 <span style="color:#0088ff">/*</span>
                 Los precios no incluyen catering ni impuestos locales
@@ -107,8 +107,8 @@
     <div class="col-12 col-md-9">
       <a href="https://ciudaddelsaber.hauzd.com" style="float:right; font-weight:700; text-decoration:underline">Explora nuestros venues en 3D</a>
       <h3 style="color:#0088ff; margin-bottom:10px">Ubicación</h3>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7918.400021473715!2d<?php echo $parent->longitude ?>!3d<?php echo $parent->latitude ?>!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwNTknNTYuMiJOIDc5wrAzNScwMC4xIlc!5e0!3m2!1ses!2sco!4v1618496938772!5m2!1ses!2sco" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9234.855855146361!2d<?php echo $parent->longitude ?>!3d<?php echo $parent->latitude ?>!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca7b0a46a3bd1%3A0x93b801d16c74cc5c!2sCd%20del%20Saber%2C%20Panam%C3%A1!5e0!3m2!1ses!2sco!4v1590440019299!5m2!1ses!2sco" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>-->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7918.400021473715!2d<?php echo $parent ? $parent->longitude : '' ?>!3d<?php echo $parent ? $parent->latitude : '' ?>!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwNTknNTYuMiJOIDc5wrAzNScwMC4xIlc!5e0!3m2!1ses!2sco!4v1618496938772!5m2!1ses!2sco" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9234.855855146361!2d<?php echo $parent ? $parent->longitude : '' ?>!3d<?php echo $parent ? $parent->latitude : '' ?>!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca7b0a46a3bd1%3A0x93b801d16c74cc5c!2sCd%20del%20Saber%2C%20Panam%C3%A1!5e0!3m2!1ses!2sco!4v1590440019299!5m2!1ses!2sco" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>-->
     </div>
   </div>
 

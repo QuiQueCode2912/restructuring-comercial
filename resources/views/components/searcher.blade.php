@@ -35,6 +35,7 @@
             <li><a href="#">Más de 500 personas</a></li>
           </ul>
         </li>
+        <!--
         <li>
           <a href="#date">
             <label for="activity-date">Fecha</label>
@@ -43,11 +44,12 @@
           </a>
           <input type="text" name="daterange" value="" />
         </li>
+        -->
         <li>
           <a href="#how">
             <label for="activity-description">Cómo imaginas tu actividad</label>
             <i class="fe fe-chevron-down"></i>
-            <span><?php echo isset($_GET['how']) ? $_GET['how'] : '' ?></span>
+            <span><?php echo isset($_GET['how']) ? $_GET['how'] : 'Elije tu opción' ?></span>
           </a>
           <input type="hidden" name="how" value="" />
           <ul>

@@ -15,10 +15,10 @@ class IndexController extends Controller
   public function index(Request $request)
   {
     $parents = [
+      '02i3m0000092sG9AAI',
       '02i3m0000092sG3AAI',
       '02i3m0000092sJSAAY',
-      '02i3m0000092sEkAAI',
-      '02i3m0000092rzDAAQ'
+      '02i3m0000092sHZAAY'
     ];
 
     $venues = Venue::whereIn('id', $parents)->get();
@@ -27,6 +27,10 @@ class IndexController extends Controller
     if ($venues) {
       foreach ($venues as $venue) {
         switch ($venue->id) {
+          case '02i3m0000092sG9AAI' :
+            $name = 'Ateneo';
+            $url = '/ateneo';
+            break;
           case '02i3m0000092sG3AAI' :
             $name = 'Centro de convenciones';
             $url = '/centro-convenciones';
@@ -39,7 +43,7 @@ class IndexController extends Controller
             $name = 'Aulas 220';
             $url = '/aulas-220';
             break;
-          case '02i3m0000092rzDAAQ' :
+          case '02i3m0000092sHZAAY' :
             $name = 'Complejo de hospedaje';
             $url = '/complejo-hospedaje';
             break;
@@ -48,8 +52,13 @@ class IndexController extends Controller
         $venue_image = VenueFile::where('venue_id', $venue->id)->first();
         $image = $venue_image ? url('storage/venues/' . $venue_image->path) : '/assets/images/placeholder-image.jpg';
 
-        $subvenues = Venue::where('parent_id', '=', $venue->id)
-          ->get();
+        if ($venue->id == '02i3m0000092sG9AAI') {
+          $subvenues = [$venue];
+        } else {
+          $subvenues = Venue::where('parent_id', '=', $venue->id)
+            ->get();
+        }
+
         $designs = [];
         if ($subvenues) {
           foreach ($subvenues as $subvenue) {
@@ -80,10 +89,38 @@ class IndexController extends Controller
 
   public function ateneo(Request $request)
   { 
-    return view('venues.ateneo', [
+    $parent = Venue::find('02i3m0000092sG9AAI');
+    $venues = [$parent];
+    
+    $max_pax = 0;
+    if ($venues) {
+      foreach ($venues as $venue) {
+        $venue_max_pax = $venue->designs()->max('max_pax');
+        $max_pax = $venue_max_pax > $max_pax ? $venue_max_pax : $max_pax;
+      }
+      $facilities = $venues ? $venues[0]->facilities : null;
+    }
+
+    $venue_images = VenueFile::where('venue_id', $parent->id)->get();
+    $images = [];
+    if ($venue_images->count() > 0) {
+      foreach ($venue_images as $image) {
+        $images[] = url('storage/venues/' . $image->path);
+      }
+    } else {
+      $images[] = '/assets/images/placeholder-image.jpg';
+    }
+
+    return view('venues.venue', [
       'page_title' => 'Servicios - Ateneo',
       'venue' => 'ateneo',
       'venueName' => 'Ateneo',
+      'subtitle' => 'Conecta con tus audiencias',
+      'parent' => $parent,
+      'venues' => $venues,
+      'images' => $images,
+      'facilities' => $facilities,
+      'max_pax' => $max_pax
     ]);
   }
 
@@ -99,7 +136,7 @@ class IndexController extends Controller
         $venue_max_pax = $venue->designs()->max('max_pax');
         $max_pax = $venue_max_pax > $max_pax ? $venue_max_pax : $max_pax;
       }
-      $facilities = $venues[0]->facilities;
+      $facilities = $venues ? $venues[0]->facilities : null;
     }
 
     $venue_images = VenueFile::where('venue_id', $parent->id)->get();
@@ -137,7 +174,7 @@ class IndexController extends Controller
         $venue_max_pax = $venue->designs()->max('max_pax');
         $max_pax = $venue_max_pax > $max_pax ? $venue_max_pax : $max_pax;
       }
-      $facilities = $venues[0]->facilities;
+      $facilities = $venues ? $venues[0]->facilities : null;
     }
     
     $venue_images = VenueFile::where('venue_id', $parent->id)->get();
@@ -175,7 +212,7 @@ class IndexController extends Controller
         $venue_max_pax = $venue->designs()->max('max_pax');
         $max_pax = $venue_max_pax > $max_pax ? $venue_max_pax : $max_pax;
       }
-      $facilities = $venues[0]->facilities;
+      $facilities = $venues ? $venues[0]->facilities : null;
     }
 
     $venue_images = VenueFile::where('venue_id', $parent->id)->get();
@@ -203,9 +240,12 @@ class IndexController extends Controller
 
   public function complejoHospedaje(Request $request)
   {
-    $parent = Venue::find('02i3m0000092rzDAAQ');
-    $venues = Venue::where('parent_id', '=', $parent->id)
-      ->get();
+    $parent = Venue::find('02i3m0000092sHZAAY');
+    $venues = Venue::whereIn('parent_id', [
+        '02i3m0000092sHZAAY', // E-157
+        '02i3m0000092sH7AAI', // E-158A
+        '02i3m0000092sGcAAI', // E-158B
+      ])->get();
     
     $max_pax = 0;
     if ($venues) {
@@ -213,10 +253,10 @@ class IndexController extends Controller
         $venue_max_pax = $venue->designs()->max('max_pax');
         $max_pax = $venue_max_pax > $max_pax ? $venue_max_pax : $max_pax;
       }
-      $facilities = $venues[0]->facilities;
+      $facilities = $venues->count() > 0 ? $venues[0]->facilities : null;
     }
 
-    $venue_images = VenueFile::where('venue_id', $parent->id)->get();
+    $venue_images = VenueFile::where('venue_id', '02i3m0000092sHZAAY')->get();
     $images = [];
     if ($venue_images->count() > 0) {
       foreach ($venue_images as $image) {
@@ -252,7 +292,7 @@ class IndexController extends Controller
         $venue_max_pax = $venue->designs()->max('max_pax');
         $max_pax = $venue_max_pax > $max_pax ? $venue_max_pax : $max_pax;
       }
-      $facilities = $venues[0]->facilities;
+      $facilities = $venues ? $venues[0]->facilities : null;
     }
 
     $venue_images = VenueFile::where('venue_id', $parent->id)->get();

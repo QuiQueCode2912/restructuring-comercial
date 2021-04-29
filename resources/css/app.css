@@ -288,7 +288,7 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
   border-bottom: 1px dotted #cccccc;
   color: #989898;
   text-transform: none;
-  font-size: 13px;
+  font-size: 11px;
 }
 .header .container .menu li.has-childs ul li a:hover {
   background: #f2f2f2;
@@ -315,14 +315,15 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
 .header .container .menu li:nth-child(12) {
   float: right;
 }
-.header .container .menu li:nth-child(12) a {
+.header .container .menu li:nth-child(12) > a {
   background: #0c4683;
-  margin: 4px 2px 0;
-  padding: 5px 8px 2px;
+  margin: 3px 2px 0;
+  padding: 5px 10px 4px;
 }
 .header .container .menu li:nth-child(10) a {
   border-bottom: 3px solid #0c4683;
   padding: 9px 12px 3px;
+  font-size: 12px;
 }
 .header .container .logo img {
   width: 100%;
@@ -579,7 +580,7 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
   list-style: none;
 }
 .search ul li {
-  width: 20%;
+  width: 25%;
   display: block;
   float: left;
   padding: 0;
@@ -632,9 +633,6 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
 .search ul li a[href="#how"] {
   color: #212529;
   display: block;
-}
-.search ul li a[href="#how"] span {
-  top: 45px;
 }
 .search ul li input[name="daterange"] {
   position: absolute;
@@ -1166,7 +1164,7 @@ form select.invalid {
   list-style: none;
   display: inline-block;
   float: left;
-  width: calc(14.3% - 1px);
+  width: calc(16.67% - 1px);
   padding: 0 10px;
   min-height: 50px;
   border-left: 1px solid #aaaaaa;
@@ -1479,4 +1477,63 @@ form select.invalid {
   top: 0;
   padding: 20px 52px;
   background: #ffffff;
+}
+
+footer #twitter-timeline {
+  display: none;
+}
+footer #twitter-timeline iframe {
+  display: none !important;
+}
+footer #twitter-timeline .timeline-Header,
+footer #twitter-timeline .timeline-Body .timeline-Body-notification,
+footer #twitter-timeline .timeline-Body .timeline-Viewport .timeline-TweetList .timeline-TweetList-tweet .timeline-Tweet .timeline-Tweet-brand,
+footer #twitter-timeline .timeline-Body .timeline-Viewport .timeline-TweetList .timeline-TweetList-tweet .timeline-Tweet .timeline-Tweet-author,
+footer #twitter-timeline .timeline-Body .timeline-Viewport .timeline-TweetList .timeline-TweetList-tweet .timeline-Tweet .timeline-Tweet-retweetCredit,
+footer #twitter-timeline .timeline-Body .timeline-Viewport .timeline-TweetList .timeline-TweetList-tweet .timeline-Tweet .timeline-Tweet-media,
+footer #twitter-timeline .timeline-Body .timeline-Viewport .timeline-TweetList .timeline-TweetList-tweet .timeline-Tweet .timeline-Tweet-metadata,
+footer #twitter-timeline .timeline-Body .timeline-Viewport .timeline-TweetList .timeline-TweetList-tweet .timeline-Tweet .timeline-Tweet-actions,
+footer #twitter-timeline .timeline-Body .timeline-LoadMore,
+footer #twitter-timeline .timeline-Footer {
+  display: none;
+}
+footer #twitter-timeline .timeline-Body .timeline-Viewport .timeline-TweetList,
+footer #twitter-timeline .timeline-Body .timeline-Viewport .timeline-TweetList .timeline-TweetList-tweet {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+footer #twitter-timeline .timeline-Body .timeline-Viewport .timeline-TweetList .timeline-TweetList-tweet {
+  width: 31%;
+  float: left;
+  margin: 0 1%;
+}
+footer #twitter-timeline .timeline-Body .timeline-Viewport .timeline-TweetList .timeline-TweetList-tweet:first-child {
+  margin-left: 0;
+}
+footer #twitter-timeline .timeline-Body .timeline-Viewport .timeline-TweetList .timeline-TweetList-tweet:last-child {
+  margin-right: 0;
+}
+footer #twitter-timeline .timeline-Body .timeline-Viewport .timeline-TweetList .timeline-TweetList-tweet .timeline-Tweet .timeline-Tweet-metadata {
+  display: block;
+}
+footer #twitter-timeline .timeline-Body .timeline-Viewport .timeline-TweetList .timeline-TweetList-tweet .timeline-Tweet .timeline-Tweet-text {
+  word-break: break-all;
+  margin-bottom: 10px;
+  padding: 0;
+}
+footer #twitter-timeline .timeline-Body .timeline-Viewport .timeline-TweetList .timeline-TweetList-tweet .timeline-Tweet .timeline-Tweet-text img.Emoji {
+  width: 16px;
+  margin: 0 5px;
+}
+footer #twitter-timeline .timeline-Body .timeline-Viewport .timeline-TweetList .timeline-TweetList-tweet .timeline-Tweet .timeline-Tweet-text a {
+  color: #0088ff;
+}
+footer #twitter-timeline .twitter-embed-header {
+  font-weight: bold;
+  font-size: 13px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #dddddd;
+  margin-bottom: 10px;
+  color: #ffffff;
 }

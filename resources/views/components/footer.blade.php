@@ -16,6 +16,7 @@
           Apartado postal 0843 - 03081.
         </p>
       </div>
+      <div class="col-md-8 col-12" id="twitter-timeline"></div>
     </div>
   </div>
 </footer>
