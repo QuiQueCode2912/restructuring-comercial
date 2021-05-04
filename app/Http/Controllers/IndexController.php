@@ -633,7 +633,7 @@ class IndexController extends Controller
         $file->storeAs('public/venues', $filename);
       }
 
-      return redirect()->to('/galeria/' . $venue->id);
+      return redirect()->to('/galeria/' . $venue->id, ['sessionid' => $sessionId]);
     }
 
     $images = VenueFile::where('venue_id', $venue->id)->get();
@@ -666,7 +666,7 @@ class IndexController extends Controller
     $venue = Venue::where('id', $venue)->first();
 
     if (is_null($venue)) {
-      return redirect()->to('/');
+      return abort(404);
     }
 
     $image = VenueFile::where('token', $token)->first();
@@ -675,6 +675,6 @@ class IndexController extends Controller
       $image->delete();
     }
 
-    return redirect()->to('/galeria/' . $venue->id);
+    return redirect()->to('/galeria/' . $venue->id, ['sessionid' => $sessionId]);
   }
 }
