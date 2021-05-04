@@ -337,7 +337,22 @@
         </div>
       </div>
     </div>
+    <?php if ($venue ?? '') : ?>
     <div class="row" style="margin-top:40px">
+      <div class="col-12 col-md-6">
+        <div class="form-group-preview">
+          Venue: <?php echo $venue ?>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="form-group-preview">
+          Montaje: <?php echo session()->get('00N3m00000QQOe8') ?>
+          <a href="/cotizacion/datos-evento#layout">Editar</a>
+        </div>
+      </div>
+    </div>
+    <?php endif ?>
+    <div class="row" style="<?php echo $venue ?? '' ? '' : 'margin-top:40px' ?>">
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
           <?php echo session()->get('00N3m00000QMsCK') == 'Si' ? 'SI' : 'NO' ?> necesito hospedaje
@@ -463,6 +478,8 @@
         <input type="hidden" value="<?php echo session()->get('phone') ?>" name="phone" id="phone" />
         <input type="hidden" value="<?php echo session()->get('company') ?>" name="company" id="company" />
         <input type="hidden" value="<?php echo session()->get('country_code') ?>" name="country_code" id="country_code" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000Pb23w') ?>" name="00N3m00000Pb23w" id="00N3m00000Pb23w" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000QQOe8') ?>" name="00N3m00000QQOe8" id="00N3m00000QQOe8" />
         <input type="hidden" value="<?php echo session()->get('00N3m00000QQOde') ?>" name="00N3m00000QQOde" id="00N3m00000QQOde" />
         <input type="hidden" value="<?php echo session()->get('00N3m00000QQOdA') ?>" name="00N3m00000QQOdA" id="00N3m00000QQOdA" />
         <input type="hidden" value="<?php echo session()->get('00N3m00000QMsCF') ?>" name="00N3m00000QMsCF" id="00N3m00000QMsCF" />

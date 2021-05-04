@@ -81,9 +81,37 @@ class IndexController extends Controller
       }
     }
 
+    $ids = [
+      'ids[]=910',
+      'ids[]=913',
+      'ids[]=926',
+      'ids[]=964',
+      'ids[]=1014',
+    ];
+
+    $clients = [];
+    $clients_response = [];
+    
+    try {
+      $clients_response = file_get_contents('https://ciudaddelsaber.org/wp-json/fcds/v1/clients?' . urldecode(implode('&', $ids)));
+    } catch(\Exception $e) {}
+
+    if ($clients_response) {
+      $clients_response = json_decode($clients_response);
+      foreach ($clients_response as $cr) {
+        $clients[] = [
+          'name' => $cr->commercial_name,
+          'logo' => $cr->logo,
+          'url' => 'https://ciudaddelsaber.org/directorio/' . $cr->nice_name . '/',
+        ];
+      }
+    }
+    shuffle($clients);
+
     return view('index.index', [
       'page_title' => 'Servicios',
       'venues' => $fixedVenues,
+      'clients' => json_encode($clients),
     ]);
   }
 
@@ -445,6 +473,7 @@ class IndexController extends Controller
             '00N3m00000QMsCK' => 'required|string',
             '00N3m00000QMsCP' => 'required|string',
             '00N3m00000QMzL7' => 'nullable|string',
+            '00N3m00000QQOe8' => 'nullable|string',
             'description' => 'required|string',
           ]);
 
@@ -492,9 +521,25 @@ class IndexController extends Controller
         break;
     }
 
+    if ($request->id) {
+      session(['00N3m00000Pb23w' => $request->id]);
+    }
+
+    $venue = null;
+    $designs = [];
+    $venueId = session()->get('00N3m00000Pb23w');
+    if ($venueId) {
+      $venue = Venue::find($venueId);
+      $designs = VenueDesign::where('venue_id', $venue->id)
+        ->orderBy('layout', 'asc')
+        ->get();
+    }
+    
     return view('index.request', [
       'page_title' => 'Servicios - Cotización - ' . $stepName,
       'step' => $step,
+      'venue' => $venue,
+      'designs' => $designs,
       'form_url' => $form_url
     ]);
   }

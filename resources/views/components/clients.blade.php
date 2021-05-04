@@ -1,3 +1,5 @@
+<?php $clients = json_decode(html_entity_decode($clients)) ?>
+<?php if ($clients) : ?>
 <div class="clients">
   <div class="container featured" style="margin-bottom:0">
     <div class="row">
@@ -6,24 +8,14 @@
       </div>
     </div>
     <div class="row" style="margin-top:10px">
+      <?php foreach ($clients as $client) : ?>
       <div class="col-6 col-md-2">
-        <img src="/assets/images/sensum-panama-logo-color-positive-280x200.png" />
-      </div>
-      <div class="col-6 col-md-2">
-        <img src="/assets/images/HSBC Logo (alta)-1.JPG" />
-      </div>
-      <div class="col-6 col-md-2">
-        <img src="/assets/images/images.jpg" />
-      </div>
-      <div class="col-6 col-md-2">
-        <img src="/assets/images/logo-panama-05.jpg" />
-      </div>
-      <div class="col-6 col-md-2">
-        <img src="/assets/images/logo-panama-04.jpg" />
-      </div>
-      <div class="col-6 col-md-2">
-        <img src="/assets/images/multimax-gris-final-800x-1.png" />
-      </div>
+        <a href="<?php echo $client->url ?>" target="_blank" title="<?php echo $client->name ?>">
+          <img src="<?php echo $client->logo ?>" />
+        </a>
+      </div>        
+      <?php endforeach ?>
     </div>
   </div>
 </div>
+<?php endif ?>

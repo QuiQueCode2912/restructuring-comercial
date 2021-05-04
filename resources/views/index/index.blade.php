@@ -75,7 +75,7 @@
   </div>
 </div>
 
-<x-clients />
+<x-clients clients="{{ $clients }}" />
 <x-contact />
 <x-footer />
 @endsection

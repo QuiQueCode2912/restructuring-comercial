@@ -67,7 +67,30 @@
         </div>
       </div>
     </div>
+
+    <?php if ($venue ?? '') : ?>
     <div class="row" style="margin-top:40px">
+      <div class="col-12 col-md-6">
+        <div class="form-group-preview" style="background:#ffffff; border:1px solid #000000; padding:12px 20px">
+          Venue: <?php echo $venue ?>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="form-group">
+          <select class="form-control" name="00N3m00000QQOe8" id="layout">
+            <option value="">Montaje del evento</option>  
+            <?php $designs = json_decode(html_entity_decode($designs)) ?>
+            <?php if ($designs) : ?>
+            <?php foreach ($designs as $design) : ?>
+            <option <?php echo session()->get('00N3m00000QQOe8') == $design->layout ? 'selected="selected"' : '' ?>><?php echo $design->layout ?></option>
+            <?php endforeach ?>
+            <?php endif ?>  
+          </select>
+        </div>
+      </div>
+    </div>
+    <?php endif ?>
+    <div class="row" style="<?php echo $venue ?? '' ? '' : 'margin-top:40px' ?>">
       <div class="col-12 col-md-6">
         <div class="form-group">
           <select class="form-control" name="00N3m00000QMsCK" id="lodging">
