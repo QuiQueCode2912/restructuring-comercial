@@ -32,7 +32,10 @@
         </small>
         <?php if ($venues) : ?>
         <?php foreach ($venues as $venue) : ?>
-          <?php $venue_image = $venue->files()->count() > 0 ? url('storage/venues/' . $venue->files()->first()->path) : '/assets/images/placeholder-image.jpg' ?>
+          <?php 
+          $venue_img = $venue->files()->count() > 0 ? substr($venue->files()->first()->path, 0, strpos($venue->files()->first()->path, '.')) . '_480.' . substr($venue->files()->first()->path, strpos($venue->files()->first()->path, '.') + 1) : null;
+          $venue_image = $venue_img ? url('storage/venues/' . $venue_img) : '/assets/images/placeholder-image_480.jpg'; 
+          ?>
           <x-venue-list image="{{ $venue_image }}" id="{{ $venue->id }}" name="{{ $venue->name }}" designs="{{ $venue->designs }}" type="{{ $venue->type }}" hourfee="{{ $venue->hour_fee }}" middayfee="{{ $venue->mid_day_fee }}" alldayfee="{{ $venue->all_day_fee }}" />
         <?php endforeach ?>
         <?php else : ?>

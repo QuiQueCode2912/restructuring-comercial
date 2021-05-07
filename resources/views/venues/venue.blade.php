@@ -9,14 +9,15 @@
 <div class="container" style="margin:0 auto; padding:0; position:relative">
   <?php if ($images) : ?>
   <?php foreach ($images as $image) : ?>
-    <a href="<?php echo $image ?>" data-lightbox="venue" title="<h1>Centro de convenciones</h1>Los salones tienen capacidad para hasta 24 personas, en formato aula de clases; ideales para reuniones corporativas o académicas.<br><br><a href='#'>Revisa la política COVID para este venue</a>" <?php if ($image == $images[0]) : ?>class="gallery"<?php endif ?>><?php if ($image == $images[0]) : ?>FOTOGALERÍA <span>+</span><?php endif ?></a>
+    <?php $image_path = substr($image, 0, strrpos($image, '.')) . '_1440.' . substr($image, strrpos($image, '.') + 1) ?>
+    <a href="<?php echo $image_path ?>" data-lightbox="venue" title="<h1>Centro de convenciones</h1>Los salones tienen capacidad para hasta 24 personas, en formato aula de clases; ideales para reuniones corporativas o académicas.<br><br><a href='#'>Revisa la política COVID para este venue</a>" <?php if ($image == $images[0]) : ?>class="gallery"<?php endif ?>><?php if ($image == $images[0]) : ?>FOTOGALERÍA <span>+</span><?php endif ?></a>
   <?php endforeach ?>
   <?php endif ?>
 </div>
 <div id="home-carousel" class="carousel slide venue-main-image" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="<?php echo $images[0] ?>" class="d-block" alt="...">
+      <img src="<?php echo $images[0] ? substr($images[0], 0, strrpos($images[0], '.')) . '_1440.' . substr($images[0], strrpos($images[0], '.') + 1) : '/assets/images/placeholder-image_1440.jpg' ?>" class="d-block" alt="...">
     </div>
   </div>
 </div>

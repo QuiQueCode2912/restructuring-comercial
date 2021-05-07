@@ -7,6 +7,7 @@ use Illuminate\Http\Request,
   App\Models\VenueFile,
   App\Models\VenueDesign,
   Str,
+  Image,
   Illuminate\Support\Facades\Storage,
   Illuminate\Support\Facades\DB;
 
@@ -616,12 +617,14 @@ class IndexController extends Controller
       $file = $request->file('file');
       if ($file) {
         $filepath = hash('sha256', (Str::random(60) . microtime()));
-        $filename = $filepath . '.' . $file->getClientOriginalExtension();
+        $file_extension = $file->getClientOriginalExtension();
+        $filename = $filepath . '.' . $file_extension;
+        $original_name = $file->getClientOriginalName();
         
         $venue_file = new VenueFile([
           'venue_id' => $venue->id,
           'token' => $filepath,
-          'name' => $file->getClientOriginalName(),
+          'name' => $original_name,
           'path' => $filename,
           'size' => $file->getSize(),
           'type' => 'image',
@@ -630,10 +633,14 @@ class IndexController extends Controller
         ]);
         $venue_file->save();
 
-        $file->storeAs('public/venues', $filename);
+        $this->resizeImage($file, $filepath . '_1440.' . $file_extension, 1440);
+        $this->resizeImage($file, $filepath . '_1024.' . $file_extension, 1024);
+        $this->resizeImage($file, $filepath . '_720.' . $file_extension, 720);
+        $this->resizeImage($file, $filepath . '_480.' . $file_extension, 480);
+        $this->resizeImage($file, $filepath . '_240.' . $file_extension, 480);
       }
 
-      return redirect()->to('/galeria/' . $venue->id, ['sessionid' => $sessionId]);
+      return redirect()->to('/galeria/' . $venue->id . '?sessionid=' . urlencode($sessionId));
     }
 
     $images = VenueFile::where('venue_id', $venue->id)->get();
@@ -641,6 +648,7 @@ class IndexController extends Controller
     return view('venues.gallery', [
       'images' => $images,
       'venue' => $venue,
+      'sessionid' => urlencode($sessionId)
     ]);
   }
 
@@ -672,9 +680,27 @@ class IndexController extends Controller
     $image = VenueFile::where('token', $token)->first();
     if ($image) {
       Storage::delete('public/venues/' . $image->path);
+      Storage::delete('public/venues/' . substr($image->path, 0, strpos($image->path, '.')) . '_1440.' . substr($image->path, strpos($image->path, '.') + 1));
+      Storage::delete('public/venues/' . substr($image->path, 0, strpos($image->path, '.')) . '_1024.' . substr($image->path, strpos($image->path, '.') + 1));
+      Storage::delete('public/venues/' . substr($image->path, 0, strpos($image->path, '.')) . '_720.' . substr($image->path, strpos($image->path, '.') + 1));
+      Storage::delete('public/venues/' . substr($image->path, 0, strpos($image->path, '.')) . '_480.' . substr($image->path, strpos($image->path, '.') + 1));
+      Storage::delete('public/venues/' . substr($image->path, 0, strpos($image->path, '.')) . '_240.' . substr($image->path, strpos($image->path, '.') + 1));
       $image->delete();
     }
 
-    return redirect()->to('/galeria/' . $venue->id, ['sessionid' => $sessionId]);
+    return redirect()->to('/galeria/' . $venue->id . '?sessionid=' . urlencode($sessionId));
+  }
+
+  private function resizeImage($file, $fileNameToStore, $size) {
+    $resize = Image::make($file)->resize($size, null, function ($constraint) {
+      $constraint->aspectRatio();
+    })->encode('jpg');
+
+    $save = Storage::put("public/venues/{$fileNameToStore}", $resize->__toString());
+
+    if ($save) {
+      return true;
+    }
+    return false;
   }
 }

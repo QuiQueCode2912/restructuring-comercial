@@ -23,7 +23,7 @@
       <?php foreach ($venues as $venue) : ?>
       <div class="col-12 col-md-4">
       <div class="venue">
-        <a href="<?php echo $venue['url'] ?>"><img src="<?php echo $venue['image'] ?>"></a>
+        <a href="<?php echo $venue['url'] ?>"><img src="<?php echo substr($venue['image'], 0, strrpos($venue['image'], '.')) . '_480.' . substr($venue['image'], strrpos($venue['image'], '.') + 1) ?>"></a>
         <a href="<?php echo $venue['url'] ?>" class="venue-name"><?php echo  $venue['name'] ?></a>
         <?php
         $max_pax = 0; 
