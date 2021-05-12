@@ -15,13 +15,12 @@
         <div class="row">
           <div class="col-12 col-md-7">
             <div class="lined-box">
-              <strong>Check-in: </strong><?php echo $from ?? '' ?>
-              <strong>Check-out: </strong><?php echo $to ?? '' ?>
+              <strong>Tipo de actividad: </strong><?php echo $type ?? '' ?>
             </div>
           </div>
           <div class="col-12 col-md-5">
             <div class="lined-box">
-              <strong>Personas agregadas:</strong> <?php echo $quantity ?? '' ?>
+              <strong>Cantidad de personas:</strong> <?php echo $quantity ?? '' ?>
             </div>
           </div>
         </div>

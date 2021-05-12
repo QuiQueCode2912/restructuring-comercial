@@ -1140,6 +1140,9 @@ form select.invalid {
 .searcher.aside form .search ul li a[href="#search"] {
   left: 0;
 }
+.searcher.aside form .search ul li a[href="#how"] span {
+  top: 50px;
+}
 .searcher.aside form .search ul li ul {
   z-index: 10;
   left: 0;

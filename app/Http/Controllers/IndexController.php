@@ -633,6 +633,7 @@ class IndexController extends Controller
         ]);
         $venue_file->save();
 
+        $this->resizeImage($file, $filepath . '_2048.' . $file_extension, 2048);
         $this->resizeImage($file, $filepath . '_1440.' . $file_extension, 1440);
         $this->resizeImage($file, $filepath . '_1024.' . $file_extension, 1024);
         $this->resizeImage($file, $filepath . '_720.' . $file_extension, 720);
@@ -680,6 +681,7 @@ class IndexController extends Controller
     $image = VenueFile::where('token', $token)->first();
     if ($image) {
       Storage::delete('public/venues/' . $image->path);
+      Storage::delete('public/venues/' . substr($image->path, 0, strpos($image->path, '.')) . '_2048.' . substr($image->path, strpos($image->path, '.') + 1));
       Storage::delete('public/venues/' . substr($image->path, 0, strpos($image->path, '.')) . '_1440.' . substr($image->path, strpos($image->path, '.') + 1));
       Storage::delete('public/venues/' . substr($image->path, 0, strpos($image->path, '.')) . '_1024.' . substr($image->path, strpos($image->path, '.') + 1));
       Storage::delete('public/venues/' . substr($image->path, 0, strpos($image->path, '.')) . '_720.' . substr($image->path, strpos($image->path, '.') + 1));
