@@ -1344,6 +1344,7 @@ form select.invalid {
   padding: 0 80px;
   background: #ffffff;
   margin-top: -80px;
+  z-index: 4;
 }
 .venue-detail h6 {
   position: absolute;
