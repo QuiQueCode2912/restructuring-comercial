@@ -16,9 +16,6 @@
     <li>No registra</li>
     <?php endif ?>
   </ul>
-  <br />
-  <i class="fe fe-arrow-right" style="color:#0088ff"></i>
-  <a href="https://ciudaddelsaber.hauzd.com" style="font-weight:700">Explora nuestros venues en 3D</a>
   <br /><br />
   <x-security-measures />
   <br /><br />

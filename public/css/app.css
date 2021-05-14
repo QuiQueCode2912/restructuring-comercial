@@ -1171,7 +1171,6 @@ form select.invalid {
   margin: 20px 0 0 !important;
   width: 100%;
   max-width: 285px;
-  border-bottom: 1px solid #cccccc;
 }
 .security-measures li {
   width: 33%;
@@ -1180,7 +1179,7 @@ form select.invalid {
   padding-bottom: 10px !important;
   border: none !important;
   float: left;
-  font-size: 10px;
+  font-size: 10px !important;
   font-weight: bold;
 }
 .security-measures li:last-child {
@@ -1428,6 +1427,7 @@ form select.invalid {
   list-style: none;
   padding: 5px 0;
   border-bottom: 1px solid #cccccc; 
+  font-size: 12px;
 }
 .venue-characteristics ul li.title {
   font-weight: 700;
