@@ -61,7 +61,7 @@
             <dd>Disponible</dd>
           </dl>
         </div>
-        <p><a href="#">Revisa la política Covid para este venue</a></p>
+        <p><a href="#security-policies" data-bs-toggle="modal" data-bs-target="#security-policies">Revisa la política Covid para este venue</a></p>
         <a href="<?php echo $venue['url'] ?>" class="btn btn-primary btn-sm">Cotizar</a>
       </div>
       </div>
@@ -78,4 +78,5 @@
 <x-clients clients="{{ $clients }}" />
 <x-contact />
 <x-footer />
+<x-security-policies />
 @endsection

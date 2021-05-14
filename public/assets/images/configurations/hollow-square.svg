@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>hollow-square</title>
+    <g id="hollow-square" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle-Copy-26" stroke="#979797" fill="#FFFFFF" transform="translate(35.500000, 40.000000) rotate(-270.000000) translate(-35.500000, -40.000000) " x="31.5" y="37.5" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-32" stroke="#979797" fill="#FFFFFF" transform="translate(45.500000, 33.000000) rotate(-180.000000) translate(-45.500000, -33.000000) " x="41.5" y="30.5" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-34" stroke="#979797" fill="#FFFFFF" transform="translate(45.500000, 67.000000) rotate(-180.000000) translate(-45.500000, -67.000000) " x="41.5" y="64.5" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-33" stroke="#979797" fill="#FFFFFF" transform="translate(55.500000, 33.000000) rotate(-180.000000) translate(-55.500000, -33.000000) " x="51.5" y="30.5" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-35" stroke="#979797" fill="#FFFFFF" transform="translate(55.500000, 67.000000) rotate(-180.000000) translate(-55.500000, -67.000000) " x="51.5" y="64.5" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-29" stroke="#979797" fill="#FFFFFF" transform="translate(64.500000, 40.000000) rotate(-270.000000) translate(-64.500000, -40.000000) " x="60.5" y="37.5" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-27" stroke="#979797" fill="#FFFFFF" transform="translate(35.500000, 50.000000) rotate(-270.000000) translate(-35.500000, -50.000000) " x="31.5" y="47.5" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-30" stroke="#979797" fill="#FFFFFF" transform="translate(64.500000, 50.000000) rotate(-270.000000) translate(-64.500000, -50.000000) " x="60.5" y="47.5" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-28" stroke="#979797" fill="#FFFFFF" transform="translate(35.500000, 60.000000) rotate(-270.000000) translate(-35.500000, -60.000000) " x="31.5" y="57.5" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-31" stroke="#979797" fill="#FFFFFF" transform="translate(64.500000, 60.000000) rotate(-270.000000) translate(-64.500000, -60.000000) " x="60.5" y="57.5" width="8" height="5" rx="1"></rect>
+        <path d="M62,34.5 L62.5,65 L38,65.5 L37.5,35 L62,34.5 Z M55,40.5 L45,40.5 L44.8528231,40.5071021 C44.5138301,40.5400928 44.2074632,40.6869481 43.9691779,40.9252334 C43.7186011,41.1758102 43.540396,41.5324427 43.5,41.9756618 L43.5,41.9756618 L43.5,58 L43.5071021,58.1471769 C43.5400928,58.4861699 43.6869481,58.7925368 43.9252334,59.0308221 C44.1758102,59.2813989 44.5324427,59.459604 44.9756618,59.5 L44.9756618,59.5 L55,59.5 L55.1471769,59.4928979 C55.4861699,59.4599072 55.7925368,59.3130519 56.0308221,59.0747666 C56.2813989,58.8241898 56.459604,58.4675573 56.5,58.0243382 L56.5,58.0243382 L56.5,42 L56.4922557,41.8466337 C56.4564087,41.4936545 56.298176,41.1768556 56.0606602,40.9393398 C55.7892136,40.6678932 55.4142136,40.5 55,40.5 L55,40.5 Z" id="Combined-Shape" stroke="#979797" fill="#FFFFFF"></path>
+    </g>
+</svg>

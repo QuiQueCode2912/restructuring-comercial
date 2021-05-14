@@ -1148,7 +1148,30 @@ form select.invalid {
   color: #0088ff;
   font-size: 25px;
 }
-
+.security-measures {
+  overflow: hidden;
+  margin: 20px 0 0 !important;
+  width: 100%;
+  max-width: 285px;
+  border-bottom: 1px solid #cccccc;
+}
+.security-measures li {
+  width: 33%;
+  text-align: left;
+  padding-right: 10px !important;
+  padding-bottom: 10px !important;
+  border: none !important;
+  float: left;
+  font-size: 10px;
+  font-weight: bold;
+}
+.security-measures li:last-child {
+  margin-bottom: 20px;
+}
+.security-measures li img {
+  margin-bottom: 6px;
+  display: block;
+}
 .venues-menu {
   margin: 0;
   padding: 15px 0;
@@ -1283,9 +1306,8 @@ form select.invalid {
   padding: 0;
   list-style: none;
   width: auto;
-  position: absolute;
-  left: 1.5%;
-  right: 10%;
+  margin-left: 1.5%;
+  margin-right: 10%;
 }
 .venue-list .configurations ul li {
   list-style: none;
@@ -1293,11 +1315,22 @@ form select.invalid {
   display: block;
   float: left;
   text-align: center;
-  padding-top: 100px;
+  padding-top: 120px;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-color: transparent;
+  position: relative;
+}
+.venue-list .configurations ul li small {
+  position: absolute;
+  display: block;
+  width: 100%;
+  top: 85px;
+  line-height: .8rem;
+  text-align: center;
 }
 .venue-list .configurations ul li.inactive {
-  background: rgba(255, 255, 255, .65);
-  color: transparent;
+  opacity: .25;
 }
 
 .venue-detail {
@@ -1473,6 +1506,45 @@ form select.invalid {
 .venue-detail .near-by li strong {
   float: right;
   font-weight: 700;
+}
+.modal#security-policies .modal-dialog .modal-content {
+  padding: 15px;
+  border-radius: 14px;
+}
+.modal#security-policies .modal-dialog .modal-content .modal-header {
+  border-bottom: none;
+}
+.modal#security-policies .modal-dialog .modal-content .modal-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+.modal#security-policies .modal-dialog .modal-content .modal-body {
+  font-size: 13px;
+  padding-top: 0;
+}
+.modal#security-policies .modal-dialog .modal-content .modal-body ul,
+.modal#security-policies .modal-dialog .modal-content .modal-body ul li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.modal#security-policies .modal-dialog .modal-content .modal-body ul {
+  margin-bottom: 40px;
+}
+.modal#security-policies .modal-dialog .modal-content .modal-body ul li {
+  padding-left: 15px;
+  position: relative;
+}
+.modal#security-policies .modal-dialog .modal-content .modal-body strong {
+  display: block;
+  padding: 6px 0;
+} 
+.modal#security-policies .modal-dialog .modal-content .modal-body ul li::before {
+  content: "✓";
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #198754;
 }
 
 .fixed-shortcuts {

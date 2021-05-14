@@ -135,4 +135,5 @@
 
 <x-contact />
 <x-footer />
+<x-security-policies />
 @endsection

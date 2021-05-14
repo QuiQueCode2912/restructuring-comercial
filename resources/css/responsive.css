@@ -190,14 +190,14 @@
   }
   .venue-list .configurations {
     overflow: auto;
-    height: 130px;
+    height: 140px;
   }
   .venue-list .configurations ul {
     width: 615px;
     margin-left: 6px;
   }
   .venue-list .configurations ul li {
-    padding-top: 90px;
+    padding-top: 115px;
   }
   .venue-list .configurations ul + img {
     width: 600px;

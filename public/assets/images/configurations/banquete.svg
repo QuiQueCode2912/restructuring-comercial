@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>banquete</title>
+    <g id="banquete" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle-Copy-23" stroke="#979797" fill="#FFFFFF" transform="translate(50.500000, 61.000000) rotate(-180.000000) translate(-50.500000, -61.000000) " x="46.5" y="58.5" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-3" stroke="#979797" fill="#FFFFFF" x="46.5" y="35.5" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-24" stroke="#979797" fill="#FFFFFF" transform="translate(62.500000, 50.000000) rotate(-270.000000) translate(-62.500000, -50.000000) " x="58.5" y="47.5" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-25" stroke="#979797" fill="#FFFFFF" transform="translate(38.500000, 50.000000) rotate(-270.000000) translate(-38.500000, -50.000000) " x="34.5" y="47.5" width="8" height="5" rx="1"></rect>
+        <circle id="Oval" stroke="#979797" fill="#FFFFFF" cx="50.5" cy="49.5" r="10"></circle>
+    </g>
+</svg>

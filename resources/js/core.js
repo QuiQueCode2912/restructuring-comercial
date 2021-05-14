@@ -266,6 +266,29 @@ $(document).ready(function() {
       }
     }
   }, '.request-step #work-in-campus');
+
+  $(document).on({
+    click: function(e) {
+      e.preventDefault();
+      var security_policies_modal = new bootstrap.Modal(document.querySelector('.modal#security-policies'), {
+        keyboard: false
+      });
+      security_policies_modal.show();
+    }
+  }, 'a[href="#security-policies"]');
+
+  $(document).on({
+    click: function(e) {
+      e.preventDefault();
+      $('.modal#security-policies').removeClass('show');
+      $('.modal-backdrop').removeClass('show');
+      setTimeout(function() {
+        $('.modal-backdrop').remove();
+        $('body').removeClass('modal-open');
+        $('.modal#security-policies').css('display', 'none');
+      }, 500);
+    }
+  }, '.modal .modal-dialog .modal-content .modal-header .btn-close');
 });
 
 var validateFormFields = function(form, field) {

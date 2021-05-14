@@ -20,7 +20,7 @@
   <i class="fe fe-arrow-right" style="color:#0088ff"></i>
   <a href="https://ciudaddelsaber.hauzd.com" style="font-weight:700">Explora nuestros venues en 3D</a>
   <br /><br />
-  <a href="#" style="color:#000000">Revisa la política COVID-19<br />para este venue</a>
+  <x-security-measures />
   <br /><br />
   <p class="small" style="max-width:270px">
     <img src="/assets/images/halt-hand.png" width="30" style="margin-bottom:5px" />

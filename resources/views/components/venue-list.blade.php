@@ -34,7 +34,7 @@ if ($designs) {
           <dd>$<?php echo $alldayfee ?? 0 ?> <span style="color:#0088ff">/*</span></dd>
         </dl>
       </div>
-      <p><a href="#">Revisa la política Covid para este venue</a></p>
+      <p><a href="#security-policies" data-bs-toggle="modal" data-bs-target="#security-policies">Revisa la política Covid para este venue</a></p>
     </div>
   </div>
   <div class="row" style="margin-top:20px; margin-bottom:0 !important">
@@ -45,16 +45,15 @@ if ($designs) {
   <div class="row configurations">
     <div class="col-12">
       <ul>
-        <li <?php echo !isset($configuration['Auditorio']) ? 'class="inactive"' : '' ?>><?php echo $configuration['Auditorio'] ?? 0 ?></li>
-        <li <?php echo !isset($configuration['Escuela']) ? 'class="inactive"' : '' ?>><?php echo $configuration['Escuela'] ?? 0 ?></li>
-        <li <?php echo !isset($configuration['Mesa en U']) ? 'class="inactive"' : '' ?>><?php echo $configuration['Mesa en U'] ?? 0 ?></li>
-        <li <?php echo !isset($configuration['Mesa redonda']) ? 'class="inactive"' : '' ?>><?php echo $configuration['Mesa redonda'] ?? 0 ?></li>
-        <li <?php echo !isset($configuration['Mesa de reunión']) ? 'class="inactive"' : '' ?>><?php echo $configuration['Mesa de reunión'] ?? 0 ?></li>
-        <li <?php echo !isset($configuration['Cóctel']) ? 'class="inactive"' : '' ?>><?php echo $configuration['Cóctel'] ?? 0 ?></li>
-        <li <?php echo !isset($configuration['Cóctel']) ? 'class="inactive"' : '' ?>><?php echo $configuration['Cóctel'] ?? 0 ?></li>
-        <li <?php echo !isset($configuration['Mesa de reunión']) ? 'class="inactive"' : '' ?>><?php echo $configuration['Mesa de reunión'] ?? 0 ?></li>
+        <li style="background-image:url(/assets/images/configurations/teatro.svg)" <?php echo !isset($configuration['Auditorio']) ? 'class="inactive"' : '' ?>><?php echo $configuration['Auditorio'] ?? 0 ?><small>Auditorio</small></li>
+        <li style="background-image:url(/assets/images/configurations/salon-clase.svg)" <?php echo !isset($configuration['Escuela']) ? 'class="inactive"' : '' ?>><?php echo $configuration['Escuela'] ?? 0 ?><small>Salón de clase</small></li>
+        <li style="background-image:url(/assets/images/configurations/mesa-u.svg)" <?php echo !isset($configuration['Mesa en U']) ? 'class="inactive"' : '' ?>><?php echo $configuration['Mesa en U'] ?? 0 ?><small>Mesa en U</small></li>
+        <li style="background-image:url(/assets/images/configurations/mesa-redonda.svg)" <?php echo !isset($configuration['Mesa redonda']) ? 'class="inactive"' : '' ?>><?php echo $configuration['Mesa redonda'] ?? 0 ?><small>Mesa redonda</small></li>
+        <li style="background-image:url(/assets/images/configurations/sala-reuniones.svg)" <?php echo !isset($configuration['Mesa de reunión']) ? 'class="inactive"' : '' ?>><?php echo $configuration['Mesa de reunión'] ?? 0 ?><small>Sala de reunión</small></li>
+        <li style="background-image:url(/assets/images/configurations/banquete.svg)" <?php echo !isset($configuration['Cóctel']) ? 'class="inactive"' : '' ?>><?php echo $configuration['Cóctel'] ?? 0 ?><small>Banquete</small></li>
+        <li style="background-image:url(/assets/images/configurations/cocktail.svg)" <?php echo !isset($configuration['Cóctel']) ? 'class="inactive"' : '' ?>><?php echo $configuration['Cóctel'] ?? 0 ?><small>Cocktail</small></li>
+        <li style="background-image:url(/assets/images/configurations/hollow-square.svg)" <?php echo !isset($configuration['Mesa de reunión']) ? 'class="inactive"' : '' ?>><?php echo $configuration['Mesa de reunión'] ?? 0 ?><small>Hollow square</small></li>
       </ul>
-      <img src="/assets/images/configurations.png" width="90%" />
     </div>
   </div>
 </div>
