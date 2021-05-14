@@ -364,7 +364,7 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
 .carousel#home-carousel .carousel-inner .carousel-item img {
   position: absolute;
   z-index: 1;
-  bottom: 0;
+  bottom: -20px;
 }
 .carousel#home-carousel .carousel-inner .carousel-item .container {
   z-index: 2;
