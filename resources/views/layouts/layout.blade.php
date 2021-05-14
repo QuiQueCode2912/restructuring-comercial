@@ -7,6 +7,11 @@
 
     <title>{{ $page_title ?? 'Servicios' }}</title>
 
+    <link rel="icon" href="https://ciudaddelsaber.org/wp-content/uploads/2020/01/cropped-faviconpng-32x32.png" sizes="32x32">
+    <link rel="icon" href="https://ciudaddelsaber.org/wp-content/uploads/2020/01/cropped-faviconpng-192x192.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="https://ciudaddelsaber.org/wp-content/uploads/2020/01/cropped-faviconpng-180x180.png">
+    <meta name="msapplication-TileImage" content="https://ciudaddelsaber.org/wp-content/uploads/2020/01/cropped-faviconpng-270x270.png">
+    
     <link rel="stylesheet" href="/assets/feather/feather.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" rel="stylesheet">

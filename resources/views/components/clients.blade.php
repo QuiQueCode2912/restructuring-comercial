@@ -7,7 +7,7 @@
         <h4>Empresas que confían en la Ciudad del Saber</h4>
       </div>
     </div>
-    <div class="row" style="margin-top:10px">
+    <div class="row justify-content-center" style="margin-top:10px">
       <?php foreach ($clients as $client) : ?>
       <div class="col-6 col-md-2">
         <a href="<?php echo $client->url ?>" target="_blank" title="<?php echo $client->name ?>">
