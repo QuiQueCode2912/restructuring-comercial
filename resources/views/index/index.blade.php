@@ -62,7 +62,7 @@
           </dl>
         </div>
         <p><a href="#security-policies" data-bs-toggle="modal" data-bs-target="#security-policies">Revisa la política Covid para este venue</a></p>
-        <a href="<?php echo $venue['url'] ?>" class="btn btn-primary btn-sm">Cotizar</a>
+        <a href="<?php echo $venue['url'] ?>" class="btn btn-primary btn-sm">Ver oferta</a>
       </div>
       </div>
       <?php endforeach ?>

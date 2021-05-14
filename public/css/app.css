@@ -361,6 +361,14 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
 .carousel#home-carousel .carousel-inner .carousel-item {
   height: 600px;
 }
+.carousel#home-carousel .carousel-inner .carousel-item img {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+}
+.carousel#home-carousel .carousel-inner .carousel-item .container {
+  z-index: 2;
+}
 .gallery {
   position: absolute;
   background: #ffffff;
