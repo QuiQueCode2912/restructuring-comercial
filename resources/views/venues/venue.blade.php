@@ -12,12 +12,16 @@
     <?php $image_path = substr($image, 0, strrpos($image, '.')) . '_2048.' . substr($image, strrpos($image, '.') + 1) ?>
     <a href="<?php echo $image_path ?>" data-lightbox="venue" title="<h1>Centro de convenciones</h1>Los salones tienen capacidad para hasta 24 personas, en formato aula de clases; ideales para reuniones corporativas o académicas.<br><br><a href='#'>Revisa la política COVID para este venue</a>" <?php if ($image == $images[0]) : ?>class="gallery"<?php endif ?>><?php if ($image == $images[0]) : ?>FOTOGALERÍA <span>+</span><?php endif ?></a>
   <?php endforeach ?>
-  <?php endif ?>
+    @if($venueName == 'Ateneo')
+    <a href="https://izi.travel/es/91de-ateneo/es" target="_blank" class="gallery" style="transform:translate(-100px, 36px); background:#000000; color:#ffffff">AUDIOGUIA</a>
+    @endif
+    <?php endif ?>
 </div>
 <div id="home-carousel" class="carousel slide venue-main-image" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="<?php echo $images[0] ? substr($images[0], 0, strrpos($images[0], '.')) . '_2048.' . substr($images[0], strrpos($images[0], '.') + 1) : '/assets/images/placeholder-image.jpg' ?>" class="d-block" alt="...">
+      <?php $rand = rand(0, count($images) - 1) ?>
+      <img src="<?php echo $images[$rand] ? substr($images[$rand], 0, strrpos($images[$rand], '.')) . '_2048.' . substr($images[$rand], strrpos($images[$rand], '.') + 1) : '/assets/images/placeholder-image.jpg' ?>" class="d-block" alt="...">
     </div>
   </div>
 </div>

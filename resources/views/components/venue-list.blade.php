@@ -52,7 +52,7 @@ if ($designs) {
         <li style="background-image:url(/assets/images/configurations/sala-reuniones.svg)" <?php echo !isset($configuration['Mesa de reunión']) ? 'class="inactive"' : '' ?>><?php echo $configuration['Mesa de reunión'] ?? 0 ?><small>Sala de reunión</small></li>
         <li style="background-image:url(/assets/images/configurations/banquete.svg)" <?php echo !isset($configuration['Cóctel']) ? 'class="inactive"' : '' ?>><?php echo $configuration['Cóctel'] ?? 0 ?><small>Banquete</small></li>
         <li style="background-image:url(/assets/images/configurations/cocktail.svg)" <?php echo !isset($configuration['Cóctel']) ? 'class="inactive"' : '' ?>><?php echo $configuration['Cóctel'] ?? 0 ?><small>Cocktail</small></li>
-        <li style="background-image:url(/assets/images/configurations/hollow-square.svg)" <?php echo !isset($configuration['Mesa de reunión']) ? 'class="inactive"' : '' ?>><?php echo $configuration['Mesa de reunión'] ?? 0 ?><small>Hollow square</small></li>
+        <li style="background-image:url(/assets/images/configurations/hollow-square.svg)" <?php echo !isset($configuration['Mesa de reunión']) ? 'class="inactive"' : '' ?>><?php echo $configuration['Mesa de reunión'] ?? 0 ?><small>Otro</small></li>
       </ul>
     </div>
   </div>
