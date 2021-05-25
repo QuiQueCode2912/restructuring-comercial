@@ -16,7 +16,8 @@ if ($designs) {
     </div>
     <div class="col-12 col-md-6">
       <a href="#" class="venue-name">{{ $name }}</a>
-      @if($type ?? 'venues' == 'residencias')
+      
+      <?php if (($type ?? 'venue') == 'Vivienda') : ?>
       <div class="characteristics">
         <dl>
           <dt>Habitaciones</dt>
@@ -44,7 +45,7 @@ if ($designs) {
           </dd>
         </dl>
       </div>
-      @else
+      <?php else : ?>
       <div class="characteristics">
         <dl>
           <dt>Configuración</dt>
@@ -81,7 +82,7 @@ if ($designs) {
           </dd>
         </dl>
       </div>
-      @endif
+      <?php endif ?>
       <p>
         @if($shownotincluded)<small style="color:#0088ff; display:inline-block; margin-bottom:5px">/* No incluyen catering, personal o equipamiento extra /</small>@endif
         @if($showpolicies)<a href="#security-policies" data-bs-toggle="modal" data-bs-target="#security-policies">Revisa la política Covid para este venue</a>@endif
