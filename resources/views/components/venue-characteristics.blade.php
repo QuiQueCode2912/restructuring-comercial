@@ -16,7 +16,7 @@
     <li>No registra</li>
     <?php endif ?>
   </ul>
-  @if($showpolicies)
+  @if($showpolicies ?? true)
   <br /><br />
   <x-security-measures />
   <br /><br />

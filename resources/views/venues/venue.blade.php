@@ -4,7 +4,7 @@
 <x-covid />
 <x-header menu="true" />
 <x-venues-menu venue="{{ $venue }}" />
-<x-venue-characteristics maxpax="{{ $max_pax }}" facilities="{{ $facilities }}" venues="{{ count($venues) }}" showpolicies="{{ $show_policies }}" />
+<x-venue-characteristics maxpax="{{ $max_pax }}" facilities="{{ $facilities }}" venues="{{ count($venues) }}" showpolicies="{{ $show_policies ?? true }}" />
 
 <div class="container" style="margin:0 auto; padding:0; position:relative">
   <?php if ($images) : ?>
@@ -62,7 +62,7 @@
               <a name="description"></a>
               
               <h3 style="color:#0088ff; margin:30px 0 5px">Venue: <?php echo $parent ? $parent->name : '' ?></h3>
-              @if($show_not_included)
+              @if($show_not_included ?? true)
               <small>
                 <span style="color:#0088ff">/*</span>
                 Los precios no incluyen catering ni impuestos locales
@@ -74,7 +74,7 @@
                 $venue_img = $venue->files()->count() > 0 ? substr($venue->files()->first()->path, 0, strpos($venue->files()->first()->path, '.')) . '_480.' . substr($venue->files()->first()->path, strpos($venue->files()->first()->path, '.') + 1) : null;
                 $venue_image = $venue_img ? url('storage/venues/' . $venue_img) : '/assets/images/placeholder-image_480.jpg'; 
                 ?>
-                <x-venue-list type="{{ $type ?? 'venues' }}" showpolicies="{{ $show_policies }}" shownotincluded="{{ $show_not_included }}" image="{{ $venue_image }}" id="{{ $venue->id }}" name="{{ $venue->name }}" designs="{{ $venue->designs }}" type="{{ $venue->type }}" hourfee="{{ $venue->hour_fee }}" middayfee="{{ $venue->mid_day_fee }}" alldayfee="{{ $venue->all_day_fee }}" seasonalhourfee="{{ $venue->seasonal_hour_fee }}" seasonalmiddayfee="{{ $venue->seasonal_mid_day_fee }}" seasonalalldayfee="{{ $venue->seasonal_all_day_fee }}" />
+                <x-venue-list type="{{ $type ?? 'venues' }}" showpolicies="{{ $show_policies ?? true }}" shownotincluded="{{ $show_not_included ?? true }}" image="{{ $venue_image }}" id="{{ $venue->id }}" name="{{ $venue->name }}" designs="{{ $venue->designs }}" type="{{ $venue->type }}" hourfee="{{ $venue->hour_fee }}" middayfee="{{ $venue->mid_day_fee }}" alldayfee="{{ $venue->all_day_fee }}" seasonalhourfee="{{ $venue->seasonal_hour_fee }}" seasonalmiddayfee="{{ $venue->seasonal_mid_day_fee }}" seasonalalldayfee="{{ $venue->seasonal_all_day_fee }}" />
               <?php endforeach ?>
               <?php endif ?>
             </div>
