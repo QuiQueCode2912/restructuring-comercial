@@ -6,7 +6,7 @@
 
 <div class="request">
   <div class="container">
-    <form method="post" action="<?php echo $form_url ?>">
+    <form method="post" action="<?php echo $form_url ?>" enctype="multipart/form-data">
       @csrf
       <div class="row justify-content-md-center">
         <div class="col-12 col-md-7">

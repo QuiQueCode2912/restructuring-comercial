@@ -376,6 +376,27 @@ $(document).ready(function () {
       }, 500);
     }
   }, '.modal .modal-dialog .modal-content .modal-header .btn-close');
+  $(document).on({
+    change: function change() {
+      $('.company-fields #company').val('');
+      $('.company-fields #identification').val('');
+
+      if ($(this).prop('checked')) {
+        $('.company-fields').css('display', 'block');
+      } else {
+        $('.company-fields').css('display', 'none');
+      }
+    }
+  }, '#show-company-fields');
+  $(document).on({
+    change: function change() {
+      if ($(this).get(0).files.length > 0) {
+        $(this).parent().find('label').text($(this).get(0).files.length + ($(this).get(0).files.length != 1 ? ' archivos seleccionados' : ' archivo seleccionado'));
+      } else {
+        $(this).parent().find('label').text('Selecciona uno o varios archivos');
+      }
+    }
+  }, '.request input[type=file]');
 });
 
 var validateFormFields = function validateFormFields(form, field) {
@@ -486,21 +507,23 @@ var validateFormFields = function validateFormFields(form, field) {
 };
 
 setTimeout(function () {
-  twttr.widgets.createTimeline({
-    sourceType: "url",
-    url: "https://twitter.com/CiudaddelSaber"
-  }, document.getElementById("twitter-timeline"));
-  twttr.events.bind('rendered', function (event) {
-    var twitterContent = $('footer #twitter-timeline iframe').contents().find("body").html();
-    $('footer #twitter-timeline').html('<div class="twitter-embed-header">ÚLTIMOS TWEETS</div>' + twitterContent);
-    $.each($('footer #twitter-timeline .timeline-Widget .timeline-Body .timeline-Viewport .timeline-TweetList .timeline-TweetList-tweet'), function (index, element) {
-      if (index > 2) {
-        $(element).addClass('twitter-remove-element');
-      }
+  if (document.getElementById("twitter-timeline") > 0) {
+    twttr.widgets.createTimeline({
+      sourceType: "url",
+      url: "https://twitter.com/CiudaddelSaber"
+    }, document.getElementById("twitter-timeline"));
+    twttr.events.bind('rendered', function (event) {
+      var twitterContent = $('footer #twitter-timeline iframe').contents().find("body").html();
+      $('footer #twitter-timeline').html('<div class="twitter-embed-header">ÚLTIMOS TWEETS</div>' + twitterContent);
+      $.each($('footer #twitter-timeline .timeline-Widget .timeline-Body .timeline-Viewport .timeline-TweetList .timeline-TweetList-tweet'), function (index, element) {
+        if (index > 2) {
+          $(element).addClass('twitter-remove-element');
+        }
+      });
+      $('footer #twitter-timeline .twitter-remove-element').remove();
+      $('footer #twitter-timeline').show();
     });
-    $('footer #twitter-timeline .twitter-remove-element').remove();
-    $('footer #twitter-timeline').show();
-  });
+  }
 }, 2000);
 
 /***/ }),

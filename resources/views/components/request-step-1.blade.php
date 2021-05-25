@@ -25,16 +25,7 @@
           <input type="text" class="form-control" name="phone" id="phone" placeholder="Número de teléfono" value="<?php echo session()->get('phone') ?>">
         </div>
       </div>
-      <div class="col-12 col-md-6">
-        <div class="form-group">
-          <input type="text" class="form-control" name="company" id="company" placeholder="Organización" value="<?php echo session()->get('company') ?>">
-        </div>
-      </div>
-      <div class="col-12 col-md-6">
-        <div class="form-group">
-          <input type="text" class="form-control" name="00N3m00000QQOde" id="identification" placeholder="RUC (Número de identificación fiscal)" value="<?php echo session()->get('00N3m00000QQOde') ?>">
-        </div>
-      </div>
+      <!--
       <div class="col-12 col-md-6">
         <div class="form-group required">
           <select  id="country_code" name="country_code">
@@ -290,7 +281,34 @@
           </select>
         </div>
       </div>
+      -->
+
       <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="1" id="show-company-fields" <?php if (session()->get('company')) : ?>checked="checked"<?php endif ?>>
+            <label class="form-check-label" for="show-company-fields" style="font-size:13px; font-family: 'Roboto', sans-serif">
+              ¿Deseas que la factura se genere a nombre de tu organización?
+            </label>
+          </div>
+      </div>
+
+      <div class="col-12 company-fields w-100" style="display:<?php echo session()->get('company') ? 'block' : 'none' ?>">
+        <div class="row mt-3">
+          <div class="col-12"><small>Por favor ingresa la siguiente información</small></div>
+          <div class="col-12 col-md-6">
+            <div class="form-group">
+              <input type="text" class="form-control" name="company" id="company" placeholder="Organización" value="<?php echo session()->get('company') ?>">
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="form-group">
+              <input type="text" class="form-control" name="00N3m00000QQOde" id="identification" placeholder="RUC (Número de identificación fiscal)" value="<?php echo session()->get('00N3m00000QQOde') ?>">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 mt-4">
         <a href="#"><small>* Campos obligatorios</small></a>
       </div>
     </div>

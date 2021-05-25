@@ -111,6 +111,21 @@ a {
   color: #0088ff;
 }
 
+.strike {
+  position: relative;
+  display: inline-block;
+}
+.strike::after {
+  border-bottom: 2px solid #000000;
+  content: "";
+  display: inline-block;
+  height: 0;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 8px;
+}
+
 form input[type=text],
 form input[type=email],
 form input[type="datetime-local"] {
@@ -146,7 +161,7 @@ form textarea {
   font-family: "Roboto", sans-serif;
   font-size: 13px;
   border: 1px solid #000000;
-  min-height: 140px;
+  min-height: 148px;
   border-radius: 5px;
   padding: 10px;
   color: #495057;
@@ -1087,6 +1102,20 @@ form select.invalid {
 .request .col-12.col-md-7 {
   max-width: 68%;
   flex: 0 0 68%;
+}
+
+input[type="file"] {
+  display: none;
+}
+input[type="file"] + label {
+  background: #ffffff;
+  border: 1px solid #000000;
+  padding: 12px 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 5px;
 }
 .request .fe-upload {
   float: right;

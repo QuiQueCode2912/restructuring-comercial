@@ -371,26 +371,32 @@
           <a href="/cotizacion/datos-evento#lodging-quantity">Editar</a>
         </div>
       </div>
-      <div class="col-12">
-        <div class="form-group-preview">
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="form-group-preview mt-4">
           <small>Describe tu evento</small>
           <?php echo session()->get('description') ?>
           <br /><br /><br />
           <a href="/cotizacion/datos-evento#description">Editar</a>
         </div>
       </div>
-      <!--
       <div class="col-12 col-md-6">
-        <p style="line-height:1rem; margin-top:47px"><small>Puedes compartir la agenda de tu evento,  material 
-          promocional o cualquier otro documento que nos ayude a 
-          entender mejor tus necesidades</small></p>
+        <?php if (session()->get('files')) : ?>
+        <p style="line-height:1rem; margin-bottom:6px"><small>Archivos compartidos</small></p>
+        <?php foreach (session()->get('files') as $file) : ?>
         <div class="form-group-preview">
-          globalgame.docx
-          <a href="#" style="margin-right:36px">Borrar</a>
-          <i class="fe fe-upload"></i>
+          <?php echo $file['name'] ?>
+          <a href="{{ $file['path'] }}" target="_blank">Ver</a>
         </div>
+        <?php endforeach ?>
+        <?php else : ?>
+        <p style="margin:25px 0 0; line-height:1rem"><small>Puedes compartir la agenda de tu evento,  material 
+        promocional o cualquier otro documento que nos ayude a 
+        entender mejor tus necesidades</small></p><br />
+        <div class="form-group-preview" style="background:transparent"><a href="/cotizacion/datos-evento#file" style="left:0">Editar</a></div>
+        <?php endif ?>
       </div>
-      -->
     </div>
     <?php else : ?>
     <div class="row" style="margin-top:40px">

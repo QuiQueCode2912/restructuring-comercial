@@ -17,7 +17,6 @@
             <ul>
               <li>Capacidad limitada</li>
               <li>Separación adicional entre mesas</li>
-              <li>Distanciamiento social en áreas comunes</li>
             </ul>
           </div>
           <div class="col-12 col-md-6">
@@ -41,7 +40,6 @@
             <strong>Equipos de protección</strong>
             <ul>
               <li>Uso constante de mascarilla</li>
-              <li>Uso constante de guantes</li>
             </ul>
           </div>
           <div class="col-12">
@@ -52,7 +50,6 @@
               <li>Reporte de contactos cercanos</li>
               <li>Incremento de limpieza y desinfección en áreas comunes</li>
               <li>Entrenamiento del personal en medidas de seguridad y prevención</li>
-              <li>Protocolos de seguridad alimentaria</li>
             </ul>
           </div>
         </div>

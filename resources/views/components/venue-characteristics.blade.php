@@ -16,6 +16,7 @@
     <li>No registra</li>
     <?php endif ?>
   </ul>
+  @if($showpolicies)
   <br /><br />
   <x-security-measures />
   <br /><br />
@@ -25,4 +26,5 @@
     Si tu evento requiere de múltiples espacios o excede las 24hs, puedes
     conectarte con nosotros desde el formulario al pie de la página.
   </p>
+  @endif
 </div>

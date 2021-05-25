@@ -343,7 +343,12 @@ class IndexController extends Controller
       'venues' => $venues,
       'images' => $images,
       'facilities' => $facilities,
-      'max_pax' => $max_pax
+      'max_pax' => $max_pax,
+      'show_shortcuts' => false,
+      'show_menu' => false,
+      'show_policies' => false,
+      'show_not_included' => false,
+      'type' => 'residencias',
     ]);
   }
 
@@ -353,6 +358,10 @@ class IndexController extends Controller
     $quantity = $request->quantity;
     $daterange = $request->daterange;
     $how = $request->how;
+
+    if ($quantity) {
+      session()->put('00N3m00000QMsCA', $quantity);
+    }
 
     $quantities = [];
     switch ($quantity) {
@@ -447,10 +456,13 @@ class IndexController extends Controller
             'email' => 'required|string|email',
             'phone' => 'required|string',
             'company' => 'nullable|string',
-            'country_code' => 'nullable|string',
-            'want_to_do' => 'nullable|string',
+            //'country_code' => 'nullable|string',
+            //'want_to_do' => 'nullable|string',
             '00N3m00000QQOde' => 'nullable|string',
           ]);
+
+          $inputs['want_to_do'] = 'event';
+          $inputs['country_code'] = 'PA';
 
           session($inputs);
 
@@ -479,6 +491,23 @@ class IndexController extends Controller
           ]);
 
           $inputs['recordType'] = '0123m0000012tH4';
+          
+          $uploaded_files = [];
+          if($request->hasFile('file')) { 
+            foreach($request->allFiles('file') as $files) {
+              foreach($files as $file) {
+                $filename = $file->getClientOriginalName();
+                $filepath = time() . '-' . rand(100000, 999999) . '-' . $filename;
+                $uploaded_files[] = [
+                  'name' => $filename,
+                  'path' => url('/storage/requests/' . $filepath)
+                ];
+
+                $file->storeAs('public/requests', $filepath);
+              }
+            }
+            $inputs['files'] = $uploaded_files;
+          }         
           
           session($inputs);
           return redirect()->to('/cotizacion/vista-previa');

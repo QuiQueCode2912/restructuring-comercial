@@ -28,9 +28,11 @@
         <?php
         $max_pax = 0; 
         $ppd = 0;
+        $sppd = 0;
         if ($venue['venues']) {
           foreach ($venue['venues'] as $subvenue) {
             $ppd = $subvenue['all_day_fee'] > $ppd ? $subvenue['all_day_fee'] : $ppd;
+            $sppd = $subvenue['seasonal_all_day_fee'] > $sppd ? $subvenue['seasonal_all_day_fee'] : $sppd;
           }
         }
         if ($venue['designs']) {
@@ -50,7 +52,16 @@
           </dl>
           <dl>
             <dt>Precio por día</dt>
-            <dd>$<?php echo $ppd ?> <span style="color:#0088ff">/*</span></dd>
+            <dd>
+              desde
+              @if($sppd < $ppd)
+              <span class="strike">$<?php echo $ppd ?></span>
+              <span class="text-danger">$<?php echo $sppd < $ppd ? $sppd : $ppd ?></span> 
+              @else
+              $<?php echo $sppd < $ppd ? $sppd : $ppd ?> 
+              @endif
+              <span style="color:#0088ff">/*</span>
+            </dd>
           </dl>
           <dl>
             <dt>Eventos con alcohol</dt>
@@ -61,7 +72,9 @@
             <dd>Disponible</dd>
           </dl>
         </div>
-        <p><a href="#security-policies" data-bs-toggle="modal" data-bs-target="#security-policies">Revisa la política Covid para este venue</a></p>
+        <p>
+          <a href="#security-policies" data-bs-toggle="modal" data-bs-target="#security-policies">Revisa la política Covid para este venue</a>
+        </p>
         <a href="<?php echo $venue['url'] ?>" class="btn btn-primary btn-sm">Ver oferta</a>
       </div>
       </div>
@@ -69,7 +82,7 @@
       <?php endif ?>
 
       <div class="col-12">
-        <p class="text-center" style="color:#0088ff"><small>/* Los precios no incluyen catering ni impuestos locales /</small></p>
+        <p class="text-center" style="color:#0088ff"><small>/* Los precios no incluyen catering, ni personal o equipamiento extra /</small></p>
       </div>
     </div>
   </div>

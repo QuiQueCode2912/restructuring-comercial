@@ -16,6 +16,35 @@ if ($designs) {
     </div>
     <div class="col-12 col-md-6">
       <a href="#" class="venue-name">{{ $name }}</a>
+      @if($type ?? 'venues' == 'residencias')
+      <div class="characteristics">
+        <dl>
+          <dt>Habitaciones</dt>
+          <dd>0</dd>
+        </dl>
+        <dl>
+          <dt>Área cerrada</dt>
+          <dd>0 mts<sup>2</sup></dd>
+        </dl>
+        <dl>
+          <dt>Área abierta</dt>
+          <dd>0 mts<sup>2</sup></dd>
+        </dl>
+        <dl>
+          <dt>Mensualidad</dt>
+          <dd>
+            desde
+            @if($seasonalmiddayfee < $middayfee)
+            <span class="strike">$<?php echo $middayfee ?></span>
+            <span class="text-danger">$<?php echo $seasonalmiddayfee < $middayfee ? $seasonalmiddayfee : $middayfee ?></span> 
+            @else
+            $<?php echo $seasonalmiddayfee < $middayfee ? $seasonalmiddayfee : $middayfee ?> 
+            @endif
+            <span style="color:#0088ff">/*</span>
+          </dd>
+        </dl>
+      </div>
+      @else
       <div class="characteristics">
         <dl>
           <dt>Configuración</dt>
@@ -27,16 +56,39 @@ if ($designs) {
         </dl>
         <dl>
           <dt>Precio por medio día</dt>
-          <dd>$<?php echo $middayfee ?? 0 ?> <span style="color:#0088ff">/*</span></dd>
+          <dd>
+            desde
+            @if($seasonalmiddayfee < $middayfee)
+            <span class="strike">$<?php echo $middayfee ?></span>
+            <span class="text-danger">$<?php echo $seasonalmiddayfee < $middayfee ? $seasonalmiddayfee : $middayfee ?></span> 
+            @else
+            $<?php echo $seasonalmiddayfee < $middayfee ? $seasonalmiddayfee : $middayfee ?> 
+            @endif
+            <span style="color:#0088ff">/*</span>
+          </dd>
         </dl>
         <dl>
           <dt>Precio por día entero</dt>
-          <dd>$<?php echo $alldayfee ?? 0 ?> <span style="color:#0088ff">/*</span></dd>
+          <dd>
+            desde
+            @if($seasonalalldayfee < $alldayfee)
+            <span class="strike">$<?php echo $alldayfee ?></span>
+            <span class="text-danger">$<?php echo $seasonalalldayfee < $alldayfee ? $seasonalalldayfee : $alldayfee ?></span> 
+            @else
+            $<?php echo $seasonalalldayfee < $alldayfee ? $seasonalalldayfee : $alldayfee ?> 
+            @endif
+            <span style="color:#0088ff">/*</span>
+          </dd>
         </dl>
       </div>
-      <p><a href="#security-policies" data-bs-toggle="modal" data-bs-target="#security-policies">Revisa la política Covid para este venue</a></p>
+      @endif
+      <p>
+        @if($shownotincluded)<small style="color:#0088ff; display:inline-block; margin-bottom:5px">/* No incluyen catering, personal o equipamiento extra /</small>@endif
+        @if($showpolicies)<a href="#security-policies" data-bs-toggle="modal" data-bs-target="#security-policies">Revisa la política Covid para este venue</a>@endif
+      </p>
     </div>
   </div>
+  @if($configuration)
   <div class="row" style="margin-top:20px; margin-bottom:0 !important">
     <div class="col-12">
       <strong>Configuración del Aula / Salón</strong>
@@ -56,4 +108,5 @@ if ($designs) {
       </ul>
     </div>
   </div>
+  @endif
 </div>
