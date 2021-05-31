@@ -3,10 +3,20 @@
 <div class="venue-characteristics">
   <span style="color:#0088ff">Características del venue</span>
   <ul>
+    <?php if ($type == 'Vivienda') : ?>
+    <li>Finos acabados</li>
+    <li>Sala</li>
+    <li>Comedor</li>
+    <li>Baños</li>
+    <li>Estacionamientos</li>
+    <li>Pet friendly</li>
+    <li style="padding-bottom:20px; border-bottom:none">Listas para ocupar</li>
+    <?php else : ?>
     <li class="title">Centro de conferencias y oficinas</li>
     <li>Capacidad {{ $maxpax }} personas máximo</li>
     <li>{{ $venues }} aulas / salones para eventos</li>
     <li style="padding-bottom:20px; border-bottom:none">96 habitaciones</li>
+
     <li class="title">Facilidades</li>
     <?php if ($facilities) : ?>
     <?php foreach ($facilities as $facility) : ?>
@@ -14,6 +24,7 @@
     <?php endforeach ?>
     <?php else : ?>
     <li>No registra</li>
+    <?php endif ?>
     <?php endif ?>
   </ul>
   @if($showpolicies ?? true)

@@ -4,7 +4,12 @@
 <x-covid />
 <x-header menu="true" />
 <x-venues-menu venue="{{ $venue }}" />
-<x-venue-characteristics maxpax="{{ $max_pax }}" facilities="{{ $facilities }}" venues="{{ count($venues) }}" showpolicies="{{ $show_policies ?? true }}" />
+<x-venue-characteristics 
+  type="{{ $venues ? $venues[0]->type : 'venues' }}"
+  maxpax="{{ $max_pax }}" 
+  facilities="{{ $facilities }}" 
+  venues="{{ count($venues) }}" 
+  showpolicies="{{ $show_policies ?? true }}" />
 
 <div class="container" style="margin:0 auto; padding:0; position:relative">
   <?php if ($images) : ?>
@@ -21,7 +26,9 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <?php $rand = rand(0, count($images) - 1) ?>
+      <?php if (isset($images[$rand])) : ?>
       <img src="<?php echo $images[$rand] ? substr($images[$rand], 0, strrpos($images[$rand], '.')) . '_2048.' . substr($images[$rand], strrpos($images[$rand], '.') + 1) : '/assets/images/placeholder-image.jpg' ?>" class="d-block" alt="...">
+      <?php endif ?>
     </div>
   </div>
 </div>
@@ -71,10 +78,33 @@
               <?php if ($venues) : ?>
               <?php foreach ($venues as $venue) : ?>
                 <?php 
-                $venue_img = $venue->files()->count() > 0 ? substr($venue->files()->first()->path, 0, strpos($venue->files()->first()->path, '.')) . '_480.' . substr($venue->files()->first()->path, strpos($venue->files()->first()->path, '.') + 1) : null;
-                $venue_image = $venue_img ? url('storage/venues/' . $venue_img) : '/assets/images/placeholder-image_480.jpg'; 
+                if (isset($venue->fixed_image)) {
+                  $venue_image = url('assets/images/residencies/' . $venue->fixed_image); 
+                } else {
+                  $venue_img = $venue->files()->count() > 0 ? substr($venue->files()->first()->path, 0, strpos($venue->files()->first()->path, '.')) . '_480.' . substr($venue->files()->first()->path, strpos($venue->files()->first()->path, '.') + 1) : null;
+                  $venue_image = $venue_img ? url('storage/venues/' . $venue_img) : '/assets/images/placeholder-image_480.jpg'; 
+                }
                 ?>
-                <x-venue-list type="{{ $type ?? 'venues' }}" showpolicies="{{ $show_policies ?? true }}" shownotincluded="{{ $show_not_included ?? true }}" image="{{ $venue_image }}" id="{{ $venue->id }}" name="{{ $venue->name }}" designs="{{ $venue->designs }}" type="{{ $venue->type }}" hourfee="{{ $venue->hour_fee }}" middayfee="{{ $venue->mid_day_fee }}" alldayfee="{{ $venue->all_day_fee }}" seasonalhourfee="{{ $venue->seasonal_hour_fee }}" seasonalmiddayfee="{{ $venue->seasonal_mid_day_fee }}" seasonalalldayfee="{{ $venue->seasonal_all_day_fee }}" />
+                <x-venue-list 
+                  showpolicies="{{ $show_policies ?? true }}" 
+                  shownotincluded="{{ $show_not_included ?? true }}" 
+                  image="{{ $venue_image }}" 
+                  id="{{ $venue->id }}" 
+                  name="{{ $venue->name }}" 
+                  designs="{{ $venue->designs }}" 
+                  type="{{ $venue->type }}" 
+                  rooms="{{ $venue->rooms ?? 0 }}"
+                  closedarea="{{ $venue->closed_area ?? 0 }}"
+                  openarea="{{ $venue->open_area ?? 0 }}"
+                  hourfee="{{ $venue->hour_fee }}" 
+                  middayfee="{{ $venue->mid_day_fee }}" 
+                  alldayfee="{{ $venue->all_day_fee }}" 
+                  monthlyfee="{{ $venue->monthly_fee ?? 0 }}" 
+                  seasonalhourfee="{{ $venue->seasonal_hour_fee }}" 
+                  seasonalmiddayfee="{{ $venue->seasonal_mid_day_fee }}" 
+                  seasonalalldayfee="{{ $venue->seasonal_all_day_fee }}" 
+                  seasonalmonthlyfee="{{ $venue->seasonal_monthly_fee ?? 0 }}" 
+                />
               <?php endforeach ?>
               <?php endif ?>
             </div>

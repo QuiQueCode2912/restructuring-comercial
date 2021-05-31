@@ -21,25 +21,29 @@ if ($designs) {
       <div class="characteristics">
         <dl>
           <dt>Habitaciones</dt>
-          <dd>0</dd>
+          <dd><?php echo $rooms ?? '' ?></dd>
         </dl>
         <dl>
           <dt>Área cerrada</dt>
-          <dd>0 mts<sup>2</sup></dd>
+          <dd><?php echo $closedarea ?? '' ?> mts<sup>2</sup></dd>
         </dl>
         <dl>
           <dt>Área abierta</dt>
-          <dd>0 mts<sup>2</sup></dd>
+          <dd><?php echo $openarea ?? '' ?> mts<sup>2</sup></dd>
         </dl>
         <dl>
           <dt>Mensualidad</dt>
           <dd>
             desde
-            @if($seasonalmiddayfee < $middayfee)
-            <span class="strike">$<?php echo $middayfee ?></span>
-            <span class="text-danger">$<?php echo $seasonalmiddayfee < $middayfee ? $seasonalmiddayfee : $middayfee ?></span> 
+            <?php 
+              $seasonalmonthlyfee = $seasonalmonthlyfee ?? 0;
+              $monthlyfee = $monthlyfee ?? 0;
+            ?>
+            @if($seasonalmonthlyfee > 0 && $seasonalmonthlyfee < $monthlyfee)
+            <span class="strike">$<?php echo $monthlyfee ?></span>
+            <span class="text-danger">$<?php echo $seasonalmonthlyfee < $monthlyfee ? $seasonalmonthlyfee : $monthlyfee ?></span> 
             @else
-            $<?php echo $seasonalmiddayfee < $middayfee ? $seasonalmiddayfee : $middayfee ?> 
+            $<?php echo $seasonalmonthlyfee > 0 && $seasonalmonthlyfee < $monthlyfee ? $seasonalmonthlyfee : $monthlyfee ?> 
             @endif
             <span style="color:#0088ff">/*</span>
           </dd>
@@ -59,11 +63,11 @@ if ($designs) {
           <dt>Precio por medio día</dt>
           <dd>
             desde
-            @if($seasonalmiddayfee < $middayfee)
+            @if($seasonalmiddayfee > 0 && $seasonalmiddayfee < $middayfee)
             <span class="strike">$<?php echo $middayfee ?></span>
             <span class="text-danger">$<?php echo $seasonalmiddayfee < $middayfee ? $seasonalmiddayfee : $middayfee ?></span> 
             @else
-            $<?php echo $seasonalmiddayfee < $middayfee ? $seasonalmiddayfee : $middayfee ?> 
+            $<?php echo $seasonalmiddayfee > 0 && $seasonalmiddayfee < $middayfee ? $seasonalmiddayfee : $middayfee ?> 
             @endif
             <span style="color:#0088ff">/*</span>
           </dd>
@@ -72,11 +76,11 @@ if ($designs) {
           <dt>Precio por día entero</dt>
           <dd>
             desde
-            @if($seasonalalldayfee < $alldayfee)
+            @if($seasonalalldayfee > 0 && $seasonalalldayfee < $alldayfee)
             <span class="strike">$<?php echo $alldayfee ?></span>
             <span class="text-danger">$<?php echo $seasonalalldayfee < $alldayfee ? $seasonalalldayfee : $alldayfee ?></span> 
             @else
-            $<?php echo $seasonalalldayfee < $alldayfee ? $seasonalalldayfee : $alldayfee ?> 
+            $<?php echo $seasonalalldayfee > 0 && $seasonalalldayfee < $alldayfee ? $seasonalalldayfee : $alldayfee ?> 
             @endif
             <span style="color:#0088ff">/*</span>
           </dd>

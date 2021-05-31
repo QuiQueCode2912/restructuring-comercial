@@ -310,29 +310,87 @@ class IndexController extends Controller
 
   public function residencias(Request $request)
   {
-    $venues = Venue::where('type', '=', 'Vivienda')
-      ->get();
-    
-    $parent = null;
-    $max_pax = 0;
-    if ($venues) {
-      $parent = $venues[0];
-      foreach ($venues as $venue) {
-        $venue_max_pax = $venue->designs()->max('max_pax');
-        $max_pax = $venue_max_pax > $max_pax ? $venue_max_pax : $max_pax;
-      }
-      $facilities = $venues ? $venues[0]->facilities : null;
-    }
+    $parent = new \StdClass();
+    $parent->name = 'Zona Residencial';
+    $parent->main_text = 'Tranquilidad, seguridad y plenitud rodeado de la naturaleza.
+      Viviendas unifamiliares dúplex, remodeladas y listas para ocupar.';
+    $parent->secondary_text = '';
+    $parent->latitude = 8.9989308934125;
+    $parent->longitude = -79.583345960991;
 
-    $venue_images = VenueFile::where('venue_id', $parent->id)->get();
-    $images = [];
-    if ($venue_images->count() > 0) {
+    $venue_1 = new \StdClass();
+    $venue_1->id = '';
+    $venue_1->name = 'Modelo 300 abajo dúplex';
+    $venue_1->fixed_image = '300-abajo.jpg';
+    $venue_1->designs = '';
+    $venue_1->type = 'Vivienda';
+    $venue_1->hour_fee = 0;
+    $venue_1->mid_day_fee = 0;
+    $venue_1->all_day_fee = 0;
+    $venue_1->rooms = 2;
+    $venue_1->open_area = 0;
+    $venue_1->closed_area = 151.93;
+    $venue_1->seasonal_hour_fee = 0;
+    $venue_1->seasonal_mid_day_fee = 0;
+    $venue_1->seasonal_all_day_fee = 0;
+    $venue_1->monthly_fee = 1000;
+    $venue_1->seasonal_monthly_fee = 0;
+
+    $venue_2 = new \StdClass();
+    $venue_2->id = '';
+    $venue_2->name = 'Modelo 300 arriba';
+    $venue_2->fixed_image = '300-arriba.jpg';
+    $venue_2->designs = '';
+    $venue_2->type = 'Vivienda';
+    $venue_2->hour_fee = 0;
+    $venue_2->mid_day_fee = 0;
+    $venue_2->all_day_fee = 0;
+    $venue_2->rooms = 3;
+    $venue_2->open_area = 0;
+    $venue_2->closed_area = 154.06;
+    $venue_2->seasonal_hour_fee = 0;
+    $venue_2->seasonal_mid_day_fee = 0;
+    $venue_2->seasonal_all_day_fee = 0;
+    $venue_2->monthly_fee = 1200;
+    $venue_2->seasonal_monthly_fee = 0;
+
+    $venue_3 = new \StdClass();
+    $venue_3->id = '';
+    $venue_3->name = 'Coroneles';
+    $venue_3->fixed_image = 'coroneles.jpg';
+    $venue_3->designs = '';
+    $venue_3->type = 'Vivienda';
+    $venue_3->hour_fee = 0;
+    $venue_3->mid_day_fee = 0;
+    $venue_3->all_day_fee = 0;
+    $venue_3->rooms = 3;
+    $venue_3->open_area = 0;
+    $venue_3->closed_area = 446.58;
+    $venue_3->seasonal_hour_fee = 0;
+    $venue_3->seasonal_mid_day_fee = 0;
+    $venue_3->seasonal_all_day_fee = 0;
+    $venue_3->monthly_fee = 1600;
+    $venue_3->seasonal_monthly_fee = 0;
+
+    $venues = [$venue_1, $venue_2, $venue_3];
+    
+    $max_pax = 0;
+    $facilities = null;
+
+    $images = [
+      '/assets/images/residencies/hero-1.jpg', 
+      '/assets/images/residencies/hero-2.jpg', 
+      '/assets/images/residencies/hero-3.jpg', 
+      '/assets/images/residencies/hero-4.jpg', 
+      '/assets/images/residencies/hero-5.jpg'
+    ];
+    /*if ($venue_images->count() > 0) {
       foreach ($venue_images as $image) {
         $images[] = url('storage/venues/' . $image->path);
       }
     } else {
       $images = ['/assets/images/placeholder-image.jpg'];
-    }
+    }*/
 
     return view('venues.venue', [
       'page_title' => 'Servicios - Residencias',
