@@ -31,8 +31,7 @@
           <li><a href="/ateneo">Ateneo</a></li>
           <li><a href="/centro-convenciones">Centro de convenciones</a></li>
           <li><a href="/aulas-105">Aulas 105</a></li>
-          <!--<li><a href="/aulas-220">Aulas 220</a></li>-->
-          <li><a href="/complejo-hospedaje">Complejo de hospedaje</a></li>
+          <li><a href="https://live.ipms247.com/booking/book-rooms-complejodehospedaje-es-Spanish" target="_blank">Complejo de hospedaje</a></li>
           <li><a href="/residencias">Residencias</a></li>
         </ul>
       </li>
