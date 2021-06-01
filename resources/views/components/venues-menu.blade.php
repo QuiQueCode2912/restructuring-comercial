@@ -22,8 +22,7 @@
           <li <?php echo $venue == 'ateneo' ? 'class="active"' : '' ?>><a href="/ateneo">Ateneo</a></li>
           <li <?php echo $venue == 'centro-convenciones' ? 'class="active"' : '' ?>><a href="/centro-convenciones">Centro de convenciones</a></li>
           <li <?php echo $venue == 'aulas-105' ? 'class="active"' : '' ?>><a href="/aulas-105">Aulas 105</a></li>
-          <!--<li <?php echo $venue == 'aulas-220' ? 'class="active"' : '' ?>><a href="/aulas-220">Aulas 220 <br />Coworking</a></li>-->
-          <li <?php echo $venue == 'complejo-hospedaje' ? 'class="active"' : '' ?>><a href="/complejo-hospedaje">Complejo de hospedaje</a></li>
+          <li><a href="https://live.ipms247.com/booking/book-rooms-complejodehospedaje-es-Spanish" target="_blank">Complejo de hospedaje</a></li>
           <li <?php echo $venue == 'residencias' ? 'class="active"' : '' ?>><a href="/residencias">Residencias</a></li>
         </ul>
       </div>

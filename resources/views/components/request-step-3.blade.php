@@ -502,8 +502,27 @@
         <input type="hidden" value="<?php echo session()->get('00N3m00000QMzLM') ?>" name="00N3m00000QMzLM" id="00N3m00000QMzLM" />
         <input type="hidden" value="<?php echo session()->get('00N3m00000QMzLR') ?>" name="00N3m00000QMzLR" id="00N3m00000QMzLR" />
         <input type="hidden" value="<?php echo session()->get('00N3m00000QMzLW') ?>" name="00N3m00000QMzLW" id="00N3m00000QMzLW" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000Pb6zh') ?>" name="00N3m00000Pb6zh" id="00N3m00000Pb6zh" />
         <input type="hidden" value="<?php echo session()->get('description') ?>" name="description" id="description" />
         <input type="hidden" value="<?php echo session()->get('recordType') ?>" name="recordType" id="recordType" />
+
+        <?php 
+        $files = session()->get('files');
+        if (count($files) >= 1) : ?>
+          <input type="hidden" value="<?php echo $files[0]['name'] ?>" name="00N3m00000Pb6zr" id="00N3m00000Pb6zr" />
+          <input type="hidden" value="<?php echo $files[0]['path'] ?>" name="00N3m00000Pb6zm" id="00N3m00000Pb6zm" />
+        <?php endif ?>
+
+        <?php if (count($files) >= 2) : ?>
+          <input type="hidden" value="<?php echo $files[1]['name'] ?>" name="00N3m00000Pb701" id="00N3m00000Pb701" />
+          <input type="hidden" value="<?php echo $files[1]['path'] ?>" name="00N3m00000Pb6zw" id="00N3m00000Pb6zw" />
+        <?php endif ?>
+
+        <?php if (count($files) == 3) : ?>
+          <input type="hidden" value="<?php echo $files[2]['name'] ?>" name="00N3m00000Pb70B" id="00N3m00000Pb70B" />
+          <input type="hidden" value="<?php echo $files[2]['path'] ?>" name="00N3m00000Pb706" id="00N3m00000Pb706" />
+        <?php endif ?>
+
         <button type="submit" class="btn btn-primary submit-form">Confirmar</button>
       </div>
     </div>

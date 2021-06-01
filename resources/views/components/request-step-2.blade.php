@@ -131,11 +131,11 @@
         <p style="margin:35px 0 0; line-height:1rem"><small>Puedes compartir la agenda de tu evento,  material 
           promocional o cualquier otro documento que nos ayude a 
           entender mejor tus necesidades</small></p>
-        <p style="margin:0"><small>Archivos .pdf o .docx - máximo 5MB</small></p>
+        <p style="margin:0"><small>Archivos .pdf o .docx - Máximo 3 archivos de 5MB</small></p>
         <div class="form-group">
           <i class="fe fe-upload"></i>
           <input type="file" class="form-control" id="file" name="file[]" multiple>
-          <label for="file"><?php echo count(session()->get('files')) > 0 ? count(session()->get('files')) . (count(session()->get('files')) != 1 ? ' archivos seleccionados' : 'archivo seleccionado') : 'Selecciona uno o varios archivos' ?></label>
+          <label for="file"><?php echo session()->get('files') && count(session()->get('files')) > 0 ? count(session()->get('files')) . (count(session()->get('files')) != 1 ? ' archivos seleccionados' : 'archivo seleccionado') : 'Selecciona uno o varios archivos' ?></label>
         </div>
       </div>
     </div>

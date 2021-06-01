@@ -305,10 +305,14 @@ $(document).ready(function() {
 
   $(document).on({
     change: function() {
-      if ($(this).get(0).files.length > 0) {
-        $(this).parent().find('label').text($(this).get(0).files.length + ($(this).get(0).files.length != 1 ? ' archivos seleccionados' : ' archivo seleccionado'))
+      if ($(this).get(0).files.length > 3) {
+        alert('No puedes adjuntar más de 3 archivos');
       } else {
-        $(this).parent().find('label').text('Selecciona uno o varios archivos');
+        if ($(this).get(0).files.length > 0) {
+          $(this).parent().find('label').text($(this).get(0).files.length + ($(this).get(0).files.length != 1 ? ' archivos seleccionados' : ' archivo seleccionado'))
+        } else {
+          $(this).parent().find('label').text('Selecciona uno o varios archivos');
+        }
       }
     }
   }, '.request input[type=file]');

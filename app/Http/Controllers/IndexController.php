@@ -22,7 +22,9 @@ class IndexController extends Controller
       '02i3m0000092sHZAAY'
     ];
 
-    $venues = Venue::whereIn('id', $parents)->get();
+    $venues = Venue::whereIn('id', $parents)
+      ->where('show_on_website', 'Si')
+      ->get();
 
     $fixedVenues = [];
     if ($venues) {
@@ -57,6 +59,7 @@ class IndexController extends Controller
           $subvenues = [$venue];
         } else {
           $subvenues = Venue::where('parent_id', '=', $venue->id)
+            ->where('show_on_website', 'Si')
             ->get();
         }
 
@@ -157,6 +160,7 @@ class IndexController extends Controller
   {
     $parent = Venue::find('02i3m0000092sG3AAI');
     $venues = Venue::where('parent_id', '=', $parent->id)
+      ->where('show_on_website', 'Si')
       ->get();
     
     $max_pax = 0;
@@ -195,6 +199,7 @@ class IndexController extends Controller
   {
     $parent = Venue::find('02i3m0000092sJSAAY');
     $venues = Venue::where('parent_id', '=', $parent->id)
+      ->where('show_on_website', 'Si')
       ->get();
     
     $max_pax = 0;
@@ -233,6 +238,7 @@ class IndexController extends Controller
   {
     $parent = Venue::find('02i3m0000092sEkAAI');
     $venues = Venue::where('parent_id', '=', $parent->id)
+      ->where('show_on_website', 'Si')
       ->get();
     
     $max_pax = 0;
@@ -274,7 +280,9 @@ class IndexController extends Controller
         '02i3m0000092sHZAAY', // E-157
         '02i3m0000092sH7AAI', // E-158A
         '02i3m0000092sGcAAI', // E-158B
-      ])->get();
+      ])
+      ->where('show_on_website', 'Si')
+      ->get();
     
     $max_pax = 0;
     if ($venues) {
@@ -319,7 +327,7 @@ class IndexController extends Controller
     $parent->longitude = -79.583345960991;
 
     $venue_1 = new \StdClass();
-    $venue_1->id = '';
+    $venue_1->id = urlencode('Modelo 300 abajo dúplex');
     $venue_1->name = 'Modelo 300 abajo dúplex';
     $venue_1->fixed_image = '300-abajo.jpg';
     $venue_1->designs = '';
@@ -337,7 +345,7 @@ class IndexController extends Controller
     $venue_1->seasonal_monthly_fee = 0;
 
     $venue_2 = new \StdClass();
-    $venue_2->id = '';
+    $venue_2->id = urlencode('Modelo 300 arriba');
     $venue_2->name = 'Modelo 300 arriba';
     $venue_2->fixed_image = '300-arriba.jpg';
     $venue_2->designs = '';
@@ -355,7 +363,7 @@ class IndexController extends Controller
     $venue_2->seasonal_monthly_fee = 0;
 
     $venue_3 = new \StdClass();
-    $venue_3->id = '';
+    $venue_3->id = urlencode('Coroneles');
     $venue_3->name = 'Coroneles';
     $venue_3->fixed_image = 'coroneles.jpg';
     $venue_3->designs = '';
@@ -471,7 +479,9 @@ class IndexController extends Controller
 
     $venues = [];
     if (count($ids) > 0) {
-      $venues = Venue::whereIn('id', $ids)->get();
+      $venues = Venue::whereIn('id', $ids)
+        ->where('show_on_website', 'Si')
+        ->get();
     }
 
     return view('index.venues', [
@@ -518,8 +528,16 @@ class IndexController extends Controller
             //'want_to_do' => 'nullable|string',
             '00N3m00000QQOde' => 'nullable|string',
           ]);
+          
+          switch ($request->id) {
+            case 'Modelo 300 abajo dúplex' :
+            case 'Modelo 300 arriba' :
+            case 'Coroneles' :
+              $inputs['want_to_do'] = 'residency';
+              break;
+            default: $inputs['want_to_do'] = 'event'; break;
+          }
 
-          $inputs['want_to_do'] = 'event';
           $inputs['country_code'] = 'PA';
 
           session($inputs);
@@ -553,15 +571,17 @@ class IndexController extends Controller
           $uploaded_files = [];
           if($request->hasFile('file')) { 
             foreach($request->allFiles('file') as $files) {
-              foreach($files as $file) {
-                $filename = $file->getClientOriginalName();
-                $filepath = time() . '-' . rand(100000, 999999) . '-' . $filename;
-                $uploaded_files[] = [
-                  'name' => $filename,
-                  'path' => url('/storage/requests/' . $filepath)
-                ];
+              foreach($files as $index => $file) {
+                if ($index <= 2) {
+                  $filename = $file->getClientOriginalName();
+                  $filepath = time() . '-' . rand(100000, 999999) . '-' . $filename;
+                  $uploaded_files[] = [
+                    'name' => $filename,
+                    'path' => url('/storage/requests/' . $filepath)
+                  ];
 
-                $file->storeAs('public/requests', $filepath);
+                  $file->storeAs('public/requests', $filepath);
+                }
               }
             }
             $inputs['files'] = $uploaded_files;
@@ -600,7 +620,8 @@ class IndexController extends Controller
             '00N3m00000QMzLR' => 'nullable|string',
             '00N3m00000QMzLW' => 'nullable|string',
           ]);
-
+          
+          $inputs['00N3m00000Pb6zh'] = session()->get('00N3m00000Pb23w');
           $inputs['recordType'] = '0121N000001AmUK';
           
           session($inputs);
@@ -618,9 +639,11 @@ class IndexController extends Controller
     $venueId = session()->get('00N3m00000Pb23w');
     if ($venueId) {
       $venue = Venue::find($venueId);
-      $designs = VenueDesign::where('venue_id', $venue->id)
-        ->orderBy('layout', 'asc')
-        ->get();
+      if ($venue) {
+        $designs = VenueDesign::where('venue_id', $venue->id)
+          ->orderBy('layout', 'asc')
+          ->get();
+      }
     }
     
     return view('index.request', [
