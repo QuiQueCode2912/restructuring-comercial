@@ -511,6 +511,7 @@ class IndexController extends Controller
     $step = $request->step;
     $stepName = 'Solicitud de cotización';
     $form_url = '';
+    $file_upload = false;
     
     switch ($step) {
       case 'datos-contacto': 
@@ -549,6 +550,7 @@ class IndexController extends Controller
       case 'datos-evento': 
         $step = 2;
         $stepName = 'Datos de tu evento'; 
+        $file_upload = true;
 
         if ($request->isMethod('post')) {
           $inputs = $request->validate([
@@ -651,6 +653,7 @@ class IndexController extends Controller
       'step' => $step,
       'venue' => $venue,
       'designs' => $designs,
+      'file_upload' => $file_upload,
       'form_url' => $form_url
     ]);
   }

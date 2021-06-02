@@ -506,8 +506,13 @@
         <input type="hidden" value="<?php echo session()->get('description') ?>" name="description" id="description" />
         <input type="hidden" value="<?php echo session()->get('recordType') ?>" name="recordType" id="recordType" />
 
+        <?php if (config('app.env') == 'local') : ?>
+        <!--<input type="hidden" name="debug" value="1">
+        <input type="hidden" name="debugEmail" value="dnavas00@hotmail.com">-->
+        <?php endif ?>
+
         <?php 
-        $files = session()->get('files');
+        $files = session()->get('files') ? session()->get('files') : [];
         if (count($files) >= 1) : ?>
           <input type="hidden" value="<?php echo $files[0]['name'] ?>" name="00N3m00000Pb6zr" id="00N3m00000Pb6zr" />
           <input type="hidden" value="<?php echo $files[0]['path'] ?>" name="00N3m00000Pb6zm" id="00N3m00000Pb6zm" />
