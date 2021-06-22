@@ -671,8 +671,29 @@ class IndexController extends Controller
     );
 
     $opportunity = new \StdClass;
-    $opportunity->Id = '0063m00000lYmBLAA0';
+    $opportunity->Id = $request->token;
     $opportunity->StageName = 'Aceptación de propuesta';
+    $result = $mySFC->update([$opportunity], 'Opportunity');
+
+    dd($result);
+  }
+
+  public function rejectQuote(Request $request)
+  {
+    require_once ('Soapclient/SforceEnterpriseClient.php');
+
+    $mySFC = new \SforceEnterpriseClient();
+    $mySFC->createConnection(__DIR__ . '/Soapclient/enterprise.wsdl.xml');
+    $mySFC->login(
+        env('SALESFORCE_USERNAME'),
+        env('SALESFORCE_PASSWORD') .
+        env('SALESFORCE_SECURITY_TOKEN')
+    );
+
+    $opportunity = new \StdClass;
+    $opportunity->Id = $request->token;
+    $opportunity->StageName = 'Closed Lost';
+    $opportunity->Closing_comments__c = 'Rechazo de cotización';
     $result = $mySFC->update([$opportunity], 'Opportunity');
 
     dd($result);

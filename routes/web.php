@@ -25,7 +25,8 @@ Route::get('/residencias', 'App\Http\Controllers\IndexController@residencias');
 Route::get('/cotizacion/{step}', 'App\Http\Controllers\IndexController@request');
 Route::post('/cotizacion/{step}', 'App\Http\Controllers\IndexController@request');
 
-Route::get('/aceptar-cotizacion', 'App\Http\Controllers\IndexController@acceptQuote');
+Route::get('/aceptar-cotizacion/{token}', 'App\Http\Controllers\IndexController@acceptQuote');
+Route::get('/rechazar-cotizacion/{token}', 'App\Http\Controllers\IndexController@rejectQuote');
 
 Route::get('/confirmacion-pago/{token}', 'App\Http\Controllers\IndexController@paymentConfirmation');
 Route::get('/ds/paguelo-facil/{token}', 'App\Http\Controllers\IndexController@docuSignPayment');
