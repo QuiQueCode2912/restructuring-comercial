@@ -658,44 +658,64 @@ class IndexController extends Controller
     ]);
   }
 
+  public function acceptQuote(Request $request)
+  {
+    require_once ('Soapclient/SforceEnterpriseClient.php');
+
+    $mySFC = new \SforceEnterpriseClient();
+    $mySFC->createConnection(__DIR__ . '/Soapclient/enterprise.wsdl.xml');
+    $mySFC->login(
+        env('SALESFORCE_USERNAME'),
+        env('SALESFORCE_PASSWORD') .
+        env('SALESFORCE_SECURITY_TOKEN')
+    );
+
+    $opportunity = new \StdClass;
+    $opportunity->Id = '0063m00000lYmBLAA0';
+    $opportunity->StageName = 'Aceptación de propuesta';
+    $result = $mySFC->update([$opportunity], 'Opportunity');
+
+    dd($result);
+  }
+
   public function docuSignPayment (Request $request) 
   {
-    if ($request->isMethod('get')) {
-      // Get document Info
-      require_once ('Soapclient/SforceEnterpriseClient.php');
-
-      $mySFC = new \SforceEnterpriseClient();
-      $mySFC->createConnection(__DIR__ . '/Soapclient/enterprise.wsdl.xml');
-      $mySFC->login(
-          env('SALESFORCE_USERNAME'),
-          env('SALESFORCE_PASSWORD') .
-          env('SALESFORCE_SECURITY_TOKEN')
-      );
-
-      $query = 'SELECT Id, Name, Type, AccountNumber FROM ACCOUNT LIMIT 10';
-      $result = $mySFC->query($query);
-
-      // Paguelo fácil
+    if ($request->isMethod('post')) {
       $endpoint = 'https://secure.paguelofacil.com/LinkDeamon.cfm';
       $params = [
           'CCLW' => '588BA57F825D6D9F6E230C2F39C94ACE84369A887E899DE043924E0122C38FF6',
-          'CMTN' => 100.00,
-          'CDSC' => 'Reserva de evento',
-          'RETURN_URL' => bin2hex(url('/confirmacion-pago')),
-          'PARM_1' => 'TokenEvento',
+          'CMTN' => $request->total,
+          'CDSC' => $request->event_name,
+          'RETURN_URL' => bin2hex(url('/confirmacion-pago/' . $request->token)),
+          'PARM_1' => $request->token,
         ];
       
-      $redirect = $endpoint . '?' . http_build_query($params);
-      dd($redirect);
-      //return redirect()->to($redirect);
+      $pay_url = $endpoint . '?' . http_build_query($params);
+      return redirect()->to($pay_url);
     }
 
-    return response('<h3>Solicitud inválida</h3>
-      El pago no puede ser procesado.
-      <br><br>
-      Por favor comuníquese con el área comercial y notifique esta incidencia.
-      <br>
-      O visite <a href="https://ciudaddelsaber.org">www.ciudaddelsaber.org</a> para más información.', 421);
+    require_once ('Soapclient/SforceEnterpriseClient.php');
+
+    $mySFC = new \SforceEnterpriseClient();
+    $mySFC->createConnection(__DIR__ . '/Soapclient/enterprise.wsdl.xml');
+    $mySFC->login(
+        env('SALESFORCE_USERNAME'),
+        env('SALESFORCE_PASSWORD') .
+        env('SALESFORCE_SECURITY_TOKEN')
+    );
+
+    $query = "SELECT 
+        Id, TotalPrice, Subtotal, Tax
+      FROM ServiceContract 
+      WHERE Id = '{$request->token}'";
+
+    $result = $mySFC->query($query);
+    $total = 100.00;
+    
+    return view('index.paguelo-facil', [
+      'total' => $total,
+      'event_name' => 'Mi evento'
+    ]);
   }
 
   public function paymentConfirmation(Request $request) 

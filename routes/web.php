@@ -25,9 +25,11 @@ Route::get('/residencias', 'App\Http\Controllers\IndexController@residencias');
 Route::get('/cotizacion/{step}', 'App\Http\Controllers\IndexController@request');
 Route::post('/cotizacion/{step}', 'App\Http\Controllers\IndexController@request');
 
-Route::get('/confirmacion-pago', 'App\Http\Controllers\IndexController@paymentConfirmation');
-Route::get('/ds/paguelo-facil', 'App\Http\Controllers\IndexController@docuSignPayment');
-Route::post('/ds/paguelo-facil', 'App\Http\Controllers\IndexController@docuSignPayment');
+Route::get('/aceptar-cotizacion', 'App\Http\Controllers\IndexController@acceptQuote');
+
+Route::get('/confirmacion-pago/{token}', 'App\Http\Controllers\IndexController@paymentConfirmation');
+Route::get('/ds/paguelo-facil/{token}', 'App\Http\Controllers\IndexController@docuSignPayment');
+Route::post('/ds/paguelo-facil/{token}', 'App\Http\Controllers\IndexController@docuSignPayment');
 
 Route::get('/galeria/{venue}', 'App\Http\Controllers\IndexController@gallery');
 Route::post('/galeria/{venue}', 'App\Http\Controllers\IndexController@gallery');
