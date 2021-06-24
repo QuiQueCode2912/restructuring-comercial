@@ -29,8 +29,8 @@ Route::get('/aceptar-cotizacion/{token}', 'App\Http\Controllers\IndexController@
 Route::get('/rechazar-cotizacion/{token}', 'App\Http\Controllers\IndexController@rejectQuote');
 
 Route::get('/confirmacion-pago/{token}', 'App\Http\Controllers\IndexController@paymentConfirmation');
-Route::get('/ds/paguelo-facil/{token}', 'App\Http\Controllers\IndexController@docuSignPayment');
-Route::post('/ds/paguelo-facil/{token}', 'App\Http\Controllers\IndexController@docuSignPayment');
+Route::get('/solicitud-pago/{token}', 'App\Http\Controllers\IndexController@docuSignPayment');
+Route::post('/solicitud-pago/{token}', 'App\Http\Controllers\IndexController@docuSignPayment');
 
 Route::get('/galeria/{venue}', 'App\Http\Controllers\IndexController@gallery');
 Route::post('/galeria/{venue}', 'App\Http\Controllers\IndexController@gallery');
