@@ -35,7 +35,7 @@
   <div class="container text-center" style="min-height:800px">
     <form method="post">
       @csrf
-      <input type="hidden" name="event_name" value="{{ $event_name }}" />
+      <input type="hidden" name="event_name" value="Abono - {{ $event_name }}" />
       <br><br>
       <div class="row justify-content-center">
         <div class="col-12 col-md-10">
@@ -54,7 +54,7 @@
         <div class="row">
           <div class="col-12 col-md-6">
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="total" id="total-50" checked>
+              <input class="form-check-input" type="radio" name="total" id="total-50" value="{{ $total / 2 }}" checked>
               <label class="form-check-label" for="total-50">
                 Pagar el 50%<br />
                 <strong>USD {{ $total / 2 }}</strong>
@@ -63,7 +63,7 @@
           </div>
           <div class="col-12 col-md-6">
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="total" id="total-100">
+              <input class="form-check-input" type="radio" name="total" value="{{ $total }}" id="total-100">
               <label class="form-check-label" for="total-100">
                 Pagar el 100%<br />
                 <strong>USD {{ $total }}</strong>

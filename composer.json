@@ -10,9 +10,9 @@
     "require": {
         "php": "^7.3|^8.0",
         "bashy/laravel-campaignmonitor": "^5.0",
+        "ehaerer/php-salesforce-rest-api": "^1.0",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^7.0.1",
         "intervention/image": "^2.5",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5"

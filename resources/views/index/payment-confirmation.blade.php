@@ -18,6 +18,7 @@
 }
 </style>
 
+<?php if ($data && $opportunity) : ?>
 <div class="request">
   <div class="container text-center" style="min-height:800px">
     <br><br>
@@ -37,27 +38,27 @@
       <tbody>
         <tr>
           <th>Evento</th>
-          <td>Mi evento</td>
+          <td><?php echo $opportunity['Name'] ?></td>
         </tr>
         <tr>
           <th>ID Evento</th>
-          <td>655DSGDFS%3254GFD</td>
+          <td><?php echo $data['PARM_1'] ?></td>
         </tr>
         <tr>
           <th>Valor pagado</th>
-          <td>USD 120</td>
+          <td>USD <?php echo $data['TotalPagado'] ?></td>
         </tr>
         <tr>
           <th>Concepto</th>
-          <td>Abono de evento</td>
+          <td>Abono - <?php echo $opportunity['Name'] ?></td>
         </tr>
         <tr>
           <th>Fecha</th>
-          <td>Martes, 15 de junio. 10:00 a.m.</td>
+          <td><?php echo $data['Fecha'] ?> <?php echo $data['Hora'] ?></td>
         </tr>
         <tr>
           <th>Estado de la transacción</th>
-          <td>Pendiente de aprobación</td>
+          <td><?php echo $data['Estado'] ?></td>
         </tr>
       </tbody>
     </table>
@@ -68,5 +69,23 @@
     </p>
   </div>
 </div>
+<?php else : ?>
+<div class="request">
+  <div class="container text-center" style="min-height:800px">
+      <br><br>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10">
+          <i class="fe fe-alert-triangle" style="margin:0 auto 20px; display:block; font-size:100px; padding:20px; border-radius:50%; width:150px; height:150px; background-color:#ffc107 !important; color:#212529 !important"></i>
+        </div>
+        <div class="col-12 col-md-10">
+          <p style="font-size:20px; margin:0; font-weight:600; color:#212529 !important" class="text-center">Hay un problema con la verificación de tu pago</p>
+        </div>
+        <div class="col-12 col-md-10">
+          <p class="text-center" style="margin:0; font-family:'Trola', sans-serif; font-size:18px">No te preocupes, consulta con el asesor de tu cuenta para más información.</p>
+        </div>
+      </div>
+  </div>
+</div>
+<?php endif ?>
 
 @endsection

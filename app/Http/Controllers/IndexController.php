@@ -6,6 +6,7 @@ use Illuminate\Http\Request,
   App\Models\Venue,
   App\Models\VenueFile,
   App\Models\VenueDesign,
+  App\Models\Opportunity,
   Str,
   Image,
   Illuminate\Support\Facades\Storage,
@@ -660,88 +661,154 @@ class IndexController extends Controller
 
   public function acceptQuote(Request $request)
   {
-    require_once ('Soapclient/SforceEnterpriseClient.php');
+    $quote = [];
+    $opportunity = [];
+    $success = false;
 
-    $mySFC = new \SforceEnterpriseClient();
-    $mySFC->createConnection(__DIR__ . '/Soapclient/enterprise.wsdl.xml');
-    $mySFC->login(
-        env('SALESFORCE_USERNAME'),
-        env('SALESFORCE_PASSWORD') .
-        env('SALESFORCE_SECURITY_TOKEN')
-    );
+    if ($request->token) {
+      $salesforce = $this->salesforce();
+      $quote = $salesforce->query("SELECT 
+          Id, OpportunityId, Status
+        FROM Quote 
+        WHERE Id = '{$request->token}'");
 
-    $opportunity = new \StdClass;
-    $opportunity->Id = $request->token;
-    $opportunity->StageName = 'Aceptación de propuesta';
-    $result = $mySFC->update([$opportunity], 'Opportunity');
+      if ($quote['totalSize'] > 0) {
+        $opportunity = $salesforce->query("SELECT 
+            Id, StageName, Name 
+          FROM Opportunity 
+          WHERE Id = '{$quote['records'][0]['OpportunityId']}'");
 
-    dd($result);
+          if ($opportunity['totalSize'] > 0) {
+            if (($quote['records'][0]['Status'] == 'Presented' || 
+              $quote['records'][0]['Status'] == 'Accepted') && 
+              $opportunity['records'][0]['StageName'] == 'Negociación') {
+                $salesforce->update('Quote', $request->token, ['Status' => 'Accepted']);
+                $salesforce->update('Opportunity', $quote['records'][0]['OpportunityId'], ['StageName' => 'Aceptación de propuesta']);
+                $success = true;
+            }
+          }
+      }
+    }
+    
+    return view('index.quote', [
+      'type' => 'acceptance',
+      'quote' => $quote && $quote['records'] ? $quote['records'][0] : null,
+      'opportunity' => $opportunity && $opportunity['records'] ? $opportunity['records'][0] : null,
+      'success' => $success,
+    ]);
   }
 
   public function rejectQuote(Request $request)
   {
-    require_once ('Soapclient/SforceEnterpriseClient.php');
+    $quote = [];
+    $opportunity = [];
+    $success = false;
 
-    $mySFC = new \SforceEnterpriseClient();
-    $mySFC->createConnection(__DIR__ . '/Soapclient/enterprise.wsdl.xml');
-    $mySFC->login(
-        env('SALESFORCE_USERNAME'),
-        env('SALESFORCE_PASSWORD') .
-        env('SALESFORCE_SECURITY_TOKEN')
-    );
+    if ($request->token) {
+      $salesforce = $this->salesforce();
+      $quote = $salesforce->query("SELECT 
+          Id, OpportunityId, Status
+        FROM Quote 
+        WHERE Id = '{$request->token}'");
 
-    $opportunity = new \StdClass;
-    $opportunity->Id = $request->token;
-    $opportunity->StageName = 'Closed Lost';
-    $opportunity->Closing_comments__c = 'Rechazo de cotización';
-    $result = $mySFC->update([$opportunity], 'Opportunity');
+      if ($quote['totalSize'] > 0) {
+        $opportunity = $salesforce->query("SELECT 
+            Id, StageName, Name 
+          FROM Opportunity 
+          WHERE Id = '{$quote['records'][0]['OpportunityId']}'");
 
-    dd($result);
+          if ($opportunity['totalSize'] > 0) {
+            if ($quote['records'][0]['Status'] == 'Presented' && 
+              $opportunity['records'][0]['StageName'] == 'Negociación') {
+                $salesforce->update('Quote', $request->token, ['Status' => 'Denied']);
+                $salesforce->update('Opportunity', $quote['records'][0]['OpportunityId'], ['StageName' => 'Closed Lost']);
+                $success = true;
+            }
+          }
+      }
+    }
+
+    return view('index.quote', [
+      'type' => 'rejection',
+      'quote' => $quote && $quote['records'] ? $quote['records'][0] : null,
+      'opportunity' => $opportunity && $opportunity['records'] ? $opportunity['records'][0] : null,
+      'success' => $success,
+    ]);
   }
 
   public function docuSignPayment (Request $request) 
   {
-    if ($request->isMethod('post')) {
-      $endpoint = 'https://secure.paguelofacil.com/LinkDeamon.cfm';
-      $params = [
+    $success = false;
+    $total = 0;
+    $event_name = '';
+
+    if ($request->token) {
+      if ($request->isMethod('post')) {
+        $endpoint = env('APP_ENV') == 'production' ? 
+          'https://secure.paguelofacil.com/LinkDeamon.cfm' :
+          'https://sandbox.paguelofacil.com/LinkDeamon.cfm';
+
+        $params = [
           'CCLW' => '588BA57F825D6D9F6E230C2F39C94ACE84369A887E899DE043924E0122C38FF6',
           'CMTN' => $request->total,
           'CDSC' => $request->event_name,
           'RETURN_URL' => bin2hex(url('/confirmacion-pago/' . $request->token)),
           'PARM_1' => $request->token,
         ];
-      
-      $pay_url = $endpoint . '?' . http_build_query($params);
-      return redirect()->to($pay_url);
+        
+        $pay_url = $endpoint . '?' . http_build_query($params);
+        return redirect()->to($pay_url);
+      }
+
+      $salesforce = $this->salesforce();
+      $query = "SELECT 
+        Id, TotalPrice, Subtotal, Name
+        FROM ServiceContract 
+        WHERE Id = '{$request->token}'";
+
+      $result = $salesforce->query($query);
+      if ($result['totalSize'] > 0) {
+        $success = true;
+        $total = $result['records'][0]['TotalPrice'];
+        $event_name = $result['records'][0]['Name'];
+      }
     }
-
-    require_once ('Soapclient/SforceEnterpriseClient.php');
-
-    $mySFC = new \SforceEnterpriseClient();
-    $mySFC->createConnection(__DIR__ . '/Soapclient/enterprise.wsdl.xml');
-    $mySFC->login(
-        env('SALESFORCE_USERNAME'),
-        env('SALESFORCE_PASSWORD') .
-        env('SALESFORCE_SECURITY_TOKEN')
-    );
-
-    $query = "SELECT 
-        Id, TotalPrice, Subtotal, Tax
-      FROM ServiceContract 
-      WHERE Id = '{$request->token}'";
-
-    $result = $mySFC->query($query);
-    $total = 100.00;
     
     return view('index.paguelo-facil', [
+      'success' => $success,
       'total' => $total,
-      'event_name' => 'Mi evento'
+      'event_name' => $event_name
     ]);
   }
 
   public function paymentConfirmation(Request $request) 
   {
-    return view('index.payment-confirmation');
+    $data = [];
+    $opportunity = [];
+
+    if ($request) {
+      $data = $request->all();
+
+      if (isset($data['Estado']) && substr($data['Estado'], 0, 6) == 'Aproba') {
+        $id = $request->token == $data['PARM_1'] ? $request->token : null;
+
+        $salesforce = $this->salesforce();
+        $query = "SELECT 
+          Id, Name
+          FROM Opportunity 
+          WHERE Id = '{$id}'";
+
+        $opportunity = $salesforce->query($query);
+        if ($opportunity['totalSize'] > 0) {
+          $salesforce->update('Opportunity', $id, ['StageName' => 'Closed Won']);
+        }
+      }
+    }
+    
+    return view('index.payment-confirmation', [
+      'data' => $data,
+      'opportunity' => $opportunity['totalSize'] > 0 ? $opportunity['records'][0] : null
+    ]);
   }
 
   public function gallery(Request $request) 
@@ -858,5 +925,24 @@ class IndexController extends Controller
       return true;
     }
     return false;
+  }
+
+  private function salesforce()
+  {
+    $salesforce = new \EHAERER\Salesforce\Authentication\PasswordAuthentication([
+      'grant_type' => 'password',
+      'client_id' => env('SF_CONSUMER_KEY'),
+      'client_secret' => env('SF_CONSUMER_SECRET'),
+      'username' => env('SF_USERNAME'),
+      'password' => env('SF_PASSWORD') . env('SF_TOKEN')
+    ]);
+
+    $salesforce->setEndpoint(env('SF_LOGIN_URL'));
+    $salesforce->authenticate();
+
+    $accessToken = $salesforce->getAccessToken();
+    $instanceUrl = $salesforce->getInstanceUrl();
+
+    return new \EHAERER\Salesforce\SalesforceFunctions($instanceUrl, $accessToken);
   }
 }
