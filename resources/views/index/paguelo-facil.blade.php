@@ -36,6 +36,7 @@
     <form method="post">
       @csrf
       <input type="hidden" name="event_name" value="Abono - {{ $event_name }}" />
+      <input type="hidden" name="opportunity" value="{{ $opportunity }}" />
       <br><br>
       <div class="row justify-content-center">
         <div class="col-12 col-md-10">

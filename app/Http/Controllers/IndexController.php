@@ -741,6 +741,7 @@ class IndexController extends Controller
     $success = false;
     $total = 0;
     $event_name = '';
+    $opportunity = '';
 
     if ($request->token) {
       if ($request->isMethod('post')) {
@@ -753,7 +754,7 @@ class IndexController extends Controller
           'CMTN' => $request->total,
           'CDSC' => $request->event_name,
           'RETURN_URL' => bin2hex(url('/confirmacion-pago/' . $request->token)),
-          'PARM_1' => $request->token,
+          'PARM_1' => $request->opportunity,
         ];
         
         $pay_url = $endpoint . '?' . http_build_query($params);
@@ -762,7 +763,7 @@ class IndexController extends Controller
 
       $salesforce = $this->salesforce();
       $query = "SELECT 
-        Id, TotalPrice, Subtotal, Name
+        Id, TotalPrice, Subtotal, Name, Oportunidad__c
         FROM ServiceContract 
         WHERE Id = '{$request->token}'";
 
@@ -771,13 +772,15 @@ class IndexController extends Controller
         $success = true;
         $total = $result['records'][0]['TotalPrice'];
         $event_name = $result['records'][0]['Name'];
+        $opportunity = $result['records'][0]['Oportunidad__c'];
       }
     }
     
     return view('index.paguelo-facil', [
       'success' => $success,
       'total' => $total,
-      'event_name' => $event_name
+      'event_name' => $event_name,
+      'opportunity' => $opportunity
     ]);
   }
 
@@ -790,9 +793,21 @@ class IndexController extends Controller
       $data = $request->all();
 
       if (isset($data['Estado']) && substr($data['Estado'], 0, 6) == 'Aproba') {
-        $id = $request->token == $data['PARM_1'] ? $request->token : null;
-
         $salesforce = $this->salesforce();
+
+        $query = "SELECT 
+          Id, TotalPrice, Subtotal, Name, Oportunidad__c
+          FROM ServiceContract 
+          WHERE Id = '{$request->token}'";
+        $contract = $salesforce->query($query);
+
+        $opportunity_id = null;
+        if ($contract['totalSize'] > 0) {
+          $opportunity_id = $contract['records'][0]['Oportunidad__c'];
+        }
+
+        $id = $opportunity_id == $data['PARM_1'] ? $opportunity_id : null;
+
         $query = "SELECT 
           Id, Name
           FROM Opportunity 
