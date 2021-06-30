@@ -7,22 +7,22 @@
     <div class="row">
       <div class="col-12 col-md-6">
         <div class="form-group required">
-          <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Nombres" value="<?php echo session()->get('first_name') ?>">
+          <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Nombres" value="<?php echo session()->get('first_name', old('first_name')) ?>">
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group required">
-          <input type="email" class="form-control" name="last_name" id="last_name" placeholder="Apellidos" value="<?php echo session()->get('last_name') ?>">
+          <input type="email" class="form-control" name="last_name" id="last_name" placeholder="Apellidos" value="<?php echo session()->get('last_name', old('last_name')) ?>">
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group required">
-          <input type="text" class="form-control" name="email" id="email" placeholder="Correo electrónico" value="<?php echo session()->get('email') ?>">
+          <input type="text" class="form-control" name="email" id="email" placeholder="Correo electrónico" value="<?php echo session()->get('email', old('email')) ?>">
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group required">
-          <input type="text" class="form-control" name="phone" id="phone" placeholder="Número de teléfono" value="<?php echo session()->get('phone') ?>">
+          <input type="text" class="form-control" name="phone" id="phone" placeholder="Número de teléfono" value="<?php echo session()->get('phone', old('phone')) ?>">
         </div>
       </div>
       <!--
@@ -285,7 +285,7 @@
 
       <div class="col-12">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="1" id="show-company-fields" <?php if (session()->get('company')) : ?>checked="checked"<?php endif ?>>
+            <input class="form-check-input" type="checkbox" value="1" id="show-company-fields" <?php if (session()->get('company', old('company'))) : ?>checked="checked"<?php endif ?>>
             <label class="form-check-label" for="show-company-fields" style="font-size:13px; font-family: 'Roboto', sans-serif">
               ¿Deseas que la factura se genere a nombre de tu organización?
             </label>
@@ -297,12 +297,12 @@
           <div class="col-12"><small>Por favor ingresa la siguiente información</small></div>
           <div class="col-12 col-md-6">
             <div class="form-group">
-              <input type="text" class="form-control" name="company" id="company" placeholder="Organización" value="<?php echo session()->get('company') ?>">
+              <input type="text" class="form-control" name="company" id="company" placeholder="Organización" value="<?php echo session()->get('company', old('company')) ?>">
             </div>
           </div>
           <div class="col-12 col-md-6">
             <div class="form-group">
-              <input type="text" class="form-control" name="00N3m00000QQOde" id="identification" placeholder="RUC (Número de identificación fiscal)" value="<?php echo session()->get('00N3m00000QQOde') ?>">
+              <input type="text" class="form-control" name="00N3m00000QQOde" id="identification" placeholder="RUC (Número de identificación fiscal)" value="<?php echo session()->get('00N3m00000QQOde', old('00N3m00000QQOde')) ?>">
             </div>
           </div>
         </div>
