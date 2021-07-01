@@ -791,30 +791,29 @@ class IndexController extends Controller
 
     if ($request) {
       $data = $request->all();
+      $salesforce = $this->salesforce();
 
-      if (isset($data['Estado']) && substr($data['Estado'], 0, 6) == 'Aproba') {
-        $salesforce = $this->salesforce();
+      $query = "SELECT 
+        Id, TotalPrice, Subtotal, Name, Oportunidad__c
+        FROM ServiceContract 
+        WHERE Id = '{$request->token}'";
+      $contract = $salesforce->query($query);
 
-        $query = "SELECT 
-          Id, TotalPrice, Subtotal, Name, Oportunidad__c
-          FROM ServiceContract 
-          WHERE Id = '{$request->token}'";
-        $contract = $salesforce->query($query);
+      $opportunity_id = null;
+      if ($contract['totalSize'] > 0) {
+        $opportunity_id = $contract['records'][0]['Oportunidad__c'];
+      }
 
-        $opportunity_id = null;
-        if ($contract['totalSize'] > 0) {
-          $opportunity_id = $contract['records'][0]['Oportunidad__c'];
-        }
+      $id = $opportunity_id == $data['PARM_1'] ? $opportunity_id : null;
 
-        $id = $opportunity_id == $data['PARM_1'] ? $opportunity_id : null;
+      $query = "SELECT 
+        Id, Name
+        FROM Opportunity 
+        WHERE Id = '{$id}'";
 
-        $query = "SELECT 
-          Id, Name
-          FROM Opportunity 
-          WHERE Id = '{$id}'";
-
-        $opportunity = $salesforce->query($query);
-        if ($opportunity['totalSize'] > 0) {
+      $opportunity = $salesforce->query($query);
+      if ($opportunity['totalSize'] > 0) {
+        if (isset($data['Estado']) && substr($data['Estado'], 0, 6) == 'Aproba') {
           $salesforce->update('Opportunity', $id, ['StageName' => 'Closed Won']);
         }
       }
