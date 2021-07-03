@@ -16,6 +16,8 @@ class IndexController extends Controller
 {
   public function index(Request $request)
   {
+    return redirect('https://ciudaddelsaber.org');
+
     $parents = [
       '02i3m0000092sG9AAI',
       '02i3m0000092sG3AAI',
@@ -122,6 +124,8 @@ class IndexController extends Controller
 
   public function ateneo(Request $request)
   { 
+    return redirect('https://ciudaddelsaber.org');
+
     $parent = Venue::find('02i3m0000092sG9AAI');
     $venues = [$parent];
     
@@ -159,6 +163,8 @@ class IndexController extends Controller
 
   public function centroConvenciones(Request $request)
   {
+    return redirect('https://ciudaddelsaber.org');
+
     $parent = Venue::find('02i3m0000092sG3AAI');
     $venues = Venue::where('parent_id', '=', $parent->id)
       ->where('show_on_website', 'Si')
@@ -198,6 +204,8 @@ class IndexController extends Controller
 
   public function aulas105(Request $request)
   {
+    return redirect('https://ciudaddelsaber.org');
+
     $parent = Venue::find('02i3m0000092sJSAAY');
     $venues = Venue::where('parent_id', '=', $parent->id)
       ->where('show_on_website', 'Si')
@@ -237,6 +245,8 @@ class IndexController extends Controller
 
   public function aulas220(Request $request)
   {
+    return redirect('https://ciudaddelsaber.org');
+
     $parent = Venue::find('02i3m0000092sEkAAI');
     $venues = Venue::where('parent_id', '=', $parent->id)
       ->where('show_on_website', 'Si')
@@ -276,6 +286,8 @@ class IndexController extends Controller
 
   public function complejoHospedaje(Request $request)
   {
+    return redirect('https://ciudaddelsaber.org');
+
     $parent = Venue::find('02i3m0000092sHZAAY');
     $venues = Venue::whereIn('parent_id', [
         '02i3m0000092sHZAAY', // E-157
@@ -319,6 +331,8 @@ class IndexController extends Controller
 
   public function residencias(Request $request)
   {
+    return redirect('https://ciudaddelsaber.org');
+
     $parent = new \StdClass();
     $parent->name = 'Zona Residencial';
     $parent->main_text = 'Tranquilidad, seguridad y plenitud rodeado de la naturaleza.
@@ -421,6 +435,8 @@ class IndexController extends Controller
 
   public function oferta(Request $request)
   {
+    return redirect('https://ciudaddelsaber.org');
+
     $type = $request->type;
     $quantity = $request->quantity;
     $daterange = $request->daterange;
@@ -501,6 +517,8 @@ class IndexController extends Controller
 
   public function venue(Request $request)
   {
+    return redirect('https://ciudaddelsaber.org');
+    
     return view('index.venue', [
       'page_title' => 'Servicios - Venue',
       'venue' => 'inicio',
