@@ -1251,6 +1251,15 @@ input[type="file"] + label {
   font-weight: 600;
   position: relative;
 }
+.venues-menu ul li:last-child {
+  display: none;
+}
+.venues-menu ul.with-cds li {
+  width: calc(14.28% - 1px);
+}
+.venues-menu ul.with-cds li:last-child {
+  display: block;
+}
 .venues-menu ul li:first-child {
   border-left: none;
 }

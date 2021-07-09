@@ -3,10 +3,20 @@
 @section('content')
 <x-covid />
 <x-header menu="true" />
+
+<?php if ($show_venues_menu) : ?>
+<x-venues-menu venue="{{ $venue }}" />
+<?php endif ?>
+
+<?php if ($show_carousel) : ?>
 <x-carousel id="home-carousel" />
 <x-searcher />
 <img src="/assets/images/arrow-down-navigation.gif" class="scroll-down">
+<?php endif ?>
+
+<?php if ($show_featured_text) : ?>
 <x-featured />
+<?php endif ?>
 
 <div class="venues">
   <div class="container featured">
@@ -89,7 +99,11 @@
 </div>
 
 <x-clients clients="{{ $clients }}" />
+
+<?php if ($show_contact_form) : ?>
 <x-contact />
+<?php endif ?>
+
 <x-footer />
 <x-security-policies />
 @endsection

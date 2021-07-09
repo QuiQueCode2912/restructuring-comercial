@@ -13,17 +13,19 @@
           case 'aulas-220' : echo 'Aulas 220'; break;
           case 'complejo-hospedaje' : echo 'Complejo de hospedaje'; break;
           case 'residencias' : echo 'Residencias'; break;
+          case 'espacios-cds' : echo 'Espacios CdS'; break;
         }
         ?>
         </a>
         -->
-        <ul>
+        <ul class="<?php echo session()->get('is-cds-user') ? 'with-cds' : '' ?>">
           <li <?php echo $venue == 'inicio' ? 'class="active"' : '' ?>><a href="/">Inicio</a></li>
           <li <?php echo $venue == 'ateneo' ? 'class="active"' : '' ?>><a href="/ateneo">Ateneo</a></li>
           <li <?php echo $venue == 'centro-convenciones' ? 'class="active"' : '' ?>><a href="/centro-convenciones">Centro de convenciones</a></li>
           <li <?php echo $venue == 'aulas-105' ? 'class="active"' : '' ?>><a href="/aulas-105">Aulas 105</a></li>
           <li><a href="https://live.ipms247.com/booking/book-rooms-complejodehospedaje-es-Spanish" target="_blank">Complejo de hospedaje</a></li>
           <li <?php echo $venue == 'residencias' ? 'class="active"' : '' ?>><a href="/residencias">Residencias</a></li>
+          <li <?php echo $venue == 'espacios-cds' ? 'class="active"' : '' ?>><a href="/espacios-cds">Espacios CdS</a></li>
         </ul>
       </div>
     </div>

@@ -6,7 +6,6 @@ use Illuminate\Http\Request,
   App\Models\Venue,
   App\Models\VenueFile,
   App\Models\VenueDesign,
-  App\Models\Opportunity,
   Str,
   Image,
   Illuminate\Support\Facades\Storage,
@@ -15,15 +14,26 @@ use Illuminate\Http\Request,
 class IndexController extends Controller
 {
   public function index(Request $request)
-  {
+  {     
     return redirect('https://ciudaddelsaber.org');
-
+    
     $parents = [
-      '02i3m0000092sG9AAI',
-      '02i3m0000092sG3AAI',
-      '02i3m0000092sJSAAY',
-      '02i3m0000092sHZAAY'
+      '02i3m0000092sG9AAI', // Ateneo
+      '02i3m0000092sG3AAI', // Centro de convenciones
+      '02i3m0000092sJSAAY', // Aulas 105
+      '02i3m0000092sHZAAY', // Complejo de hospedaje
     ];
+
+    $isUser = session()->get('is-cds-user', false);
+    $userEmail = session()->get('cds-user-email', null);
+
+    if ($isUser && strpos($userEmail, '@cdspanama.org') > 0) {
+      $parents[] = '02i3m0000092sJmAAI'; // E-104
+      $parents[] = '02i3m0000092sIyAAI'; // E-109
+      $parents[] = '02i3m0000092s8rAAA'; // E-300
+      //$parents[] =  ''; // E-173 no sale
+      //$parents[] =  ''; // G-214 salen varios
+    }
 
     $venues = Venue::whereIn('id', $parents)
       ->where('show_on_website', 'Si')
@@ -33,6 +43,18 @@ class IndexController extends Controller
     if ($venues) {
       foreach ($venues as $venue) {
         switch ($venue->id) {
+          case '02i3m0000092sJmAAI' :
+            $name = 'E-104';
+            $url = '/e-104';
+            break;
+          case '02i3m0000092sIyAAI' :
+            $name = 'E-109';
+            $url = '/e-109';
+            break;
+          case '02i3m0000092s8rAAA' :
+            $name = 'E-300';
+            $url = '/e-300';
+            break;
           case '02i3m0000092sG9AAI' :
             $name = 'Ateneo';
             $url = '/ateneo';
@@ -119,6 +141,247 @@ class IndexController extends Controller
       'page_title' => 'Servicios',
       'venues' => $fixedVenues,
       'clients' => json_encode($clients),
+      'show_featured_text' => true,
+      'show_contact_form' => true,
+      'show_carousel' => true,
+      'show_venues_menu' => false,
+      'venue' => null,
+    ]);
+  }
+
+  public function cds(Request $request)
+  {     
+    return redirect('https://ciudaddelsaber.org');
+    
+    $isUser = session()->get('is-cds-user', false);
+    $userEmail = session()->get('cds-user-email', null);
+
+    if ($isUser == false || strpos($userEmail, '@cdspanama.org') == false) {
+      session()->put('is-cds-user', false);
+      session()->put('cds-user-email', null);
+
+      return redirect()->to('/');
+    }
+
+    $parents = [
+      '02i3m0000092sJmAAI', // E-104
+      '02i3m0000092sIyAAI', // E-109
+      '02i3m0000092s8rAAA', // E-300
+    ];
+
+    $venues = Venue::whereIn('id', $parents)
+      ->where('show_on_website', 'Si')
+      ->get();
+
+    $fixedVenues = [];
+    if ($venues) {
+      foreach ($venues as $venue) {
+        switch ($venue->id) {
+          case '02i3m0000092sJmAAI' :
+            $name = 'E-104';
+            $url = '/e-104';
+            break;
+          case '02i3m0000092sIyAAI' :
+            $name = 'E-109';
+            $url = '/e-109';
+            break;
+          case '02i3m0000092s8rAAA' :
+            $name = 'E-300';
+            $url = '/e-300';
+            break;
+        }
+
+        $venue_image = VenueFile::where('venue_id', $venue->id)->first();
+        $image = $venue_image ? url('storage/venues/' . $venue_image->path) : '/assets/images/placeholder-image.jpg';
+
+        $subvenues = Venue::where('parent_id', '=', $venue->id)
+          ->where('show_on_website', 'Si')
+          ->get();
+
+        $designs = [];
+        if ($subvenues) {
+          foreach ($subvenues as $subvenue) {
+            $ds = $subvenue->designs()->get();
+            if ($ds) {
+              foreach ($ds as $d) {
+                $designs[] = $d;
+              }
+            }
+          }
+        }
+        
+        $fixedVenues[] = [
+          'name' => $name,
+          'url' => $url,
+          'image' => $image,
+          'venues' => $subvenues,
+          'designs' => $designs,
+        ];
+      }
+    }
+
+    return view('index.index', [
+      'page_title' => 'Servicios',
+      'venues' => $fixedVenues,
+      'clients' => json_encode([]),
+      'show_featured_text' => false,
+      'show_contact_form' => false,
+      'show_carousel' => false,
+      'show_venues_menu' => true,
+      'venue' => 'espacios-cds',
+    ]);
+  }
+
+  public function e104(Request $request)
+  { 
+    return redirect('https://ciudaddelsaber.org');
+
+    $isUser = session()->get('is-cds-user', false);
+    $userEmail = session()->get('cds-user-email', null);
+
+    if ($isUser == false || strpos($userEmail, '@cdspanama.org') == false) {
+      session()->put('is-cds-user', false);
+      session()->put('cds-user-email', null);
+
+      return redirect()->to('/');
+    }
+
+    $parent = Venue::find('02i3m0000092sJmAAI');
+    $venues = Venue::where('parent_id', '=', $parent->id)
+      ->where('show_on_website', 'Si')
+      ->get();
+    
+    $max_pax = 0;
+    if ($venues) {
+      foreach ($venues as $venue) {
+        $venue_max_pax = $venue->designs()->max('max_pax');
+        $max_pax = $venue_max_pax > $max_pax ? $venue_max_pax : $max_pax;
+      }
+      $facilities = $venues ? $venues[0]->facilities : null;
+    }
+
+    $venue_images = VenueFile::where('venue_id', $parent->id)->get();
+    $images = [];
+    if ($venue_images->count() > 0) {
+      foreach ($venue_images as $image) {
+        $images[] = url('storage/venues/' . $image->path);
+      }
+    } else {
+      $images[] = '/assets/images/placeholder-image.jpg';
+    }
+
+    return view('venues.venue', [
+      'page_title' => 'Servicios - E-104',
+      'venue' => 'e-104',
+      'venueName' => 'E-104',
+      'subtitle' => '',
+      'parent' => $parent,
+      'venues' => $venues,
+      'images' => $images,
+      'facilities' => $facilities,
+      'max_pax' => $max_pax
+    ]);
+  }
+
+  public function e109(Request $request)
+  { 
+    return redirect('https://ciudaddelsaber.org');
+
+    $isUser = session()->get('is-cds-user', false);
+    $userEmail = session()->get('cds-user-email', null);
+
+    if ($isUser == false || strpos($userEmail, '@cdspanama.org') == false) {
+      session()->put('is-cds-user', false);
+      session()->put('cds-user-email', null);
+
+      return redirect()->to('/');
+    }
+
+    $parent = Venue::find('02i3m0000092sIyAAI');
+    $venues = Venue::where('parent_id', '=', $parent->id)
+      ->where('show_on_website', 'Si')
+      ->get();
+    
+    $max_pax = 0;
+    if ($venues) {
+      foreach ($venues as $venue) {
+        $venue_max_pax = $venue->designs()->max('max_pax');
+        $max_pax = $venue_max_pax > $max_pax ? $venue_max_pax : $max_pax;
+      }
+      $facilities = $venues ? $venues[0]->facilities : null;
+    }
+
+    $venue_images = VenueFile::where('venue_id', $parent->id)->get();
+    $images = [];
+    if ($venue_images->count() > 0) {
+      foreach ($venue_images as $image) {
+        $images[] = url('storage/venues/' . $image->path);
+      }
+    } else {
+      $images[] = '/assets/images/placeholder-image.jpg';
+    }
+
+    return view('venues.venue', [
+      'page_title' => 'Servicios - E-109',
+      'venue' => 'e-109',
+      'venueName' => 'E-109',
+      'subtitle' => '',
+      'parent' => $parent,
+      'venues' => $venues,
+      'images' => $images,
+      'facilities' => $facilities,
+      'max_pax' => $max_pax
+    ]);
+  }
+
+  public function e300(Request $request)
+  { 
+    return redirect('https://ciudaddelsaber.org');
+
+    $isUser = session()->get('is-cds-user', false);
+    $userEmail = session()->get('cds-user-email', null);
+
+    if ($isUser == false || strpos($userEmail, '@cdspanama.org') == false) {
+      session()->put('is-cds-user', false);
+      session()->put('cds-user-email', null);
+
+      return redirect()->to('/');
+    }
+
+    $parent = Venue::find('02i3m0000092s8rAAA');
+    $venues = Venue::where('parent_id', '=', $parent->id)
+      ->where('show_on_website', 'Si')
+      ->get();
+    
+    $max_pax = 0;
+    if ($venues) {
+      foreach ($venues as $venue) {
+        $venue_max_pax = $venue->designs()->max('max_pax');
+        $max_pax = $venue_max_pax > $max_pax ? $venue_max_pax : $max_pax;
+      }
+      $facilities = $venues ? $venues[0]->facilities : null;
+    }
+
+    $venue_images = VenueFile::where('venue_id', $parent->id)->get();
+    $images = [];
+    if ($venue_images->count() > 0) {
+      foreach ($venue_images as $image) {
+        $images[] = url('storage/venues/' . $image->path);
+      }
+    } else {
+      $images[] = '/assets/images/placeholder-image.jpg';
+    }
+
+    return view('venues.venue', [
+      'page_title' => 'Servicios - E-300',
+      'venue' => 'e-300',
+      'venueName' => 'E-300',
+      'subtitle' => '',
+      'parent' => $parent,
+      'venues' => $venues,
+      'images' => $images,
+      'facilities' => $facilities,
+      'max_pax' => $max_pax
     ]);
   }
 
@@ -497,8 +760,20 @@ class IndexController extends Controller
     $venues = [];
     if (count($ids) > 0) {
       $venues = Venue::whereIn('id', $ids)
-        ->where('show_on_website', 'Si')
-        ->get();
+        ->where('show_on_website', 'Si');
+      
+      $isUser = session()->get('is-cds-user', false);
+      $userEmail = session()->get('cds-user-email', null);
+
+      if ($isUser == false || strpos($userEmail, '@cdspanama.org') == false) {
+        $venues->whereNotIn('parent_id', [
+          '02i3m0000092sJmAAI', // E-104
+          '02i3m0000092sIyAAI', // E-109
+          '02i3m0000092s8rAAA', // E-300
+        ]);
+      }
+
+      $venues = $venues->get();
     }
 
     return view('index.venues', [
@@ -692,7 +967,7 @@ class IndexController extends Controller
 
       if ($quote['totalSize'] > 0) {
         $opportunity = $salesforce->query("SELECT 
-            Id, StageName, Name 
+            Id, StageName, Name, ContactId
           FROM Opportunity 
           WHERE Id = '{$quote['records'][0]['OpportunityId']}'");
 
@@ -701,7 +976,25 @@ class IndexController extends Controller
               $quote['records'][0]['Status'] == 'Accepted') && 
               $opportunity['records'][0]['StageName'] == 'Negociación') {
                 $salesforce->update('Quote', $request->token, ['Status' => 'Accepted']);
-                $salesforce->update('Opportunity', $quote['records'][0]['OpportunityId'], ['StageName' => 'Aceptación de propuesta']);
+
+                $contact = $salesforce->query("SELECT 
+                    Id, Email
+                  FROM Contact 
+                  WHERE Id = '{$opportunity['records'][0]['ContactId']}'");
+
+                $email = null;
+                if ($contact['totalSize'] > 0) {
+                  $email = $contact['records'][0]['Email'];
+                }
+
+                if ($email && strpos($email, '@cdspanama.org') > 0) {
+                  $salesforce->update('Opportunity', $request->token, [
+                    'StageName' => 'Closed Won',
+                    'Closing_comments__c' => 'Marcada como ganada automáticamente por sistema al ser un evento solicitado por un colaborador de la FCDS.'
+                  ]);
+                } else {
+                  $salesforce->update('Opportunity', $quote['records'][0]['OpportunityId'], ['StageName' => 'Aceptación de propuesta']);
+                }
                 $success = true;
             }
           }
@@ -976,5 +1269,23 @@ class IndexController extends Controller
     $instanceUrl = $salesforce->getInstanceUrl();
 
     return new \EHAERER\Salesforce\SalesforceFunctions($instanceUrl, $accessToken);
+  }
+
+  public function oneLogin(Request $request)
+  {
+    if ($request->isMethod('post')) {
+      $inputs = $request->validate([
+        'email' => 'required|string|email',
+      ]);
+
+      if (strpos($inputs['email'], '@cdspanama.org')) {
+        session()->put('is-cds-user', true);
+        session()->put('cds-user-email', $inputs['email']);
+
+        return redirect()->to('/');
+      }
+
+      return redirect()->to('/one-login?error=1');
+    }
   }
 }

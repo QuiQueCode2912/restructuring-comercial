@@ -1,4 +1,4 @@
-<?php $token = 202106011648 ?>
+<?php $token = 202107091230 ?>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   <head>

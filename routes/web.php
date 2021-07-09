@@ -15,7 +15,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\IndexController@index');
 
+Route::get('/one-login', function() {
+  return view('index.one-login');
+});
+Route::post('/one-login', 'App\Http\Controllers\IndexController@oneLogin');
+
+Route::get('/espacios-cds', 'App\Http\Controllers\IndexController@cds');
 Route::get('/oferta', 'App\Http\Controllers\IndexController@oferta');
+Route::get('/e-104', 'App\Http\Controllers\IndexController@e104');
+Route::get('/e-109', 'App\Http\Controllers\IndexController@e109');
+Route::get('/e-300', 'App\Http\Controllers\IndexController@e300');
 Route::get('/ateneo', 'App\Http\Controllers\IndexController@ateneo');
 Route::get('/centro-convenciones', 'App\Http\Controllers\IndexController@centroConvenciones');
 Route::get('/aulas-105', 'App\Http\Controllers\IndexController@aulas105');
