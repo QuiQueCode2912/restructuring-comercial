@@ -964,7 +964,7 @@ class IndexController extends Controller
           Id, OpportunityId, Status
         FROM Quote 
         WHERE Id = '{$request->token}'");
-
+        
       if ($quote['totalSize'] > 0) {
         $opportunity = $salesforce->query("SELECT 
             Id, StageName, Name, ContactId
@@ -988,7 +988,7 @@ class IndexController extends Controller
                 }
 
                 if ($email && strpos($email, '@cdspanama.org') > 0) {
-                  $salesforce->update('Opportunity', $request->token, [
+                  $salesforce->update('Opportunity', $quote['records'][0]['OpportunityId'], [
                     'StageName' => 'Closed Won',
                     'Closing_comments__c' => 'Marcada como ganada automáticamente por sistema al ser un evento solicitado por un colaborador de la FCDS.'
                   ]);
