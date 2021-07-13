@@ -91,7 +91,7 @@ class IndexController extends Controller
         }
 
         $venue_image = VenueFile::where('venue_id', $venue->id)->first();
-        $image = $venue_image ? url('storage/venues/' . $venue_image->path) : '/assets/images/placeholder-image.jpg';
+        $image = $venue_image ? image_url('storage/venues/' . $venue_image->path) : '/assets/images/placeholder-image.jpg';
 
         if ($venue->id == '02i3m0000092sG9AAI' || $venue->id == '02i3m0000092sP3AAI') {
           $subvenues = [$venue];
@@ -220,7 +220,7 @@ class IndexController extends Controller
         }
 
         $venue_image = VenueFile::where('venue_id', $venue->id)->first();
-        $image = $venue_image ? url('storage/venues/' . $venue_image->path) : '/assets/images/placeholder-image.jpg';
+        $image = $venue_image ? image_url('storage/venues/' . $venue_image->path) : '/assets/images/placeholder-image.jpg';
 
         if ($venue->id == '02i3m0000092sP3AAI') {
           $subvenues = [$venue];
@@ -296,7 +296,7 @@ class IndexController extends Controller
     $images = [];
     if ($venue_images->count() > 0) {
       foreach ($venue_images as $image) {
-        $images[] = url('storage/venues/' . $image->path);
+        $images[] = image_url('storage/venues/' . $image->path);
       }
     } else {
       $images[] = '/assets/images/placeholder-image.jpg';
@@ -347,7 +347,7 @@ class IndexController extends Controller
     $images = [];
     if ($venue_images->count() > 0) {
       foreach ($venue_images as $image) {
-        $images[] = url('storage/venues/' . $image->path);
+        $images[] = image_url('storage/venues/' . $image->path);
       }
     } else {
       $images[] = '/assets/images/placeholder-image.jpg';
@@ -398,7 +398,7 @@ class IndexController extends Controller
     $images = [];
     if ($venue_images->count() > 0) {
       foreach ($venue_images as $image) {
-        $images[] = url('storage/venues/' . $image->path);
+        $images[] = image_url('storage/venues/' . $image->path);
       }
     } else {
       $images[] = '/assets/images/placeholder-image.jpg';
@@ -449,7 +449,7 @@ class IndexController extends Controller
     $images = [];
     if ($venue_images->count() > 0) {
       foreach ($venue_images as $image) {
-        $images[] = url('storage/venues/' . $image->path);
+        $images[] = image_url('storage/venues/' . $image->path);
       }
     } else {
       $images[] = '/assets/images/placeholder-image.jpg';
@@ -500,7 +500,7 @@ class IndexController extends Controller
     $images = [];
     if ($venue_images->count() > 0) {
       foreach ($venue_images as $image) {
-        $images[] = url('storage/venues/' . $image->path);
+        $images[] = image_url('storage/venues/' . $image->path);
       }
     } else {
       $images[] = '/assets/images/placeholder-image.jpg';
@@ -539,7 +539,7 @@ class IndexController extends Controller
     $images = [];
     if ($venue_images->count() > 0) {
       foreach ($venue_images as $image) {
-        $images[] = url('storage/venues/' . $image->path);
+        $images[] = image_url('storage/venues/' . $image->path);
       }
     } else {
       $images[] = '/assets/images/placeholder-image.jpg';
@@ -578,7 +578,7 @@ class IndexController extends Controller
     $images = [];
     if ($venue_images->count() > 0) {
       foreach ($venue_images as $image) {
-        $images[] = url('storage/venues/' . $image->path);
+        $images[] = image_url('storage/venues/' . $image->path);
       }
     } else {
       $images[] = '/assets/images/placeholder-image.jpg';
@@ -619,7 +619,7 @@ class IndexController extends Controller
     $images = [];
     if ($venue_images->count() > 0) {
       foreach ($venue_images as $image) {
-        $images[] = url('storage/venues/' . $image->path);
+        $images[] = image_url('storage/venues/' . $image->path);
       }
     } else {
       $images[] = '/assets/images/placeholder-image.jpg';
@@ -660,7 +660,7 @@ class IndexController extends Controller
     $images = [];
     if ($venue_images->count() > 0) {
       foreach ($venue_images as $image) {
-        $images[] = url('storage/venues/' . $image->path);
+        $images[] = image_url('storage/venues/' . $image->path);
       }
     } else {
       $images[] = '/assets/images/placeholder-image.jpg';
@@ -701,7 +701,7 @@ class IndexController extends Controller
     $images = [];
     if ($venue_images->count() > 0) {
       foreach ($venue_images as $image) {
-        $images[] = url('storage/venues/' . $image->path);
+        $images[] = image_url('storage/venues/' . $image->path);
       }
     } else {
       $images[] = '/assets/images/placeholder-image.jpg';
@@ -746,7 +746,7 @@ class IndexController extends Controller
     $images = [];
     if ($venue_images->count() > 0) {
       foreach ($venue_images as $image) {
-        $images[] = url('storage/venues/' . $image->path);
+        $images[] = image_url('storage/venues/' . $image->path);
       }
     } else {
       $images[] = '/assets/images/placeholder-image.jpg';
@@ -845,7 +845,7 @@ class IndexController extends Controller
     ];
     /*if ($venue_images->count() > 0) {
       foreach ($venue_images as $image) {
-        $images[] = url('storage/venues/' . $image->path);
+        $images[] = image_url('storage/venues/' . $image->path);
       }
     } else {
       $images = ['/assets/images/placeholder-image.jpg'];

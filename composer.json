@@ -11,6 +11,7 @@
         "php": "^7.3|^8.0",
         "bashy/laravel-campaignmonitor": "^5.0",
         "ehaerer/php-salesforce-rest-api": "^1.0",
+        "facade/ignition": "^2.11",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "intervention/image": "^2.5",
@@ -18,7 +19,6 @@
         "laravel/tinker": "^2.5"
     },
     "require-dev": {
-        "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
@@ -35,6 +35,9 @@
         }
     },
     "autoload": {
+        "files": [
+            "app/helpers.php"
+        ],
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",

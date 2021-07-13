@@ -79,10 +79,10 @@
               <?php foreach ($venues as $venue) : ?>
                 <?php 
                 if (isset($venue->fixed_image)) {
-                  $venue_image = url('assets/images/residencies/' . $venue->fixed_image); 
+                  $venue_image = image_url('assets/images/residencies/' . $venue->fixed_image); 
                 } else {
                   $venue_img = $venue->files()->count() > 0 ? substr($venue->files()->first()->path, 0, strpos($venue->files()->first()->path, '.')) . '_480.' . substr($venue->files()->first()->path, strpos($venue->files()->first()->path, '.') + 1) : null;
-                  $venue_image = $venue_img ? url('storage/venues/' . $venue_img) : '/assets/images/placeholder-image_480.jpg'; 
+                  $venue_image = $venue_img ? image_url('storage/venues/' . $venue_img) : '/assets/images/placeholder-image_480.jpg'; 
                 }
                 ?>
                 <x-venue-list 

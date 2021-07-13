@@ -78,10 +78,10 @@
     <ul>
     <?php foreach ($images as $image) : ?>
       <li class="thumb">
-        <a href="<?php echo url('storage/venues/' . $image->path) ?>" target="_blank">
+        <a href="<?php echo image_url('storage/venues/' . $image->path) ?>" target="_blank">
           <span><?php echo $image->name ?></span>
           <i class="fe fe-external-link"></i>
-          <img src="<?php echo url('storage/venues/' . substr($image->path, 0, strpos($image->path, '.')) . '_480.' . substr($image->path, strpos($image->path, '.') + 1)) ?>">
+          <img src="<?php echo image_url('storage/venues/' . substr($image->path, 0, strpos($image->path, '.')) . '_480.' . substr($image->path, strpos($image->path, '.') + 1)) ?>">
         </a>
         <a href="/galeria/<?php echo $venue->id ?>/eliminar/<?php echo $image->token ?>?sessionid=<?php echo $sessionid ?>" class="delete-image">
           <i class="fe fe-x"></i>
