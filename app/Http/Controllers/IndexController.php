@@ -15,7 +15,7 @@ class IndexController extends Controller
 {
   public function index(Request $request)
   { 
-    if (config('app.env') == 'production') return redirect('https://ciudaddelsaber.org');
+    if (config('app.env') == 'production' && !session()->get('is-cds-user', false)) return redirect('https://ciudaddelsaber.org');
     
     $parents = [
       '02i3m0000092sG9AAI', // Ateneo
@@ -151,7 +151,7 @@ class IndexController extends Controller
 
   public function cds(Request $request)
   {     
-    if (config('app.env') == 'production') return redirect('https://ciudaddelsaber.org');
+    if (config('app.env') == 'production' && !session()->get('is-cds-user', false)) return redirect('https://ciudaddelsaber.org');
     
     $isUser = session()->get('is-cds-user', false);
     $userEmail = session()->get('cds-user-email', null);
@@ -234,7 +234,7 @@ class IndexController extends Controller
 
   public function e104(Request $request)
   { 
-    if (config('app.env') == 'production') return redirect('https://ciudaddelsaber.org');
+    if (config('app.env') == 'production' && !session()->get('is-cds-user', false)) return redirect('https://ciudaddelsaber.org');
 
     $isUser = session()->get('is-cds-user', false);
     $userEmail = session()->get('cds-user-email', null);
@@ -285,7 +285,7 @@ class IndexController extends Controller
 
   public function e109(Request $request)
   { 
-    if (config('app.env') == 'production') return redirect('https://ciudaddelsaber.org');
+    if (config('app.env') == 'production' && !session()->get('is-cds-user', false)) return redirect('https://ciudaddelsaber.org');
 
     $isUser = session()->get('is-cds-user', false);
     $userEmail = session()->get('cds-user-email', null);
@@ -336,7 +336,7 @@ class IndexController extends Controller
 
   public function e300(Request $request)
   { 
-    if (config('app.env') == 'production') return redirect('https://ciudaddelsaber.org');
+    if (config('app.env') == 'production' && !session()->get('is-cds-user', false)) return redirect('https://ciudaddelsaber.org');
 
     $isUser = session()->get('is-cds-user', false);
     $userEmail = session()->get('cds-user-email', null);
@@ -387,7 +387,7 @@ class IndexController extends Controller
 
   public function ateneo(Request $request)
   { 
-    if (config('app.env') == 'production') return redirect('https://ciudaddelsaber.org');
+    if (config('app.env') == 'production' && !session()->get('is-cds-user', false)) return redirect('https://ciudaddelsaber.org');
 
     $parent = Venue::find('02i3m0000092sG9AAI');
     $venues = [$parent];
@@ -426,7 +426,7 @@ class IndexController extends Controller
 
   public function centroConvenciones(Request $request)
   {
-    if (config('app.env') == 'production') return redirect('https://ciudaddelsaber.org');
+    if (config('app.env') == 'production' && !session()->get('is-cds-user', false)) return redirect('https://ciudaddelsaber.org');
 
     $parent = Venue::find('02i3m0000092sG3AAI');
     $venues = Venue::where('parent_id', '=', $parent->id)
@@ -467,7 +467,7 @@ class IndexController extends Controller
 
   public function aulas105(Request $request)
   {
-    if (config('app.env') == 'production') return redirect('https://ciudaddelsaber.org');
+    if (config('app.env') == 'production' && !session()->get('is-cds-user', false)) return redirect('https://ciudaddelsaber.org');
 
     $parent = Venue::find('02i3m0000092sJSAAY');
     $venues = Venue::where('parent_id', '=', $parent->id)
@@ -508,7 +508,7 @@ class IndexController extends Controller
 
   public function aulas220(Request $request)
   {
-    if (config('app.env') == 'production') return redirect('https://ciudaddelsaber.org');
+    if (config('app.env') == 'production' && !session()->get('is-cds-user', false)) return redirect('https://ciudaddelsaber.org');
 
     $parent = Venue::find('02i3m0000092sEkAAI');
     $venues = Venue::where('parent_id', '=', $parent->id)
@@ -549,7 +549,7 @@ class IndexController extends Controller
 
   public function complejoHospedaje(Request $request)
   {
-    if (config('app.env') == 'production') return redirect('https://ciudaddelsaber.org');
+    if (config('app.env') == 'production' && !session()->get('is-cds-user', false)) return redirect('https://ciudaddelsaber.org');
 
     $parent = Venue::find('02i3m0000092sHZAAY');
     $venues = Venue::whereIn('parent_id', [
@@ -594,7 +594,7 @@ class IndexController extends Controller
 
   public function residencias(Request $request)
   {
-    if (config('app.env') == 'production') return redirect('https://ciudaddelsaber.org');
+    if (config('app.env') == 'production' && !session()->get('is-cds-user', false)) return redirect('https://ciudaddelsaber.org');
 
     $parent = new \StdClass();
     $parent->name = 'Zona Residencial';
@@ -698,7 +698,7 @@ class IndexController extends Controller
 
   public function oferta(Request $request)
   {
-    if (config('app.env') == 'production') return redirect('https://ciudaddelsaber.org');
+    if (config('app.env') == 'production' && !session()->get('is-cds-user', false)) return redirect('https://ciudaddelsaber.org');
 
     $type = $request->type;
     $quantity = $request->quantity;
@@ -792,7 +792,7 @@ class IndexController extends Controller
 
   public function venue(Request $request)
   {
-    if (config('app.env') == 'production') return redirect('https://ciudaddelsaber.org');
+    if (config('app.env') == 'production' && !session()->get('is-cds-user', false)) return redirect('https://ciudaddelsaber.org');
     
     return view('index.venue', [
       'page_title' => 'Servicios - Venue',
