@@ -4,7 +4,7 @@ if (! function_exists('image_url')) {
   function image_url($path) {
     $env = config('app.env');
 
-    if ($env == 'staging') {
+    if (!in_array($env, ['production', 'local'])) {
       $url = 'https://comercial.ciudaddelsaber.org/';
     } else {
       $url = url('/');
