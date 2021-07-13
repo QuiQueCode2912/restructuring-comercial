@@ -31,8 +31,9 @@ class IndexController extends Controller
       $parents[] = '02i3m0000092sJmAAI'; // E-104
       $parents[] = '02i3m0000092sIyAAI'; // E-109
       $parents[] = '02i3m0000092s8rAAA'; // E-300
-      //$parents[] =  ''; // E-173 no sale
-      //$parents[] =  ''; // G-214 salen varios
+      $parents[] = '02i3m0000092s2PAAQ'; // L-173
+      $parents[] = '02i3m0000092s88AAA'; // G-214ABC
+      $parents[] = '02i3m0000092sP3AAI'; // Parque de los Lagos
     }
 
     $venues = Venue::whereIn('id', $parents)
@@ -43,6 +44,18 @@ class IndexController extends Controller
     if ($venues) {
       foreach ($venues as $venue) {
         switch ($venue->id) {
+          case '02i3m0000092s2PAAQ' :
+            $name = 'L-173';
+            $url = '/l-173';
+            break;
+          case '02i3m0000092s88AAA' :
+            $name = 'G-214ABC';
+            $url = '/g-214abc';
+            break;
+          case '02i3m0000092sP3AAI' :
+            $name = 'Parque de los Lagos';
+            $url = '/parque-de-los-lagos';
+            break;
           case '02i3m0000092sJmAAI' :
             $name = 'E-104';
             $url = '/e-104';
@@ -80,7 +93,7 @@ class IndexController extends Controller
         $venue_image = VenueFile::where('venue_id', $venue->id)->first();
         $image = $venue_image ? url('storage/venues/' . $venue_image->path) : '/assets/images/placeholder-image.jpg';
 
-        if ($venue->id == '02i3m0000092sG9AAI') {
+        if ($venue->id == '02i3m0000092sG9AAI' || $venue->id == '02i3m0000092sP3AAI') {
           $subvenues = [$venue];
         } else {
           $subvenues = Venue::where('parent_id', '=', $venue->id)
@@ -167,6 +180,9 @@ class IndexController extends Controller
       '02i3m0000092sJmAAI', // E-104
       '02i3m0000092sIyAAI', // E-109
       '02i3m0000092s8rAAA', // E-300
+      '02i3m0000092s2PAAQ', // L-173
+      '02i3m0000092s88AAA', // G-214ABC
+      '02i3m0000092sP3AAI', // Parque de los Lagos
     ];
 
     $venues = Venue::whereIn('id', $parents)
@@ -189,14 +205,30 @@ class IndexController extends Controller
             $name = 'E-300';
             $url = '/e-300';
             break;
+          case '02i3m0000092s2PAAQ' :
+            $name = 'L-173';
+            $url = '/l-173';
+            break;
+          case '02i3m0000092s88AAA' :
+            $name = 'G-214ABC';
+            $url = '/g-214abc';
+            break;
+          case '02i3m0000092sP3AAI' :
+            $name = 'Parque de los Lagos';
+            $url = '/parque-de-los-lagos';
+            break;
         }
 
         $venue_image = VenueFile::where('venue_id', $venue->id)->first();
         $image = $venue_image ? url('storage/venues/' . $venue_image->path) : '/assets/images/placeholder-image.jpg';
 
-        $subvenues = Venue::where('parent_id', '=', $venue->id)
-          ->where('show_on_website', 'Si')
-          ->get();
+        if ($venue->id == '02i3m0000092sP3AAI') {
+          $subvenues = [$venue];
+        } else {
+          $subvenues = Venue::where('parent_id', '=', $venue->id)
+            ->where('show_on_website', 'Si')
+            ->get();
+        }
 
         $designs = [];
         if ($subvenues) {
@@ -228,7 +260,7 @@ class IndexController extends Controller
       'show_contact_form' => false,
       'show_carousel' => false,
       'show_venues_menu' => true,
-      'venue' => 'espacios-cds',
+      'venue' => 'espacios-fcds',
     ]);
   }
 
@@ -272,8 +304,110 @@ class IndexController extends Controller
 
     return view('venues.venue', [
       'page_title' => 'Servicios - E-104',
-      'venue' => 'e-104',
+      'venue' => 'espacios-fcds',
       'venueName' => 'E-104',
+      'subtitle' => '',
+      'parent' => $parent,
+      'venues' => $venues,
+      'images' => $images,
+      'facilities' => $facilities,
+      'max_pax' => $max_pax
+    ]);
+  }
+
+  public function l173(Request $request)
+  { 
+    if (config('app.env') == 'production' && !session()->get('is-cds-user', false)) return redirect('https://ciudaddelsaber.org');
+
+    $isUser = session()->get('is-cds-user', false);
+    $userEmail = session()->get('cds-user-email', null);
+
+    if ($isUser == false || strpos($userEmail, '@cdspanama.org') == false) {
+      session()->put('is-cds-user', false);
+      session()->put('cds-user-email', null);
+
+      return redirect()->to('/');
+    }
+
+    $parent = Venue::find('02i3m0000092s2PAAQ');
+    $venues = Venue::where('parent_id', '=', $parent->id)
+      ->where('show_on_website', 'Si')
+      ->get();
+    
+    $max_pax = 0;
+    if ($venues) {
+      foreach ($venues as $venue) {
+        $venue_max_pax = $venue->designs()->max('max_pax');
+        $max_pax = $venue_max_pax > $max_pax ? $venue_max_pax : $max_pax;
+      }
+      $facilities = $venues ? $venues[0]->facilities : null;
+    }
+
+    $venue_images = VenueFile::where('venue_id', $parent->id)->get();
+    $images = [];
+    if ($venue_images->count() > 0) {
+      foreach ($venue_images as $image) {
+        $images[] = url('storage/venues/' . $image->path);
+      }
+    } else {
+      $images[] = '/assets/images/placeholder-image.jpg';
+    }
+
+    return view('venues.venue', [
+      'page_title' => 'Servicios - L-173',
+      'venue' => 'espacios-fcds',
+      'venueName' => 'L-173',
+      'subtitle' => '',
+      'parent' => $parent,
+      'venues' => $venues,
+      'images' => $images,
+      'facilities' => $facilities,
+      'max_pax' => $max_pax
+    ]);
+  }
+
+  public function g214abc(Request $request)
+  { 
+    if (config('app.env') == 'production' && !session()->get('is-cds-user', false)) return redirect('https://ciudaddelsaber.org');
+
+    $isUser = session()->get('is-cds-user', false);
+    $userEmail = session()->get('cds-user-email', null);
+
+    if ($isUser == false || strpos($userEmail, '@cdspanama.org') == false) {
+      session()->put('is-cds-user', false);
+      session()->put('cds-user-email', null);
+
+      return redirect()->to('/');
+    }
+
+    $parent = Venue::find('02i3m0000092s88AAA');
+    $venues = Venue::where('parent_id', '=', $parent->id)
+      ->where('show_on_website', 'Si')
+      ->get();
+    
+    $max_pax = 0;
+    if ($venues) {
+      foreach ($venues as $venue) {
+        $venue_max_pax = $venue->designs()->max('max_pax');
+        $max_pax = $venue_max_pax > $max_pax ? $venue_max_pax : $max_pax;
+      }
+      $facilities = $venues ? $venues[0]->facilities : null;
+    }
+
+    $venue_images = VenueFile::where('venue_id', $parent->id)->get();
+    $images = [];
+    if ($venue_images->count() > 0) {
+      foreach ($venue_images as $image) {
+        $images[] = url('storage/venues/' . $image->path);
+      }
+    } else {
+      $images[] = '/assets/images/placeholder-image.jpg';
+    }
+
+    return view('venues.venue', [
+      'page_title' => 'Servicios - G-214ABC',
+      'venue' => 'espacios-fcds',
+      'venueName' => 'G-214ABC',
       'subtitle' => '',
       'parent' => $parent,
       'venues' => $venues,
@@ -323,7 +457,7 @@ class IndexController extends Controller
 
     return view('venues.venue', [
       'page_title' => 'Servicios - E-109',
-      'venue' => 'e-109',
+      'venue' => 'espacios-fcds',
       'venueName' => 'E-109',
       'subtitle' => '',
       'parent' => $parent,
@@ -374,7 +508,7 @@ class IndexController extends Controller
 
     return view('venues.venue', [
       'page_title' => 'Servicios - E-300',
-      'venue' => 'e-300',
+      'venue' => 'espacios-fcds',
       'venueName' => 'E-300',
       'subtitle' => '',
       'parent' => $parent,
@@ -416,6 +550,45 @@ class IndexController extends Controller
       'venue' => 'ateneo',
       'venueName' => 'Ateneo',
       'subtitle' => 'Conecta con tus audiencias',
+      'parent' => $parent,
+      'venues' => $venues,
+      'images' => $images,
+      'facilities' => $facilities,
+      'max_pax' => $max_pax
+    ]);
+  }
+
+  public function parqueDeLosLagos(Request $request)
+  { 
+    if (config('app.env') == 'production' && !session()->get('is-cds-user', false)) return redirect('https://ciudaddelsaber.org');
+
+    $parent = Venue::find('02i3m0000092sP3AAI');
+    $venues = [$parent];
+    
+    $max_pax = 0;
+    if ($venues) {
+      foreach ($venues as $venue) {
+        $venue_max_pax = $venue->designs()->max('max_pax');
+        $max_pax = $venue_max_pax > $max_pax ? $venue_max_pax : $max_pax;
+      }
+      $facilities = $venues ? $venues[0]->facilities : null;
+    }
+
+    $venue_images = VenueFile::where('venue_id', $parent->id)->get();
+    $images = [];
+    if ($venue_images->count() > 0) {
+      foreach ($venue_images as $image) {
+        $images[] = url('storage/venues/' . $image->path);
+      }
+    } else {
+      $images[] = '/assets/images/placeholder-image.jpg';
+    }
+
+    return view('venues.venue', [
+      'page_title' => 'Servicios - Parque de los Lagos',
+      'venue' => 'espacios-fcds',
+      'venueName' => 'Parque de los Lagos',
+      'subtitle' => '',
       'parent' => $parent,
       'venues' => $venues,
       'images' => $images,

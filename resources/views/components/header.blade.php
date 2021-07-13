@@ -34,7 +34,7 @@
           <li><a href="https://live.ipms247.com/booking/book-rooms-complejodehospedaje-es-Spanish" target="_blank">Complejo de hospedaje</a></li>
           <li><a href="/residencias">Residencias</a></li>
           <?php if (session()->get('is-cds-user')) : ?>
-          <li><a href="/espacios-cds">Espacios CdS</a></li>
+          <li><a href="/espacios-fcds">Espacios FCdS</a></li>
           <?php endif ?>
         </ul>
       </li>

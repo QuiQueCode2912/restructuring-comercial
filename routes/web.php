@@ -20,8 +20,11 @@ Route::get('/one-login', function() {
 });
 Route::post('/one-login', 'App\Http\Controllers\IndexController@oneLogin');
 
-Route::get('/espacios-cds', 'App\Http\Controllers\IndexController@cds');
+Route::get('/espacios-fcds', 'App\Http\Controllers\IndexController@cds');
 Route::get('/oferta', 'App\Http\Controllers\IndexController@oferta');
+Route::get('/l-173', 'App\Http\Controllers\IndexController@l173');
+Route::get('/g-214abc', 'App\Http\Controllers\IndexController@g214abc');
+Route::get('/parque-de-los-lagos', 'App\Http\Controllers\IndexController@parqueDeLosLagos');
 Route::get('/e-104', 'App\Http\Controllers\IndexController@e104');
 Route::get('/e-109', 'App\Http\Controllers\IndexController@e109');
 Route::get('/e-300', 'App\Http\Controllers\IndexController@e300');
