@@ -1,3 +1,5 @@
+<x-error-message />
+
 <div class="request-step">
   <div class="container">
     <h4>Comencemos con tus datos de contacto</h4>

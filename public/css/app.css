@@ -1251,6 +1251,14 @@ input[type="file"] + label {
   font-weight: 600;
   position: relative;
 }
+.error-message {
+  font-size: .8rem;
+  text-align: center;
+  background: #fff3e0;
+  margin: 0 15px 0;
+  padding: 15px 10px 12px;
+  border-radius: 5px;
+}
 .venues-menu ul li:last-child {
   display: none;
 }

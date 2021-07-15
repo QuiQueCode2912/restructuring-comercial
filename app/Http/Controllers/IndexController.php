@@ -1114,7 +1114,7 @@ class IndexController extends Controller
           ->get();
       }
     }
-    
+
     return view('index.request', [
       'page_title' => 'Servicios - Cotización - ' . $stepName,
       'step' => $step,

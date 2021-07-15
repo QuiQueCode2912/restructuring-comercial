@@ -464,7 +464,8 @@
     <div class="row buttons">
       <div class="col-12 text-center">
         <?php 
-        $from_date = null;
+        $from_date = new DateTime();
+        $from_date->setTime($from_date->format('H'), 0, 0);
         $to_date = null;
         if (session()->get('00N3m00000QMwta')) {
           $from_date = new DateTime(session()->get('00N3m00000QMwta'));

@@ -1,3 +1,5 @@
+<x-error-message />
+
 <div class="request-step">
   <div class="container">
     <h4>Cuéntanos algunos datos de tu residencia</h4>
