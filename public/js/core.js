@@ -105,7 +105,7 @@ $(document).ready(function () {
   });
   $('input.datetimepicker').daterangepicker({
     singleDatePicker: true,
-    timePicker: true,
+    timePicker: false,
     locale: {
       format: 'YYYY-MM-DD HH:mm',
       applyLabel: 'Aplicar',
@@ -113,17 +113,18 @@ $(document).ready(function () {
     }
   });
 
-  if ($('input.datetimepicker#start-date').length > 0 && $('input.datetimepicker#end-date').length > 0) {
-    $('input.datetimepicker#start-date').on('apply.daterangepicker', function (ev, picker) {
-      var date = new Date($('input.datetimepicker#start-date').val());
+  if ($('input.datepicker#start-date').length > 0 && $('input.datepicker#end-date').length > 0) {
+    $('input.datepicker#start-date').on('apply.daterangepicker', function (ev, picker) {
+      var date = new Date($('input.datepicker#start-date').val());
       date.setHours(date.getHours() + 1);
-      var dateString = date.getFullYear() + '-' + ((date.getMonth() + 1 < 10 ? '0' : '') + (date.getMonth() + 1)) + '-' + ((date.getDate() < 10 ? '0' : '') + date.getDate()) + ' ' + ((date.getHours() < 10 ? '0' : '') + date.getHours()) + ':' + ((date.getMinutes() < 10 ? '0' : '') + date.getMinutes());
-      $('input.datetimepicker#end-date').val(dateString);
-      $('input.datetimepicker#end-date').daterangepicker({
+      var dateString = date.getFullYear() + '-' + ((date.getMonth() + 1 < 10 ? '0' : '') + (date.getMonth() + 1)) + '-' + ((date.getDate() < 10 ? '0' : '') + date.getDate());
+      $('input.datepicker#end-date').val(dateString);
+      $('input.datepicker#end-date').daterangepicker({
         singleDatePicker: true,
-        timePicker: true,
+        timePicker: false,
+        minDate: dateString,
         locale: {
-          format: 'YYYY-MM-DD HH:mm',
+          format: 'YYYY-MM-DD',
           applyLabel: 'Aplicar',
           cancelLabel: 'Cancelar'
         }

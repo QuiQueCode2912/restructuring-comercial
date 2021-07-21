@@ -318,13 +318,13 @@
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
-          Desde: <?php echo session()->get('00N3m00000QMwta') ?>
+          Desde: <?php echo session()->get('00N3m00000QMwta') . ' ' . session()->get('00N3m00000QMwta-hour') ?>
           <a href="/cotizacion/datos-evento#start-date">Editar</a>
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
-          Hasta: <?php echo session()->get('00N3m00000QMwtf') ?>
+          Hasta: <?php echo session()->get('00N3m00000QMwtf') . ' ' . session()->get('00N3m00000QMwtf-hour') ?>
           <a href="/cotizacion/datos-evento#end-date">Editar</a>
         </div>
       </div>
@@ -467,11 +467,11 @@
         $from_date = new DateTime();
         $from_date->setTime($from_date->format('H'), 0, 0);
         $to_date = null;
-        if (session()->get('00N3m00000QMwta')) {
-          $from_date = new DateTime(session()->get('00N3m00000QMwta'));
+        if (session()->get('00N3m00000QMwta') && session()->get('00N3m00000QMwta-hour')) {
+          $from_date = new DateTime(session()->get('00N3m00000QMwta') . ' ' . session()->get('00N3m00000QMwta-hour'));
         }
-        if (session()->get('00N3m00000QMwtf')) {
-          $to_date = new DateTime(session()->get('00N3m00000QMwtf'));
+        if (session()->get('00N3m00000QMwtf') && session()->get('00N3m00000QMwtf-hour')) {
+          $to_date = new DateTime(session()->get('00N3m00000QMwtf') . ' ' . session()->get('00N3m00000QMwtf-hour'));
         } else {
           $to_date = $from_date;
           $to_date->add(new DateInterval('PT1H'));

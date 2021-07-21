@@ -1027,6 +1027,8 @@ class IndexController extends Controller
             '00N3m00000QMsC5' => 'required|string',
             '00N3m00000QMwta' => 'required|string',
             '00N3m00000QMwtf' => 'required|string',
+            '00N3m00000QMwta-hour' => 'required|string',
+            '00N3m00000QMwtf-hour' => 'required|string',
             '00N3m00000QQOdy' => 'nullable|string',
             '00N3m00000QMsCK' => 'required|string',
             '00N3m00000QMsCP' => 'required|string',

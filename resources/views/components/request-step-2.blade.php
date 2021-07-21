@@ -1,3 +1,16 @@
+<?php
+$from_hour = session()->get('00N3m00000QMwta-hour', null);
+$to_hour   = session()->get('00N3m00000QMwtf-hour', null);
+
+if (is_null($from_hour)) {
+  session()->put('00N3m00000QMwta-hour', date('H') . ':00');
+}
+
+if (is_null($to_hour)) {
+  session()->put('00N3m00000QMwtf-hour', (date('H') + 1) . ':00');
+}
+?>
+
 <x-error-message />
 
 <div class="request-step">
@@ -49,14 +62,34 @@
           </select>
         </div>
       </div>
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-4">
         <div class="form-group required">
-          <input type="text" class="form-control datetimepicker" name="00N3m00000QMwta" id="start-date" placeholder="Fecha y hora de inicio" value="<?php echo session()->get('00N3m00000QMwta', old('00N3m00000QMwta')) ?>">
+          <input type="text" class="form-control datepicker" name="00N3m00000QMwta" id="start-date" placeholder="Fecha de inicio" value="<?php echo session()->get('00N3m00000QMwta', old('00N3m00000QMwta')) ?>">
         </div>
       </div>
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-2">
         <div class="form-group required">
-          <input type="text" class="form-control datetimepicker" name="00N3m00000QMwtf" id="end-date" placeholder="Fecha y hora de finalización" value="<?php echo session()->get('00N3m00000QMwtf', old('00N3m00000QMwtf')) ?>">
+          <select class="form-control" id="end-date-from" name="00N3m00000QMwta-hour">
+            <?php for ($i = 0; $i <= 23; $i++) : ?>
+            <option <?php echo session()->get('00N3m00000QMwta-hour', old('00N3m00000QMwta-hour')) == str_pad($i, 2, 0, STR_PAD_LEFT) . ':00' ? 'selected' : '' ?> value="<?php echo str_pad($i, 2, 0, STR_PAD_LEFT) ?>:00"><?php echo str_pad($i, 2, 0, STR_PAD_LEFT) ?>:00</option>
+            <option <?php echo session()->get('00N3m00000QMwta-hour', old('00N3m00000QMwta-hour')) == str_pad($i, 2, 0, STR_PAD_LEFT) . ':30' ? 'selected' : '' ?> value="<?php echo str_pad($i, 2, 0, STR_PAD_LEFT) ?>:30"><?php echo str_pad($i, 2, 0, STR_PAD_LEFT) ?>:30</option>
+            <?php endfor ?>
+          </select>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="form-group required">
+          <input type="text" class="form-control datepicker" name="00N3m00000QMwtf" id="end-date" placeholder="Fecha de finalización" value="<?php echo session()->get('00N3m00000QMwtf', old('00N3m00000QMwtf')) ?>">
+        </div>
+      </div>
+      <div class="col-12 col-md-2">
+        <div class="form-group required">
+          <select class="form-control" id="end-date-hour" name="00N3m00000QMwtf-hour">
+            <?php for ($i = 0; $i <= 23; $i++) : ?>
+            <option <?php echo session()->get('00N3m00000QMwtf-hour', old('00N3m00000QMwtf-hour')) == str_pad($i, 2, 0, STR_PAD_LEFT) . ':00' ? 'selected' : '' ?> value="<?php echo str_pad($i, 2, 0, STR_PAD_LEFT) ?>:00"><?php echo str_pad($i, 2, 0, STR_PAD_LEFT) ?>:00</option>
+            <option <?php echo session()->get('00N3m00000QMwtf-hour', old('00N3m00000QMwtf-hour')) == str_pad($i, 2, 0, STR_PAD_LEFT) . ':30' ? 'selected' : '' ?> value="<?php echo str_pad($i, 2, 0, STR_PAD_LEFT) ?>:30"><?php echo str_pad($i, 2, 0, STR_PAD_LEFT) ?>:30</option>
+            <?php endfor ?>
+          </select>
         </div>
       </div>
       <div class="col-12 col-md-6">
@@ -126,7 +159,7 @@
       <div class="col-12 col-md-6">
         <div class="form-group required">
           <label for="description"><small>Describe tu evento</small></label>
-          <textarea name="description" id="description"><?php echo session()->get('description', old('description')) ?></textarea>
+          <textarea name="description" required id="description"><?php echo session()->get('description', old('description')) ?></textarea>
         </div>
       </div>
       <div class="col-12 col-md-6">
