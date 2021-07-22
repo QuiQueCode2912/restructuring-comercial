@@ -316,7 +316,7 @@
     </div>
     <div class="row buttons">
       <div class="col-12 text-center">
-        <a href="javascript:;" class="btn btn-primary disabled">Anterior</a>
+        <a href="/" class="btn btn-primary disabled">Anterior</a>
         <button type="submit" class="btn btn-primary submit-form">Siguiente</button>
       </div>
     </div>

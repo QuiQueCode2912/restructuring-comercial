@@ -1,4 +1,5 @@
 <?php 
+$current = 0;
 $total = $total ? $total : 3;
 switch (app('request')->step) {
   case 'datos-contacto':    $current = 1; break;
