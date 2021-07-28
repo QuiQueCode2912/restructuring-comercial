@@ -317,6 +317,25 @@ $(document).ready(function() {
       }
     }
   }, '.request input[type=file]');
+
+  if ($('.other-methods #total').length > 0) {
+    $('.other-methods #total').val($('.form-check .form-check-input:checked').attr('value'));
+
+    $(document).on({
+      change: function(e) {
+        $('.other-methods #total').val($(this).val());
+      }
+    }, '.form-check .form-check-input');
+
+    $(document).on({
+      click: function(e) {
+        e.preventDefault();
+
+        $('.paguelo-facil-container').hide();
+        $('.other-methods').show();
+      }
+    }, '.other-methods-btn');
+  }
 });
 
 var validateFormFields = function(form, field) {

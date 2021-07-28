@@ -49,6 +49,10 @@
           <td>USD <?php echo $data['TotalPagado'] ?></td>
         </tr>
         <tr>
+          <th>Método</th>
+          <td><?php echo $data['method'] ?></td>
+        </tr>
+        <tr>
           <th>Concepto</th>
           <td>Abono - <?php echo $opportunity['Name'] ?></td>
         </tr>
@@ -64,6 +68,7 @@
     </table>
 
     <p class="text-center">
+      <small>Esta transacción estará sujeta a verificación</small><br><br>
       <a href="/" class="btn btn-primary">Volver al inicio</a>
       <a href="javascript:print()" class="btn btn-primary">Imprimir comprobante</a>
     </p>

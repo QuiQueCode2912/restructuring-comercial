@@ -29,10 +29,17 @@
   background: #0088ff;
   color: #fff;
 }
+.amount-to-pay {
+  display: inline-block;
+  padding: 10px;
+}
+.other-methods {
+  display: none;
+}
 </style>
 
 <div class="request">
-  <div class="container text-center" style="min-height:800px">
+  <div class="container text-center" style="min-height:960px">
     <form method="post">
       @csrf
       <input type="hidden" name="event_name" value="Abono - {{ $event_name }}" />
@@ -53,33 +60,82 @@
 
       <div style="max-width:400px; margin:80px auto 140px; text-align:left">
         <div class="row">
-          <div class="col-12 col-md-6">
+          <?php foreach ($payments as $index => $payment) : ?>
+          <div class="col-12<?php echo count($payments) > 1 ? ' col-md-6' : ' offset-2' ?>">
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="total" id="total-50" value="{{ $total / 2 }}" checked>
-              <label class="form-check-label" for="total-50">
-                Pagar el 50%<br />
-                <strong>USD {{ $total / 2 }}</strong>
+              <input class="form-check-input" type="radio" name="total" id="total-<?php echo $index ?>" value="{{ $payment->total }}" <?php echo $index == 0 ? 'checked' : '' ?>>
+              <label class="form-check-label" for="total-<?php echo $index ?>">
+                <?php echo $payment->concept ?><br />
+                <strong>USD {{ $payment->total }}</strong>
               </label>
             </div>
           </div>
-          <div class="col-12 col-md-6">
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="total" value="{{ $total }}" id="total-100">
-              <label class="form-check-label" for="total-100">
-                Pagar el 100%<br />
-                <strong>USD {{ $total }}</strong>
-              </label>
-            </div>
-          </div>
+          <?php endforeach ?>
         </div>
       </div>
 
-      <p class="text-center">
-        <button type="submit" class="btn btn-primary" style="text-transform:none">Pagar en línea</button>
+      <p class="text-center paguelo-facil-container">
+        Paga en línea con<br>
+        <input type="image" src="/assets/images/pagar-paguelo-facil.png"></input><br><br>
+        <a href="#" class="btn btn-secondary other-methods-btn">o Selecciona otro medio de pago</a>
         <br><br>
         <small><a href="/" class="text-secondary">Cancelar</a></small>
       </p>
     </form>
+
+    <div class="other-methods" style="max-width:800px; margin:80px auto 140px; text-align:left">
+      <div class="row">
+        <div class="col-12 text-center">
+          Realiza el pago mediante <strong>Transferencia ACH</strong>, 
+          <strong>Yappy</strong> o <strong>Cheque</strong>.<br>Ten en cuenta
+          los siguientes datos de referencia cuando realices tu pago.
+          <br><br>
+          Fundación Ciudad del Saber<br>
+          <strong>Cuenta Corriente, Banco General</strong><br>
+          <big><strong>03-01-01-003310-4</strong></big><br>
+          <strong># de referencia:</strong> <?php echo $opportunity ?>
+          <br><br>
+          Una vez realizado
+          el pago diligencia el siguiente formulario.
+        </div>
+      </div>
+      <form action="/confirmacion-pago/<?php echo $token ?>" style="max-width:600px; margin:40px auto 20px">
+        <input type="hidden" name="PARM_1" value="<?php echo $opportunity ?>" />
+        <input type="hidden" name="Estado" value="Aprobado" />
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <select class="form-group required" required name="method" id="method">
+              <option value="ACH">Transferencia ACH</option>
+              <option value="Yappy">Yappy</option>
+              <option value="Cheque">Cheque</option>
+            </select>
+          </div>
+          <div class="col-12 col-md-6 form-group required">
+            <input type="text" class="form-control" name="TotalPagado" id="total" placeholder="Total a pagar" value="0" required readonly>
+          </div>
+          <div class="col-12 col-md-6 form-group required">
+            <input type="text" class="form-control datepicker" name="date" id="date" placeholder="Fecha de pago" value="" required>
+          </div>
+          <div class="col-12 col-md-6 form-group required">
+            <input type="text" class="form-control" name="Oper" id="transaction" placeholder="Número de operación" value="" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 text-center">
+            <small>El pago registrado estará sujeto a verificación</small>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <p class="text-center" style="margin-top:30px">
+              <button type="submit" class="btn btn-primary" style="text-transform:none">Registrar pago</button>
+              <br><br>
+              <small><a href="/" class="text-secondary">Cancelar</a></small>
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
 

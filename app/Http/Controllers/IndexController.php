@@ -1228,6 +1228,7 @@ class IndexController extends Controller
     $total = 0;
     $event_name = '';
     $opportunity = '';
+    $payments = [];
 
     if ($request->token) {
       if ($request->isMethod('post')) {
@@ -1249,16 +1250,49 @@ class IndexController extends Controller
 
       $salesforce = $this->salesforce();
       $query = "SELECT 
-        Id, TotalPrice, Subtotal, Name, Oportunidad__c
+        Id, Gran_Total__c, TotalPrice, Subtotal, Name, Oportunidad__c
         FROM ServiceContract 
         WHERE Id = '{$request->token}'";
 
       $result = $salesforce->query($query);
       if ($result['totalSize'] > 0) {
         $success = true;
-        $total = $result['records'][0]['TotalPrice'];
+        $total = $result['records'][0]['Gran_Total__c'];
         $event_name = $result['records'][0]['Name'];
         $opportunity = $result['records'][0]['Oportunidad__c'];
+      }
+
+      $payments = [
+        [
+          'concept' => 'Pagar el 50%',
+          'total' => $total / 2
+        ],
+        [
+          'concept' => 'Pagar el 100%',
+          'total' => $total
+        ]
+      ];
+
+      $query = "SELECT 
+        Id, Monto__c
+        FROM Recibo__c 
+        WHERE Contrato_de_servicio__c	 = '{$request->token}'";
+      
+      $recibos = $salesforce->query($query);
+      $pagado = 0;
+      if ($recibos['totalSize'] > 0) {
+        foreach ($recibos['records'] as $recibo) {
+          $pagado += $recibo['Monto__c'];
+        }
+      }
+      
+      if ($pagado > 0) {
+        $payments = [
+          [
+            'concept' => 'Pagar el saldo pendiente',
+            'total' => $total - $pagado,
+          ]
+        ];
       }
     }
     
@@ -1266,7 +1300,9 @@ class IndexController extends Controller
       'success' => $success,
       'total' => $total,
       'event_name' => $event_name,
-      'opportunity' => $opportunity
+      'opportunity' => $opportunity,
+      'token' => $request->token,
+      'payments' => json_decode(json_encode($payments))
     ]);
   }
 
@@ -1280,7 +1316,7 @@ class IndexController extends Controller
       $salesforce = $this->salesforce();
 
       $query = "SELECT 
-        Id, TotalPrice, Subtotal, Name, Oportunidad__c
+        Id, Gran_Total__c, TotalPrice, Subtotal, Name, Oportunidad__c
         FROM ServiceContract 
         WHERE Id = '{$request->token}'";
       $contract = $salesforce->query($query);
@@ -1298,9 +1334,38 @@ class IndexController extends Controller
         WHERE Id = '{$id}'";
 
       $opportunity = $salesforce->query($query);
+      
       if ($opportunity['totalSize'] > 0) {
         if (isset($data['Estado']) && substr($data['Estado'], 0, 6) == 'Aproba') {
-          $salesforce->update('Opportunity', $id, ['StageName' => 'Closed Won']);
+          $date = new \DateTime(isset($data['date']) ? $data['date'] . ' ' . date('H:i:s') : date('Y-m-d H:i:s'));
+
+          $receiptData = [
+            'Confirmado__c' => false,
+            'Contrato_de_servicio__c' => $request->token,
+            'Monto__c' => $data['TotalPagado'],
+            'Numero_de_transaccion__c' => $data['Oper'],
+            'Fecha_de_pago__c' => $date->format('Y-m-d\TH:i:s.000\Z'),
+            'Tipo__c' => (isset($data['method']) ? $data['method'] : 'Páguelo Fácil')
+          ];
+
+          $query = "SELECT 
+            Id
+            FROM Order 
+            WHERE Service_Contract__c = '{$request->token}'";
+
+          $invoice = $salesforce->query($query);
+          if ($invoice['totalSize'] > 0) {
+            $receiptData['Factura'] = $contract['records'][0]['Id'];
+          }
+          
+          $receiptId = $salesforce->create('Recibo__c', $receiptData);
+          $data['Fecha'] = $date->format('Y-m-d');
+          $data['Hora'] = $date->format('H:i:s');
+          $data['method'] = $receiptData['Tipo__c'];
+
+          if ($receiptId) {
+            $salesforce->update('Opportunity', $id, ['StageName' => 'Closed Won']);
+          }
         }
       }
     }
