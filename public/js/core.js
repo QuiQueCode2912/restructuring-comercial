@@ -411,6 +411,15 @@ $(document).ready(function () {
       }
     }, '.form-check .form-check-input');
     $(document).on({
+      change: function change(e) {
+        if ($(this).val() == 'Páguelo Fácil') {
+          $('.other-methods').hide();
+          $('.paguelo-facil-container').show();
+          $(this).val('ACH');
+        }
+      }
+    }, '.other-methods #method');
+    $(document).on({
       click: function click(e) {
         e.preventDefault();
         $('.paguelo-facil-container').hide();

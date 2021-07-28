@@ -108,6 +108,7 @@
               <option value="ACH">Transferencia ACH</option>
               <option value="Yappy">Yappy</option>
               <option value="Cheque">Cheque</option>
+              <option value="Páguelo Fácil">Páguelo Fácil</option>
             </select>
           </div>
           <div class="col-12 col-md-6 form-group required">

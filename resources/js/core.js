@@ -328,6 +328,16 @@ $(document).ready(function() {
     }, '.form-check .form-check-input');
 
     $(document).on({
+      change: function(e) {
+        if ($(this).val() == 'Páguelo Fácil') {
+          $('.other-methods').hide();
+          $('.paguelo-facil-container').show();
+          $(this).val('ACH');
+        }
+      }
+    }, '.other-methods #method');
+
+    $(document).on({
       click: function(e) {
         e.preventDefault();
 
