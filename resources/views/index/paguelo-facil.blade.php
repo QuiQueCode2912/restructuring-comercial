@@ -36,6 +36,9 @@
 .other-methods {
   display: none;
 }
+.file-upload::before {
+  top: 38px !important;
+}
 </style>
 
 <div class="request">
@@ -99,7 +102,7 @@
           el pago diligencia el siguiente formulario.
         </div>
       </div>
-      <form action="/confirmacion-pago/<?php echo $token ?>" style="max-width:600px; margin:40px auto 20px">
+      <form method="post" enctype="multipart/form-data" action="/confirmacion-pago/<?php echo $token ?>" style="max-width:600px; margin:40px auto 20px">
         <input type="hidden" name="PARM_1" value="<?php echo $opportunity ?>" />
         <input type="hidden" name="Estado" value="Aprobado" />
         <div class="row">
@@ -119,6 +122,11 @@
           </div>
           <div class="col-12 col-md-6 form-group required">
             <input type="text" class="form-control" name="Oper" id="transaction" placeholder="Número de operación" value="" required>
+          </div>
+          <div class="col-12 form-group file-upload required" style="transform:translateY(-25px)">
+            <i class="fe fe-upload"></i>
+            <input type="file" class="form-control" id="file" name="file" required>
+            <label for="file">Sube el comprobante de la transacción</label>
           </div>
         </div>
         <div class="row">

@@ -1334,15 +1334,25 @@ class IndexController extends Controller
         WHERE Id = '{$id}'";
 
       $opportunity = $salesforce->query($query);
-      
+
       if ($opportunity['totalSize'] > 0) {
         if (isset($data['Estado']) && substr($data['Estado'], 0, 6) == 'Aproba') {
           $date = new \DateTime(isset($data['date']) ? $data['date'] . ' ' . date('H:i:s') : date('Y-m-d H:i:s'));
+
+          $uploaded_file = null;
+          if($request->hasFile('file')) { 
+            $file = $request->file('file');
+            $filename = $file->getClientOriginalName();
+            $filepath = time() . '-' . rand(100000, 999999) . '-' . $filename;
+            $uploaded_file = url('/storage/requests/' . $filepath);
+            $file->storeAs('public/requests', $filepath);
+          } 
 
           $receiptData = [
             'Confirmado__c' => false,
             'Contrato_de_servicio__c' => $request->token,
             'Monto__c' => $data['TotalPagado'],
+            'Soporte__c' => $uploaded_file,
             'Numero_de_transaccion__c' => $data['Oper'],
             'Fecha_de_pago__c' => $date->format('Y-m-d\TH:i:s.000\Z'),
             'Tipo__c' => (isset($data['method']) ? $data['method'] : 'Páguelo Fácil')
