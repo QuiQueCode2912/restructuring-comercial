@@ -1302,6 +1302,7 @@ class IndexController extends Controller
       'event_name' => $event_name,
       'opportunity' => $opportunity,
       'token' => $request->token,
+      'otherMethods' => request('other-methods', false),
       'payments' => json_decode(json_encode($payments))
     ]);
   }

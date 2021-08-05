@@ -77,7 +77,7 @@
         </div>
       </div>
 
-      <p class="text-center paguelo-facil-container">
+      <p class="text-center paguelo-facil-container" style="display:<?php echo $otherMethods ? 'none' : 'block' ?>">
         Paga en línea con<br>
         <input type="image" src="/assets/images/pagar-paguelo-facil.png"></input><br><br>
         <a href="#" class="btn btn-secondary other-methods-btn">o Selecciona otro medio de pago</a>
@@ -86,7 +86,7 @@
       </p>
     </form>
 
-    <div class="other-methods" style="max-width:800px; margin:80px auto 140px; text-align:left">
+    <div class="other-methods" style="max-width:800px; margin:80px auto 140px; text-align:left; display:<?php echo $otherMethods ? 'block' : 'none' ?>">
       <div class="row">
         <div class="col-12 text-center">
           Realiza el pago mediante <strong>Transferencia ACH</strong>, 
