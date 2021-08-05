@@ -1366,7 +1366,7 @@ class IndexController extends Controller
 
           $invoice = $salesforce->query($query);
           if ($invoice['totalSize'] > 0) {
-            $receiptData['Factura__c'] = $contract['records'][0]['Id'];
+            $receiptData['Factura__c'] = $invoice['records'][0]['Id'];
           }
           
           $receiptId = $salesforce->create('Recibo__c', $receiptData);
