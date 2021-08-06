@@ -29,12 +29,10 @@ if (is_null($to_hour)) {
         <div class="form-group required">
           <select class="form-control" id="type" name="00N3m00000QMsCF">
             <option value="">Tipo de actividad</option>
-            <option <?php echo session()->get('00N3m00000QMsCF', old('00N3m00000QMsCF')) == 'Convención' ? 'selected="selected"' : '' ?>>Convención</option>
+            <option <?php echo session()->get('00N3m00000QMsCF', old('00N3m00000QMsCF')) == 'Coctel/Evento Social' ? 'selected="selected"' : '' ?>>Coctel/Evento Social</option>
             <option <?php echo session()->get('00N3m00000QMsCF', old('00N3m00000QMsCF')) == 'Conferencia' ? 'selected="selected"' : '' ?>>Conferencia</option>
-            <option <?php echo session()->get('00N3m00000QMsCF', old('00N3m00000QMsCF')) == 'Evento' ? 'selected="selected"' : '' ?>>Evento</option>
-            <option <?php echo session()->get('00N3m00000QMsCF', old('00N3m00000QMsCF')) == 'Cocktail' ? 'selected="selected"' : '' ?>>Cocktail</option>
-            <option <?php echo session()->get('00N3m00000QMsCF', old('00N3m00000QMsCF')) == 'Coworking' ? 'selected="selected"' : '' ?>>Coworking</option>
-            <option <?php echo session()->get('00N3m00000QMsCF', old('00N3m00000QMsCF')) == 'Formación académica' ? 'selected="selected"' : '' ?>>Formación académica</option>
+            <option <?php echo session()->get('00N3m00000QMsCF', old('00N3m00000QMsCF')) == 'Convención' ? 'selected="selected"' : '' ?>>Convención</option>
+            <option <?php echo session()->get('00N3m00000QMsCF', old('00N3m00000QMsCF')) == 'Otros' ? 'selected="selected"' : '' ?>>Otros</option>
             <option <?php echo session()->get('00N3m00000QMsCF', old('00N3m00000QMsCF')) == 'Seminario' ? 'selected="selected"' : '' ?>>Seminario</option>
           </select>
         </div>
@@ -43,7 +41,8 @@ if (is_null($to_hour)) {
         <div class="form-group required">
           <select class="form-control" id="quantity" name="00N3m00000QMsCA">
             <option value="">Cantidad de personas</option>
-            <option <?php echo session()->get('00N3m00000QMsCA', old('00N3m00000QMsCA')) == 'Menos de 50 personas' ? 'selected="selected"' : '' ?>>Menos de 50 personas</option>
+            <option <?php echo session()->get('00N3m00000QMsCA', old('00N3m00000QMsCA')) == 'Entre 1 y 25 personas' ? 'selected="selected"' : '' ?>>Entre 1 y 25 personas</option>
+            <option <?php echo session()->get('00N3m00000QMsCA', old('00N3m00000QMsCA')) == 'Entre 26 y 50 personas' ? 'selected="selected"' : '' ?>>Entre 26 y 50 personas</option>
             <option <?php echo session()->get('00N3m00000QMsCA', old('00N3m00000QMsCA')) == 'Entre 51 y 100 personas' ? 'selected="selected"' : '' ?>>Entre 51 y 100 personas</option>
             <option <?php echo session()->get('00N3m00000QMsCA', old('00N3m00000QMsCA')) == 'Entre 101 y 200 personas' ? 'selected="selected"' : '' ?>>Entre 101 y 200 personas</option>
             <option <?php echo session()->get('00N3m00000QMsCA', old('00N3m00000QMsCA')) == 'Entre 201 y 500 personas' ? 'selected="selected"' : '' ?>>Entre 201 y 500 personas</option>
