@@ -32,7 +32,7 @@
           <li><a href="/centro-convenciones">Centro de convenciones</a></li>
           <li><a href="/aulas-105">Aulas 105</a></li>
           <li><a href="https://live.ipms247.com/booking/book-rooms-complejodehospedaje-es-Spanish" target="_blank">Complejo de hospedaje</a></li>
-          <li><a href="/residencias">Residencias</a></li>
+          <!--<li><a href="/residencias">Residencias</a></li>-->
           <?php if (session()->get('is-cds-user')) : ?>
           <li><a href="/espacios-fcds">Espacios FCdS</a></li>
           <?php endif ?>
