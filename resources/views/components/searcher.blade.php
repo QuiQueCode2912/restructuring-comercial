@@ -11,12 +11,10 @@
           </a>
           <input type="hidden" name="type" value="<?php echo isset($_GET['type']) ? $_GET['type'] : '' ?>" />
           <ul>
+            <li><a href="#">Coctel/Evento Social</a></li>
             <li><a href="#">Convención</a></li>
             <li><a href="#">Conferencia</a></li>
-            <li><a href="#">Evento</a></li>
-            <li><a href="#">Cocktail</a></li>
-            <li><a href="#">Coworking</a></li>
-            <li><a href="#">Formación académica</a></li>
+            <li><a href="#">Otros</a></li>
             <li><a href="#">Seminario</a></li>
           </ul>
         </li>
@@ -28,7 +26,8 @@
           </a>
           <input type="hidden" name="quantity" value="<?php echo isset($_GET['quantity']) ? $_GET['quantity'] : '' ?>" />
           <ul>
-            <li><a href="#">Menos de 50 personas</a></li>
+            <li><a href="#">Entre 1 y 25 personas</a></li>
+            <li><a href="#">Entre 26 y 50 personas</a></li>
             <li><a href="#">Entre 51 y 100 personas</a></li>
             <li><a href="#">Entre 101 y 200 personas</a></li>
             <li><a href="#">Entre 201 y 500 personas</a></li>
@@ -56,8 +55,6 @@
             <li><a href="#">Presencial</a></li>
             <li><a href="#">Virtual</a></li>
             <li><a href="#">Semi-presencial</a></li>
-            <li><a href="#">Hospedaje</a></li>
-            <li><a href="#">Vivienda</a></li>
             <li><a href="#">No estoy seguro, necesito asesoramiento</a></li>
           </ul>
         </li>

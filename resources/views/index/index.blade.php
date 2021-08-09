@@ -9,7 +9,7 @@
 <?php endif ?>
 
 <?php if ($show_carousel) : ?>
-<x-carousel id="home-carousel" />
+<x-carousel id="home-carousel" venueTitle="{{ $venue_title }}" venueSubtitle="{{ $venue_subtitle }}" venueImage="{{ $venue_image }}" />
 <x-searcher />
 <img src="/assets/images/arrow-down-navigation.gif" class="scroll-down">
 <?php endif ?>
@@ -78,7 +78,7 @@
             <dd>permitidos</dd>
           </dl>
           <dl>
-            <dt>Catering en exteriores</dt>
+            <dt>Servicio de catering</dt>
             <dd>Disponible</dd>
           </dl>
         </div>

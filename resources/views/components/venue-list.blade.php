@@ -15,7 +15,7 @@ if ($designs) {
       <a href="/cotizacion/datos-contacto?id={{ $id }}" class="btn btn-primary btn-sm">Cotizar</a>
     </div>
     <div class="col-12 col-md-6">
-      <a href="#" class="venue-name">{{ $name }}</a>
+      <a href="#" class="venue-name"><?php echo $parent ?? '' ? $parent . ' - ' : '' ?>{{ $name }}</a>
       
       <?php if (($type ?? 'venue') == 'Vivienda') : ?>
       <div class="characteristics">

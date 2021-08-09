@@ -9,13 +9,14 @@
   maxpax="{{ $max_pax }}" 
   facilities="{{ $facilities }}" 
   venues="{{ count($venues) }}" 
+  venue="{{ $venueName }}"
   showpolicies="{{ $show_policies ?? true }}" />
 
 <div class="container" style="margin:0 auto; padding:0; position:relative">
   <?php if ($images) : ?>
   <?php foreach ($images as $image) : ?>
     <?php $image_path = substr($image, 0, strrpos($image, '.')) . '_2048.' . substr($image, strrpos($image, '.') + 1) ?>
-    <a href="<?php echo $image_path ?>" data-lightbox="venue" title="<h1>Centro de convenciones</h1>Los salones tienen capacidad para hasta 24 personas, en formato aula de clases; ideales para reuniones corporativas o académicas.<br><br><a href='#'>Revisa la política COVID para este venue</a>" <?php if ($image == $images[0]) : ?>class="gallery"<?php endif ?>><?php if ($image == $images[0]) : ?>FOTOGALERÍA <span>+</span><?php endif ?></a>
+    <a href="<?php echo $image_path ?>" data-lightbox="venue" title="<h1><?php echo $venueName ?></h1><a href='#security-policies' data-bs-toggle='modal' data-bs-target='#security-policies'>Revisa la política COVID para este venue</a>" <?php if ($image == $images[0]) : ?>class="gallery"<?php endif ?>><?php if ($image == $images[0]) : ?>FOTOGALERÍA <span>+</span><?php endif ?></a>
   <?php endforeach ?>
     @if($venueName == 'Ateneo')
     <a href="https://izi.travel/es/91de-ateneo/es" target="_blank" class="gallery" style="transform:translate(-100px, 36px); background:#000000; color:#ffffff">AUDIOGUIA</a>
@@ -54,7 +55,7 @@
           <div class="row">
             <div class="col-12 col-md-9" style="padding-right:40px; padding-left:0">
               <div class="row shortcuts">
-              @if($show_shortcuts ?? true)
+              @if($show_shortcuts ?? true && $venueName != 'Ateneo')
                 <div class="col-12 col-md-4">
                   <a href="#description">Aulas / Salones</a>
                 </div>
@@ -114,7 +115,7 @@
     </div>
   </div>
   
-  @if($show_menu ?? true)
+  @if($show_menu ?? true && $venueName != 'Ateneo')
   <a name="menu"></a><br />
   <div class="row">
     <div class="col-12 col-md-9">
@@ -152,7 +153,6 @@
       <a href="https://ciudaddelsaber.hauzd.com" style="float:right; font-size:12px; font-weight:700; text-decoration:underline">Explora nuestros venues en 3D</a>
       <h3 style="color:#0088ff; margin-bottom:10px">Ubicación</h3>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7918.400021473715!2d<?php echo $parent ? $parent->longitude : '' ?>!3d<?php echo $parent ? $parent->latitude : '' ?>!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwNTknNTYuMiJOIDc5wrAzNScwMC4xIlc!5e0!3m2!1ses!2sco!4v1618496938772!5m2!1ses!2sco" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9234.855855146361!2d<?php echo $parent ? $parent->longitude : '' ?>!3d<?php echo $parent ? $parent->latitude : '' ?>!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca7b0a46a3bd1%3A0x93b801d16c74cc5c!2sCd%20del%20Saber%2C%20Panam%C3%A1!5e0!3m2!1ses!2sco!4v1590440019299!5m2!1ses!2sco" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>-->
     </div>
   </div>
 

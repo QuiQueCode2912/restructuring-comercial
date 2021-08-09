@@ -19,6 +19,11 @@ class Venue extends Model
       'seasonal_mid_day_fee', 'seasonal_all_day_fee',
     ];
 
+    public function parent()
+    {
+        return $this->belongsTo('App\Models\Venue', 'parent_id');
+    }
+
     public function designs()
     {
         return $this->hasMany('App\Models\VenueDesign');
@@ -27,5 +32,10 @@ class Venue extends Model
     public function files()
     {
         return $this->hasMany('App\Models\VenueFile');
+    }
+
+    public function childs()
+    {
+        return $this->hasMany('App\Models\Venue');
     }
 }
