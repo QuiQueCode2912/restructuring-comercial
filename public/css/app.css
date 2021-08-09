@@ -1580,6 +1580,12 @@ input[type="file"] + label {
   float: right;
   font-weight: 700;
 }
+.modal {
+  z-index: 10500 !important;
+}
+.modal-backdrop {
+  z-index: 10400 !important;
+}
 .modal#security-policies .modal-dialog .modal-content {
   padding: 15px;
   border-radius: 14px;
