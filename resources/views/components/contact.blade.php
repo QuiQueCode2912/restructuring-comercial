@@ -19,7 +19,10 @@
       <div class="col-12 col-md-6">
         <small style="color:#0088ff">* Campos obligatorios</small>
         <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
-          <input type=hidden name="oid" value="00D1N000002MAgJ">
+          <input type="hidden" name="oid" value="00D1N000002MAgJ">
+          <input type="hidden" name="recordType" value="0123m0000012tH4">
+          <input type="hidden" name="00N3m00000QMwta" value="<?php echo date('Y-m-d H:i:s', time()) ?>">
+          <input type="hidden" name="00N3m00000QMwtf" value="<?php echo date('Y-m-d H:i:s', time() + 3600) ?>">
           <input type=hidden name="retURL" value="https://comercial.ciudaddelsaber.org/"> 
           <div class="row" style="padding-top:10px">
           <div class="col-12 col-md-6">
