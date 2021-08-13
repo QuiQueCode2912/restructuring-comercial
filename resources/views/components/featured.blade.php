@@ -9,8 +9,7 @@
         <p class="featured-text">
           <strong>Ciudad del Saber</strong> es un espacio inspirador en el que se 
           desarrollan nuevas metodologías de colaboración. 
-          Ubicada frente al Canal de Panamá, Ciudad del saber 
-          te permite crecer a ti y a tu negocio.
+          Ubicada frente al Canal de Panamá, te permite crecer a ti y a tu negocio.
         </p>
       </div>
     </div>
