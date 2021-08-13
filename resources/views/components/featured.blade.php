@@ -8,7 +8,7 @@
         </h1>
         <p class="featured-text">
           <strong>Ciudad del Saber</strong> es un espacio inspirador en el que se 
-          desarrollan nuevas metodologías de colaboración. <br>
+          desarrollan nuevas metodologías de colaboración. 
           Ubicada frente al Canal de Panamá, Ciudad del saber 
           te permite crecer a ti y a tu negocio.
         </p>
@@ -16,7 +16,7 @@
     </div>
     <div class="row characteristics">
       <div class="col-12 col-md-3">
-        <h3>6</h3>
+        <h3>7</h3>
         <p>
           <strong>MODERNOS EDIFICIOS</strong>
           Dentro del tecnoparque, un espacio donde convergen patrimonio e innovación.
