@@ -1127,47 +1127,51 @@ class IndexController extends Controller
     $opportunity = [];
     $success = false;
 
-    if ($request->token) {
-      $salesforce = $this->salesforce();
-      $quote = $salesforce->query("SELECT 
+    try {
+        if ($request->token) {
+            $salesforce = $this->salesforce();
+            $quote = $salesforce->query("SELECT 
           Id, OpportunityId, Status
         FROM Quote 
         WHERE Id = '{$request->token}'");
         
-      if ($quote['totalSize'] > 0) {
-        $opportunity = $salesforce->query("SELECT 
+            if ($quote['totalSize'] > 0) {
+                $opportunity = $salesforce->query("SELECT 
             Id, StageName, Name, ContactId
           FROM Opportunity 
           WHERE Id = '{$quote['records'][0]['OpportunityId']}'");
 
-          if ($opportunity['totalSize'] > 0) {
-            if (($quote['records'][0]['Status'] == 'Presented' || 
-              $quote['records'][0]['Status'] == 'Accepted') && 
+                if ($opportunity['totalSize'] > 0) {
+                    if (($quote['records'][0]['Status'] == 'Presented' ||
+              $quote['records'][0]['Status'] == 'Accepted') &&
               $opportunity['records'][0]['StageName'] == 'Negociación') {
-                $salesforce->update('Quote', $request->token, ['Status' => 'Accepted']);
+                        $salesforce->update('Quote', $request->token, ['Status' => 'Accepted']);
 
-                $contact = $salesforce->query("SELECT 
+                        $contact = $salesforce->query("SELECT 
                     Id, Email
                   FROM Contact 
                   WHERE Id = '{$opportunity['records'][0]['ContactId']}'");
 
-                $email = null;
-                if ($contact['totalSize'] > 0) {
-                  $email = $contact['records'][0]['Email'];
-                }
+                        $email = null;
+                        if ($contact['totalSize'] > 0) {
+                            $email = $contact['records'][0]['Email'];
+                        }
 
-                if ($email && strpos($email, '@cdspanama.org') > 0) {
-                  $salesforce->update('Opportunity', $quote['records'][0]['OpportunityId'], [
+                        if ($email && strpos($email, '@cdspanama.org') > 0) {
+                            $salesforce->update('Opportunity', $quote['records'][0]['OpportunityId'], [
                     'StageName' => 'Closed Won',
                     'Closing_comments__c' => 'Marcada como ganada automáticamente por sistema al ser un evento solicitado por un colaborador de la FCDS.'
                   ]);
-                } else {
-                  $salesforce->update('Opportunity', $quote['records'][0]['OpportunityId'], ['StageName' => 'Aceptación de propuesta']);
+                        } else {
+                            $salesforce->update('Opportunity', $quote['records'][0]['OpportunityId'], ['StageName' => 'Aceptación de propuesta']);
+                        }
+                        $success = true;
+                    }
                 }
-                $success = true;
             }
-          }
-      }
+        }
+    } catch (\Exception $e) {
+      $success = false;
     }
     
     return view('index.quote', [
@@ -1184,28 +1188,32 @@ class IndexController extends Controller
     $opportunity = [];
     $success = false;
 
-    if ($request->token) {
-      $salesforce = $this->salesforce();
-      $quote = $salesforce->query("SELECT 
-          Id, OpportunityId, Status
-        FROM Quote 
-        WHERE Id = '{$request->token}'");
+    try {
+        if ($request->token) {
+            $salesforce = $this->salesforce();
+            $quote = $salesforce->query("SELECT 
+            Id, OpportunityId, Status
+          FROM Quote 
+          WHERE Id = '{$request->token}'");
 
-      if ($quote['totalSize'] > 0) {
-        $opportunity = $salesforce->query("SELECT 
-            Id, StageName, Name 
-          FROM Opportunity 
-          WHERE Id = '{$quote['records'][0]['OpportunityId']}'");
+            if ($quote['totalSize'] > 0) {
+                $opportunity = $salesforce->query("SELECT 
+              Id, StageName, Name 
+            FROM Opportunity 
+            WHERE Id = '{$quote['records'][0]['OpportunityId']}'");
 
-          if ($opportunity['totalSize'] > 0) {
-            if ($quote['records'][0]['Status'] == 'Presented' && 
-              $opportunity['records'][0]['StageName'] == 'Negociación') {
-                $salesforce->update('Quote', $request->token, ['Status' => 'Denied']);
-                $salesforce->update('Opportunity', $quote['records'][0]['OpportunityId'], ['StageName' => 'Closed Lost']);
-                $success = true;
+                if ($opportunity['totalSize'] > 0) {
+                    if ($quote['records'][0]['Status'] == 'Presented' &&
+                $opportunity['records'][0]['StageName'] == 'Negociación') {
+                        $salesforce->update('Quote', $request->token, ['Status' => 'Denied']);
+                        $salesforce->update('Opportunity', $quote['records'][0]['OpportunityId'], ['StageName' => 'Closed Lost']);
+                        $success = true;
+                    }
+                }
             }
-          }
-      }
+        }
+    } catch (\Exception $e) {
+      $success = false;
     }
 
     return view('index.quote', [
