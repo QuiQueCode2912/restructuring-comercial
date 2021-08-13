@@ -121,10 +121,9 @@
     <div class="col-12 col-md-9">
       <h3 style="color:#0088ff; margin-bottom:20px">Catering: Menús opcionales</h3>
       <div id="accordion">
-        <x-accordion-card index="1" name="Desayunos" />
-        <x-accordion-card index="2" name="Coffee break AM" />
-        <x-accordion-card index="3" name="Almuerzo" />
-        <x-accordion-card index="4" name="Cena" />
+        <x-accordion-card index="1" name="Coffee breaks" />
+        <x-accordion-card index="2" name="Lunch boxes" />
+        <x-accordion-card index="3" name="Almuerzos" />
       </div>
     </div>
   </div>
