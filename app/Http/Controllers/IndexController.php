@@ -1511,8 +1511,8 @@ class IndexController extends Controller
       'grant_type' => 'password',
       'client_id' => env('SF_CONSUMER_KEY'),
       'client_secret' => env('SF_CONSUMER_SECRET'),
-      'username' => env('SF_USERNAME'),
-      'password' => env('SF_PASSWORD') . env('SF_TOKEN')
+      'username' => 'dnavas00@hotmail.com',
+      'password' => '19801980MAFdwvjyJArqvVOiKp9PdmPFFN'
     ]);
 
     $salesforce->setEndpoint(env('SF_LOGIN_URL'));
