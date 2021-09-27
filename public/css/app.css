@@ -1244,7 +1244,7 @@ input[type="file"] + label {
   list-style: none;
   display: inline-block;
   float: left;
-  width: calc(16.67% - 1px);
+  width: calc(14.28% - 1px);
   padding: 0 10px;
   min-height: 50px;
   border-left: 1px solid #aaaaaa;

@@ -25,6 +25,7 @@ Route::get('/oferta', 'App\Http\Controllers\IndexController@oferta');
 Route::get('/l-173', 'App\Http\Controllers\IndexController@l173');
 Route::get('/g-214abc', 'App\Http\Controllers\IndexController@g214abc');
 Route::get('/parque-de-los-lagos', 'App\Http\Controllers\IndexController@parqueDeLosLagos');
+Route::get('/parque-cds', 'App\Http\Controllers\IndexController@parqueCds');
 Route::get('/e-104', 'App\Http\Controllers\IndexController@e104');
 Route::get('/e-109', 'App\Http\Controllers\IndexController@e109');
 Route::get('/e-300', 'App\Http\Controllers\IndexController@e300');

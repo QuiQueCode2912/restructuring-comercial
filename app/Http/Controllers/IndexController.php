@@ -21,6 +21,7 @@ class IndexController extends Controller
       '02i3m0000092sG3AAI', // Centro de convenciones
       '02i3m0000092sJSAAY', // Aulas 105
       '02i3m0000092sHZAAY', // Complejo de hospedaje
+      '02i3m00000D9DaPAAV', // Parque CDS
     ];
 
     $randId = rand(0, 2);
@@ -52,6 +53,7 @@ class IndexController extends Controller
       $parents[] = '02i3m0000092s2PAAQ'; // L-173
       $parents[] = '02i3m0000092s88AAA'; // G-214ABC
       $parents[] = '02i3m0000092sP3AAI'; // Parque de los Lagos
+      $parents[] = '02i3m00000D9DaPAAV'; // Parque CDS
     }
 
     $venues = Venue::whereIn('id', $parents)
@@ -73,6 +75,10 @@ class IndexController extends Controller
           case '02i3m0000092sP3AAI' :
             $name = 'Parque de los Lagos';
             $url = '/parque-de-los-lagos';
+            break;
+          case '02i3m00000D9DaPAAV' :
+            $name = 'Parque CDS';
+            $url = '/parque-cds';
             break;
           case '02i3m0000092sJmAAI' :
             $name = 'E-104';
@@ -593,6 +599,43 @@ class IndexController extends Controller
       'page_title' => 'Servicios - Parque de los Lagos',
       'venue' => 'espacios-fcds',
       'venueName' => 'Parque de los Lagos',
+      'subtitle' => '',
+      'parent' => $parent,
+      'venues' => $venues,
+      'images' => $images,
+      'facilities' => $facilities,
+      'max_pax' => $max_pax
+    ]);
+  }
+
+  public function parqueCds(Request $request)
+  { 
+    $parent = Venue::find('02i3m00000D9DaPAAV');
+    $venues = [$parent];
+    
+    $max_pax = 0;
+    if ($venues) {
+      foreach ($venues as $venue) {
+        $venue_max_pax = $venue->designs()->max('max_pax');
+        $max_pax = $venue_max_pax > $max_pax ? $venue_max_pax : $max_pax;
+      }
+      $facilities = $venues ? $venues[0]->facilities : null;
+    }
+
+    $venue_images = VenueFile::where('venue_id', $parent->id)->get();
+    $images = [];
+    if ($venue_images->count() > 0) {
+      foreach ($venue_images as $image) {
+        $images[] = image_url('storage/venues/' . $image->path);
+      }
+    } else {
+      $images[] = '/assets/images/placeholder-image.jpg';
+    }
+
+    return view('venues.venue', [
+      'page_title' => 'Servicios - Parque CDS',
+      'venue' => 'parque-cds',
+      'venueName' => 'Parque CDS',
       'subtitle' => '',
       'parent' => $parent,
       'venues' => $venues,
