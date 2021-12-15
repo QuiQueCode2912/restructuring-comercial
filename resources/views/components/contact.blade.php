@@ -13,7 +13,7 @@
           <strong>Crea</strong> <span style="color:#0088ff">+</span>
           <strong>Estudia</strong> <span style="color:#0088ff">+</span>
           <strong>Trabaja</strong> <span style="color:#0088ff">+</span>
-          <strong>Vive 1</strong>
+          <strong>Vive</strong>
         </p>
       </div>
       <div class="col-12 col-md-6">
@@ -309,7 +309,7 @@
             </div>
           </div>
         </form>
-        <small>Al hacer clic en el botón de enviar aceptarás nuestros <a href="#">Términos de uso y privacidad</a></small>
+        <small>Al hacer clic en el botón de enviar aceptas nuestros <a href="#">Términos de uso y privacidad</a></small>
       </div>
     </div>
   </div>
