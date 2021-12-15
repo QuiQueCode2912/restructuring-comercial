@@ -309,7 +309,7 @@
             </div>
           </div>
         </form>
-        <small>Al hacer clic en el botón de enviar aceptas nuestros <a href="#">Términos de uso y privacidad</a></small>
+        <small>Al hacer clic en el botón de enviar aceptarás nuestros <a href="#">Términos de uso y privacidad</a></small>
       </div>
     </div>
   </div>
