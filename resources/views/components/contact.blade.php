@@ -5,14 +5,14 @@
         <h3>¿Quieres realizar algo especial?<br>
         Podemos ayudarte</h3><br>
         <p>
-          Si necesitas reservar espacios múltiples u organizar eventos que duren más de 
+          Si necesitas reservar espacios múltiples u organizar eventos que duren más de
           un día, estamos aquí para ayudarte a planificarlo. Por favor completa este formulario y un miembro del equipo de Ciudad del Saber
           se pondrá en contacto contigo para que puedas concretar tu proyecto.
         </p>
         <p>
-          <strong>Crea</strong> <span style="color:#0088ff">+</span> 
-          <strong>Estudia</strong> <span style="color:#0088ff">+</span> 
-          <strong>Trabaja</strong> <span style="color:#0088ff">+</span> 
+          <strong>Crea</strong> <span style="color:#0088ff">+</span>
+          <strong>Estudia</strong> <span style="color:#0088ff">+</span>
+          <strong>Trabaja</strong> <span style="color:#0088ff">+</span>
           <strong>Vive</strong>
         </p>
       </div>
@@ -23,7 +23,7 @@
           <input type="hidden" name="recordType" value="0123m0000012tH4">
           <input type="hidden" name="00N3m00000QMwta" value="<?php echo date('Y-m-d H:i:s', time()) ?>">
           <input type="hidden" name="00N3m00000QMwtf" value="<?php echo date('Y-m-d H:i:s', time() + 3600) ?>">
-          <input type=hidden name="retURL" value="https://comercial.ciudaddelsaber.org/"> 
+          <input type=hidden name="retURL" value="https://comercial.ciudaddelsaber.org/">
           <div class="row" style="padding-top:10px">
           <div class="col-12 col-md-6">
               <div class="form-group required">
