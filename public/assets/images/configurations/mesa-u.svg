@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>mesa-u</title>
+    <g id="mesa-u" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle-Copy-9" stroke="#979797" fill="#FFFFFF" transform="translate(44.976074, 64.566406) rotate(-360.000000) translate(-44.976074, -64.566406) " x="40.9760742" y="62.0664063" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-10" stroke="#979797" fill="#FFFFFF" transform="translate(55.976074, 64.566406) rotate(-360.000000) translate(-55.976074, -64.566406) " x="51.9760742" y="62.0664063" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-3" stroke="#979797" fill="#FFFFFF" transform="translate(34.976074, 37.566406) rotate(-90.000000) translate(-34.976074, -37.566406) " x="30.9760742" y="35.0664063" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-6" stroke="#979797" fill="#FFFFFF" transform="translate(65.976074, 37.566406) rotate(-90.000000) translate(-65.976074, -37.566406) " x="61.9760742" y="35.0664063" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-4" stroke="#979797" fill="#FFFFFF" transform="translate(34.976074, 47.566406) rotate(-90.000000) translate(-34.976074, -47.566406) " x="30.9760742" y="45.0664063" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-7" stroke="#979797" fill="#FFFFFF" transform="translate(65.976074, 47.566406) rotate(-90.000000) translate(-65.976074, -47.566406) " x="61.9760742" y="45.0664063" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-5" stroke="#979797" fill="#FFFFFF" transform="translate(34.976074, 57.566406) rotate(-90.000000) translate(-34.976074, -57.566406) " x="30.9760742" y="55.0664063" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-8" stroke="#979797" fill="#FFFFFF" transform="translate(65.976074, 57.566406) rotate(-90.000000) translate(-65.976074, -57.566406) " x="61.9760742" y="55.0664063" width="8" height="5" rx="1"></rect>
+        <path d="M63,32.5 L63.5,62 L38,62.5 L37.5,33 L43,32.5 L43.5,56.5 L57.5,56.5 L57.5,33 L63,32.5 Z" id="Combined-Shape" stroke="#979797" fill="#FFFFFF"></path>
+    </g>
+</svg>

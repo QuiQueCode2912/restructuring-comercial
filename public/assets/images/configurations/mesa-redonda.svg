@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>mesa-redonda</title>
+    <g id="mesa-redonda" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle-Copy-19" stroke="#979797" fill="#FFFFFF" transform="translate(35.976074, 50.566406) rotate(-101.000000) translate(-35.976074, -50.566406) " x="31.9760742" y="48.0664063" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-20" stroke="#979797" fill="#FFFFFF" transform="translate(41.976074, 59.566406) rotate(-142.000000) translate(-41.976074, -59.566406) " x="37.9760742" y="57.0664063" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-21" stroke="#979797" fill="#FFFFFF" transform="translate(53.566406, 62.788574) rotate(-188.000000) translate(-53.566406, -62.788574) " x="49.5664062" y="60.2885742" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-22" stroke="#979797" fill="#FFFFFF" transform="translate(63.371094, 57.036621) rotate(-234.000000) translate(-63.371094, -57.036621) " x="59.3710937" y="54.5366211" width="8" height="5" rx="1"></rect>
+        <circle id="Oval" stroke="#979797" fill="#FFFFFF" cx="51" cy="48" r="13.5"></circle>
+    </g>
+</svg>

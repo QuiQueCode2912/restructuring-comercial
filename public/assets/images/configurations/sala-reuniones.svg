@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>sala-reuniones</title>
+    <g id="sala-reuniones" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" stroke="#979797" fill="#FFFFFF" x="41.5" y="29.5" width="17" height="41" rx="1"></rect>
+        <rect id="Rectangle-Copy-11" stroke="#979797" fill="#FFFFFF" transform="translate(38.976074, 34.566406) rotate(-90.000000) translate(-38.976074, -34.566406) " x="34.9760742" y="32.0664063" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-15" stroke="#979797" fill="#FFFFFF" transform="translate(60.976074, 34.566406) rotate(-90.000000) translate(-60.976074, -34.566406) " x="56.9760742" y="32.0664063" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-12" stroke="#979797" fill="#FFFFFF" transform="translate(38.976074, 45.566406) rotate(-90.000000) translate(-38.976074, -45.566406) " x="34.9760742" y="43.0664063" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-16" stroke="#979797" fill="#FFFFFF" transform="translate(60.976074, 45.566406) rotate(-90.000000) translate(-60.976074, -45.566406) " x="56.9760742" y="43.0664063" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-13" stroke="#979797" fill="#FFFFFF" transform="translate(38.976074, 55.566406) rotate(-90.000000) translate(-38.976074, -55.566406) " x="34.9760742" y="53.0664063" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-17" stroke="#979797" fill="#FFFFFF" transform="translate(60.976074, 55.566406) rotate(-90.000000) translate(-60.976074, -55.566406) " x="56.9760742" y="53.0664063" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-14" stroke="#979797" fill="#FFFFFF" transform="translate(38.976074, 65.566406) rotate(-90.000000) translate(-38.976074, -65.566406) " x="34.9760742" y="63.0664063" width="8" height="5" rx="1"></rect>
+        <rect id="Rectangle-Copy-18" stroke="#979797" fill="#FFFFFF" transform="translate(60.976074, 65.566406) rotate(-90.000000) translate(-60.976074, -65.566406) " x="56.9760742" y="63.0664063" width="8" height="5" rx="1"></rect>
+    </g>
+</svg>
