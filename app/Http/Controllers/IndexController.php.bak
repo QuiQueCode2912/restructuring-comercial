@@ -1169,6 +1169,7 @@ class IndexController extends Controller
     $quote = [];
     $opportunity = [];
     $success = false;
+	$debugstage = "";
 
     try {
         if ($request->token) {
@@ -1177,24 +1178,25 @@ class IndexController extends Controller
           Id, OpportunityId, Status
         FROM Quote 
         WHERE Id = '{$request->token}'");
+		$debugstage = "SELECT de Quote:{$request->token}";
         
             if ($quote['totalSize'] > 0) {
                 $opportunity = $salesforce->query("SELECT 
             Id, StageName, Name, ContactId
           FROM Opportunity 
           WHERE Id = '{$quote['records'][0]['OpportunityId']}'");
-
+		  $debugstage = "SELECT de Opportunity";
                 if ($opportunity['totalSize'] > 0) {
                     if (($quote['records'][0]['Status'] == 'Presented' ||
               $quote['records'][0]['Status'] == 'Accepted') &&
               $opportunity['records'][0]['StageName'] == 'Negociación') {
                         $salesforce->update('Quote', $request->token, ['Status' => 'Accepted']);
-
+$debugstage = "UPDATE de Quote";
                         $contact = $salesforce->query("SELECT 
                     Id, Email
                   FROM Contact 
                   WHERE Id = '{$opportunity['records'][0]['ContactId']}'");
-
+$debugstage = "SELECT de Contact";
                         $email = null;
                         if ($contact['totalSize'] > 0) {
                             $email = $contact['records'][0]['Email'];
@@ -1207,6 +1209,7 @@ class IndexController extends Controller
                   ]);
                         } else {
                             $salesforce->update('Opportunity', $quote['records'][0]['OpportunityId'], ['StageName' => 'Aceptación de propuesta']);
+							$debugstage = "UPDATE de Opportunity";
                         }
                         $success = true;
                     }
@@ -1214,6 +1217,7 @@ class IndexController extends Controller
             }
         }
     } catch (\Exception $e) {
+	  $debugstage = $debugstage . " Error: " . $e->getMessage();
       $success = false;
     }
     

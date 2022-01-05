@@ -1226,6 +1226,7 @@ $debugstage = "SELECT de Contact";
       'quote' => $quote && $quote['records'] ? $quote['records'][0] : null,
       'opportunity' => $opportunity && $opportunity['records'] ? $opportunity['records'][0] : null,
       'success' => $success,
+	  'debugstage' => $debugstage,
     ]);
   }
 
