@@ -1168,7 +1168,7 @@ class IndexController extends Controller
   {
     $quote = [];
     $opportunity = [];
-    $success = true;
+    $success = false;
 
     try {
         if ($request->token) {
