@@ -33,7 +33,7 @@ switch (true) {
       <br /><br />
       Sin embargo te esperamos en una próxima oportunidad con los brazos abiertos.';
     break;
-   case
+   default:
      $description = $description . " - " . $debugstage;
 	 break;
 }
