@@ -69,7 +69,7 @@
               <input class="form-check-input" type="radio" name="total" id="total-<?php echo $index ?>" value="{{ $payment->total }}" <?php echo $index == 0 ? 'checked' : '' ?>>
               <label class="form-check-label" for="total-<?php echo $index ?>">
                 <?php echo $payment->concept ?><br />
-                <strong>USD {{ $payment->total }}</strong>
+                <strong>USD {{ number_format($payment->total, 2, '.', ',') }}</strong>
               </label>
             </div>
           </div>

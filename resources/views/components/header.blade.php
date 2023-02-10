@@ -33,6 +33,8 @@
           <li><a href="/aulas-105">Aulas 105</a></li>
           <li><a href="https://live.ipms247.com/booking/book-rooms-complejodehospedaje-es-Spanish" target="_blank">Complejo de hospedaje</a></li>
           <!--<li><a href="/residencias">Residencias</a></li>-->
+          <li><a href="/e-109">Centro de Innovación</a></li>
+            <li><a href="/parque-cds">Parque CDS</a></li>
           <?php if (session()->get('is-cds-user')) : ?>
           <li><a href="/espacios-fcds">Espacios FCdS</a></li>
           <?php endif ?>
@@ -100,9 +102,9 @@
 @else
 <div class="header small">
   <div class="container">
-    <a href="/" class="menu-toggle"><i class="fe fe-arrow-left"></i></a>
+    <div class="menu-toggle"><i class="fe fe-menu"></i></div>
     <ul class="menu">
-      <li><a href="/"><i class="fe fe-arrow reflect"></i> Volver al inicio</a></li>
+      <li><a href="/"><i class="fe fe-home  reflect"></i> Volver al inicio</a></li>
     </ul>
     <a href="https://ciudaddelsaber.org" class="logo">
       <img src="/assets/images/logo-white.png" />

@@ -38,7 +38,13 @@
       <tbody>
         <tr>
           <th>Evento</th>
-          <td><?php echo $opportunity['Name'] ?></td>
+          <td>
+          @if (isset($data['LeadId']))
+          <?php echo $data['LeadId'] ?>
+          @else
+          <?php echo $opportunity['Name'] ?>
+          @endif
+          </td>
         </tr>
         <tr>
           <th>ID Evento</th>
@@ -54,7 +60,13 @@
         </tr>
         <tr>
           <th>Concepto</th>
-          <td>Abono - <?php echo $opportunity['Name'] ?></td>
+          <td>
+          @if (isset($data['LeadId']))
+          <?php echo $data['Concepto'] ?>
+          @else
+          Abono - <?php echo $opportunity['Name'] ?>
+          @endif
+          </td>
         </tr>
         <tr>
           <th>Fecha</th>

@@ -12,13 +12,19 @@
     <li>Pet friendly</li>
     <li style="padding-bottom:20px; border-bottom:none">Listas para ocupar</li>
     <?php else : ?>
+    <?php if ($venue == 'Parque CDS') : ?>
+    <li class="title">Espacios al aire libre</li>
+    <li>Food Court</li>
+    <li>Baños</li>
+    <li style="padding-bottom:20px; border-bottom:none">Vestidores</li>
+    <?php else : ?>
     <?php if ($venue != 'Ateneo') : ?>
     <li class="title">Centro de conferencias y oficinas</li>
     <li>Capacidad {{ $maxpax }} personas máximo</li>
     <li>{{ $venues }} aulas / salones para eventos</li>
     <li style="padding-bottom:20px; border-bottom:none">96 habitaciones</li>
     <?php endif ?>
-
+     <?php endif ?>
     <li class="title">Facilidades</li>
     <?php if ($facilities) : ?>
     <?php foreach ($facilities as $facility) : ?>

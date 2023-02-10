@@ -45,20 +45,48 @@
             $sppd = $subvenue['seasonal_all_day_fee'] > $sppd ? $subvenue['seasonal_all_day_fee'] : $sppd;
           }
         }
+        if($venue['type'] == 'Habitaciones')
+        {
+        $configuracion = "Distribuciones";
+            $max_pax = 96;
+            $max_pax_txt ="simple, doble, triple";
+        }
+        else
+        {
+        $configuracion = "Espacio para";
         if ($venue['designs']) {
           foreach ($venue['designs'] as $design) {
             $max_pax = $design['max_pax'] > $max_pax ? $design['max_pax'] : $max_pax;
           }
         }
+        $max_pax_txt = $max_pax . ' personas';
+        }
         ?>
         <div class="characteristics">
           <dl>
-            <dt>Espacio para</dt>
-            <dd><?php echo $max_pax ?> personas</dd>
+            <dt><?php echo $configuracion ?></dt>
+            <dd><?php echo $max_pax_txt ?></dd>
           </dl>
           <dl>
-            <dt>Sala para eventos</dt>
-            <dd><?php echo count($venue['venues']) ?></dd>
+            <dt><?php
+            $pvax = isset($parentVenue) ? $parentVenue : '';
+            if($pvax != 'parque-cds')
+            {
+            echo $venue['type'];
+            } else
+            {
+            echo "Canchas/Espacios";
+            }
+            ?></dt>
+            <dd><?php
+             if($venue['type'] == 'Habitaciones')
+        {
+            echo 96;
+            } else {
+	echo count($venue['venues']);
+}
+
+            ?></dd>
           </dl>
           <dl>
             <dt>Precio por día</dt>
@@ -73,6 +101,10 @@
               <span style="color:#0088ff">/*</span>
             </dd>
           </dl>
+          <?php
+            if($pvax != 'parque-cds')
+            {
+          ?>
           <dl>
             <dt>Eventos con alcohol</dt>
             <dd>permitidos</dd>
@@ -81,6 +113,9 @@
             <dt>Servicio de catering</dt>
             <dd>Disponible</dd>
           </dl>
+          <?php
+            }
+          ?>
         </div>
         <p>
           <a href="#security-policies" data-bs-toggle="modal" data-bs-target="#security-policies">Revisa la política Covid para este venue</a>

@@ -1,4 +1,4 @@
-<div class="request-step">
+<div class="request-step" style="margin-top:0px;">
   <div class="container">
     <h4>Estás a punto de completar tu solicitud. <br>
       Por favor verifica que los datos sean correctos</h4>
@@ -39,7 +39,7 @@
           <a href="/cotizacion/datos-contacto#identification">Editar</a>
         </div>
       </div>
-      <div class="col-12 col-md-6">
+     <!-- <div class="col-12 col-md-6">
         <div class="form-group-preview">
           Nacionalidad: 
           <?php 
@@ -286,12 +286,18 @@
           }
           ?>
           <a href="/cotizacion/datos-contacto#country_code">Editar</a>
-        </div>
-      </div>
-    </div>
+        </div> 
+      </div>-->
+    </div> 
 
-    <?php if (session()->get('recordType') == '0123m0000012tH4') : ?>
+    <?php if (session()->get('recordType') == '0123m0000012tH4' || session()->get('recordType') == '0123m000001AzQ4') : ?>
+     <?php
+       if($rootid != '02i3m00000D9DaPAAV')
+       {
+    ?>
     <div class="row" style="margin-top:40px">
+
+   
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
           Evento: <?php echo session()->get('00N3m00000QQOdA') ?>
@@ -371,9 +377,76 @@
           <a href="/cotizacion/datos-evento#lodging-quantity">Editar</a>
         </div>
       </div>
+ 
     </div>
+         <?php
+      }
+      ?>
+     <?php
+       if($rootid == '02i3m00000D9DaPAAV')
+       {
+    ?>
     <div class="row">
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-12">
+        <div class="form-group-preview mt-4">
+          <small>Espacios que deseas reservar</small>
+          <script>
+  var reservas = JSON.parse('<?php echo session()->get('ReservasSeleccionadas'); ?>');
+  
+  var formatReservas = function(reservas) {
+    var result = "";
+
+    reservas.forEach(function(reserva, index) {
+      var horaInicio = reserva.id.substring(7, 9);
+      var horaInicioFormateada = formatHora(horaInicio);
+      var horaFinFormateada = formatHora(parseInt(horaInicio) + 1);
+      result += reserva.venue + " " + reserva.fecha + " " + horaInicioFormateada + " - " + horaFinFormateada;
+
+      if (index !== reservas.length - 1) {
+        result += "<br/>";
+      }
+    });
+
+    return result;
+  }
+
+  var formatHora = function(hora) {
+    if (hora < 10) {
+      hora = "0" + hora;
+    }
+
+    var periodo = hora < 12 ? "AM" : "PM";
+    hora = hora % 12;
+    if (hora == 0) {
+      hora = 12;
+    }
+
+    return hora + ":00 " + periodo;
+  }
+  var ftRes = formatReservas(reservas);
+  document.write(ftRes);
+
+  
+  document.addEventListener("DOMContentLoaded", function(event) {
+  var inputF = document.getElementById("00N3m00000QeGT3");
+  inputF.value = ftRes.replaceAll('<br/>', '\n');
+  });
+
+</script>
+<br />Reserva para: <?php echo session()->get('00N3m00000QeGyG') ?>
+
+
+
+          <br /><br /><br />
+          <a href="/cotizacion/datos-evento#ReservasSeleccionadas">Editar</a>
+      </div>
+    </div>
+    </div>
+              <?php
+      }
+      ?>
+    <div class="row">
+      <div class="col-12 col-md-<?php if($rootid != '02i3m00000D9DaPAAV') { echo '6'; } else { echo '12'; } ?>">
         <div class="form-group-preview mt-4">
           <small>Describe tu evento</small>
           <?php echo session()->get('description') ?>
@@ -381,6 +454,13 @@
           <a href="/cotizacion/datos-evento#description">Editar</a>
         </div>
       </div>
+
+
+
+      <?php
+       if($rootid != '02i3m00000D9DaPAAV')
+       {
+    ?>
       <div class="col-12 col-md-6">
         <?php if (session()->get('files')) : ?>
         <p style="line-height:1rem; margin-bottom:6px"><small>Archivos compartidos</small></p>
@@ -396,8 +476,12 @@
         entender mejor tus necesidades</small></p><br />
         <div class="form-group-preview" style="background:transparent"><a href="/cotizacion/datos-evento#file" style="left:0">Editar</a></div>
         <?php endif ?>
-      </div>
-    </div>
+        </div>
+    
+
+    <?php
+    }
+    ?>
     <?php else : ?>
     <div class="row" style="margin-top:40px">
       <div class="col-12 col-md-6">
@@ -454,6 +538,22 @@
       </div>
     </div>
     <?php endif ?>
+
+      </div>
+      <?php
+       if($rootid == '02i3m00000D9DaPAAV')
+       {
+    ?>
+     <div class="row">
+      <div class="col-12 col-md-12">
+        <div class="form-group-preview mt-4" style="display: inline-flex;width: 100%;justify-content: space-between;">
+          <div><small><b>Precio Total</b></small></div><div><b>B/. <?php echo nl2br($estimacion)?></b></div>
+        </div>
+      </div>
+      </div>
+        <?php
+    }
+    ?>
     <div class="row" style="margin-top:40px">
       <div class="col-12 text-center">
         <p style="color:#0088ff; font-family:'Roboto', sans-serif; font-size:14px">
@@ -478,7 +578,9 @@
         }
         ?>
         <input type=hidden name="oid" value="00D1N000002MAgJ">
-        <input type=hidden name="retURL" value="https://comercial.ciudaddelsaber.org/cotizacion/solicitud-enviada">
+        <input type=hidden name="retURL" value="<?php if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {  $url = "https://"; } else {  $url = "http://"; } echo $url . $_SERVER['HTTP_HOST']; ?>/cotizacion/solicitud-enviada">
+     <!--   <input type="hidden" name="debug" value="1">
+        <input type="hidden" name="debugEmail" value="jurena@cdspanama.org"> -->
         <input  id="00N3m00000PbDs5" name="00N3m00000PbDs5" type="hidden" value="1"/>
         <input type="hidden" value="<?php echo session()->get('first_name') ?>" name="first_name" id="first_name" />
         <input type="hidden" value="<?php echo session()->get('last_name') ?>" name="last_name" id="last_name" />
@@ -507,6 +609,27 @@
         <input type="hidden" value="<?php echo session()->get('00N3m00000Pb6zh') ?>" name="00N3m00000Pb6zh" id="00N3m00000Pb6zh" />
         <input type="hidden" value="<?php echo session()->get('description') ?>" name="description" id="description" />
         <input type="hidden" value="<?php echo session()->get('recordType') ?>" name="recordType" id="recordType" />
+      <?php
+       if($rootid == '02i3m00000D9DaPAAV')
+       {
+    ?>
+    
+        <input type="hidden" name="00N3m00000QeGlb" id="00N3m00000QeGlb" value='<?php echo session()->getId() ?>'/>
+        <input type="hidden" name="00N3m00000QeGSy" id="00N3m00000QeGSy" value='<?php echo session()->get("ReservasSeleccionadas") ?>'/>
+        <input type="hidden" name="00N3m00000QeGT3" id="00N3m00000QeGT3" value='Sin selección'/>
+        <input type="hidden" name="00N3m00000QeGyG" id="00N3m00000QeGyG" value="<?php echo session()->get('00N3m00000QeGyG') ?>"/>
+        <input type="hidden" name="00N3m00000QeGSo" id="00N3m00000QeGSo" value='{{ $estimacion }}'/>
+
+        <input type="hidden" name="00N3m00000QeH7c" id="00N3m00000QeH7c" value='Reserva desatendida'/>
+
+<!--        Tipo de reserva:<select  id="00N3m00000QeH7c" name="00N3m00000QeH7c" title="Tipo de reserva">
+        <option value="">--None--</option><option value="Reserva desatendida">Reserva desatendida</option>
+        <option value="Reserva consultiva">Reserva consultiva</option>
+        </select> -->
+
+        <?php
+    }
+    ?>  
 
         <?php if (config('app.env') == 'local') : ?>
         <!--<input type="hidden" name="debug" value="1">

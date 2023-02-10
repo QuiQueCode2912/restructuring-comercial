@@ -57,11 +57,19 @@
               <div class="row shortcuts">
               @if($show_shortcuts ?? true && $venueName != 'Ateneo')
                 <div class="col-12 col-md-4">
-                  <a href="#description">Aulas / Salones</a>
+                  <a href="#description">
+                  @if($venueName != 'Parque CDS')
+                  Aulas / Salones
+                  @else
+                  Canchas / Espacios
+                  @endif
+                  </a>
                 </div>
+                 @if($show_menu ?? true )
                 <div class="col-12 col-md-4">
                   <a href="#menu">Menús</a>
                 </div>
+                 @endif
                 <div class="col-12 col-md-4">
                   <a href="#venue-location">Ubicación</a>
                 </div>
@@ -76,6 +84,7 @@
                 Los precios no incluyen catering ni impuestos locales
               </small>
               @endif
+              <?php $venueRoute = $venue; ?>
               <?php if ($venues) : ?>
               <?php foreach ($venues as $venue) : ?>
                 <?php 
@@ -93,18 +102,22 @@
                   id="{{ $venue->id }}" 
                   name="{{ $venue->name }}" 
                   designs="{{ $venue->designs }}" 
-                  type="{{ $venue->type }}" 
+                  type="{{ $venue->type }}"
+                  venueroute="{{ $venueRoute }}"
+                  parentVenue="{{ $venueName }}"
+                  venuefacilities="{{ $venue->venue_facilities }}" 
                   rooms="{{ $venue->rooms ?? 0 }}"
                   closedarea="{{ $venue->closed_area ?? 0 }}"
                   openarea="{{ $venue->open_area ?? 0 }}"
-                  hourfee="{{ $venue->hour_fee }}" 
-                  middayfee="{{ $venue->mid_day_fee }}" 
-                  alldayfee="{{ $venue->all_day_fee }}" 
+                  hourfee="{{ $venue->hour_fee ?? 0 }}" 
+                  middayfee="{{ $venue->mid_day_fee ?? 0 }}" 
+                  alldayfee="{{ $venue->all_day_fee ?? 0 }}" 
                   monthlyfee="{{ $venue->monthly_fee ?? 0 }}" 
                   seasonalhourfee="{{ $venue->seasonal_hour_fee }}" 
                   seasonalmiddayfee="{{ $venue->seasonal_mid_day_fee }}" 
                   seasonalalldayfee="{{ $venue->seasonal_all_day_fee }}" 
-                  seasonalmonthlyfee="{{ $venue->seasonal_monthly_fee ?? 0 }}" 
+                  seasonalmonthlyfee="{{ $venue->seasonal_monthly_fee ?? 0 }}"
+                  tipouso="{{ $venue->tipo_uso }}" 
                 />
               <?php endforeach ?>
               <?php endif ?>

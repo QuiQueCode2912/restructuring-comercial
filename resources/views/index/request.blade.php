@@ -13,17 +13,22 @@
           <x-stepper total="3" />
           <?php 
           switch ($step) {
-            case 2 : 
+            case '2' : 
               $designs = json_encode($designs);
               ?><x-request-step-2 venue="{{ $venue ? $venue->name : '' }}" designs="{{ $designs }}" /><?php 
               break;
-            case 3 : 
+              case '2-p' : 
               $designs = json_encode($designs);
-              ?><x-request-step-3 venue="{{ $venue ? $venue->name : '' }}" designs="{{ $designs }}" /><?php 
+              ?><x-request-step-2-p venue="{{ $venue ? $venue->name : '' }}" designs="{{ $designs }}" grupos="{{ $grupos }}"/><?php 
               break;
-            case 4 : ?><x-request-step-4 /><?php break;
-            case 5 : ?><x-request-step-2-lodging /><?php break;
-            case 6 : ?><x-request-step-2-residency /><?php break;
+            case '3' : 
+              $designs = json_encode($designs);
+              ?><x-request-step-3 rootid="{{ $rootid ? $rootid : '' }}"  estimacion="{{ $estimacion ? $estimacion : '' }}" venue="{{ $venue ? $venue->name : '' }}" designs="{{ $designs }}" /><?php 
+              break;
+            case '4' : ?><x-request-step-4 /><?php break;
+            case '4-p' : ?><x-request-step-4-p /><?php break;
+            case '5' : ?><x-request-step-2-lodging /><?php break;
+            case '6' : ?><x-request-step-2-residency /><?php break;
             default : ?><x-request-step-1 /><?php break;
           }
           ?>

@@ -13,7 +13,8 @@
           <strong>Crea</strong> <span style="color:#0088ff">+</span>
           <strong>Estudia</strong> <span style="color:#0088ff">+</span>
           <strong>Trabaja</strong> <span style="color:#0088ff">+</span>
-          <strong>Vive</strong>
+          <strong>Vive</strong> <span style="color:#0088ff">+</span>
+          <strong>Ejercita</strong>
         </p>
       </div>
       <div class="col-12 col-md-6">
@@ -37,7 +38,7 @@
             </div>
             <div class="col-12 col-md-6">
               <div class="form-group required">
-                <input type="email" class="form-control" id="email" maxlength="80" required placeholder="Correo electrónico">
+                <input type="email" class="form-control" name="email" id="email" maxlength="80" required placeholder="Correo electrónico">
               </div>
             </div>
             <div class="col-12 col-md-6">

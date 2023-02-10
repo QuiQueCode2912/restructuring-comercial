@@ -10,9 +10,17 @@ if ($designs) {
 
 <div class="venue-list">
   <div class="row">
-    <div class="col-12 col-md-6">
-      <img src="{{ $image }}" class="venue-image">
+    <div class="col-12 col-md-6 v-container">
+      <img src="{{ $image }}" class="venue-image"/>
+      <div class="v-button-container">
+      @if($venueroute == "parque-cds")
+      @if($hourfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=hora" class="btn btn-primary btn-sm">Cotizar horas</a> @endif
+      @if($alldayfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=dia" class="btn btn-primary btn-sm">Cotizar días</a> @endif
+      @if($monthlyfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=mes" class="btn btn-primary btn-sm">Cotizar mes</a> @endif
+      @else
       <a href="/cotizacion/datos-contacto?id={{ $id }}" class="btn btn-primary btn-sm">Cotizar</a>
+      @endif
+      </div>
     </div>
     <div class="col-12 col-md-6">
       <a href="#" class="venue-name"><?php echo $parent ?? '' ? $parent . ' - ' : '' ?>{{ $name }}</a>
@@ -51,10 +59,57 @@ if ($designs) {
       </div>
       <?php else : ?>
       <div class="characteristics">
+
+      <?php
+          if ($parentVenue == 'Parque CDS')
+          {
+      ?>
+        <dl>
+          <dt>Cuenta con luminarias</dt>
+          <dd>
+          <?php
+                if (str_contains($venuefacilities, 'Luminarias'))
+                {
+                    echo 'Si';
+                }
+                else
+                {
+                    echo 'No';
+                }
+          ?>
+          </dd>
+        </dl>
+
+        <dl>
+          <dt>Cuenta con graderías</dt>
+          <dd>
+          <?php
+                if (str_contains($venuefacilities, 'Graderías'))
+                {
+                    echo 'Si';
+                }
+                else
+                {
+                    echo 'No';
+                }
+          ?>
+          </dd>
+        </dl>
+      <?php
+          }
+      ?>
+
+      <?php
+          if ($parentVenue != 'Parque CDS')
+          {
+      ?>
         <dl>
           <dt>Configuración</dt>
-          <dd><?php echo count($configuration) > 0 ? (count($configuration) > 1 ? 'Múltiple' : 'Única') : 'No registra' ?></dd>
+          <dd><?php   echo count($configuration) > 0 ? (count($configuration) > 1 ? 'Múltiple' : 'Única') : 'No registra';    ?></dd>
         </dl>
+       <?php
+          }
+      ?>
         <dl>
           <dt>Capacidad máxima</dt>
           <dd><?php echo $configuration ? max($configuration) : 0 ?> personas</dd>
@@ -85,6 +140,16 @@ if ($designs) {
             <span style="color:#0088ff">/*</span>
           </dd>
         </dl>
+
+        <dl>
+          <dt>Tipo de uso</dt>
+          <dd>
+
+            <span ><?php echo $tipouso ?></span> 
+
+          </dd>
+        </dl>
+
       </div>
       <?php endif ?>
       <p>
@@ -93,7 +158,7 @@ if ($designs) {
       </p>
     </div>
   </div>
-  @if($configuration)
+  @if($configuration && $parentVenue != 'Parque CDS')
   <div class="row" style="margin-top:20px; margin-bottom:0 !important">
     <div class="col-12">
       <strong>Configuración del Aula / Salón</strong>
