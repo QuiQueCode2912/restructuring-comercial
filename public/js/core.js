@@ -92,17 +92,273 @@
   \******************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
+            var firstTime = true;
 
+
+            function validateSelDate(venueId, selDate, todayDate) {
+              //  alert(venueId + ' : ' + selDate);
+                $.ajax({
+                    url: '/getAvailableSlots',
+                    data: { 'venueId': venueId, 'date': selDate },
+                    type: 'post',
+                    cache: false,
+                    async: true,
+                    dataType: 'html',
+                    success: function (response) {
+                        const d = new Date();
+                        let hour = d.getHours();
+                        //limpiar
+                        for (var i = 7; i <= 20; i++) {
+                            var controlIdx = '' + i;
+                            if (i < 10)
+                                controlIdx = '0' + i;
+                    //        console.log('Limpiando: ' + controlIdx);
+                            $("[id^='chkhora" + controlIdx + "']").prop("checked", false);
+                            $("[id^='hora" + controlIdx + "']").removeClass('active');
+                            $("[id^='hora" + controlIdx + "']").removeClass('btn-primary');
+                            if (selDate == todayDate && i <= hour) {
+                                $("#trHora" + controlIdx).css('display', 'none');
+                                $("#lblHora" + controlIdx).css('color','silver');
+                                $("[id^='hora" + controlIdx + "']").removeClass('btn-outline-primary');
+                                $("[id^='hora" + controlIdx + "']").addClass('btn-outline-secondary');
+                                $("[id^='hora" + controlIdx + "']").addClass('disabled');
+                            } else {
+                                $("#trHora" + controlIdx).css('display', 'table-row');
+                                $("#lblHora" + controlIdx).css('color', '');
+                                $("[id^='hora" + controlIdx + "']").css('color', 'transparent');
+                        //        $("[id^='hora" + controlIdx + "']").text('+');
+                                $("[id^='hora" + controlIdx + "']").removeClass('btn-outline-secondary');
+                                $("[id^='hora" + controlIdx + "']").addClass('btn-outline-primary');
+                                $("[id^='hora" + controlIdx + "']").removeClass('disabled');
+                            }
+                        }
+                         //   window.prompt('response', JSON.stringify(response));
+                        if (response.length > 0) {
+                            var eventos = JSON.parse(response);
+                            console.log("** Reservas detectadas: " + eventos.length + " **");
+                            for (var i = 7; i <= 20; i++) {
+                                for (var j = 0; j < eventos.length; j++) {
+                                    var HiD = eventos[j].StartDateTime;
+                                    var Hi = parseInt(HiD.substring(11, 13), 10) - 5;
+                                    var HfD = eventos[j].EndDateTime;
+                                    var Hf = parseInt(HfD.substring(11, 13), 10);
+                                    if (Hf == 0)
+                                        Hf = 24;
+                                    Hf = Hf - 5;
+                                    var controlIdx = '' + i + eventos[j].Venue__c;
+                                    if (i < 10)
+                                        controlIdx = '0' + i + eventos[j].Venue__c;
+                                    if (i >= Hi && i < Hf && eventos[j].Estado__c != 'Cancelado') {
+
+                                        // DESHABILITA ESTA HORA
+                                        $('#chkhora' + controlIdx).prop("checked", false);
+                                        $('#hora' + controlIdx).removeClass('active');
+                                        $('#hora' + controlIdx).removeClass('btn-outline-primary');
+                                        $('#hora' + controlIdx).addClass('btn-outline-secondary');
+                                        $('#hora' + controlIdx).addClass('disabled');
+                                        $("[id^='hora" + controlIdx + "']").css('color', '');
+                             //           $("[id^='hora" + controlIdx + "']").text('No disponible');
+                                        //    alert(i + ' Hora: ' + '#hora'+ controlIdx + ' Datos: ' + Hi + ' ' + Hf);
+                                    } else {
+                                        $('#chkhora' + controlIdx).prop("checked", false);
+                                        $('#hora' + controlIdx).removeClass('active');
+                                        $('#hora' + controlIdx).removeClass('btn-outline-secondary');
+                                        $('#hora' + controlIdx).addClass('btn-outline-primary');
+                                        $('#hora' + controlIdx).removeClass('disabled');
+                                        $("[id^='hora" + controlIdx + "']").css('color', 'transparent');
+                           //             $("[id^='hora" + controlIdx + "']").text('+');
+                                        //alert(i + ' Hora: ' + '#hora' + controlIdx + ' Datos: ' + Hi + ' ' + Hf);
+                                    }
+                                    //    var startDT = eventos[i].StartDateTime;
+                                    //    var endDT = eventos[i].EndDateTime;
+                                    //    var ffDT = eventos[i].Fecha_fin_del_evento__c;
+                                    // dato ejemplo :   "2022-07-14T14:45:00.000+0000"
+                                }
+                            }
+                        } else {
+                            console.log("** No response:  no se detectaron reservas **");
+
+                        }
+                        var selVenues = $("#ReservasSeleccionadas").val() ? JSON.parse($("#ReservasSeleccionadas").val()) : JSON.parse("[]");
+                      //  var selVenues = JSON.parse($("#ReservasSeleccionadas").val());
+                        console.log("** MARCANDO FECHAS QUE HABIA SELECCIONADO **");
+                        var fecha = $("#start-date").val();
+                        for (var i = 0; i < selVenues.length; i++) {
+                            if (selVenues[i].fecha == fecha) {
+                                if ($("#" + selVenues[i].id.replace("chk", "")).hasClass('disabled') == true)
+                                {
+                                    var selVenues = $("#ReservasSeleccionadas").val() ? JSON.parse($("#ReservasSeleccionadas").val()) : JSON.parse("[]");
+                                    selVenues = selVenues.filter(function (venue) {
+                                        return venue.id !== selVenues[i].id || venue.fecha !== fecha;
+                                    });
+                                    //TODO: CAMBIAR LO DE ARRIBA POR ELIMINARVENUE
+                                    $("#ReservasSeleccionadas").val(JSON.stringify(selVenues));
+                                    $('#overlay').css('display', 'none');
+                                    $('#prevDay').prop('disabled', false);
+                                    $('#nextDay').prop('disabled', false);
+                                    $("[id^='show']").prop('disabled', false);
+                                    $('#conflictoModalLong').modal('show');
+                                }
+                                else {
+                                    console.log("Set: " + selVenues[i].id);
+                                    // FRANJA DIA
+                                    
+                                    var clave = selVenues[i].id.substr(selVenues[i].id.length - 18);
+                                    var franja = $("#franja-seleccion").val();
+                                    //alert("franja: " + franja + " clave: " + clave);
+                                    if (franja == 'dia') {
+                                        $("[id$='" + clave + "']").not('.disabled').removeClass("btn-outline-primary");
+                                        $("[id$='" + clave + "']").not('.disabled').addClass("btn-primary");
+                                        $("[id$='" + clave + "']").not('.disabled').prop("checked", false);
+                                        $("[id$='" + clave + "']").not('.disabled').removeClass('active');
+                                        $("[id$='" + clave + "']").not('.disabled').css('color', 'transparent');
+                                    }
+                                    // MARCAR TODO EL DIA
+                                    $("#" + selVenues[i].id).prop("checked", true);
+                                    $("#" + selVenues[i].id.replace("chk", "")).addClass('active');
+                                    $("#" + selVenues[i].id.replace("chk", "")).css('color', '');
+
+                                }
+                            }
+                            // agregar los botones
+                            var cantidadSeleccionada = selVenues.filter(x => x.fecha === selVenues[i].fecha).length;
+                            $("#esPlaceholder").hide();
+                            var botonNombre = 'show' + selVenues[i].fecha;
+                            var botonesExistes = $("#espaciosSeleccionados").find("#" + botonNombre);
+
+                            if (botonesExistes.length > 0) {
+                                var contador = botonesExistes.find(".circle p");
+                                contador.html(cantidadSeleccionada);
+                                //alert('ya wey');
+                            } else {
+                                var nuevoBoton = document.createElement("button");
+                                nuevoBoton.id = botonNombre;
+                                nuevoBoton.onclick = function () {
+                                    $("[id^='show']").prop('disabled', true);
+                                    goToDate(this);
+                                    return false;
+                                }
+                                nuevoBoton.className = "btn btn-primary";
+                                nuevoBoton.style.display = "flex";
+                                nuevoBoton.style.fontSize = "0.7rem";
+                                nuevoBoton.innerHTML = selVenues[i].fecha + '<div class="circle"><p>' + cantidadSeleccionada + '</p></div>';
+
+                                var espaciosSeleccionados = document.getElementById("espaciosSeleccionados");
+                                espaciosSeleccionados.appendChild(nuevoBoton);
+                            }
+                                    // hasta aqui
+                        }
+                         
+                     //   alert("ReservasSeleccionadas: " + JSON.stringify(selVenues));
+
+
+                        $('#overlay').css('display', 'none');
+                        $('#prevDay').prop('disabled', false);
+                        $('#nextDay').prop('disabled', false);
+                        $("[id^='show']").prop('disabled', false);
+                    },
+                    statusCode: {
+                        404: function () {
+                            alert('web not found');
+                        }
+                    },
+                    error: function (x, xs, xt) {
+                        // window.open(JSON.stringify(x));
+                        setTimeout(function () { validateSelDate(venueId, selDate, todayDate) }, 2000);
+                    }
+                });
+            }
+            $("#start-date").load("ajax/test.html", function () {
+                if ($('input.datepicker#start-date').data('setavailablehours') == true && firstTime == true) {
+                    $('#prevDay').prop('disabled', true);
+                    $('#nextDay').prop('disabled', true);
+                    firstTime = false;
+                    var today = new Date();
+                    var mes = today.getMonth() + 1;
+                    var mesS = '' + mes;
+                    if (mes < 10)
+                        mesS = '0' + mes;
+                    var dia = today.getDate();
+                    var diaS = '' + dia;
+                    if (dia < 10)
+                        diaS = '0' + dia;
+                    var min_date = today.getFullYear() + '-' + (mesS) + '-' + diaS;
+                    venueId = $('#venueId').val();
+                    validateSelDate(venueId, min_date, min_date);
+                }
+            });
 $(document).ready(function () {
-  $('input[name="daterange"]').daterangepicker();
+    $('input[name="daterange"]').daterangepicker();
+    var today = new Date();
+    var mes = today.getMonth() + 1;
+    var mesS = '' + mes;
+    if (mes < 10)
+        mesS = '0' + mes;
+    var dia = today.getDate();
+    var diaS = '' + dia;
+    if (dia < 10)
+        diaS = '0' + dia;
+    var min_date = today.getFullYear() + '-' + (mesS) + '-' + diaS;
+    var setAvailableHours = '0';
+    venueId = $('#venueId').val();
+    var maxLimitDate = today.getFullYear()+2 + '-' + (mesS) + '-' + diaS;
+
+  //  console.log(JSON.stringify($('input.datepicker#start-date').data('setavailablehours')));
+    if ($('input.datepicker#start-date').data('setavailablehours') == true) {
+        setAvailableHours = '1';
+        today.setDate(today.getDate() + 15);
+        mes = today.getMonth() + 1;
+        mesS = '' + mes;
+        (mes < 10)
+            mesS = '0' + mes;
+        dia = today.getDate();
+        diaS = '' + dia;
+        if (dia < 10)
+            diaS = '0' + dia;
+        maxLimitDate = today.getFullYear() + '-' + (mesS) + '-' + diaS;
+ //       validateSelDate(venueId, min_date);
+    }
+
   $('input.datepicker').daterangepicker({
-    singleDatePicker: true,
+      singleDatePicker: true,
+      minDate: min_date,
+      maxDate: maxLimitDate,
     locale: {
       format: 'YYYY-MM-DD',
       applyLabel: 'Aplicar',
       cancelLabel: 'Cancelar'
-    }
-  });
+      }
+  }
+      //, function (start, end, label) {
+     // if(setAvailableHours == 1)
+      //{
+      //    alert('custom1');
+      //    $('#overlay').css('display', 'block');
+      //    selDate = start.format('YYYY-MM-DD');
+     //     validateSelDate(venueId, selDate, min_date);
+     // }
+  //}
+  );
+    $('input.datepicker#start-date').on('apply.daterangepicker', function (ev, picker) {
+        if ($('input.datepicker#start-date').data('setavailablehours') == true) {
+    //        alert('custom2');
+            $('#overlay').css('display', 'block');
+                var today = new Date();
+    var mes = today.getMonth() + 1;
+    var mesS = '' + mes;
+    if (mes < 10)
+        mesS = '0' + mes;
+    var dia = today.getDate();
+    var diaS = '' + dia;
+    if (dia < 10)
+        diaS = '0' + dia;
+    var min_date = today.getFullYear() + '-' + (mesS) + '-' + diaS;
+    var setAvailableHours = '0';
+    venueId = $('#venueId').val();
+            selDate = $('input.datepicker#start-date').val();
+            validateSelDate(venueId, selDate, min_date);
+        }
+    });
   $('input.datetimepicker').daterangepicker({
     singleDatePicker: true,
     timePicker: false,
@@ -117,7 +373,7 @@ $(document).ready(function () {
     $('input.datepicker#start-date').on('apply.daterangepicker', function (ev, picker) {
       var date = new Date($('input.datepicker#start-date').val());
       date.setHours(date.getHours() + 1);
-      var dateString = date.getFullYear() + '-' + ((date.getMonth() + 1 < 10 ? '0' : '') + (date.getMonth() + 1)) + '-' + ((date.getDate() < 10 ? '0' : '') + date.getDate());
+      var dateString = date.getFullYear() + '-' + ((date.getMonth() + 1 < 10 ? '0' : '') + (date.getMonth() + 1)) + '-' + ((date.getDate() +1 < 10 ? '0' : '') + (date.getDate() + 1));
       $('input.datepicker#end-date').val(dateString);
       $('input.datepicker#end-date').daterangepicker({
         singleDatePicker: true,
@@ -168,7 +424,109 @@ $(document).ready(function () {
     });
     $('.venue-characteristics').show();
   }
+    window.almacenarVenue = function (venueId, fechaActual, nombreVenue, reemplazar = false) {
+        var selVenues = $("#ReservasSeleccionadas").val() ? JSON.parse($("#ReservasSeleccionadas").val()) : JSON.parse("[]");
+        var id = venueId;
+        if (reemplazar) {
+            var assetId = id.slice(-18);
+            selVenues = selVenues.filter(x => !(x.fecha === fechaActual && x.id.endsWith(assetId)));
+        }
+        var objeto = { fecha: fechaActual, id: id, venue: nombreVenue };
+        if (!selVenues.find(x => x.id === id && x.fecha === fechaActual)) {
+            selVenues.push(objeto);
+            var count = selVenues.filter(x => x.fecha === fechaActual).length;
+            agregarBoton(fechaActual, count);
+        }
+        $("#ReservasSeleccionadas").val(JSON.stringify(selVenues));
+    }
+    window.almacenarVenueMensual = function (venueId, fechaActual, nombreVenue) {
+        var selVenues = $("#ReservasSeleccionadas").val() ? JSON.parse($("#ReservasSeleccionadas").val()) : JSON.parse("[]");
+        var id = venueId;
+        
+        var fechas = selVenues.map(function (a) { return new Date(a.fecha); });
+        var fechaInicial = fechas.length > 0 ? Math.min.apply(null, fechas) : new Date(fechaActual);
+        var fecha1 = new Date(fechaInicial);
+        var fecha2 = new Date(fechaInicial);
+        fecha2.setDate(fecha2.getDate() + 7);
+        var fecha3 = new Date(fechaInicial);
+        fecha3.setDate(fecha3.getDate() + 14);
+        var fecha4 = new Date(fechaInicial);
+        fecha4.setDate(fecha4.getDate() + 21);
+        var fechaActualDate = new Date(fechaActual);
+        console.log("fecha1: " + fecha1 + " fechaActualDate: " + fechaActualDate);
+        // Verificar si la fecha actual está dentro de algún rango
+        var fechas = [fecha1, fecha2, fecha3, fecha4];
+        var fechaEnRango = fechas.find(fechaRango => fechaActualDate >= fechaRango && fechaActualDate < new Date().setDate(fechaRango.getDate() + 7));
+        if (!fechaEnRango) {
+            console.log("La fecha actual está fuera del rango permitido.");
+            return false;
+        }
+        console.log("fechaEnRango: " + fechaEnRango);
+        // Verificar el límite de 6 elementos por rango
+        var elementosPorRango = selVenues.filter(x => new Date(x.fecha) >= fechaEnRango && new Date(x.fecha) < new Date().setDate(fechaEnRango.getDate() + 7)).length;
+        console.log("elementosPorRango: " + elementosPorRango);
+        if (elementosPorRango >= 6) {
+            console.log("Se ha alcanzado el límite de 6 elementos para el rango");
+            return false;
+        }
 
+        if (!selVenues.find(x => x.id === id && x.fecha === fechaActual)) {
+            var objeto = { fecha: fechaActual, id: id, venue: nombreVenue };
+            selVenues.push(objeto);
+            var count = selVenues.filter(x => x.fecha === fechaActual).length;
+            agregarBoton(fechaActual, count);
+        }
+        $("#ReservasSeleccionadas").val(JSON.stringify(selVenues));
+        return true;
+    };
+    window.eliminarVenue = function (venueId, fechaActual) {
+        //var selVenues = JSON.parse($("#ReservasSeleccionadas").val());
+        var selVenues = $("#ReservasSeleccionadas").val() ? JSON.parse($("#ReservasSeleccionadas").val()) : JSON.parse("[]");
+        selVenues = selVenues.filter(function (venue) {
+            return venue.id !== venueId || venue.fecha !== fechaActual;
+        });
+        var count = selVenues.filter(x => x.fecha === fechaActual).length;
+        if (count <= 0) {
+            eliminarBoton(fechaActual);
+        } else {
+            agregarBoton(fechaActual, count);
+        }
+        $("#ReservasSeleccionadas").val(JSON.stringify(selVenues));
+    }
+    window.agregarBoton = function (variableFecha, cantidadSeleccionada) {
+        $("#esPlaceholder").hide();
+        var botonNombre = 'show' + variableFecha;
+        var botonesExistes = $("#espaciosSeleccionados").find("#" + botonNombre);
+
+        if (botonesExistes.length > 0) {
+            var contador = botonesExistes.find(".circle p");
+            contador.html(cantidadSeleccionada);
+            //alert('ya wey');
+        } else {
+            var nuevoBoton = document.createElement("button");
+            nuevoBoton.id = botonNombre;
+            nuevoBoton.onclick = function () {
+                $("[id^='show']").prop('disabled', true);
+                goToDate(this);
+                return false;
+            }
+            nuevoBoton.className = "btn btn-primary";
+            nuevoBoton.style.display = "flex";
+            nuevoBoton.style.fontSize = "0.7rem";
+            nuevoBoton.innerHTML = variableFecha + '<div class="circle"><p>' + cantidadSeleccionada + '</p></div>';
+
+            var espaciosSeleccionados = document.getElementById("espaciosSeleccionados");
+            espaciosSeleccionados.appendChild(nuevoBoton);
+        }
+    }
+    window.eliminarBoton = function (fecha) {
+        var botonNombre = 'show' + fecha;
+        var botonEliminar = $("#espaciosSeleccionados").find("#" + botonNombre);
+        botonEliminar.remove();
+        if ($("#espaciosSeleccionados").children().length <= 1) {
+            $("#esPlaceholder").show();
+        }
+    }
   window.addEventListener('scroll', function (e) {
     var scrollY = window.pageYOffset || document.documentElement.scrollTop;
 
