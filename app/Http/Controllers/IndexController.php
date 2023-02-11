@@ -1709,8 +1709,16 @@ class IndexController extends Controller
             if ($request->isMethod('post'))
             {
                 $endpoint = env('APP_ENV') == 'production' ? 'https://secure.paguelofacil.com/LinkDeamon.cfm' : 'https://sandbox.paguelofacil.com/LinkDeamon.cfm';
-
-                $params = ['CCLW' => '588BA57F825D6D9F6E230C2F39C94ACE84369A887E899DE043924E0122C38FF6', 'CMTN' => $request->total, 'CDSC' => $request->event_name, 'RETURN_URL' => bin2hex(url('/confirmacion-pago/' . $request->token)) , 'PARM_1' => $request->opportunity, ];
+                if(substr($request->token, 0, 3) != '00Q')
+                {
+                    $p1 = $request->opportunity;
+                    $ev_nm = $request->event_name;
+                } else
+                {
+                    $p1 = $request->opportunity;
+                    $ev_nm = 'Pago de reserva';
+                }
+                $params = ['CCLW' => '588BA57F825D6D9F6E230C2F39C94ACE84369A887E899DE043924E0122C38FF6', 'CMTN' => $request->total, 'CDSC' => $ev_nm, 'RETURN_URL' => bin2hex(url('/confirmacion-pago/' . $request->token)) , 'PARM_1' => $request->opportunity, ];
 
                 $pay_url = $endpoint . '?' . http_build_query($params);
                 return redirect()->to($pay_url);
@@ -1778,7 +1786,7 @@ class IndexController extends Controller
                         session()->put('company', $company);
                         session()->put('00N3m00000QQOde', $idenruc);
 
-            $query = "SELECT Id, Precio_Estimado__c, Pago_confirmado__c FROM Lead WHERE Id = '{$request->token}'";
+            $query = "SELECT Id, Precio_Estimado__c, Pago_confirmado__c, Name, Reserva__c FROM Lead WHERE Id = '{$request->token}'";
 
 
         $result = $salesforce->query($query);
@@ -1788,7 +1796,8 @@ class IndexController extends Controller
             {
                 $lead_id = $result['records'][0]['Id'];
                 $total = $result['records'][0]['Precio_Estimado__c'];
-                 
+                $event_name = $result['records'][0]['Name'];
+                $opportunity = $result['records'][0]['Reserva__c'];
 
             }
 
@@ -1892,12 +1901,14 @@ class IndexController extends Controller
             $lead_id = null;
             if ($lead['totalSize'] > 0)
             {
+             if (isset($data['Estado']) && substr($data['Estado'], 0, 6) == 'Aproba')
+                {
                 $lead_id = $lead['records'][0]['Id'];
                 $concepto = $lead['records'][0]['Espacios_que_desea_reservar__c'];
 
             //      $receiptData = ['Confirmado__c' => false, 'Lead__c' => $request->token, 'Monto__c' => $data['TotalPagado'], 'Soporte__c' => $uploaded_file, 'Numero_de_transaccion__c' => $data['Oper'], 'Fecha_de_pago__c' => $date->format('Y-m-d\TH:i:s.000\Z') , 'Tipo__c' => (isset($data['method']) ? $data['method'] : 'Páguelo Fácil') ];
 
-            }
+            
             $date = new \DateTime(isset($data['date']) ? $data['date'] . ' ' . date('H:i:s') : date('Y-m-d H:i:s'));
 
                     $uploaded_file = null;
@@ -1920,6 +1931,8 @@ class IndexController extends Controller
                     if ($receiptId)
                     {
                         $salesforce->update('Lead', $lead_id, ['Pago_confirmado__c' => 'true']);
+                    }
+                    }
                     }
                     return view('index.payment-confirmation', ['data' => $data, 'opportunity' => $lead['totalSize'] > 0 ? $lead['records'][0] : null]);
         }
@@ -2136,7 +2149,6 @@ class IndexController extends Controller
             //    $opportunity_id = $contract['records'][0]['Oportunidad__c'];
             }
         //  echo $query;
-
 
     }
 }

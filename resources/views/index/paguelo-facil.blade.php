@@ -49,6 +49,7 @@
       <input type="hidden" name="opportunity" value="{{ $opportunity }}" />
       <br><br>
       <div class="row justify-content-center">
+      @if(count($payments) > 1)
         <div class="col-12 col-md-10">
           <p style="font-size:20px; margin:0 0 30px; font-weight:600; color:#63AF3F !important">Selecciona el valor a pagar</p>
         </div>
@@ -59,13 +60,23 @@
             <span style="font-family:'Trola', sans-serif;">Selecciona el valor a pagar y realiza tu pago en línea.</span>
           </p>
         </div>
+      @else
+        <div class="col-12 col-md-10">
+          <p style="font-size:20px; margin:0 0 30px; font-weight:600; color:#63AF3F !important">Vamos a pagar!</p>
+        </div>
+        <div class="col-12 col-md-10">
+          <p class="text-center" style="margin:0; font-size:18px">
+            <span style="font-family:'Trola', sans-serif;">Realiza el pago para completar tu reserva.</span>
+          </p>
+        </div>
+      @endif
       </div>
 
-      <div style="max-width:400px; margin:80px auto 140px; text-align:left">
+      <div style="max-width:400px; margin:40px auto 90px; text-align:left">
         <div class="row">
           <?php foreach ($payments as $index => $payment) : ?>
           <div class="col<?php echo count($payments) > 1 ? ' col-md-6' : ' offset-2' ?>">
-            <div class="form-check">
+            <div class="form-check"<?php echo count($payments) > 1 ? '' : ' style="left:14%"' ?>>
               <input class="form-check-input" type="radio" name="total" id="total-<?php echo $index ?>" value="{{ $payment->total }}" <?php echo $index == 0 ? 'checked' : '' ?>>
               <label class="form-check-label" for="total-<?php echo $index ?>">
                 <?php echo $payment->concept ?><br />
@@ -78,8 +89,8 @@
       </div>
 
       <p class="text-center paguelo-facil-container" style="display:<?php echo $otherMethods ? 'none' : 'block' ?>">
-        Paga en línea con<br>
-        <input type="image" src="/assets/images/pagar-paguelo-facil.png"></input><br><br>
+        Paga en línea<br>
+        <input type="image" src="/assets/images/btn_es.png" style="padding-left: 0px;"></input><br><br>
         <a href="#" class="btn btn-secondary other-methods-btn">o Selecciona otro medio de pago</a>
         <br><br>
         <small><a href="/" class="text-secondary">Cancelar</a></small>
@@ -96,8 +107,11 @@
           Fundación Ciudad del Saber<br>
           <strong>Cuenta Corriente, Banco General</strong><br>
           <big><strong>03-01-01-003310-4</strong></big><br>
+          @if ($opportunity!='')
           <strong># de referencia:</strong> <?php echo $opportunity ?>
-          <br><br>
+          <br>
+          @endif
+          <br>
           Una vez realizado
           el pago diligencia el siguiente formulario.
         </div>
