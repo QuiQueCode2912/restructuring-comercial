@@ -84,7 +84,7 @@
     <div class="content">
       <form method="post">
         @csrf
-        <?php if (isset($_REQUEST['error']) && $_REQUEST['error'] == 1) : ?>
+        <?php if (isset($error) && $error == 1) : ?>
         <p>Ha ocurrido un error. No puedes iniciar sesión.</p>
         <?php endif ?>
         <input type="hidden" name="email" id="email" value="" />

@@ -15,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\IndexController@index');
 
-Route::get('/one-login', function() {
-  return view('index.one-login');
-});
+Route::get('/one-login', 'App\Http\Controllers\IndexController@oneLogin');
+Route::get('/portal-clientes', 'App\Http\Controllers\IndexController@portalClientes');
 Route::post('/one-login', 'App\Http\Controllers\IndexController@oneLogin');
+Route::post('/portal-clientes', 'App\Http\Controllers\IndexController@portalClientes');
 
 Route::get('/espacios-fcds', 'App\Http\Controllers\IndexController@cds');
 Route::get('/oferta', 'App\Http\Controllers\IndexController@oferta');

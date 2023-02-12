@@ -1356,7 +1356,7 @@ class IndexController extends Controller
                     $recargoFeriado = Rates::where('name', '=', 'Recargo - Feriado')->first();
 
                     $esEmpleado = session()->has('is-cds-user') ? session()->get('is-cds-user') : false;
-                    $esCliente = session()->has('is-cds-user') ? session()->get('is-cds-customer') : false;
+                    $esCliente = session()->has('is-cds-customer') ? session()->get('is-cds-customer') : false;
                     if($esEmpleado)
                     {
                         $descuentoColaboradores = Rates::where('name', '=', 'Descuento - Colaboradores')->first()->percentage;
@@ -1525,6 +1525,7 @@ class IndexController extends Controller
                     default:
                         $isUser = session()->get('is-cds-user', false);
                         $userEmail = session()->get('cds-user-email', null);
+                        $isCustomer = session()->get('is-cds-customer', false);
                         $first_name = session()->get('first_name', null);
                         $last_name = session()->get('last_name', null);
                         $email = session()->get('email', null);
@@ -1534,6 +1535,7 @@ class IndexController extends Controller
                         session()->flush();
                         session()->put('is-cds-user', $isUser);
                         session()->put('cds-user-email', $userEmail);
+                        session()->put('is-cds-customer', $isCustomer);
                         session()->put('first_name', $first_name);
                         session()->put('last_name', $last_name);
                         session()->put('email', $email);
@@ -1770,6 +1772,7 @@ class IndexController extends Controller
 
                         $isUser = session()->get('is-cds-user', false);
                         $userEmail = session()->get('cds-user-email', null);
+                        $isCustomer = session()->get('is-cds-customer', false);
                         $first_name = session()->get('first_name', null);
                         $last_name = session()->get('last_name', null);
                         $email = session()->get('email', null);
@@ -1779,6 +1782,7 @@ class IndexController extends Controller
                         session()->flush();
                         session()->put('is-cds-user', $isUser);
                         session()->put('cds-user-email', $userEmail);
+                        session()->put('is-cds-customer', $isCustomer);
                         session()->put('first_name', $first_name);
                         session()->put('last_name', $last_name);
                         session()->put('email', $email);
@@ -2084,22 +2088,79 @@ class IndexController extends Controller
 
     public function oneLogin(Request $request)
     {
-        if ($request->isMethod('post'))
+    if($request->logout == 1)
+    {
+                        $first_name = session()->get('first_name', null);
+                        $last_name = session()->get('last_name', null);
+                        $email = session()->get('email', null);
+                        $phone = session()->get('phone', null);
+                        $company = session()->get('company', null);
+                        $idenruc = session()->get('00N3m00000QQOde', null);
+                        session()->flush();
+                        session()->put('first_name', $first_name);
+                        session()->put('last_name', $last_name);
+                        session()->put('email', $email);
+                        session()->put('phone', $phone);
+                        session()->put('company', $company);
+                        session()->put('00N3m00000QQOde', $idenruc);
+    return redirect()->to('/');
+    }
+        if ($request->isMethod('post') || env('APP_ENV') == 'staging')
         {
-            $inputs = $request->validate(['email' => 'required|string|email', ]);
-
-            if (strpos($inputs['email'], '@cdspanama.org'))
+            $inputs = $request->email;
+            if($inputs)
+            if (strpos($inputs, '@cdspanama.org'))
             {
+                        $first_name = session()->get('first_name', null);
+                        $last_name = session()->get('last_name', null);
+                        $email = session()->get('email', null);
+                        $phone = session()->get('phone', null);
+                        $company = session()->get('company', null);
+                        $idenruc = session()->get('00N3m00000QQOde', null);
+                        session()->flush();
+                        session()->put('first_name', $first_name);
+                        session()->put('last_name', $last_name);
+                        session()->put('email', $email);
+                        session()->put('phone', $phone);
+                        session()->put('company', $company);
+                        session()->put('00N3m00000QQOde', $idenruc);
                 session()->put('is-cds-user', true);
                 session()
-                    ->put('cds-user-email', $inputs['email']);
+                    ->put('cds-user-email', $inputs);
 
                 return redirect()->to('/');
             }
 
-            return redirect()
-                ->to('/one-login?error=1');
         }
+        return view('index.one-login', ['error' => '1']);
+    }
+
+    public function portalClientes(Request $request)
+    {
+        if ($request->isMethod('post') || env('APP_ENV') == 'staging')
+        {
+            $inputs = $request->email;
+            if($inputs)
+            if (strpos($inputs, '@'))
+            {
+                        $first_name = session()->get('first_name', null);
+                        $last_name = session()->get('last_name', null);
+                        $email = session()->get('email', null);
+                        $phone = session()->get('phone', null);
+                        $company = session()->get('company', null);
+                        $idenruc = session()->get('00N3m00000QQOde', null);
+                        session()->flush();
+                        session()->put('first_name', $first_name);
+                        session()->put('last_name', $last_name);
+                        session()->put('email', $email);
+                        session()->put('phone', $phone);
+                        session()->put('company', $company);
+                        session()->put('00N3m00000QQOde', $idenruc);
+                session()->put('is-cds-customer', true);
+                return redirect()->to('/');
+            }          
+        }
+          return view('index.one-login', ['error' => '1']);
     }
 
     public function getAvailableSlots(Request $request)
