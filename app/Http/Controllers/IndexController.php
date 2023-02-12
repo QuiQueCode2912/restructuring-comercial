@@ -1344,7 +1344,8 @@ class IndexController extends Controller
                // $venuesgrupo = Venue::where('parent_id', '=', $venuesgrupo)->get();
                 $step = 3;
                 $stepName = 'Vista previa';
-
+                $esEmpleado = session()->has('is-cds-user') ? session()->get('is-cds-user') : false;
+                $esCliente = session()->has('is-cds-customer') ? session()->get('is-cds-customer') : false;
                 switch ($venuep->parent_id) {
 	                case '02i3m00000D9DaPAAV':
                     $selVenues = session('ReservasSeleccionadas');
@@ -1355,8 +1356,7 @@ class IndexController extends Controller
                     $recargoFin = Rates::where('name', '=', 'Recargo - Fin de semana')->first();
                     $recargoFeriado = Rates::where('name', '=', 'Recargo - Feriado')->first();
 
-                    $esEmpleado = session()->has('is-cds-user') ? session()->get('is-cds-user') : false;
-                    $esCliente = session()->has('is-cds-customer') ? session()->get('is-cds-customer') : false;
+
                     if($esEmpleado)
                     {
                         $descuentoColaboradores = Rates::where('name', '=', 'Descuento - Colaboradores')->first()->percentage;
@@ -1508,21 +1508,19 @@ class IndexController extends Controller
                         $estimacion = $formatted_costoTotal;
                         //$estimacion = $estimacion . "\r\n" . $debugCalculo . $horaInicio;
 		                break;
-                }   
-
+                }
+                if($esEmpleado)
+                    session()->put('00N3m00000QeHcG', 'Colaborador');
+                elseif($esCliente)
+                        session()->put('00N3m00000QeHcG', 'Cliente');
+                    else
+                        session()->put('00N3m00000QeHcG', 'Visitante');
                 $form_url = 'https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
             break;
             case 'solicitud-enviada':
                 $venuep = Venue::find($venue->parent_id);
                 $rootid = Venue::where('parent_id', '=', $venuep->parent_id)->first();
                // $venuesgrupo = Venue::where('parent_id', '=', $venuesgrupo)->get();
-
-                switch ($venuep->parent_id) {
-	                case '02i3m00000D9DaPAAV':
-                    $step = '4-p';
-                    $form_url = '/solicitud-pago';
-                        break;
-                    default:
                         $isUser = session()->get('is-cds-user', false);
                         $userEmail = session()->get('cds-user-email', null);
                         $isCustomer = session()->get('is-cds-customer', false);
@@ -1542,6 +1540,12 @@ class IndexController extends Controller
                         session()->put('phone', $phone);
                         session()->put('company', $company);
                         session()->put('00N3m00000QQOde', $idenruc);
+                switch ($venuep->parent_id) {
+	                case '02i3m00000D9DaPAAV':
+                    $step = '4-p';
+                    $form_url = '/solicitud-pago';
+                        break;
+                    default:
                         $step = '4';
                         break;
                 }
@@ -1767,10 +1771,18 @@ class IndexController extends Controller
                 $payments = [['concept' => 'Pagar el saldo pendiente', 'total' => $total - $pagado, ]];
             }
 
-            } else
+            }
+            else
             {
 
                         $isUser = session()->get('is-cds-user', false);
+
+                        if($isUser)
+                        {
+                            $salesforce->update('Lead', $request->token, ['Pago_confirmado__c' => 'true']);
+                            return redirect()->to('/');
+                        }
+
                         $userEmail = session()->get('cds-user-email', null);
                         $isCustomer = session()->get('is-cds-customer', false);
                         $first_name = session()->get('first_name', null);

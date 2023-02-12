@@ -609,11 +609,12 @@
         <input type="hidden" value="<?php echo session()->get('00N3m00000Pb6zh') ?>" name="00N3m00000Pb6zh" id="00N3m00000Pb6zh" />
         <input type="hidden" value="<?php echo session()->get('description') ?>" name="description" id="description" />
         <input type="hidden" value="<?php echo session()->get('recordType') ?>" name="recordType" id="recordType" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000QeHcG') ?>" name="00N3m00000QeHcG" id="00N3m00000QeHcG" /> 
       <?php
        if($rootid == '02i3m00000D9DaPAAV')
        {
     ?>
-    
+
         <input type="hidden" name="00N3m00000QeGlb" id="00N3m00000QeGlb" value='<?php echo session()->getId() ?>'/>
         <input type="hidden" name="00N3m00000QeGSy" id="00N3m00000QeGSy" value='<?php echo session()->get("ReservasSeleccionadas") ?>'/>
         <input type="hidden" name="00N3m00000QeGT3" id="00N3m00000QeGT3" value='Sin selección'/>
