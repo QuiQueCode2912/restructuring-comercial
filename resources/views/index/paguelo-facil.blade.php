@@ -42,6 +42,28 @@
 </style>
 
 <div class="request">
+<!-- Modal -->
+<center>
+<div class="modal fade" id="qrModal" tabindex="-1" role="dialog" aria-labelledby="conflictoModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content"  style="max-width:96vw">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cqrModalLongTitle">Escanea el QR</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="/assets/images/YappyCDS.png" style="max-width:86vw"/>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+</center>
+<!-- Modal -->
   <div class="container text-center" style="min-height:960px">
     <form method="post">
       @csrf
@@ -101,7 +123,13 @@
       <div class="row">
         <div class="col-12 text-center">
           Realiza el pago mediante <strong>Transferencia ACH</strong>, 
-          <strong>Yappy</strong> o <strong>Cheque</strong>.<br>Ten en cuenta
+          <strong>Yappy</strong> o <strong>Cheque</strong>.
+          <div id="yappy">
+          <br><br>Busca en el directorio de Yappy: fundacionciudaddelsaber<br/>O escanea el código de QR desde tu App:<br/><br>
+          <input type="image" src="/assets/images/showQR.png" style="padding-left: 0px;" onclick="$('#qrModal').modal('show');"></input><br><br>
+          </div>
+          <div id="bank">
+          <br>Ten en cuenta
           los siguientes datos de referencia cuando realices tu pago.
           <br><br>
           Fundación Ciudad del Saber<br>
@@ -114,9 +142,10 @@
           <br>
           Una vez realizado
           el pago diligencia el siguiente formulario.
+          </div>
         </div>
       </div>
-      <form method="post" enctype="multipart/form-data" action="/confirmacion-pago/<?php echo $token ?>" style="max-width:600px; margin:40px auto 20px">
+      <form method="post" enctype="multipart/form-data" action="/confirmacion-pago/<?php echo $token ?>" style="max-width:600px; margin:20px auto 20px">
         <input type="hidden" name="PARM_1" value="<?php echo $opportunity ?>" />
         <input type="hidden" name="Estado" value="Aprobado" />
         <div class="row">
