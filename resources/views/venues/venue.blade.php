@@ -26,10 +26,19 @@
 <div id="home-carousel" class="carousel slide venue-main-image" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
+    <div class="container">
+         @if (session()->get('is-cds-user') == true)
+        <h3 style="top:330px;">Sección de Empleados</h3>
+        @endif
+        @if (session()->get('is-cds-customer') == true)
+        <h3 style="top:330px;">Sección de Clientes</h3>
+        @endif
+      </div>
       <?php $rand = rand(0, count($images) - 1) ?>
       <?php if (isset($images[$rand])) : ?>
       <img src="<?php echo $images[$rand] ? substr($images[$rand], 0, strrpos($images[$rand], '.')) . '_2048.' . substr($images[$rand], strrpos($images[$rand], '.') + 1) : '/assets/images/placeholder-image.jpg' ?>" class="d-block" alt="...">
       <?php endif ?>
+
     </div>
   </div>
 </div>

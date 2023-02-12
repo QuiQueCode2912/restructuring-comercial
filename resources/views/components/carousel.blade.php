@@ -4,6 +4,12 @@
       <div class="container">
         <h4><?php echo $venueTitle ?></h4>
         <h3><?php echo $venueSubtitle ?></h3>
+         @if (session()->get('is-cds-user') == true)
+        <h3 style="top:330px;">Sección de Empleados</h3>
+        @endif
+        @if (session()->get('is-cds-customer') == true)
+        <h3 style="top:330px;">Sección de Clientes</h3>
+        @endif
       </div>
       <img src="<?php echo $venueImage ? substr($venueImage, 0, strrpos($venueImage, '.')) . '_2048.' . substr($venueImage, strrpos($venueImage, '.') + 1) : '/assets/images/residencies/hero-1_2048.jpg' ?>" class="d-block" alt="...">
     </div>
