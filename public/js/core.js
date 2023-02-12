@@ -306,7 +306,7 @@ $(document).ready(function () {
   //  console.log(JSON.stringify($('input.datepicker#start-date').data('setavailablehours')));
     if ($('input.datepicker#start-date').data('setavailablehours') == true) {
         setAvailableHours = '1';
-        today.setDate(today.getDate() + 28);
+        today.setDate(today.getDate() + 27);
         mes = today.getMonth() + 1;
         mesS = '' + mes;
         (mes < 10)
