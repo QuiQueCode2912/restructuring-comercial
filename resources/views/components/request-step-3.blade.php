@@ -654,7 +654,7 @@
           <input type="hidden" value="<?php echo $files[2]['path'] ?>" name="00N3m00000Pb706" id="00N3m00000Pb706" />
         <?php endif ?>
 
-        <button type="submit" class="btn btn-primary submit-form" onclick="this.disabled=true;this.value='Enviando...'; this.form.submit();"">Confirmar</button>
+        <button type="submit" class="btn btn-primary submit-form" onclick="if (this.value !== 'Enviando...') { this.disabled=true; this.value='Enviando...'; this.form.submit(); }">Confirmar</button>
       </div>
     </div>
   </div>
