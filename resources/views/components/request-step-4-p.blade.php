@@ -1,9 +1,33 @@
 
+<style>
+  body {
+    overflow: hidden;
+  }
+  .vertical-center {
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+</style>
+<div id="overlay" style="position:fixed;padding-top:0px;background-color: rgba(255,255,255,0.7);">
+    <div class="vertical-center">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+            <br/>
+            <div id="">Estamos procesando tu reserva!<br/>Por favor espera...</div>
+    </div>
+</div>
+
 <div class="request-step">
   <div class="container">
-
-
-
+  <div style="min-height:100vh">
+ 
+    </div>
   </div>
 </div>
 

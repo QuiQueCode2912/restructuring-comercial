@@ -1518,6 +1518,7 @@ class IndexController extends Controller
                 $form_url = 'https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
             break;
             case 'solicitud-enviada':
+             // return view('index.request', ['page_title' => 'Servicios - Cotización - ' . $stepName, 'step' => '4-p', 'venue' => $venue, 'designs' => null, 'file_upload' => null, 'form_url' => null, 'grupos' => null, 'rootid' => null, 'estimacion' => null]);
                 $venuep = Venue::find($venue->parent_id);
                 $rootid = Venue::where('parent_id', '=', $venuep->parent_id)->first();
                // $venuesgrupo = Venue::where('parent_id', '=', $venuesgrupo)->get();
