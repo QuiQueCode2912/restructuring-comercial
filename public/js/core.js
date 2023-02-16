@@ -105,6 +105,7 @@
                     async: true,
                     dataType: 'html',
                     success: function (response) {
+                        //console.log("JSON: " + (response));
                         const d = new Date();
                         let hour = d.getHours();
                         //limpiar
@@ -113,23 +114,15 @@
                             if (i < 10)
                                 controlIdx = '0' + i;
                     //        console.log('Limpiando: ' + controlIdx);
-                            $("[id^='chkhora" + controlIdx + "']").prop("checked", false);
-                            $("[id^='hora" + controlIdx + "']").removeClass('active');
-                            $("[id^='hora" + controlIdx + "']").removeClass('btn-primary');
+                            $("[id^='chkhora" + controlIdx + "']").removeClass('selected');
+                            $("[id^='chkhora" + controlIdx + "']").removeClass('secundary');
+                            $("[id^='chkhora" + controlIdx + "']").removeClass('disabled');
                             if (selDate == todayDate && i <= hour) {
                                 $("#trHora" + controlIdx).css('display', 'none');
-                                $("#lblHora" + controlIdx).css('color','silver');
-                                $("[id^='hora" + controlIdx + "']").removeClass('btn-outline-primary');
-                                $("[id^='hora" + controlIdx + "']").addClass('btn-outline-secondary');
-                                $("[id^='hora" + controlIdx + "']").addClass('disabled');
+
                             } else {
                                 $("#trHora" + controlIdx).css('display', 'table-row');
-                                $("#lblHora" + controlIdx).css('color', '');
-                                $("[id^='hora" + controlIdx + "']").css('color', 'transparent');
-                        //        $("[id^='hora" + controlIdx + "']").text('+');
-                                $("[id^='hora" + controlIdx + "']").removeClass('btn-outline-secondary');
-                                $("[id^='hora" + controlIdx + "']").addClass('btn-outline-primary');
-                                $("[id^='hora" + controlIdx + "']").removeClass('disabled');
+
                             }
                         }
                          //   window.prompt('response', JSON.stringify(response));
@@ -140,32 +133,28 @@
                                 for (var j = 0; j < eventos.length; j++) {
                                     var HiD = eventos[j].StartDateTime;
                                     var Hi = parseInt(HiD.substring(11, 13), 10) - 5;
+                                    if (Hi < 0)
+                                        Hi = Hi + 24;
                                     var HfD = eventos[j].EndDateTime;
                                     var Hf = parseInt(HfD.substring(11, 13), 10);
                                     if (Hf == 0)
                                         Hf = 24;
                                     Hf = Hf - 5;
+                                    if (Hf < 0)
+                                        Hf = Hf + 24;
                                     var controlIdx = '' + i + eventos[j].Venue__c;
                                     if (i < 10)
                                         controlIdx = '0' + i + eventos[j].Venue__c;
                                     if (i >= Hi && i < Hf && eventos[j].Estado__c != 'Cancelado') {
 
                                         // DESHABILITA ESTA HORA
-                                        $('#chkhora' + controlIdx).prop("checked", false);
-                                        $('#hora' + controlIdx).removeClass('active');
-                                        $('#hora' + controlIdx).removeClass('btn-outline-primary');
-                                        $('#hora' + controlIdx).addClass('btn-outline-secondary');
-                                        $('#hora' + controlIdx).addClass('disabled');
-                                        $("[id^='hora" + controlIdx + "']").css('color', '');
+      
+                                        $('#chkhora' + controlIdx).addClass('disabled');
+                              //          $("[id^='hora" + controlIdx + "']").css('color', '');
                              //           $("[id^='hora" + controlIdx + "']").text('No disponible');
-                                        //    alert(i + ' Hora: ' + '#hora'+ controlIdx + ' Datos: ' + Hi + ' ' + Hf);
+                                            console.log("Deshabilita: " + i + ' Hora: ' + '#hora'+ controlIdx + ' Datos: ' + Hi + ' ' + Hf);
                                     } else {
-                                        $('#chkhora' + controlIdx).prop("checked", false);
-                                        $('#hora' + controlIdx).removeClass('active');
-                                        $('#hora' + controlIdx).removeClass('btn-outline-secondary');
-                                        $('#hora' + controlIdx).addClass('btn-outline-primary');
-                                        $('#hora' + controlIdx).removeClass('disabled');
-                                        $("[id^='hora" + controlIdx + "']").css('color', 'transparent');
+                  
                            //             $("[id^='hora" + controlIdx + "']").text('+');
                                         //alert(i + ' Hora: ' + '#hora' + controlIdx + ' Datos: ' + Hi + ' ' + Hf);
                                     }
@@ -185,7 +174,7 @@
                         var fecha = $("#start-date").val();
                         for (var i = 0; i < selVenues.length; i++) {
                             if (selVenues[i].fecha == fecha) {
-                                if ($("#" + selVenues[i].id.replace("chk", "")).hasClass('disabled') == true)
+                                if ($("#" + selVenues[i].id).hasClass('disabled') == true)
                                 {
                                     var selVenues = $("#ReservasSeleccionadas").val() ? JSON.parse($("#ReservasSeleccionadas").val()) : JSON.parse("[]");
                                     selVenues = selVenues.filter(function (venue) {
@@ -207,17 +196,10 @@
                                     var franja = $("#franja-seleccion").val();
                                     //alert("franja: " + franja + " clave: " + clave);
                                     if (franja == 'dia') {
-                                        $("[id$='" + clave + "']").not('.disabled').removeClass("btn-outline-primary");
-                                        $("[id$='" + clave + "']").not('.disabled').addClass("btn-primary");
-                                        $("[id$='" + clave + "']").not('.disabled').prop("checked", false);
-                                        $("[id$='" + clave + "']").not('.disabled').removeClass('active');
-                                        $("[id$='" + clave + "']").not('.disabled').css('color', 'transparent');
+                                        $("[id$='" + clave + "']").not('.disabled').not("#" + selVenues[i].id).addClass("secundary");
                                     }
                                     // MARCAR TODO EL DIA
-                                    $("#" + selVenues[i].id).prop("checked", true);
-                                    $("#" + selVenues[i].id.replace("chk", "")).addClass('active');
-                                    $("#" + selVenues[i].id.replace("chk", "")).css('color', '');
-
+                                    $("#" + selVenues[i].id).not('.disabled').addClass('selected');
                                 }
                             }
                             // agregar los botones
@@ -424,6 +406,90 @@ $(document).ready(function () {
     });
     $('.venue-characteristics').show();
   }
+    window.createAlert = function(title, summary, details, severity, dismissible, autoDismiss, appendToId) {
+        var iconMap = {
+            info: "fe fe-info",
+            success: "fe fe-thumbs-up",
+            warning: "fe fe-alert-triangle",
+            danger: "fe fa-alert-circle"
+        };
+
+        var iconAdded = false;
+
+        var alertClasses = ["alert", "fade", "show"];
+        alertClasses.push("alert-" + severity.toLowerCase());
+
+        if (dismissible) {
+            alertClasses.push("alert-dismissible");
+        }
+
+        var msgIcon = $("<i />", {
+            "class": iconMap[severity] // you need to quote "class" since it's a reserved keyword
+        });
+
+        var msg = $("<div />", {
+            "role": "alert",
+            "class": alertClasses.join(" ") // you need to quote "class" since it's a reserved keyword
+        });
+
+        if (title) {
+            var msgTitle = $("<h4 />", {
+                html: title
+            }).appendTo(msg);
+
+            if (!iconAdded) {
+                msgTitle.prepend(msgIcon);
+                iconAdded = true;
+            }
+        }
+
+        if (summary) {
+            var msgSummary = $("<strong />", {
+                html: summary
+            }).appendTo(msg);
+
+            if (!iconAdded) {
+                msgSummary.prepend(msgIcon);
+                iconAdded = true;
+            }
+        }
+
+        if (details) {
+            var msgDetails = $("<div />", {
+                "class": "infotext"
+            }).appendTo(msg);
+
+            if (!iconAdded) {
+                msgDetails.prepend(msgIcon);
+                iconAdded = true;
+            }
+
+            var msgDetailsText = $("<p />", {
+                html: details
+            }).appendTo(msgDetails);
+        }
+
+
+        if (dismissible) {
+            var msgClose = $("<button  />", {
+                "type": "button",
+                "class": "close", // you need to quote "class" since it's a reserved keyword
+                "data-dismiss": "alert",
+                html: "<span aria-hidden='true'>&times;</span>"
+            }).appendTo(msg);
+        }
+
+        $('#' + appendToId).prepend(msg);
+
+        if (autoDismiss) {
+            setTimeout(function () {
+                msg.addClass("flipOutX");
+                setTimeout(function () {
+                    msg.remove();
+                }, 1000);
+            }, 7000);
+        }
+    }
     window.almacenarVenue = function (venueId, fechaActual, nombreVenue, reemplazar = false) {
         var selVenues = $("#ReservasSeleccionadas").val() ? JSON.parse($("#ReservasSeleccionadas").val()) : JSON.parse("[]");
         var id = venueId;
@@ -432,12 +498,21 @@ $(document).ready(function () {
             selVenues = selVenues.filter(x => !(x.fecha === fechaActual && x.id.endsWith(assetId)));
         }
         var objeto = { fecha: fechaActual, id: id, venue: nombreVenue };
+
+        var elementosPorRango = selVenues.filter(x => x.fecha === fechaActual).length;
+        console.log("elementosPorRango: " + (elementosPorRango + 1));
+        if (elementosPorRango >= 2) {
+            console.log("Se ha alcanzado el límite de 2 elementos para el rango");
+            return false;
+        }
+
         if (!selVenues.find(x => x.id === id && x.fecha === fechaActual)) {
             selVenues.push(objeto);
             var count = selVenues.filter(x => x.fecha === fechaActual).length;
             agregarBoton(fechaActual, count);
         }
         $("#ReservasSeleccionadas").val(JSON.stringify(selVenues));
+        return true;
     }
     window.almacenarVenueMensual = function (venueId, fechaActual, nombreVenue) {
         var selVenues = $("#ReservasSeleccionadas").val() ? JSON.parse($("#ReservasSeleccionadas").val()) : JSON.parse("[]");
@@ -446,27 +521,35 @@ $(document).ready(function () {
         var fechas = selVenues.map(function (a) { return new Date(a.fecha); });
         var fechaInicial = fechas.length > 0 ? Math.min.apply(null, fechas) : new Date(fechaActual);
         var fecha1 = new Date(fechaInicial);
-        var fecha2 = new Date(fechaInicial);
-        fecha2.setDate(fecha2.getDate() + 7);
-        var fecha3 = new Date(fechaInicial);
-        fecha3.setDate(fecha3.getDate() + 14);
-        var fecha4 = new Date(fechaInicial);
-        fecha4.setDate(fecha4.getDate() + 21);
+        var fecha2 = new Date(fechaInicial);        fecha2.setDate(fecha2.getDate() + 7);
+        var fecha3 = new Date(fechaInicial);        fecha3.setDate(fecha3.getDate() + 14);
+        var fecha4 = new Date(fechaInicial);        fecha4.setDate(fecha4.getDate() + 21);
+        var fecha5 = new Date(fechaInicial);        fecha5.setDate(fecha5.getDate() + 28);
         var fechaActualDate = new Date(fechaActual);
-        console.log("fecha1: " + fecha1 + " fechaActualDate: " + fechaActualDate);
+        console.log("\nfecha1: " + fecha1 + "\nfecha2: " + fecha2 + "\nfecha3: " + fecha3 + "\nfecha4: " + fecha4 + "\nfechaActualDate: " + fechaActualDate);
         // Verificar si la fecha actual está dentro de algún rango
-        var fechas = [fecha1, fecha2, fecha3, fecha4];
-        var fechaEnRango = fechas.find(fechaRango => fechaActualDate >= fechaRango && fechaActualDate < new Date().setDate(fechaRango.getDate() + 7));
+      //  var fechas = [fecha1, fecha2, fecha3, fecha4, fecha5];
+     //   var fechaEnRango = fechas.find(fechaRango => fechaActualDate >= new Date().setDate(fechaRango.getDate()-1) && fechaActualDate < new Date().setDate(fechaRango.getDate() + 7));
+        var fechaEnRango = null;
+        if (fechaActualDate >= fecha1 && fechaActualDate < fecha2)
+            fechaEnRango = fecha1;
+        if (fechaActualDate >= fecha2 && fechaActualDate < fecha3)
+            fechaEnRango = fecha2;
+        if (fechaActualDate >= fecha3 && fechaActualDate < fecha4)
+            fechaEnRango = fecha3;
+        if (fechaActualDate >= fecha4 && fechaActualDate < fecha5)
+            fechaEnRango = fecha4;
+        console.log("La fecha está en el rango: " + fechaEnRango);
         if (!fechaEnRango) {
             console.log("La fecha actual está fuera del rango permitido.");
             return false;
         }
         console.log("fechaEnRango: " + fechaEnRango);
         // Verificar el límite de 6 elementos por rango
-        var elementosPorRango = selVenues.filter(x => new Date(x.fecha) >= fechaEnRango && new Date(x.fecha) < new Date().setDate(fechaEnRango.getDate() + 7)).length;
-        console.log("elementosPorRango: " + elementosPorRango);
-        if (elementosPorRango >= 6) {
-            console.log("Se ha alcanzado el límite de 6 elementos para el rango");
+        var elementosPorRango = selVenues.filter(x => new Date(x.fecha) >= fechaEnRango && new Date(x.fecha) < new Date(fecha5)).length;
+        console.log("elementosPorRango: " + (elementosPorRango + 1));
+        if (elementosPorRango >= 4) {
+            console.log("Se ha alcanzado el límite de 4 elementos para el rango");
             return false;
         }
 
