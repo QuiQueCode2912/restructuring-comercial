@@ -1870,3 +1870,23 @@ footer #twitter-timeline .twitter-embed-header {
     margin-bottom: 10px;
 }
 
+#pageMessages {
+    position: absolute;
+    top: 15px;
+    z-index: 999;
+
+}
+
+.alert .infotext {
+    display: flex;
+   
+}
+.alert .infotext i {
+    margin-top: 5px;
+}
+.alert p {
+    margin: 0;
+}
+    .alert .fe {
+        margin-right: .3em;
+    }
