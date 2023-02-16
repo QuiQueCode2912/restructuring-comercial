@@ -22,69 +22,122 @@ if ($designs) {
 ?>
 <input type="hidden" id="franja-seleccion" value="<?PHP echo session()->get('franja')?>"/>
 <?php $grupos = json_decode(html_entity_decode($grupos)) ?>
-           
+    <style>
+
+        @media (hover: hover) {
+        .spBtn:hover {
+                background-color: #C3E0E5;
+            }
+        }
+        .spBtn.disabled:hover {
+                background-color: transparent;
+            }
+       .spBtn {
+         border: 1px solid #007bff;
+         border-color: #007bff;
+         border-radius: 0.25rem;
+         cursor: pointer;
+         color: transparent;
+         width: 140px;
+         height: 33px;
+         text-align: center;
+         vertical-align: middle;
+         font-weight: 400;
+         font-size: small;
+         display: inline-block;
+         padding: 0.375rem 0.75rem;
+         line-height: 1.5;
+         transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+       }
+        .spBtn.disabled {
+         border: 1px solid silver;
+         color: silver;
+        }
+        .spBtn.selected {
+         background-color: #007bff;
+         color: #fff;
+        }
+        .spBtn.secundary {
+         background-color: #007bff;
+         color: transparent;
+        }
+        .tDiv{
+            -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none;
+        }
+    </style>
+
+    <div id="pageMessages"></div>
 <script>
-
-
+  
             function chkCambio(e) {
                 var fecha = $("#start-date").val();
                 var nombreVenue = e.target.getAttribute("data-venuename")
                 var tarCont = e.target.id;
-                tarCont = "#" + tarCont.replace('chk','');
+                //tarCont = "#" + tarCont.replace('chk','');
                 var tarChk = e.target.id;
                 tarChk = "#" + tarChk;
+
+                $(tarChk).off('mouseenter mouseleave');
+
                 var franja = "<?PHP echo session()->get('franja')?>";
                 var clave = tarCont.substr(tarCont.length - 18);
                 var reemplazar = false;
-                console.log("tarChk: " + tarChk + " tarCont: " + tarCont);
-                if(e.target.checked)
+                
+                if(!$(tarChk).hasClass("selected") && !$(tarChk).hasClass("disabled"))
                 {
-                 //
+
                  if(franja == 'dia')
                  {
-                  $("[id$='" + clave + "']").not('.disabled').removeClass("btn-outline-primary");
-                  $("[id$='" + clave + "']").not('.disabled').addClass("btn-primary");
-                  $("[id$='" + clave + "']").not('.disabled').prop("checked", false);
-                  $("[id$='" + clave + "']").not('.disabled').removeClass('active');
-                  $("[id$='" + clave + "']").not('.disabled').css('color', 'transparent');
+                  $("[id$='" + clave + "']").not('.disabled').not(tarChk).addClass("secundary");
+                  $("[id$='" + clave + "']").not('.disabled').not(tarChk).removeClass("selected");
+                  createAlert('','','<b>Se marcaron todas las horas?</b><br/>Descuida! En reserva diaria se marcan todos los espacios del día porque puedes venir a cualquier hora!','info',true,true,'pageMessages');
                   reemplazar = true;
                  }
                  $(tarCont).css('color', '');
                  if(franja == 'mes')
                  {
-                    var sePermite = almacenarVenueMensual(e.target.name,fecha,nombreVenue,reemplazar);
+                    var sePermite = almacenarVenueMensual(tarCont,fecha,nombreVenue,reemplazar);
                     if(!sePermite)
                     {
+                    createAlert('','','<b>Sólo se permiten 4 horas por semana!</b><br/>Puedes cambiar tus horas seleccionadas para esta semana si lo deseas.','warning',true,true,'pageMessages');
                         console.log("No se permite!");
-                        //$(tarCont).addClass("btn-outline-primary");
-                      //  $(tarCont).removeClass("btn-primary");
-                        $(tarChk).prop("checked", false);
-                        $(tarCont).blur();
-                        $(tarCont).removeClass('active');
-                        $(tarCont).css('color', 'transparent');
+               
+                    } else
+                    {
+                        $(tarChk).not('.disabled').addClass("selected");
                     }
                  }
                  else {
-                    almacenarVenue(e.target.name,fecha,nombreVenue,reemplazar);
-                    $(tarCont).css('color', '');
+                    console.log("tarChk: " + tarChk + " tarCont: " + tarCont + " nombreVenue: " + nombreVenue);
+                    if(franja == 'hora')
+                    {
+                        var sePermite = almacenarVenue(tarCont,fecha,nombreVenue,reemplazar);
+                        if(!sePermite)
+                        {
+                            createAlert('','','<b>Sólo se permiten 2 horas por día!</b><br/>Puedes cambiar tus horas seleccionadas para este día si lo deseas.','warning',true,true,'pageMessages');
+                            console.log("No se permite!");
+                            return false;
+                        }
+                    } else
+                    {
+                            almacenarVenue(tarCont,fecha,nombreVenue,reemplazar);
+                    }
+                    $(tarChk).not('.disabled').addClass("selected");
+                    $(tarChk).not('.disabled').removeClass("secundary")
                  }
-                 
-                //  $("[id$='" + clave + "']").addClass("disabled");
-                 //
                 } else
                 {
-                eliminarVenue(e.target.name,fecha,nombreVenue);
-                 //
+                eliminarVenue(tarCont,fecha,nombreVenue);
                  if(franja == 'dia')
                  {
-                 $("[id$='" + clave + "']").not('.disabled').addClass("btn-outline-primary");
-                  $("[id$='" + clave + "']").not('.disabled').removeClass("btn-primary");
-                  $("[id$='" + clave + "']").not('.disabled').css('color', 'transparent');
-                 // $(tarCont).removeClass("focus");
+                  $("[id$='" + clave + "']").not('.disabled').removeClass("secundary");
                  }
-                 $(tarCont).css('color', 'transparent');
+                   $(tarChk).removeClass("selected");
                 }
-               // alert('chkCambio: ' + tarCont + ' = ' + e.target.checked + ' / ' + fecha);
+                console.log('chkCambio: ' + tarCont + ' / ' + fecha);
+                
             }
 
 
@@ -433,7 +486,7 @@ height: 1.3em;
       <?php $hayNocturnos = 0 ?>
        <?php if ($grupos) : ?>
             <?php foreach ($grupos as $grupo) : ?>
-                <td><a href="" onclick="showVenueInfo('{{$grupo->name}}','{{$grupo->venue_facilities}}','<?php echo $configuration ? max($configuration) : 0 ?>','{{$grupo->hour_fee}}','{{$grupo->mid_day_fee}}','{{$grupo->all_day_fee}}','{{$grupo->monthly_fee}}','{{$grupo->image}}')" style="white-space: normal;word-wrap: break-word;font-family: 'Roboto', sans-serif;"><b>{{ $grupo->name }}</b></a></td>
+                <td><div id="diaDisclaimer" data-toggle="popover" data-placement="bottom" style="top: -130px;" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?"><a href="" onclick="showVenueInfo('{{$grupo->name}}','{{$grupo->venue_facilities}}','<?php echo $configuration ? max($configuration) : 0 ?>','{{$grupo->hour_fee}}','{{$grupo->mid_day_fee}}','{{$grupo->all_day_fee}}','{{$grupo->monthly_fee}}','{{$grupo->image}}')" style="white-space: normal;word-wrap: break-word;font-family: 'Roboto', sans-serif;"><b>{{ $grupo->name }}</b></a></div></td>
             <?php
                if($grupo->nightcharge == 1)
                { $hayNocturnos = 1; }
@@ -441,7 +494,7 @@ height: 1.3em;
             <?php endforeach ?>
             <?php endif ?>   
      </tr>
-
+     
      <?php
          $horaInicial = 7;
          $horaFinal = 20;
@@ -491,7 +544,6 @@ height: 1.3em;
             $horaActual24STR = (string) $horaActual;
        }
      ?>
-
      <?php if($horaActual <= 17 || $hayNocturnos == 1) : ?>
       <tr id="trHora{{$horaActual24STR}}">
       <th id="lblHora{{$horaActual24STR}}" style="font-family: 'Roboto', sans-serif;" class="headcol">{{$horaActualSTR}}:00 {{$THoraInicial}}</th>
@@ -499,10 +551,15 @@ height: 1.3em;
       <?php foreach ($grupos as $grupo) : ?>
       <td class="long">
       <?php if($horaActual <= 17 || ($grupo->nightcharge == 1 && $horaActual > 17)) : ?>
-		<label id="hora{{$horaActual24STR}}{{ $grupo->id }}" class="btn noHover shadow-none btn-outline-primary">
-        
-    			<input class="chkHide" data-venuename="{{ $grupo->name }}" id="chkhora{{$horaActual24STR}}{{ $grupo->id }}" name="chkhora{{$horaActual24STR}}{{ $grupo->id }}" type="checkbox" autocomplete="off" onchange="chkCambio(event)" />{{$horaActualSTR}}:00{{$THoraInicial}} - {{$horaFinalSTR}}:00{{$THoraFinal}}
-  		</label>
+      <div class="spBtn" data-venuename="{{ $grupo->name }}" id="chkhora{{$horaActual24STR}}{{ $grupo->id }}" name="chkhora{{$horaActual24STR}}{{ $grupo->id }}" onclick="chkCambio(event)">
+		
+         
+    			<!-- btn noHover shadow-none btn-outline-primary
+                <input class="chkHide" data-venuename="{{ $grupo->name }}" id="chkhora{{$horaActual24STR}}{{ $grupo->id }}" name="chkhora{{$horaActual24STR}}{{ $grupo->id }}" type="checkbox" autocomplete="off" onchange="chkCambio(event)" />
+                -->
+                {{$horaActualSTR}}:00{{$THoraInicial}} - {{$horaFinalSTR}}:00{{$THoraFinal}}
+  		
+          </div>
        <?php endif ?> 
 	  </td>
       <?php endforeach ?>
