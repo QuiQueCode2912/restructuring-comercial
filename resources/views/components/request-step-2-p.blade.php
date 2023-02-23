@@ -396,7 +396,7 @@ if ($designs) {
       </div>
 
       <div class="col-12 col-md-12" >
-             <div><small>Selecciona el horario</small></div>
+            <div><small>Selecciona el horario (puedes reservar en múltiples días)</small></div>
             <div id="overlay" style="padding-top:150px;background-color: rgba(255,255,255,0.7);">
             <div class="spinner-border" role="status">
   <span class="sr-only">Loading...</span>
