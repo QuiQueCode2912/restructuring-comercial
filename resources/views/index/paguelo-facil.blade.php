@@ -94,7 +94,7 @@
       @endif
       </div>
 
-      <div style="max-width:400px; margin:40px auto 90px; text-align:left">
+      <div style="max-width:400px; margin:40px auto 90px; text-align:left;<?php if(count($payments) == 1) echo 'display: none'; ?>">
         <div class="row">
           <?php foreach ($payments as $index => $payment) : ?>
           <div class="col<?php echo count($payments) > 1 ? ' col-md-6' : ' offset-2' ?>">
@@ -109,7 +109,11 @@
           <?php endforeach ?>
         </div>
       </div>
-
+      @if(count($payments) == 1)
+      <div class="form-group-preview mt-4" style="display: inline-flex;max-width: 620PX; width: 100%;justify-content: space-between;">
+          <div><small><b>Precio total a pagar por tu reserva</b></small></div><div><b>USD {{ number_format($payment->total, 2, '.', ',') }}</b></div>
+        </div>
+      @endif
       <p class="text-center paguelo-facil-container" style="display:<?php echo $otherMethods ? 'none' : 'block' ?>">
         Paga en línea<br>
         <input type="image" src="/assets/images/btn_es.png" style="padding-left: 0px;"></input><br><br>
