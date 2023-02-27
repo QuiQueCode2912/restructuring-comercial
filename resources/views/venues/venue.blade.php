@@ -4,30 +4,24 @@
 <x-covid />
 <x-header menu="true" />
 <x-venues-menu venue="{{ $venue }}" />
-<x-venue-characteristics 
-  type="{{ $venues ? $venues[0]->type : 'venues' }}"
-  maxpax="{{ $max_pax }}" 
-  facilities="{{ $facilities }}" 
-  venues="{{ count($venues) }}" 
-  venue="{{ $venueName }}"
-  showpolicies="{{ $show_policies ?? true }}" />
+<x-venue-characteristics type="{{ $venues ? $venues[0]->type : 'venues' }}" maxpax="{{ $max_pax }}" facilities="{{ $facilities }}" venues="{{ count($venues) }}" venue="{{ $venueName }}" showpolicies="{{ $show_policies ?? true }}" />
 
 <div class="container" style="margin:0 auto; padding:0; position:relative">
   <?php if ($images) : ?>
-  <?php foreach ($images as $image) : ?>
-    <?php $image_path = substr($image, 0, strrpos($image, '.')) . '_2048.' . substr($image, strrpos($image, '.') + 1) ?>
-    <a href="<?php echo $image_path ?>" data-lightbox="venue" title="<h1><?php echo $venueName ?></h1><a href='#security-policies' data-bs-toggle='modal' data-bs-target='#security-policies'>Revisa la política COVID para este venue</a>" <?php if ($image == $images[0]) : ?>class="gallery"<?php endif ?>><?php if ($image == $images[0]) : ?>FOTOGALERÍA <span>+</span><?php endif ?></a>
-  <?php endforeach ?>
+    <?php foreach ($images as $image) : ?>
+      <?php $image_path = substr($image, 0, strrpos($image, '.')) . '_2048.' . substr($image, strrpos($image, '.') + 1) ?>
+      <a href="<?php echo $image_path ?>" data-lightbox="venue" title="<h1><?php echo $venueName ?></h1><a href='#security-policies' data-bs-toggle='modal' data-bs-target='#security-policies'>Revisa la política COVID para este venue</a>" <?php if ($image == $images[0]) : ?>class="gallery" <?php endif ?>><?php if ($image == $images[0]) : ?>FOTOGALERÍA <span>+</span><?php endif ?></a>
+    <?php endforeach ?>
     @if($venueName == 'Ateneo')
     <a href="https://izi.travel/es/91de-ateneo/es" target="_blank" class="gallery" style="transform:translate(-100px, 36px); background:#000000; color:#ffffff">AUDIOGUIA</a>
     @endif
-    <?php endif ?>
+  <?php endif ?>
 </div>
 <div id="home-carousel" class="carousel slide venue-main-image" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-    <div class="container">
-         @if (session()->get('is-cds-user') == true)
+      <div class="container">
+        @if (session()->get('is-cds-user') == true)
         <h3 style="top:330px;">Sección de Empleados</h3>
         @endif
         @if (session()->get('is-cds-customer') == true)
@@ -36,7 +30,7 @@
       </div>
       <?php $rand = rand(0, count($images) - 1) ?>
       <?php if (isset($images[$rand])) : ?>
-      <img src="<?php echo $images[$rand] ? substr($images[$rand], 0, strrpos($images[$rand], '.')) . '_2048.' . substr($images[$rand], strrpos($images[$rand], '.') + 1) : '/assets/images/placeholder-image.jpg' ?>" class="d-block" alt="...">
+        <img src="<?php echo $images[$rand] ? substr($images[$rand], 0, strrpos($images[$rand], '.')) . '_2048.' . substr($images[$rand], strrpos($images[$rand], '.') + 1) : '/assets/images/placeholder-image.jpg' ?>" class="d-block" alt="...">
       <?php endif ?>
 
     </div>
@@ -49,10 +43,10 @@
       <h6>{{ $venueName }}</h6>
       <h1>{{ $subtitle }}</h1>
       <p class="description">
-      <?php echo $parent ? $parent->main_text : '' ?>
+        <?php echo $parent ? $parent->main_text : '' ?>
       </p>
       <p>
-      <?php echo $parent ? $parent->secondary_text : '' ?>
+        <?php echo $parent ? $parent->secondary_text : '' ?>
       </p>
     </div>
   </div>
@@ -64,29 +58,29 @@
           <div class="row">
             <div class="col-12 col-md-9" style="padding-right:40px; padding-left:0">
               <div class="row shortcuts">
-              @if($show_shortcuts ?? true && $venueName != 'Ateneo')
+                @if($show_shortcuts ?? true && $venueName != 'Ateneo')
                 <div class="col-12 col-md-4">
                   <a href="#description">
-                  @if($venueName != 'Parque CDS')
-                  Aulas / Salones
-                  @else
-                  Canchas / Espacios
-                  @endif
+                    @if($venueName != 'Parque CDS')
+                    Aulas / Salones
+                    @else
+                    Canchas / Espacios
+                    @endif
                   </a>
                 </div>
-                 @if($show_menu ?? true )
+                @if($show_menu ?? true )
                 <div class="col-12 col-md-4">
                   <a href="#menu">Menús</a>
                 </div>
-                 @endif
+                @endif
                 <div class="col-12 col-md-4">
                   <a href="#venue-location">Ubicación</a>
                 </div>
-              @endif
+                @endif
               </div>
               <a name="description"></a>
-              
-              <h3 style="color:#0088ff; margin:30px 0 5px">Venue: <?php echo $parent ? $parent->name : '' ?></h3>
+
+              <h3 style="color:#505152; margin:30px 0 5px">Venue: <?php echo $parent ? $parent->name : '' ?></h3>
               @if($show_not_included ?? true)
               <small>
                 <span style="color:#0088ff">/*</span>
@@ -95,40 +89,17 @@
               @endif
               <?php $venueRoute = $venue; ?>
               <?php if ($venues) : ?>
-              <?php foreach ($venues as $venue) : ?>
-                <?php 
-                if (isset($venue->fixed_image)) {
-                  $venue_image = image_url('assets/images/residencies/' . $venue->fixed_image); 
-                } else {
-                  $venue_img = $venue->files()->count() > 0 ? substr($venue->files()->first()->path, 0, strpos($venue->files()->first()->path, '.')) . '_480.' . substr($venue->files()->first()->path, strpos($venue->files()->first()->path, '.') + 1) : null;
-                  $venue_image = $venue_img ? image_url('storage/venues/' . $venue_img) : '/assets/images/placeholder-image_480.jpg'; 
-                }
-                ?>
-                <x-venue-list 
-                  showpolicies="{{ $show_policies ?? true }}" 
-                  shownotincluded="{{ $show_not_included ?? true }}" 
-                  image="{{ $venue_image }}" 
-                  id="{{ $venue->id }}" 
-                  name="{{ $venue->name }}" 
-                  designs="{{ $venue->designs }}" 
-                  type="{{ $venue->type }}"
-                  venueroute="{{ $venueRoute }}"
-                  parentVenue="{{ $venueName }}"
-                  venuefacilities="{{ $venue->venue_facilities }}" 
-                  rooms="{{ $venue->rooms ?? 0 }}"
-                  closedarea="{{ $venue->closed_area ?? 0 }}"
-                  openarea="{{ $venue->open_area ?? 0 }}"
-                  hourfee="{{ $venue->hour_fee ?? 0 }}" 
-                  middayfee="{{ $venue->mid_day_fee ?? 0 }}" 
-                  alldayfee="{{ $venue->all_day_fee ?? 0 }}" 
-                  monthlyfee="{{ $venue->monthly_fee ?? 0 }}" 
-                  seasonalhourfee="{{ $venue->seasonal_hour_fee }}" 
-                  seasonalmiddayfee="{{ $venue->seasonal_mid_day_fee }}" 
-                  seasonalalldayfee="{{ $venue->seasonal_all_day_fee }}" 
-                  seasonalmonthlyfee="{{ $venue->seasonal_monthly_fee ?? 0 }}"
-                  tipouso="{{ $venue->tipo_uso }}" 
-                />
-              <?php endforeach ?>
+                <?php foreach ($venues as $venue) : ?>
+                  <?php
+                  if (isset($venue->fixed_image)) {
+                    $venue_image = image_url('assets/images/residencies/' . $venue->fixed_image);
+                  } else {
+                    $venue_img = $venue->files()->count() > 0 ? substr($venue->files()->first()->path, 0, strpos($venue->files()->first()->path, '.')) . '_480.' . substr($venue->files()->first()->path, strpos($venue->files()->first()->path, '.') + 1) : null;
+                    $venue_image = $venue_img ? image_url('storage/venues/' . $venue_img) : '/assets/images/placeholder-image_480.jpg';
+                  }
+                  ?>
+                  <x-venue-list showpolicies="{{ $show_policies ?? true }}" shownotincluded="{{ $show_not_included ?? true }}" image="{{ $venue_image }}" id="{{ $venue->id }}" name="{{ $venue->name }}" designs="{{ $venue->designs }}" type="{{ $venue->type }}" venueroute="{{ $venueRoute }}" parentVenue="{{ $venueName }}" venuefacilities="{{ $venue->venue_facilities }}" rooms="{{ $venue->rooms ?? 0 }}" closedarea="{{ $venue->closed_area ?? 0 }}" openarea="{{ $venue->open_area ?? 0 }}" hourfee="{{ $venue->hour_fee ?? 0 }}" middayfee="{{ $venue->mid_day_fee ?? 0 }}" alldayfee="{{ $venue->all_day_fee ?? 0 }}" monthlyfee="{{ $venue->monthly_fee ?? 0 }}" seasonalhourfee="{{ $venue->seasonal_hour_fee }}" seasonalmiddayfee="{{ $venue->seasonal_mid_day_fee }}" seasonalalldayfee="{{ $venue->seasonal_all_day_fee }}" seasonalmonthlyfee="{{ $venue->seasonal_monthly_fee ?? 0 }}" tipouso="{{ $venue->tipo_uso }}" />
+                <?php endforeach ?>
               <?php endif ?>
             </div>
           </div>
@@ -136,7 +107,7 @@
       </div>
     </div>
   </div>
-  
+
   @if($show_menu ?? true && $venueName != 'Ateneo')
   <a name="menu"></a><br />
   <div class="row">
@@ -177,20 +148,20 @@
     </div>
   </div>
 
-  <br /><br />  
+  <br /><br />
 
   <div class="row">
     <div class="col-12 col-md-9">
       <h4 style="margin-bottom:20px; font-weight:600">Sitios de interés próximos a Ciudad del Saber</h4>
       <ul class="near-by">
-        <li><strong>1 km</strong>Centro de Visitantes del Canal de Panamá (Miraflores)	 Aeropuerto Marcos Gelabert (vuelos internos)</li>
-        <li><strong>3 km</strong>Albrook Mall y Terminal de Transporte de Albrook</li> 
+        <li><strong>1 km</strong>Centro de Visitantes del Canal de Panamá (Miraflores) Aeropuerto Marcos Gelabert (vuelos internos)</li>
+        <li><strong>3 km</strong>Albrook Mall y Terminal de Transporte de Albrook</li>
         <li><strong>7 km</strong>Casco Antiguo</li>
         <li><strong>10 km</strong>Área Bancaria</li>
         <li><strong>13 km</strong>Museo de la Biodiversidad (en Amador)</li>
       </ul>
     </div>
-  </div>  
+  </div>
 
 </div>
 

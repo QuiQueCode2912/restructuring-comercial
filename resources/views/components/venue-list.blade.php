@@ -1,4 +1,4 @@
-<?php 
+<?php
 $designs = json_decode(html_entity_decode($designs ?? ''));
 $configuration = [];
 if ($designs) {
@@ -11,146 +11,135 @@ if ($designs) {
 <div class="venue-list">
   <div class="row">
     <div class="col-12 col-md-6 v-container">
-      <img src="{{ $image }}" class="venue-image"/>
+      <img src="{{ $image }}" class="venue-image" />
       <div class="v-button-container">
-      @if($venueroute == "parque-cds")
-      @if($hourfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=hora" class="btn btn-primary btn-sm">Cotizar horas</a> @endif
-      @if($alldayfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=dia" class="btn btn-primary btn-sm">Cotizar días</a> @endif
-      @if($monthlyfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=mes" class="btn btn-primary btn-sm">Cotizar mes</a> @endif
-      @else
-      <a href="/cotizacion/datos-contacto?id={{ $id }}" class="btn btn-primary btn-sm">Cotizar</a>
-      @endif
+        @if($venueroute == "parque-cds")
+        @if($hourfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=hora" class="btn btn-primary btn-sm">Reservar horas</a> @endif
+        @if($alldayfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=dia" class="btn btn-primary btn-sm">Reservar días</a> @endif
+        @if($monthlyfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=mes" class="btn btn-primary btn-sm">Reservar mes</a> @endif
+        @else
+        <a href="/cotizacion/datos-contacto?id={{ $id }}" class="btn btn-primary btn-sm">Cotizar</a>
+        @endif
       </div>
     </div>
     <div class="col-12 col-md-6">
-      <a href="#" class="venue-name"><?php echo $parent ?? '' ? $parent . ' - ' : '' ?>{{ $name }}</a>
-      
+      <p class="venue-name"><?php echo $parent ?? '' ? $parent . ' - ' : '' ?>{{ $name }}</p>
+
       <?php if (($type ?? 'venue') == 'Vivienda') : ?>
-      <div class="characteristics">
-        <dl>
-          <dt>Habitaciones</dt>
-          <dd><?php echo $rooms ?? '' ?></dd>
-        </dl>
-        <dl>
-          <dt>Área cerrada</dt>
-          <dd><?php echo $closedarea ?? '' ?> mts<sup>2</sup></dd>
-        </dl>
-        <dl>
-          <dt>Área abierta</dt>
-          <dd><?php echo $openarea ?? '' ?> mts<sup>2</sup></dd>
-        </dl>
-        <dl>
-          <dt>Mensualidad</dt>
-          <dd>
-            desde
-            <?php 
+        <div class="characteristics">
+          <dl>
+            <dt>Habitaciones</dt>
+            <dd><?php echo $rooms ?? '' ?></dd>
+          </dl>
+          <dl>
+            <dt>Área cerrada</dt>
+            <dd><?php echo $closedarea ?? '' ?> mts<sup>2</sup></dd>
+          </dl>
+          <dl>
+            <dt>Área abierta</dt>
+            <dd><?php echo $openarea ?? '' ?> mts<sup>2</sup></dd>
+          </dl>
+          <dl>
+            <dt>Mensualidad</dt>
+            <dd>
+              desde
+              <?php
               $seasonalmonthlyfee = $seasonalmonthlyfee ?? 0;
               $monthlyfee = $monthlyfee ?? 0;
-            ?>
-            @if($seasonalmonthlyfee > 0 && $seasonalmonthlyfee < $monthlyfee)
-            <span class="strike">$<?php echo $monthlyfee ?></span>
-            <span class="text-danger">$<?php echo $seasonalmonthlyfee < $monthlyfee ? $seasonalmonthlyfee : $monthlyfee ?></span> 
-            @else
-            $<?php echo $seasonalmonthlyfee > 0 && $seasonalmonthlyfee < $monthlyfee ? $seasonalmonthlyfee : $monthlyfee ?> 
-            @endif
-            <span style="color:#0088ff">/*</span>
-          </dd>
-        </dl>
-      </div>
+              ?>
+              @if($seasonalmonthlyfee > 0 && $seasonalmonthlyfee < $monthlyfee) <span class="strike">$<?php echo $monthlyfee ?></span>
+                <span class="text-danger">$<?php echo $seasonalmonthlyfee < $monthlyfee ? $seasonalmonthlyfee : $monthlyfee ?></span>
+                @else
+                $<?php echo $seasonalmonthlyfee > 0 && $seasonalmonthlyfee < $monthlyfee ? $seasonalmonthlyfee : $monthlyfee ?>
+                @endif
+                <span style="color:#0088ff">/*</span>
+            </dd>
+          </dl>
+        </div>
       <?php else : ?>
-      <div class="characteristics">
+        <div class="characteristics">
 
-      <?php
-          if ($parentVenue == 'Parque CDS')
-          {
-      ?>
-        <dl>
-          <dt>Cuenta con luminarias</dt>
-          <dd>
           <?php
-                if (str_contains($venuefacilities, 'Luminarias'))
-                {
-                    echo 'Si';
-                }
-                else
-                {
-                    echo 'No';
-                }
+          if ($parentVenue == 'Parque CDS') {
           ?>
-          </dd>
-        </dl>
+            <dl>
+              <dt>Cuenta con luminarias</dt>
+              <dd>
+                <?php
+                if (str_contains($venuefacilities, 'Luminarias')) {
+                  echo 'Si';
+                } else {
+                  echo 'No';
+                }
+                ?>
+              </dd>
+            </dl>
 
-        <dl>
-          <dt>Cuenta con graderías</dt>
-          <dd>
+            <dl>
+              <dt>Cuenta con graderías</dt>
+              <dd>
+                <?php
+                if (str_contains($venuefacilities, 'Graderías')) {
+                  echo 'Si';
+                } else {
+                  echo 'No';
+                }
+                ?>
+              </dd>
+            </dl>
           <?php
-                if (str_contains($venuefacilities, 'Graderías'))
-                {
-                    echo 'Si';
-                }
-                else
-                {
-                    echo 'No';
-                }
+          }
           ?>
-          </dd>
-        </dl>
-      <?php
+
+          <?php
+          if ($parentVenue != 'Parque CDS') {
+          ?>
+            <dl>
+              <dt>Configuración</dt>
+              <dd><?php echo count($configuration) > 0 ? (count($configuration) > 1 ? 'Múltiple' : 'Única') : 'No registra';    ?></dd>
+            </dl>
+          <?php
           }
-      ?>
+          ?>
+          <dl>
+            <dt>Capacidad máxima</dt>
+            <dd><?php echo $configuration ? max($configuration) : 0 ?> personas</dd>
+          </dl>
+          <dl>
+            <dt>Precio por medio día</dt>
+            <dd>
+              desde
+              @if($seasonalmiddayfee > 0 && $seasonalmiddayfee < $middayfee) <span class="strike">$<?php echo $middayfee ?></span>
+                <span class="text-danger">$<?php echo $seasonalmiddayfee < $middayfee ? $seasonalmiddayfee : $middayfee ?></span>
+                @else
+                $<?php echo $seasonalmiddayfee > 0 && $seasonalmiddayfee < $middayfee ? $seasonalmiddayfee : $middayfee ?>
+                @endif
+                <span style="color:#0088ff">/*</span>
+            </dd>
+          </dl>
+          <dl>
+            <dt>Precio por día entero</dt>
+            <dd>
+              desde
+              @if($seasonalalldayfee > 0 && $seasonalalldayfee < $alldayfee) <span class="strike">$<?php echo $alldayfee ?></span>
+                <span class="text-danger">$<?php echo $seasonalalldayfee < $alldayfee ? $seasonalalldayfee : $alldayfee ?></span>
+                @else
+                $<?php echo $seasonalalldayfee > 0 && $seasonalalldayfee < $alldayfee ? $seasonalalldayfee : $alldayfee ?>
+                @endif
+                <span style="color:#0088ff">/*</span>
+            </dd>
+          </dl>
 
-      <?php
-          if ($parentVenue != 'Parque CDS')
-          {
-      ?>
-        <dl>
-          <dt>Configuración</dt>
-          <dd><?php   echo count($configuration) > 0 ? (count($configuration) > 1 ? 'Múltiple' : 'Única') : 'No registra';    ?></dd>
-        </dl>
-       <?php
-          }
-      ?>
-        <dl>
-          <dt>Capacidad máxima</dt>
-          <dd><?php echo $configuration ? max($configuration) : 0 ?> personas</dd>
-        </dl>
-        <dl>
-          <dt>Precio por medio día</dt>
-          <dd>
-            desde
-            @if($seasonalmiddayfee > 0 && $seasonalmiddayfee < $middayfee)
-            <span class="strike">$<?php echo $middayfee ?></span>
-            <span class="text-danger">$<?php echo $seasonalmiddayfee < $middayfee ? $seasonalmiddayfee : $middayfee ?></span> 
-            @else
-            $<?php echo $seasonalmiddayfee > 0 && $seasonalmiddayfee < $middayfee ? $seasonalmiddayfee : $middayfee ?> 
-            @endif
-            <span style="color:#0088ff">/*</span>
-          </dd>
-        </dl>
-        <dl>
-          <dt>Precio por día entero</dt>
-          <dd>
-            desde
-            @if($seasonalalldayfee > 0 && $seasonalalldayfee < $alldayfee)
-            <span class="strike">$<?php echo $alldayfee ?></span>
-            <span class="text-danger">$<?php echo $seasonalalldayfee < $alldayfee ? $seasonalalldayfee : $alldayfee ?></span> 
-            @else
-            $<?php echo $seasonalalldayfee > 0 && $seasonalalldayfee < $alldayfee ? $seasonalalldayfee : $alldayfee ?> 
-            @endif
-            <span style="color:#0088ff">/*</span>
-          </dd>
-        </dl>
+          <dl>
+            <dt>Tipo de uso</dt>
+            <dd>
 
-        <dl>
-          <dt>Tipo de uso</dt>
-          <dd>
+              <span><?php echo $tipouso ?></span>
 
-            <span ><?php echo $tipouso ?></span> 
+            </dd>
+          </dl>
 
-          </dd>
-        </dl>
-
-      </div>
+        </div>
       <?php endif ?>
       <p>
         @if($shownotincluded ?? true)<small style="color:#0088ff; display:inline-block; margin-bottom:5px">/* No incluyen catering, personal o equipamiento extra /</small>@endif

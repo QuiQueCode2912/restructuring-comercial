@@ -245,10 +245,7 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 0.5rem;
-    width: 70%;
-    position: absolute;
-    bottom: 1rem;
-    margin-left: -2rem;
+    padding-top: 1rem;
     text-transform: uppercase;
     font-weight: 700;
 }
@@ -256,7 +253,6 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
 @media (min-width: 768px) {
     .v-button-container {
         bottom: 5rem;
-        margin-left: -1rem;
     }
 }
 
@@ -776,7 +772,7 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
 }
 .featured h4 {
   text-align: center;
-  color: #0088ff;
+  color: #505152;
   font-weight: 900;
   font-size: 28px;
 }
@@ -1018,6 +1014,11 @@ footer p i.fe {
   position: relative;
   height: auto;
 }
+
+.request .obligatory{
+  color: red;
+}
+
 .request .stepper {
   width: auto;
   min-width: 120px;
@@ -1338,6 +1339,7 @@ input[type="file"] + label {
   box-shadow: 0 2px 6px inset rgba(0, 0, 0, .4);
   padding-top: 25px;
 }
+
 .venues-list .venues-availability {
   padding: 10px 10px 8px;
   font-family: "Gotham", sans-serif;
@@ -1407,6 +1409,7 @@ input[type="file"] + label {
   display: block;
   margin-bottom: 15px;
   font-weight: 700;
+  color: #505152;
 }
 .venue-list .configurations {
   margin-top: 0;
@@ -1890,3 +1893,5 @@ footer #twitter-timeline .twitter-embed-header {
     .alert .fe {
         margin-right: .3em;
     }
+
+
