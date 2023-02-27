@@ -1455,11 +1455,11 @@ input[type="file"] + label {
 }
 .venue-detail h6 {
   position: absolute;
-  font-size: 24px;
+  font-size: 44px;
   color: #ffffff;
-  background: #0088ff;
+  background: #505152;
   padding: 8px 15px;
-  margin-top: -35px;
+  margin-top: -75px;
   font-weight: 600;
 }
 .venue-detail h1 {
