@@ -615,7 +615,7 @@
        {
     ?>
 
-        <input type="hidden" name="00N3m00000QeGlb" id="00N3m00000QeGlb" value='<?php echo session()->getId() ?>'/>
+        <input type="hidden" name="00N3m00000QeGlb" id="00N3m00000QeGlb" value='<?php echo session()->get('00N3m00000QeGlb') ?>'/>
         <input type="hidden" name="00N3m00000QeGSy" id="00N3m00000QeGSy" value='<?php echo session()->get("ReservasSeleccionadas") ?>'/>
         <input type="hidden" name="00N3m00000QeGT3" id="00N3m00000QeGT3" value='Sin selección'/>
         <input type="hidden" name="00N3m00000QeGyG" id="00N3m00000QeGyG" value="<?php echo session()->get('00N3m00000QeGyG') ?>"/>

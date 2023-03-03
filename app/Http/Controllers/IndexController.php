@@ -1519,6 +1519,7 @@ class IndexController extends Controller
                     else
                         session()->put('00N3m00000QeHcG', 'Visitante');
                 $form_url = 'https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
+                session()->put('00N3m00000QeGlb', session()->getId() . '-' . time());
             break;
             case 'solicitud-enviada':
              // return view('index.request', ['page_title' => 'Servicios - Cotización - ' . $stepName, 'step' => '4-p', 'venue' => $venue, 'designs' => null, 'file_upload' => null, 'form_url' => null, 'grupos' => null, 'rootid' => null, 'estimacion' => null]);
@@ -1534,6 +1535,7 @@ class IndexController extends Controller
                         $phone = session()->get('phone', null);
                         $company = session()->get('company', null);
                         $idenruc = session()->get('00N3m00000QQOde', null);
+                        $thisSession = session()->get('00N3m00000QeGlb', null);
                         session()->flush();
                         session()->put('is-cds-user', $isUser);
                         session()->put('cds-user-email', $userEmail);
@@ -1544,6 +1546,7 @@ class IndexController extends Controller
                         session()->put('phone', $phone);
                         session()->put('company', $company);
                         session()->put('00N3m00000QQOde', $idenruc);
+                        session()->put('00N3m00000QeGlb', $thisSession);
                 switch ($venuep->parent_id) {
 	                case '02i3m00000D9DaPAAV':
                     $step = '4-p';

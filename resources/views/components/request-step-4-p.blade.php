@@ -33,7 +33,7 @@
 
 <script>
   function ready() {
-    var sessionId = '<?php echo session()->getId() ?>';
+    var sessionId = '<?php echo session()->get('00N3m00000QeGlb') ?>';
     console.log(sessionId);
     $.ajax({
                     url: '/getInsertedLeadId',
