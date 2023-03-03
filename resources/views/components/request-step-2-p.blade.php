@@ -604,8 +604,8 @@ height: 1.3em;
     <div class="row">
       <div class="col-12 col-md-12">
         <div class="form-group">
-          <label for="description"><small>Describe tu reserva</small>&nbsp;&nbsp;&nbsp;<a href="#"><small>(obligatorio)</small></a></label>
-          <textarea name="description" required id="description"><?php echo session()->get('description', old('description')) ?></textarea>
+          <label for="description"><small>Describe tu reserva</small>&nbsp;&nbsp;&nbsp;<?php if ($grupos[0]->parent_id=='02i3m00000DiduVAAR') echo "<a href='#'><small>(obligatorio)</small></a>"; else echo "<small>(opcional)</small>" ?></label>
+          <textarea name="description" <?php if ($grupos[0]->parent_id=='02i3m00000DiduVAAR') echo "required"; else echo ""; ?> id="description"><?php echo session()->get('description', old('description')) ?></textarea>
         </div>
       </div>
       

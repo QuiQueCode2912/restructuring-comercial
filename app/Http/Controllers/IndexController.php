@@ -1296,7 +1296,10 @@ class IndexController extends Controller
                         {
                             $request['ReservasSeleccionadas'] = null;
                         }
-                        $inputs = $request->validate([ 'description' => 'required|string', 'ReservasSeleccionadas' => 'required|string' ]);
+                        if($venuep->id == '02i3m00000DiduVAAR')
+                            $inputs = $request->validate([ 'description' => 'required|string', 'ReservasSeleccionadas' => 'required|string' ]);
+                        else
+                            $inputs = $request->validate(['ReservasSeleccionadas' => 'required|string' ]);
                         //return redirect()->back()->withInput();
                      //   $inputs['ReservasSeleccionadas'] = ($inputs['ReservasSeleccionadas']); 
                         //$inputs['ReservasSeleccionadas'] = json_encode(str_replace('"', "'", $inputs['ReservasSeleccionadas'])); 
