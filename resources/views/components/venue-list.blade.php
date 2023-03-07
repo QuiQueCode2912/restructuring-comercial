@@ -24,7 +24,9 @@ if ($designs) {
     </div>
     <div class="col-12 col-md-6">
       <p class="venue-name"><?php echo $parent ?? '' ? $parent . ' - ' : '' ?>{{ $name }}</p>
-
+      <a href="#map">
+      <img src="/assets/images/mapIcon.png" width="50px" height="50px" style="position:absolute;right:14px;top:-10px;">
+      </a>
       <?php if (($type ?? 'venue') == 'Vivienda') : ?>
         <div class="characteristics">
           <dl>

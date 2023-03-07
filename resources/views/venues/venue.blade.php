@@ -138,12 +138,11 @@
     </div>
   </div>
   -->
-  <?php echo $parent->latitude; ?>
   <br /><br /><a name="venue-location"></a><br />
   <div class="row">
     <div class="col-12 col-md-9">
       <a href="https://ciudaddelsaber.hauzd.com" style="float:right; font-size:12px; font-weight:700; text-decoration:underline">Explora nuestros venues en 3D</a>
-      <h3 style="color:#0088ff; margin-bottom:10px">Ubicación</h3>
+      <h3 id="map" style="color:#0088ff; margin-bottom:10px">Ubicación</h3>
       <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7918.400021473715!2d<?php echo $parent ? $parent->longitude : '' ?>!3d<?php echo $parent ? $parent->latitude : '' ?>!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwNTknNTYuMiJOIDc5wrAzNScwMC4xIlc!5e0!3m2!1ses!2sco!4v1618496938772!5m2!1ses!2sco" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>-->
 
       <iframe src="https://maps.google.com/maps?width=100%25&amp;height=450&amp;hl=en&amp;q=<?php echo $parent ? $parent->latitude : '' ?>,%20<?php echo $parent ? $parent->longitude : '' ?>+(My%20Business%20Name)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
