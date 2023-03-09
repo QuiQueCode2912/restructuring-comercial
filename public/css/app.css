@@ -412,6 +412,13 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
 .carousel#home-carousel .carousel-inner .carousel-item {
   height: 600px;
 }
+@media screen and (max-width: 767px) {
+  .carousel#home-carousel,
+  .carousel#home-carousel .carousel-inner,
+  .carousel#home-carousel .carousel-inner .carousel-item {
+    height: 300px;
+  }
+}
 .carousel#home-carousel .carousel-inner .carousel-item img {
   position: absolute;
   z-index: 1;
@@ -583,6 +590,13 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
   display: inline-block;
   position: absolute;
 }
+@media screen and (max-width: 767px) {
+  .carousel#home-carousel .carousel-inner .carousel-item .container h3 {
+    font-size: 24px;
+  }
+}
+
+
 .carousel#home-carousel .carousel-inner .carousel-item img {
   width: 100%;
 }
@@ -736,6 +750,23 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
   padding: 10px 12px 30px;
   display: none;
 }
+@media screen and (max-width: 767px) {
+  .search > p {
+    font-size: 15px;
+  }
+  .search ul li label {
+    height: 58px;
+  }
+  .search ul li i {
+    bottom: 5px;
+  }
+  .search ul li  {
+    height: 60px;
+  }
+  .search ul li ul {
+    top: 58px;
+  }
+}
 .search ul li.open ul {
   display: block;
 }
@@ -794,6 +825,7 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
   text-align: center;
   font-family: "Trola", sans-serif;
 }
+
 .featured .characteristics .col-12 {
   border-right: 2px solid #dddddd;
 }
@@ -822,6 +854,23 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
 }
 .venues .featured h1 {
   font-size: 48px;
+}
+@media screen and (max-width: 767px) {
+  .featured .featured-text {
+    font-size: 18px;
+  }
+  .featured {
+    padding-top: 25px;
+    padding-bottom: 0px; 
+  }
+  .venues .featured h1 {
+    font-size: 24px;
+    margin: 0px;
+  }
+
+  .venues .featured h4 {
+    font-size: 18px;
+  }
 }
 .venues .venue {
   background: #ffffff;
@@ -1339,7 +1388,11 @@ input[type="file"] + label {
   box-shadow: 0 2px 6px inset rgba(0, 0, 0, .4);
   padding-top: 25px;
 }
-
+@media screen and (max-width: 767px) {
+.venues-list {
+  padding-top: 0px;
+}
+}
 .venues-list .venues-availability {
   padding: 10px 10px 8px;
   font-family: "Gotham", sans-serif;
@@ -1487,6 +1540,20 @@ input[type="file"] + label {
   padding: 5px 8px;
   font-size: 14px;
   position: relative;
+}
+@media screen and (max-width: 767px) {
+  .venue-detail h1 {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-weight: 600;
+    font-size: 24px;
+  }
+  .venue-detail .venues-list .shortcuts a {
+    height: 40px;
+  }
+  .venue-detail > .row > .col-12 > p {
+    font-size: 12px;
+  }
 }
 .fixed-shortcuts a::after,
 .venue-detail .venues-list .shortcuts a::after {

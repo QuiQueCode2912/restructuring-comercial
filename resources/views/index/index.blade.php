@@ -22,6 +22,13 @@
   <div class="container featured">
     <div class="row">
       <div class="col-12">
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
         <h4>Mira nuestra oferta de servicios</h4>
         <h1>
           Un espacio para cada necesidad
@@ -31,7 +38,9 @@
     <div class="row" style="margin-top:40px">
       <?php if ($venues) : ?>
       <?php foreach ($venues as $venue) : ?>
-      <div class="col-12 col-md-4">
+
+<div class="col-12 col-md-6 col-lg-4">
+
       <div class="venue">
         <a href="<?php echo $venue['url'] ?>"><img src="<?php echo substr($venue['image'], 0, strrpos($venue['image'], '.')) . '_480.' . substr($venue['image'], strrpos($venue['image'], '.') + 1) ?>"></a>
         <a href="<?php echo $venue['url'] ?>" class="venue-name"><?php echo  $venue['name'] ?></a>

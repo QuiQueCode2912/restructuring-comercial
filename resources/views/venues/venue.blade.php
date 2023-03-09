@@ -149,8 +149,8 @@
 
       <iframe src="https://maps.google.com/maps?width=100%25&amp;height=450&amp;hl=en&amp;q=<?php echo $parent ? $parent->latitude : '' ?>,%20<?php echo $parent ? $parent->longitude : '' ?>+(My%20Business%20Name)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       @if(request()->server('HTTP_USER_AGENT') && strpos(request()->server('HTTP_USER_AGENT'), 'Mobile') !== false)
-      <a href="https://www.waze.com/ul?ll=<?php echo $parent ? $parent->latitude : '' ?>,<?php echo $parent ? $parent->longitude : '' ?>&navigate=yes"><img src="/assets/images/waze.gif" wdith="100px" height="100px" style="position:absolute;top:50px;right:20px"/></a>
-      <a href="https://maps.google.com/?q=<?php echo $parent ? $parent->latitude : '' ?>,<?php echo $parent ? $parent->longitude : '' ?>"><img src="/assets/images/gmaps.gif" wdith="100px" height="100px" style="position:absolute;top:160px;right:20px"/></a>
+      <a href="https://www.waze.com/ul?ll=<?php echo $parent ? $parent->latitude : '' ?>,<?php echo $parent ? $parent->longitude : '' ?>&navigate=yes"><img src="/assets/images/waze.gif" wdith="80px" height="80px" style="position:absolute;top:50px;right:25px"/></a>
+      <a href="https://maps.google.com/?q=<?php echo $parent ? $parent->latitude : '' ?>,<?php echo $parent ? $parent->longitude : '' ?>"><img src="/assets/images/gmaps.gif" wdith="80px" height="80px" style="position:absolute;top:150px;right:25px"/></a>
       @endif
     </div>
   </div>

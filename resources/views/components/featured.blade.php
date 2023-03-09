@@ -13,6 +13,7 @@
         </p>
       </div>
     </div>
+@if(!(request()->server('HTTP_USER_AGENT') && strpos(request()->server('HTTP_USER_AGENT'), 'Mobile') !== false))
     <div class="row characteristics">
       <div class="col-12 col-md-2">
         <h3>7</h3>
@@ -60,5 +61,6 @@
         </p>
       </div>
     </div>
+@endif
   </div>
 </div>

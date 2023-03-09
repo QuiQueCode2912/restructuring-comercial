@@ -6,6 +6,18 @@ if ($designs) {
     $configuration[$design->layout] = $design->max_pax;
   }
 }
+if(!isset($venueroute))
+{
+  $venueroute = "";
+  }
+  if(!isset($parentVenue))
+{
+  $parentVenue = "";
+  }
+    if(!isset($tipouso))
+{
+  $tipouso = "";
+  }
 ?>
 
 <div class="venue-list">
