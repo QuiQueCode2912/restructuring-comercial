@@ -81,7 +81,7 @@
   }
   .carousel#home-carousel .carousel-inner .carousel-item img {
     width: auto !important;
-    height: 600px;
+    height: 300px;
   }
   .carousel#home-carousel > .container {
     display: none;

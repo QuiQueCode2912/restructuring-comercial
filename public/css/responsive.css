@@ -80,8 +80,8 @@
     left: 25px;
   }
   .carousel#home-carousel .carousel-inner .carousel-item img {
-    width: auto !important;
-    height: 600px;
+    width: 100% !important;
+    height: 320px !important;
   }
   .carousel#home-carousel > .container {
     display: none;
@@ -177,7 +177,7 @@
     padding: 0 40px;
   }
   .venue-detail h6 {
-    font-size: 30px;
+    font-size: 24px;
   }
   .venue-name {
     margin-top: 10px;
