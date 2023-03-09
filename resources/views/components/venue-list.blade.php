@@ -145,7 +145,7 @@ if ($designs) {
       <?php endif ?>
       <p>
         @if($shownotincluded ?? true)<small style="color:#0088ff; display:inline-block; margin-bottom:5px">/* No incluyen catering, personal o equipamiento extra /</small>@endif
-        @if($showpolicies ?? true)<a href="#security-policies" data-bs-toggle="modal" data-bs-target="#security-policies">Revisa la política Covid para este venue</a>@endif
+      <!-- COVID  @if($showpolicies ?? true)<a href="#security-policies" data-bs-toggle="modal" data-bs-target="#security-policies">Revisa la política  para este venue</a>@endif -->
       </p>
     </div>
   </div>

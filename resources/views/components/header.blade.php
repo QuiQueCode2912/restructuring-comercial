@@ -52,7 +52,7 @@
         <ul>
           <li><a href="https://ciudaddelsaber.org/noticias/">Noticias</a></li>
           <li><a href="https://ciudaddelsaber.org/descargas/">Descargas</a></li>
-          <li><a href="https://issuu.com/ciudaddelsaber/docs/cds_sapiens03">Revisat Sapiens</a></li>
+          <li><a href="https://issuu.com/ciudaddelsaber/docs/cds_sapiens03">Revista Sapiens</a></li>
         </ul>
       </li>
       <li class="has-childs">

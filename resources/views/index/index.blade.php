@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-<x-covid />
+<!-- COVID <x-covid /> -->
 <x-header menu="true" />
 
 <?php if ($show_venues_menu) : ?>
@@ -116,10 +116,10 @@
           <?php
             }
           ?>
-        </div>
-        <p>
-          <a href="#security-policies" data-bs-toggle="modal" data-bs-target="#security-policies">Revisa la política Covid para este venue</a>
-        </p>
+        </div><br/>
+  <!-- COVID      <p>
+          <a href="#security-policies" data-bs-toggle="modal" data-bs-target="#security-policies">Revisa la política  para este venue</a>
+        </p> -->
         <a href="<?php echo $venue['url'] ?>" class="btn btn-primary btn-sm">Ver oferta</a>
       </div>
       </div>

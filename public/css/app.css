@@ -1360,7 +1360,7 @@ input[type="file"] + label {
   text-decoration: underline;
 }
 .venue-list {
-  margin: 20px 0 80px;
+  margin: 20px 0 70px;
   font-size: 14px;
   position: relative;
 }

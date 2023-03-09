@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-<x-covid />
+<!-- COVID <x-covid /> -->
 <x-header menu="true" />
 <x-venues-menu venue="{{ $venue }}" />
 <x-venue-characteristics type="{{ $venues ? $venues[0]->type : 'venues' }}" maxpax="{{ $max_pax }}" facilities="{{ $facilities }}" venues="{{ count($venues) }}" venue="{{ $venueName }}" showpolicies="{{ $show_policies ?? true }}" />
@@ -10,7 +10,9 @@
   <?php if ($images) : ?>
     <?php foreach ($images as $image) : ?>
       <?php $image_path = substr($image, 0, strrpos($image, '.')) . '_2048.' . substr($image, strrpos($image, '.') + 1) ?>
-      <a href="<?php echo $image_path ?>" data-lightbox="venue" title="<h1><?php echo $venueName ?></h1><a href='#security-policies' data-bs-toggle='modal' data-bs-target='#security-policies'>Revisa la política COVID para este venue</a>" <?php if ($image == $images[0]) : ?>class="gallery" <?php endif ?>><?php if ($image == $images[0]) : ?>FOTOGALERÍA <span>+</span><?php endif ?></a>
+      <a href="<?php echo $image_path ?>" data-lightbox="venue" title="<h1><?php echo $venueName ?></h1>
+      <!-- COVID <a href='#security-policies' data-bs-toggle='modal' data-bs-target='#security-policies'>Revisa la política COVID para este venue</a> -->
+      " <?php if ($image == $images[0]) : ?>class="gallery" <?php endif ?>><?php if ($image == $images[0]) : ?>FOTOGALERÍA <span>+</span><?php endif ?></a>
     <?php endforeach ?>
     @if($venueName == 'Ateneo')
     <a href="https://izi.travel/es/91de-ateneo/es" target="_blank" class="gallery" style="transform:translate(-100px, 36px); background:#000000; color:#ffffff">AUDIOGUIA</a>
@@ -138,7 +140,7 @@
     </div>
   </div>
   -->
-  <br /><br /><a name="venue-location"></a><br />
+  <a name="venue-location"></a>
   <div class="row">
     <div class="col-12 col-md-9">
       <a href="https://ciudaddelsaber.hauzd.com" style="float:right; font-size:12px; font-weight:700; text-decoration:underline">Explora nuestros venues en 3D</a>

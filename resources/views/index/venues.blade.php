@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-<x-covid />
+<!-- COVID <x-covid /> -->
 <x-header menu="true" />
 <x-venues-menu venue="{{ $venue }}" />
 <x-searcher class="aside" />
