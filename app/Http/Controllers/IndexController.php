@@ -1787,7 +1787,7 @@ class IndexController extends Controller
                         if($isUser)
                         {
                             $salesforce->update('Lead', $request->token, ['Pago_confirmado__c' => 'true']);
-                            return redirect()->to('/');
+                            return redirect()->to('/confirmacion-pago/' . $request->token);
                         }
 
                         $userEmail = session()->get('cds-user-email', null);
@@ -1848,7 +1848,6 @@ class IndexController extends Controller
                         Id, Gran_Total__c, TotalPrice, Subtotal, Name, Oportunidad__c
                         FROM ServiceContract 
                         WHERE Id = '{$request->token}'";
-
 
                     $contract = $salesforce->query($query);
 
@@ -1915,7 +1914,7 @@ class IndexController extends Controller
         else
         {
             $query = "SELECT 
-                        Id, Precio_Estimado__c, Pago_confirmado__c, Espacios_que_desea_reservar__c
+                        Id, Precio_Estimado__c, Pago_confirmado__c, Espacios_que_desea_reservar__c,WebSessionId__c
                         FROM Lead	
                         WHERE Id = '{$request->token}'";
 
@@ -1927,12 +1926,11 @@ class IndexController extends Controller
              if (isset($data['Estado']) && substr($data['Estado'], 0, 6) == 'Aproba')
                 {
                 $lead_id = $lead['records'][0]['Id'];
-                $concepto = $lead['records'][0]['Espacios_que_desea_reservar__c'];
+                $concepto = nl2br($lead['records'][0]['Espacios_que_desea_reservar__c']);
 
             //      $receiptData = ['Confirmado__c' => false, 'Lead__c' => $request->token, 'Monto__c' => $data['TotalPagado'], 'Soporte__c' => $uploaded_file, 'Numero_de_transaccion__c' => $data['Oper'], 'Fecha_de_pago__c' => $date->format('Y-m-d\TH:i:s.000\Z') , 'Tipo__c' => (isset($data['method']) ? $data['method'] : 'Páguelo Fácil') ];
 
-            
-            $date = new \DateTime(isset($data['date']) ? $data['date'] . ' ' . date('H:i:s') : date('Y-m-d H:i:s'));
+                    $date = new \DateTime(isset($data['date']) ? $data['date'] . ' ' . date('H:i:s') : date('Y-m-d H:i:s'));
 
                     $uploaded_file = null;
                     if ($request->hasFile('file'))
@@ -1943,20 +1941,30 @@ class IndexController extends Controller
                         $uploaded_file = url('/storage/requests/' . $filepath);
                         $file->storeAs('public/requests', $filepath);
                     }
-
-                    $receiptData = ['Confirmado__c' => false, 'Lead__c' => $lead_id, 'Monto__c' => $data['TotalPagado'], 'Soporte__c' => $uploaded_file, 'Numero_de_transaccion__c' => $data['Oper'], 'Fecha_de_pago__c' => $date->format('Y-m-d\TH:i:s.000\Z') , 'Tipo__c' => (isset($data['method']) ? $data['method'] : 'Páguelo Fácil') ];
-                    $receiptId = $salesforce->create('Recibo__c', $receiptData);
-                    $data['Fecha'] = $date->format('Y-m-d');
-                    $data['Hora'] = $date->format('H:i:s');
-                    $data['method'] = $receiptData['Tipo__c'];
-                    $data['LeadId'] = $lead_id;
-                    $data['Concepto'] = $concepto;
-                    if ($receiptId)
+                    if(isset($data['TotalPagado']))
                     {
-                        $salesforce->update('Lead', $lead_id, ['Pago_confirmado__c' => 'true']);
-                    }
-                    }
-                    }
+                        $receiptData = ['Confirmado__c' => false, 'Lead__c' => $lead_id, 'Monto__c' => $data['TotalPagado'], 'Soporte__c' => $uploaded_file, 'Numero_de_transaccion__c' => $data['Oper'], 'Fecha_de_pago__c' => $date->format('Y-m-d\TH:i:s.000\Z') , 'Tipo__c' => (isset($data['method']) ? $data['method'] : 'Páguelo Fácil') ];
+                        $receiptId = $salesforce->create('Recibo__c', $receiptData);
+                        $data['Fecha'] = $date->format('Y-m-d');
+                        $data['Hora'] = $date->format('H:i:s');
+                        $data['method'] = $receiptData['Tipo__c'];
+                        $data['LeadId'] = $lead_id;
+                        $data['Concepto'] = $concepto;
+                        if ($receiptId)
+                        {
+                            $salesforce->update('Lead', $lead_id, ['Pago_confirmado__c' => 'true']);
+                        }
+                     }
+                }  else 
+                {
+                   $date = new \DateTime(isset($data['date']) ? $data['date'] . ' ' . date('H:i:s') : date('Y-m-d H:i:s'));
+                   $data['LeadId'] = "Reservas Parque CDS";
+                   $data['Fecha'] = $date->format('Y-m-d');
+                   $data['Hora'] = $date->format('H:i:s');
+                   $data['Concepto'] = nl2br($lead['records'][0]['Espacios_que_desea_reservar__c']);
+                }
+            }
+
                     return view('index.payment-confirmation', ['data' => $data, 'opportunity' => $lead['totalSize'] > 0 ? $lead['records'][0] : null]);
         }
 
