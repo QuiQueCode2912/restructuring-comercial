@@ -166,7 +166,7 @@
         <div><b>USD {{ number_format($payment->total, 2, '.', ',') }}</b></div>
       </div>
       @endif-->
-    </form>
+
     <!-- card metodo de pago QuiQue -->
     <div class="row justify-content-center">
       <div class="card shadow mb-5 vp-card" style=" background-color:#ffffff; border: none; ">
@@ -257,7 +257,7 @@
         </div>
       </div>
     </div>
-
+    </form>
     <div class="other-methods" style="max-width:800px; margin:80px auto 140px; text-align:left; display:<?php echo $otherMethods ? 'block' : 'none' ?>">
 
       <form method="post" id="bank" enctype="multipart/form-data" action="/confirmacion-pago/<?php echo $token ?>" style="max-width:600px; margin:20px auto 20px">

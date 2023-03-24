@@ -61,6 +61,7 @@ class IndexController extends Controller
         }
 
         $venues = Venue::whereIn('id', $parents)->where('show_on_website', 'Si')
+            ->orderBy('venuesorder', 'asc')
             ->get();
      //   echo "VENUESDEBUG:" . json_encode($venues);
         $fixedVenues = [];
@@ -635,10 +636,22 @@ class IndexController extends Controller
                 }
 
         $parent = Venue::find($routeName->uri);
+        //  CODIGO PARA MOSTRAR SÓLO TENIS - PARA QUE SEA NORMAL, SOLO LO QUE ESTÁ EN EL ELSE
+        if($parent->id != '02i3m00000Didu7AAB')
+        {
         $venues = Venue::where('parent_id', '=', $parent->id)
+            ->where('id', '!=', $parent->id)
+            ->where('id', '=', '02i3m00000Didu7AAB')
+            ->where('show_on_website', 'Si')
+            ->orderBy('venuesorder', 'asc')
+            ->get();
+        } else 
+        {
+            $venues = Venue::where('parent_id', '=', $parent->id)
             ->where('id', '!=', $parent->id)
             ->where('show_on_website', 'Si')
             ->get();
+        }
 
         $fixedVenues = [];
         if ($venues)
@@ -682,7 +695,7 @@ class IndexController extends Controller
                         $url = 'parque-cds/piscina';
                     break;
                     case '02i3m00000DiduVAAR':
-                        $name = 'Bohios y otras instalaciones';
+                        $name = 'Bohios';
                         $url = 'parque-cds/bohios';
                     break;
                 }
@@ -733,7 +746,7 @@ class IndexController extends Controller
                     ->max('max_pax');
                 $max_pax = $venue_max_pax > $max_pax ? $venue_max_pax : $max_pax;
             }
-            $facilities = $venues ? $venues[0]->facilities : null;
+            $facilities = $venues ? (isset($venues[0]->facilities) ? $venues[0]->facilities : null) : null;
         }
 
         $venue_images = VenueFile::where('venue_id', $parent->id)
