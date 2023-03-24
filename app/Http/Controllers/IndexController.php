@@ -1842,7 +1842,7 @@ class IndexController extends Controller
             $data = $request->all();
             $salesforce = $this->salesforce();
 
-            if(substr($request->token, 0, 3) != '00Q')
+            if(substr($request->token, 0, 3) != '00Q' && substr($request->token, 0, 3) != '001')
             {
             $query = "SELECT 
                         Id, Gran_Total__c, TotalPrice, Subtotal, Name, Oportunidad__c
@@ -1913,6 +1913,8 @@ class IndexController extends Controller
         }
         else
         {
+            if(substr($request->token, 0, 3) != '001')
+            {
             $query = "SELECT 
                         Id, Precio_Estimado__c, Pago_confirmado__c, Espacios_que_desea_reservar__c,WebSessionId__c
                         FROM Lead	
@@ -1966,6 +1968,34 @@ class IndexController extends Controller
             }
 
                     return view('index.payment-confirmation', ['data' => $data, 'opportunity' => $lead['totalSize'] > 0 ? $lead['records'][0] : null]);
+            } else
+            {
+                // PAGOS DIRECTO A UN ACCOUNT
+                $accountId = $request->token;
+                $date = new \DateTime(isset($data['date']) ? $data['date'] . ' ' . date('H:i:s') : date('Y-m-d H:i:s'));
+                if (isset($data['Estado']) && substr($data['Estado'], 0, 6) == 'Aproba')
+                {
+                if(isset($data['TotalPagado']))
+                {
+                    $receiptData = ['Confirmado__c' => false, 'Cliente__c' => $accountId, 'Nombre__c' => $data['Usuario'], 'Email__c' => $data['Email'], 'Monto__c' => $data['TotalPagado'], 'Numero_de_transaccion__c' => $data['Oper'], 'Fecha_de_pago__c' => $date->format('Y-m-d\TH:i:s.000\Z') , 'Tipo__c' => (isset($data['Tipo']) ? $data['Tipo'] : 'Páguelo Fácil') ];
+                    $receiptId = $salesforce->create('Recibo__c', $receiptData);
+                    $data['Fecha'] = $date->format('Y-m-d');
+                    $data['Hora'] = $date->format('H:i:s');
+                    $data['method'] = $receiptData['Tipo__c'];
+                    $data['LeadId'] = $accountId;
+                    $data['Concepto'] = $data['PARM_1'];
+                    $opp['Name'] = $data['Usuario'];
+                }
+            } else 
+            {
+                $date = new \DateTime(isset($data['date']) ? $data['date'] . ' ' . date('H:i:s') : date('Y-m-d H:i:s'));
+                   $data['LeadId'] = "Intento de pago";
+                   $data['Fecha'] = $date->format('Y-m-d');
+                   $data['Hora'] = $date->format('H:i:s');
+                   $data['Concepto'] = $data['PARM_1'];
+            }
+            return view('index.payment-confirmation', ['data' => $data, 'opportunity' => $opp]);
+            }
         }
 
 
