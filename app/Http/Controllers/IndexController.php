@@ -2280,6 +2280,5 @@ class IndexController extends Controller
             //    $opportunity_id = $contract['records'][0]['Oportunidad__c'];
             }
         //  echo $query;
-
     }
 }
