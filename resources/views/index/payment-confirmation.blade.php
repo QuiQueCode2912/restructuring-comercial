@@ -99,9 +99,19 @@
       </tbody>
     </table>
 
+@php
+ $url = $_SERVER['REQUEST_URI'];
+    $path = parse_url($url, PHP_URL_PATH);
+    $pathParts = explode('/', $path);
+    $lastPart = end($pathParts);
+    $showButton = substr($lastPart, 0, 3) !== '001';
+@endphp
+
     <p class="text-center">
       <small>Esta transacción estará sujeta a verificación</small><br><br>
+      @if($showButton)
       <a href="/" class="btn btn-primary">Volver al inicio</a>
+      @endif
       <a href="javascript:print()" class="btn btn-primary">Imprimir comprobante</a>
     </p>
   </div>

@@ -1990,13 +1990,13 @@ class IndexController extends Controller
                 {
                 if(isset($data['TotalPagado']))
                 {
-                    $receiptData = ['Confirmado__c' => false, 'Cliente__c' => $accountId, 'Nombre__c' => $data['Usuario'], 'Email__c' => $data['Email'], 'Monto__c' => $data['TotalPagado'], 'Numero_de_transaccion__c' => $data['Oper'], 'Fecha_de_pago__c' => $date->format('Y-m-d\TH:i:s.000\Z') , 'Tipo__c' => (isset($data['Tipo']) ? $data['Tipo'] : 'Páguelo Fácil') ];
+                    $receiptData = ['Confirmado__c' => false, 'Cliente__c' => $accountId, 'Nombre__c' => $data['Usuario'], 'Email__c' => $data['Email'], 'Monto__c' => $data['TotalPagado'], 'Numero_de_transaccion__c' => $data['Oper'], 'CDSC__c' => $data['CDSC'], 'PARM_1__c' => $data['PARM_1'], 'Fecha_de_pago__c' => $date->format('Y-m-d\TH:i:s.000\Z') , 'Tipo__c' => (isset($data['Tipo']) ? $data['Tipo'] : 'Páguelo Fácil') ];
                     $receiptId = $salesforce->create('Recibo__c', $receiptData);
                     $data['Fecha'] = $date->format('Y-m-d');
                     $data['Hora'] = $date->format('H:i:s');
                     $data['method'] = $receiptData['Tipo__c'];
                     $data['LeadId'] = $accountId;
-                    $data['Concepto'] = $data['PARM_1'];
+                    $data['Concepto'] = $data['CDSC'];
                     $opp['Name'] = $data['Usuario'];
                 }
             } else 
