@@ -184,7 +184,8 @@
         <div class="row">
           <div class="col-12">
             <p class="text-center" style="margin-top:30px">
-              <button type="submit" class="btn btn-primary" style="text-transform:none">Registrar pago</button>
+
+              <button type="submit" class="btn btn-primary submit-form" onclick="if (this.value !== 'Enviando...') { this.disabled=true; this.value='Enviando...'; this.form.submit(); }">Registrar pago</button>
               <br><br>
               <small><a href="/" class="text-secondary">Cancelar</a></small>
             </p>
