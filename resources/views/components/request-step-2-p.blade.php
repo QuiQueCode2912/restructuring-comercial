@@ -371,7 +371,7 @@ if ($designs) {
     <div class="row">
 
  
-       <div class="col-12 col-md-12">
+       <div class="col-12 col-md-12" style="display:none">
        <div style="margin-bottom:8px;"><small>Tu reserva es para</small></div>
 <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width:100%">
   <label class="btn btn-outline-primary {{ session()->get('00N3m00000QeGyG', old('00N3m00000QeGyG')) == 'Adulto' ? 'active' : '' }}" style="width:33%">
