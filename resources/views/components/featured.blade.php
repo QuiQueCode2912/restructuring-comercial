@@ -50,7 +50,7 @@
         <h3>30+</h3>
         <p>
           <strong>CANCHAS Y PISCINA</strong>
-          Canchas de Fútbol, Basketball, Baseball, Voleyball, Tenis, Golf, Paddle y Piscina
+          Canchas de Fútbol, Basketball, Baseball, Voleyball, Tenis, Golf, Raquetbol y Piscina
         </p>
       </div>
       <div class="col-12 col-md-2">
