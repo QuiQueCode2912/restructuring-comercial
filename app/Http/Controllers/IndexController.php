@@ -1490,8 +1490,7 @@ class IndexController extends Controller
                             $debugCalculo = $debugCalculo . " noche";
                             $tarifaUsar = $tarifaUsar + $tarifaUsar * $recargoNoche->percentage / 100;
                         }
-                    }
-                    
+                    } else                     
                     if($thisVenue->weekendcharge)
                     {
                     $diaSemana = date("w", strtotime($fechaActual));
@@ -1503,8 +1502,7 @@ class IndexController extends Controller
                         $debugCalculo = $debugCalculo . " domingo";
                         $tarifaUsar = $tarifaUsar + $tarifaUsar * $recargoFin->percentage / 100;
                     }
-                    }
-
+                    } else
                     if($thisVenue->holidaycharge)
                     {
                         $libre = Holidays::where('fecha', '=', $fechaActual)->first();
