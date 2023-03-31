@@ -1317,6 +1317,8 @@ class IndexController extends Controller
                      //   $inputs['ReservasSeleccionadas'] = ($inputs['ReservasSeleccionadas']); 
                         //$inputs['ReservasSeleccionadas'] = json_encode(str_replace('"', "'", $inputs['ReservasSeleccionadas'])); 
                    }
+                   if(isset($request['description'])) 
+                        $inputs['description'] = $request['description'] ;
                     switch ($venuep->parent_id) {
 	                case '02i3m00000D9DaPAAV':
                     //<input type="hidden" name="00N3m00000QeH7c" id="00N3m00000QeH7c" value='Reserva desatendida'/> TODO: VERIFICAR SI ES CONSULTIVA
