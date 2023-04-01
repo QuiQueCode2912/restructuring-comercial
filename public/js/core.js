@@ -105,7 +105,7 @@
                     async: true,
                     dataType: 'html',
                     success: function (response) {
-                        //console.log("JSON: " + (response));
+           //             console.log("LN108 JSON: " + (response));
                         const d = new Date();
                         let hour = d.getHours();
                         //limpiar
@@ -131,6 +131,23 @@
                             console.log("** Reservas detectadas: " + eventos.length + " **");
                             for (var i = 7; i <= 20; i++) {
                                 for (var j = 0; j < eventos.length; j++) {
+
+                                  var dateI = new Date(eventos[j].StartDateTime);
+                                  var dateF = new Date(eventos[j].EndDateTime);
+                                  dateI.setHours(dateI.getHours() - 5);
+                                  dateF.setHours(dateF.getHours() - 5);
+                                  var today = new Date(selDate);
+                                  today.setHours(today.getHours() + 5);
+         //                         console.log("Fecha inicial ajustada:", dateI);
+          //                        console.log("Fecha final ajustada:", dateF);
+           //                       console.log("Fecha actual (today):", today);
+                                    if(dateI.getDate() === today.getDate() &&
+                                    dateI.getMonth() === today.getMonth() &&
+                                    dateI.getFullYear() === today.getFullYear() && 
+                                    dateF.getDate() === today.getDate() &&
+    dateF.getMonth() === today.getMonth() &&
+    dateF.getFullYear() === today.getFullYear())
+                                    {
                                     var HiD = eventos[j].StartDateTime;
                                     var Hi = parseInt(HiD.substring(11, 13), 10) - 5;
                                     if (Hi < 0)
@@ -162,6 +179,7 @@
                                     //    var endDT = eventos[i].EndDateTime;
                                     //    var ffDT = eventos[i].Fecha_fin_del_evento__c;
                                     // dato ejemplo :   "2022-07-14T14:45:00.000+0000"
+                                  }
                                 }
                             }
                         } else {
