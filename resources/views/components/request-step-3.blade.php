@@ -654,6 +654,9 @@
           <input type="hidden" value="<?php echo $files[2]['path'] ?>" name="00N3m00000Pb706" id="00N3m00000Pb706" />
         <?php endif ?>
 
+
+
+<a href="/cotizacion/datos-evento" class="btn btn-primary">Anterior</a>
         <button type="submit" class="btn btn-primary submit-form" onclick="if (this.value !== 'Enviando...') { this.disabled=true; this.value='Enviando...'; this.form.submit(); }">Confirmar</button>
       </div>
     </div>
