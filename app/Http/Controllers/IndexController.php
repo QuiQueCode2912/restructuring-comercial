@@ -2016,7 +2016,11 @@ class IndexController extends Controller
 
         
     }
+    public function cancelarReserva(Request $request)
+    {
+        return view('index.cancelar-reserva', ['data' => $request]);
 
+    }
     public function gallery(Request $request)
     {
         $secret_key = "9537642792179615";

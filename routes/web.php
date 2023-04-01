@@ -60,6 +60,9 @@ Route::post('/confirmacion-pago/{token}', 'App\Http\Controllers\IndexController@
 Route::get('/solicitud-pago/{token}', 'App\Http\Controllers\IndexController@docuSignPayment');
 Route::post('/solicitud-pago/{token}', 'App\Http\Controllers\IndexController@docuSignPayment');
 
+Route::get('/cancelar-reserva/{token}', 'App\Http\Controllers\IndexController@cancelarReserva');
+Route::post('/cancelar-reserva/{token}', 'App\Http\Controllers\IndexController@cancelarReserva');
+
 Route::get('/galeria/{venue}', 'App\Http\Controllers\IndexController@gallery');
 Route::post('/galeria/{venue}', 'App\Http\Controllers\IndexController@gallery');
 Route::get('/galeria/{venue}/eliminar/{token}', 'App\Http\Controllers\IndexController@deleteImage');
