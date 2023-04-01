@@ -561,6 +561,52 @@
         momento de ser procesada por el equipo de Ciudad del Saber.</p>
       </div>
     </div>
+
+    <div class="row">
+  <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="1" id="accept-policy">
+            <label class="form-check-label" for="accept-policy" style="font-size:13px; font-family: 'Roboto', sans-serif">
+              Al marcar esta casilla se asume que he leído, entendido y acepto las <a href="" data-toggle="modal" data-target="#myModal" style="cursor: pointer;"><b>políticas de reserva y cancelación de espacios de CDS</b></a>. De acuerdo a lo establecido en la política, confirmo que también entiendo las condiciones de reembolso y los procedimientos aplicables de esa cancelación.
+            </label>
+          </div>
+      </div>
+</div>
+ <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Políticas de reserva y cancelación de espacios de CDS</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <p>Por favor, tenga en cuenta las siguientes normas y políticas durante su visita al Parque:</p>
+  <ul>
+    <li>No se permite el consumo y venta de bebidas alcohólicas.</li>
+    <li>No se permite la venta de comida y bebidas (sodas, aguas, bebidas energizantes, etc.).</li>
+    <li>No se permite fumar.</li>
+    <li>Cumplir con el uso apropiado de los estacionamientos. No se pueden estacionar en los laterales de la vía principal del Parque.</li>
+    <li>No se permite el uso de murgas, troneras, parlantes, bocinas, micrófonos y otros instrumentos de ruido excesivo.</li>
+    <li>Se le solicita depositar los desechos de basura que se produzcan durante el uso de la instalación en los cestos de basura. Se le hará un cargo de B/. 100.00 en caso de encontrar algún tipo de desecho en el área asignada.</li>
+    <li>LA FUNDACIÓN por condiciones climatológicas se reserva el derecho de uso de las instalaciones para preservar el buen estado de estas.</li>
+    <li>LA FUNDACIÓN no se hará responsable por la pérdida de objetos de valor (prendas, celulares, equipos deportivos, etc.) durante el desarrollo de las actividades.</li>
+    <li>El Cliente exonera a LA FUNDACIÓN de cualquier imprevisto, lesión o accidente que ocurra con algún participante durante las actividades del evento.</li>
+    <li>Respetar y obedecer las instrucciones del personal del Parque Ciudad del Saber y agentes de Seguridad de CdS.</li>
+    <li>Se prohibe los actos de violencia, riña y palabras ofensivas durante las actividades. De ocurrir algunos de estos hechos, El Cliente deberá expulsar al equipo o persona que incurrió en la falta y, de tratarse de la barra, está deberá abandonar las instalaciones.</li>
+    <li>El marcado del cuadro o la cancha será por cuenta de El Cliente.</li>
+     <li>Las cancelaciones realizadas <strong>12 horas antes</strong> de la fecha reservada recibirán un reembolso del <strong>100%</strong>.</li>
+    <li>Las cancelaciones realizadas <strong>dentro de las 12 horas</strong> antes de la fecha reservada recibirán un reembolso del <strong>50%</strong>.</li>
+    <li>Por favor, tenga en cuenta que las devoluciones se deben pasar a retirar por ventanilla.</li>
+  </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
     <div class="row buttons">
       <div class="col-12 text-center">
         <?php 
@@ -657,8 +703,20 @@
 
 
 <a href="/cotizacion/datos-evento" class="btn btn-primary">Anterior</a>
-        <button type="submit" class="btn btn-primary submit-form" onclick="if (this.value !== 'Enviando...') { this.disabled=true; this.value='Enviando...'; this.form.submit(); }">Confirmar</button>
+        <button type="submit" id="confirm-button" class="btn btn-primary disabled submit-form" disabled onclick="if (this.value !== 'Enviando...') { this.disabled=true; this.value='Enviando...'; this.form.submit(); }">Confirmar</button>
       </div>
     </div>
   </div>
 </div>
+<script>
+       function ready() {
+            $("#accept-policy").on("change", function() {
+                if ($(this).is(":checked")) {
+                    $("#confirm-button").removeClass("disabled").removeAttr("disabled");
+                } else {
+                    $("#confirm-button").addClass("disabled").attr("disabled", true);
+                }
+            });
+       }
+        window.addEventListener("load", ready);
+    </script>
