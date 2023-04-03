@@ -636,22 +636,19 @@ class IndexController extends Controller
                 }
 
         $parent = Venue::find($routeName->uri);
-        //  CODIGO PARA MOSTRAR SÓLO TENIS - PARA QUE SEA NORMAL, SOLO LO QUE ESTÁ EN EL ELSE
-        if($parent->id != '02i3m00000Didu7AAB')
-        {
+        //  CODIGO PARA MOSTRAR SÓLO TENIS - PARA QUE SEA NORMAL COMENTAR DE 640 - 645 Y DESCOMENTAR 647 - 650 - RECUERDA! Cambiar index.blade.php las DISCIPLINAS
         $venues = Venue::where('parent_id', '=', $parent->id)
             ->where('id', '!=', $parent->id)
             ->where('id', '=', '02i3m00000Didu7AAB')
             ->where('show_on_website', 'Si')
             ->orderBy('venuesorder', 'asc')
             ->get();
-        } else 
-        {
-            $venues = Venue::where('parent_id', '=', $parent->id)
-            ->where('id', '!=', $parent->id)
-            ->where('show_on_website', 'Si')
-            ->get();
-        }
+
+       //     $venues = Venue::where('parent_id', '=', $parent->id)
+       //     ->where('id', '!=', $parent->id)
+       //     ->where('show_on_website', 'Si')
+       //     ->get();
+
 
         $fixedVenues = [];
         if ($venues)
