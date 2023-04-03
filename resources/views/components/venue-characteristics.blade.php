@@ -48,9 +48,9 @@
     <?php else : ?>
     <?php if ($venue == 'Parque CDS') : ?>
     <li class="title">Espacios al aire libre</li>
-    <li>Food Court</li>
-    <li>Baños</li>
-    <li style="padding-bottom:20px; border-bottom:none">Vestidores</li>
+    <li>Food Court - En La Plaza</li>
+    <li>Baños cerca - Preguntar</li>
+    <li style="padding-bottom:20px; border-bottom:none">Vestidores cerca - Preguntar</li>
     <?php else : ?>
     <?php if ($venue != 'Ateneo') : ?>
     <li class="title">Centro de conferencias y oficinas</li>
