@@ -85,8 +85,13 @@
               <h3 style="color:#505152; margin:30px 0 5px">Venue: <?php echo $parent ? $parent->name : '' ?></h3>
               @if($show_not_included ?? true)
               <small>
-                <span style="color:#0088ff">/*</span>
+                <span style="color:#0088ff">/*
+                @if($venueName != 'Parque CDS')
                 Los precios no incluyen catering ni impuestos locales
+                @else
+                Los precios listados pueden variar de acuerdo a recargos por noche, fin de semana, y feriados
+                @endif
+                /</span>
               </small>
               @endif
               <?php $venueRoute = $venue; ?>
