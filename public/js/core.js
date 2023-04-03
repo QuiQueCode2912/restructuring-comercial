@@ -109,6 +109,10 @@
                         const d = new Date();
                         let hour = d.getHours();
                         //limpiar
+                        var selectedDate = new Date(selDate);
+                        selectedDate.setHours(selectedDate.getHours() + 5);
+                        var dayOfWeek = selectedDate.getDay();
+                        console.log("selectedDate: " + selectedDate + "dayofweek: " + dayOfWeek);
                         for (var i = 7; i <= 20; i++) {
                             var controlIdx = '' + i;
                             if (i < 10)
@@ -117,7 +121,8 @@
                             $("[id^='chkhora" + controlIdx + "']").removeClass('selected');
                             $("[id^='chkhora" + controlIdx + "']").removeClass('secundary');
                             $("[id^='chkhora" + controlIdx + "']").removeClass('disabled');
-                            if (selDate == todayDate && i <= hour) {
+                            // EN EL IF DESPUES DEL PRIMER OR ES PARA NO MOSTRAR NADA LUEGO DE LAS 5 EN FIN DE SEMANA
+                            if ((selDate == todayDate && i <= hour) || ((dayOfWeek === 0 || dayOfWeek === 6) && i > 17)) {
                                 $("#trHora" + controlIdx).css('display', 'none');
 
                             } else {
