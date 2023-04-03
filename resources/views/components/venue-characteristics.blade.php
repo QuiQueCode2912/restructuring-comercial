@@ -25,7 +25,7 @@
     <li>El marcado del cuadro o la cancha será por cuenta de El Cliente.</li>
      <li>Las cancelaciones realizadas <strong>12 horas antes</strong> de la fecha reservada recibirán un reembolso del <strong>100%</strong>.</li>
     <li>Las cancelaciones realizadas <strong>dentro de las 12 horas</strong> antes de la fecha reservada recibirán un reembolso del <strong>50%</strong>.</li>
-    <li>Por favor, tenga en cuenta que las devoluciones se deben pasar a retirar por ventanilla.</li>
+    <li>Por favor, tenga en cuenta que los reembolsos sólo se tramitarán por ACH.</li>
   </ul>
         </div>
         <div class="modal-footer">
@@ -47,10 +47,7 @@
     <li style="padding-bottom:20px; border-bottom:none">Listas para ocupar</li>
     <?php else : ?>
     <?php if ($venue == 'Parque CDS') : ?>
-    <li class="title">Espacios al aire libre</li>
-    <li>Food Court - En La Plaza</li>
-    <li>Baños cerca (Clover, 167 y Gimnasio)</li>
-    <li style="padding-bottom:20px; border-bottom:none">Vestidores cerca (Gimnasio)</li>
+    
     <?php else : ?>
     <?php if ($venue != 'Ateneo') : ?>
     <li class="title">Centro de conferencias y oficinas</li>
