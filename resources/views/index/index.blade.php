@@ -100,7 +100,7 @@
         {
             echo 96;
             } else {
-            if($pvax != 'parque-cds'  && $pvax != 'Parque CDS')
+            if($pvax != 'Parque CDS')
 	            echo count($venue['venues']);
             else
               echo "1";
