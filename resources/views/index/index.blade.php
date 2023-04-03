@@ -23,7 +23,7 @@
     <div class="row">
       <div class="col-12">
 
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
+<div class="alert alert-warning alert-dismissible fade show" role="alert" style="display:none">
   <strong>Holy guacamole!</strong> You should check in on some of those fields below.
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
@@ -50,6 +50,8 @@
         $sppd = 0;
         if ($venue['venues']) {
           foreach ($venue['venues'] as $subvenue) {
+            //echo $subvenue['name'] . $subvenue['hour_fee'] . "<br>";
+            $pph = $subvenue['hour_fee'] > $ppd ? $subvenue['hour_fee'] : $ppd;
             $ppd = $subvenue['all_day_fee'] > $ppd ? $subvenue['all_day_fee'] : $ppd;
             $sppd = $subvenue['seasonal_all_day_fee'] > $sppd ? $subvenue['seasonal_all_day_fee'] : $sppd;
           }
@@ -78,13 +80,19 @@
           </dl>
           <dl>
             <dt><?php
-            $pvax = isset($parentVenue) ? $parentVenue : '';
-            if($pvax != 'parque-cds')
+            $pvax = isset($parentVenue) ? $parentVenue : $venue['name'];
+            if($pvax != 'parque-cds'  && $pvax != 'Parque CDS')
             {
-            echo $venue['type'];
+              if(isset($venue['type']) ? $venue['type'] != '' : false )
+                echo $venue['type'];
+              else
+                echo "Salones";
             } else
             {
-            echo "Canchas/Espacios";
+            if($pvax != 'parque-cds')
+              echo "Disciplinas";
+            else 
+              echo "Canchas";
             }
             ?></dt>
             <dd><?php
@@ -98,14 +106,24 @@
             ?></dd>
           </dl>
           <dl>
-            <dt>Precio por día</dt>
+            <dt>
+            @if($pvax != 'parque-cds'  && $pvax != 'Parque CDS')
+            Precio por día
+            @else
+            Precio por hora
+            @endif
+            </dt>
             <dd>
               desde
-              @if($sppd < $ppd)
+              @if($sppd < $ppd && $sppd > 0)
               <span class="strike">$<?php echo $ppd ?></span>
               <span class="text-danger">$<?php echo $sppd < $ppd ? $sppd : $ppd ?></span> 
               @else
+              @if(($ppd < $pph && $ppd > 0 ) || ($pvax != 'parque-cds'  && $pvax != 'Parque CDS'))
               $<?php echo $sppd < $ppd ? $sppd : $ppd ?> 
+              @else
+              $<?php echo $pph ?> 
+              @endif
               @endif
               <span style="color:#0088ff">/*</span>
             </dd>
@@ -116,11 +134,23 @@
           ?>
           <dl>
             <dt>Eventos con alcohol</dt>
-            <dd>permitidos</dd>
+            <dd>
+            @if($pvax != 'parque-cds'  && $pvax != 'Parque CDS')
+            Permitidos
+            @else
+            No permitidos
+            @endif
+            </dd>
           </dl>
           <dl>
             <dt>Servicio de catering</dt>
-            <dd>Disponible</dd>
+            <dd>
+            @if($pvax != 'parque-cds'  && $pvax != 'Parque CDS')
+            Disponible
+            @else
+            No disponible
+            @endif
+            </dd>
           </dl>
           <?php
             }
@@ -136,7 +166,15 @@
       <?php endif ?>
 
       <div class="col-12">
-        <p class="text-center" style="color:#0088ff"><small>/* Los precios no incluyen catering, ni personal o equipamiento extra /</small></p>
+        <p class="text-center" style="color:#0088ff">
+        <small>
+        @if($pvax != 'parque-cds'  && $pvax != 'Parque CDS')
+        /* Los precios no incluyen catering, ni personal o equipamiento extra /
+        @else
+        /* Los precios listados pueden variar de acuerdo a recargos por noche, fin de semana, y feriados /
+        @endif
+        </small>
+        </p>
       </div>
     </div>
   </div>

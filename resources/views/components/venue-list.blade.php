@@ -18,6 +18,7 @@ if(!isset($venueroute))
 {
   $tipouso = "";
   }
+  $pvax = isset($parentVenue) ? $parentVenue : $venue['name'];
 ?>
 
 <div class="venue-list">
@@ -119,6 +120,7 @@ if(!isset($venueroute))
             <dt>Capacidad máxima</dt>
             <dd><?php echo $configuration ? max($configuration) : 0 ?> personas</dd>
           </dl>
+          @if($pvax != 'parque-cds'  && $pvax != 'Parque CDS')
           <dl>
             <dt>Precio por medio día</dt>
             <dd>
@@ -135,7 +137,9 @@ if(!isset($venueroute))
             <dt>Precio por día entero</dt>
             <dd>
               desde
-              @if($seasonalalldayfee > 0 && $seasonalalldayfee < $alldayfee) <span class="strike">$<?php echo $alldayfee ?></span>
+              @if($seasonalalldayfee > 0 && $seasonalalldayfee < $alldayfee)
+              <span class="strike">
+                $<?php echo $alldayfee ?></span>
                 <span class="text-danger">$<?php echo $seasonalalldayfee < $alldayfee ? $seasonalalldayfee : $alldayfee ?></span>
                 @else
                 $<?php echo $seasonalalldayfee > 0 && $seasonalalldayfee < $alldayfee ? $seasonalalldayfee : $alldayfee ?>
@@ -143,7 +147,17 @@ if(!isset($venueroute))
                 <span style="color:#0088ff">/*</span>
             </dd>
           </dl>
-
+          @else
+          <dl>
+            <dt>Precio por hora</dt>
+            <dd>
+              desde
+              
+                $<?php echo $hourfee ?>
+                <span style="color:#0088ff">/*</span>
+            </dd>
+          </dl>
+          @endif
           <dl>
             <dt>Tipo de uso</dt>
             <dd>
@@ -156,7 +170,15 @@ if(!isset($venueroute))
         </div>
       <?php endif ?>
       <p>
-        @if($shownotincluded ?? true)<small style="color:#0088ff; display:inline-block; margin-bottom:5px">/* No incluyen catering, personal o equipamiento extra /</small>@endif
+        @if($shownotincluded ?? true)
+        <small style="color:#0088ff; display:inline-block; margin-bottom:5px">
+         @if($pvax != 'parque-cds'  && $pvax != 'Parque CDS')
+        /* Los precios no incluyen catering, ni personal o equipamiento extra /
+        @else
+        /* Los precios listados pueden variar de acuerdo a recargos por noche, fin de semana, y feriados /
+        @endif
+        </small>
+          @endif
       <!-- COVID  @if($showpolicies ?? true)<a href="#security-policies" data-bs-toggle="modal" data-bs-target="#security-policies">Revisa la política  para este venue</a>@endif -->
       </p>
     </div>
