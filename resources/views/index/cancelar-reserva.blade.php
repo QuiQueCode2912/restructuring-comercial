@@ -40,12 +40,31 @@
   top: 38px !important;
 }
 </style>
-
+<form method="post">
+@csrf
+  <div class="modal fade" id="cancelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Cancelar Reserva</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ¿Está seguro de que desea cancelar la reserva?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" style="width:260px">No, mantener reserva</button>
+          <button type="submit" class="btn btn-danger submit-form" onclick="if (this.value !== 'Enviando...') { this.disabled=true; this.value='Enviando...'; this.form.submit(); }" style="width:260px">Sí, cancelar reserva</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <div class="request">
  <div class="container " style="min-height:960px">
-    <form method="post">
-      @csrf
+    
       <div class="row justify-content-md-center">
       <div class="col-12 col-md-7">
 <div class="request-step" style="margin:0px">
@@ -63,7 +82,10 @@
           <div class="col-12 text-center">
             <p class="text-center" style="margin-top:30px">
 
-              <button type="submit" class="btn btn-danger submit-form" onclick="if (this.value !== 'Enviando...') { this.disabled=true; this.value='Enviando...'; this.form.submit(); }">Cancelar reserva</button>
+  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#cancelModal">
+    Cancelar Reserva
+  </button>
+
               <br><br>
               <small><a href="/" class="text-secondary">Cancelar</a></small>
             </p>
@@ -73,9 +95,9 @@
 </div>
 </div>
 </div>
-  </form>
+  
 </div>
 </div>
 
-
+</form>
 @endsection

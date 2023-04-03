@@ -2018,8 +2018,12 @@ class IndexController extends Controller
     }
     public function cancelarReserva(Request $request)
     {
+        if ($request->isMethod('post'))
+        {
+            $salesforce = $this->salesforce();
+            $salesforce->update('Opportunity', $request->token, ['Closing_comments__c' => 'Cancelado por el cliente desde el link en el Email','StageName' => 'Closed Lost']);
+        }
         return view('index.cancelar-reserva', ['data' => $request]);
-
     }
     public function gallery(Request $request)
     {
