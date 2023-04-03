@@ -57,7 +57,7 @@
         <h3>20+</h3>
         <p>
           <strong>BOHIOS</strong>
-          Bohíos y ranchos para tus eventos y reuniones
+          Bohíos para tus eventos y reuniones
         </p>
       </div>
     </div>
