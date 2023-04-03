@@ -2022,6 +2022,7 @@ class IndexController extends Controller
         {
             $salesforce = $this->salesforce();
             $salesforce->update('Opportunity', $request->token, ['Closing_comments__c' => 'Cancelado por el cliente desde el link en el Email','StageName' => 'Closed Lost']);
+            $request['Cancelado'] = 'Si';
         }
         return view('index.cancelar-reserva', ['data' => $request]);
     }

@@ -80,8 +80,10 @@
   <p>Al hacer clic en el siguiente botón, se entenderá que ACEPTA COMPLETAMENTE las políticas de cancelación arriba descritas</p>
 
           <div class="col-12 text-center">
+          @if ($data->Cancelado === 'Si')
+  <p><b>Tu reserva ha sido cancelada.</b></p>
+@else
             <p class="text-center" style="margin-top:30px">
-
   <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#cancelModal">
     Cancelar Reserva
   </button>
@@ -89,6 +91,7 @@
               <br><br>
               <small><a href="/" class="text-secondary">Cancelar</a></small>
             </p>
+@endif
           </div>
 
   <p>Le agradecemos su comprensión y lamentamos cualquier inconveniente que esta política pueda causarle. Si tiene alguna pregunta o inquietud, no dude en ponerse en contacto con nosotros.</p>
