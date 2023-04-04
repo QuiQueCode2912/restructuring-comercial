@@ -1419,10 +1419,10 @@ class IndexController extends Controller
                     $idActual = $reserva->id;
                     $fechaActual = $reserva->fecha;
                     $fechaActualCarbon = Carbon::parse($fechaActual);
-$fechaActualCarbon->addHours(5);
+                    $fechaActualCarbon->addHours(5);
 
-// Si deseas actualizar el campo fecha en el objeto reserva
-$fechaActual = $fechaActualCarbon;
+                    // Si deseas actualizar el campo fecha en el objeto reserva
+                    $fechaActual = $fechaActualCarbon;
                     $horaInicio = substr($idActual, 7, 2);
                     $sfAssetId = substr($idActual, 9);
 
