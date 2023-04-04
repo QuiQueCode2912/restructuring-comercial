@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-<!-- COVID <x-covid /> -->
+<x-covid />
 <x-header menu="false" />
 
 <style>
@@ -42,28 +42,6 @@
 </style>
 
 <div class="request">
-<!-- Modal -->
-<center>
-<div class="modal fade" id="qrModal" tabindex="-1" role="dialog" aria-labelledby="conflictoModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content"  style="max-width:96vw">
-      <div class="modal-header">
-        <h5 class="modal-title" id="cqrModalLongTitle">Escanea el QR</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <img src="/assets/images/YappyCDS.png" style="max-width:86vw"/>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
-</center>
-<!-- Modal -->
   <div class="container text-center" style="min-height:960px">
     <form method="post">
       @csrf
@@ -71,7 +49,6 @@
       <input type="hidden" name="opportunity" value="{{ $opportunity }}" />
       <br><br>
       <div class="row justify-content-center">
-      @if(count($payments) > 1)
         <div class="col-12 col-md-10">
           <p style="font-size:20px; margin:0 0 30px; font-weight:600; color:#63AF3F !important">Selecciona el valor a pagar</p>
         </div>
@@ -82,41 +59,27 @@
             <span style="font-family:'Trola', sans-serif;">Selecciona el valor a pagar y realiza tu pago en línea.</span>
           </p>
         </div>
-      @else
-        <div class="col-12 col-md-10">
-          <p style="font-size:20px; margin:0 0 30px; font-weight:600; color:#63AF3F !important">Vamos a pagar!</p>
-        </div>
-        <div class="col-12 col-md-10">
-          <p class="text-center" style="margin:0; font-size:18px">
-            <span style="font-family:'Trola', sans-serif;">Realiza el pago para completar tu reserva.</span>
-          </p>
-        </div>
-      @endif
       </div>
 
-      <div style="max-width:400px; margin:40px auto 90px; text-align:left;<?php if(count($payments) == 1) echo 'display: none'; ?>">
+      <div style="max-width:400px; margin:80px auto 140px; text-align:left">
         <div class="row">
           <?php foreach ($payments as $index => $payment) : ?>
-          <div class="col<?php echo count($payments) > 1 ? ' col-md-6' : ' offset-2' ?>">
-            <div class="form-check"<?php echo count($payments) > 1 ? '' : ' style="left:14%"' ?>>
+          <div class="col-12<?php echo count($payments) > 1 ? ' col-md-6' : ' offset-2' ?>">
+            <div class="form-check">
               <input class="form-check-input" type="radio" name="total" id="total-<?php echo $index ?>" value="{{ $payment->total }}" <?php echo $index == 0 ? 'checked' : '' ?>>
               <label class="form-check-label" for="total-<?php echo $index ?>">
                 <?php echo $payment->concept ?><br />
-                <strong>USD {{ number_format($payment->total, 2, '.', ',') }}</strong>
+                <strong>USD {{ $payment->total }}</strong>
               </label>
             </div>
           </div>
           <?php endforeach ?>
         </div>
       </div>
-      @if(count($payments) == 1)
-      <div class="form-group-preview mt-4" style="display: inline-flex;max-width: 620PX; width: 100%;justify-content: space-between;">
-          <div><small><b>Precio total a pagar por tu reserva</b></small></div><div><b>USD {{ number_format($payment->total, 2, '.', ',') }}</b></div>
-        </div>
-      @endif
+
       <p class="text-center paguelo-facil-container" style="display:<?php echo $otherMethods ? 'none' : 'block' ?>">
-        Paga en línea<br>
-        <input type="image" src="/assets/images/btn_es.png" style="padding-left: 0px;"></input><br><br>
+        Paga en línea con<br>
+        <input type="image" src="/assets/images/pagar-paguelo-facil.png"></input><br><br>
         <a href="#" class="btn btn-secondary other-methods-btn">o Selecciona otro medio de pago</a>
         <br><br>
         <small><a href="/" class="text-secondary">Cancelar</a></small>
@@ -127,29 +90,19 @@
       <div class="row">
         <div class="col-12 text-center">
           Realiza el pago mediante <strong>Transferencia ACH</strong>, 
-          <strong>Yappy</strong> o <strong>Cheque</strong>.
-          <div id="yappy">
-          <br><br>Busca en el directorio de Yappy: fundacionciudaddelsaber<br/>O escanea el código de QR desde tu App:<br/><br>
-          <input type="image" src="/assets/images/showQR.png" style="padding-left: 0px;" onclick="$('#qrModal').modal('show');"></input><br><br>
-          </div>
-          <div id="bank">
-          <br>Ten en cuenta
+          <strong>Yappy</strong> o <strong>Cheque</strong>.<br>Ten en cuenta
           los siguientes datos de referencia cuando realices tu pago.
           <br><br>
           Fundación Ciudad del Saber<br>
           <strong>Cuenta Corriente, Banco General</strong><br>
           <big><strong>03-01-01-003310-4</strong></big><br>
-          @if ($opportunity!='')
           <strong># de referencia:</strong> <?php echo $opportunity ?>
-          <br>
-          @endif
-          <br>
+          <br><br>
           Una vez realizado
           el pago diligencia el siguiente formulario.
-          </div>
         </div>
       </div>
-      <form method="post" enctype="multipart/form-data" action="/confirmacion-pago/<?php echo $token ?>" style="max-width:600px; margin:20px auto 20px">
+      <form method="post" enctype="multipart/form-data" action="/confirmacion-pago/<?php echo $token ?>" style="max-width:600px; margin:40px auto 20px">
         <input type="hidden" name="PARM_1" value="<?php echo $opportunity ?>" />
         <input type="hidden" name="Estado" value="Aprobado" />
         <div class="row">
@@ -184,8 +137,7 @@
         <div class="row">
           <div class="col-12">
             <p class="text-center" style="margin-top:30px">
-
-              <button type="submit" class="btn btn-primary submit-form" onclick="if (this.value !== 'Enviando...') { this.disabled=true; this.value='Enviando...'; this.form.submit(); }">Registrar pago</button>
+              <button type="submit" class="btn btn-primary" style="text-transform:none">Registrar pago</button>
               <br><br>
               <small><a href="/" class="text-secondary">Cancelar</a></small>
             </p>

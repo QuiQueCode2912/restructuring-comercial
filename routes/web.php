@@ -15,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\IndexController@index');
 
-Route::get('/one-login', function() {
-  return view('index.one-login');
-});
+Route::get('/one-login', 'App\Http\Controllers\IndexController@oneLogin');
+Route::get('/portal-clientes', 'App\Http\Controllers\IndexController@portalClientes');
 Route::post('/one-login', 'App\Http\Controllers\IndexController@oneLogin');
+Route::post('/portal-clientes', 'App\Http\Controllers\IndexController@portalClientes');
 
 Route::get('/espacios-fcds', 'App\Http\Controllers\IndexController@cds');
 Route::get('/oferta', 'App\Http\Controllers\IndexController@oferta');
@@ -26,6 +26,18 @@ Route::get('/l-173', 'App\Http\Controllers\IndexController@l173');
 Route::get('/g-214abc', 'App\Http\Controllers\IndexController@g214abc');
 Route::get('/parque-de-los-lagos', 'App\Http\Controllers\IndexController@parqueDeLosLagos');
 Route::get('/parque-cds', 'App\Http\Controllers\IndexController@parqueCds');
+
+Route::get('/parque-cds/futbol', 'App\Http\Controllers\IndexController@parqueCds');
+Route::get('/parque-cds/beisbol', 'App\Http\Controllers\IndexController@parqueCds');
+Route::get('/parque-cds/baloncesto', 'App\Http\Controllers\IndexController@parqueCds');
+Route::get('/parque-cds/tenis', 'App\Http\Controllers\IndexController@parqueCds');
+Route::get('/parque-cds/golf', 'App\Http\Controllers\IndexController@parqueCds');
+Route::get('/parque-cds/gimnasio', 'App\Http\Controllers\IndexController@parqueCds');
+Route::get('/parque-cds/piscina', 'App\Http\Controllers\IndexController@parqueCds');
+Route::get('/parque-cds/voleibol', 'App\Http\Controllers\IndexController@parqueCds');
+Route::get('/parque-cds/bohios', 'App\Http\Controllers\IndexController@parqueCds');
+
+
 Route::get('/e-104', 'App\Http\Controllers\IndexController@e104');
 Route::get('/e-109', 'App\Http\Controllers\IndexController@e109');
 Route::get('/e-300', 'App\Http\Controllers\IndexController@e300');
@@ -37,6 +49,8 @@ Route::get('/complejo-hospedaje', 'App\Http\Controllers\IndexController@complejo
 Route::get('/residencias', 'App\Http\Controllers\IndexController@residencias');
 Route::get('/cotizacion/{step}', 'App\Http\Controllers\IndexController@request');
 Route::post('/cotizacion/{step}', 'App\Http\Controllers\IndexController@request');
+Route::post('/getAvailableSlots', 'App\Http\Controllers\IndexController@getAvailableSlots');
+Route::post('/getInsertedLeadId', 'App\Http\Controllers\IndexController@getInsertedLeadId');
 
 Route::get('/aceptar-cotizacion/{token}', 'App\Http\Controllers\IndexController@acceptQuote');
 Route::get('/rechazar-cotizacion/{token}', 'App\Http\Controllers\IndexController@rejectQuote');
@@ -45,6 +59,9 @@ Route::get('/confirmacion-pago/{token}', 'App\Http\Controllers\IndexController@p
 Route::post('/confirmacion-pago/{token}', 'App\Http\Controllers\IndexController@paymentConfirmation');
 Route::get('/solicitud-pago/{token}', 'App\Http\Controllers\IndexController@docuSignPayment');
 Route::post('/solicitud-pago/{token}', 'App\Http\Controllers\IndexController@docuSignPayment');
+
+Route::get('/cancelar-reserva/{token}', 'App\Http\Controllers\IndexController@cancelarReserva');
+Route::post('/cancelar-reserva/{token}', 'App\Http\Controllers\IndexController@cancelarReserva');
 
 Route::get('/galeria/{venue}', 'App\Http\Controllers\IndexController@gallery');
 Route::post('/galeria/{venue}', 'App\Http\Controllers\IndexController@gallery');

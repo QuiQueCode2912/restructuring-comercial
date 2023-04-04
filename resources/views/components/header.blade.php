@@ -33,6 +33,8 @@
           <li><a href="/aulas-105">Aulas 105</a></li>
           <li><a href="https://live.ipms247.com/booking/book-rooms-complejodehospedaje-es-Spanish" target="_blank">Complejo de hospedaje</a></li>
           <!--<li><a href="/residencias">Residencias</a></li>-->
+          <li><a href="/e-109">Centro de Innovación</a></li>
+            <li><a href="/parque-cds">Parque CDS</a></li>
           <?php if (session()->get('is-cds-user')) : ?>
           <li><a href="/espacios-fcds">Espacios FCdS</a></li>
           <?php endif ?>
@@ -50,7 +52,7 @@
         <ul>
           <li><a href="https://ciudaddelsaber.org/noticias/">Noticias</a></li>
           <li><a href="https://ciudaddelsaber.org/descargas/">Descargas</a></li>
-          <li><a href="https://issuu.com/ciudaddelsaber/docs/cds_sapiens03">Revisat Sapiens</a></li>
+          <li><a href="https://issuu.com/ciudaddelsaber/docs/cds_sapiens03">Revista Sapiens</a></li>
         </ul>
       </li>
       <li class="has-childs">
@@ -78,7 +80,11 @@
       <li><a href="https://ciudaddelsaber.org/"><i class="fe fe-search"></i></a></li>
       <li><a href="https://ciudaddelsaber.org/en/">Inglés</a></li>
       <li><a href="https://ciudaddelsaber.org/">Español</a></li>
+      @if (session()->get('is-cds-user') == true || session()->get('is-cds-customer') == true)
+      <li><a href="/one-login?logout=1"><i class="fe fe-log-out"></i> Salir</a></li>
+      @else
       <li><a href="https://ciudaddelsaber.org/wp-login.php"><i class="fe fe-lock"></i> Login</a></li>
+      @endif
       <li class="has-childs">
         <a href="https://ciudaddelsaber.org/ser-miembro/">Ser miembro</a>
         <ul>
@@ -100,9 +106,9 @@
 @else
 <div class="header small">
   <div class="container">
-    <a href="/" class="menu-toggle"><i class="fe fe-arrow-left"></i></a>
+    <div class="menu-toggle"><i class="fe fe-menu"></i></div>
     <ul class="menu">
-      <li><a href="/"><i class="fe fe-arrow reflect"></i> Volver al inicio</a></li>
+      <li><a href="/"><i class="fe fe-home  reflect"></i> Volver al inicio</a></li>
     </ul>
     <a href="https://ciudaddelsaber.org" class="logo">
       <img src="/assets/images/logo-white.png" />

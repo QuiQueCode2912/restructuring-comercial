@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-<x-covid />
+<!-- COVID <x-covid /> -->
 <x-header menu="false" />
 
 <?php 
@@ -33,9 +33,11 @@ switch (true) {
       <br /><br />
       Sin embargo te esperamos en una próxima oportunidad con los brazos abiertos.';
     break;
-   case
+	
+	/*
+   default:
      $description = $description . " - " . $debugstage;
-	 break;
+	 break; */
 }
 ?>
 

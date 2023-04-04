@@ -1,4 +1,4 @@
-<div class="request-step">
+<div class="request-step" style="margin-top:0px;">
   <div class="container">
     <h4>Estás a punto de completar tu solicitud. <br>
       Por favor verifica que los datos sean correctos</h4>
@@ -39,7 +39,7 @@
           <a href="/cotizacion/datos-contacto#identification">Editar</a>
         </div>
       </div>
-      <div class="col-12 col-md-6">
+     <!-- <div class="col-12 col-md-6">
         <div class="form-group-preview">
           Nacionalidad: 
           <?php 
@@ -286,12 +286,18 @@
           }
           ?>
           <a href="/cotizacion/datos-contacto#country_code">Editar</a>
-        </div>
-      </div>
-    </div>
+        </div> 
+      </div>-->
+    </div> 
 
-    <?php if (session()->get('recordType') == '0123m0000012tH4') : ?>
+    <?php if (session()->get('recordType') == '0123m0000012tH4' || session()->get('recordType') == '0123m000001AzQ4') : ?>
+     <?php
+       if($rootid != '02i3m00000D9DaPAAV')
+       {
+    ?>
     <div class="row" style="margin-top:40px">
+
+   
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
           Evento: <?php echo session()->get('00N3m00000QQOdA') ?>
@@ -371,9 +377,76 @@
           <a href="/cotizacion/datos-evento#lodging-quantity">Editar</a>
         </div>
       </div>
+ 
     </div>
+         <?php
+      }
+      ?>
+     <?php
+       if($rootid == '02i3m00000D9DaPAAV')
+       {
+    ?>
     <div class="row">
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-12">
+        <div class="form-group-preview mt-4">
+          <small>Espacios que deseas reservar</small>
+          <script>
+  var reservas = JSON.parse('<?php echo session()->get('ReservasSeleccionadas'); ?>');
+  
+  var formatReservas = function(reservas) {
+    var result = "";
+
+    reservas.forEach(function(reserva, index) {
+      var horaInicio = reserva.id.substring(7, 9);
+      var horaInicioFormateada = formatHora(horaInicio);
+      var horaFinFormateada = formatHora(parseInt(horaInicio) + 1);
+      result += reserva.venue + " " + reserva.fecha + " " + horaInicioFormateada + " - " + horaFinFormateada;
+
+      if (index !== reservas.length - 1) {
+        result += "<br/>";
+      }
+    });
+
+    return result;
+  }
+
+  var formatHora = function(hora) {
+    if (hora < 10) {
+      hora = "0" + hora;
+    }
+
+    var periodo = hora < 12 ? "AM" : "PM";
+    hora = hora % 12;
+    if (hora == 0) {
+      hora = 12;
+    }
+
+    return hora + ":00 " + periodo;
+  }
+  var ftRes = formatReservas(reservas);
+  document.write(ftRes);
+
+  
+  document.addEventListener("DOMContentLoaded", function(event) {
+  var inputF = document.getElementById("00N3m00000QeGT3");
+  inputF.value = ftRes.replaceAll('<br/>', '\n');
+  });
+
+</script>
+<br />Reserva para: <?php echo session()->get('00N3m00000QeGyG') ?>
+
+
+
+          <br /><br /><br />
+          <a href="/cotizacion/datos-evento#ReservasSeleccionadas">Editar</a>
+      </div>
+    </div>
+    </div>
+              <?php
+      }
+      ?>
+    <div class="row">
+      <div class="col-12 col-md-<?php if($rootid != '02i3m00000D9DaPAAV') { echo '6'; } else { echo '12'; } ?>">
         <div class="form-group-preview mt-4">
           <small>Describe tu evento</small>
           <?php echo session()->get('description') ?>
@@ -381,6 +454,13 @@
           <a href="/cotizacion/datos-evento#description">Editar</a>
         </div>
       </div>
+
+
+
+      <?php
+       if($rootid != '02i3m00000D9DaPAAV')
+       {
+    ?>
       <div class="col-12 col-md-6">
         <?php if (session()->get('files')) : ?>
         <p style="line-height:1rem; margin-bottom:6px"><small>Archivos compartidos</small></p>
@@ -396,8 +476,12 @@
         entender mejor tus necesidades</small></p><br />
         <div class="form-group-preview" style="background:transparent"><a href="/cotizacion/datos-evento#file" style="left:0">Editar</a></div>
         <?php endif ?>
-      </div>
-    </div>
+        </div>
+    
+
+    <?php
+    }
+    ?>
     <?php else : ?>
     <div class="row" style="margin-top:40px">
       <div class="col-12 col-md-6">
@@ -454,6 +538,22 @@
       </div>
     </div>
     <?php endif ?>
+
+      </div>
+      <?php
+       if($rootid == '02i3m00000D9DaPAAV')
+       {
+    ?>
+     <div class="row">
+      <div class="col-12 col-md-12">
+        <div class="form-group-preview mt-4" style="display: inline-flex;width: 100%;justify-content: space-between;">
+          <div><small><b>Precio Total</b></small></div><div><b>B/. <?php echo nl2br($estimacion)?></b></div>
+        </div>
+      </div>
+      </div>
+        <?php
+    }
+    ?>
     <div class="row" style="margin-top:40px">
       <div class="col-12 text-center">
         <p style="color:#0088ff; font-family:'Roboto', sans-serif; font-size:14px">
@@ -461,6 +561,52 @@
         momento de ser procesada por el equipo de Ciudad del Saber.</p>
       </div>
     </div>
+
+    <div class="row">
+  <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="1" id="accept-policy">
+            <label class="form-check-label" for="accept-policy" style="font-size:13px; font-family: 'Roboto', sans-serif">
+              Al marcar esta casilla se asume que he leído, entendido y acepto las <a href="" data-toggle="modal" data-target="#myModal" style="cursor: pointer;"><b>políticas de reserva y cancelación de espacios de CDS</b></a>. De acuerdo a lo establecido en la política, confirmo que también entiendo las condiciones de reembolso y los procedimientos aplicables de esa cancelación.
+            </label>
+          </div>
+      </div>
+</div>
+ <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Políticas de reserva y cancelación de espacios de CDS</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <p>Por favor, tenga en cuenta las siguientes normas y políticas durante su visita al Parque:</p>
+  <ul>
+    <li>No se permite el consumo y venta de bebidas alcohólicas.</li>
+    <li>No se permite la venta de comida y bebidas (sodas, aguas, bebidas energizantes, etc.).</li>
+    <li>No se permite fumar.</li>
+    <li>Cumplir con el uso apropiado de los estacionamientos. No se pueden estacionar en los laterales de la vía principal del Parque.</li>
+    <li>No se permite el uso de murgas, troneras, parlantes, bocinas, micrófonos y otros instrumentos de ruido excesivo.</li>
+    <li>Se le solicita depositar los desechos de basura que se produzcan durante el uso de la instalación en los cestos de basura. Se le hará un cargo de B/. 100.00 en caso de encontrar algún tipo de desecho en el área asignada.</li>
+    <li>LA FUNDACIÓN por condiciones climatológicas se reserva el derecho de uso de las instalaciones para preservar el buen estado de estas.</li>
+    <li>LA FUNDACIÓN no se hará responsable por la pérdida de objetos de valor (prendas, celulares, equipos deportivos, etc.) durante el desarrollo de las actividades.</li>
+    <li>El Cliente exonera a LA FUNDACIÓN de cualquier imprevisto, lesión o accidente que ocurra con algún participante durante las actividades del evento.</li>
+    <li>Respetar y obedecer las instrucciones del personal del Parque Ciudad del Saber y agentes de Seguridad de CdS.</li>
+    <li>Se prohibe los actos de violencia, riña y palabras ofensivas durante las actividades. De ocurrir algunos de estos hechos, El Cliente deberá expulsar al equipo o persona que incurrió en la falta y, de tratarse de la barra, está deberá abandonar las instalaciones.</li>
+    <li>El marcado del cuadro o la cancha será por cuenta de El Cliente.</li>
+     <li>Las cancelaciones realizadas <strong>12 horas antes</strong> de la fecha reservada recibirán un reembolso del <strong>100%</strong>.</li>
+    <li>Las cancelaciones realizadas <strong>dentro de las 12 horas</strong> antes de la fecha reservada recibirán un reembolso del <strong>50%</strong>.</li>
+    <li>Por favor, tenga en cuenta que los reembolsos sólo se tramitarán por ACH.</li>
+  </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
     <div class="row buttons">
       <div class="col-12 text-center">
         <?php 
@@ -478,7 +624,9 @@
         }
         ?>
         <input type=hidden name="oid" value="00D1N000002MAgJ">
-        <input type=hidden name="retURL" value="https://comercial.ciudaddelsaber.org/cotizacion/solicitud-enviada">
+        <input type=hidden name="retURL" value="<?php if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {  $url = "https://"; } else {  $url = "http://"; } echo $url . $_SERVER['HTTP_HOST']; ?>/cotizacion/solicitud-enviada">
+     <!--   <input type="hidden" name="debug" value="1">
+        <input type="hidden" name="debugEmail" value="jurena@cdspanama.org"> -->
         <input  id="00N3m00000PbDs5" name="00N3m00000PbDs5" type="hidden" value="1"/>
         <input type="hidden" value="<?php echo session()->get('first_name') ?>" name="first_name" id="first_name" />
         <input type="hidden" value="<?php echo session()->get('last_name') ?>" name="last_name" id="last_name" />
@@ -507,6 +655,28 @@
         <input type="hidden" value="<?php echo session()->get('00N3m00000Pb6zh') ?>" name="00N3m00000Pb6zh" id="00N3m00000Pb6zh" />
         <input type="hidden" value="<?php echo session()->get('description') ?>" name="description" id="description" />
         <input type="hidden" value="<?php echo session()->get('recordType') ?>" name="recordType" id="recordType" />
+        <input type="hidden" value="<?php echo session()->get('00N3m00000QeHcG') ?>" name="00N3m00000QeHcG" id="00N3m00000QeHcG" /> 
+      <?php
+       if($rootid == '02i3m00000D9DaPAAV')
+       {
+    ?>
+
+        <input type="hidden" name="00N3m00000QeGlb" id="00N3m00000QeGlb" value='<?php echo session()->get('00N3m00000QeGlb') ?>'/>
+        <input type="hidden" name="00N3m00000QeGSy" id="00N3m00000QeGSy" value='<?php echo session()->get("ReservasSeleccionadas") ?>'/>
+        <input type="hidden" name="00N3m00000QeGT3" id="00N3m00000QeGT3" value='Sin selección'/>
+        <input type="hidden" name="00N3m00000QeGyG" id="00N3m00000QeGyG" value="<?php echo session()->get('00N3m00000QeGyG') ?>"/>
+        <input type="hidden" name="00N3m00000QeGSo" id="00N3m00000QeGSo" value='{{ $estimacion }}'/>
+
+        <input type="hidden" name="00N3m00000QeH7c" id="00N3m00000QeH7c" value='Reserva desatendida'/>
+
+<!--        Tipo de reserva:<select  id="00N3m00000QeH7c" name="00N3m00000QeH7c" title="Tipo de reserva">
+        <option value="">--None--</option><option value="Reserva desatendida">Reserva desatendida</option>
+        <option value="Reserva consultiva">Reserva consultiva</option>
+        </select> -->
+
+        <?php
+    }
+    ?>  
 
         <?php if (config('app.env') == 'local') : ?>
         <!--<input type="hidden" name="debug" value="1">
@@ -530,8 +700,23 @@
           <input type="hidden" value="<?php echo $files[2]['path'] ?>" name="00N3m00000Pb706" id="00N3m00000Pb706" />
         <?php endif ?>
 
-        <button type="submit" class="btn btn-primary submit-form">Confirmar</button>
+
+
+<a href="/cotizacion/datos-evento" class="btn btn-primary">Anterior</a>
+        <button type="submit" id="confirm-button" class="btn btn-primary disabled submit-form" disabled onclick="if (this.value !== 'Enviando...') { this.disabled=true; this.value='Enviando...'; this.form.submit(); }">Confirmar</button>
       </div>
     </div>
   </div>
 </div>
+<script>
+       function ready() {
+            $("#accept-policy").on("change", function() {
+                if ($(this).is(":checked")) {
+                    $("#confirm-button").removeClass("disabled").removeAttr("disabled");
+                } else {
+                    $("#confirm-button").addClass("disabled").attr("disabled", true);
+                }
+            });
+       }
+        window.addEventListener("load", ready);
+    </script>

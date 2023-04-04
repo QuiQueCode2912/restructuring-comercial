@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-<x-covid />
+<!-- COVID <x-covid /> -->
 <x-header menu="true" />
 <x-venues-menu venue="{{ $venue }}" />
 <x-searcher class="aside" />
@@ -47,7 +47,8 @@
             alldayfee="{{ $venue->all_day_fee }}" 
             seasonalhourfee="{{ $venue->seasonal_hour_fee }}" 
             seasonalmiddayfee="{{ $venue->seasonal_mid_day_fee }}" 
-            seasonalalldayfee="{{ $venue->seasonal_all_day_fee }}" />
+            seasonalalldayfee="{{ $venue->seasonal_all_day_fee }}" 
+             />
         <?php endforeach ?>
         <?php else : ?>
           <br><br><br>

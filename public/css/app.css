@@ -237,6 +237,42 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
   top: 1px;
   transform: rotate(45deg);
 }
+.venue-list .row .v-container {
+    position: relative;
+}
+
+.v-button-container {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 0.5rem;
+    padding-top: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+@media (min-width: 768px) {
+    .v-button-container {
+        bottom: 5rem;
+    }
+}
+
+.characteristics .characteristics-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #cccccc;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.characteristics .characteristics-item .characteristics-text1 {
+        font-weight: 300 !important;
+        font-family: "Gotham", sans-serif !important;
+}
+
+.characteristics .characteristics-item .characteristics-text2 {
+        font-weight: 900 !important;
+        font-family: "Gotham", sans-serif !important;
+}
 
 .covid {
   display: block;
@@ -375,6 +411,13 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
 .carousel#home-carousel .carousel-inner,
 .carousel#home-carousel .carousel-inner .carousel-item {
   height: 600px;
+}
+@media screen and (max-width: 767px) {
+  .carousel#home-carousel,
+  .carousel#home-carousel .carousel-inner,
+  .carousel#home-carousel .carousel-inner .carousel-item {
+    height: 300px !important;
+  }
 }
 .carousel#home-carousel .carousel-inner .carousel-item img {
   position: absolute;
@@ -547,6 +590,13 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
   display: inline-block;
   position: absolute;
 }
+@media screen and (max-width: 767px) {
+  .carousel#home-carousel .carousel-inner .carousel-item .container h3 {
+    font-size: 24px;
+  }
+}
+
+
 .carousel#home-carousel .carousel-inner .carousel-item img {
   width: 100%;
 }
@@ -700,6 +750,23 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
   padding: 10px 12px 30px;
   display: none;
 }
+@media screen and (max-width: 767px) {
+  .search > p {
+    font-size: 15px;
+  }
+  .search ul li label {
+    height: 58px;
+  }
+  .search ul li i {
+    bottom: 5px;
+  }
+  .search ul li  {
+    height: 60px;
+  }
+  .search ul li ul {
+    top: 58px;
+  }
+}
 .search ul li.open ul {
   display: block;
 }
@@ -736,7 +803,7 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
 }
 .featured h4 {
   text-align: center;
-  color: #0088ff;
+  color: #505152;
   font-weight: 900;
   font-size: 28px;
 }
@@ -758,6 +825,7 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
   text-align: center;
   font-family: "Trola", sans-serif;
 }
+
 .featured .characteristics .col-12 {
   border-right: 2px solid #dddddd;
 }
@@ -786,6 +854,23 @@ form .custom-switch .custom-control-input:checked~.custom-control-label::after {
 }
 .venues .featured h1 {
   font-size: 48px;
+}
+@media screen and (max-width: 767px) {
+  .featured .featured-text {
+    font-size: 18px;
+  }
+  .featured {
+    padding-top: 25px;
+    padding-bottom: 0px; 
+  }
+  .venues .featured h1 {
+    font-size: 24px;
+    margin: 0px;
+  }
+
+  .venues .featured h4 {
+    font-size: 18px;
+  }
 }
 .venues .venue {
   background: #ffffff;
@@ -978,6 +1063,11 @@ footer p i.fe {
   position: relative;
   height: auto;
 }
+
+.request .obligatory{
+  color: red;
+}
+
 .request .stepper {
   width: auto;
   min-width: 120px;
@@ -1298,6 +1388,11 @@ input[type="file"] + label {
   box-shadow: 0 2px 6px inset rgba(0, 0, 0, .4);
   padding-top: 25px;
 }
+@media screen and (max-width: 767px) {
+.venues-list {
+  padding-top: 0px;
+}
+}
 .venues-list .venues-availability {
   padding: 10px 10px 8px;
   font-family: "Gotham", sans-serif;
@@ -1318,7 +1413,7 @@ input[type="file"] + label {
   text-decoration: underline;
 }
 .venue-list {
-  margin: 20px 0 80px;
+  margin: 20px 0 70px;
   font-size: 14px;
   position: relative;
 }
@@ -1367,6 +1462,7 @@ input[type="file"] + label {
   display: block;
   margin-bottom: 15px;
   font-weight: 700;
+  color: #505152;
 }
 .venue-list .configurations {
   margin-top: 0;
@@ -1412,11 +1508,11 @@ input[type="file"] + label {
 }
 .venue-detail h6 {
   position: absolute;
-  font-size: 24px;
+  font-size: 44px;
   color: #ffffff;
-  background: #0088ff;
+  background: #505152;
   padding: 8px 15px;
-  margin-top: -35px;
+  margin-top: -75px;
   font-weight: 600;
 }
 .venue-detail h1 {
@@ -1444,6 +1540,20 @@ input[type="file"] + label {
   padding: 5px 8px;
   font-size: 14px;
   position: relative;
+}
+@media screen and (max-width: 767px) {
+  .venue-detail h1 {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-weight: 600;
+    font-size: 24px;
+  }
+  .venue-detail .venues-list .shortcuts a {
+    height: 40px;
+  }
+  .venue-detail > .row > .col-12 > p {
+    font-size: 12px;
+  }
 }
 .fixed-shortcuts a::after,
 .venue-detail .venues-list .shortcuts a::after {
@@ -1690,4 +1800,167 @@ footer #twitter-timeline .twitter-embed-header {
   border-bottom: 1px solid #dddddd;
   margin-bottom: 10px;
   color: #ffffff;
+}
+.noHover.focus:not(:active) {
+    background-color: transparent !important;
+    //color: #007bff !important;
+}
+.noHover.focus.active {
+    background-color: #007bff !important;
+    color: white !important;
+}
+
+.noHover {
+    margin-bottom: 10px !important;
+    width: 64px !important;
+    height: 64px !important;
+}
+#overlay {
+    position: absolute; /* Sit on top of the page content */
+
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: -5px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: rgba(255,255,255,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+.tabpage-content {
+    display: none;
+}
+
+.tabpage:target .tabpage-content, .tabpage:last-of-type .tabpage-content {
+    display: block;
+}
+
+.tabpage:target ~ .tabpage:last-of-type .tabpage-content {
+    display: none;
+}
+
+:root {
+    --tabs-border-color: #177add;
+    --tabs-border-size: 1px;
+    --tabs-dark-color: #177add;
+    --tabs-width: 50%;
+    --tabs-height: 40px;
+}
+
+.tabpages * {
+    box-sizing: border-box;
+}
+
+.tabpage-container {
+    position: relative;
+    padding-top: var(--tabs-height); /* en esta zona colocaremos las pestañas */
+}
+
+#tab1 > a {
+    --tabs-position: 0;
+}
+
+#tab2 > a {
+    --tabs-position: 1;
+}
+
+.tabpage > a {
+    color: #007bff;
+    text-align: center;
+    position: absolute;
+    width: calc(var(--tabs-width));
+    height: calc(var(--tabs-height) + var(--tabs-border-size));
+    top: 0;
+    left: calc(var(--tabs-width) * var(--tabs-position)); /* posición de cada pestaña */
+}
+
+.modal-content .tabs {
+    padding: 10px;
+}
+
+.tabpage-content {
+    border-radius: 0 5px 5px 5px;
+    position: relative;
+    z-index: 100;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.tabpage > a {
+    background-color: var(--tabs-lite-color);
+    padding: 8px;
+    border: var(--tabs-border-size) solid var(--tabs-border-color);
+    width: 50%;
+}
+
+.tabpage .a1 {
+    border-radius: 5px 0px 0px 5px;
+}
+
+.tabpage .a2 {
+    border-radius: 0px 5px 5px 0px;
+}
+
+.tabpage:target > a, .tabpage:last-of-type > a {
+    background-color: var(--tabs-dark-color);
+    z-index: 200;
+    color: white;
+}
+
+.tabpage:target ~ .tabpage:last-of-type > a {
+    background-color: var(--tabs-lite-color);
+    z-index: 0;
+    color: #007bff;
+}
+
+.tabs .tabpage-container .tabpage-content .characteristics .characteristics-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #cccccc;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+    .tabs .tabpage-container .tabpage-content .characteristics .characteristics-item .characteristics-text1 {
+        font-weight: 300 !important;
+        font-family: "Gotham", sans-serif !important;
+    }
+
+    .tabs .tabpage-container .tabpage-content .characteristics .characteristics-item .characteristics-text2 {
+        font-weight: 900 !important;
+        font-family: "Gotham", sans-serif !important;
+    }
+
+.tabs .tabpage-container .tabpage-content .tabpage-img {
+    width: 100%;
+    height: 18rem;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#pageMessages {
+    position: absolute;
+    top: 15px;
+    z-index: 999;
+
+}
+
+.alert .infotext {
+    display: flex;
+   
+}
+.alert .infotext i {
+    margin-top: 5px;
+}
+.alert p {
+    margin: 0;
+}
+    .alert .fe {
+        margin-right: .3em;
+    }
+
+.vp-card{
+  width: 30rem;
 }

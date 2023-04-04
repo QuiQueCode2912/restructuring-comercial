@@ -1,4 +1,4 @@
-@media screen and (max-width:992px) {
+@media screen and (max-width:700px) {
   body {
     padding: 0;
   }
@@ -81,7 +81,7 @@
   }
   .carousel#home-carousel .carousel-inner .carousel-item img {
     width: auto !important;
-    height: 600px;
+    height: 300px;
   }
   .carousel#home-carousel > .container {
     display: none;

@@ -1,6 +1,6 @@
 <x-error-message />
 
-<div class="request-step">
+<div class="request-step" style="margin-top:0px;">
   <div class="container">
     <h4>Comencemos con tus datos de contacto</h4>
     <div class="row form-error-message">
@@ -27,6 +27,7 @@
           <input type="text" class="form-control" name="phone" id="phone" placeholder="Número de teléfono" value="<?php echo session()->get('phone', old('phone')) ?>">
         </div>
       </div>
+
       <!--
       <div class="col-12 col-md-6">
         <div class="form-group required">
@@ -309,6 +310,7 @@
           </div>
         </div>
       </div>
+
 
       <div class="col-12 mt-4">
         <a href="#"><small>* Campos obligatorios</small></a>

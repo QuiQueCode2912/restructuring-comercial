@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-<x-covid />
+<!-- COVID <x-covid /> -->
 <x-header menu="false" />
 
 <style>
@@ -18,7 +18,7 @@
 }
 </style>
 
-<?php if ($data && $opportunity) : ?>
+<?php if ($data && $opportunity || ($opportunity['Pago_confirmado__c'] == true)) : ?>
 <div class="request">
   <div class="container text-center" style="min-height:800px">
     <br><br>
@@ -38,38 +38,80 @@
       <tbody>
         <tr>
           <th>Evento</th>
-          <td><?php echo $opportunity['Name'] ?></td>
+          <td>
+          @if (isset($data) && isset($data['LeadId']))
+          <?php echo $data['LeadId'] ?>
+          @else
+          @if (isset($opportunity) && isset($opportunity['Name']))
+          <?php echo $opportunity['Name'] ?>
+          @else
+          <?php echo $opportunity['Id'] ?>
+          @endif
+          @endif
+          </td>
         </tr>
         <tr>
           <th>ID Evento</th>
-          <td><?php echo $data['PARM_1'] ?></td>
+          <td>
+          @if (isset($data) && isset($data['PARM_1']))
+          <?php echo $data['PARM_1'] ?>
+          @else
+          @if (isset($opportunity) && isset($opportunity['Name']))
+          <?php echo $opportunity['Name'] ?>
+          @else
+          <?php echo $opportunity['Id'] ?>
+          @endif
+          @endif
+          </td>
         </tr>
+        @if (isset($data) && isset($data['TotalPagado']))
         <tr>
           <th>Valor pagado</th>
-          <td>USD <?php echo $data['TotalPagado'] ?></td>
+          <td>
+          USD <?php echo $data['TotalPagado'] ?>
+          </td>
         </tr>
         <tr>
           <th>Método</th>
           <td><?php echo $data['method'] ?></td>
         </tr>
+        @endif
         <tr>
           <th>Concepto</th>
-          <td>Abono - <?php echo $opportunity['Name'] ?></td>
+          <td>
+          @if (isset($data['LeadId']))
+          <?php echo $data['Concepto'] ?>
+          @else
+          Abono - <?php echo $opportunity['Name'] ?>
+          @endif
+          </td>
         </tr>
         <tr>
           <th>Fecha</th>
           <td><?php echo $data['Fecha'] ?> <?php echo $data['Hora'] ?></td>
         </tr>
+        @if (isset($data) && isset($data['Estado']))
         <tr>
           <th>Estado de la transacción</th>
           <td><?php echo $data['Estado'] ?></td>
         </tr>
+          @endif
       </tbody>
     </table>
 
+@php
+ $url = $_SERVER['REQUEST_URI'];
+    $path = parse_url($url, PHP_URL_PATH);
+    $pathParts = explode('/', $path);
+    $lastPart = end($pathParts);
+    $showButton = substr($lastPart, 0, 3) !== '001';
+@endphp
+
     <p class="text-center">
       <small>Esta transacción estará sujeta a verificación</small><br><br>
+      @if($showButton)
       <a href="/" class="btn btn-primary">Volver al inicio</a>
+      @endif
       <a href="javascript:print()" class="btn btn-primary">Imprimir comprobante</a>
     </p>
   </div>
