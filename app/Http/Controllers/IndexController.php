@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request, App\Models\Venue, App\Models\VenueFile, App\Models\VenueDesign, App\Models\Holidays, App\Models\Rates, Str, Image, Illuminate\Support\Facades\Storage, Illuminate\Support\Facades\DB;
 use Monolog\Handler\NullHandler;
+use Carbon\Carbon;
 
 class IndexController extends Controller
 {
@@ -1417,6 +1418,11 @@ class IndexController extends Controller
                     $debugCalculo = $debugCalculo . "\r\nFranja:" . session()->get('franja') . "\r\n";
                     $idActual = $reserva->id;
                     $fechaActual = $reserva->fecha;
+                    $fechaActualCarbon = Carbon::parse($fechaActual);
+$fechaActualCarbon->addHours(5);
+
+// Si deseas actualizar el campo fecha en el objeto reserva
+$fechaActual = $fechaActualCarbon;
                     $horaInicio = substr($idActual, 7, 2);
                     $sfAssetId = substr($idActual, 9);
 
@@ -1482,36 +1488,43 @@ class IndexController extends Controller
 
                     $debugCalculo = $debugCalculo . " Esta tarifa:" . $tarifaUsar;
                     
-
+                    $recargo = false;
                     if($thisVenue->nightcharge)
                     {
                         if($horaInicio > 16)
                         {
+                            $recargo = true;
                             $debugCalculo = $debugCalculo . " noche";
                             $tarifaUsar = $tarifaUsar + $tarifaUsar * $recargoNoche->percentage / 100;
                         }
-                    } else                     
-                    if($thisVenue->weekendcharge)
+                    }       
+
+                    if($thisVenue->weekendcharge && !$recargo)
                     {
                     $diaSemana = date("w", strtotime($fechaActual));
 
                     if ($diaSemana == 6) {
+                        $recargo = true;
                         $debugCalculo = $debugCalculo . " sabado";
                         $tarifaUsar = $tarifaUsar + $tarifaUsar * $recargoFin->percentage / 100;
                     } else if ($diaSemana == 0) {
+                        $recargo = true;
                         $debugCalculo = $debugCalculo . " domingo";
                         $tarifaUsar = $tarifaUsar + $tarifaUsar * $recargoFin->percentage / 100;
                     }
-                    } else
-                    if($thisVenue->holidaycharge)
+                    } 
+
+                    if($thisVenue->holidaycharge  && !$recargo)
                     {
-                        $libre = Holidays::where('fecha', '=', $fechaActual)->first();
+                        $libre = Holidays::where('fecha', '=', $fechaActualCarbon->format('Y-m-d'))->first();
                         if($libre != null)
                         {
+                            $recargo = true;
                             $debugCalculo = $debugCalculo . " feriado";
                             $tarifaUsar = $tarifaUsar + $tarifaUsar * $recargoFeriado->percentage / 100;
                         }
                     }
+
                     } else { $tarifaUsar = 0; }
                     $debugCalculo .= "Ajustada: " . $tarifaUsar . " calcular: " . $calcular;
                     $costoTotal = $costoTotal + $tarifaUsar;
@@ -1522,7 +1535,7 @@ class IndexController extends Controller
 
 		                
                         $estimacion = $formatted_costoTotal;
-                        //$estimacion = $estimacion . "\r\n" . $debugCalculo . $horaInicio;
+                     //   $estimacion = $estimacion . "\r\n" . $debugCalculo . $horaInicio . "\r\n" . $fechaActualCarbon->format('Y-m-d');
 		                break;
                 }
                 if($esEmpleado)
