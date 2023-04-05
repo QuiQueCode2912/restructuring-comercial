@@ -2263,14 +2263,16 @@ class IndexController extends Controller
         $parentId = $thisVenue->parent_id;
      //    echo json_encode($thisVenue);
         $Fi =$request->date . "T00:00:00Z";
-        $Ff =$request->date . "T23:59:59Z";
+        //$Ff =$request->date . "T04:59:59Z";
+        $FfCarbon = Carbon::parse($request->date . "T23:59:59Z")->addHours(5);
+        $Ff = $FfCarbon->format('Y-m-d\TH:i:s\Z');
         // ORIGINAL
   //      $query = "SELECT StartDateTime,EndDateTime,Fecha_fin_del_evento__c FROM Event
   //      where ((
   //      ((StartDateTime >= {$Fi} AND StartDateTime <= {$Ff}) OR (EndDateTime >= {$Fi} AND EndDateTime <= {$Ff}) OR (StartDateTime <= {$Fi} AND EndDateTime >= {$Ff})))
   //      AND (Venue__c ='{$venueId}')) or ((RecordType.Name='Excluir de reservas' and venue__c ='') AND ((StartDateTime >= {$Fi} AND StartDateTime <= {$Ff}) OR (EndDateTime >= {$Fi} AND EndDateTime <= {$Ff})
   //      OR (StartDateTime <= {$Fi} AND EndDateTime >= {$Ff})))";
-        $query = "SELECT StartDateTime,EndDateTime,Fecha_fin_del_evento__c,Venue__c,Venue__r.Name,Estado__c FROM Event
+        $query = "SELECT StartDateTime,EndDateTime,Fecha_fin_del_evento__c,Venue__c,Venue__r.Name,Estado__c,Subject FROM Event
         where ((
         ((StartDateTime >= {$Fi} AND StartDateTime <= {$Ff}) OR (EndDateTime >= {$Fi} AND EndDateTime <= {$Ff}) OR (StartDateTime <= {$Fi} AND EndDateTime >= {$Ff})))
         AND (Venue__r.ParentId ='{$parentId}')) or ((RecordType.Name='Excluir de reservas' and venue__c ='') AND ((StartDateTime >= {$Fi} AND StartDateTime <= {$Ff}) OR (EndDateTime >= {$Fi} AND EndDateTime <= {$Ff})
