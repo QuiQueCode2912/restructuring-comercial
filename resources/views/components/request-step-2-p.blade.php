@@ -214,11 +214,11 @@ if ($designs) {
                 $('#dayGrp').show();
                 $('#dayLbl').html('desde $' + preciodia + ' <span style="color: #0088ff">*</span>');
                 } else { $('#dayGrp').hide(); }
-                if(preciomes > 0)
-                {
-                $('#monthGrp').show();
-                $('#monthLbl').html('desde $' + preciomes + ' <span style="color: #0088ff">*</span>');
-                } else { $('#monthGrp').hide(); }
+                //if(preciomes > 0)
+                //{
+                //$('#monthGrp').show();
+                //$('#monthLbl').html('desde $' + preciomes + ' <span style="color: #0088ff">*</span>');
+                //} else { $('#monthGrp').hide(); }
                 $('#venue_photo').attr('src',foto);
                 window.location.hash = "tab1";
                 $('#venueinfoModalLong').modal('show');
@@ -335,7 +335,7 @@ if ($designs) {
                                   </div>
                                 </div>
 
-                                <div id="monthGrp" class="characteristics-item">
+                          <!--<div id="monthGrp" class="characteristics-item">
                                   <div class="characteristics-text1">
                                     Precio por mes
                                   </div>
@@ -343,7 +343,7 @@ if ($designs) {
                                     desde $0.00
                                     <span style="color: #0088ff">*</span>
                                   </div>
-                                </div>
+                                </div>-->
                               </div>
                               <br/>
                               <small><span style="color:#0088ff">*</span>
