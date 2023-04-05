@@ -1206,7 +1206,7 @@ class IndexController extends Controller
                     }
 
                     $inputs['country_code'] = 'PA';
-                    $inputs['franja'] = request()->query('franja', 'sin-franja');
+                    $inputs['franja'] = request()->query('franja', session()->get('franja','sin-franja'));
                     
                     if(session()->get('franja') != $inputs['franja'] && $inputs['franja'] != 'sin-franja')
                     {

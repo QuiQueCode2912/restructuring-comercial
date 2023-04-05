@@ -563,6 +563,7 @@
     </div>
 
     <div class="row">
+@if($rootid == '02i3m00000D9DaPAAV')
   <div class="col-12">
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="1" id="accept-policy">
@@ -607,6 +608,7 @@
       </div>
     </div>
   </div>
+@endif
     <div class="row buttons">
       <div class="col-12 text-center">
         <?php 
@@ -703,7 +705,11 @@
 
 
 <a href="/cotizacion/datos-evento" class="btn btn-primary">Anterior</a>
+@if($rootid == '02i3m00000D9DaPAAV')
         <button type="submit" id="confirm-button" class="btn btn-primary disabled submit-form" disabled onclick="if (this.value !== 'Enviando...') { this.disabled=true; this.value='Enviando...'; this.form.submit(); }">Confirmar</button>
+@else
+  <button type="submit" id="confirm-button" class="btn btn-primary submit-form" onclick="if (this.value !== 'Enviando...') { this.disabled=true; this.value='Enviando...'; this.form.submit(); }">Confirmar</button>
+@endif
       </div>
     </div>
   </div>
