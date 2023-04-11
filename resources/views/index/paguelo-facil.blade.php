@@ -39,6 +39,9 @@
 .file-upload::before {
   top: 38px !important;
 }
+.is-invalid {
+    border-color: #dc3545 !important;
+}
 </style>
 
 <div class="request">
@@ -149,7 +152,8 @@
           </div>
         </div>
       </div>
-      <form method="post" enctype="multipart/form-data" action="/confirmacion-pago/<?php echo $token ?>" style="max-width:600px; margin:20px auto 20px">
+
+      <form id="comprobante" method="post" enctype="multipart/form-data" action="/confirmacion-pago/<?php echo $token ?>" style="max-width:600px; margin:20px auto 20px">
         <input type="hidden" name="PARM_1" value="<?php echo $opportunity ?>" />
         <input type="hidden" name="Estado" value="Aprobado" />
         <div class="row">
@@ -173,7 +177,7 @@
           <div class="col-12 form-group file-upload required" style="transform:translateY(-25px)">
             <i class="fe fe-upload"></i>
             <input type="file" class="form-control" id="file" name="file" required>
-            <label for="file">Sube el comprobante de la transacción</label>
+            <label id="fileLabel" for="file">Sube el comprobante de la transacción</label>
           </div>
         </div>
         <div class="row">
@@ -185,15 +189,84 @@
           <div class="col-12">
             <p class="text-center" style="margin-top:30px">
 
-              <button type="submit" class="btn btn-primary submit-form" onclick="if (this.value !== 'Enviando...') { this.disabled=true; this.value='Enviando...'; this.form.submit(); }">Registrar pago</button>
+              <button id="botonSubmit" type="button" class="btn btn-primary" onclick="if (this.value !== 'Enviando...') { this.disabled=true; this.value='Enviando...'; enviarComprobante(); }">Registrar pago</button>
               <br><br>
               <small><a href="/" class="text-secondary">Cancelar</a></small>
             </p>
           </div>
         </div>
+
+<script>
+  function ready() {
+     $('.form-control').on('input', function() {
+if($(this).attr('type') == 'file') {
+      var input = document.getElementById('file');
+      var file = input.files;
+ if(file.length==0){
+        $('#fileLabel').addClass('is-invalid');
+        } else {
+          $('#fileLabel').removeClass('is-invalid');
+        } 
+        } else
+        {
+      if ($(this).val() !== '') {
+        $(this).removeClass('is-invalid');
+      } else {
+        $(this).addClass('is-invalid');
+      }
+}
+
+    });
+  };
+    function enviarComprobante() {
+   
+    if (!isFormValid()) {
+        
+        $('#botonSubmit').prop( "value", "No" );
+        $('#botonSubmit').prop( "disabled", false );
+             return false;
+      } 
+      else 
+      {
+      $('form').submit();
+      }
+      
+    }
+
+ function isFormValid() {
+      let valid = true;
+      $('.form-control').each(function() {
+      if($(this).attr('type') == 'file') {
+      var input = document.getElementById('file');
+      var file = input.files;
+        if(file.length==0){
+            valid = false;
+        $('#fileLabel').addClass('is-invalid');
+          
+        } else {
+          $('#fileLabel').removeClass('is-invalid');
+        } 
+        } else
+        {
+        if ($(this).val() === '' ) {
+          $(this).addClass('is-invalid');
+          valid = false;
+        } else {
+          $(this).removeClass('is-invalid');
+        }
+        }
+      });
+      return valid;
+    }
+
+   window.addEventListener("load", ready);
+</script>
+
       </form>
     </div>
   </div>
 </div>
+
+
 
 @endsection
