@@ -1752,12 +1752,14 @@ class IndexController extends Controller
                 {
                     $p1 = $request->opportunity;
                     $ev_nm = $request->event_name;
+                    $tokenPF = '588BA57F825D6D9F6E230C2F39C94ACE84369A887E899DE043924E0122C38FF6';
                 } else
                 {
                     $p1 = $request->opportunity;
                     $ev_nm = 'Pago de reserva';
+                    $tokenPF = 'AF82C97D3C2D9AE2FFF0340BEFA87A25C3A9E02AF67E619BBFFCF28BA2A2B37E118020C0F65C36640CBF62A7E309BD4EC72FFF53E86EC4D6BC3FF0BDEB3767AF';
                 }
-                $params = ['CCLW' => '588BA57F825D6D9F6E230C2F39C94ACE84369A887E899DE043924E0122C38FF6', 'CMTN' => $request->total, 'CDSC' => $ev_nm, 'RETURN_URL' => bin2hex(url('/confirmacion-pago/' . $request->token)) , 'PARM_1' => $request->opportunity, ];
+                $params = ['CCLW' => $tokenPF, 'CMTN' => $request->total, 'CDSC' => $ev_nm, 'RETURN_URL' => bin2hex(url('/confirmacion-pago/' . $request->token)) , 'PARM_1' => $request->opportunity, ];
 
                 $pay_url = $endpoint . '?' . http_build_query($params);
                 return redirect()->to($pay_url);

@@ -141,8 +141,12 @@
           <br><br>
           Fundación Ciudad del Saber<br>
           <strong>Cuenta Corriente, Banco General</strong><br>
+          @if (substr($token,0,3)!='00Q')
           <big><strong>03-01-01-003310-4</strong></big><br>
-          @if ($opportunity!='')
+          <strong># de referencia:</strong> <?php echo $token ?>
+          <br>
+          @else
+          <big><strong>03-03-01-050580-6</strong></big><br>
           <strong># de referencia:</strong> <?php echo $opportunity ?>
           <br>
           @endif
