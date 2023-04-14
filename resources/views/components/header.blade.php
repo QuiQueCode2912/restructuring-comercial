@@ -83,7 +83,7 @@
       @if (session()->get('is-cds-user') == true || session()->get('is-cds-customer') == true)
       <li><a href="/one-login?logout=1"><i class="fe fe-log-out"></i> Salir</a></li>
       @else
-      <li><a href="https://ciudaddelsaber.org/wp-login.php"><i class="fe fe-lock"></i> Login</a></li>
+      <li><a href="https://ciudaddelsaber.org/portal-de-soluciones"><i class="fe fe-lock"></i> Login</a></li>
       @endif
       <li class="has-childs">
         <a href="https://ciudaddelsaber.org/ser-miembro/">Ser miembro</a>
