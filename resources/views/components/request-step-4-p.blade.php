@@ -7,7 +7,7 @@
     width: 100%;
     margin: 0;
     position: absolute;
-    top: 200px;
+    top: 150px;
   }
 .box {
   height: 220px;
