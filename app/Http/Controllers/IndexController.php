@@ -631,6 +631,9 @@ class IndexController extends Controller
                     case 'parque-cds/gimnasio':
                         $routeName->uri = '02i3m00000DiduUAAR';
                     break;
+                    case 'parque-cds/pesas':
+                        $routeName->uri = '02i3m00000Fx0PJAAZ';
+                        break;
                     case 'parque-cds/piscina':
                         $routeName->uri = '02i3m00000DiduZAAR';
                     break;
@@ -641,7 +644,7 @@ class IndexController extends Controller
 
         $parent = Venue::find($routeName->uri);
         //  CODIGO PARA MOSTRAR SÓLO TENIS - PARA QUE SEA NORMAL COMENTAR DE 640 - 645 Y DESCOMENTAR 647 - 650 - RECUERDA! Cambiar index.blade.php las DISCIPLINAS
-        $includeIds = ['02i3m00000Didu7AAB', '02i3m00000Fx0PEAAZ'];
+        $includeIds = ['02i3m00000Didu7AAB', '02i3m00000Fx0PEAAZ', '02i3m00000Fx0PJAAZ'];
         if (!in_array($parent->id, $includeIds))
         {
             $venues = Venue::where('parent_id', '=', $parent->id)
@@ -701,6 +704,10 @@ class IndexController extends Controller
                     case '02i3m00000DiduUAAR':
                         $name = 'Gimnasio';
                         $url = 'parque-cds/gimnasio';
+                    break;
+                    case '02i3m00000Fx0PJAAZ':
+                        $name = 'Gimnasio';
+                        $url = 'parque-cds/pesas';
                     break;
                     case '02i3m00000DiduZAAR':
                         $name = 'Piscina';
