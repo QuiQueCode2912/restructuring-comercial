@@ -619,6 +619,9 @@ class IndexController extends Controller
                     case 'parque-cds/tenis':
                         $routeName->uri = '02i3m00000Didu7AAB';
                     break;
+                    case 'parque-cds/raquetbol':
+                        $routeName->uri = '02i3m00000Fx0PEAAZ';
+                    break;
                     case 'parque-cds/voleibol':
                         $routeName->uri = '02i3m00000Didu3AAB';
                     break;
@@ -638,11 +641,15 @@ class IndexController extends Controller
 
         $parent = Venue::find($routeName->uri);
         //  CODIGO PARA MOSTRAR SÓLO TENIS - PARA QUE SEA NORMAL COMENTAR DE 640 - 645 Y DESCOMENTAR 647 - 650 - RECUERDA! Cambiar index.blade.php las DISCIPLINAS
-        if($parent->id != '02i3m00000Didu7AAB')
+        $includeIds = ['02i3m00000Didu7AAB', '02i3m00000Fx0PEAAZ'];
+        if (!in_array($parent->id, $includeIds))
         {
-        $venues = Venue::where('parent_id', '=', $parent->id)
+            $venues = Venue::where('parent_id', '=', $parent->id)
             ->where('id', '!=', $parent->id)
-            ->where('id', '=', '02i3m00000Didu7AAB')
+            ->where(function($query) {
+                $query->where('id', '=', '02i3m00000Didu7AAB')
+                      ->orWhere('id', '=', '02i3m00000Fx0PEAAZ');
+            })
             ->where('show_on_website', 'Si')
             ->orderBy('venuesorder', 'asc')
             ->get();
@@ -678,6 +685,10 @@ class IndexController extends Controller
                     case '02i3m00000Didu7AAB':
                         $name = 'Canchas de tenis';
                         $url = 'parque-cds/tenis';
+                    break;
+                    case '02i3m00000Fx0PEAAZ':
+                        $name = 'Canchas de raquetbol';
+                        $url = 'parque-cds/raquetbol';
                     break;
                     case '02i3m00000Didu3AAB':
                         $name = 'Canchas de voleibol';
@@ -1747,7 +1758,7 @@ class IndexController extends Controller
         {
             if ($request->isMethod('post'))
             {
-                $endpoint = env('APP_ENV') == 'production' ? 'https://secure.paguelofacil.com/LinkDeamon.cfm' : 'https://sandbox.paguelofacil.com/LinkDeamon.cfm';
+                $endpoint = env('APP_ENV') != 'production' ? 'https://secure.paguelofacil.com/LinkDeamon.cfm' : 'https://sandbox.paguelofacil.com/LinkDeamon.cfm';
                 if(substr($request->token, 0, 3) != '00Q')
                 {
                     // COMERCIAL
@@ -1759,7 +1770,7 @@ class IndexController extends Controller
                     // PARQUE
                     $p1 = $request->opportunity;
                     $ev_nm = 'Pago de reserva';
-                    $tokenPF = '588BA57F825D6D9F6E230C2F39C94ACE84369A887E899DE043924E0122C38FF6';
+                    $tokenPF = 'AF82C97D3C2D9AE2FFF0340BEFA87A25C3A9E02AF67E619BBFFCF28BA2A2B37E118020C0F65C36640CBF62A7E309BD4EC72FFF53E86EC4D6BC3FF0BDEB3767AF';
                 }
                 $params = ['CCLW' => $tokenPF, 'CMTN' => $request->total, 'CDSC' => $ev_nm, 'RETURN_URL' => bin2hex(url('/confirmacion-pago/' . $request->token)) , 'PARM_1' => $request->opportunity, ];
 
