@@ -651,7 +651,8 @@ class IndexController extends Controller
             ->where('id', '!=', $parent->id)
             ->where(function($query) {
                 $query->where('id', '=', '02i3m00000Didu7AAB')
-                      ->orWhere('id', '=', '02i3m00000Fx0PEAAZ');
+                      ->orWhere('id', '=', '02i3m00000Fx0PEAAZ')
+                      ->orWhere('id', '=', '02i3m00000Fx0PJAAZ');
             })
             ->where('show_on_website', 'Si')
             ->orderBy('venuesorder', 'asc')
@@ -706,7 +707,7 @@ class IndexController extends Controller
                         $url = 'parque-cds/gimnasio';
                     break;
                     case '02i3m00000Fx0PJAAZ':
-                        $name = 'Gimnasio';
+                        $name = 'Pesas';
                         $url = 'parque-cds/pesas';
                     break;
                     case '02i3m00000DiduZAAR':
