@@ -31,6 +31,9 @@ Route::get('/parque-cds/futbol', 'App\Http\Controllers\IndexController@parqueCds
 Route::get('/parque-cds/beisbol', 'App\Http\Controllers\IndexController@parqueCds');
 Route::get('/parque-cds/baloncesto', 'App\Http\Controllers\IndexController@parqueCds');
 Route::get('/parque-cds/tenis', 'App\Http\Controllers\IndexController@parqueCds');
+Route::get('/parque-cds/raquetbol', 'App\Http\Controllers\IndexController@parqueCds');
+Route::get('/parque-cds/boxeo', 'App\Http\Controllers\IndexController@parqueCds');
+Route::get('/parque-cds/pesas', 'App\Http\Controllers\IndexController@parqueCds');
 Route::get('/parque-cds/golf', 'App\Http\Controllers\IndexController@parqueCds');
 Route::get('/parque-cds/gimnasio', 'App\Http\Controllers\IndexController@parqueCds');
 Route::get('/parque-cds/piscina', 'App\Http\Controllers\IndexController@parqueCds');
