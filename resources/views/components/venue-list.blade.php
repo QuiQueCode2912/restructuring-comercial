@@ -27,11 +27,13 @@ if(!isset($venueroute))
       <img src="{{ $image }}" class="venue-image" />
       <div class="v-button-container">
         @if($venueroute == "parque-cds")
-        @if($hourfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=hora" class="btn btn-primary btn-sm">Reservar horas</a> @endif
-        @if($alldayfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=dia" class="btn btn-primary btn-sm">Reservar días</a> @endif
-        <!-- @if($monthlyfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=mes" class="btn btn-primary btn-sm">Reservar mes</a> @endif -->
+          @if($parentid!='02i3m00000Fx0PJAAZ')
+            @if($hourfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=hora" class="btn btn-primary btn-sm">Reservar horas</a> @endif
+            @if($alldayfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=dia" class="btn btn-primary btn-sm">Reservar días</a> @endif
+            <!-- @if($monthlyfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=mes" class="btn btn-primary btn-sm">Reservar mes</a> @endif -->
+          @endif
         @else
-        <a href="/cotizacion/datos-contacto?id={{ $id }}" class="btn btn-primary btn-sm">Cotizar</a>
+          <a href="/cotizacion/datos-contacto?id={{ $id }}" class="btn btn-primary btn-sm">Cotizar</a>
         @endif
       </div>
     </div>

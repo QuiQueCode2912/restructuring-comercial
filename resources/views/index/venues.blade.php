@@ -39,6 +39,7 @@
             image="{{ $venue_image }}" 
             id="{{ $venue->id }}" 
             name="{{ $venue->name }}" 
+            parentid="{{ $venue->parent_id }}" 
             parent="{{ $venue->parent()->first()->name }}" 
             designs="{{ $venue->designs }}" 
             type="{{ $venue->type }}" 
