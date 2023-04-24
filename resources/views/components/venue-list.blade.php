@@ -95,7 +95,11 @@ if(!isset($venueroute))
             </dl>
 
             <dl>
+            @if($parentid!='02i3m00000Fx0PEAAZ')
               <dt>Cuenta con graderías</dt>
+            @else
+              <dt>Sala de observación</dt>
+            @endif
               <dd>
                 <?php
                 if (str_contains($venuefacilities, 'Graderías')) {
