@@ -120,10 +120,12 @@ if(!isset($venueroute))
           <?php
           }
           ?>
+          @if($parentid!='02i3m00000Fx0PJAAZ')
           <dl>
             <dt>Capacidad máxima</dt>
             <dd><?php echo $configuration ? max($configuration) : 0 ?> personas</dd>
           </dl>
+          @endif
           @if($pvax != 'parque-cds'  && $pvax != 'Parque Ciudad del Saber')
           <dl>
             <dt>Precio por medio día</dt>
