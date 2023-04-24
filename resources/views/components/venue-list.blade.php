@@ -32,7 +32,7 @@ if(!isset($venueroute))
             @if($alldayfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=dia" class="btn btn-primary btn-sm">Reservar días</a> @endif
             <!-- @if($monthlyfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=mes" class="btn btn-primary btn-sm">Reservar mes</a> @endif -->
           @else
-            <span style="font-family: roboto; font-weight: unset; text-transform: unset;">Para utilizar el Área de pesas sólo debes venir y pagar la cuota de uso<br><br>Lunes a viernes de 6AM a 9PM<br>Sábados y Dominos de 6AM a 6PM</span>
+            <span style="font-family: roboto; font-weight: 600; text-transform: none;">Para utilizar el Área de pesas sólo debes venir y pagar la cuota de uso<br><br>Lunes a Viernes de 6AM a 9PM<br>Sábados y Dominos de 6AM a 6PM</span>
           @endif
         @else
           <a href="/cotizacion/datos-contacto?id={{ $id }}" class="btn btn-primary btn-sm">Cotizar</a>
