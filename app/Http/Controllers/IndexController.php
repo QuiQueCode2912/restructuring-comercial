@@ -691,7 +691,7 @@ class IndexController extends Controller
                         $url = 'parque-cds/tenis';
                     break;
                     case '02i3m00000Fx0PEAAZ':
-                        $name = 'Canchas de raquetbol';
+                        $name = 'Canchas de ráquetbol';
                         $url = 'parque-cds/raquetbol';
                     break;
                     case '02i3m00000Didu3AAB':
