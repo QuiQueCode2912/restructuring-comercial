@@ -32,7 +32,7 @@ if(!isset($venueroute))
             @if($alldayfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=dia" class="btn btn-primary btn-sm">Reservar días</a> @endif
             <!-- @if($monthlyfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=mes" class="btn btn-primary btn-sm">Reservar mes</a> @endif -->
           @else
-            Para utilizar la Zona Fitness sólo debes venir y pagar la cuota de uso<br><br>Lunes a viernes de 6AM a 9PM<br>Sábados y Dominos de 6AM a 6PM
+            Para utilizar el Área de pesas sólo debes venir y pagar la cuota de uso<br><br>Lunes a viernes de 6AM a 9PM<br>Sábados y Dominos de 6AM a 6PM
           @endif
         @else
           <a href="/cotizacion/datos-contacto?id={{ $id }}" class="btn btn-primary btn-sm">Cotizar</a>
