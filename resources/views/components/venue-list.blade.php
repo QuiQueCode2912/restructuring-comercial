@@ -32,7 +32,7 @@ if(!isset($venueroute))
             @if($alldayfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=dia" class="btn btn-primary btn-sm">Reservar días</a> @endif
             <!-- @if($monthlyfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=mes" class="btn btn-primary btn-sm">Reservar mes</a> @endif -->
           @else
-            Para utilizar la Zona Fitness sólo debes venir y pagar la cuota de uso
+            Para utilizar la Zona Fitness sólo debes venir y pagar la cuota de uso<br><br>Lunes a viernes de 6AM a 9PM<br>Sábados y Dominos de 6AM a 6PM
           @endif
         @else
           <a href="/cotizacion/datos-contacto?id={{ $id }}" class="btn btn-primary btn-sm">Cotizar</a>
@@ -79,7 +79,7 @@ if(!isset($venueroute))
         <div class="characteristics">
 
           <?php
-          if ($parentVenue == 'Parque CDS') {
+          if ($parentVenue == 'Parque Ciudad del Saber') {
           ?>
             <dl>
               <dt>Cuenta con luminarias</dt>
@@ -111,7 +111,7 @@ if(!isset($venueroute))
           ?>
 
           <?php
-          if ($parentVenue != 'Parque CDS') {
+          if ($parentVenue != 'Parque Ciudad del Saber') {
           ?>
             <dl>
               <dt>Configuración</dt>
@@ -124,7 +124,7 @@ if(!isset($venueroute))
             <dt>Capacidad máxima</dt>
             <dd><?php echo $configuration ? max($configuration) : 0 ?> personas</dd>
           </dl>
-          @if($pvax != 'parque-cds'  && $pvax != 'Parque CDS')
+          @if($pvax != 'parque-cds'  && $pvax != 'Parque Ciudad del Saber')
           <dl>
             <dt>Precio por medio día</dt>
             <dd>
@@ -176,7 +176,7 @@ if(!isset($venueroute))
       <p>
         @if($shownotincluded ?? true)
         <small style="color:#0088ff; display:inline-block; margin-bottom:5px">
-         @if($pvax != 'parque-cds'  && $pvax != 'Parque CDS')
+         @if($pvax != 'parque-cds'  && $pvax != 'Parque Ciudad del Saber')
         /* Los precios no incluyen catering, ni personal o equipamiento extra /
         @else
         /* Los precios listados pueden variar de acuerdo a recargos por noche, fin de semana, y feriados /
@@ -187,7 +187,7 @@ if(!isset($venueroute))
       </p>
     </div>
   </div>
-  @if($configuration && $parentVenue != 'Parque CDS')
+  @if($configuration && $parentVenue != 'Parque Ciudad del Saber')
   <div class="row" style="margin-top:20px; margin-bottom:0 !important">
     <div class="col-12">
       <strong>Configuración del Aula / Salón</strong>

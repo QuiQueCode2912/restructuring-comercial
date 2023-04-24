@@ -13,7 +13,7 @@ class IndexController extends Controller
         '02i3m0000092sG3AAI', // Centro de convenciones 1
         '02i3m0000092sJSAAY', // Aulas 105 2
         '02i3m0000092rzDAAQ', // Complejo de hospedaje 3
-        '02i3m00000D9DaPAAV', // Parque CDS 4
+        '02i3m00000D9DaPAAV', // Parque Ciudad del Saber 4
         '02i3m0000092sIyAAI', // E-109 5
         ];
 
@@ -41,7 +41,7 @@ class IndexController extends Controller
                 $venue_subtitle = 'Acogedoras habitaciones en un lugar cerca de todo';
             break;
             case 4:
-                $venue_title = 'Parque CDS';
+                $venue_title = 'Parque Ciudad del Saber';
                 $venue_subtitle = 'Actividades deportivas, natación, esparcimiento';
             break;
         }
@@ -57,7 +57,7 @@ class IndexController extends Controller
             $parents[] = '02i3m0000092s2PAAQ'; // L-173
             $parents[] = '02i3m0000092s88AAA'; // G-214ABC
             $parents[] = '02i3m0000092sP3AAI'; // Parque de los Lagos
-            $parents[] = '02i3m00000D9DaPAAV'; // Parque CDS
+            $parents[] = '02i3m00000D9DaPAAV'; // Parque Ciudad del Saber
             
         }
 
@@ -85,7 +85,7 @@ class IndexController extends Controller
                         $url = '/parque-de-los-lagos';
                     break;
                     case '02i3m00000D9DaPAAV':
-                        $name = 'Parque CDS';
+                        $name = 'Parque Ciudad del Saber';
                         $url = '/parque-cds';
                     break;
                     case '02i3m0000092sJmAAI':
@@ -792,9 +792,9 @@ class IndexController extends Controller
         else {
 	
             return view('venues.venue', [
-              'page_title' => 'Servicios - Parque CDS',
+              'page_title' => 'Servicios - Parque Ciudad del Saber',
               'venue' => 'parque-cds',
-              'venueName' => 'Parque CDS',
+              'venueName' => 'Parque Ciudad del Saber',
               'subtitle' => '',
               'parent' => $parent,
              'venues' => $venues,
@@ -1778,7 +1778,7 @@ class IndexController extends Controller
                     // PARQUE
                     $p1 = $request->opportunity;
                     $ev_nm = 'Pago de reserva';
-                    $tokenPF = 'AF82C97D3C2D9AE2FFF0340BEFA87A25C3A9E02AF67E619BBFFCF28BA2A2B37E118020C0F65C36640CBF62A7E309BD4EC72FFF53E86EC4D6BC3FF0BDEB3767AF';
+                    $tokenPF = '64A597C71811ACE965C8FDA4F27D28ED69A0541DA15F41C62DEB5B459A253212477A9E16864EF2EA1C76BB7414E9685A4F00934CA22BA0F6D28166C1DCA91597';
                 }
                 $params = ['CCLW' => $tokenPF, 'CMTN' => $request->total, 'CDSC' => $ev_nm, 'RETURN_URL' => bin2hex(url('/confirmacion-pago/' . $request->token)) , 'PARM_1' => $request->opportunity, ];
 
@@ -2009,7 +2009,7 @@ class IndexController extends Controller
                 }  else 
                 {
                    $date = new \DateTime(isset($data['date']) ? $data['date'] . ' ' . date('H:i:s') : date('Y-m-d H:i:s'));
-                   $data['LeadId'] = "Reservas Parque CDS";
+                   $data['LeadId'] = "Reservas Parque Ciudad del Saber";
                    $data['Fecha'] = $date->format('Y-m-d');
                    $data['Hora'] = $date->format('H:i:s');
                    $data['Concepto'] = nl2br($lead['records'][0]['Espacios_que_desea_reservar__c']);

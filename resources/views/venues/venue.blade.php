@@ -63,7 +63,7 @@
                 @if($show_shortcuts ?? true && $venueName != 'Ateneo')
                 <div class="col-12 col-md-4">
                   <a href="#description">
-                    @if($venueName != 'Parque CDS')
+                    @if($venueName != 'Parque Ciudad del Saber')
                     Aulas / Salones
                     @else
                     Canchas / Espacios
@@ -86,7 +86,7 @@
               @if($show_not_included ?? true)
               <small>
                 <span style="color:#0088ff">/*
-                @if($venueName != 'Parque CDS')
+                @if($venueName != 'Parque Ciudad del Saber')
                 Los precios no incluyen catering ni impuestos locales
                 @else
                 Los precios listados pueden variar de acuerdo a recargos por noche, fin de semana, y feriados

@@ -13,7 +13,7 @@
           case 'aulas-220' : echo 'Aulas 220'; break;
           case 'complejo-hospedaje' : echo 'Complejo de hospedaje'; break;
           case 'residencias' : echo 'Residencias'; break;
-          case 'parque-cds' : echo 'Parque CDS'; break;
+          case 'parque-cds' : echo 'Parque Ciudad del Saber'; break;
           case 'espacios-fcds' : echo 'Espacios FCdS'; break;
         }
         ?>
@@ -25,7 +25,7 @@
           <li <?php echo $venue == 'centro-convenciones' ? 'class="active"' : '' ?>><a href="/centro-convenciones">Centro de convenciones</a></li>
           <li <?php echo $venue == 'aulas-105' ? 'class="active"' : '' ?>><a href="/aulas-105">Aulas 105</a></li>
           <li <?php echo $venue == 'e-109' ? 'class="active"' : '' ?>><a href="/e-109">Centro de Innovación</a></li>
-          <li <?php echo $venue == 'parque-cds' ? 'class="active"' : '' ?>><a href="/parque-cds">Parque CDS</a></li>
+          <li <?php echo $venue == 'parque-cds' ? 'class="active"' : '' ?>><a href="/parque-cds">Parque Ciudad del Saber</a></li>
           <li><a href="https://live.ipms247.com/booking/book-rooms-complejodehospedaje-es-Spanish" target="_blank">Complejo de hospedaje</a></li>
           <!--<li <?php echo $venue == 'residencias' ? 'class="active"' : '' ?>><a href="/residencias">Residencias</a></li>-->
           <li <?php echo $venue == 'espacios-fcds' ? 'class="active"' : '' ?>><a href="/espacios-fcds">Espacios FCdS</a></li>

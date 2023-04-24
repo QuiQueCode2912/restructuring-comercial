@@ -46,7 +46,7 @@
     <li>Pet friendly</li>
     <li style="padding-bottom:20px; border-bottom:none">Listas para ocupar</li>
     <?php else : ?>
-    <?php if ($venue == 'Parque CDS') : ?>
+    <?php if ($venue == 'Parque Ciudad del Saber') : ?>
     
     <?php else : ?>
     <?php if ($venue != 'Ateneo') : ?>
@@ -67,7 +67,7 @@
     <?php endif ?>
   </ul>
   <br />
-  @if ($venue == 'Parque CDS')
+  @if ($venue == 'Parque Ciudad del Saber')
   <a href="" data-toggle="modal" data-target="#myModal" style="cursor: pointer;"><b>Políticas de reserva y cancelación de espacios de CDS</b></a>
   @endif
   @if($showpolicies ?? true)

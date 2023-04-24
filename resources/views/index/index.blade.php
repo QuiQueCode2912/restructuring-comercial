@@ -81,7 +81,7 @@
           <dl>
             <dt><?php
             $pvax = isset($parentVenue) ? $parentVenue : $venue['name'];
-            if($pvax != 'parque-cds'  && $pvax != 'Parque CDS')
+            if($pvax != 'parque-cds'  && $pvax != 'Parque Ciudad del Saber')
             {
               if(isset($venue['type']) ? $venue['type'] != '' : false )
                 echo $venue['type'];
@@ -100,7 +100,7 @@
         {
             echo 96;
             } else {
-            if($pvax != 'Parque CDS')
+            if($pvax != 'Parque Ciudad del Saber')
 	            echo count($venue['venues']);
             else
               echo "1";
@@ -110,7 +110,7 @@
           </dl>
           <dl>
             <dt>
-            @if($pvax != 'parque-cds'  && $pvax != 'Parque CDS')
+            @if($pvax != 'parque-cds'  && $pvax != 'Parque Ciudad del Saber')
             Precio por día
             @else
             Precio por hora
@@ -122,7 +122,7 @@
               <span class="strike">$<?php echo $ppd ?></span>
               <span class="text-danger">$<?php echo $sppd < $ppd ? $sppd : $ppd ?></span> 
               @else
-              @if(($ppd < $pph && $ppd > 0 ) || ($pvax != 'parque-cds'  && $pvax != 'Parque CDS'))
+              @if(($ppd < $pph && $ppd > 0 ) || ($pvax != 'parque-cds'  && $pvax != 'Parque Ciudad del Saber'))
               $<?php echo $sppd < $ppd ? $sppd : $ppd ?> 
               @else
               $<?php echo $pph ?> 
@@ -138,7 +138,7 @@
           <dl>
             <dt>Eventos con alcohol</dt>
             <dd>
-            @if($pvax != 'parque-cds'  && $pvax != 'Parque CDS')
+            @if($pvax != 'parque-cds'  && $pvax != 'Parque Ciudad del Saber')
             Permitidos
             @else
             No permitidos
@@ -148,7 +148,7 @@
           <dl>
             <dt>Servicio de catering</dt>
             <dd>
-            @if($pvax != 'parque-cds'  && $pvax != 'Parque CDS')
+            @if($pvax != 'parque-cds'  && $pvax != 'Parque Ciudad del Saber')
             Disponible
             @else
             No disponible
@@ -171,7 +171,7 @@
       <div class="col-12">
         <p class="text-center" style="color:#0088ff">
         <small>
-        @if($pvax != 'parque-cds'  && $pvax != 'Parque CDS')
+        @if($pvax != 'parque-cds'  && $pvax != 'Parque Ciudad del Saber')
         /* Los precios no incluyen catering, ni personal o equipamiento extra /
         @else
         /* Los precios listados pueden variar de acuerdo a recargos por noche, fin de semana, y feriados /
