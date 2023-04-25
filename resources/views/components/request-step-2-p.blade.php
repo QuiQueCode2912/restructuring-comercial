@@ -291,7 +291,13 @@ if ($designs) {
 
                                 <div class="characteristics-item">
                                   <div class="characteristics-text1">
-                                    Cuenta con graderías
+
+@if($parentid!='02i3m00000Fx0PEAAZ')
+              Cuenta con graderías
+            @else
+              Sala de observación
+            @endif
+   
                                   </div>
                                   <div id="graderiasLbl" class="characteristics-text2">No</div>
                                 </div>

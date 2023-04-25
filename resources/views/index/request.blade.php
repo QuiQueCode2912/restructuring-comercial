@@ -19,7 +19,7 @@
               break;
               case '2-p' : 
               $designs = json_encode($designs);
-              ?><x-request-step-2-p venue="{{ $venue ? $venue->name : '' }}" designs="{{ $designs }}" grupos="{{ $grupos }}"/><?php 
+              ?><x-request-step-2-p venue="{{ $venue ? $venue->name : '' }}" designs="{{ $designs }}" grupos="{{ $grupos }}" parentid="{{ $venue->parent_id }}"/><?php 
               break;
             case '3' : 
               $designs = json_encode($designs);
