@@ -187,14 +187,14 @@ if ($designs) {
                 var facilidad = "No";
 
                 if (facilidades.indexOf("Luminarias") !== -1) {
-                  facilidad = "Si";
+                  facilidad = "Sí";
                 }
                 $('#luminariasLbl').text(facilidad);
 
                 facilidad = "No";
 
                 if (facilidades.indexOf("Graderías") !== -1) {
-                  facilidad = "Si";
+                  facilidad = "Sí";
                 }
                 $('#graderiasLbl').text(facilidad);
 

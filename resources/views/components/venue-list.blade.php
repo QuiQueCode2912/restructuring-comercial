@@ -32,7 +32,7 @@ if(!isset($venueroute))
             @if($alldayfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=dia" class="btn btn-primary btn-sm">Reservar días</a> @endif
             <!-- @if($monthlyfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=mes" class="btn btn-primary btn-sm">Reservar mes</a> @endif -->
           @else
-            <span style="font-family: roboto; font-weight: 600; text-transform: none;">Para utilizar el Área de pesas sólo debes venir y pagar la cuota de uso<br><br>Lunes a Viernes de 6AM a 9PM<br>Sábados y Dominos de 6AM a 6PM</span>
+            <span style="font-family: roboto; font-weight: 600; text-transform: none;">Para utilizar el área de pesas debes realizar el pago por ventanilla en el gimnasion edificio 183<br><br>Lunes a Viernes de 6AM a 9PM<br>Sábados y Dominos de 6AM a 6PM</span>
           @endif
         @else
           <a href="/cotizacion/datos-contacto?id={{ $id }}" class="btn btn-primary btn-sm">Cotizar</a>
@@ -86,7 +86,7 @@ if(!isset($venueroute))
               <dd>
                 <?php
                 if (str_contains($venuefacilities, 'Luminarias')) {
-                  echo 'Si';
+                  echo 'Sí';
                 } else {
                   echo 'No';
                 }
@@ -103,7 +103,7 @@ if(!isset($venueroute))
               <dd>
                 <?php
                 if (str_contains($venuefacilities, 'Graderías')) {
-                  echo 'Si';
+                  echo 'Sí';
                 } else {
                   echo 'No';
                 }
