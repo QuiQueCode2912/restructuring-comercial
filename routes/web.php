@@ -70,6 +70,8 @@ Route::get('/galeria/{venue}', 'App\Http\Controllers\IndexController@gallery');
 Route::post('/galeria/{venue}', 'App\Http\Controllers\IndexController@gallery');
 Route::get('/galeria/{venue}/eliminar/{token}', 'App\Http\Controllers\IndexController@deleteImage');
 
+Route::post('/sfASWEwweWEQQW/inbound', 'App\Http\Controllers\eventsController@handleInboundMessage');
+
 Route::get('/email/quote', function() {
   return view('email.quote');
 });
