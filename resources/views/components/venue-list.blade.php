@@ -169,6 +169,17 @@ if(!isset($venueroute))
             </dd>
           </dl>
           @endif
+ @if($parentid=='02i3m00000Fx0PJAAZ')
+          <dl>
+            <dt>Precio por mes</dt>
+            <dd>
+              desde
+              
+                $<?php echo $monthlyfee ?>
+                <span style="color:#0088ff">/*</span>
+            </dd>
+          </dl>
+@endif
           <dl>
             <dt>Tipo de uso</dt>
             <dd>
