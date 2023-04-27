@@ -496,6 +496,9 @@ height: 1.3em;
             <?php
                if($grupo->nightcharge == 1)
                { $hayNocturnos = 1; }
+               $facilidadesVenue = $grupo->venue_facilities;
+               if (strpos($facilidadesVenue, 'Luminarias') !== false) 
+               { $hayNocturnos = 1; }
             ?>
             <?php endforeach ?>
             <?php endif ?>   
@@ -555,8 +558,16 @@ height: 1.3em;
       <th id="lblHora{{$horaActual24STR}}" style="font-family: 'Roboto', sans-serif;" class="headcol">{{$horaActualSTR}}:00 {{$THoraInicial}}</th>
       <?php if ($grupos) : ?>
       <?php foreach ($grupos as $grupo) : ?>
+      <?php 
+         $facilidadesVenue = $grupo->venue_facilities;
+         $luminarias = 0;
+        // echo 'XYZ: ' . $facilidadesVenue;
+         if (strpos($facilidadesVenue, 'Luminarias') !== false) {
+            $luminarias = 1;
+         }
+      ?>
       <td class="long">
-      <?php if($horaActual <= 17 || ($grupo->nightcharge == 1 && $horaActual > 17)) : ?>
+      <?php if($horaActual <= 17 || ($luminarias == 1 && $horaActual > 17)) : ?>
       <div class="spBtn" data-venuename="{{ $grupo->name }}" id="chkhora{{$horaActual24STR}}{{ $grupo->id }}" name="chkhora{{$horaActual24STR}}{{ $grupo->id }}" onclick="chkCambio(event)">
 		
          
