@@ -23,7 +23,7 @@
               break;
             case '3' : 
               $designs = json_encode($designs);
-              ?><x-request-step-3 rootid="{{ $rootid ? $rootid : '' }}"  estimacion="{{ $estimacion ? $estimacion : '' }}" venue="{{ $venue ? $venue->name : '' }}" designs="{{ $designs }}" /><?php 
+              ?><x-request-step-3 rootid="{{ $rootid ? $rootid : '' }}"  estimacion="{{ $estimacion ? $estimacion : '' }}" venue="{{ $venue ? $venue->name : '' }}" designs="{{ $designs }}" parentid="{{ $parentid }}"/><?php 
               break;
             case '4' : ?><x-request-step-4 /><?php break;
             case '4-p' : ?><x-request-step-4-p /><?php break;

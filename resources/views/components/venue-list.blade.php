@@ -32,7 +32,8 @@ if(!isset($venueroute))
             @if($alldayfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=dia" class="btn btn-primary btn-sm">Reservar días</a> @endif
             <!-- @if($monthlyfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=mes" class="btn btn-primary btn-sm">Reservar mes</a> @endif -->
           @else
-            <span style="font-family: roboto; font-weight: 600; text-transform: none;">Para utilizar el área de pesas debes realizar el pago por ventanilla en el gimnasion edificio 183<br><br>Lunes a Viernes de 6:00AM a 9:00PM<br>Sábados y Domingos de 6:00AM a 6:00PM</span>
+            <span style="font-family: roboto; font-weight: 600; text-transform: none;">Para utilizar el Área de Pesas debes realizar el pago por ventanilla en el Gimnasio, Edificio 183.<br>
+            <br>Lunes a Viernes de 6:00 am a 9:00 pm.<br>Sábados y Domingos de 6:00 am a 6:00 pm.</span>
           @endif
         @else
           <a href="/cotizacion/datos-contacto?id={{ $id }}" class="btn btn-primary btn-sm">Cotizar</a>

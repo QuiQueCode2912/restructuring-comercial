@@ -25,8 +25,15 @@
     <li>El marcado del cuadro o la cancha será por cuenta de El Cliente.</li>
      <li>Las cancelaciones realizadas <strong>12 horas antes</strong> de la fecha reservada recibirán un reembolso del <strong>100%</strong>.</li>
     <li>Las cancelaciones realizadas <strong>dentro de las 12 horas</strong> antes de la fecha reservada recibirán un reembolso del <strong>50%</strong>.</li>
-    <li>Por favor, tenga en cuenta que los reembolsos sólo se tramitarán por ACH.</li>
+    <li><strong>Por favor, tenga en cuenta que los reembolsos sólo se tramitarán por ACH</strong>.</li>
   </ul>
+@if($parentid == '02i3m00000Fx0PEAAZ')
+  <p>Reglas adicionales en canchas de ráquetbol:</p>
+  <ul>
+    <li>El cliente debe traer su raqueta y pelotas para jugar.</li>
+    <li>Es obligatorio el uso de lentes de protección para ingresar a las canchas.</li>
+  </ul>
+  @endif
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

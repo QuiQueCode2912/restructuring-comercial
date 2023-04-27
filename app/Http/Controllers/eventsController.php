@@ -45,7 +45,7 @@ class eventsController extends Controller
             $ownerId = (string)$sObject['sf:OwnerId'];
         }
         // Crea una nueva instancia del modelo Event y asigna los valores de los campos
-        $event = new Event();
+        $event = Event::firstOrNew(['sfId' => $id]);
         $event->subject = $asunto;
         $event->owner = $ownerId;
         $event->startdate = $startDateTime;

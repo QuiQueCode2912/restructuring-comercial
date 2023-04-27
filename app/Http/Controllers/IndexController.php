@@ -801,7 +801,9 @@ class IndexController extends Controller
              'images' => $images,
              'facilities' => $facilities,
              'max_pax' => $max_pax,
-             'show_menu' => false
+             'show_menu' => false,
+             'venueid' => $venue->id,
+             'parentid' => $venue->parent_id
            ]);
         
         }
@@ -1642,7 +1644,7 @@ class IndexController extends Controller
         }
         if(!isset($estimacion))
             $estimacion = "";
-        return view('index.request', ['page_title' => 'Servicios - Cotización - ' . $stepName, 'step' => $step, 'venue' => $venue, 'designs' => $designs, 'file_upload' => $file_upload, 'form_url' => $form_url, 'grupos' => $venuesgrupo, 'rootid' => $rootid->id, 'estimacion' => $estimacion]);
+        return view('index.request', ['page_title' => 'Servicios - Cotización - ' . $stepName, 'parentid' => $venue->parent_id,'step' => $step, 'venue' => $venue, 'designs' => $designs, 'file_upload' => $file_upload, 'form_url' => $form_url, 'grupos' => $venuesgrupo, 'rootid' => $rootid->id, 'estimacion' => $estimacion]);
     }
 
     public function acceptQuote(Request $request)
