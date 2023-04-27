@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Models\Event;
+use Illuminate\Http\Response;
 
 class eventsController extends Controller
 {
@@ -60,7 +61,18 @@ class eventsController extends Controller
         // Registra un mensaje en el log para fines de depuración
        // Log::info("Evento procesado: {$id}");
 
-        // Retorna una respuesta para confirmar la recepción del mensaje
-        return response('OK', 200);
+            // Crear la respuesta XML
+    $responseContent = '<?xml version="1.0" encoding="UTF-8"?>';
+    $responseContent .= '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">';
+    $responseContent .= '<soapenv:Body>';
+    $responseContent .= '<notificationsResponse xmlns="http://soap.sforce.com/2005/09/outbound">';
+    $responseContent .= '<Ack>true</Ack>';
+    $responseContent .= '</notificationsResponse>';
+    $responseContent .= '</soapenv:Body>';
+    $responseContent .= '</soapenv:Envelope>';
+
+    // Enviar la respuesta XML
+    return response($responseContent, Response::HTTP_OK)
+            ->header('Content-Type', 'text/xml');
     }
 }
