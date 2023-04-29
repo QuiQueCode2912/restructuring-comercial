@@ -62,7 +62,7 @@ class eventsController extends Controller
        // Log::info("Evento procesado: {$id}");
 
             // Crear la respuesta XML
-    $responseContent .= '<soapenv:Envelope>';
+    $responseContent = '<soapenv:Envelope>';
     $responseContent .= '<soapenv:Body>';
     $responseContent .= '<notificationsResponse>';
     $responseContent .= '<Ack>true</Ack>';
