@@ -43,7 +43,7 @@ class eventsController extends Controller
             $venueId = (string)$sObject['sf:Venue__c'];
             $startDateTime = (string)$sObject['sf:StartDateTime'];
             $endDateTime = (string)$sObject['sf:EndDateTime'];
-            $ownerId = (string)$sObject['sf:OwnerId'];
+            $ownerId = (string)$sObject['sf:CreatedById'];
         }
         // Crea una nueva instancia del modelo Event y asigna los valores de los campos
         $event = Event::firstOrNew(['sfId' => $id]);
