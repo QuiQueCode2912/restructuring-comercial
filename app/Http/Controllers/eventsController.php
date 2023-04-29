@@ -62,13 +62,20 @@ class eventsController extends Controller
        // Log::info("Evento procesado: {$id}");
 
             // Crear la respuesta XML
-    $responseContent = '<soapenv:Envelope>';
-    $responseContent .= '<soapenv:Body>';
-    $responseContent .= '<notificationsResponse>';
+       //     $responseContent = '<element name="notificationsResponse">';
+       //     $responseContent .= '<complexType>';
+       //     $responseContent .= '<sequence>';
+       //     $responseContent .= '<element name="Ack" type="xsd:boolean" />';
+       //     $responseContent .= '</sequence>';
+       //     $responseContent .= '</complexType>';
+       //     $responseContent .= '</element>';
+    $responseContent = '<soap:Envelope xmlns:soap=”http://schemas.xmlsoap.org/soap/envelope/”>';
+    $responseContent .= '<soap:Body>';
+    $responseContent .= '<notificationsResponse xmlns:ns2=”urn:sobject.enterprise.soap.sforce.com” xmlns=”http://soap.sforce.com/2005/09/outbound”>';
     $responseContent .= '<Ack>true</Ack>';
     $responseContent .= '</notificationsResponse>';
-    $responseContent .= '</soapenv:Body>';
-    $responseContent .= '</soapenv:Envelope>';
+    $responseContent .= '</soap:Body>';
+    $responseContent .= '</soap:Envelope>';
 
     // Enviar la respuesta XML
     return response($responseContent, Response::HTTP_OK)
