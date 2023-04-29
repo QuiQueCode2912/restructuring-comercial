@@ -9,7 +9,7 @@
           </button>
         </div>
         <div class="modal-body">
-  <p><strong>Por favor, tenga en cuenta las siguientes normas y políticas durante su visita al Parque Ciudad del Saber:<strong></p>
+  <p><strong>Por favor, tenga en cuenta las siguientes normas y políticas durante su visita al Parque Ciudad del Saber:</strong></p>
   <ul>
     <li>No se permite el consumo y venta de bebidas alcohólicas.</li>
     <li>No se permite la venta de comida y bebidas (sodas, aguas, bebidas energizantes, etc.).</li>
