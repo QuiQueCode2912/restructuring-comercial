@@ -9,7 +9,7 @@
           </button>
         </div>
         <div class="modal-body">
-            <p>Por favor, tenga en cuenta las siguientes normas y políticas durante su visita al Parque:</p>
+  <p><strong>Por favor, tenga en cuenta las siguientes normas y políticas durante su visita al Parque Ciudad del Saber:<strong></p>
   <ul>
     <li>No se permite el consumo y venta de bebidas alcohólicas.</li>
     <li>No se permite la venta de comida y bebidas (sodas, aguas, bebidas energizantes, etc.).</li>
@@ -28,7 +28,7 @@
     <li><strong>Por favor, tenga en cuenta que los reembolsos sólo se tramitarán por ACH</strong>.</li>
   </ul>
 @if($parentid == '02i3m00000Fx0PEAAZ')
-  <p>Reglas adicionales en canchas de ráquetbol:</p>
+  <p><strong>Reglas adicionales en canchas de Ráquetbol:</strong></p>
   <ul>
     <li>El cliente debe traer su raqueta y pelotas para jugar.</li>
     <li>Es obligatorio el uso de lentes de protección para ingresar a las canchas.</li>
