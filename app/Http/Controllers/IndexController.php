@@ -640,11 +640,14 @@ class IndexController extends Controller
                     case 'parque-cds/bohios':
                         $routeName->uri = '02i3m00000DiduVAAR';
                     break;
+                    case 'parque-cds/boxeo':
+                        $routeName->uri = '02i3m00000FbwwjAAB';
+                    break;
                 }
 
         $parent = Venue::find($routeName->uri);
         //  CODIGO PARA MOSTRAR SÓLO TENIS - PARA QUE SEA NORMAL COMENTAR DE 640 - 645 Y DESCOMENTAR 647 - 650 - RECUERDA! Cambiar index.blade.php las DISCIPLINAS
-        $includeIds = ['02i3m00000Didu7AAB', '02i3m00000Fx0PEAAZ', '02i3m00000Fx0PJAAZ'];
+        $includeIds = ['02i3m00000Didu7AAB', '02i3m00000Fx0PEAAZ', '02i3m00000Fx0PJAAZ','02i3m00000DidtxAAB','02i3m00000Didu3AAB','02i3m00000FbwwjAAB'];
         if (!in_array($parent->id, $includeIds))
         {
             $venues = Venue::where('parent_id', '=', $parent->id)
@@ -652,7 +655,10 @@ class IndexController extends Controller
             ->where(function($query) {
                 $query->where('id', '=', '02i3m00000Didu7AAB')
                       ->orWhere('id', '=', '02i3m00000Fx0PEAAZ')
-                      ->orWhere('id', '=', '02i3m00000Fx0PJAAZ');
+                      ->orWhere('id', '=', '02i3m00000Fx0PJAAZ')
+                      ->orWhere('id', '=', '02i3m00000DidtxAAB')
+                      ->orWhere('id', '=', '02i3m00000Didu3AAB')
+                      ->orWhere('id', '=', '02i3m00000FbwwjAAB');
             })
             ->where('show_on_website', 'Si')
             ->orderBy('venuesorder', 'asc')
@@ -717,6 +723,10 @@ class IndexController extends Controller
                     case '02i3m00000DiduVAAR':
                         $name = 'Bohios';
                         $url = 'parque-cds/bohios';
+                    break;
+                    case '02i3m00000FbwwjAAB':
+                        $name = 'Boxeo';
+                        $url = 'parque-cds/boxeo';
                     break;
                 }
 
