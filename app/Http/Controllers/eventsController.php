@@ -92,7 +92,8 @@ $ack = $xml->createElement('out:Ack', 'true');
 $notificationsResponse->appendChild($ack);
 
 // Configurar la respuesta
-$responseContent = $xml->saveXML();
+//$responseContent = $xml->saveXML();
+$responseContent = $xml->saveXML($xml->documentElement);
 $response = response($responseContent, Response::HTTP_OK)
     ->header('Content-Type', 'text/xml');
 
