@@ -85,10 +85,10 @@ $envelope->appendChild($header);
 $body = $xml->createElement('soapenv:Body');
 $envelope->appendChild($body);
 
-$notificationsResponse = $xml->createElementNS('http://soap.sforce.com/2005/09/outbound', 'out:notificationsResponse');
+$notificationsResponse = $xml->createElementNS('http://soap.sforce.com/2005/09/outbound', 'notificationsResponse');
 $body->appendChild($notificationsResponse);
 
-$ack = $xml->createElement('out:Ack', 'true');
+$ack = $xml->createElement('Ack', 'true');
 $notificationsResponse->appendChild($ack);
 
 // Configurar la respuesta
