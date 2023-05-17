@@ -1399,7 +1399,6 @@ class IndexController extends Controller
                 switch ($venuep->parent_id) {
 	                case '02i3m00000D9DaPAAV':
                     $selVenues = session('ReservasSeleccionadas');
-                    
                     $reservas = json_decode(session('ReservasSeleccionadas'));
 
                     $recargoNoche = Rates::where('name', '=', 'Recargo - Noche')->first();
@@ -1509,13 +1508,21 @@ class IndexController extends Controller
                     if($calcular)
                     {
                     if($thisVenue->employeediscount)
+                    {
                         $tarifaUsar = $tarifaUsar * (1.0 + ($descuentoColaboradores/100));
+                    }
                     if($thisVenue->residentdiscount)
+                    {
                         $tarifaUsar = $tarifaUsar * (1.0 + ($descuentoResidente/100));
+                    }
                     if($thisVenue->retireddiscount)
+                    {
                         $tarifaUsar = $tarifaUsar * (1.0 + ($descuentoJubilados/100));
+                    }
                     if($thisVenue->kidsdiscount)
+                    {
                         $tarifaUsar = $tarifaUsar * (1.0 + ($descuentoNinos/100));
+                    }
 
                     $debugCalculo = $debugCalculo . " Esta tarifa:" . $tarifaUsar;
                     
@@ -1525,6 +1532,7 @@ class IndexController extends Controller
                         if($horaInicio > 16)
                         {
                             $recargo = true;
+                            $reserva->recargo = "Noche";
                             $debugCalculo = $debugCalculo . " noche";
                             $tarifaUsar = $tarifaUsar + $tarifaUsar * $recargoNoche->percentage / 100;
                         }
@@ -1536,10 +1544,12 @@ class IndexController extends Controller
 
                     if ($diaSemana == 6) {
                         $recargo = true;
+                        $reserva->recargo = "Sábado";
                         $debugCalculo = $debugCalculo . " sabado";
                         $tarifaUsar = $tarifaUsar + $tarifaUsar * $recargoFin->percentage / 100;
                     } else if ($diaSemana == 0) {
                         $recargo = true;
+                        $reserva->recargo = "Domingo";
                         $debugCalculo = $debugCalculo . " domingo";
                         $tarifaUsar = $tarifaUsar + $tarifaUsar * $recargoFin->percentage / 100;
                     }
@@ -1551,6 +1561,7 @@ class IndexController extends Controller
                         if($libre != null)
                         {
                             $recargo = true;
+                            $reserva->recargo = "Feriado";
                             $debugCalculo = $debugCalculo . " feriado";
                             $tarifaUsar = $tarifaUsar + $tarifaUsar * $recargoFeriado->percentage / 100;
                         }
@@ -1558,17 +1569,20 @@ class IndexController extends Controller
 
                     } else { $tarifaUsar = 0; }
                     $debugCalculo .= "Ajustada: " . $tarifaUsar . " calcular: " . $calcular;
+
+                    $reserva->subtotal = $tarifaUsar;
                     $costoTotal = $costoTotal + $tarifaUsar;
 
-                    }
+                    } // este es el end del foreach
 
                     $formatted_costoTotal = number_format($costoTotal, 2, '.', ',') ;
 
-		                
+                        
                         $estimacion = $formatted_costoTotal;
                      //   $estimacion = $estimacion . "\r\n" . $debugCalculo . $horaInicio . "\r\n" . $fechaActualCarbon->format('Y-m-d');
 		                break;
                 }
+                session(['ReservasSeleccionadas' => json_encode($reservas)]);
                 if($esEmpleado)
                     session()->put('00N3m00000QeHcG', 'Colaborador');
                 elseif($esCliente)

@@ -390,6 +390,11 @@
       <div class="col-12 col-md-12">
         <div class="form-group-preview mt-4">
           <small>Espacios que deseas reservar</small>
+          <div id="tabContainer" style="overflow-x: auto !important">
+          <table width="100%" style="min-width:500px">
+          <tr>
+          <td><b>Venue</b></td><td><b>Fecha / Hora</b></td><td><b>Recargos</b></td><td style='text-align:right'><b>Subtotal</b></td>
+          </tr>
           <script>
   var reservas = JSON.parse('<?php echo session()->get('ReservasSeleccionadas'); ?>');
   
@@ -399,12 +404,14 @@
     reservas.forEach(function(reserva, index) {
       var horaInicio = reserva.id.substring(7, 9);
       var horaInicioFormateada = formatHora(horaInicio);
+      var recargo = reserva.recargo ?? '-';
       var horaFinFormateada = formatHora(parseInt(horaInicio) + 1);
-      result += reserva.venue + " " + reserva.fecha + " " + horaInicioFormateada + " - " + horaFinFormateada;
+      var tarifaLinea = formatNumber(reserva.subtotal);
+      result += "<tr><td>" + reserva.venue + "</td><td>" + reserva.fecha + " " + horaInicioFormateada + " - " + horaFinFormateada + "</td><td>" + recargo + "</td><td style='text-align:right'>" + tarifaLinea + "</td></tr>";
 
-      if (index !== reservas.length - 1) {
-        result += "<br/>";
-      }
+     // if (index !== reservas.length - 1) {
+    //    result += "<br/>";
+    //  }
     });
 
     return result;
@@ -423,6 +430,14 @@
 
     return hora + ":00 " + periodo;
   }
+
+  var formatNumber = function(num) {
+    return num.toLocaleString('en-US', {
+        minimumFractionDigits: 2, 
+        maximumFractionDigits: 2 
+    });
+  }
+
   var ftRes = formatReservas(reservas);
   document.write(ftRes);
 
@@ -432,12 +447,52 @@
   inputF.value = ftRes.replaceAll('<br/>', '\n');
   });
 
+function smoothScroll(element, target, duration) {
+  var start = element.scrollLeft,
+      change = target - start,
+      startTime = performance.now(),
+      val, now, elapsed, t;
+
+  function animateScroll(){
+    now = performance.now();
+    elapsed = (now - startTime) / 1000;
+    t = (elapsed/duration);
+
+    element.scrollLeft = start + change * easeInOutQuad(t);
+
+    if(t < 1)
+      window.requestAnimationFrame(animateScroll);
+  };
+
+  // Esta es una función de easing que puede ser modificada para cambiar la
+  // velocidad de la animación en diferentes puntos.
+  function easeInOutQuad(t) { 
+    return t < .5 ? 2*t*t : -1+(4-2*t)*t;
+  };
+
+  animateScroll();
+}
+
+var el = document.getElementById('tabContainer');
+
+// Desplazarse a la derecha
+smoothScroll(el, el.scrollWidth, 1);
+
+setTimeout(function() {
+  // Desplazarse a la izquierda después de un retardo
+  smoothScroll(el, 0, 1);
+}, 600);
+
+
 </script>
+<tr><td></td></tr>
+</table>
+</div>
 <br />Reserva para: <?php echo session()->get('00N3m00000QeGyG') ?>
 
 
 
-          <br /><br /><br />
+          <br />
           <a href="/cotizacion/datos-evento#ReservasSeleccionadas">Editar</a>
       </div>
     </div>
@@ -686,7 +741,6 @@
         <?php
     }
     ?>  
-
         <?php if (config('app.env') == 'local') : ?>
         <!--<input type="hidden" name="debug" value="1">
         <input type="hidden" name="debugEmail" value="dnavas00@hotmail.com">-->

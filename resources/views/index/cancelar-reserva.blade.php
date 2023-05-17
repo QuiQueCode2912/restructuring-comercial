@@ -76,7 +76,7 @@
     <li>Las cancelaciones realizadas <strong>12 horas antes</strong> de la fecha reservada recibirán un reembolso del <strong>100%</strong>.</li>
     <li>Las cancelaciones realizadas <strong>dentro de las 12 horas</strong> antes de la fecha reservada recibirán un reembolso del <strong>50%</strong>.</li>
   </ul>
-  <p>Por favor, tenga en cuenta que las devoluciones se deben pasar a retirar por ventanilla.</p>
+  <p><strong>Por favor, tenga en cuenta que los reembolsos sólo se tramitarán por ACH</strong>.</p>
   <p>Al hacer clic en el siguiente botón, se entenderá que ACEPTA COMPLETAMENTE las políticas de cancelación arriba descritas</p>
 
           <div class="col-12 text-center">
