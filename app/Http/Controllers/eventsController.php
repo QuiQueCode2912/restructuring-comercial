@@ -75,26 +75,17 @@ class eventsController extends Controller
      //       ->header('Content-Type', 'text/xml');
 
      // Crear el XML
-$xml = new \DOMDocument('1.0', 'UTF-8');
-$envelope = $xml->createElementNS('http://schemas.xmlsoap.org/soap/envelope/', 'soapenv:Envelope');
-$xml->appendChild($envelope);
 
-$body = $xml->createElement('soapenv:Body');
-$envelope->appendChild($body);
-
-$notificationsResponse = $xml->createElementNS('http://soap.sforce.com/2005/09/outbound', 'notificationsResponse');
-$body->appendChild($notificationsResponse);
-
-$ack = $xml->createElement('Ack', 'true');
-$notificationsResponse->appendChild($ack);
-
-// Configurar la respuesta
-$responseContent = $xml->saveXML();
-//$responseContent = $xml->saveXML($xml->documentElement);
-$response = response($responseContent, Response::HTTP_OK)
-    ->header('Content-Type', 'text/xml');
-
-// Enviar la respuesta
-return $response;
+     header("Content-Type: text/xml\r\n");
+     ob_start();
+     ob_end_clean();
+     print '<?xml version="1.0" encoding="UTF-8"?>
+     <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <soapenv:Body>
+              <notifications xmlns="http://soap.sforce.com/2005/09/outbound">
+              <Ack>true</Ack>
+              </notifications>
+              </soapenv:Body>
+              </soapenv:Envelope>';
     }
 }
