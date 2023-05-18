@@ -79,9 +79,6 @@ $xml = new \DOMDocument('1.0', 'UTF-8');
 $envelope = $xml->createElementNS('http://schemas.xmlsoap.org/soap/envelope/', 'soapenv:Envelope');
 $xml->appendChild($envelope);
 
-$header = $xml->createElement('soapenv:Header');
-$envelope->appendChild($header);
-
 $body = $xml->createElement('soapenv:Body');
 $envelope->appendChild($body);
 
