@@ -77,4 +77,11 @@ class eventsController extends Controller
     return response($responseContent, Response::HTTP_OK)
             ->header('Content-Type', 'text/xml');
     }
+
+    public function getEvents(Request $request)
+    {
+
+        $events = Event::all();
+        echo json_encode($events);
+    }
 }

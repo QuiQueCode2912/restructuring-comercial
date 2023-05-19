@@ -72,6 +72,8 @@ Route::get('/galeria/{venue}/eliminar/{token}', 'App\Http\Controllers\IndexContr
 
 Route::post('/sfASWEwweWEQQW/inbound', 'App\Http\Controllers\eventsController@handleInboundMessage');
 
+Route::get('/sfASWEwweWEQQW/getEvents', 'App\Http\Controllers\eventsController@getEvents');
+
 Route::get('/email/quote', function() {
   return view('email.quote');
 });
