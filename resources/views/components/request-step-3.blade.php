@@ -445,13 +445,14 @@
   document.addEventListener("DOMContentLoaded", function(event) {
   var inputF = document.getElementById("00N3m00000QeGT3");
   var ftResTXT = ftRes.replaceAll('<br/>', '\n');
-  ftResTXT = ftRes.replaceAll('<tr><td>', '');
-  ftResTXT = ftRes.replaceAll('</td><td>', ' ');
-  ftResTXT = ftRes.replaceAll('Noche', 'Recargo noche');
-  ftResTXT = ftRes.replaceAll('Sábado', 'Recargo sábado');
-  ftResTXT = ftRes.replaceAll('Domingo', 'Recargo domingo');
-  ftResTXT = ftRes.replaceAll('Feriado', 'Recargo feriado');
-  ftResTXT = ftRes.replaceAll('</td></tr>', '\n');
+  ftResTXT = ftResTXT.replaceAll('<tr><td>', '');
+  ftResTXT = ftResTXT.replaceAll('</td><td>', ' ');
+  ftResTXT = ftResTXT.replaceAll('</td><td style=\'text-align:right\'>',' ');
+  ftResTXT = ftResTXT.replaceAll('Noche', 'Recargo noche');
+  ftResTXT = ftResTXT.replaceAll('Sábado', 'Recargo sábado');
+  ftResTXT = ftResTXT.replaceAll('Domingo', 'Recargo domingo');
+  ftResTXT = ftResTXT.replaceAll('Feriado', 'Recargo feriado');
+  ftResTXT = ftResTXT.replaceAll('</td></tr>', '\n');
   inputF.value = ftResTXT;
   });
 
