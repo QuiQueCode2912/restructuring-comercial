@@ -1568,7 +1568,7 @@ class IndexController extends Controller
                     }
 
                     } else { $tarifaUsar = 0; }
-                    $debugCalculo .= "Ajustada: " . $tarifaUsar . " calcular: " . $calcular;
+                    //$debugCalculo .= "Ajustada: " . $tarifaUsar . " calcular: " . $calcular;
 
                     $reserva->subtotal = $tarifaUsar;
                     $costoTotal = $costoTotal + $tarifaUsar;

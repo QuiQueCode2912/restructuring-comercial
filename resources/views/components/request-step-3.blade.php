@@ -404,7 +404,7 @@
     reservas.forEach(function(reserva, index) {
       var horaInicio = reserva.id.substring(7, 9);
       var horaInicioFormateada = formatHora(horaInicio);
-      var recargo = reserva.recargo ?? '-';
+      var recargo = reserva.recargo ?? ' ';
       var horaFinFormateada = formatHora(parseInt(horaInicio) + 1);
       var tarifaLinea = formatNumber(reserva.subtotal);
       result += "<tr><td>" + reserva.venue + "</td><td>" + reserva.fecha + " " + horaInicioFormateada + " - " + horaFinFormateada + "</td><td>" + recargo + "</td><td style='text-align:right'>" + tarifaLinea + "</td></tr>";
@@ -444,7 +444,15 @@
   
   document.addEventListener("DOMContentLoaded", function(event) {
   var inputF = document.getElementById("00N3m00000QeGT3");
-  inputF.value = ftRes.replaceAll('<br/>', '\n');
+  var ftResTXT = ftRes.replaceAll('<br/>', '\n');
+  ftResTXT = ftRes.replaceAll('<tr><td>', '');
+  ftResTXT = ftRes.replaceAll('</td><td>', ' ');
+  ftResTXT = ftRes.replaceAll('Noche', 'Recargo noche');
+  ftResTXT = ftRes.replaceAll('Sábado', 'Recargo sábado');
+  ftResTXT = ftRes.replaceAll('Domingo', 'Recargo domingo');
+  ftResTXT = ftRes.replaceAll('Feriado', 'Recargo feriado');
+  ftResTXT = ftRes.replaceAll('</td></tr>', '\n');
+  inputF.value = ftResTXT;
   });
 
 function smoothScroll(element, target, duration) {
