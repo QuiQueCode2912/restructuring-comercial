@@ -65,7 +65,7 @@ class eventsController extends Controller
     $responseContent = '<?xml version="1.0" encoding="UTF-8"?>';
     $responseContent .= '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">';
     $responseContent .= '<soapenv:Body>';
-    $responseContent .= '<notificationsResponse xmlns=”http://soap.sforce.com/2005/09/outbound”>';
+    $responseContent .= '<notificationsResponse xmlns="http://soap.sforce.com/2005/09/outbound">';
     $responseContent .= '<Ack>true</Ack>';
     $responseContent .= '</notificationsResponse>';
     $responseContent .= '</soapenv:Body>';
