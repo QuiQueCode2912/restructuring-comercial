@@ -87,6 +87,6 @@ class eventsController extends Controller
                   ->orWhereDate('enddate', $today);
         })->get();
     
-        return response()->json($queryLog);
+        return response()->json($events);
     }
 }
