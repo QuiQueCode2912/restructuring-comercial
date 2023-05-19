@@ -62,30 +62,19 @@ class eventsController extends Controller
        // Log::info("Evento procesado: {$id}");
 
             // Crear la respuesta XML
-    //$responseContent = '<soap:Envelope xmlns:soap=”http://schemas.xmlsoap.org/soap/envelope/”>';
-    //$responseContent .= '<soap:Body>';
-    //$responseContent .= '<notificationsResponse xmlns:ns2=”urn:sobject.enterprise.soap.sforce.com” xmlns=”http://soap.sforce.com/2005/09/outbound”>';
-    //$responseContent .= '<Ack>true</Ack>';
-    //$responseContent .= '</notificationsResponse>';
-    //$responseContent .= '</soap:Body>';
-    //$responseContent .= '</soap:Envelope>';
+    $responseContent = '<?xml version="1.0" encoding="UTF-8"?>';
+    $responseContent .= '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">';
+    $responseContent .= '<soapenv:Body>';
+    $responseContent .= '<notificationsResponse xmlns=”http://soap.sforce.com/2005/09/outbound”>';
+    $responseContent .= '<Ack>true</Ack>';
+    $responseContent .= '</notificationsResponse>';
+    $responseContent .= '</soapenv:Body>';
+    $responseContent .= '</soapenv:Envelope>';
 
+    ob_start();
+    ob_end_clean();
     // Enviar la respuesta XML
-   // return response($responseContent, Response::HTTP_OK)
-     //       ->header('Content-Type', 'text/xml');
-
-     // Crear el XML
-
-     header("Content-Type: text/xml\r\n");
-     ob_start();
-     ob_end_clean();
-     print '<?xml version="1.0" encoding="UTF-8"?>
-     <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-              <soapenv:Body>
-              <notifications xmlns="http://soap.sforce.com/2005/09/outbound">
-              <Ack>true</Ack>
-              </notifications>
-              </soapenv:Body>
-              </soapenv:Envelope>';
+    return response($responseContent, Response::HTTP_OK)
+            ->header('Content-Type', 'text/xml');
     }
 }
