@@ -80,8 +80,13 @@ class eventsController extends Controller
 
     public function getEvents(Request $request)
     {
+        $today = today()->toDateString();
 
-        $events = Event::all();
-        echo json_encode($events);
+        $events = Event::where(function ($query) use ($today) {
+            $query->whereDate('startdate', $today)
+                  ->orWhereDate('enddate', $today);
+        })->get();
+    
+        return response()->json($queryLog);
     }
 }
