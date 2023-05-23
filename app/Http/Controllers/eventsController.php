@@ -38,7 +38,7 @@ class eventsController extends Controller
         $xml = simplexml_load_string($xmlContent);
         $json = json_encode($xml);
         $data = json_decode($json, true);
-        Log::info('Data: ' . $data);
+        Log::info('Data: ' . $json);
         //print_r($data);
         if (isset($data['soapenv:Body']['notifications']['Notification']['sObject'])) {
             $sObject = $data['soapenv:Body']['notifications']['Notification']['sObject'];
