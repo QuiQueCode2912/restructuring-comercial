@@ -14,7 +14,7 @@ class Event extends Model
     protected $keyType = 'string';
     protected $table = 'events';
     protected $fillable = [
-        'id', 'subject', 'owner', 'startdate', 'enddate', 'status', 'venueid', 'sfId'
+        'id', 'subject', 'owner', 'startdate', 'enddate', 'status', 'venueid', 'sfId', 'chstatus'
     ];
 
     protected $casts = [
