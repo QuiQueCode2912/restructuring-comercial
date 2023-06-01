@@ -1177,6 +1177,7 @@ class IndexController extends Controller
         $designs = [];
         if ($venueId)
         {
+            session(['00N3m00000Pb23w'=> $venueId]);
             $venue = Venue::find($venueId);
             if ($venue)
             {
@@ -1186,6 +1187,7 @@ class IndexController extends Controller
                     $rootid = $venue;
             }
         }
+
         $venuesgrupo = [];
         
         switch ($step)
@@ -1258,7 +1260,7 @@ class IndexController extends Controller
             break;
             case 'datos-evento':
                 $venuep = Venue::find($venue->parent_id);
-                
+
              //   $rootid = Venue::where('parent_id', '=', $venuep->parent_id)->first();
                 $rootid = Venue::find($venuep->parent_id);
             //    echo 'Venues: ' . $venuesgrupo;
@@ -1298,18 +1300,19 @@ class IndexController extends Controller
 
              $venue_ids = $venuesgrupo->pluck('id')->toArray();   
              $venue_images = VenueFile::whereIn('venue_id', $venue_ids)->first();
-        foreach ($venuesgrupo as $venue) {
-            $images = $venue_images->where('venue_id', $venue->id);
+
+        foreach ($venuesgrupo as $venueAX) {
+            $images = $venue_images->where('venue_id', $venueAX->id);
             if ($images->count() > 0)
             {
 
                 $this_image = $images->pluck('path')->first();
                 $this_image = substr($this_image, 0, strpos($this_image, '.')) . '_480.' . substr($this_image, strpos($this_image, '.') + 1);
-                $venue->image = image_url('storage/venues/' . $this_image);
+                $venueAX->image = image_url('storage/venues/' . $this_image);
             }
             else
             {
-                $venue->image = image_url('/assets/images/placeholder-image.jpg');
+                $venueAX->image = image_url('/assets/images/placeholder-image.jpg');
             }
         }
 
@@ -1580,9 +1583,10 @@ class IndexController extends Controller
                         
                         $estimacion = $formatted_costoTotal;
                      //   $estimacion = $estimacion . "\r\n" . $debugCalculo . $horaInicio . "\r\n" . $fechaActualCarbon->format('Y-m-d');
-		                break;
+                     session(['ReservasSeleccionadas' => json_encode($reservas)]);
+		            break;
                 }
-                session(['ReservasSeleccionadas' => json_encode($reservas)]);
+                
                 if($esEmpleado)
                     session()->put('00N3m00000QeHcG', 'Colaborador');
                 elseif($esCliente)
@@ -1655,19 +1659,18 @@ class IndexController extends Controller
             session(['00N3m00000Pb23w' => $request->id]);
         }
 
-       //echo 'Venues: ' . $venuesgrupo;
-
         if ($venuesgrupo)
         {
-            foreach ($venuesgrupo as $venue)
+            foreach ($venuesgrupo as $venueAX)
             {
-                $venue->name = str_ireplace("Parque CDS - " , "", $venue->name);
-                $venue->name = str_ireplace("GYM-" , "", $venue->name);
-                $venue->name = str_ireplace("CANCHA TENIS" , "TENIS", $venue->name);
+                $venueAX->name = str_ireplace("Parque CDS - " , "", $venueAX->name);
+                $venueAX->name = str_ireplace("GYM-" , "", $venueAX->name);
+                $venueAX->name = str_ireplace("CANCHA TENIS" , "TENIS", $venueAX->name);
             }
         }
         if(!isset($estimacion))
             $estimacion = "";
+       // $venue->name = $venueId;
         return view('index.request', ['page_title' => 'Servicios - Cotización - ' . $stepName, 'parentid' => $venue->parent_id,'step' => $step, 'venue' => $venue, 'designs' => $designs, 'file_upload' => $file_upload, 'form_url' => $form_url, 'grupos' => $venuesgrupo, 'rootid' => $rootid->id, 'estimacion' => $estimacion]);
     }
 
