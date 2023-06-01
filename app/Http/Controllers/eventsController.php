@@ -178,4 +178,23 @@ class eventsController extends Controller
         })->where('enddate', '>=', now())->orderByRaw("startdate")->get();
         return response()->json($events);
     }
+
+    public function setEvent(Request $request)
+{
+    $validatedData = $request->validate([
+        'eventId' => 'required',
+        'status' => 'required',
+    ]);
+
+    $event = Event::find($validatedData['eventId']);
+
+    if(!$event){
+        return response()->json(['message' => 'Evento no encontrado'], 404);
+    }
+
+    $event->status = $validatedData['status'];
+    $event->save();
+
+    return response()->json($event);
+}
 }
