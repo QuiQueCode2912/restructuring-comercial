@@ -114,7 +114,7 @@ class eventsController extends Controller
         $xmlContent = str_replace('xmlns:soapenv', 'xmlnssoapenv', $xmlContent);
         $xmlContent = str_replace('xsi:type', 'xsitype', $xmlContent);
         $xmlContent = str_replace('xmlns:sf', 'xmlnssf', $xmlContent);
-      //  print_r($xmlContent);
+        //  print_r($xmlContent);
 
         //<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
         // Cargar el contenido XML en un objeto SimpleXMLElement
@@ -123,7 +123,7 @@ class eventsController extends Controller
         $json = json_encode($xml);
         $data = json_decode($json, true);
         //    Log::info('Data: ' . $json);
-    //    print_r($data);
+        //    print_r($data);
         if (isset($data['soapenv:Body']['notifications']['Notification'])) {
             $notifications = $data['soapenv:Body']['notifications']['Notification'];
 
@@ -141,7 +141,7 @@ class eventsController extends Controller
                 // edita Event y asigna los valores de los campos
                 $event = Event::where('sfId', $recid)->first();
 
-                if($event){
+                if ($event) {
                     $event->status = $estado;
                     $event->save();
                 }
@@ -180,21 +180,21 @@ class eventsController extends Controller
     }
 
     public function setEvent(Request $request)
-{
-    $validatedData = $request->validate([
-        'eventId' => 'required',
-        'status' => 'required',
-    ]);
+    {
+        $validatedData = $request->validate([
+            'eventId' => 'required',
+            'status' => 'required',
+        ]);
 
-    $event = Event::find($validatedData['eventId']);
+        $event = Event::find($validatedData['eventId']);
 
-    if(!$event){
-        return response()->json(['message' => 'Evento no encontrado'], 404);
+        if (!$event) {
+            return response()->json(['message' => 'Evento no encontrado'], 404);
+        }
+
+        $event->chstatus = $validatedData['status'];
+        $event->save();
+
+        return response()->json($event);
     }
-
-    $event->status = $validatedData['status'];
-    $event->save();
-
-    return response()->json($event);
-}
 }
