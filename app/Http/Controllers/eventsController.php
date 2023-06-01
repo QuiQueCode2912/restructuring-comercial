@@ -96,7 +96,7 @@ class eventsController extends Controller
 
     public function handleInbounddMessage(Request $request)
     {
-           Log::info('Llamada a handleInboundMessage');
+        //   Log::info('Llamada a handleInboundMessage');
 
         // Reemplaza esto con la API token que compartes con Salesforce
         $sharedApiToken = '906F00000008zQWIAY';
@@ -110,7 +110,7 @@ class eventsController extends Controller
 
         // Carga el contenido del mensaje SOAP/XML
         $xmlContent = $request->getContent();
-            Log::info('Contenido del Request: ' . $xmlContent);
+        //    Log::info('Contenido del Request: ' . $xmlContent);
         $xmlContent = str_replace('xmlns:soapenv', 'xmlnssoapenv', $xmlContent);
         $xmlContent = str_replace('xsi:type', 'xsitype', $xmlContent);
         $xmlContent = str_replace('xmlns:sf', 'xmlnssf', $xmlContent);
