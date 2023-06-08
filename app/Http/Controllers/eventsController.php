@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Models\Event;
+use App\Models\Venue;
 use Illuminate\Http\Response;
 
 class eventsController extends Controller
@@ -196,5 +197,11 @@ class eventsController extends Controller
         $event->save();
 
         return response()->json($event);
+    }
+
+    public function getVenue(Request $request)
+    {
+        $venue = Venue::where('token', '=', $request->token)->get();
+        return response()->json($venue);
     }
 }
