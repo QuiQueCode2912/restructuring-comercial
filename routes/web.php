@@ -76,6 +76,8 @@ Route::post('/sfASWEwweWEQQW/inboundd', 'App\Http\Controllers\eventsController@h
 Route::post('/sfASWEwweWEQQW/getEvents', 'App\Http\Controllers\eventsController@getEvents');
 Route::post('/sfASWEwweWEQQW/setEvent', 'App\Http\Controllers\eventsController@setEvent');
 
-Route::get('/email/quote', function() {
+Route::post('/sfASWEwweWEQQW/getVenue', 'App\Http\Controllers\eventsController@getVenue');
+
+Route::get('/email/quote', function () {
   return view('email.quote');
 });
