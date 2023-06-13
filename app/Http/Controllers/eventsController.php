@@ -172,11 +172,12 @@ class eventsController extends Controller
     public function getEvents(Request $request)
     {
         $today = today()->toDateString();
-
+        $venueid = $request->venueid;
+        
         $events = Event::where(function ($query) use ($today) {
             $query->whereDate('startdate', $today)
                 ->orWhereDate('enddate', $today);
-        })->where('enddate', '>=', now())->orderByRaw("startdate")->get();
+        })->where('venueid', $venueid)->where('enddate', '>=', now())->orderByRaw("startdate")->get();
         return response()->json($events);
     }
 

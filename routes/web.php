@@ -73,7 +73,7 @@ Route::get('/galeria/{venue}/eliminar/{token}', 'App\Http\Controllers\IndexContr
 Route::post('/sfASWEwweWEQQW/inbound', 'App\Http\Controllers\eventsController@handleInboundMessage');
 Route::post('/sfASWEwweWEQQW/inboundd', 'App\Http\Controllers\eventsController@handleInbounddMessage');
 
-Route::get('/sfASWEwweWEQQW/getEvents', 'App\Http\Controllers\eventsController@getEvents');
+Route::post('/sfASWEwweWEQQW/getEvents', 'App\Http\Controllers\eventsController@getEvents');
 Route::post('/sfASWEwweWEQQW/setEvent', 'App\Http\Controllers\eventsController@setEvent');
 
 Route::get('/email/quote', function() {

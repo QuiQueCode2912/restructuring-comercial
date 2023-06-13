@@ -273,7 +273,8 @@
                     }
                 });
             }
-            $("#start-date").load("ajax/test.html", function () {
+
+            $("#start-date").load("ajax/ignorar.html", function () {
                 if ($('input.datepicker#start-date').data('setavailablehours') == true && firstTime == true) {
                     $('#prevDay').prop('disabled', true);
                     $('#nextDay').prop('disabled', true);
@@ -293,7 +294,14 @@
                 }
             });
 $(document).ready(function () {
-    $('input[name="daterange"]').daterangepicker();
+
+  $('input[name="daterange"]').daterangepicker({
+  locale: {
+    format: 'YYYY-MM-DD',
+    applyLabel: 'Aplicar',
+    cancelLabel: 'Cancelar'
+    }});
+    console.log('*** FORM LOADED ***');
     var today = new Date();
     var mes = today.getMonth() + 1;
     var mesS = '' + mes;
@@ -307,8 +315,7 @@ $(document).ready(function () {
     var setAvailableHours = '0';
     venueId = $('#venueId').val();
     var maxLimitDate = today.getFullYear()+2 + '-' + (mesS) + '-' + diaS;
-
-  //  console.log(JSON.stringify($('input.datepicker#start-date').data('setavailablehours')));
+  //  console.log(JSON.stringify($('input.datepicker#start-date').data('setavailablehours')))
     if ($('input.datepicker#start-date').data('setavailablehours') == true) {
         setAvailableHours = '1';
         today.setDate(today.getDate() + 27);
@@ -321,9 +328,10 @@ $(document).ready(function () {
         if (dia < 10)
             diaS = '0' + dia;
         maxLimitDate = today.getFullYear() + '-' + (mesS) + '-' + diaS;
+        console.log("LN331 - maxLimitDate: " + maxLimitDate);
  //       validateSelDate(venueId, min_date);
     }
-
+  console.log("LN334 - min_date: " + min_date + " maxLimitDate:" + maxLimitDate);
   $('input.datepicker').daterangepicker({
       singleDatePicker: true,
       minDate: min_date,
@@ -334,16 +342,10 @@ $(document).ready(function () {
       cancelLabel: 'Cancelar'
       }
   }
-      //, function (start, end, label) {
-     // if(setAvailableHours == 1)
-      //{
-      //    alert('custom1');
-      //    $('#overlay').css('display', 'block');
-      //    selDate = start.format('YYYY-MM-DD');
-     //     validateSelDate(venueId, selDate, min_date);
-     // }
-  //}
   );
+  // COMO LOS VALORES DEL FORMULARIO NO SE INICIALIZAN A MENOS QUE COMPLETES LA RESERVA, QUEDA GUARDADA LA ÚLTIMA FECHA SELECCIONADA
+  //console.log("date val: " +  $('input.datepicker#start-date').val());
+  //$('input.datepicker#start-date').val(min_date);
     $('input.datepicker#start-date').on('apply.daterangepicker', function (ev, picker) {
         if ($('input.datepicker#start-date').data('setavailablehours') == true) {
     //        alert('custom2');
@@ -377,8 +379,8 @@ $(document).ready(function () {
   if ($('input.datepicker#start-date').length > 0 && $('input.datepicker#end-date').length > 0) {
     $('input.datepicker#start-date').on('apply.daterangepicker', function (ev, picker) {
       var date = new Date($('input.datepicker#start-date').val());
-      date.setHours(date.getHours() + 1);
-      var dateString = date.getFullYear() + '-' + ((date.getMonth() + 1 < 10 ? '0' : '') + (date.getMonth() + 1)) + '-' + ((date.getDate() +1 < 10 ? '0' : '') + (date.getDate() + 1));
+      date.setHours(date.getHours() + 5);
+      var dateString = date.getFullYear() + '-' + ((date.getMonth()+1< 10 ? '0' : '') + (date.getMonth()+1)) + '-' + ((date.getDate()< 10 ? '0' : '') + (date.getDate()));
       $('input.datepicker#end-date').val(dateString);
       $('input.datepicker#end-date').daterangepicker({
         singleDatePicker: true,
