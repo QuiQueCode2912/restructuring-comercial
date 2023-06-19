@@ -58,8 +58,8 @@ $estado = (string)$sObject['sf:Estado__c'];
 $cantidad = (int)$sObject['sf:Cantidad__c'];
 $consumible = (string)$sObject['sf:Consumible__c'];
 $decimal = (float)$sObject['sf:ValorDecimal__c'];
-$fechainicial = (string)$sObject['sf:FechaInicial__c'];
-$fechafinal = (string)$sObject['sf:Fecha_Final__c'];
+$fechainicial = (string)$sObject['sf:fi__c'];
+$fechafinal = (string)$sObject['sf:ff__c'];
 $validopara = (string)$sObject['sf:Valido_para__c'];
 
 $cupon = Cupon::firstOrNew(['sfid' => $id]);
