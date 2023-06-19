@@ -611,7 +611,7 @@ setTimeout(function() {
     <div class="row  mt-4">
       <div class="col-8 col-md-8">
         <div class="form-group">
-          <input type="email" class="form-control" name="cupon" id="cupon" placeholder="Tienes un cupón?" style="height: 39px" value="<?php echo session()->get('00N3m00000Qpiz4') ?>">
+          <input type="email" class="form-control" name="cupon" id="cupon" placeholder="Tienes un cupón?" style="height: 39px" value="<?php echo session()->get('cupon') ?>">
         </div>
       </div>
 <div class="col-4 col-md-4">
@@ -637,7 +637,7 @@ setTimeout(function() {
           _token: '{{ csrf_token() }}' // Token CSRF para la seguridad
         },
         success: function(response) {
-        alert(JSON.stringify(response));
+        //alert(JSON.stringify(response));
           if(response != '' && response != 'undefined')
           {
             $('#00N3m00000Qpiz4').val(response.sfid);

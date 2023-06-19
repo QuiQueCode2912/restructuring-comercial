@@ -1174,16 +1174,30 @@ class IndexController extends Controller
         $phone = $request->input('phone');
         $company = $request->input('company');
         $value = $request->input('00N3m00000QQOde');
+        session(['franja' => $franja]);
+session(['first_name' => $first_name]);
+session(['last_name' => $last_name]);
+session(['email' => $email]);
+session(['phone' => $phone]);
+session(['company' => $company]);
+session(['00N3m00000QQOde' => $value]);
         session(['00N3m00000Qpiz4'=> $request->input('flexipage')]);
-        session(['ReservasSeleccionadas'=> null]);
-        setcookie('first_name',  $first_name, time() + (86400 * 365 * 5), "/");
-                    setcookie('last_name', $last_name, time() + (86400 * 365 * 5), "/");
-                    setcookie('email', $email, time() + (86400 * 365 * 5), "/");
-                    setcookie('phone', $phone, time() + (86400 * 365 * 5), "/");
-                    setcookie('company', $company, time() + (86400 * 365 * 5), "/");
-                    setcookie('00N3m00000QQOde', $value, time() + (86400 * 365 * 5), "/");
-                    $inputs['country_code'] = 'PA';
-                    $inputs['want_to_do'] = 'event';
+
+        $cupon = Cupon::where('sfid', $request->input('flexipage'))->first();
+        if ($cupon) { 
+            $valordecimalFormateado = 'B/. ' . number_format($cupon->valordecimal, 2, '.', ',');
+            session(['cupon' => "Descuento: " . $valordecimalFormateado]);
+        }
+
+            session(['ReservasSeleccionadas'=> null]);
+            setcookie('first_name',  $first_name, time() + (86400 * 365 * 5), "/");
+            setcookie('last_name', $last_name, time() + (86400 * 365 * 5), "/");
+            setcookie('email', $email, time() + (86400 * 365 * 5), "/");
+            setcookie('phone', $phone, time() + (86400 * 365 * 5), "/");
+            setcookie('company', $company, time() + (86400 * 365 * 5), "/");
+            setcookie('00N3m00000QQOde', $value, time() + (86400 * 365 * 5), "/");
+            $inputs['country_code'] = 'PA';
+            $inputs['want_to_do'] = 'event';
         }
 
         $step = $request->step;
@@ -2471,7 +2485,7 @@ $events['records'] = $newEvents;
                         sleep(1);
                     }
 
-                    $id = "02i3m00000D9GtVAAV";
+                    $id = $token;
                     $first_name = "John";
                     $last_name = "Doe";
                     $email = "john.doe@example.com";
