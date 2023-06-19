@@ -27,7 +27,7 @@ class cuponesController extends Controller
 
         // Carga el contenido del mensaje SOAP/XML
         $xmlContent = $request->getContent();
-            Log::info('Contenido del Request: ' . $xmlContent);
+       //     Log::info('Contenido del Request: ' . $xmlContent);
         $xmlContent = str_replace('xmlns:soapenv', 'xmlnssoapenv', $xmlContent);
         $xmlContent = str_replace('xsi:type', 'xsitype', $xmlContent);
         $xmlContent = str_replace('xmlns:sf', 'xmlnssf', $xmlContent);

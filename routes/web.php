@@ -82,6 +82,8 @@ Route::post('/sfASWEwweWEQQW/setEvent', 'App\Http\Controllers\eventsController@s
 
 Route::post('/sfASWEwweWEQQW/getVenue', 'App\Http\Controllers\eventsController@getVenue');
 
+Route::post('/aplicarCupon', 'App\Http\Controllers\IndexController@aplicarCupon');
+
 Route::get('/email/quote', function () {
   return view('email.quote');
 });

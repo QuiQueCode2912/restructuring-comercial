@@ -628,17 +628,17 @@ setTimeout(function() {
       <script type="text/javascript">
   function ready() {
     $('#apply-coupon').click(function() {
-      alert('cupon');
-      var coupon = $('#cupon').val();
+      var cupon = $('#cupon').val();
       $.ajax({
-        url: '/ruta/a/tu/controlador', // URL del método de tu controlador
+        url: '/aplicarCupon', // URL del método de tu controlador
         method: 'POST',
         data: {
-          cupon: coupon,
+          cupon: cupon,
           _token: '{{ csrf_token() }}' // Token CSRF para la seguridad
         },
         success: function(response) {
-          // Aquí puedes manejar la respuesta de tu controlador
+          alert(response);
+          $('#00N3m00000Qpiz4').val('a2u3m0000042jm7AAA');
         }
       });
     });

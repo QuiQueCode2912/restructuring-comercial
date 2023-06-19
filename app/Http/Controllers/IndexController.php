@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request, App\Models\Venue, App\Models\VenueFile, App\Models\VenueDesign, App\Models\Holidays, App\Models\Rates, Str, Image, Illuminate\Support\Facades\Storage, Illuminate\Support\Facades\DB;
 use Monolog\Handler\NullHandler;
 use Carbon\Carbon;
+use App\Models\Cupon;
 
 class IndexController extends Controller
 {
@@ -1911,10 +1912,32 @@ class IndexController extends Controller
                         session()->put('company', $company);
                         session()->put('00N3m00000QQOde', $idenruc);
 
-            $query = "SELECT Id, Precio_Estimado__c, Pago_confirmado__c, Name, Reserva__c FROM Lead WHERE Id = '{$request->token}'";
+            $query = "SELECT Id, Precio_Estimado__c, Pago_confirmado__c, Name, Reserva__c, cuponid__c FROM Lead WHERE Id = '{$request->token}'";
+
+$result = $salesforce->query($query);
+
+for ($i = 0; $i < 20; $i++) {
+    
+    if ($result['totalSize'] > 0) {
+        $cupon = $result['records'][0]['cuponid__c'];
+        if($cupon =='')
+        {
+            sleep(1);
+            $result = $salesforce->query($query);
+            break;
+        }
+    }
+    sleep(1);
+    $result = $salesforce->query($query);
+}
+if($result['records'][0]['Precio_Estimado__c'] == '0')
+{
+    $salesforce->update('Lead', $request->token, ['Pago_confirmado__c' => 'true']);
+    return redirect()->to('/confirmacion-pago/' . $request->token);
+}
 
 
-        $result = $salesforce->query($query);
+        
 
             $lead_id = null;
             if ($result['totalSize'] > 0)
@@ -2027,6 +2050,7 @@ class IndexController extends Controller
             $lead_id = null;
             if ($lead['totalSize'] > 0)
             {
+ 
              if (isset($data['Estado']) && substr($data['Estado'], 0, 6) == 'Aproba')
                 {
                 $lead_id = $lead['records'][0]['Id'];
@@ -2482,6 +2506,21 @@ $events['records'] = $newEvents;
         return view('index.cancelar-evento', ['data' => $request]);
         }
         
+    }
+
+    public function aplicarCupon(Request $request) {
+        $fechaActual = Carbon::now();
+        $cupon = Cupon::where('codigo', $request->input('cupon'))
+            ->where('fechainicial', '<=', $fechaActual)
+            ->where('fechafinal', '>=', $fechaActual)
+            ->where('cantidad', '>', 0)
+            ->first();
+
+        if ($cupon) { // Verifica que el cupón exista y no haya sido usado
+            echo 'OK';
+        } else {
+            // Maneja el caso en que el cupón no existe o ya ha sido usado
+        }
     }
 
 }
