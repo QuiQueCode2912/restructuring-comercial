@@ -1161,6 +1161,30 @@ class IndexController extends Controller
 
     public function request(Request $request)
     {
+        if($request->has('reagendar'))
+        {
+        $id = $request->input('id');
+        session(['00N3m00000Pb23w'=> $id ]);
+        $request->id = $id;
+        $franja = $request->input('franja');
+        $first_name = $request->input('first_name');
+        $last_name = $request->input('last_name');
+        $email = $request->input('email');
+        $phone = $request->input('phone');
+        $company = $request->input('company');
+        $value = $request->input('00N3m00000QQOde');
+        session(['00N3m00000Qpiz4'=> $request->input('flexipage')]);
+        session(['ReservasSeleccionadas'=> null]);
+        setcookie('first_name',  $first_name, time() + (86400 * 365 * 5), "/");
+                    setcookie('last_name', $last_name, time() + (86400 * 365 * 5), "/");
+                    setcookie('email', $email, time() + (86400 * 365 * 5), "/");
+                    setcookie('phone', $phone, time() + (86400 * 365 * 5), "/");
+                    setcookie('company', $company, time() + (86400 * 365 * 5), "/");
+                    setcookie('00N3m00000QQOde', $value, time() + (86400 * 365 * 5), "/");
+                    $inputs['country_code'] = 'PA';
+                    $inputs['want_to_do'] = 'event';
+        }
+
         $step = $request->step;
         $stepName = 'Solicitud de cotización';
         $form_url = '';
@@ -2313,6 +2337,10 @@ class IndexController extends Controller
         $salesforce = $this->salesforce();
         $thisVenue = Venue::where('id', '=', $venueId)->first();
         $parentId = $thisVenue->parent_id;
+
+        //02i3m00000Didu3AAB VOLEIBOL
+        //02i3m00000DidtxAAB BASQUETBOL
+
      //    echo json_encode($thisVenue);
         $Fi =$request->date . "T00:00:00Z";
         //$Ff =$request->date . "T04:59:59Z";
@@ -2324,15 +2352,43 @@ class IndexController extends Controller
   //      ((StartDateTime >= {$Fi} AND StartDateTime <= {$Ff}) OR (EndDateTime >= {$Fi} AND EndDateTime <= {$Ff}) OR (StartDateTime <= {$Fi} AND EndDateTime >= {$Ff})))
   //      AND (Venue__c ='{$venueId}')) or ((RecordType.Name='Excluir de reservas' and venue__c ='') AND ((StartDateTime >= {$Fi} AND StartDateTime <= {$Ff}) OR (EndDateTime >= {$Fi} AND EndDateTime <= {$Ff})
   //      OR (StartDateTime <= {$Fi} AND EndDateTime >= {$Ff})))";
-        $query = "SELECT StartDateTime,EndDateTime,Fecha_fin_del_evento__c,Venue__c,Venue__r.Name,Estado__c,Subject FROM Event
+        if($parentId =='02i3m00000Didu3AAB')
+            $PARENTCONDITION = "Venue__r.ParentId ='02i3m00000Didu3AAB' OR Venue__r.ParentId ='02i3m00000DidtxAAB'";
+        elseif($parentId =='02i3m00000DidtxAAB')
+            $PARENTCONDITION = "Venue__r.ParentId ='02i3m00000DidtxAAB' OR Venue__r.ParentId ='02i3m00000Didu3AAB'";
+        else
+            $PARENTCONDITION = "Venue__r.ParentId ='{$parentId}'";
+        $query = "SELECT StartDateTime,EndDateTime,Fecha_fin_del_evento__c,Venue__c,Venue__r.Name,Estado__c,Subject,Venue__r.Bloqueo_adicional_1__c,Venue__r.Bloqueo_adicional_2__c,Venue__r.Bloqueo_adicional_3__c FROM Event
         where ((
         ((StartDateTime >= {$Fi} AND StartDateTime <= {$Ff}) OR (EndDateTime >= {$Fi} AND EndDateTime <= {$Ff}) OR (StartDateTime <= {$Fi} AND EndDateTime >= {$Ff})))
-        AND (Venue__r.ParentId ='{$parentId}')) or ((RecordType.Name='Excluir de reservas' and venue__c ='') AND ((StartDateTime >= {$Fi} AND StartDateTime <= {$Ff}) OR (EndDateTime >= {$Fi} AND EndDateTime <= {$Ff})
+        AND ({$PARENTCONDITION})) or ((RecordType.Name='Excluir de reservas' and venue__c ='') AND ((StartDateTime >= {$Fi} AND StartDateTime <= {$Ff}) OR (EndDateTime >= {$Fi} AND EndDateTime <= {$Ff})
         OR (StartDateTime <= {$Fi} AND EndDateTime >= {$Ff})))";
 
         $events = $salesforce->query($query);
 
-            
+        $newEvents = [];
+foreach ($events['records'] as $event) {
+    // Añadir el evento original al array
+    $newEvents[] = $event;
+    // Verificar si existen bloqueos adicionales
+    if(isset($event['Venue__r']['Bloqueo_adicional_1__c']) ||
+       isset($event['Venue__r']['Bloqueo_adicional_2__c']) ||
+       isset($event['Venue__r']['Bloqueo_adicional_3__c'])) {
+        // Crear duplicados para cada bloque adicional
+        for ($i = 1; $i <= 3; $i++) {
+            $bloqueo = 'Bloqueo_adicional_' . $i . '__c';
+            if (isset($event['Venue__r'][$bloqueo])) {
+                // Crear un duplicado del evento
+                $duplicateEvent = $event;
+                // Reemplazar el Venue__c con el bloque adicional
+                $duplicateEvent['Venue__c'] = $event['Venue__r'][$bloqueo];
+                // Añadir el duplicado al array
+                $newEvents[] = $duplicateEvent;
+            }
+        }
+    }
+}
+$events['records'] = $newEvents;
           if ($events['totalSize'] > 0)
             {
           echo json_encode($events['records']);
@@ -2357,4 +2413,75 @@ class IndexController extends Controller
             }
         //  echo $query;
     }
+
+    public function cancelarEvento(Request $request)
+    {
+        $salesforce = $this->salesforce();
+        $token = $request->token;
+        if ($request->isMethod('post'))
+        {
+            $tipoSolicitud = $request->input('solicitud');
+            switch ($tipoSolicitud) {
+                case 'reagendar':
+                    $salesforce->update('Event', $token,['Aplicar_devolucion__c'=>'true']);
+                    $query = "SELECT ID, Estado__c,WhatId FROM Event where id='{$token}'";
+                    $result = $salesforce->query($query);
+                    if ($result['totalSize'] > 0) {
+                        if($result['records'][0]['Estado__c'] == 'Cancelado')
+                        {
+                     //       $request['Cancelado'] = 'Si';
+                    //        return view('index.cancelar-evento', ['data' => $request]);
+                        }
+                    }
+                    $whatid = $result['records'][0]['WhatId'];
+
+
+                    $query = "SELECT Id FROM Cupon__c WHERE fromid__c = '{$token}'";
+                    $cupon = "";
+                    for ($i = 0; $i < 20; $i++) {
+                        $result = $salesforce->query($query);
+                        if ($result['totalSize'] > 0) {
+                            $cupon = $result['records'][0]['Id'];
+                            break;
+                        }
+                        sleep(1);
+                    }
+
+                    $id = "02i3m00000D9GtVAAV";
+                    $first_name = "John";
+                    $last_name = "Doe";
+                    $email = "john.doe@example.com";
+                    $phone = "1234567890";
+                    $company = "Company";
+                    $value = "Value";
+                    $url = "/cotizacion/datos-evento?reagendar=1&id=$id&franja=hora&first_name=$first_name&last_name=$last_name&email=$email&phone=$phone&company=$company&00N3m00000QQOde=$value&flexipage=$cupon";
+                    return redirect($url);
+                    break;
+                case 'voucher':
+                    // Tu código para voucher aquí.
+                    $request['Cancelado'] = 'Si2';
+                    // INCLUIR LO DEL CUPON
+                    // LEER DE SALESFORCE LOS DATOS
+                    $salesforce->update('Event', $token,['Aplicar_devolucion__c'=>'true']);
+                    return view('index.cancelar-evento-confirmation', ['data' => $request]);
+                    break;
+                default:
+                    return view('index.cancelar-evento', ['data' => $request]);
+                    break;
+            }
+        } else {
+            $query = "SELECT ID, Estado__c,whatid FROM Event where id='{$token}'";
+                    $result = $salesforce->query($query);
+                    if ($result['totalSize'] > 0) {
+                        if($result['records'][0]['Estado__c'] == 'Cancelado')
+                        {
+                            // DESCOMENTAR PARA PRODUCCION
+                       //     $request['Cancelado'] = 'Si';
+                        }
+                    }
+        return view('index.cancelar-evento', ['data' => $request]);
+        }
+        
+    }
+
 }

@@ -176,7 +176,7 @@
             <input type="text" class="form-control datepicker" name="date" id="date" placeholder="Fecha de pago" value="" required>
           </div>
           <div class="col-12 col-md-6 form-group required">
-            <input type="text" class="form-control" name="Oper" id="transaction" placeholder="Número de operación" value="" required>
+            <input type="text" class="form-control" name="Oper" id="transaction" placeholder="Número de confirmacion" value="" required>
           </div>
           <div class="col-12 form-group file-upload required" style="transform:translateY(-25px)">
             <i class="fe fe-upload"></i>

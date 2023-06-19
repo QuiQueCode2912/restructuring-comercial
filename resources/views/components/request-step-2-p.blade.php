@@ -223,6 +223,43 @@ if ($designs) {
                 window.location.hash = "tab1";
                 $('#venueinfoModalLong').modal('show');
             }
+
+function smoothScroll(element, target, duration) {
+console.log('*** HACIENDO SCROLL ***');
+  var start = element.scrollLeft,
+      change = target - start,
+      startTime = performance.now(),
+      val, now, elapsed, t;
+
+  function animateScroll(){
+    now = performance.now();
+    elapsed = (now - startTime) / 1000;
+    t = (elapsed/duration);
+
+    element.scrollLeft = start + change * easeInOutQuad(t);
+
+    if(t < 1)
+      window.requestAnimationFrame(animateScroll);
+  };
+
+  // Esta es una función de easing que puede ser modificada para cambiar la
+  // velocidad de la animación en diferentes puntos.
+  function easeInOutQuad(t) { 
+    return t < .5 ? 2*t*t : -1+(4-2*t)*t;
+  };
+
+  animateScroll();
+}
+
+var el = document.getElementById('tabContainer');
+
+// Desplazarse a la derecha
+smoothScroll(el, el.scrollWidth, 1);
+
+setTimeout(function() {
+  smoothScroll(el, 0, 1);
+}, 600);
+alert('*** HACIENDO SCROLL ***');
 </script>
 <x-error-message />
 <div class="request-step" style="margin-top:0px;">
@@ -484,7 +521,7 @@ height: 1.3em;
 </style>
 
 <div class="tDiv">
-<div class="btn-group-toggle" data-toggle="buttons">
+<div class="btn-group-toggle" data-toggle="buttons" id="tabContainer" >
   <table>
     <tbody>
     <tr style="text-align: -webkit-center;">

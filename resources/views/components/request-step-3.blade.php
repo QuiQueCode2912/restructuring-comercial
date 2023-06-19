@@ -608,13 +608,43 @@ setTimeout(function() {
        if($rootid == '02i3m00000D9DaPAAV')
        {
     ?>
+    <div class="row  mt-4">
+      <div class="col-8 col-md-8">
+        <div class="form-group">
+          <input type="email" class="form-control" name="cupon" id="cupon" placeholder="Tienes un cupón?" style="height: 39px" value="<?php echo session()->get('00N3m00000Qpiz4') ?>">
+        </div>
+      </div>
+<div class="col-4 col-md-4">
+       <button type="button" id="apply-coupon" class="btn btn-primary w-100">Aplicar</button>
+      </div>
+      </div>
      <div class="row">
       <div class="col-12 col-md-12">
-        <div class="form-group-preview mt-4" style="display: inline-flex;width: 100%;justify-content: space-between;">
+        <div class="form-group-preview" style="display: inline-flex;width: 100%;justify-content: space-between;">
           <div><small><b>Precio Total</b></small></div><div><b>B/. <?php echo nl2br($estimacion)?></b></div>
         </div>
       </div>
       </div>
+      <script type="text/javascript">
+  function ready() {
+    $('#apply-coupon').click(function() {
+      alert('cupon');
+      var coupon = $('#cupon').val();
+      $.ajax({
+        url: '/ruta/a/tu/controlador', // URL del método de tu controlador
+        method: 'POST',
+        data: {
+          cupon: coupon,
+          _token: '{{ csrf_token() }}' // Token CSRF para la seguridad
+        },
+        success: function(response) {
+          // Aquí puedes manejar la respuesta de tu controlador
+        }
+      });
+    });
+  }
+  window.addEventListener("load", ready);
+</script>
         <?php
     }
     ?>
@@ -729,6 +759,7 @@ setTimeout(function() {
         <input type="hidden" value="<?php echo session()->get('description') ?>" name="description" id="description" />
         <input type="hidden" value="<?php echo session()->get('recordType') ?>" name="recordType" id="recordType" />
         <input type="hidden" value="<?php echo session()->get('00N3m00000QeHcG') ?>" name="00N3m00000QeHcG" id="00N3m00000QeHcG" /> 
+        <input type="hidden" value="<?php echo session()->get('00N3m00000Qpiz4') ?>" name="00N3m00000Qpiz4" id="00N3m00000Qpiz4" />
       <?php
        if($rootid == '02i3m00000D9DaPAAV')
        {

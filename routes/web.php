@@ -66,11 +66,15 @@ Route::post('/solicitud-pago/{token}', 'App\Http\Controllers\IndexController@doc
 Route::get('/cancelar-reserva/{token}', 'App\Http\Controllers\IndexController@cancelarReserva');
 Route::post('/cancelar-reserva/{token}', 'App\Http\Controllers\IndexController@cancelarReserva');
 
+Route::get('/cancelar-reserva-evento/{token}', 'App\Http\Controllers\IndexController@cancelarEvento');
+Route::post('/cancelar-reserva-evento/{token}', 'App\Http\Controllers\IndexController@cancelarEvento');
+
 Route::get('/galeria/{venue}', 'App\Http\Controllers\IndexController@gallery');
 Route::post('/galeria/{venue}', 'App\Http\Controllers\IndexController@gallery');
 Route::get('/galeria/{venue}/eliminar/{token}', 'App\Http\Controllers\IndexController@deleteImage');
 
 Route::post('/sfASWEwweWEQQW/inbound', 'App\Http\Controllers\eventsController@handleInboundMessage');
+Route::post('/sfASWEwweWEQQW/inboundc', 'App\Http\Controllers\cuponesController@handleInboundMessage');
 Route::post('/sfASWEwweWEQQW/inboundd', 'App\Http\Controllers\eventsController@handleInbounddMessage');
 
 Route::post('/sfASWEwweWEQQW/getEvents', 'App\Http\Controllers\eventsController@getEvents');
