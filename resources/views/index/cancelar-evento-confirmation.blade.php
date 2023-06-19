@@ -54,13 +54,16 @@
 <div class="request-step" style="margin:0px">
               <h4>Confirmación de cancelación</h4>
               <br/>
-  <p>Tu evento ha sido cancelado satisfactoriamente.</p>
-  <p>De acuerdo a la política de cancelación aplicada tu Cupón es:</p>
- 
-          <div class="col-12 text-center">
-          TEST TEST TEST
+  <p>Lamentamos saber que deseas cancelar tu reserva. Entendemos que a veces los planes pueden cambiar y estamos aquí para ayudarte.</p>
 
-          </div>
+  <p>Hemos generado un cupón por el valor del evento.</p>
+
+  <p>El código de tu cupón es: <b>{{ $data->cupon }}</b>
+  <br/>El monto del cupón es: <b>{{ $data->monto }}</b></p>
+
+  <p>Para utilizar el cupón, simplemente introduce el código al realizar tu próxima reserva o compra en nuestra página web.</p>
+
+  <p>Esperamos que esta solución sea conveniente para ti y que tengas la oportunidad de utilizar nuestros espacios y canchas en el futuro. Si tienes alguna pregunta o si hay algo más con lo que podamos ayudarte, no dudes en ponerte en contacto con nosotros.</p>
 
   <p>También recibirás los datos del cupón en tu correo electrónico.</p>
 </div>

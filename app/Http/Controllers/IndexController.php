@@ -1175,18 +1175,22 @@ class IndexController extends Controller
         $company = $request->input('company');
         $value = $request->input('00N3m00000QQOde');
         session(['franja' => $franja]);
-session(['first_name' => $first_name]);
-session(['last_name' => $last_name]);
-session(['email' => $email]);
-session(['phone' => $phone]);
-session(['company' => $company]);
-session(['00N3m00000QQOde' => $value]);
+        session(['first_name' => $first_name]);
+        session(['last_name' => $last_name]);
+        session(['email' => $email]);
+        session(['phone' => $phone]);
+        session(['company' => $company]);
+        session(['00N3m00000QQOde' => $value]);
         session(['00N3m00000Qpiz4'=> $request->input('flexipage')]);
 
         $cupon = Cupon::where('sfid', $request->input('flexipage'))->first();
         if ($cupon) { 
             $valordecimalFormateado = 'B/. ' . number_format($cupon->valordecimal, 2, '.', ',');
+            if($cupon->cantidad == 0)
+                $valordecimalFormateado .= ' * USADO';
             session(['cupon' => "Descuento: " . $valordecimalFormateado]);
+        } else {
+            session(['cupon' => ""]);
         }
 
             session(['ReservasSeleccionadas'=> null]);
@@ -1252,8 +1256,7 @@ session(['00N3m00000QQOde' => $value]);
             {
             if($venueId != $request->id)
         {
-            session(['ReservasSeleccionadas'=> null]);
-             
+            session(['ReservasSeleccionadas'=> null]); 
         }
         }
         //    session(['ReservasSeleccionadas'=> null]);
@@ -1264,7 +1267,6 @@ session(['00N3m00000QQOde' => $value]);
                     //'country_code' => 'nullable|string',
                     //'want_to_do' => 'nullable|string',
                     '00N3m00000QQOde' => 'nullable|string', ]);
-
                     switch ($request->id)
                     {
                         case 'Modelo 300 abajo dúplex':
@@ -1276,7 +1278,6 @@ session(['00N3m00000QQOde' => $value]);
                             $inputs['want_to_do'] = 'event';
                         break;
                     }
-
                     $inputs['country_code'] = 'PA';
                     $inputs['franja'] = request()->query('franja', session()->get('franja','sin-franja'));
                     
@@ -1290,12 +1291,9 @@ session(['00N3m00000QQOde' => $value]);
                     setcookie('phone', $request->phone, time() + (86400 * 365 * 5), "/");
                     setcookie('company', $request->company, time() + (86400 * 365 * 5), "/");
                     setcookie('00N3m00000QQOde', $request['00N3m00000QQOde'], time() + (86400 * 365 * 5), "/");
-                    
                     session($inputs);
-
                     return redirect()->to($inputs['want_to_do'] == 'event' ? '/cotizacion/datos-evento' : '/cotizacion/datos-residencia');
                 }
-
             break;
             case 'datos-evento':
                 $venuep = Venue::find($venue->parent_id);
@@ -1709,6 +1707,14 @@ session(['00N3m00000QQOde' => $value]);
         }
         if(!isset($estimacion))
             $estimacion = "";
+
+        if(!isset($rootid))
+        {
+            $venueAUX = Venue::find($id);
+            $rootid = $venueAUX; 
+           // $venuepAUX = Venue::find($venueAUX->parent_id);
+            //$rootid = Venue::find($venuepAUX->parent_id);
+        }
        // $venue->name = $venueId;
         return view('index.request', ['page_title' => 'Servicios - Cotización - ' . $stepName, 'parentid' => $venue->parent_id,'step' => $step, 'venue' => $venue, 'designs' => $designs, 'file_upload' => $file_upload, 'form_url' => $form_url, 'grupos' => $venuesgrupo, 'rootid' => $rootid->id, 'estimacion' => $estimacion]);
     }
@@ -2462,9 +2468,10 @@ $events['records'] = $newEvents;
             switch ($tipoSolicitud) {
                 case 'reagendar':
                     $salesforce->update('Event', $token,['Aplicar_devolucion__c'=>'true']);
-                    $query = "SELECT ID, Estado__c,WhatId FROM Event where id='{$token}'";
+                    $query = "SELECT ID,Estado__c,WhatId,Venue__c FROM Event where id='{$token}'";
                     $result = $salesforce->query($query);
                     if ($result['totalSize'] > 0) {
+                        $venueid = $result['records'][0]['Venue__c'];
                         if($result['records'][0]['Estado__c'] == 'Cancelado')
                         {
                      //       $request['Cancelado'] = 'Si';
@@ -2473,6 +2480,26 @@ $events['records'] = $newEvents;
                     }
                     $whatid = $result['records'][0]['WhatId'];
 
+                    $query = "SELECT Account.Name, Contacto__r.FirstName, Contacto__r.LastName, Contacto__r.Email, Contacto__r.Phone, Account.document_number__c, Account.document_type__c  FROM OPPORTUNITY WHERE Id='{$whatid}'";
+                    $oppdata = $salesforce->query($query);
+                    if ($oppdata['totalSize'] > 0) {
+                        $first_name = $oppdata['records'][0]['Contacto__r']['FirstName'];
+                        $last_name = $oppdata['records'][0]['Contacto__r']['LastName'];
+                        $email = $oppdata['records'][0]['Contacto__r']['Email'];
+                        $phone = $oppdata['records'][0]['Contacto__r']['Phone'];
+                        $company = $oppdata['records'][0]['Account']['Name'];
+                        
+                        $document_type = $oppdata['records'][0]['Account']['document_type__c'];
+                        if($document_type == 'RUC')
+                        {
+                            $company = $oppdata['records'][0]['Account']['Name'];
+                            $value = $oppdata['records'][0]['Account']['document_number__c'];
+                        } else
+                        {
+                            $company = '';
+                            $value = '';
+                        }
+                    }
 
                     $query = "SELECT Id FROM Cupon__c WHERE fromid__c = '{$token}'";
                     $cupon = "";
@@ -2485,13 +2512,8 @@ $events['records'] = $newEvents;
                         sleep(1);
                     }
 
-                    $id = $token;
-                    $first_name = "John";
-                    $last_name = "Doe";
-                    $email = "john.doe@example.com";
-                    $phone = "1234567890";
-                    $company = "Company";
-                    $value = "Value";
+                    $id = $venueid;
+
                     $url = "/cotizacion/datos-evento?reagendar=1&id=$id&franja=hora&first_name=$first_name&last_name=$last_name&email=$email&phone=$phone&company=$company&00N3m00000QQOde=$value&flexipage=$cupon";
                     return redirect($url);
                     break;
@@ -2501,6 +2523,21 @@ $events['records'] = $newEvents;
                     // INCLUIR LO DEL CUPON
                     // LEER DE SALESFORCE LOS DATOS
                     $salesforce->update('Event', $token,['Aplicar_devolucion__c'=>'true']);
+                    $query = "SELECT Id,Voucher__c,Monto__c FROM Cupon__c WHERE fromid__c = '{$token}'";
+                    $cupon = "";
+                    $monto = "0";
+                    for ($i = 0; $i < 20; $i++) {
+                        $result = $salesforce->query($query);
+                        if ($result['totalSize'] > 0) {
+                            $cupon = $result['records'][0]['Voucher__c'];
+                            $monto = $result['records'][0]['Monto__c'];
+                            break;
+                        }
+                        sleep(1);
+                    }
+                    $valordecimalFormateado = 'B/. ' . number_format($monto, 2, '.', ',');
+                    $request['cupon'] = $cupon;
+                    $request['monto'] = $valordecimalFormateado;
                     return view('index.cancelar-evento-confirmation', ['data' => $request]);
                     break;
                 default:

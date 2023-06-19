@@ -1,3 +1,4 @@
+<!--<script type="text/javascript" src="/js/instascan.min.js"></script>-->
 <div class="request-step" style="margin-top:0px;">
   <div class="container">
     <h4>Estás a punto de completar tu solicitud. <br>
@@ -627,6 +628,7 @@ setTimeout(function() {
       </div>
       <script type="text/javascript">
   function ready() {
+
     $('#apply-coupon').click(function() {
       var cupon = $('#cupon').val();
       $.ajax({
