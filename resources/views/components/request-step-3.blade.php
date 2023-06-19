@@ -637,8 +637,14 @@ setTimeout(function() {
           _token: '{{ csrf_token() }}' // Token CSRF para la seguridad
         },
         success: function(response) {
-          alert(response);
-          $('#00N3m00000Qpiz4').val('a2u3m0000042jm7AAA');
+        alert(JSON.stringify(response));
+          if(response != '' && response != 'undefined')
+          {
+            $('#00N3m00000Qpiz4').val(response.sfid);
+            $('#cupon').val('Descuento: ' + response.valordecimal);
+          }
+          else
+            $('#cupon').val('');
         }
       });
     });

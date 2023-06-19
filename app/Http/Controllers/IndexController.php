@@ -2517,7 +2517,8 @@ $events['records'] = $newEvents;
             ->first();
 
         if ($cupon) { // Verifica que el cupón exista y no haya sido usado
-            echo 'OK';
+            $valordecimalFormateado = 'B/. ' . number_format($cupon->valordecimal, 2, '.', ',');
+            return response()->json(['sfid' => $cupon->sfid, 'valordecimal' => $valordecimalFormateado , 'valororiginal' => $cupon->valordecimal]);
         } else {
             // Maneja el caso en que el cupón no existe o ya ha sido usado
         }
