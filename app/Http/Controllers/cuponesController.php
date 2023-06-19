@@ -56,11 +56,11 @@ $codigo = (string)$sObject['sf:Voucher__c'];
 $tipo = (string)$sObject['sf:Tipo__c'];
 $estado = (string)$sObject['sf:Estado__c'];
 $cantidad = (int)$sObject['sf:Cantidad__c'];
-$consumible = (bool)$sObject['sf:Consumible__c'];
+$consumible = (string)$sObject['sf:Consumible__c'];
 $decimal = (float)$sObject['sf:ValorDecimal__c'];
-$fechainicial = new \DateTime($sObject['sf:FechaInicial__c']);
-$fechafinal = new \DateTime($sObject['sf:Fecha_Final__c']);
-$validopara = (string)$sObject['sf:ValidoPara__c'];
+$fechainicial = (string)$sObject['sf:FechaInicial__c'];
+$fechafinal = (string)$sObject['sf:Fecha_Final__c'];
+$validopara = (string)$sObject['sf:Valido_para__c'];
 
 $cupon = Cupon::firstOrNew(['sfid' => $id]);
 $cupon->codigo = $codigo;
