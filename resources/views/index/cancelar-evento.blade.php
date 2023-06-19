@@ -57,7 +57,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal" style="width:260px">No, mantener reserva</button>
-          <button type="submit" class="btn btn-danger submit-form" onclick="if (this.value !== 'Enviando...') { this.disabled=true; this.value='Enviando...'; this.form.submit(); }" style="width:260px">Sí, cancelar reserva</button>
+          <button type="submit" class="btn btn-danger submit-form" onclick="if (this.value !== 'Enviando...') { this.disabled=true; this.value='Enviando...'; this.form.submit(); }" style="width:260px">Sí, reagendar</button>
         </div>
       </div>
     </div>
@@ -107,7 +107,7 @@
 
           <div class="col-12 text-center">
 @if ($data->Cancelado === 'Si')
-  <p><b>Tu reserva ha sido cancelada.</b></p>
+  <p><b>Esta reserva ya fue cancelada.</b></p>
 @else
             <p class="text-center" style="margin-top:30px">
   <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#cancelModal" style="width:220px">

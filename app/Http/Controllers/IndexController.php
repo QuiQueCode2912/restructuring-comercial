@@ -2518,10 +2518,7 @@ $events['records'] = $newEvents;
                     return redirect($url);
                     break;
                 case 'voucher':
-                    // Tu código para voucher aquí.
                     $request['Cancelado'] = 'Si2';
-                    // INCLUIR LO DEL CUPON
-                    // LEER DE SALESFORCE LOS DATOS
                     $salesforce->update('Event', $token,['Aplicar_devolucion__c'=>'true']);
                     $query = "SELECT Id,Voucher__c,Monto__c FROM Cupon__c WHERE fromid__c = '{$token}'";
                     $cupon = "";
@@ -2551,7 +2548,7 @@ $events['records'] = $newEvents;
                         if($result['records'][0]['Estado__c'] == 'Cancelado')
                         {
                             // DESCOMENTAR PARA PRODUCCION
-                       //     $request['Cancelado'] = 'Si';
+                            $request['Cancelado'] = 'Si';
                         }
                     }
         return view('index.cancelar-evento', ['data' => $request]);
