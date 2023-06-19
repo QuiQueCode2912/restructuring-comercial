@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
-use App\Models\Event;
+use App\Models\Cupon;
 use App\Models\Venue;
 use Illuminate\Http\Response;
 
@@ -27,7 +27,7 @@ class cuponesController extends Controller
 
         // Carga el contenido del mensaje SOAP/XML
         $xmlContent = $request->getContent();
-        //    Log::info('Contenido del Request: ' . $xmlContent);
+            Log::info('Contenido del Request: ' . $xmlContent);
         $xmlContent = str_replace('xmlns:soapenv', 'xmlnssoapenv', $xmlContent);
         $xmlContent = str_replace('xsi:type', 'xsitype', $xmlContent);
         $xmlContent = str_replace('xmlns:sf', 'xmlnssf', $xmlContent);
@@ -48,25 +48,30 @@ class cuponesController extends Controller
             if (isset($notifications['sObject'])) {
                 $notifications = [$notifications];
             }
-        //    'tipo',
-         //   'estado',
-         //   'cantidad',
-        //    'consumible',
-       //     'decimal',
-        //    'fechainicial',
-         //   'fechafinal',
-       //     'codigo',
-       //     'validopara',
-       //     'sfid'
+
             foreach ($notifications as $notification) {
                 $sObject = $notification['sObject'];
-                // Extrae los campos deseados del objeto Event
                 $id = (string)$sObject['sf:Id'];
-                $codigo = (string)$sObject['sf:Voucher__c'];
+$codigo = (string)$sObject['sf:Voucher__c'];
+$tipo = (string)$sObject['sf:Tipo__c'];
+$estado = (string)$sObject['sf:Estado__c'];
+$cantidad = (int)$sObject['sf:Cantidad__c'];
+$consumible = (bool)$sObject['sf:Consumible__c'];
+$decimal = (float)$sObject['sf:ValorDecimal__c'];
+$fechainicial = new \DateTime($sObject['sf:FechaInicial__c']);
+$fechafinal = new \DateTime($sObject['sf:Fecha_Final__c']);
+$validopara = (string)$sObject['sf:ValidoPara__c'];
 
-                $cupon = Cupon::firstOrNew(['sfid' => $id]);
-                $cupon->codigo = $codigo;
-
+$cupon = Cupon::firstOrNew(['sfid' => $id]);
+$cupon->codigo = $codigo;
+$cupon->tipo = $tipo;
+$cupon->estado = $estado;
+$cupon->cantidad = $cantidad;
+$cupon->consumible = $consumible;
+$cupon->valordecimal = $decimal;
+$cupon->fechainicial = $fechainicial;
+$cupon->fechafinal = $fechafinal;
+$cupon->validopara = $validopara;
 
                 $cupon->save();
             }

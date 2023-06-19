@@ -10,7 +10,7 @@ class Cupon extends Model
     use HasFactory;
     public $timestamps = false;
 
-    protected $table = 'Cupones';
+    protected $table = 'cupones';
 
     protected $fillable = [
         'id',
