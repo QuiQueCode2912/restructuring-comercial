@@ -646,7 +646,10 @@ setTimeout(function() {
             $('#cupon').val('Descuento: ' + response.valordecimal);
           }
           else
+          {
+            $('#00N3m00000Qpiz4').val('');
             $('#cupon').val('');
+          }
         }
       });
     });

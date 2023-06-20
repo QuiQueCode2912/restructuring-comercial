@@ -1181,15 +1181,17 @@ class IndexController extends Controller
         session(['phone' => $phone]);
         session(['company' => $company]);
         session(['00N3m00000QQOde' => $value]);
-        session(['00N3m00000Qpiz4'=> $request->input('flexipage')]);
+        
 
         $cupon = Cupon::where('sfid', $request->input('flexipage'))->first();
         if ($cupon) { 
+            session(['00N3m00000Qpiz4'=> $request->input('flexipage')]);
             $valordecimalFormateado = 'B/. ' . number_format($cupon->valordecimal, 2, '.', ',');
             if($cupon->cantidad == 0)
                 $valordecimalFormateado .= ' * USADO';
             session(['cupon' => "Descuento: " . $valordecimalFormateado]);
         } else {
+            session(['00N3m00000Qpiz4'=> ""]);
             session(['cupon' => ""]);
         }
 
@@ -1202,7 +1204,7 @@ class IndexController extends Controller
             setcookie('00N3m00000QQOde', $value, time() + (86400 * 365 * 5), "/");
             $inputs['country_code'] = 'PA';
             $inputs['want_to_do'] = 'event';
-        }
+        }         
 
         $step = $request->step;
         $stepName = 'Solicitud de cotización';
@@ -1243,7 +1245,8 @@ class IndexController extends Controller
             //    $venuesgrupo = Venue::where('parent_id', '=', $venuep->id)->get();
             //    $rootid = Venue::where('parent_id', '=', $venuep->parent_id)->first();
             $rootid->id = null;
-
+            session(['00N3m00000Qpiz4'=> ""]);
+            session(['cupon' => ""]);
             if(isset($_COOKIE['first_name'])) { session(['first_name'=> $_COOKIE['first_name']]); }
             if(isset($_COOKIE['last_name'])) { session(['last_name'=> $_COOKIE['last_name']]); }
             if(isset($_COOKIE['email'])) { session(['email'=> $_COOKIE['email']]); }
@@ -2566,8 +2569,15 @@ $events['records'] = $newEvents;
 
         if ($cupon) { // Verifica que el cupón exista y no haya sido usado
             $valordecimalFormateado = 'B/. ' . number_format($cupon->valordecimal, 2, '.', ',');
+            session(['00N3m00000Qpiz4'=> $cupon->sfid]);
+            if($cupon->cantidad == 0)
+                $valordecimalFormateado .= ' * USADO';
+            session(['cupon' => "Descuento: " . $valordecimalFormateado]);
             return response()->json(['sfid' => $cupon->sfid, 'valordecimal' => $valordecimalFormateado , 'valororiginal' => $cupon->valordecimal]);
+            
         } else {
+            session(['00N3m00000Qpiz4'=> ""]);
+            session(['cupon' => ""]);
             // Maneja el caso en que el cupón no existe o ya ha sido usado
         }
     }
