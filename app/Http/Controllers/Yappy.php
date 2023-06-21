@@ -1,0 +1,90 @@
+<?php
+namespace App\Http\Controllers;
+use App\Libraries\BgFirma;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request, App\Models\Venue, App\Models\VenueFile, App\Models\VenueDesign, App\Models\Holidays, App\Models\Rates, Str, Image, Illuminate\Support\Facades\Storage, Illuminate\Support\Facades\DB;
+use Monolog\Handler\NullHandler;
+use Carbon\Carbon;
+
+
+class Yappy extends Controller
+{
+    public function pagarYappy(Request $request) {
+// verificar credenciales
+// Obtener el dominio del servidor 
+$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+
+$domain = $protocol . $_SERVER['HTTP_HOST'];
+
+$domain = "https://comercial.ciudaddelsaber.org";
+// verificar credenciales
+$response = BgFirma::checkCredentials(env('ID_DEL_COMERCIO'), env('CLAVE_SECRETA'), $domain);
+
+if ($response && $response['success']) {
+    // Inicializar objeto para poder generar el hash
+
+    $bg = new BgFirma(
+        $_POST["total"],
+        env('ID_DEL_COMERCIO'),
+        'USD',
+        $_POST["subtotal"],
+        $_POST["taxes"],
+        $response['unixTimestamp'],
+        'YAP',
+        'VEN',
+        $_POST["orderId"],
+        $_POST["successUrl"],
+        $_POST["failUrl"],
+        $domain,
+        env('CLAVE_SECRETA'),
+        env('MODO_DE_PRUEBAS'),
+        $response['accessToken'],
+        $_POST["tel"]
+    );
+    $response = $bg->createHash();
+    if ($response['success']) {
+        /**
+         * Al verificar si se creó con éxito el hash, podremos obtener el url de la siguiente manera
+         * @var response contiente los valores
+         * @var response['url'] = contiene el url a redireccionar para continuar con el pago.
+         */
+        $url = $response['url'];
+        echo "
+                <script type=\"text/javascript\">
+                window.location.replace(\"$url\");
+                </script>
+            ";
+    } else {
+        /**
+         * Aquí es donde se mostrarán los errores generados por
+         * cualquier tipo de validación de campos necesarios para realizar la transacción.
+         * @var response contiene los valores
+         * @var response['msg'] = contiene el mensaje de error a mostrar
+         * @var response['class'] = contiene la clase de error que es, pueden ser: alert (amarillo), invalid (rojo)
+         */
+        $bg->showAlertError($response);
+    }
+} else {
+    $css = file_get_contents(public_path('css/main.css'));
+    echo '<style>';
+    echo $css;
+    echo '</style>';
+    echo "<div class='alert'>Algo salió mal. Contacta con el administrador</div>";
+    echo "<br>" . json_encode($response);
+}
+
+    }
+
+    public function procesarYappy(Request $request) {
+        if (isset($_GET['orderId']) && isset($_GET['status']) && isset($_GET['domain']) && isset($_GET['hash'])) {
+            header('Content-Type: application/json');
+            $success = validateHash();
+            if ($success) {
+                // Si es true, se debe cambiar el estado de la orden en la base de datos
+            }
+            echo json_encode(['succes' => $success]);
+        }
+
+    }
+
+}

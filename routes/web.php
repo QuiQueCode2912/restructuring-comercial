@@ -84,6 +84,13 @@ Route::post('/sfASWEwweWEQQW/getVenue', 'App\Http\Controllers\eventsController@g
 
 Route::post('/aplicarCupon', 'App\Http\Controllers\IndexController@aplicarCupon');
 
+Route::get('/yappy', 'App\Http\Controllers\Yappy@pagarYappy');
+Route::post('/yappy', 'App\Http\Controllers\Yappy@pagarYappy');
+
+Route::post('/yappydone', 'App\Http\Controllers\Yappy@procesarYappy');
+Route::post('/yappydone', 'App\Http\Controllers\Yappy@procesarYappy');
+
+
 Route::get('/email/quote', function () {
   return view('email.quote');
 });
