@@ -76,8 +76,9 @@ if ($response && $response['success']) {
     }
 
     public function procesarYappy(Request $request) {
-        Log::info('Datos recibidos: ', $request->all());
         echo "procesarYappy";
+        Log::info('Datos recibidos: ', $request->all());
+        
      
 
     }
