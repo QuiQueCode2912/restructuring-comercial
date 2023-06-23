@@ -93,12 +93,12 @@ if ($response && $response['success']) {
     protected function validateHash()
     {
     try {
-        include 'env.php'; // IMPORTAR ARCHIVO DE ENV PARA UTILIZAR LA VARIABLE 'CLAVE_SECRETA'
+       // include 'env.php'; // IMPORTAR ARCHIVO DE ENV PARA UTILIZAR LA VARIABLE 'CLAVE_SECRETA'
         $orderId = $_GET['orderId'];
         $status = $_GET['status'];
         $hash = $_GET['hash'];
         $domain = $_GET['domain'];
-        $values = base64_decode(CLAVE_SECRETA);
+        $values = base64_decode(env('CLAVE_SECRETA'));
         $secrete = explode('.', $values);
         $signature =  hash_hmac('sha256', $orderId . $status . $domain, $secrete[0]);
         $success = strcmp($hash, $signature) === 0;

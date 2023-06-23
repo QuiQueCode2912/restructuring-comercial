@@ -183,8 +183,8 @@
                     <input type="hidden" class="form-control" id="taxes" name="taxes" value="0.00">
                     <input type="hidden" class="form-control" id="discount" name="discount" value="0.00">
                     <input type="hidden" class="form-control" id="shipping" name="shipping" value="0.00">
-                    <input type="hidden" class="form-control" id="successUrl" name="successUrl" value="{{ url('/yappydone/'.$token) }}">
-                    <input type="hidden" class="form-control" id="failUrl" name="failUrl" value="{{ url('/yappyfail/'.$token) }}">
+                    <input type="hidden" class="form-control" id="successUrl" name="successUrl" value="https://comercial.ciudaddelsaber.org/yappydone/{{ $token }}">
+                    <input type="hidden" class="form-control" id="failUrl" name="failUrl" value="https://comercial.ciudaddelsaber.org/yappyfail/{{ $token }}">
                     <input type="hidden" class="form-control" id="orderId" name="orderId" value="<?php echo $token ?>"> 
                     <input type="hidden" class="form-control" id="tel" name="tel" value="<?php echo session()->get('phone') ?>">
 
