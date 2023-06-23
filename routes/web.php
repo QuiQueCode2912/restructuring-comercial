@@ -87,8 +87,11 @@ Route::post('/aplicarCupon', 'App\Http\Controllers\IndexController@aplicarCupon'
 Route::get('/yappy', 'App\Http\Controllers\Yappy@pagarYappy');
 Route::post('/yappy', 'App\Http\Controllers\Yappy@pagarYappy');
 
-Route::post('/yappydone', 'App\Http\Controllers\Yappy@procesarYappy');
-Route::post('/yappydone', 'App\Http\Controllers\Yappy@procesarYappy');
+Route::get('/yappydone/{token}', 'App\Http\Controllers\Yappy@procesarYappy');
+Route::post('/yappydone/{token}', 'App\Http\Controllers\Yappy@procesarYappy');
+
+Route::get('/yappyfail/{token}', 'App\Http\Controllers\Yappy@failYappy');
+Route::post('/yappyfail/{token}', 'App\Http\Controllers\Yappy@failYappy');
 
 
 Route::get('/email/quote', function () {

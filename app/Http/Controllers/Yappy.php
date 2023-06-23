@@ -80,11 +80,15 @@ if ($response && $response['success']) {
             header('Content-Type: application/json');
             $success = validateHash();
             if ($success) {
-                // Si es true, se debe cambiar el estado de la orden en la base de datos
+                $salesforce = $this->salesforce();
+                echo $_GET['status'];
             }
             echo json_encode(['succes' => $success]);
         }
 
+    }
+    public function failYappy(Request $request) {
+    return view('index.yappy-fail', ['request' => $request]);
     }
 
 }

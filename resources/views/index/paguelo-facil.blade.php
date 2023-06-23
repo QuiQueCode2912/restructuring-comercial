@@ -175,7 +175,7 @@
                                     </button>
                                 </div>
             </form>
-            <div class="card">
+            <div class="card yappyForm">
                 <form method="post" id="paymentForm" action="/yappy">
                     @csrf
                     <input type="hidden" class="form-control" id="total" name="total" value="0.01">
@@ -184,11 +184,15 @@
                     <input type="hidden" class="form-control" id="discount" name="discount" value="0.00">
                     <input type="hidden" class="form-control" id="shipping" name="shipping" value="0.00">
                     <input type="hidden" class="form-control" id="successUrl" name="successUrl"
-                        value="https://comercial.ciudaddelsaber.org">
+                        value="{{ url('/yappydone/'.$token) }}">
                     <input type="hidden" class="form-control" id="failUrl" name="failUrl"
-                        value="https://comercial.ciudaddelsaber.org/fail">
-                    <input type="hidden" class="form-control" id="orderId" name="orderId" value="12345">
-                    <input type="hidden" class="form-control" id="tel" name="tel" value="66666666">
+                        value="{{ url('/yappyfail/'.$token) }}">
+                    @if (substr($token,0,3)!='00Q')
+                            <input type="hidden" class="form-control" id="orderId" name="orderId" value="<?php echo $token ?>">
+                        @else
+                            <input type="hidden" class="form-control" id="orderId" name="orderId" value="<?php echo $opportunity ?>">
+                        @endif    
+                    <input type="hidden" class="form-control" id="tel" name="tel" value="<?php echo session()->get('phone') ?>">
 
                     <div id="Yappy_Checkout_Button"></div>
                     <script src="/js/env.js"></script>
@@ -206,7 +210,6 @@
                         <br><br>
                         Fundación Ciudad del Saber<br>
                         <strong>Cuenta Corriente, Banco General</strong><br>
-                        <big><strong>03-01-01-003310-4</strong></big><br>
                         @if (substr($token,0,3)!='00Q')
                             <big><strong>03-01-01-003310-4</strong></big><br>
                             <strong># de referencia:</strong> <?php echo $token ?>

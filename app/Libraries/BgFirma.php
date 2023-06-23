@@ -47,8 +47,8 @@ final class BgFirma
         $this->paymentMethod = $paymentMethod;
         $this->transactionType = $transactionType;
         $this->orderId = $orderId ? $orderId : self::DEFAULT_ORDER_ID;
-        $this->successUrl = $successUrl ? mb_strtolower($successUrl) : '';
-        $this->failUrl = $failUrl ? mb_strtolower($failUrl) : '';
+        $this->successUrl = $successUrl ? ($successUrl) : '';
+        $this->failUrl = $failUrl ? ($failUrl) : '';
         $this->domain = mb_strtolower($domain);
         $this->secretToken = $secretToken;
         $this->sandbox = $sandbox === true ? true : false;

@@ -105,7 +105,7 @@
                     async: true,
                     dataType: 'html',
                     success: function (response) {
-           //             console.log("LN108 JSON: " + (response));
+                        console.log("LN108 JSON: " + (response));
                         const d = new Date();
                         let hour = d.getHours();
                         //limpiar
@@ -871,9 +871,13 @@ $(document).ready(function () {
 
   if ($('.other-methods #total').length > 0) {
     $('.other-methods #total').val($('.form-check .form-check-input:checked').attr('value'));
+    $('.yappyForm #total').val($('.form-check .form-check-input:checked').attr('value'));
+    $('.yappyForm #subtotal').val($('.form-check .form-check-input:checked').attr('value'));
     $(document).on({
       change: function change(e) {
         $('.other-methods #total').val($(this).val());
+        $('.yappyForm #total').val($(this).val());
+        $('.yappyForm #subtotal').val($(this).val());
       }
     }, '.form-check .form-check-input');
     $(document).on({
