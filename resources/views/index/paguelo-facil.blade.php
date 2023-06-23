@@ -176,22 +176,20 @@
                                 </div>
             </form>
             <div class="card yappyForm">
-                <form method="post" id="paymentForm" action="/yappy">
-                    @csrf
-                    <input type="hidden" class="form-control" id="total" name="total" value="0.01">
-                    <input type="hidden" class="form-control" id="subtotal" name="subtotal" value="0.01">
-                    <input type="hidden" class="form-control" id="taxes" name="taxes" value="0.00">
-                    <input type="hidden" class="form-control" id="discount" name="discount" value="0.00">
-                    <input type="hidden" class="form-control" id="shipping" name="shipping" value="0.00">
-                    <input type="hidden" class="form-control" id="successUrl" name="successUrl" value="https://comercial.ciudaddelsaber.org/yappydone/{{ $token }}">
-                    <input type="hidden" class="form-control" id="failUrl" name="failUrl" value="https://comercial.ciudaddelsaber.org/yappyfail/{{ $token }}">
-                    <input type="hidden" class="form-control" id="orderId" name="orderId" value="<?php echo $token ?>"> 
-                    <input type="hidden" class="form-control" id="tel" name="tel" value="<?php echo session()->get('phone') ?>">
-
-                    <div id="Yappy_Checkout_Button"></div>
+        <form id="paymentForm" action="/yappy" method="post">
+            <input type="hidden" class="form-control" id="total" name="total" value="17.00">
+            <input type="hidden" class="form-control" id="subtotal" name="subtotal" value="10.00">
+            <input type="hidden" class="form-control" id="taxes" name="taxes" value="0.00">
+            <input type="hidden" class="form-control" id="discount" name="discount" value="0.00">
+            <input type="hidden" class="form-control" id="shipping" name="shipping" value="0.00">
+            <input type="hidden" class="form-control" id="successUrl" name="successUrl" value="https://comercial.ciudaddelsaber.org/yappydone/<?php echo $token ?>">
+            <input type="hidden" class="form-control" id="failUrl" name="failUrl" value="https://comercial.ciudaddelsaber.org/yappyfail/<?php echo $token ?>">
+            <input type="hidden" class="form-control" id="orderId" name="orderId" value="<?php echo substr($token, 0, 15); ?>">
+            <input type="hidden" class="form-control" id="tel" name="tel" value="66666666">
+        </form>
+                <div id="Yappy_Checkout_Button"></div>
                     <script src="/js/env.js"></script>
                     <script src="/js/bg-payment.js"></script>
-                </form>
 
             </div>
             <div class="card">

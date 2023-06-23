@@ -90,8 +90,8 @@ Route::post('/yappy', 'App\Http\Controllers\Yappy@pagarYappy');
 Route::get('/yappydone/{token}', 'App\Http\Controllers\Yappy@doneYappy');
 Route::post('/yappydone/{token}', 'App\Http\Controllers\Yappy@doneYappy');
 
-//Route::get('/pagosbg.php', 'App\Http\Controllers\Yappy@procesarYappy');
-//Route::post('/pagosbg.php', 'App\Http\Controllers\Yappy@procesarYappy');
+Route::get('/pagosbg.php', 'App\Http\Controllers\Yappy@procesarYappy');
+Route::post('/pagosbg.php', 'App\Http\Controllers\Yappy@procesarYappy');
 
 Route::get('/yappyfail/{token}', 'App\Http\Controllers\Yappy@failYappy');
 Route::post('/yappyfail/{token}', 'App\Http\Controllers\Yappy@failYappy');
