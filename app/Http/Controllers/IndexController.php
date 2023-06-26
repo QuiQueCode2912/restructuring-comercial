@@ -2378,8 +2378,7 @@ if($result['records'][0]['Precio_Estimado__c'] == '0')
 
     public function getAvailableSlots(Request $request)
     {
-        try {
-            //code...
+   
        
         $venueId = $request->venueId;
         $salesforce = $this->salesforce();
@@ -2388,7 +2387,7 @@ if($result['records'][0]['Precio_Estimado__c'] == '0')
 
         //02i3m00000Didu3AAB VOLEIBOL
         //02i3m00000DidtxAAB BASQUETBOL
-
+/*
      //    echo json_encode($thisVenue);
         $Fi =$request->date . "T00:00:00Z";
         //$Ff =$request->date . "T04:59:59Z";
@@ -2436,20 +2435,16 @@ foreach ($events['records'] as $event) {
         }
     }
 }
-$events['records'] = $newEvents;
-          if ($events['totalSize'] > 0)
-            {
-          echo json_encode($events['records']);
-            //    $opportunity_id = $contract['records'][0]['Oportunidad__c'];
-            }
+    $events['records'] = $newEvents;
+            if ($events['totalSize'] > 0)
+                {
+            echo json_encode($events['records']);
+                //    $opportunity_id = $contract['records'][0]['Oportunidad__c'];
+                }
 
-        //   $id = $opportunity_id == $data['PARM_1'] ? $opportunity_id : null;
+            //   $id = $opportunity_id == $data['PARM_1'] ? $opportunity_id : null;
 
-    } catch (Exception $e) {
-        $error =$e->getMessage();
-        return  response()->json(['message' => $error], 500);
-        //throw $th;
-    }
+        } */
     }
 
     public function getInsertedLeadId(Request $request)
