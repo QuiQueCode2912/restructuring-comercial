@@ -2444,7 +2444,7 @@ foreach ($events['records'] as $event) {
 
             //   $id = $opportunity_id == $data['PARM_1'] ? $opportunity_id : null;
 
-        } 
+         
     }
 
     public function getInsertedLeadId(Request $request)
