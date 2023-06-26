@@ -2380,8 +2380,6 @@ if($result['records'][0]['Precio_Estimado__c'] == '0')
 
     public function getAvailableSlots(Request $request)
     {
-   
-       
         $venueId = $request->venueId;
         $salesforce = $this->salesforce();
         $thisVenue = Venue::where('id', '=', $venueId)->first();
@@ -2437,16 +2435,14 @@ foreach ($events['records'] as $event) {
         }
     }
 }
-    $events['records'] = $newEvents;
-            if ($events['totalSize'] > 0)
-                {
-            echo json_encode($events['records']);
-                //    $opportunity_id = $contract['records'][0]['Oportunidad__c'];
-                }
+$events['records'] = $newEvents;
+          if ($events['totalSize'] > 0)
+            {
+          echo json_encode($events['records']);
+            //    $opportunity_id = $contract['records'][0]['Oportunidad__c'];
+            }
 
-            //   $id = $opportunity_id == $data['PARM_1'] ? $opportunity_id : null;
-
-         
+        //   $id = $opportunity_id == $data['PARM_1'] ? $opportunity_id : null;
     }
 
     public function getInsertedLeadId(Request $request)
