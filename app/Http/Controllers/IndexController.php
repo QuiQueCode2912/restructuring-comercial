@@ -2387,7 +2387,7 @@ if($result['records'][0]['Precio_Estimado__c'] == '0')
 
         //02i3m00000Didu3AAB VOLEIBOL
         //02i3m00000DidtxAAB BASQUETBOL
-/*
+
      //    echo json_encode($thisVenue);
         $Fi =$request->date . "T00:00:00Z";
         //$Ff =$request->date . "T04:59:59Z";
@@ -2444,7 +2444,7 @@ foreach ($events['records'] as $event) {
 
             //   $id = $opportunity_id == $data['PARM_1'] ? $opportunity_id : null;
 
-        } */
+        } 
     }
 
     public function getInsertedLeadId(Request $request)
