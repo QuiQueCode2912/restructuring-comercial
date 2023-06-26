@@ -45,11 +45,7 @@
           </p>
         </div>
         <div class="col-md-3 text-right">
-<<<<<<< HEAD
-          <span style="color:#0088ff">El precio varía según lo solicitado</span>
-=======
           <span style="color:#0088ff">El precio varía según lo solicitado</span> 
->>>>>>> origin/master
         </div>
       </div>
       <hr style="margin:10px 0 30px" />
@@ -98,11 +94,7 @@
           </p>
         </div>
         <div class="col-md-3 text-right">
-<<<<<<< HEAD
-          <span style="color:#0088ff">El precio varía según lo solicitado</span>
-=======
           <span style="color:#0088ff">El precio varía según lo solicitado</span> 
->>>>>>> origin/master
         </div>
       </div>
     @break
@@ -120,11 +112,7 @@
           </p>
         </div>
         <div class="col-md-3 text-right">
-<<<<<<< HEAD
-          <span style="color:#0088ff">El precio varía según lo solicitado</span>
-=======
           <span style="color:#0088ff">El precio varía según lo solicitado</span> 
->>>>>>> origin/master
         </div>
       </div>
       <hr style="margin:10px 0 30px" />
@@ -141,11 +129,7 @@
           </p>
         </div>
         <div class="col-md-3 text-right">
-<<<<<<< HEAD
-          <span style="color:#0088ff">El precio varía según lo solicitado</span>
-=======
           <span style="color:#0088ff">El precio varía según lo solicitado</span> 
->>>>>>> origin/master
         </div>
       </div>
     @break
