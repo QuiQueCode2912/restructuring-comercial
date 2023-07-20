@@ -325,13 +325,6 @@
   </div>
 </div>
 
-
-
-<script>
-    console.log('Logs');
-    console.log(<?php  echo session()?>);
-</script>
-
 <?php if (session()->get('country_code')) : ?>
 <script>
 document.getElementById('country_code').value = "<?php echo session()->get('country_code') ?>"
