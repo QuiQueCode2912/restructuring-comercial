@@ -325,6 +325,12 @@
   </div>
 </div>
 
+
+
+<script>
+    console.log(<?php  echo session()->get('venue') ?>);
+</script>
+
 <?php if (session()->get('country_code')) : ?>
 <script>
 document.getElementById('country_code').value = "<?php echo session()->get('country_code') ?>"
