@@ -326,6 +326,12 @@
 </div>
 
 
+<script>
+    var data = @json($data);
+    console.log(data);
+</script>
+
+
 
 <?php if (session()->get('country_code')) : ?>
 <script>
