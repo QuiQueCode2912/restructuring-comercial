@@ -328,7 +328,8 @@
 
 
 <script>
-    console.log(<?php  echo session()->get('venue') ?>);
+    console.log('Logs');
+    console.log(<?php  echo session()?>);
 </script>
 
 <?php if (session()->get('country_code')) : ?>
