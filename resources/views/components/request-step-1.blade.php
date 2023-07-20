@@ -325,11 +325,7 @@
   </div>
 </div>
 
-<script>
-    var jobs = JSON.parse("{{ json_encode($venue) }}");
-    console.log('Jobs');
-    console.log(jobs);
-</script>
+
 
 <?php if (session()->get('country_code')) : ?>
 <script>
