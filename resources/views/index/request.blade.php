@@ -37,4 +37,11 @@
     </form>
   </div>
 </div>
+<script>
+  $(document).ready(function() {
+  var title = {!! json_encode($venue) !!};
+  console.log('title');
+  console.log(title);
+  });
+</script>
 @endsection
