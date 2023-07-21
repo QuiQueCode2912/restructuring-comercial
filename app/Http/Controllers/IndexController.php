@@ -1232,7 +1232,7 @@ class IndexController extends Controller
         }
 
         $venuesgrupo = [];
-        session(['venue'=> $venue]); 
+        
         
         switch ($step)
         {
