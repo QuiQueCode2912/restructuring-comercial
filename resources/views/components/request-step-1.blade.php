@@ -324,8 +324,6 @@
     </div>
   </div>
 </div>
-{{ dd(get_defined_vars()['__data']) }}
-
 <?php if (session()->get('country_code')) : ?>
 <script>
 document.getElementById('country_code').value = "<?php echo session()->get('country_code') ?>"
