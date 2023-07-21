@@ -29,7 +29,7 @@
             case '4-p' : ?><x-request-step-4-p /><?php break;
             case '5' : ?><x-request-step-2-lodging /><?php break;
             case '6' : ?><x-request-step-2-residency /><?php break;
-            default : ?><x-request-step-1 /><?php break;
+            default : ?><x-request-step-1 venue="{{ $venue }}" /><?php break;
           }
           ?>
         </div>
@@ -37,11 +37,4 @@
     </form>
   </div>
 </div>
-<script>
-  $(document).ready(function() {
-  var title = {!! json_encode($venue) !!};
-  console.log('title');
-  console.log(title);
-  });
-</script>
 @endsection
