@@ -1251,6 +1251,8 @@ class IndexController extends Controller
             if(isset($_COOKIE['phone'])) { session(['phone'=> $_COOKIE['phone']]); }
             if(isset($_COOKIE['company'])) { session(['company'=> $_COOKIE['company']]); }
             if(isset($_COOKIE['00N3m00000QQOde'])) { session(['00N3m00000QQOde'=> $_COOKIE['00N3m00000QQOde']]); }
+
+            session(['venue'=> $venue]); 
             
             session(['00N3m00000QeGyG'=> 'Adulto']);
             if($request->id)
