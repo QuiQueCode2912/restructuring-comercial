@@ -299,7 +299,7 @@
         <div class="row mt-3">
           <div class="col-12"><small>Por favor ingresa la siguiente información</small></div>
           <div class="col-12 col-md-6">
-            <div class="form-group">
+            <div class="{{ $venue == 'Salas de eventos' ? 'form-group required' :'form-group' }}">
               <input type="text" class="form-control" name="company" id="company" placeholder="Organización" value="<?php echo session()->get('company', old('company')) ?>">
             </div>
           </div>
@@ -310,7 +310,7 @@
           </div>
         </div>
       </div>
-      {{ $venue }}
+      
 
       <div class="col-12 mt-4">
         <a href="#"><small>* Campos obligatorios</small></a>
