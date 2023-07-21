@@ -304,7 +304,7 @@
             </div>
           </div>
           <div class="col-12 col-md-6">
-            <div class="form-group">
+            <div class="{{ $venue == 'Salas de eventos' ? 'form-group required' :'form-group' }}">
               <input type="text" class="form-control" name="00N3m00000QQOde" id="identification" placeholder="RUC (Número de identificación fiscal)" value="<?php echo session()->get('00N3m00000QQOde', old('00N3m00000QQOde')) ?>">
             </div>
           </div>
