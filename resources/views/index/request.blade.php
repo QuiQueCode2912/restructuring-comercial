@@ -29,7 +29,7 @@
             case '4-p' : ?><x-request-step-4-p /><?php break;
             case '5' : ?><x-request-step-2-lodging /><?php break;
             case '6' : ?><x-request-step-2-residency /><?php break;
-            default : ?><x-request-step-1 /><?php break;
+            default : ?><x-request-step-1 venue="{{ $venue ? $venue->type : '' }}" /><?php break;
           }
           ?>
         </div>

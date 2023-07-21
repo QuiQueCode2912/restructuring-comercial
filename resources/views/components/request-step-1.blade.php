@@ -299,18 +299,18 @@
         <div class="row mt-3">
           <div class="col-12"><small>Por favor ingresa la siguiente información</small></div>
           <div class="col-12 col-md-6">
-            <div class="form-group">
+            <div class="{{ $venue == 'Salas de eventos' ? 'form-group required' :'form-group' }}">
               <input type="text" class="form-control" name="company" id="company" placeholder="Organización" value="<?php echo session()->get('company', old('company')) ?>">
             </div>
           </div>
           <div class="col-12 col-md-6">
-            <div class="form-group">
+            <div class="{{ $venue == 'Salas de eventos' ? 'form-group required' :'form-group' }}">
               <input type="text" class="form-control" name="00N3m00000QQOde" id="identification" placeholder="RUC (Número de identificación fiscal)" value="<?php echo session()->get('00N3m00000QQOde', old('00N3m00000QQOde')) ?>">
             </div>
           </div>
         </div>
       </div>
-
+      
 
       <div class="col-12 mt-4">
         <a href="#"><small>* Campos obligatorios</small></a>
@@ -324,13 +324,6 @@
     </div>
   </div>
 </div>
-
-
-
-<script>
-    console.log(<?php  echo session()->get('venue') ?>);
-</script>
-
 <?php if (session()->get('country_code')) : ?>
 <script>
 document.getElementById('country_code').value = "<?php echo session()->get('country_code') ?>"

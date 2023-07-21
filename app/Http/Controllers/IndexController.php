@@ -1235,6 +1235,7 @@ class IndexController extends Controller
 
         $venuesgrupo = [];
         
+        
         switch ($step)
         {
             case 'datos-contacto':
