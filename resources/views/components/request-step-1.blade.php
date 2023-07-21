@@ -324,6 +324,7 @@
     </div>
   </div>
 </div>
+{{ dd(get_defined_vars()['__data']) }}
 
 <?php if (session()->get('country_code')) : ?>
 <script>
