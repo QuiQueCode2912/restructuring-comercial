@@ -310,7 +310,7 @@
           </div>
         </div>
       </div>
-      {{ $venue->type }}
+      {{ $venue }}
 
       <div class="col-12 mt-4">
         <a href="#"><small>* Campos obligatorios</small></a>
