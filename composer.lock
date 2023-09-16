@@ -7448,7 +7448,7 @@
     "minimum-stability": "dev",
     "stability-flags": [],
     "prefer-stable": true,
-    "prefer-lowest": false, 
+    "prefer-lowest": false,
     "platform": {
         "php": "7.4"
     },
