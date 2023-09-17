@@ -92,7 +92,11 @@
             if($pvax != 'parque-cds')
               echo "Disciplinas";
             else 
-              echo "Canchas";
+              if($venue['name']=='Piscina') 
+                echo 'Piscinas';
+              else
+                echo "Canchas";
+              
             }
             ?></dt>
             <dd><?php
@@ -100,8 +104,11 @@
         {
             echo 96;
             } else {
-            if($pvax != 'Parque Ciudad del Saber')
-	            echo count($venue['venues']);
+            if($pvax != 'Parque Ciudad del Saber' )
+              if($venue['name']=='Piscina')
+                echo "1";
+              else
+	              echo count($venue['venues']);
             else
               echo "1";
 }
