@@ -28,9 +28,16 @@ if(!isset($venueroute))
       <div class="v-button-container">
         @if($venueroute == "parque-cds")
           @if($parentid!='02i3m00000Fx0PJAAZ')
-            @if($hourfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=hora" class="btn btn-primary btn-sm">Reservar horas</a> @endif
+            <!-- 02i3m00000D9BANAA4  ESTE ID ES DE LA PISCINA  -->
+            @if($hourfee > 0 && $id != '02i3m00000D9BANAA4') <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=hora" class="btn btn-primary btn-sm">Reservar horas</a> @endif
             @if($alldayfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=dia" class="btn btn-primary btn-sm">Reservar días</a> @endif
             <!-- @if($monthlyfee > 0) <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=mes" class="btn btn-primary btn-sm">Reservar mes</a> @endif -->
+            @if($id == '02i3m00000D9BANAA4')
+            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#piscinaHours">
+              VER HORARIOS
+            </button>
+              
+             @endif
           @else
             <span style="font-family: roboto; font-weight: 600; text-transform: none;">Para utilizar el Área de Pesas debes realizar el pago por ventanilla en el Gimnasio, Edificio 183.<br>
             <br>Lunes a Viernes de 6:00 am a 9:00 pm.<br>Sábados y Domingos de 6:00 am a 6:00 pm.</span>

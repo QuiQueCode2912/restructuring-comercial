@@ -4,6 +4,13 @@
 <!-- COVID <x-covid /> -->
 <x-header menu="true" />
 <x-venues-menu venue="{{ $venue }}" />
+
+
+<!-- Modal -->
+
+<!-- Modal -->
+<x-piscina-horarios />
+
 <x-venue-characteristics type="{{ $venues ? $venues[0]->type : 'venues' }}" maxpax="{{ $max_pax }}" facilities="{{ $facilities }}" venues="{{ count($venues) }}" venue="{{ $venueName }}" showpolicies="{{ $show_policies ?? true }}" venueid="{{ isset($venueid) ? $venueid : '' }}" parentid="{{ isset($parentid) ? $parentid : '' }}"/>
 
 <div class="container" style="margin:0 auto; padding:0; position:relative">
