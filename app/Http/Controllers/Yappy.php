@@ -16,7 +16,7 @@ $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERV
 
 $domain = $protocol . $_SERVER['HTTP_HOST'];
 
-$domain = "https://comercial.ciudaddelsaber.org";
+$domain = "https://staging.comercial.ciudaddelsaber.org";
 // verificar credenciales
 $response = BgFirma::checkCredentials(env('ID_DEL_COMERCIO'), env('CLAVE_SECRETA'), $domain);
 
