@@ -83,6 +83,7 @@ if ($response && $response['success']) {
 
     }
     public function doneYappy(Request $request) {
+        $salesforce->update('Lead', $request->token, ['Pago_confirmado__c' => 'true']);
         return redirect()->to('/confirmacion-pago/' . $request->token);
     }
     
