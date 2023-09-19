@@ -83,10 +83,9 @@ if ($response && $response['success']) {
 
     }
     public function doneYappy(Request $request) {
-        ///AQUI VA UNA PINCHE VISTA DE QUE SALIO BIEN
-     
-
+        return redirect()->to('/confirmacion-pago/' . $request->token);
     }
+    
     public function failYappy(Request $request) {
     return view('index.yappy-fail', ['request' => $request]);
     }
