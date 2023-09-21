@@ -550,6 +550,7 @@ if ($designs) {
                                         <?php $hayNocturnos = 0; ?>
                                         <?php if ($grupos) : ?>
                                         <?php foreach ($grupos as $grupo) : ?>
+                                        <?php if ($grupo->name !='PISCINA RECREATIVA') : ?>
                                         <td>
                                             <div id="diaDisclaimer" data-toggle="popover" data-placement="bottom"
                                                 style="top: -130px;" title="Dismissible popover"
@@ -568,6 +569,8 @@ if ($designs) {
                                             $hayNocturnos = 1;
                                         }
                                         ?>
+                                        <?php endif ?>
+
                                         <?php endforeach ?>
                                         <?php endif ?>
                                     </tr>
@@ -578,95 +581,106 @@ if ($designs) {
                                           
                                           class Timetable {
                                             public $startTime;
+                                            public $startTimeToShow;
                                             public $endTime;
+                                            public $endTimeToShow;
                                           }
 
                                           $timeOne = new Timetable();
-                                          $timeOne->startTime = '05:30 AM';
-                                          $timeOne->endTime = '06:30 AM';
+                                          $timeOne->startTime = '05-30';
+                                          $timeOne->startTimeToShow = '05:30 AM';
+                                          $timeOne->endTime = '06-30';
+                                          $timeOne->endTimeToShow = '06:30 AM';
 
                                           
                                           $timeTwo = new Timetable();
-                                          $timeTwo->startTime = '07:30 AM';
-                                          $timeTwo->endTime = '08:30 AM';
+                                          $timeTwo->startTime = '07-30';
+                                          $timeTwo->startTimeToShow = '07:30 AM';
+                                          $timeTwo->endTime = '08-30';
+                                          $timeTwo->endTimeToShow = '08:30 AM';
 
 
                                           $lsTimeTables = array($timeOne,$timeTwo);
                                           foreach ($lsTimeTables as $timeItem) {
                                     ?>
-                                          <tr id="trHora{{ $timeItem->startTime }}">
-                                                <th id="lblHora{{ $timeItem->startTime }}"
-                                                    style="font-family: 'Roboto', sans-serif;" class="headcol">
-                                                    {{ $timeItem->startTime }}-{{ $timeItem->endTime }}
-                                          </th>
+                                    <tr id="trHora{{ $timeItem->startTime }}">
+                                        <th id="lblHora{{ $timeItem->startTime }}"
+                                            style="font-family: 'Roboto', sans-serif;" class="headcol">
+                                            {{ $timeItem->startTimeToShow }}
+                                        </th>
                                         <?php 
                                           
                                           foreach ($grupos as $grupo) {
                                         ?>
+                                        <?php if ($grupo->name !='PISCINA RECREATIVA') : ?>
                                         <td class="long">
-                                            <div class="spBtn">
-                                                {{ $timeItem->startTime }} -
-                                                {{ $timeItem->endTime }}
-                                          </div>
-
-
-                                    <?php }?>
-                                      </td>
-                                    </tr> 
+                                            <div class="spBtn" data-venuename="{{ $grupo->name }}"
+                                                id="chkhora{{ $timeItem->startTime }}{{ $grupo->id }}"
+                                                name="chkhora{{ $timeItem->startTime }}{{ $grupo->id }}"
+                                                onclick="chkCambio(event)">
+                                                {{ $timeItem->startTimeToShow }} -
+                                                {{ $timeItem->endTimeToShow }}
+                                            </div>
+                                        </td>
+                                        <?php endif ?>
+                                        <?php }?>
+                                    </tr>
                                     <?php 
                                           }
                                           
-                                          return;//escape 
+                                          
                                         }?>
+
                                     <?php
-                                        $horaInicial = 7;
-                                        $horaFinal = 20;
-                                        $incrementosFranja = 1;
-                                        for ($horaActual = $horaInicial; $horaActual <= $horaFinal; $horaActual += $incrementosFranja)
-                                        {
-                                        $horaActualSTR = "";
-                                        $horaActual24STR = "";
-                                        $horaFinalSTR = "";
-                                        $THoraInicial = "AM";
-                                        $THoraFinal = "AM";
-                                        $hActual = $horaActual;
-                                        $hFinal = $horaActual + $incrementosFranja;
-                                        if($hFinal > 12)
-                                        {
-                                            $THoraFinal = "PM";
-                                            $hFinal -= 12;
-                                        }
-                                        if($hActual > 12)
-                                        {
-                                            $THoraInicial = "PM";
-                                            $hActual -= 12;
-                                        }
-                                        
-                                        if($hActual < 10)
-                                        {
-                                            $horaActualSTR = "0" . (string) $hActual;
-                                        }
-                                        else
-                                        {
-                                              $horaActualSTR = (string) $hActual;
-                                        }
-                                        if($hFinal < 10)
-                                        {
-                                            $horaFinalSTR = "0" . (string) $hFinal;
-                                        }
-                                        else
-                                        {
-                                              $horaFinalSTR = (string) $hFinal;
-                                        }
-                                        if($horaActual < 10)
-                                        {
-                                            $horaActual24STR = "0" . (string) $horaActual;
-                                        }
-                                        else
-                                        {
-                                              $horaActual24STR = (string) $horaActual;
-                                        }
-                                   ?>
+                                    if($parentid !== '02i3m00000DiduZAAR'){
+                                            $horaInicial = 7;
+                                            $horaFinal = 20;
+                                            $incrementosFranja = 1;
+                                            for ($horaActual = $horaInicial; $horaActual <= $horaFinal; $horaActual += $incrementosFranja)
+                                            {
+                                            $horaActualSTR = "";
+                                            $horaActual24STR = "";
+                                            $horaFinalSTR = "";
+                                            $THoraInicial = "AM";
+                                            $THoraFinal = "AM";
+                                            $hActual = $horaActual;
+                                            $hFinal = $horaActual + $incrementosFranja;
+                                            if($hFinal > 12)
+                                            {
+                                                $THoraFinal = "PM";
+                                                $hFinal -= 12;
+                                            }
+                                            if($hActual > 12)
+                                            {
+                                                $THoraInicial = "PM";
+                                                $hActual -= 12;
+                                            }
+                                            
+                                            if($hActual < 10)
+                                            {
+                                                $horaActualSTR = "0" . (string) $hActual;
+                                            }
+                                            else
+                                            {
+                                                $horaActualSTR = (string) $hActual;
+                                            }
+                                            if($hFinal < 10)
+                                            {
+                                                $horaFinalSTR = "0" . (string) $hFinal;
+                                            }
+                                            else
+                                            {
+                                                $horaFinalSTR = (string) $hFinal;
+                                            }
+                                            if($horaActual < 10)
+                                            {
+                                                $horaActual24STR = "0" . (string) $horaActual;
+                                            }
+                                            else
+                                            {
+                                                $horaActual24STR = (string) $horaActual;
+                                            }
+                                    ?>
                                     <?php if($horaActual <= 17 || $hayNocturnos == 1) : ?>
                                     <tr id="trHora{{ $horaActual24STR }}">
                                         <th id="lblHora{{ $horaActual24STR }}"
@@ -691,8 +705,8 @@ if ($designs) {
 
 
                                                 <!-- btn noHover shadow-none btn-outline-primary
-                <input class="chkHide" data-venuename="{{ $grupo->name }}" id="chkhora{{ $horaActual24STR }}{{ $grupo->id }}" name="chkhora{{ $horaActual24STR }}{{ $grupo->id }}" type="checkbox" autocomplete="off" onchange="chkCambio(event)" />
-                -->
+                    <input class="chkHide" data-venuename="{{ $grupo->name }}" id="chkhora{{ $horaActual24STR }}{{ $grupo->id }}" name="chkhora{{ $horaActual24STR }}{{ $grupo->id }}" type="checkbox" autocomplete="off" onchange="chkCambio(event)" />
+                    -->
                                                 {{ $horaActualSTR }}:00{{ $THoraInicial }} -
                                                 {{ $horaFinalSTR }}:00{{ $THoraFinal }}
 
@@ -703,6 +717,7 @@ if ($designs) {
                                         <?php endif ?>
                                     </tr>
                                     <?php endif ?>
+                                    <?php } ?>
                                     <?php } ?>
 
 

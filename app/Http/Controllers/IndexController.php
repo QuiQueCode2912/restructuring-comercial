@@ -1306,6 +1306,7 @@ class IndexController extends Controller
                     case '02i3m00000D9DaPAAV':
                         $selVenues = session('ReservasSeleccionadas');
                         $reservas = json_decode(session('ReservasSeleccionadas'));
+                       
 
                         $recargoNoche = Rates::where('name', '=', 'Recargo - Noche')->first();
                         $recargoFin = Rates::where('name', '=', 'Recargo - Fin de semana')->first();
@@ -1345,14 +1346,21 @@ class IndexController extends Controller
                         foreach ($reservas as $reserva) {
                             $debugCalculo = $debugCalculo . "\r\nFranja:" . session()->get('franja') . "\r\n";
                             $idActual = $reserva->id;
+                            echo  $reserva->fecha;
                             $fechaActual = $reserva->fecha;
                             $fechaActualCarbon = Carbon::parse($fechaActual);
                             $fechaActualCarbon->addHours(5);
 
                             // Si deseas actualizar el campo fecha en el objeto reserva
                             $fechaActual = $fechaActualCarbon;
-                            $horaInicio = substr($idActual, 7, 2);
-                            $sfAssetId = substr($idActual, 9);
+                            if($reserva->venue == 'PISCINA'){
+                                $horaInicio = substr($idActual, 7, 4);
+                                $sfAssetId = substr($idActual, 12);
+                            }else{
+                                $horaInicio = substr($idActual, 7, 2);
+                                $sfAssetId = substr($idActual, 9);
+                            }
+                     
 
                             $debugCalculo = $debugCalculo . " " . $sfAssetId;
 

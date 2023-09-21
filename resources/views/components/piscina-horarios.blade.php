@@ -32,8 +32,7 @@
                                 <p>12:30 pm a 1:30 pm</p>
                                 <p>2:00 pm a 3:00 pm</p>
                                 <p>3:30 pm a 4:30 pm</p>
-                                <p>5:00 pm a 6:00 pm (Este turno se abrirá a futuro)</p>
-                                <p>6:30 pm a 7:30 pm (Este turno se abrirá a futuro)</p>
+                            
 
                             </div>
                             <div class="tab-pane fade" id="list-profile" role="tabpanel"
@@ -47,13 +46,13 @@
                             </div>
                             <div class="tab-pane fade" id="list-messages" role="tabpanel"
                                 aria-labelledby="list-messages-list">
-                                <p>8:00 am a 9:00 am</p>
-                                <p>9:30 am a 10:30 am</p>
-                                <p>11:00 am a 12:00 pm</p>
+                                <p>5:30 am a 6:30 am </p>
+                                <p>7:00 am a 8:00 am</p>
+                                <p>8:30 am a 9:30 am</p>
+                                <p>10:00 am a 11:00 am</p>
                                 <p>12:30 pm a 1:30 pm</p>
                                 <p>2:00 pm a 3:00 pm</p>
                                 <p>3:30 pm a 4:30 pm</p>
-
                             </div>
                         </div>
                     </div>

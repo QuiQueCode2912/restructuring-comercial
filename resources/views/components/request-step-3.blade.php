@@ -403,10 +403,10 @@
     var result = "";
 
     reservas.forEach(function(reserva, index) {
-      var horaInicio = reserva.id.substring(7, 9);
-      var horaInicioFormateada = formatHora(horaInicio);
+      var horaInicio =  reserva.venue!='PISCINA' ? reserva.id.substring(7, 9) : reserva.id.substring(7, 12).replace('-',':');
+      var horaInicioFormateada = reserva.venue!='PISCINA' ? formatHora(horaInicio) : formatPiscinaHora(horaInicio);
       var recargo = reserva.recargo ?? ' ';
-      var horaFinFormateada = formatHora(parseInt(horaInicio) + 1);
+      var horaFinFormateada = reserva.venue!='PISCINA' ? formatHora(parseInt(horaInicio) + 1) : formatPiscinaHoraForEndEvent(horaInicio);
       var tarifaLinea = formatNumber(reserva.subtotal);
       result += "<tr><td>" + reserva.venue + "</td><td>" + reserva.fecha + " " + horaInicioFormateada + " - " + horaFinFormateada + "</td><td>" + recargo + "</td><td style='text-align:right'>" + tarifaLinea + "</td></tr>";
 
@@ -416,6 +416,23 @@
     });
 
     return result;
+  }
+
+  const formatPiscinaHora =function(hora){
+      var hourCheck= hora.slice(0, 2);
+      var periodo = hourCheck < 12 ? " AM" : " PM";
+      return hora+periodo;
+
+  }
+
+  
+  const formatPiscinaHoraForEndEvent =function(hora){
+      var hourCheck= hora.slice(0, 2);
+      var minutes= hora.slice(3, 5);
+      hourCheck = parseInt(hourCheck) + 1
+      var periodo = hourCheck < 12 ? " AM" : " PM";
+      return hourCheck + ':' + minutes+ periodo;
+
   }
 
   var formatHora = function(hora) {
