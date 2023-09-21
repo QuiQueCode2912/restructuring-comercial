@@ -83,8 +83,32 @@ if ($response && $response['success']) {
 
     }
     public function doneYappy(Request $request) {
+        $salesforce = $this->salesforce();
         $salesforce->update('Lead', $request->token, ['Pago_confirmado__c' => 'true']);
         return redirect()->to('/confirmacion-pago/' . $request->token);
+    }
+
+
+    private function salesforce()
+    {
+        $salesforce = new \EHAERER\Salesforce\Authentication\PasswordAuthentication(['grant_type' => 'password', 'client_id' => env('SF_CONSUMER_KEY'), 'client_secret' => env('SF_CONSUMER_SECRET'), 'username' => 'dnavas00@hotmail.com', 'password' => '19801980MAFdwvjyJArqvVOiKp9PdmPFFN']);
+        $options = [
+            'grant_type' => 'password',
+            'client_id' => '3MVG9mclR62wycM2Mqd4UzUSZenQRQBsvUMM_N71sEPWjlCO.P.f._icAYjwflXcrUn99V22Y8ws20UMRXCPr', /* insert consumer key here */
+            'client_secret' => '21A7AAE37073A238564E7EE3860B9BC04A9ABCB96FB39AF7B200D0655A343C21', /* insert consumer secret here */
+            'username' => 'dnavas00@hotmail.com', /* insert Salesforce username here */
+            'password' => '19801980MAFdwvjyJArqvVOiKp9PdmPFFN' /* insert Salesforce user password and security token here */
+        ];
+
+        //  $salesforce = new \EHAERER\Salesforce\Authentication\PasswordAuthentication($options);
+        $salesforce->setEndpoint(getenv('SF_LOGIN_URL'));
+        //    $salesforce->setEndpoint('https://login.salesforce.com/');
+        $salesforce->authenticate();
+
+        $accessToken = $salesforce->getAccessToken();
+        $instanceUrl = $salesforce->getInstanceUrl();
+
+        return new \EHAERER\Salesforce\SalesforceFunctions($instanceUrl, $accessToken);
     }
     
     public function failYappy(Request $request) {
