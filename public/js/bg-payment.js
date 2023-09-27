@@ -31,7 +31,6 @@ function setYappyButton() {
 
   document.getElementById('Yappy_Checkout_Button').addEventListener('click', function (e) {
     e.preventDefault(); // Cancel the native event
-    e.stopPropagation();
     document.getElementById('paymentForm').submit();
   });
 }
