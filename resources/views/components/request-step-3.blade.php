@@ -626,23 +626,27 @@ setTimeout(function() {
        if($rootid == '02i3m00000D9DaPAAV')
        {
     ?>
+    <div class="row">
+        <div class="col-12 col-md-12">
+            <div class="form-group-preview"
+                style="display: inline-flex;width: 100%;justify-content: space-between;">
+                <div><small><b>Precio Total</b></small></div>
+                <div><b>B/. <?php echo nl2br($estimacion); ?></b></div>
+            </div>
+        </div>
+    </div>
     <div class="row  mt-4">
       <div class="col-8 col-md-8">
         <div class="form-group">
           <input type="email" class="form-control" name="cupon" id="cupon" placeholder="Tienes un cupón?" style="height: 39px" value="<?php echo session()->get('cupon') ?>">
         </div>
       </div>
-<div class="col-4 col-md-4">
-       <button type="button" id="apply-coupon" class="btn btn-primary w-100">Aplicar</button>
+
+      <div class="col-4 col-md-4">
+       <button type="button" id="apply-coupon"  {{ request()->get('reagendar')==1 ? ' disabled' : '' }}  class="btn btn-primary w-100">Aplicar</button>
       </div>
       </div>
-     <div class="row">
-      <div class="col-12 col-md-12">
-        <div class="form-group-preview" style="display: inline-flex;width: 100%;justify-content: space-between;">
-          <div><small><b>Precio Total</b></small></div><div><b>B/. <?php echo nl2br($estimacion)?></b></div>
-        </div>
-      </div>
-      </div>
+  
       <script type="text/javascript">
   function ready() {
 
