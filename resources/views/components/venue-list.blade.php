@@ -36,6 +36,7 @@ if(!isset($venueroute))
             <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#piscinaHours">
               VER HORARIOS
             </button>
+            <span style="font-family: roboto; font-weight: 600; text-transform: none;">Para utilizar la piscina de manera recreativa debes realizar el pago al llegar a la piscina.<br>
               
              @endif
           @else
