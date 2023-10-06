@@ -23,7 +23,7 @@ function setYappyButton() {
     logo = 'yappy-logo-light.svg';
   }
 
-  image = `<img src="/assets/images/yappy.png">`
+  image = `<img src="/assets/images/yappy.png" class="yappy-logo">`
   var textButton = YappyCheckout.DONACION ? 'Donar con&nbsp;' : 'Pagar con&nbsp;';
 
   document.getElementById('Yappy_Checkout_Button').classList.add('ecommerce', 'yappy', theme);
