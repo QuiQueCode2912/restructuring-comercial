@@ -23,7 +23,7 @@ function setYappyButton() {
     logo = 'yappy-logo-light.svg';
   }
 
-  image = `<img src="https://pagosbg.bgeneral.com/assets/img/${logo}">`
+  image = `<img src="/assets/images/yappy.png">`
   var textButton = YappyCheckout.DONACION ? 'Donar con&nbsp;' : 'Pagar con&nbsp;';
 
   document.getElementById('Yappy_Checkout_Button').classList.add('ecommerce', 'yappy', theme);
