@@ -96,6 +96,42 @@
 
     <div class="request">
         <div class="container text-center" style="min-height:960px">
+            <script>    
+                console.log('Init')
+                // Set the inactivity timeout duration in milliseconds
+                        const inactivityTimeout = 60000; // 15 minutes in milliseconds
+
+
+                        let inactivityTimer;
+
+                        function resetInactivityTimer() {
+                            clearTimeout(inactivityTimer);
+                            inactivityTimer = setTimeout(showInactivityAlert, inactivityTimeout);
+                        }
+
+                        function showInactivityAlert() {
+                            alert("You've been inactive for a while!");
+                            var componentState = {!! json_encode(get_defined_vars()['__data']) !!};
+                            //var test = {{ request()->get('id') }}
+                            var token = componentState?.token;
+
+                            $.post('/cancelar/reserva/evento/inactividad/' + token, function(response) {
+                                // handle your response here
+                                window.location.href = "/parque-cds";
+                            });
+
+
+                        }
+
+                        // Reset the inactivity timer when there is user activity
+                        window.addEventListener('mousemove', resetInactivityTimer);
+                        window.addEventListener('keydown', resetInactivityTimer);
+                        window.addEventListener('click', resetInactivityTimer);
+
+                        // Initialize the timer on page load
+                        resetInactivityTimer();
+
+            </script>
             <form method="post">
                 @csrf
                 <input type="hidden" name="event_name" value="Abono - {{ $event_name }}" />
