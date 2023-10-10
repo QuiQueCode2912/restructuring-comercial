@@ -2345,4 +2345,16 @@ class IndexController extends Controller
             // Maneja el caso en que el cupón no existe o ya ha sido usado
         }
     }
+
+    public function  cancelEventForInactivity(Request $request)
+    {
+        $salesforce = $this->salesforce();
+        $leadId = $request->leadId;
+        $query = "SELECT ID,Estado__c,WhoId FROM Event where WhoId='{$leadId}'";
+        $result = $salesforce->query($query);
+        if ($result['totalSize'] > 0) {
+            $salesforce->update('Event', $result['records'][0]['Id'], ['Estado__c' => 'Cancelado']);
+            return true;
+        }
+    }
 }
