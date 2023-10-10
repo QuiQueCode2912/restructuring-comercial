@@ -613,38 +613,38 @@ if ($designs) {
                                           $timeFive = new Timetable();
                                           $timeFive->startTime = '12-30';
                                           $timeFive->startTimeToShow = '12:30 PM';
-                                          $timeFive->endTime = '01-30';
+                                          $timeFive->endTime = '13-30';
                                           $timeFive->endTimeToShow = '01:30 PM';
 
                                           $timeSix = new Timetable();
-                                          $timeSix->startTime = '01-00';
+                                          $timeSix->startTime = '13-00';
                                           $timeSix->startTimeToShow = '01:00 PM';
-                                          $timeSix->endTime = '02-00';
+                                          $timeSix->endTime = '14-00';
                                           $timeSix->endTimeToShow = '02:00 PM';
 
                                           
                                           $timeSeven = new Timetable();
-                                          $timeSeven->startTime = '02-30';
+                                          $timeSeven->startTime = '15-30';
                                           $timeSeven->startTimeToShow = '02:30 PM';
-                                          $timeSeven->endTime = '03-30';
+                                          $timeSeven->endTime = '15-30';
                                           $timeSeven->endTimeToShow = '03:30 PM';
 
                                           $timeOct = new Timetable();
-                                          $timeOct->startTime = '04-00';
+                                          $timeOct->startTime = '16-00';
                                           $timeOct->startTimeToShow = '04:00 PM';
-                                          $timeOct->endTime = '05-00';
+                                          $timeOct->endTime = '17-00';
                                           $timeOct->endTimeToShow = '05:00 PM';
 
                                           $timeNine = new Timetable();
-                                          $timeNine->startTime = '05-30';
+                                          $timeNine->startTime = '17-30';
                                           $timeNine->startTimeToShow = '05:30 PM';
-                                          $timeNine->endTime = '06-30';
-                                          $timeNine->endTimeToShow = '06:30 PM';
+                                          $timeNine->endTime = '17-30';
+                                          $timeNine->endTimeToShow = '17:30 PM';
 
                                           $timeTen = new Timetable();
-                                          $timeTen->startTime = '07-00';
+                                          $timeTen->startTime = '19-00';
                                           $timeTen->startTimeToShow = '07:00 PM';
-                                          $timeTen->endTime = '08-00';
+                                          $timeTen->endTime = '20-00';
                                           $timeTen->endTimeToShow = '08:00 PM';
 
 
