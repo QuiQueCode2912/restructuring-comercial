@@ -1214,7 +1214,20 @@ if ($designs) {
                         console.log(selectedHour);
                         let objAux = {};
                         objAux.fecha = (currentSchedule==null) ? moment().format('YYYY-MM-DD') : currentSchedule;
-                        objAux.id = 'chkhora'+selectedHour[0].startTime+venue.id;
+                        // Input time as a string
+                        var inputTime = selectedHour[0].startTime;
+
+                        // Parse the input time using Moment.js
+                        var time = moment(inputTime, "HH-mm");
+
+                        // Add 4 hours to the time
+                        time.add(4, "hours");
+
+                        // Format the result as "HH-MM"
+                        var formattedTime = time.format("HH-mm");
+
+                        objAux.id = 'chkhora'+formattedTime+venue.id;
+                        
                         objAux.venue = venue.name;
                         objAux.subtotal= 3.50;
                         objAux.calcularFact= true;
