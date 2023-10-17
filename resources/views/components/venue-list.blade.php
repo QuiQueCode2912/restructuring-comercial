@@ -50,6 +50,13 @@ if(!isset($venueroute))
     </div>
     <div class="col-12 col-md-6">
       <p class="venue-name"><?php echo $parent ?? '' ? $parent . ' - ' : '' ?>{{ $name }}</p>
+      @if($id == '02i3m00000D9BANAA3')
+      <p style="color:#0088ff;font-size:11px;margin-top:-10px;">Uso de piscina por Carriles de natación.</p>
+      @endif
+      @if($id == '02i3m00000D9BANAA4')
+        <p style="color:#0088ff;font-size:11px;margin-top:-10px;" >Uso de forma libre.</p>
+      @endif
+    
       <!--<a href="#map">
       <img src="/assets/images/mapIcon.png" width="50px" height="50px" style="position:absolute;right:14px;top:-10px;">
       </a>-->

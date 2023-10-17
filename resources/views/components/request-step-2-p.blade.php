@@ -630,10 +630,10 @@ if ($designs) {
                                 $timeFour->endTimeToShow = '11:00 AM';
 
                                 $timeFive = new Timetable();
-                                $timeFive->startTime = '12-30';
-                                $timeFive->startTimeToShow = '12:30 PM';
-                                $timeFive->endTime = '13-30';
-                                $timeFive->endTimeToShow = '01:30 PM';
+                                $timeFive->startTime = '11-30';
+                                $timeFive->startTimeToShow = '11:30 PM';
+                                $timeFive->endTime = '12-30';
+                                $timeFive->endTimeToShow = '12:30 PM';
 
                                 $timeSix = new Timetable();
                                 $timeSix->startTime = '13-00';
@@ -728,7 +728,7 @@ if ($designs) {
                                 $timeTenS->endTime = '18-30';
                                 $timeTenS->endTimeToShow = '06:30 PM';
 
-                                $lsTimeTablesS = array($timeOneS,$timeTwoS,$timeThreeS,$timeFiveS,$timeSixS,$timeSevenS,$timeEigthS,$timeNineS,$timeTenS);
+                                $lsTimeTablesS = array($timeSevenS,$timeEigthS,$timeNineS,$timeTenS);
 
                                 //Domingo
                                 $timeOneD = new Timetable();
