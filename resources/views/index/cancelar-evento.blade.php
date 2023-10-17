@@ -102,7 +102,8 @@
     <li>Las cancelaciones realizadas <strong>12 horas antes</strong> de la fecha reservada recibirán un reembolso del <strong>100%</strong>.</li>
     <li>Las cancelaciones realizadas <strong>dentro de las 12 horas</strong> antes de la fecha reservada recibirán un reembolso del <strong>50%</strong>.</li>
   </ul>
-  <p><strong>Por favor, tenga en cuenta que los reembolsos sólo se tramitarán por ACH</strong>.</p>
+  <p><strong>Para solicitar un reembolso deberá ponerse en contacto con el equipo del parque al correo parque@cdspanama.org </strong></p>
+  <p><strong> Por favor, tenga en cuenta que los reembolsos sólo se tramitarán por ACH y si no recibes tu reembolso en los siguientes 15 días hábiles contactanos nuevamente.</strong>.</p>
   <p>Al hacer clic en el siguiente botón, se entenderá que ACEPTA COMPLETAMENTE las políticas de cancelación arriba descritas</p>
 
           <div class="col-12 text-center">
