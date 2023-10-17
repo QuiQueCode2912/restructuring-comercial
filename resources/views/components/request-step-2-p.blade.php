@@ -19,6 +19,17 @@ if ($designs) {
 }
 
 ?>
+
+
+<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script crossorigin src="https://momentjs.com/downloads/moment.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+
+
+
 <input type="hidden" id="franja-seleccion" value="<?php echo session()->get('franja'); ?>" />
 <?php $grupos = json_decode(html_entity_decode($grupos)); ?>
 <style>
@@ -71,6 +82,33 @@ if ($designs) {
         -ms-user-select: none;
         /* IE 10 and IE 11 */
         user-select: none;
+    }
+
+    .col-width {
+        width: 75%
+    }
+
+    .input-cant-personas {
+        width: 10%
+    }
+
+    .stl-persons {
+        right: 0;
+        top: 0;
+    }
+
+    .stl-persons input {
+        width: 28%;
+        border-radius: 0.25rem;
+    }
+
+    .icon-bt {
+        font-size: 18px;
+    }
+
+    .spinner-styles{
+        padding-top:150px;
+        background-color: rgba(255,255,255,0.7);
     }
 </style>
 
@@ -262,7 +300,7 @@ if ($designs) {
     alert('*** HACIENDO SCROLL ***');
 </script>
 <x-error-message />
-<div class="request-step" style="margin-top:0px;">
+<div class="request-step" id="update-target" style="margin-top:0px;">
     <div class="container">
 
         <!-- Modal -->
@@ -454,7 +492,8 @@ if ($designs) {
 
             <div class="col-12 col-md-12">
                 <div><small>Selecciona el horario (puedes reservar en múltiples días)</small></div>
-                <div id="overlay" style="padding-top:150px;background-color: rgba(255,255,255,0.7);">
+                <div id="overlay" class="d-none"
+                    style="padding-top:150px;background-color: rgba(255,255,255,0.7);">
                     <div class="spinner-border" role="status">
                         <span class="sr-only">Loading...</span>
                     </div>
@@ -497,6 +536,7 @@ if ($designs) {
                             margin-top: 7px;
                             /*compensate for top border*/
                             padding-left: 5px;
+                            font-family: 'Roboto', sans-serif;
                         }
 
                         .long {
@@ -538,246 +578,344 @@ if ($designs) {
                             font-family: sans-serif;
                             color: black;
                         }
+
+                        .col-head {
+                            white-space: normal;
+                            word-wrap: break-word;
+                            font-family: 'Roboto', sans-serif;
+                        }
                     </style>
-
-                    <div class="tDiv">
-
-                        <div class="btn-group-toggle" data-toggle="buttons" id="tabContainer">
-                            <table>
-                                <tbody>
-                                    <tr style="text-align: -webkit-center;">
-                                        <th class="headcol"></th>
-                                        <?php $hayNocturnos = 0; ?>
-                                        <?php if ($grupos) : ?>
-                                        <?php foreach ($grupos as $grupo) : ?>
-                                        <?php if ($grupo->name !='PISCINA RECREATIVA') : ?>
-                                        <td>
-                                            <div id="diaDisclaimer" data-toggle="popover" data-placement="bottom"
-                                                style="top: -130px;" title="Dismissible popover"
-                                                data-content="And here's some amazing content. It's very engaging. Right?">
-                                                <a href=""
-                                                    onclick="showVenueInfo('{{ $grupo->name }}','{{ $grupo->venue_facilities }}','<?php echo $configuration ? max($configuration) : 0; ?>','{{ $grupo->hour_fee }}','{{ $grupo->mid_day_fee }}','{{ $grupo->all_day_fee }}','{{ $grupo->monthly_fee }}','{{ $grupo->image }}')"
-                                                    style="white-space: normal;word-wrap: break-word;font-family: 'Roboto', sans-serif;"><b>{{ $grupo->name }}</b></a>
-                                            </div>
-                                        </td>
-                                        <?php
-                                        if ($grupo->nightcharge == 1) {
-                                            $hayNocturnos = 1;
-                                        }
-                                        $facilidadesVenue = $grupo->venue_facilities;
-                                        if (strpos($facilidadesVenue, 'Luminarias') !== false) {
-                                            $hayNocturnos = 1;
-                                        }
-                                        ?>
-                                        <?php endif ?>
-
-                                        <?php endforeach ?>
-                                        <?php endif ?>
-                                    </tr>
-
-                                    <?php
-                                        //Este es para el asset de la piscina 
-                                        if($parentid == '02i3m00000DiduZAAR') {
-                                          
-                                          class Timetable {
-                                            public $startTime;
-                                            public $startTimeToShow;
-                                            public $endTime;
-                                            public $endTimeToShow;
-                                          }
-
-                                          $timeOne = new Timetable();
-                                          $timeOne->startTime = '05-30';
-                                          $timeOne->startTimeToShow = '05:30 AM';
-                                          $timeOne->endTime = '06-30';
-                                          $timeOne->endTimeToShow = '06:30 AM';
-
-                                          $timeTwo = new Timetable();
-                                          $timeTwo->startTime = '07-00';
-                                          $timeTwo->startTimeToShow = '07:00 AM';
-                                          $timeTwo->endTime = '08-00';
-                                          $timeTwo->endTimeToShow = '08:00 AM';
-
-                                          $timeThree = new Timetable();
-                                          $timeThree->startTime = '08-30';
-                                          $timeThree->startTimeToShow = '08:30 AM';
-                                          $timeThree->endTime = '09-30';
-                                          $timeThree->endTimeToShow = '09:30 AM';
-
-                                          $timeFour = new Timetable();
-                                          $timeFour->startTime = '10-00';
-                                          $timeFour->startTimeToShow = '10:00 AM';
-                                          $timeFour->endTime = '11-00';
-                                          $timeFour->endTimeToShow = '11:00 AM';
-
-                                          $timeFive = new Timetable();
-                                          $timeFive->startTime = '12-30';
-                                          $timeFive->startTimeToShow = '12:30 PM';
-                                          $timeFive->endTime = '13-30';
-                                          $timeFive->endTimeToShow = '01:30 PM';
-
-                                          $timeSix = new Timetable();
-                                          $timeSix->startTime = '13-00';
-                                          $timeSix->startTimeToShow = '01:00 PM';
-                                          $timeSix->endTime = '14-00';
-                                          $timeSix->endTimeToShow = '02:00 PM';
-
-                                          
-                                          $timeSeven = new Timetable();
-                                          $timeSeven->startTime = '14-30';
-                                          $timeSeven->startTimeToShow = '02:30 PM';
-                                          $timeSeven->endTime = '15-30';
-                                          $timeSeven->endTimeToShow = '03:30 PM';
-
-                                          $timeOct = new Timetable();
-                                          $timeOct->startTime = '16-00';
-                                          $timeOct->startTimeToShow = '04:00 PM';
-                                          $timeOct->endTime = '17-00';
-                                          $timeOct->endTimeToShow = '05:00 PM';
-
-                                          $timeNine = new Timetable();
-                                          $timeNine->startTime = '17-30';
-                                          $timeNine->startTimeToShow = '05:30 PM';
-                                          $timeNine->endTime = '18-30';
-                                          $timeNine->endTimeToShow = '06:30 PM';
-
-                                          $timeTen = new Timetable();
-                                          $timeTen->startTime = '19-00';
-                                          $timeTen->startTimeToShow = '07:00 PM';
-                                          $timeTen->endTime = '20-00';
-                                          $timeTen->endTimeToShow = '08:00 PM';
+                    <?php $newValue = 'testing'; ?>
 
 
-                                          $lsTimeTables = array($timeOne,$timeTwo,$timeThree,$timeFour,$timeFive,$timeSix,$timeSeven,$timeOct,$timeNine,$timeTen);
-                                          foreach ($lsTimeTables as $timeItem) {
-                                    ?>
-                                    <tr id="trHora{{ $timeItem->startTime }}">
-                                        <th id="lblHora{{ $timeItem->startTime }}"
-                                            style="font-family: 'Roboto', sans-serif;" class="headcol">
-                                            {{ $timeItem->startTimeToShow }}
-                                        </th>
-                                        <?php 
-                                          
-                                          foreach ($grupos as $grupo) {
-                                        ?>
-                                        <?php if ($grupo->name !='PISCINA RECREATIVA') : ?>
-                                        <td class="long">
-                                            <div class="spBtn" data-venuename="{{ $grupo->name }}"
-                                                id="chkhora{{ $timeItem->startTime }}{{ $grupo->id }}"
-                                                name="chkhora{{ $timeItem->startTime }}{{ $grupo->id }}"
-                                                onclick="chkCambio(event)">
-                                                {{ $timeItem->startTimeToShow }} -
-                                                {{ $timeItem->endTimeToShow }}
-                                            </div>
-                                        </td>
-                                        <?php endif ?>
-                                        <?php }?>
-                                    </tr>
-                                    <?php 
-                                          }
-                                          
-                                          
-                                        }?>
+                    <?php  //PISCINA HORARIOS ?>
+                    <?php
+                        
+                        if($parentid == '02i3m00000DiduZAAR') {
+                                
+                                class Timetable {
+                                    public $startTime;
+                                    public $startTimeToShow;
+                                    public $endTime;
+                                    public $endTimeToShow;
+                                }
 
-                                    <?php
-                                    if($parentid !== '02i3m00000DiduZAAR'){
-                                            $horaInicial = 7;
-                                            $horaFinal = 20;
-                                            $incrementosFranja = 1;
-                                            for ($horaActual = $horaInicial; $horaActual <= $horaFinal; $horaActual += $incrementosFranja)
-                                            {
-                                            $horaActualSTR = "";
-                                            $horaActual24STR = "";
-                                            $horaFinalSTR = "";
-                                            $THoraInicial = "AM";
-                                            $THoraFinal = "AM";
-                                            $hActual = $horaActual;
-                                            $hFinal = $horaActual + $incrementosFranja;
-                                            if($hFinal > 12)
-                                            {
-                                                $THoraFinal = "PM";
-                                                $hFinal -= 12;
+                                $timeOne = new Timetable();
+                                $timeOne->startTime = '05-30';
+                                $timeOne->startTimeToShow = '05:30 AM';
+                                $timeOne->endTime = '06-30';
+                                $timeOne->endTimeToShow = '06:30 AM';
+
+                                $timeTwo = new Timetable();
+                                $timeTwo->startTime = '07-00';
+                                $timeTwo->startTimeToShow = '07:00 AM';
+                                $timeTwo->endTime = '08-00';
+                                $timeTwo->endTimeToShow = '08:00 AM';
+
+                                $timeThree = new Timetable();
+                                $timeThree->startTime = '08-30';
+                                $timeThree->startTimeToShow = '08:30 AM';
+                                $timeThree->endTime = '09-30';
+                                $timeThree->endTimeToShow = '09:30 AM';
+
+                                $timeFour = new Timetable();
+                                $timeFour->startTime = '10-00';
+                                $timeFour->startTimeToShow = '10:00 AM';
+                                $timeFour->endTime = '11-00';
+                                $timeFour->endTimeToShow = '11:00 AM';
+
+                                $timeFive = new Timetable();
+                                $timeFive->startTime = '12-30';
+                                $timeFive->startTimeToShow = '12:30 PM';
+                                $timeFive->endTime = '13-30';
+                                $timeFive->endTimeToShow = '01:30 PM';
+
+                                $timeSix = new Timetable();
+                                $timeSix->startTime = '13-00';
+                                $timeSix->startTimeToShow = '01:00 PM';
+                                $timeSix->endTime = '14-00';
+                                $timeSix->endTimeToShow = '02:00 PM';
+
+                                
+                                $timeSeven = new Timetable();
+                                $timeSeven->startTime = '15-30';
+                                $timeSeven->startTimeToShow = '02:30 PM';
+                                $timeSeven->endTime = '15-30';
+                                $timeSeven->endTimeToShow = '03:30 PM';
+
+                                $timeOct = new Timetable();
+                                $timeOct->startTime = '16-00';
+                                $timeOct->startTimeToShow = '04:00 PM';
+                                $timeOct->endTime = '17-00';
+                                $timeOct->endTimeToShow = '05:00 PM';
+
+                                $timeNine = new Timetable();
+                                $timeNine->startTime = '17-30';
+                                $timeNine->startTimeToShow = '05:30 PM';
+                                $timeNine->endTime = '17-30';
+                                $timeNine->endTimeToShow = '06:30 PM';
+
+                                $timeTen = new Timetable();
+                                $timeTen->startTime = '19-00';
+                                $timeTen->startTimeToShow = '07:00 PM';
+                                $timeTen->endTime = '20-00';
+                                $timeTen->endTimeToShow = '08:00 PM';
+
+
+                                $lsTimeTables = array($timeOne,$timeTwo,$timeThree,$timeFour,$timeFive,$timeSix,$timeSeven,$timeOct,$timeNine,$timeTen);
+
+                                //Sabado
+                                $timeOneS = new Timetable();
+                                $timeOneS->startTime = '08-00';
+                                $timeOneS->startTimeToShow = '08:00 AM';
+                                $timeOneS->endTime = '09-00';
+                                $timeOneS->endTimeToShow = '09:00 AM';
+
+                                $timeTwoS = new Timetable();
+                                $timeTwoS->startTime = '09-00';
+                                $timeTwoS->startTimeToShow = '09:00 AM';
+                                $timeTwoS->endTime = '10-00';
+                                $timeTwoS->endTimeToShow = '10:00 AM';
+
+                                $timeThreeS = new Timetable();
+                                $timeThreeS->startTime = '10-00';
+                                $timeThreeS->startTimeToShow = '10:00 AM';
+                                $timeThreeS->endTime = '11-00';
+                                $timeThreeS->endTimeToShow = '11:00 AM';
+                
+
+                                $timeFiveS = new Timetable();
+                                $timeFiveS->startTime = '11-00';
+                                $timeFiveS->startTimeToShow = '11:00 AM';
+                                $timeFiveS->endTime = '12-00';
+                                $timeFiveS->endTimeToShow = '12:00 PM';
+
+                                $timeSixS = new Timetable();
+                                $timeSixS->startTime = '12-00';
+                                $timeSixS->startTimeToShow = '12:00 PM';
+                                $timeSixS->endTime = '13-00';
+                                $timeSixS->endTimeToShow = '01:00 PM';
+
+
+                                $timeSevenS = new Timetable();
+                                $timeSevenS->startTime = '13-00';
+                                $timeSevenS->startTimeToShow = '01:00 PM';
+                                $timeSevenS->endTime = '14-00';
+                                $timeSevenS->endTimeToShow = '02:00 PM';
+
+
+                                $timeEigthS = new Timetable();
+                                $timeEigthS->startTime = '14-30';
+                                $timeEigthS->startTimeToShow = '02:30 PM';
+                                $timeEigthS->endTime = '15-30';
+                                $timeEigthS->endTimeToShow = '03:30 PM';
+
+                                $timeNineS = new Timetable();
+                                $timeNineS->startTime = '16-00';
+                                $timeNineS->startTimeToShow = '04:00 PM';
+                                $timeNineS->endTime = '17-00';
+                                $timeNineS->endTimeToShow = '05:00 PM';
+
+
+                                $timeTenS = new Timetable();
+                                $timeTenS->startTime = '17-30';
+                                $timeTenS->startTimeToShow = '05:30 PM';
+                                $timeTenS->endTime = '18-30';
+                                $timeTenS->endTimeToShow = '06:30 PM';
+
+                                $lsTimeTablesS = array($timeOneS,$timeTwoS,$timeThreeS,$timeFiveS,$timeSixS,$timeSevenS,$timeEigthS,$timeNineS,$timeTenS);
+
+                                //Domingo
+                                $timeOneD = new Timetable();
+                                $timeOneD->startTime = '08-00';
+                                $timeOneD->startTimeToShow = '08:00 AM';
+                                $timeOneD->endTime = '09-00';
+                                $timeOneD->endTimeToShow = '09:00 AM';
+
+                                $timeTwoD = new Timetable();
+                                $timeTwoD->startTime = '09-30';
+                                $timeTwoD->startTimeToShow = '09:30 AM';
+                                $timeTwoD->endTime = '10-30';
+                                $timeTwoD->endTimeToShow = '10:30 AM';
+                                
+                                $timeThreeD = new Timetable();
+                                $timeThreeD->startTime = '11-00';
+                                $timeThreeD->startTimeToShow = '11:00 AM';
+                                $timeThreeD->endTime = '12-00';
+                                $timeThreeD->endTimeToShow = '12:00 PM';
+                                
+                                $timeFourD = new Timetable();
+                                $timeFourD->startTime = '12-00';
+                                $timeFourD->startTimeToShow = '12:00 PM';
+                                $timeFourD->endTime = '13-00';
+                                $timeFourD->endTimeToShow = '01:00 PM';
+
+                                $timeFiveD = new Timetable();
+                                $timeFiveD->startTime = '13-30';
+                                $timeFiveD->startTimeToShow = '01:30 PM';
+                                $timeFiveD->endTime = '14-30';
+                                $timeFiveD->endTimeToShow = '02:30 PM';
+
+                                $timeSixD = new Timetable();
+                                $timeSixD->startTime = '15-30';
+                                $timeSixD->startTimeToShow = '03:30 PM';
+                                $timeSixD->endTime = '16-30';
+                                $timeSixD->endTimeToShow = '04:30 PM';
+
+                                $timeSevenD = new Timetable();
+                                $timeSevenD->startTime = '17-30';
+                                $timeSevenD->startTimeToShow = '05:30 PM';
+                                $timeSevenD->endTime = '18-30';
+                                $timeSevenD->endTimeToShow = '06:30 PM';
+
+                                $lsTimeTablesD = array($timeOneD,$timeTwoD,$timeThreeD,$timeFourD,$timeFiveD,$timeSixD,$timeSevenD);
+
+                        }
+                    ?>
+
+                    
+                    @if($parentid == '02i3m00000DiduZAAR')
+                    <input class="form-control" required type="hidden" name="ReservasSeleccionadas"
+                    id="ReservasSeleccionadas" width="100%"  />
+                        <div id="root"></div>                 
+                    @else
+                        <div class="tDiv   ">
+                            <div class="btn-group-toggle" data-toggle="buttons" id="tabContainer">
+                                <table>
+                                    <tbody>
+                                        <tr style="text-align: -webkit-center;">
+                                            <th class="headcol"></th>
+                                            <?php $hayNocturnos = 0; ?>
+                                            <?php if ($grupos) : ?>
+                                            <?php foreach ($grupos as $grupo) : ?>
+                                            <?php if ($grupo->name !='PISCINA RECREATIVA') : ?>
+                                            <td>
+                                                <div id="diaDisclaimer" data-toggle="popover" data-placement="bottom"
+                                                    style="top: -130px;" title="Dismissible popover"
+                                                    data-content="And here's some amazing content. It's very engaging. Right?">
+                                                    <a href=""
+                                                        onclick="showVenueInfo('{{ $grupo->name }}','{{ $grupo->venue_facilities }}','<?php echo $configuration ? max($configuration) : 0; ?>','{{ $grupo->hour_fee }}','{{ $grupo->mid_day_fee }}','{{ $grupo->all_day_fee }}','{{ $grupo->monthly_fee }}','{{ $grupo->image }}')"
+                                                        style=""><b>{{ $grupo->name }}</b></a>
+                                                </div>
+                                            </td>
+                                            <?php
+                                            if ($grupo->nightcharge == 1) {
+                                                $hayNocturnos = 1;
                                             }
-                                            if($hActual > 12)
-                                            {
-                                                $THoraInicial = "PM";
-                                                $hActual -= 12;
+                                            $facilidadesVenue = $grupo->venue_facilities;
+                                            if (strpos($facilidadesVenue, 'Luminarias') !== false) {
+                                                $hayNocturnos = 1;
                                             }
-                                            
-                                            if($hActual < 10)
-                                            {
-                                                $horaActualSTR = "0" . (string) $hActual;
-                                            }
-                                            else
-                                            {
-                                                $horaActualSTR = (string) $hActual;
-                                            }
-                                            if($hFinal < 10)
-                                            {
-                                                $horaFinalSTR = "0" . (string) $hFinal;
-                                            }
-                                            else
-                                            {
-                                                $horaFinalSTR = (string) $hFinal;
-                                            }
-                                            if($horaActual < 10)
-                                            {
-                                                $horaActual24STR = "0" . (string) $horaActual;
-                                            }
-                                            else
-                                            {
-                                                $horaActual24STR = (string) $horaActual;
-                                            }
-                                    ?>
-                                    <?php if($horaActual <= 17 || $hayNocturnos == 1) : ?>
-                                    <tr id="trHora{{ $horaActual24STR }}">
-                                        <th id="lblHora{{ $horaActual24STR }}"
-                                            style="font-family: 'Roboto', sans-serif;" class="headcol">
-                                            {{ $horaActualSTR }}:00 {{ $THoraInicial }}</th>
-                                        <?php if ($grupos) : ?>
-                                        <?php foreach ($grupos as $grupo) : ?>
-                                        <?php
-                                        $facilidadesVenue = $grupo->venue_facilities;
-                                        $luminarias = 0;
-                                        // echo 'XYZ: ' . $facilidadesVenue;
-                                        if (strpos($facilidadesVenue, 'Luminarias') !== false) {
-                                            $luminarias = 1;
-                                        }
-                                        ?>
-                                        <td class="long">
-                                            <?php if($horaActual <= 17 || ($luminarias == 1 && $horaActual > 17)) : ?>
-                                            <div class="spBtn" data-venuename="{{ $grupo->name }}"
-                                                id="chkhora{{ $horaActual24STR }}{{ $grupo->id }}"
-                                                name="chkhora{{ $horaActual24STR }}{{ $grupo->id }}"
-                                                onclick="chkCambio(event)">
-
-
-                                                <!-- btn noHover shadow-none btn-outline-primary
-                    <input class="chkHide" data-venuename="{{ $grupo->name }}" id="chkhora{{ $horaActual24STR }}{{ $grupo->id }}" name="chkhora{{ $horaActual24STR }}{{ $grupo->id }}" type="checkbox" autocomplete="off" onchange="chkCambio(event)" />
-                    -->
-                                                {{ $horaActualSTR }}:00{{ $THoraInicial }} -
-                                                {{ $horaFinalSTR }}:00{{ $THoraFinal }}
-
-                                            </div>
+                                            ?>
                                             <?php endif ?>
-                                        </td>
-                                        <?php endforeach ?>
+
+                                            <?php endforeach ?>
+                                            <?php endif ?>
+                                        </tr>
+                                    <?php
+                                        if($parentid !== '02i3m00000DiduZAAR'){
+                                                $horaInicial = 7;
+                                                $horaFinal = 20;
+                                                $incrementosFranja = 1;
+                                                for ($horaActual = $horaInicial; $horaActual <= $horaFinal; $horaActual += $incrementosFranja)
+                                                {
+                                                $horaActualSTR = "";
+                                                $horaActual24STR = "";
+                                                $horaFinalSTR = "";
+                                                $THoraInicial = "AM";
+                                                $THoraFinal = "AM";
+                                                $hActual = $horaActual;
+                                                $hFinal = $horaActual + $incrementosFranja;
+                                                if($hFinal > 12)
+                                                {
+                                                    $THoraFinal = "PM";
+                                                    $hFinal -= 12;
+                                                }
+                                                if($hActual > 12)
+                                                {
+                                                    $THoraInicial = "PM";
+                                                    $hActual -= 12;
+                                                }
+                                                
+                                                if($hActual < 10)
+                                                {
+                                                    $horaActualSTR = "0" . (string) $hActual;
+                                                }
+                                                else
+                                                {
+                                                    $horaActualSTR = (string) $hActual;
+                                                }
+                                                if($hFinal < 10)
+                                                {
+                                                    $horaFinalSTR = "0" . (string) $hFinal;
+                                                }
+                                                else
+                                                {
+                                                    $horaFinalSTR = (string) $hFinal;
+                                                }
+                                                if($horaActual < 10)
+                                                {
+                                                    $horaActual24STR = "0" . (string) $horaActual;
+                                                }
+                                                else
+                                                {
+                                                    $horaActual24STR = (string) $horaActual;
+                                                }
+                                        ?>
+                                        <?php if($horaActual <= 17 || $hayNocturnos == 1) : ?>
+                                        <tr id="trHora{{ $horaActual24STR }}">
+                                            <th id="lblHora{{ $horaActual24STR }}"
+                                                style="font-family: 'Roboto', sans-serif;" class="headcol">
+                                                {{ $horaActualSTR }}:00 {{ $THoraInicial }}</th>
+                                            <?php if ($grupos) : ?>
+                                            <?php foreach ($grupos as $grupo) : ?>
+                                            <?php
+                                            $facilidadesVenue = $grupo->venue_facilities;
+                                            $luminarias = 0;
+                                            // echo 'XYZ: ' . $facilidadesVenue;
+                                            if (strpos($facilidadesVenue, 'Luminarias') !== false) {
+                                                $luminarias = 1;
+                                            }
+                                            ?>
+                                            <td class="long">
+                                                <?php if($horaActual <= 17 || ($luminarias == 1 && $horaActual > 17)) : ?>
+                                                <div class="spBtn" data-venuename="{{ $grupo->name }}"
+                                                    id="chkhora{{ $horaActual24STR }}{{ $grupo->id }}"
+                                                    name="chkhora{{ $horaActual24STR }}{{ $grupo->id }}"
+                                                    onclick="chkCambio(event)">
+
+
+                                                    <!-- btn noHover shadow-none btn-outline-primary
+                        <input class="chkHide" data-venuename="{{ $grupo->name }}" id="chkhora{{ $horaActual24STR }}{{ $grupo->id }}" name="chkhora{{ $horaActual24STR }}{{ $grupo->id }}" type="checkbox" autocomplete="off" onchange="chkCambio(event)" />
+                        -->
+                                                    {{ $horaActualSTR }}:00{{ $THoraInicial }} -
+                                                    {{ $horaFinalSTR }}:00{{ $THoraFinal }}
+
+                                                </div>
+                                                <?php endif ?>
+                                            </td>
+                                            <?php endforeach ?>
+                                            <?php endif ?>
+                                        </tr>
                                         <?php endif ?>
-                                    </tr>
-                                    <?php endif ?>
-                                    <?php } ?>
-                                    <?php } ?>
+                                        <?php } ?>
+                                        <?php } ?>
 
 
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                    </div>
+                    @endif
+                    
+
+                
 
                 </center>
             </div>
 
         </div>
+        @if($parentid != '02i3m00000DiduZAAR')
         <div class="row">
             <div class="col-12 col-md-12">
                 <div class="form-group">
@@ -831,5 +969,513 @@ if ($designs) {
                 <button type="submit" class="btn btn-primary submit-form">Siguiente</button>
             </div>
         </div>
+        @endif
     </div>
+    
+    @if($parentid == '02i3m00000DiduZAAR')
+        <script>
+            var phpVariable = @json($grupos);
+            var jsonSchedules = @json($lsTimeTables);
+            var jsonSchedulesSaturday = @json($lsTimeTablesS);
+            var jsonSchedulesSunday = @json($lsTimeTablesD);
+            var moment = moment();
+        </script>
+    @endif
+
+    @if($parentid == '02i3m00000DiduZAAR')
+        <script type="text/babel">    
+            const App = () => {
+                    const buttonRef = React.useRef(null);
+
+                    const [groups, setGroups] = React.useState([]);
+
+                    const [selectedHour, setSelectedHour] = React.useState(null);
+
+                    
+                    const [schedules, setSchedules] = React.useState([]);
+                    const [schedulesSaturday, setSchedulesSaturday] = React.useState([]);
+                    const [schedulesSunday, setSchedulesSunday] = React.useState([]);
+
+                    const [isRefresh, setIsRefresh] = React.useState(false);
+
+                    const [cantPersonas, setCantPersonas] = React.useState(1);
+
+
+                    const [persAssist, setPersAssist] = React.useState(0);
+
+                    const [isNext, setIsNext] = React.useState(true);
+
+
+                    const [venue, setVenue] = React.useState(null);
+
+
+                    
+
+
+
+
+
+                    /**
+                     *  Variable to store  the  input from  daterangepicker
+                    */
+                    const [currentDay, setCurrentDay] = React.useState(null);
+                    const [currentSchedule, setCurrentSchedule] = React.useState(null);
+
+                    /**
+                     * Slots Selected comming from  SALESFORCE PRODUCTION 
+                    */
+                    const [slotsSelected, setSlotsSelected] = React.useState([]);
+
+                      /**
+                     * Boolean para saber si esta cargando 
+                    */
+                    const [isLoading, setIsLoading] = React.useState(true);
+
+
+
+                    //Personas que van a asistir
+                    const [persAdults, setPersAdults] = React.useState(0);
+                    const [persChilds, setPersChilds] = React.useState(0);
+                    const [persJub, setPersJub] = React.useState(0);
+
+                    
+
+
+                    React.useEffect(()=>{
+                        if(currentDay == null ){
+                            const date = new Date();
+                            const dayOfWeek = date.getDay();
+                            setCurrentDay(dayOfWeek);
+                        }
+                    },[currentDay])
+                    
+
+                    React.useEffect(() => {
+                        // Access the PHP variable here
+                        if(phpVariable){
+                            setGroups([phpVariable[0]]);
+                        }
+                        if(jsonSchedules){
+                            setSchedules(jsonSchedules);
+                        }
+
+                        if(jsonSchedulesSaturday){
+                            setSchedulesSaturday(jsonSchedulesSaturday);
+                        }
+                        if(jsonSchedulesSunday){
+                            setSchedulesSunday(jsonSchedulesSunday);
+                        }
+
+                    }, [phpVariable,jsonSchedules,jsonSchedulesSunday,jsonSchedulesSaturday]);
+
+            
+
+                    
+                    React.useEffect(() => {
+                        // Add an event listener to capture the custom event
+                        const eventListener = async(event) => {    
+                            setIsLoading(false); 
+                            const dayOfWeek = moment(event.detail.currentDate).day();
+                            setCurrentDay(dayOfWeek);
+                            setCurrentSchedule(event.detail.currentDate);
+                        };
+
+                        //event dispach from  CORE.JS LINE 143
+                        window.addEventListener('dateSelected', eventListener);
+
+                        // Clean up the event listener when the component unmounts
+                        return () => {
+                            window.removeEventListener('dateSelected', eventListener);
+                        };
+                    }, []);
+
+                        
+                    React.useEffect(() => {
+                        // Add an event listener to capture the custom event
+                        const eventListener = async(event) => {
+                            if(event.detail.slotsSelected) setSlotsSelected(JSON.parse(event.detail.slotsSelected));
+                            setIsLoading(true);
+                        };
+
+                        //event dispach from  CORE.JS LINE 160
+                        window.addEventListener('slotsSelected', eventListener);
+
+                        // Clean up the event listener when the component unmounts
+                        return () => {
+                            window.removeEventListener('slotsSelected', eventListener);
+                        };
+                    }, []);
+
+                    const  handleSelectHour = (hourSelected,index,time)=>{
+                        console.log(hourSelected,index,time);
+                        setVenue(hourSelected);
+                        setIsRefresh(true);
+                        let newArr = [...groups]; // copying the old datas array
+                        newArr[index].selected=true;// replace e.target.value with whatever you want to change it to
+                        newArr[index].selectedTime = time.startTimeToShow + '-'+ time.endTimeToShow;
+                        newArr[index].startTime = time.startTime;
+                        newArr[index].selectedStartTime = currentSchedule ?  currentSchedule+' '+time.startTimeToShow :  moment().format('YYYY-MM-DD')+' ' +time.startTimeToShow;
+                        setGroups(newArr);
+                        setSelectedHour(newArr);
+                        if(slotsSelected){
+                            let cantPers = 0;
+                            
+                            slotsSelected.forEach(slot => {
+                                if(slot.StartDateTime){
+                                    let convertStartTime = moment.utc(slot.StartDateTime);
+                                   // Get the hours and minutes
+                                   var hours = convertStartTime.format('HH');
+                                   var minutes = convertStartTime.format('mm');
+
+                                   var [startHours, startMinutes] = time.startTime.split('-');
+                                   if(hours === startHours && minutes === startMinutes && slot.Cantidad_de_asistentes__c){
+                                        cantPers+=slot.Cantidad_de_asistentes__c;
+                                   }
+                                }
+                            });
+                            setPersAssist(25-cantPers);
+                        }
+
+                        setIsRefresh(false);
+
+                    }
+
+
+                    const  handleAdultsSum = e=>{
+                        e.preventDefault();
+                        if(persAssist!=0 && persAdults>-1){
+                            setPersAdults(persAdults + 1);
+                            setPersAssist(persAssist - 1);
+                            
+
+                        }
+                    }
+
+                    const  handleAdultsRest = e=>{
+                        e.preventDefault();
+                        if(persAssist>-1 && persAdults>0){
+                            setPersAdults(persAdults - 1);
+                            setPersAssist(persAssist + 1);
+                        
+                        }
+                    }
+
+
+                    const  handleChildSum = e=>{
+                        e.preventDefault();
+                        if(persAssist!=0 && persChilds>-1){
+                            setPersChilds(persChilds + 1);
+                            setPersAssist(persAssist - 1);
+                           
+
+                        }
+                    }
+
+                    const  handleChildRest = e=>{
+                        e.preventDefault();
+                        if(persAssist>-1&& persChilds>0){
+                            setPersChilds(persChilds - 1);
+                            setPersAssist(persAssist + 1);
+                     
+
+                        }
+                    }
+
+                    const  handleJubSum = e=>{
+                        e.preventDefault();
+                        if(persAssist!=0 && persJub>-1){
+                            setPersJub(persJub + 1);
+                            setPersAssist(persAssist - 1);
+                            
+                        }
+                    }
+
+                    const  handleJubRest = e=>{
+                        e.preventDefault();
+                        if(persAssist>-1 && persJub>0){
+                            setPersJub(persJub - 1);
+                            setPersAssist(persAssist + 1);
+                        }
+                    }
+
+                    const  handleClick = async e=>{
+                        e.preventDefault();
+                        console.log(selectedHour);
+                        let objAux = {};
+                        objAux.fecha = (currentSchedule==null) ? moment().format('YYYY-MM-DD') : currentSchedule;
+                        objAux.id = 'chkhora'+selectedHour[0].startTime+venue.id;
+                        objAux.venue = venue.name;
+                        objAux.subtotal= 3.50;
+                        objAux.calcularFact= true;
+                        objAux.personJubCount= persJub;
+                        objAux.personChildCount= persChilds;
+                        objAux.personAdultCount= persAdults;
+
+                        document.getElementById('ReservasSeleccionadas').value = JSON.stringify([objAux]);
+
+                        buttonRef.current.click();
+                    }
+
+                    React.useEffect(() => {
+                            if(persChilds > 0 || persAdults > 0 || persJub > 0 ){
+                                    setIsNext(false);
+                            }else{
+                                    setIsNext(true);
+                            }
+                        
+                        return () => {
+                            null
+                        }
+                    }, [persChilds,persAdults,persJub])
+                 
+
+                    return (
+                        <div>
+                            <div id="overlay" class="spinner-styles" hidden={isLoading} >
+                                <div class="spinner-border" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                                <br />Buscando disponibilidad...
+                            </div>
+                            <div className='tDiv mt-2'>
+                                <table className='w-100' >
+                                    <thead >
+                                        <tr>
+                                            <th className='headcol' ></th>
+                                            {groups.length > 0  && 
+                                                    groups.map((element,i)=>{
+                                                        return  (<th className='text-center'  key={i} >
+                                                                <div id="diaDisclaimer" data-toggle="popover" data-placement="bottom"
+                                                                    title="Dismissible popover"
+                                                                    data-content="And here's some amazing content. It's very engaging. Right?">
+                                                                    <a href='/' className='col-head'><b>{element.name}</b></a>
+                                                                </div>
+                                                            </th >);
+                                            })}
+                                        </tr>
+                                    </thead>
+                                    <tbody >
+
+                                    {/* MARTES A VIERNES */}
+                                    {schedules.length > 0 && currentDay < 6  &&  currentDay > 1    && schedules.map((sch,i)=>{
+                                                let currentDate = moment();
+                                                let currentInputValue = currentSchedule ? currentSchedule+ ' ' +sch.startTimeToShow : moment().format('YYYY-MM-DD') +' ' +sch.startTimeToShow;
+
+                                                // Parse the given date string '2023-10-17 02:30 PM' and create a moment object
+                                                var targetDate = moment(currentInputValue, 'YYYY-MM-DD hh:mm A');
+
+                                                // Compare the current date with the target date
+                                                if (currentDate.isAfter(targetDate)) {
+                                                    return '';
+                                                } else {
+                                                    return (<tr key={i} /*id={"trHora" + sch.startTime}*/>
+                                                        <th  className='headcol'  >{sch.startTimeToShow} </th>   
+                                                        {groups.length > 0  && isRefresh==false && 
+                                                                groups.map((element,i)=>{
+                                                                    let isCurrentTimeSelected =false;
+
+                                                                
+                                                                        if(element['selected']){
+                                                                            if(element.selectedStartTime == currentInputValue) isCurrentTimeSelected = true;
+                                                                        } 
+                                                                        return  ( <td className='text-center position-relative' key={i}  >
+                                                                                <div  className={isCurrentTimeSelected ? 'spBtn selected' : 'spBtn' } onClick={e=>{
+                                                                                    e.preventDefault();
+                                                                                    handleSelectHour(element,i,sch);
+                                                                                }}
+                                                                                id={i}>
+                                                                        
+                                                                                    {isCurrentTimeSelected && element.selectedTime}
+                                                                                    
+                                                                                    </div>
+                                                                                    {isCurrentTimeSelected &&  <div class=" position-absolute  stl-persons d-none align-items-center " aria-labelledby={i}>
+                                                                                            <input type="number"  className="form-control text-center  " min="1" oninput="this.value = Math.abs(this.value)"  value={cantPersonas}
+                                                                                                onChange={e=>setCantPersonas(e.target.value)} 
+                                                                                                        name="cantidadPersonas"  placeholder="" />
+                                                                                                        <i class="bi bi-people-fill ml-2 icon-bt" ></i>
+                                                                                    </div>}
+                                                                                
+                                                                            </td>);
+                                                                    
+
+                                                            
+                                                                
+                                                        })}
+                                                    </tr>);
+                                                }
+                                    })}
+
+                                    {/*SABADO*/}
+                                    {schedulesSaturday.length > 0 && currentDay == 6  && schedulesSaturday.map((sch,i)=>{
+                                                let currentDate = moment();
+                                                let currentInputValue = currentSchedule ? currentSchedule+ ' ' +sch.startTimeToShow : moment().format('YYYY-MM-DD') +' ' +sch.startTimeToShow;
+
+                                                // Parse the given date string '2023-10-17 02:30 PM' and create a moment object
+                                                var targetDate = moment(currentInputValue, 'YYYY-MM-DD hh:mm A');
+
+                                                // Compare the current date with the target date
+                                                if (currentDate.isAfter(targetDate)) {
+                                                    return '';
+                                                } else {
+                                                    return (<tr key={i} /*id={"trHora" + sch.startTime}*/>
+                                                        <th  className='headcol'  >{sch.startTimeToShow} </th>   
+                                                        {groups.length > 0  && isRefresh==false && 
+                                                                groups.map((element,i)=>{
+                                                                    let isCurrentTimeSelected =false;
+
+                                                                
+                                                                        if(element['selected']){
+                                                                            if(element.selectedStartTime == currentInputValue) isCurrentTimeSelected = true;
+                                                                        } 
+                                                                        return  ( <td className='text-center position-relative' key={i}  >
+                                                                                <div  className={isCurrentTimeSelected ? 'spBtn selected' : 'spBtn' } onClick={e=>{
+                                                                                    e.preventDefault();
+                                                                                    handleSelectHour(element,i,sch);
+                                                                                }}
+                                                                                id={i}>
+                                                                        
+                                                                                    {isCurrentTimeSelected && element.selectedTime}
+                                                                                    
+                                                                                    </div>
+                                                                                    {isCurrentTimeSelected &&  <div class=" position-absolute  stl-persons d-none align-items-center " aria-labelledby={i}>
+                                                                                            <input type="number"  className="form-control text-center  " min="1" oninput="this.value = Math.abs(this.value)"  value={cantPersonas}
+                                                                                                onChange={e=>setCantPersonas(e.target.value)} 
+                                                                                                        name="cantidadPersonas"  placeholder="" />
+                                                                                                        <i class="bi bi-people-fill ml-2 icon-bt" ></i>
+                                                                                    </div>}
+                                                                                
+                                                                            </td>);
+                                                                    
+
+                                                            
+                                                                
+                                                        })}
+                                                    </tr>);
+                                                }
+                                        })}
+
+                                        {/* DOMINGO */}
+                                        {schedulesSunday.length > 0 && currentDay == 0  && schedulesSunday.map((sch,i)=>{
+                                            let currentDate = moment();
+                                                let currentInputValue = currentSchedule ? currentSchedule+ ' ' +sch.startTimeToShow : moment().format('YYYY-MM-DD') +' ' +sch.startTimeToShow;
+
+                                                // Parse the given date string '2023-10-17 02:30 PM' and create a moment object
+                                                var targetDate = moment(currentInputValue, 'YYYY-MM-DD hh:mm A');
+
+                                                // Compare the current date with the target date
+                                                if (currentDate.isAfter(targetDate)) {
+                                                    return '';
+                                                } else {
+                                                    return (<tr key={i} /*id={"trHora" + sch.startTime}*/>
+                                                        <th  className='headcol'  >{sch.startTimeToShow} </th>   
+                                                        {groups.length > 0  && isRefresh==false && 
+                                                                groups.map((element,i)=>{
+                                                                    let isCurrentTimeSelected =false;
+
+                                                                
+                                                                        if(element['selected']){
+                                                                            if(element.selectedStartTime == currentInputValue) isCurrentTimeSelected = true;
+                                                                        } 
+                                                                        return  ( <td className='text-center position-relative' key={i}  >
+                                                                                <div  className={isCurrentTimeSelected ? 'spBtn selected' : 'spBtn' } onClick={e=>{
+                                                                                    e.preventDefault();
+                                                                                    handleSelectHour(element,i,sch);
+                                                                                }}
+                                                                                id={i}>
+                                                                        
+                                                                                    {isCurrentTimeSelected && element.selectedTime}
+                                                                                    
+                                                                                    </div>
+                                                                                    {isCurrentTimeSelected &&  <div class=" position-absolute  stl-persons d-none align-items-center " aria-labelledby={i}>
+                                                                                            <input type="number"  className="form-control text-center  " min="1" oninput="this.value = Math.abs(this.value)"  value={cantPersonas}
+                                                                                                onChange={e=>setCantPersonas(e.target.value)} 
+                                                                                                        name="cantidadPersonas"  placeholder="" />
+                                                                                                        <i class="bi bi-people-fill ml-2 icon-bt" ></i>
+                                                                                    </div>}
+                                                                                
+                                                                            </td>);
+                                                                    
+
+                                                            
+                                                                
+                                                        })}
+                                                    </tr>);
+                                                }
+                                        })}
+                
+                                    </tbody>
+                                </table>
+
+                        
+                            
+                            </div>
+                            <hr/>
+                            {
+                                selectedHour && <div >
+                                        <h4 className='w-100 text-left'> Cupos disponibles (25): {persAssist} </h4>
+                                        <div className=' '>
+                                            <div className='p-2 d-flex align-items-center'>
+                                                <p className='mb-1'>Adultos</p>
+                                                <div className='d-flex  align-items-center ml-2  '>
+                                                    <input type="number" value={persAdults} className="form-control  text-center w-25 "  readonly min="1" oninput="this.value = Math.abs(this.value)"  
+                                                                                                                            name="cantidadPersonas" />
+                                                    <div className=''>
+                                                        <button className='btn btn-primary  ml-1' onClick={handleAdultsSum}>+</button>
+                                                        <button className='btn btn-primary  ml-1' onClick={handleAdultsRest}>-</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className='p-2 d-flex align-items-center'>
+                                                <p className='mb-1'>Niños</p>
+                                                <div className='d-flex  align-items-center ml-2  '>
+                                                    <input type="number" value={persChilds} className="form-control  text-center w-25 "  readonly min="1" oninput="this.value = Math.abs(this.value)"  
+                                                                                                                            name="cantidadPersonas" />
+                                                    <div className=''>
+                                                        <button className='btn btn-primary  ml-1' onClick={handleChildSum}>+</button>
+                                                        <button className='btn btn-primary  ml-1' onClick={handleChildRest}>-</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className='p-2 d-flex align-items-center'>
+                                                <p className='mb-1'>Jubilados</p>
+                                                <div className='d-flex  align-items-center ml-2  '>
+                                                    <input type="number" value={persJub} className="form-control  text-center w-25 "  readonly min="1" oninput="this.value = Math.abs(this.value)"  
+                                                                                                                            name="cantidadPersonas" />
+                                                    <div className=''>
+                                                        <button className='btn btn-primary  ml-1' onClick={handleJubSum}>+</button>
+                                                        <button className='btn btn-primary  ml-1' onClick={handleJubRest}>-</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                        </div>                                                                                                    
+                                </div>
+                            }
+                            
+                            <div class="row">
+                                <div class="col-12 col-md-12">
+                                        <div class="form-group">
+                                            <label for="description"><small>Describe tu
+                                                    reserva(opcional)</small></label>
+                                            <textarea name="description"  id="description"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row buttons">
+                                    <div class="col-12 text-center">
+                                        <a href="/cotizacion/datos-contacto" class="btn btn-primary">Anterior</a>
+                                        <button  class="btn btn-primary" onClick={handleClick} disabled={isNext}>Siguiente</button>
+                                        <button type="submit" class="btn btn-primary submit-form d-none"  ref={buttonRef}>Siguiente</button>
+                                    </div>
+                                </div>
+                            
+                                
+                        </div>
+                    );
+                };
+
+                ReactDOM.render(<App />, document.getElementById('root'));
+        </script>
+    @endif
+
 </div>

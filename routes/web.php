@@ -84,9 +84,6 @@ Route::post('/sfASWEwweWEQQW/getVenue', 'App\Http\Controllers\eventsController@g
 
 Route::post('/aplicarCupon', 'App\Http\Controllers\IndexController@aplicarCupon');
 
-Route::post('/cancelar/reserva/evento/inactividad/{leadId}', 'App\Http\Controllers\IndexController@cancelEventForInactivity');
-    
-
 Route::get('/yappy', 'App\Http\Controllers\Yappy@pagarYappy');
 Route::post('/yappy', 'App\Http\Controllers\Yappy@pagarYappy');
 
@@ -99,6 +96,12 @@ Route::post('/pagosbg.php', 'App\Http\Controllers\Yappy@procesarYappy');
 Route::get('/yappyfail/{token}', 'App\Http\Controllers\Yappy@failYappy');
 Route::post('/yappyfail/{token}', 'App\Http\Controllers\Yappy@failYappy');
 
+Route::post('/set-session', 'App\Http\Controllers\SessionController@setSession');
+
+Route::post('/update-variable', 'App\Http\Controllers\SessionController@updateVariable');
+
+Route::post('/cancelar/reserva/evento/inactividad/{leadId}', 'App\Http\Controllers\IndexController@cancelEventForInactivity');
+    
 
 Route::get('/email/quote', function () {
   return view('email.quote');

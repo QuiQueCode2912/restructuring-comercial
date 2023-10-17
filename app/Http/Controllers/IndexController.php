@@ -1306,7 +1306,7 @@ class IndexController extends Controller
                     case '02i3m00000D9DaPAAV':
                         $selVenues = session('ReservasSeleccionadas');
                         $reservas = json_decode(session('ReservasSeleccionadas'));
-
+                       
 
                         $recargoNoche = Rates::where('name', '=', 'Recargo - Noche')->first();
                         $recargoFin = Rates::where('name', '=', 'Recargo - Fin de semana')->first();
@@ -1346,21 +1346,23 @@ class IndexController extends Controller
                         foreach ($reservas as $reserva) {
                             $debugCalculo = $debugCalculo . "\r\nFranja:" . session()->get('franja') . "\r\n";
                             $idActual = $reserva->id;
-                            echo  $reserva->fecha;
                             $fechaActual = $reserva->fecha;
                             $fechaActualCarbon = Carbon::parse($fechaActual);
                             $fechaActualCarbon->addHours(5);
 
                             // Si deseas actualizar el campo fecha en el objeto reserva
                             $fechaActual = $fechaActualCarbon;
-                            if ($reserva->venue == 'PISCINA') {
+                            if($reserva->venue == 'PISCINA'){
                                 $horaInicio = substr($idActual, 7, 4);
                                 $sfAssetId = substr($idActual, 12);
-                            } else {
+
+                                //Aqui se debe de agregar  el custom  time
+                                $reserva->customTime = true;
+                            }else{
                                 $horaInicio = substr($idActual, 7, 2);
                                 $sfAssetId = substr($idActual, 9);
                             }
-
+                     
 
                             $debugCalculo = $debugCalculo . " " . $sfAssetId;
 
@@ -1413,6 +1415,8 @@ class IndexController extends Controller
                                         }
                                     }
                             }
+                         
+
                             if ($calcular) {
                                 if ($thisVenue->employeediscount) {
                                     $tarifaUsar = $tarifaUsar * (1.0 + ($descuentoColaboradores / 100));
@@ -1468,15 +1472,33 @@ class IndexController extends Controller
                                 $tarifaUsar = 0;
                             }
                             //$debugCalculo .= "Ajustada: " . $tarifaUsar . " calcular: " . $calcular;
+                            if($reserva->calcularFact == true){
+                                $tarifaTotal = 0;
+                                if ($reserva->personJubCount) {
+                                    $tarifaTotal += 1.50 * $reserva->personJubCount ;
+                                }
+                                if ($reserva->personChildCount) {
+                                    $tarifaTotal += 1.50 * $reserva->personChildCount ;
+                                }
+                                if ($reserva->personAdultCount) {
+                                    $tarifaTotal += 3.50 * $reserva->personAdultCount ;
+                                }
+                                $reserva->subtotal =  $tarifaTotal;
+                                $costoTotal =  $costoTotal + $tarifaTotal;
+                            }else{
 
-                            $reserva->subtotal = $tarifaUsar;
-                            $costoTotal = $costoTotal + $tarifaUsar;
+                                $reserva->subtotal =  $tarifaUsar;
+                                $costoTotal =  $costoTotal + $tarifaUsar;
+                            }
+
                         } // este es el end del foreach
+
+                       
 
                         $formatted_costoTotal = number_format($costoTotal, 2, '.', ',');
 
 
-                        $estimacion = $formatted_costoTotal;
+                        $estimacion =  $formatted_costoTotal;
                         //   $estimacion = $estimacion . "\r\n" . $debugCalculo . $horaInicio . "\r\n" . $fechaActualCarbon->format('Y-m-d');
                         session(['ReservasSeleccionadas' => json_encode($reservas)]);
                         break;
@@ -2175,7 +2197,7 @@ class IndexController extends Controller
             $PARENTCONDITION = "Venue__r.ParentId ='02i3m00000DidtxAAB' OR Venue__r.ParentId ='02i3m00000Didu3AAB'";
         else
             $PARENTCONDITION = "Venue__r.ParentId ='{$parentId}'";
-        $query = "SELECT StartDateTime,EndDateTime,Fecha_fin_del_evento__c,Venue__c,Venue__r.Name,Estado__c,Subject,Venue__r.Bloqueo_adicional_1__c,Venue__r.Bloqueo_adicional_2__c,Venue__r.Bloqueo_adicional_3__c FROM Event
+        $query = "SELECT StartDateTime,EndDateTime,Cantidad_de_asistentes__c,Fecha_fin_del_evento__c,Venue__c,Venue__r.Name,Estado__c,Subject,Venue__r.Bloqueo_adicional_1__c,Venue__r.Bloqueo_adicional_2__c,Venue__r.Bloqueo_adicional_3__c FROM Event
         where ((
         ((StartDateTime >= {$Fi} AND StartDateTime <= {$Ff}) OR (EndDateTime >= {$Fi} AND EndDateTime <= {$Ff}) OR (StartDateTime <= {$Fi} AND EndDateTime >= {$Ff})))
         AND ({$PARENTCONDITION})) or ((RecordType.Name='Excluir de reservas' and venue__c ='') AND ((StartDateTime >= {$Fi} AND StartDateTime <= {$Ff}) OR (EndDateTime >= {$Fi} AND EndDateTime <= {$Ff})
