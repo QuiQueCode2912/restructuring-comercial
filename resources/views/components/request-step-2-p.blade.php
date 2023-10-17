@@ -491,7 +491,12 @@ if ($designs) {
 
 
             <div class="col-12 col-md-12">
-                <div><small>Selecciona el horario (puedes reservar en múltiples días)</small></div>
+                @if($parentid == '02i3m00000DiduZAAR')
+                    <div><small>Selecciona el horario (la duración de cada turno es de una(1) hora)</small></div>
+                @else
+                    <div><small>Selecciona el horario (puedes reservar en múltiples días)</small></div>
+                @endif
+                
                 <div id="overlay" class="d-none"
                     style="padding-top:150px;background-color: rgba(255,255,255,0.7);">
                     <div class="spinner-border" role="status">
