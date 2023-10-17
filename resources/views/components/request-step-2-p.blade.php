@@ -643,7 +643,7 @@ if ($designs) {
 
                                 
                                 $timeSeven = new Timetable();
-                                $timeSeven->startTime = '15-30';
+                                $timeSeven->startTime = '14-30';
                                 $timeSeven->startTimeToShow = '02:30 PM';
                                 $timeSeven->endTime = '15-30';
                                 $timeSeven->endTimeToShow = '03:30 PM';
@@ -657,7 +657,7 @@ if ($designs) {
                                 $timeNine = new Timetable();
                                 $timeNine->startTime = '17-30';
                                 $timeNine->startTimeToShow = '05:30 PM';
-                                $timeNine->endTime = '17-30';
+                                $timeNine->endTime = '18-30';
                                 $timeNine->endTimeToShow = '06:30 PM';
 
                                 $timeTen = new Timetable();
@@ -1423,7 +1423,7 @@ if ($designs) {
                             <hr/>
                             {
                                 selectedHour && <div >
-                                        <h4 className='w-100 text-left'> Cupos disponibles (25): {persAssist} </h4>
+                                        <h4 className='w-100 text-left'> Cupos disponibles : {persAssist} </h4>
                                         <div className=' '>
                                             <div className='p-2 d-flex align-items-center'>
                                                 <p className='mb-1'>Adultos</p>
