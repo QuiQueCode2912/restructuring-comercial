@@ -1221,13 +1221,13 @@ if ($designs) {
                         var time = moment(inputTime, "HH-mm");
 
                         // Add 4 hours to the time
-                        time.add(4, "hours");
+                        time.add(5, "hours");
 
                         // Format the result as "HH-MM"
                         var formattedTime = time.format("HH-mm");
 
                         objAux.id = 'chkhora'+formattedTime+venue.id;
-                        
+
                         objAux.venue = venue.name;
                         objAux.subtotal= 3.50;
                         objAux.calcularFact= true;
