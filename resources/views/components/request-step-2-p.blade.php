@@ -631,7 +631,7 @@ if ($designs) {
 
                                 $timeFive = new Timetable();
                                 $timeFive->startTime = '11-30';
-                                $timeFive->startTimeToShow = '11:30 PM';
+                                $timeFive->startTimeToShow = '11:30 AM';
                                 $timeFive->endTime = '12-30';
                                 $timeFive->endTimeToShow = '12:30 PM';
 
@@ -756,16 +756,22 @@ if ($designs) {
                                 $timeFourD->endTimeToShow = '01:00 PM';
 
                                 $timeFiveD = new Timetable();
-                                $timeFiveD->startTime = '13-30';
-                                $timeFiveD->startTimeToShow = '01:30 PM';
-                                $timeFiveD->endTime = '14-30';
-                                $timeFiveD->endTimeToShow = '02:30 PM';
+                                $timeFiveD->startTime = '13-00';
+                                $timeFiveD->startTimeToShow = '01:00 PM';
+                                $timeFiveD->endTime = '14-00';
+                                $timeFiveD->endTimeToShow = '02:00 PM';
 
                                 $timeSixD = new Timetable();
-                                $timeSixD->startTime = '15-30';
-                                $timeSixD->startTimeToShow = '03:30 PM';
-                                $timeSixD->endTime = '16-30';
-                                $timeSixD->endTimeToShow = '04:30 PM';
+                                $timeSixD->startTime = '14-30';
+                                $timeSixD->startTimeToShow = '02:30 PM';
+                                $timeSixD->endTime = '15-30';
+                                $timeSixD->endTimeToShow = '03:30 PM';
+
+                                $timeNineD = new Timetable();
+                                $timeNineD->startTime = '16-00';
+                                $timeNineD->startTimeToShow = '04:00 PM';
+                                $timeNineD->endTime = '17-00';
+                                $timeNineD->endTimeToShow = '05:00 PM';
 
                                 $timeSevenD = new Timetable();
                                 $timeSevenD->startTime = '17-30';
@@ -773,7 +779,7 @@ if ($designs) {
                                 $timeSevenD->endTime = '18-30';
                                 $timeSevenD->endTimeToShow = '06:30 PM';
 
-                                $lsTimeTablesD = array($timeOneD,$timeTwoD,$timeThreeD,$timeFourD,$timeFiveD,$timeSixD,$timeSevenD);
+                                $lsTimeTablesD = array($timeOneD,$timeTwoD,$timeThreeD,$timeFourD,$timeFiveD,$timeSixD,$timeNineD,$timeSevenD);
 
                         }
                     ?>
