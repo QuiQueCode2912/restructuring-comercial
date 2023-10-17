@@ -1897,17 +1897,8 @@ class IndexController extends Controller
 
                         if (isset($data['Estado']) && substr($data['Estado'], 0, 6) == 'Aproba') {
                             $lead_id = $lead['records'][0]['Id'];
-
-                            $concepto = '';
-                            if(isset($lead['records'][0]['VenueID__c']) ){
-                                if($lead['records'][0]['VenueID__c'] == '02i3m00000D9BANAA3'){
-                                $concepto ='';
-                                }
-                                else{
-                                    $concepto = nl2br($lead['records'][0]['Espacios_que_desea_reservar__c']);
-                                }
-                            }
-
+                            $concepto = nl2br($lead['records'][0]['Espacios_que_desea_reservar__c']);
+                              
                             //      $receiptData = ['Confirmado__c' => false, 'Lead__c' => $request->token, 'Monto__c' => $data['TotalPagado'], 'Soporte__c' => $uploaded_file, 'Numero_de_transaccion__c' => $data['Oper'], 'Fecha_de_pago__c' => $date->format('Y-m-d\TH:i:s.000\Z') , 'Tipo__c' => (isset($data['method']) ? $data['method'] : 'Páguelo Fácil') ];
 
                             $date = new \DateTime(isset($data['date']) ? $data['date'] . ' ' . date('H:i:s') : date('Y-m-d H:i:s'));
