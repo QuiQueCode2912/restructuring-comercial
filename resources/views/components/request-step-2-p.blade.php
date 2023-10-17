@@ -1245,7 +1245,7 @@ if ($designs) {
                         timeF.add(5, "hours");
 
                         // Format the result as "HH-MM"
-                        var formattedTimeF = time.format("HH-mm");
+                        var formattedTimeF = timeF.format("HH-mm");
                         objAux.finishTime= formattedTimeF.replace('-',':');
 
                         let tot= persJub + persChilds + persAdults;
