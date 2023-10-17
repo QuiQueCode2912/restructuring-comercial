@@ -1232,8 +1232,8 @@ if ($designs) {
                         time.add(5, "hours");
 
                         // Format the result as "HH-MM"
-                        var formattedTime = time.format("HH:mm");
-                        objAux.startTime= formattedTime;
+                        var formattedTime = time.format("HH-mm");
+                        objAux.startTime= formattedTime.replace('-',':');
 
                             // Input time as a string
                         var inputTimeFinish = selectedHour[0].endTime;
@@ -1245,9 +1245,9 @@ if ($designs) {
                         timeF.add(5, "hours");
 
                         // Format the result as "HH-MM"
-                        var formattedTimeF = time.format("HH:mm");
-                        objAux.finishTime= formattedTimeF;
-                        
+                        var formattedTimeF = time.format("HH-mm");
+                        objAux.finishTime= formattedTimeF.replace('-',':');
+
                         let tot= persJub + persChilds + persAdults;
                         objAux.totalPersons = tot.toString();
 
