@@ -111,7 +111,7 @@
 @else
             <p class="text-center" style="margin-top:30px">
   <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#cancelModal" style="width:220px">
-    Reagendar Evento
+    Reprogramar Evento
   </button><br><br>
   <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#voucherModal" style="width:220px">
     Solicitar Cupón
