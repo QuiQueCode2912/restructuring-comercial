@@ -1222,7 +1222,7 @@ if ($designs) {
                         objAux.personChildCount= persChilds;
                         objAux.personAdultCount= persAdults;
                         let tot= persJub + persChilds + persAdults;
-                        objAux.totalPersons = String.valueOf(tot);
+                        objAux.totalPersons = tot.toString();
 
                         document.getElementById('ReservasSeleccionadas').value = JSON.stringify([objAux]);
 
