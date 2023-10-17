@@ -1125,6 +1125,7 @@ if ($designs) {
                         newArr[index].selected=true;// replace e.target.value with whatever you want to change it to
                         newArr[index].selectedTime = time.startTimeToShow + '-'+ time.endTimeToShow;
                         newArr[index].startTime = time.startTime;
+                        newArr[index].endTime = time.endTime;
                         newArr[index].selectedStartTime = currentSchedule ?  currentSchedule+' '+time.startTimeToShow :  moment().format('YYYY-MM-DD')+' ' +time.startTimeToShow;
                         setGroups(newArr);
                         setSelectedHour(newArr);
@@ -1222,6 +1223,7 @@ if ($designs) {
                         objAux.personChildCount= persChilds;
                         objAux.personAdultCount= persAdults;
                         objAux.startTime= selectedHour[0].startTime;
+                        objAux.finishTime= selectedHour[0].endTime;
                         let tot= persJub + persChilds + persAdults;
                         objAux.totalPersons = tot.toString();
 
