@@ -1472,7 +1472,7 @@ class IndexController extends Controller
                                 $tarifaUsar = 0;
                             }
                             //$debugCalculo .= "Ajustada: " . $tarifaUsar . " calcular: " . $calcular;
-                            if($reserva->calcularFact == true){
+                            if(isset($reserva->calcularFact)){
                                 $tarifaTotal = 0;
                                 if ($reserva->personJubCount) {
                                     $tarifaTotal += 1.50 * $reserva->personJubCount ;
