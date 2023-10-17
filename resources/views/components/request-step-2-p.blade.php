@@ -1222,8 +1222,8 @@ if ($designs) {
                         objAux.personJubCount= persJub;
                         objAux.personChildCount= persChilds;
                         objAux.personAdultCount= persAdults;
-                        objAux.startTime= selectedHour[0].startTime;
-                        objAux.finishTime= selectedHour[0].endTime;
+                        objAux.startTime= selectedHour[0].startTime.replace('-',':');
+                        objAux.finishTime= selectedHour[0].endTime.replace('-',':');
                         let tot= persJub + persChilds + persAdults;
                         objAux.totalPersons = tot.toString();
 
