@@ -1222,8 +1222,32 @@ if ($designs) {
                         objAux.personJubCount= persJub;
                         objAux.personChildCount= persChilds;
                         objAux.personAdultCount= persAdults;
-                        objAux.startTime= selectedHour[0].startTime.replace('-',':');
-                        objAux.finishTime= selectedHour[0].endTime.replace('-',':');
+                        // Input time as a string
+                        var inputTime = selectedHour[0].startTime;
+
+                        // Parse the input time using Moment.js
+                        var time = moment(inputTime, "HH-mm");
+
+                        // Add 4 hours to the time
+                        time.add(5, "hours");
+
+                        // Format the result as "HH-MM"
+                        var formattedTime = time.format("HH:mm");
+                        objAux.startTime= formattedTime;
+
+                            // Input time as a string
+                        var inputTimeFinish = selectedHour[0].endTime;
+
+                        // Parse the input time using Moment.js
+                        var timeF = moment(inputTimeFinish, "HH-mm");
+
+                        // Add 4 hours to the time
+                        timeF.add(5, "hours");
+
+                        // Format the result as "HH-MM"
+                        var formattedTimeF = time.format("HH:mm");
+                        objAux.finishTime= formattedTimeF;
+                        
                         let tot= persJub + persChilds + persAdults;
                         objAux.totalPersons = tot.toString();
 
