@@ -86,7 +86,7 @@
           @endif
           </td>
         </tr>
-        <tr>
+        <tr class="d-none">
           <th>Fecha</th>
           <td><?php echo $data['Fecha'] ?> <?php echo $data['Hora'] ?></td>
         </tr>
