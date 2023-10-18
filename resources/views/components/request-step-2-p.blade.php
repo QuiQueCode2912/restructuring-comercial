@@ -1135,6 +1135,8 @@ if ($designs) {
                             slotsSelected.forEach(slot => {
                                 if(slot.StartDateTime){
                                     let convertStartTime = moment.utc(slot.StartDateTime);
+                                    convertStartTime.subtract(5,'hours');
+                                    
                                    // Get the hours and minutes
                                    var hours = convertStartTime.format('HH');
                                    var minutes = convertStartTime.format('mm');
