@@ -1473,16 +1473,49 @@ class IndexController extends Controller
                             }
                             //$debugCalculo .= "Ajustada: " . $tarifaUsar . " calcular: " . $calcular;
                             if(isset($reserva->calcularFact)){
+                                $trarifa =  $thisVenue->hour_fee;
+                                $recargo = false;
+
+                                if($horaInicio > 18){
+                                    $recargo = true;
+                                    $reserva->recargo = "Noche";
+                                    $debugCalculo = $debugCalculo . " noche";
+                                    $trarifa  = $trarifa + $trarifa * $recargoNoche->percentage / 100;
+                                }
+
+                                if ($thisVenue->weekendcharge && !$recargo) {
+                                    $diaSemana = date("w", strtotime($fechaActual));
+
+                                    if ($diaSemana == 6) {
+                                        $recargo = true;
+                                        $reserva->recargo = "Sábado";
+                                        $debugCalculo = $debugCalculo . " sabado";
+                                        $trarifa = $trarifa + $trarifa * $recargoFin->percentage / 100;
+                                    } else if ($diaSemana == 0) {
+                                        $recargo = true;
+                                        $reserva->recargo = "Domingo";
+                                        $debugCalculo = $debugCalculo . " domingo";
+                                        $trarifa = $trarifa + $trarifa * $recargoFin->percentage / 100;
+                                    }
+                                }
+
                                 $tarifaTotal = 0;
+
+                                if ($reserva->personAdultCount) {
+                                    $tarifaTotal +=  $trarifa * $reserva->personAdultCount ;
+                                }
+
                                 if ($reserva->personJubCount) {
-                                    $tarifaTotal += 1.50 * $reserva->personJubCount ;
+                                    $descuentoNinos = Rates::where('name', '=', 'Descuento - Niños')->first()->percentage;
+                                    $trarifaJub = $trarifa  * (1.0 + ($descuentoNinos / 100)); //
+                                    $tarifaTotal += $trarifaJub * $reserva->personJubCount ;
                                 }
                                 if ($reserva->personChildCount) {
-                                    $tarifaTotal += 1.50 * $reserva->personChildCount ;
+                                    $descuentoNinos = Rates::where('name', '=', 'Descuento - Niños')->first()->percentage;
+                                    $tarifaChilds = $trarifa  * (1.0 + ($descuentoNinos / 100));
+                                    $tarifaTotal += $tarifaChilds * $reserva->personChildCount ;
                                 }
-                                if ($reserva->personAdultCount) {
-                                    $tarifaTotal += 3.50 * $reserva->personAdultCount ;
-                                }
+                              
                                 $reserva->subtotal =  $tarifaTotal;
                                 $costoTotal =  $costoTotal + $tarifaTotal;
                             }else{
