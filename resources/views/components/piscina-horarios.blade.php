@@ -57,8 +57,9 @@
                                 <p>9:30 am a 10:30 am</p>
                                 <p>11:00 am a 12:00 md</p>
                                 <p>12:00 md a 1:00 pm</p>
-                                <p>1:30 pm a 2:30 pm</p>
-                                <p>3:30 pm a 4:30 pm</p>
+                                <p>1:00 pm a 2:00 pm</p>
+                                <p>2:30 pm a 3:30 pm</p>
+                                <p>4:00 pm a 5:00 pm</p>
                                 <p>5:30 pm a 6:30 pm</p>
                             </div>
                         </div>

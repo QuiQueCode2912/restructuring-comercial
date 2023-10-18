@@ -51,7 +51,7 @@ if(!isset($venueroute))
     <div class="col-12 col-md-6">
       <p class="venue-name"><?php echo $parent ?? '' ? $parent . ' - ' : '' ?>{{ $name }}</p>
       @if($id == '02i3m00000D9BANAA3')
-      <p style="color:#0088ff;font-size:11px;margin-top:-10px;">Uso de piscina por Carriles de natación.</p>
+      <p style="color:#0088ff;font-size:11px;margin-top:-10px;">Uso de piscina por carriles de natación.</p>
       @endif
       @if($id == '02i3m00000D9BANAA4')
         <p style="color:#0088ff;font-size:11px;margin-top:-10px;" >Uso de forma libre.</p>
