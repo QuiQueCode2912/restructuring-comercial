@@ -1118,7 +1118,12 @@ if ($designs) {
                     }, []);
 
                     const  handleSelectHour = (hourSelected,index,time)=>{
-                        console.log(hourSelected,index,time);
+                        
+                        //Rest time to persons
+                        setPersAdults(0);
+                        setPersChilds(0);
+                        setPersJub(0);
+
                         setVenue(hourSelected);
                         setIsRefresh(true);
                         let newArr = [...groups]; // copying the old datas array
