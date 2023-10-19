@@ -2303,6 +2303,17 @@ class IndexController extends Controller
             $tipoSolicitud = $request->input('solicitud');
             switch ($tipoSolicitud) {
                 case 'reagendar':
+                    //INICIO EL CHEQUEO PARA LA PISCINA
+                    $queryOpp = "SELECT ID FROM OPPORTUNITY WHERE id='{$token}'";
+                    $resultCheckIfOpp = $salesforce->query($queryOpp);
+                    if ($resultCheckIfOpp['totalSize'] > 0){
+                        $queryEvent = "SELECT ID,Estado__c,WhatId,Venue__c FROM Event where WhatId='{$token}'";
+                        $resultEve = $salesforce->query($queryEvent);
+                        if ($resultEve['totalSize'] > 0){
+                            $token = $resultEve['records'][0]['ID'];
+                        }
+                    }
+                    //FIN DE CHEQUEAR SI VIENE DE LA PISCINA
                     $salesforce->update('Event', $token, ['Aplicar_devolucion__c' => 'true']);
                     $query = "SELECT ID,Estado__c,WhatId,Venue__c FROM Event where id='{$token}'";
                     $result = $salesforce->query($query);
