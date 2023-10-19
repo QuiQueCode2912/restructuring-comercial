@@ -1476,6 +1476,15 @@ class IndexController extends Controller
                                 $trarifa =  $thisVenue->hour_fee;
                                 $recargo = false;
 
+                                if($thisVenue->employeediscount)
+                                {
+                                    $trarifa = $trarifa * (1.0 + ($descuentoColaboradores/100));
+                                }
+                                if($thisVenue->residentdiscount)
+                                {
+                                    $trarifa = $trarifa * (1.0 + ($descuentoResidente/100));
+                                }
+
                                 if($horaInicio > 18){
                                     $recargo = true;
                                     $reserva->recargo = "Noche";
