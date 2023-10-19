@@ -10,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                @if ($parentid != '02i3m00000DiduZAAR')
+
                     <p><strong>Por favor, tenga en cuenta las siguientes normas y políticas durante su visita al Parque
                             Ciudad del Saber:</strong></p>
                     <ul>
@@ -50,7 +50,7 @@
                         <li><strong>Por favor, tenga en cuenta que los reembolsos sólo se tramitarán por ACH</strong>.
                         </li>
                     </ul>
-                @endif
+
                 @if ($parentid == '02i3m00000DiduZAAR')
                   <p><strong>Reglas adicionales en Piscina:</strong></p>
                     <ul>
