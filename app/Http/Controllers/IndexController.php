@@ -2246,7 +2246,7 @@ class IndexController extends Controller
         OR (StartDateTime <= {$Fi} AND EndDateTime >= {$Ff})))";
 
         if($parentId == '02i3m00000DiduZAAR'){
-            $query = $query + " AND  Estado__c!='Cancelado' ";
+            $query = $query." AND  Estado__c!='Cancelado' ";
         }
 
         $events = $salesforce->query($query);
