@@ -2245,6 +2245,10 @@ class IndexController extends Controller
         AND ({$PARENTCONDITION})) or ((RecordType.Name='Excluir de reservas' and venue__c ='') AND ((StartDateTime >= {$Fi} AND StartDateTime <= {$Ff}) OR (EndDateTime >= {$Fi} AND EndDateTime <= {$Ff})
         OR (StartDateTime <= {$Fi} AND EndDateTime >= {$Ff})))";
 
+        if($parentId == '02i3m00000DiduZAAR'){
+            $query = $query + " AND  Estado__c!='Cancelado' ";
+        }
+
         $events = $salesforce->query($query);
 
         $newEvents = [];
