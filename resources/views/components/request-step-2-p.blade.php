@@ -1152,7 +1152,12 @@ if ($designs) {
                                    }
                                 }
                             });
-                            setPersAssist(25-cantPers);
+                             let totalPers = 25-cantPers;
+                            if(totalPers<=0){
+                                setPersAssist(0);
+                            }else{
+                                setPersAssist(totalPers);
+                            }
                         }
 
                         setIsRefresh(false);
