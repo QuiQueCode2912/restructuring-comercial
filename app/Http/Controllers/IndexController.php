@@ -2240,11 +2240,13 @@ class IndexController extends Controller
         else
             $PARENTCONDITION = "Venue__r.ParentId ='{$parentId}'";
     
-        if($parentId == '02i3m00000DiduZAAR'){
-            $conditionState = "Estado__c!='Cancelado' ";
+        if ($parentId == '02i3m00000DiduZAAR') {
+            $fitlerState = "Estado__c!='Cancelado' AND ";
+        }else{
+            $fitlerState = "";
         }
         $query = "SELECT StartDateTime,EndDateTime,Cantidad_de_asistentes__c,Fecha_fin_del_evento__c,Venue__c,Venue__r.Name,Estado__c,Subject,Venue__r.Bloqueo_adicional_1__c,Venue__r.Bloqueo_adicional_2__c,Venue__r.Bloqueo_adicional_3__c FROM Event
-        where  $conditionState AND ((
+        where  ( $fitlerState (
         ((StartDateTime >= {$Fi} AND StartDateTime <= {$Ff}) OR (EndDateTime >= {$Fi} AND EndDateTime <= {$Ff}) OR (StartDateTime <= {$Fi} AND EndDateTime >= {$Ff})))
         AND ({$PARENTCONDITION})) or ((RecordType.Name='Excluir de reservas' and venue__c ='') AND ((StartDateTime >= {$Fi} AND StartDateTime <= {$Ff}) OR (EndDateTime >= {$Fi} AND EndDateTime <= {$Ff})
         OR (StartDateTime <= {$Fi} AND EndDateTime >= {$Ff})))";
