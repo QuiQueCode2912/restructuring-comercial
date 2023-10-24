@@ -2239,15 +2239,16 @@ class IndexController extends Controller
             $PARENTCONDITION = "Venue__r.ParentId ='02i3m00000DidtxAAB' OR Venue__r.ParentId ='02i3m00000Didu3AAB'";
         else
             $PARENTCONDITION = "Venue__r.ParentId ='{$parentId}'";
+    
+        if($parentId == '02i3m00000DiduZAAR'){
+            $conditionState = "Estado__c!='Cancelado' ";
+        }
         $query = "SELECT StartDateTime,EndDateTime,Cantidad_de_asistentes__c,Fecha_fin_del_evento__c,Venue__c,Venue__r.Name,Estado__c,Subject,Venue__r.Bloqueo_adicional_1__c,Venue__r.Bloqueo_adicional_2__c,Venue__r.Bloqueo_adicional_3__c FROM Event
-        where ((
+        where  $conditionState AND ((
         ((StartDateTime >= {$Fi} AND StartDateTime <= {$Ff}) OR (EndDateTime >= {$Fi} AND EndDateTime <= {$Ff}) OR (StartDateTime <= {$Fi} AND EndDateTime >= {$Ff})))
         AND ({$PARENTCONDITION})) or ((RecordType.Name='Excluir de reservas' and venue__c ='') AND ((StartDateTime >= {$Fi} AND StartDateTime <= {$Ff}) OR (EndDateTime >= {$Fi} AND EndDateTime <= {$Ff})
         OR (StartDateTime <= {$Fi} AND EndDateTime >= {$Ff})))";
 
-        if($parentId == '02i3m00000DiduZAAR'){
-            $query = $query." AND  Estado__c!='Cancelado' ";
-        }
 
         $events = $salesforce->query($query);
 
