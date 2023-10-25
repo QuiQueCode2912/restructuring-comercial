@@ -1737,7 +1737,8 @@ class IndexController extends Controller
 
         if ($request->token) {
             if ($request->isMethod('post')) {
-                $endpoint = env('APP_ENV') == 'production' ? 'https://secure.paguelofacil.com/LinkDeamon.cfm' : 'https://sandbox.paguelofacil.com/LinkDeamon.cfm';
+                //$endpoint = env('APP_ENV') == 'production' ? 'https://secure.paguelofacil.com/LinkDeamon.cfm' : 'https://sandbox.paguelofacil.com/LinkDeamon.cfm';
+                $endpoint =  'https://secure.paguelofacil.com/LinkDeamon.cfm';
                 if (substr($request->token, 0, 3) != '00Q') {
                     // COMERCIAL
                     $p1 = $request->opportunity;
