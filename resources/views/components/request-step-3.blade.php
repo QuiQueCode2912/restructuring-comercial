@@ -643,7 +643,7 @@ setTimeout(function() {
       </div>
 
       <div class="col-4 col-md-4">
-       <button type="button" id="apply-coupon"  {{ request()->has('reagendar')  ? ' disabled' : '' }}  class="btn btn-primary w-100">Aplicar</button>
+       <button type="button" id="apply-coupon"  {{ url()->previous()->has('reagendar')  ? ' disabled' : '' }}  class="btn btn-primary w-100">Aplicar</button>
       </div>
       </div>
   
