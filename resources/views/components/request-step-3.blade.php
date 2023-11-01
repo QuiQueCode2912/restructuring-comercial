@@ -643,10 +643,19 @@ setTimeout(function() {
       </div>
 
       <div class="col-4 col-md-4">
-       <button type="button" id="apply-coupon"  {{ request()->has('reagendar')  ? ' disabled' : '' }}  class="btn btn-primary w-100">Aplicar</button>
+       <button type="button" id="apply-coupon"  class="btn btn-primary w-100">Aplicar</button>
       </div>
       {{url()->previous()}}
       </div>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var previousUrl = "{{ url()->previous() }}";
+            if (previousUrl.includes('reagendar')) {
+              $('#apply-coupon').prop('disabled', true);
+            } 
+        });
+    </script>
   
       <script type="text/javascript">
   function ready() {
