@@ -1836,11 +1836,20 @@ class IndexController extends Controller
                     sleep(1);
                     $result = $salesforce->query($query);
                 }
-                if ($result['records'][0]['Precio_Estimado__c'] == '0') {
-                    $salesforce->update('Lead', $request->token, ['Pago_confirmado__c' => 'true']);
-                    return redirect()->to('/confirmacion-pago/' . $request->token);
+             
+                if($resultContact['totalSize'] > 0){
+                    return redirect()->to('/confirmacion-pago/' . $resultContact['records'][0]['Id']);
                 }
 
+                if ($result['totalSize'] > 0  && $result['records'][0]['Precio_Estimado__c'] == '0') {
+                    try {
+                        $salesforce->update('Lead', $request->token, ['Pago_confirmado__c' => 'true']);
+                    } catch (\Throwable $th) {
+                        //throw $th;
+                    }
+                    
+                    return redirect()->to('/confirmacion-pago/' . $request->token);
+                }
 
 
 
