@@ -645,7 +645,6 @@ setTimeout(function() {
       <div class="col-4 col-md-4">
        <button type="button" id="apply-coupon"  class="btn btn-primary w-100">Aplicar</button>
       </div>
-      {{url()->previous()}}
       </div>
 
       <script>
