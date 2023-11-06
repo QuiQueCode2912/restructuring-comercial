@@ -1136,15 +1136,6 @@ class IndexController extends Controller
                     session(['00N3m00000QQOde' => $_COOKIE['00N3m00000QQOde']]);
                 }
 
-                if (isset($_COOKIE['00NRb000000Ex1p'])) {
-                    session(['00NRb000000Ex1p' => $_COOKIE['00NRb000000Ex1p']]);
-                }
-
-                if (isset($_COOKIE['00NRb000000Ex0D'])) {
-                    session(['00NRb000000Ex0D' => $_COOKIE['00NRb000000Ex0D']]);
-                }
-
-
                 session(['00N3m00000QeGyG' => 'Adulto']);
                 if ($request->id) {
                     if ($venueId != $request->id) {
