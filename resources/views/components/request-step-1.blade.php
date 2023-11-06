@@ -1,34 +1,91 @@
 <x-error-message />
 
 <div class="request-step" style="margin-top:0px;">
-  <div class="container">
-    <h4>Comencemos con tus datos de contacto</h4>
-    <div class="row form-error-message">
-      <div class="col-12">Sólo tienes que completar los datos que faltan</div>
-    </div>
-    <div class="row">
-      <div class="col-12 col-md-6">
-        <div class="form-group required">
-          <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Nombres" value="<?php echo session()->get('first_name', old('first_name')) ?>">
+    <div class="container">
+        <h4 class="mb-0">Comencemos con tus datos de contacto</h4>
+        <div class="col-12 pr-0 pl-0  pb-4"><small>En caso de tratarse de un contribuyente en Panamá por favor
+                ingresar
+                sus datos como están registrados en la DGI</small></div>
+        <div class="row form-error-message">
+            <div class="col-12">Sólo tienes que completar los datos que faltan</div>
         </div>
-      </div>
-      <div class="col-12 col-md-6">
-        <div class="form-group required">
-          <input type="email" class="form-control" name="last_name" id="last_name" placeholder="Apellidos" value="<?php echo session()->get('last_name', old('last_name')) ?>">
-        </div>
-      </div>
-      <div class="col-12 col-md-6">
-        <div class="form-group required">
-          <input type="text" class="form-control" name="email" id="email" placeholder="Correo electrónico" value="<?php echo session()->get('email', old('email')) ?>">
-        </div>
-      </div>
-      <div class="col-12 col-md-6">
-        <div class="form-group required">
-          <input type="text" class="form-control" name="phone" id="phone" placeholder="Número de teléfono" value="<?php echo session()->get('phone', old('phone')) ?>">
-        </div>
-      </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="form-group required">
+                    <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Nombres"
+                        value="<?php echo session()->get('first_name', old('first_name')); ?>">
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-group required">
+                    <input type="email" class="form-control" name="last_name" id="last_name" placeholder="Apellidos"
+                        value="<?php echo session()->get('last_name', old('last_name')); ?>">
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-group required">
+                    <input type="text" class="form-control" name="email" id="email"
+                        placeholder="Correo electrónico" value="<?php echo session()->get('email', old('email')); ?>">
+                </div>
+            </div>
+            <div class="col-12 col-md-6 d-flex p-0">
+                <div class="col-4 col-md-4 pr-0">
+                    <div class="form-group required">
+                        <select id="codigo_pais" name="00NRb000000Ex0D" class="form-control" id="codigo_pais"
+                            placeholder="(+000)" value="<?php echo session()->get('00NRb000000Ex0D', old('00NRb000000Ex0D')); ?>">
+                            <option value="+507">Panamá (+507)</option>
+                            <option value="+1">EE. UU. (+1)</option>
+                            <option value="+44">Reino Unido (+44)</option>
+                            <option value="+33">Francia (+33)</option>
+                            <option value="+49">Alemania (+49)</option>
+                            <option value="+81">Japón (+81)</option>
+                            <option value="+86">China (+86)</option>
+                            <option value="+91">India (+91)</option>
+                            <option value="+52">México (+52)</option>
+                            <option value="+55">Brasil (+55)</option>
+                            <option value="+61">Australia (+61)</option>
+                            <option value="+354">Islandia (+354)</option>
+                            <option value="+39">Italia (+39)</option>
+                            <option value="+7">Rusia (+7)</option>
+                            <option value="+34">España (+34)</option>
+                            <option value="+82">Corea del Sur (+82)</option>
+                            <option value="+971">Emiratos Árabes Unidos (+971)</option>
+                            <option value="+353">Irlanda (+353)</option>
+                            <option value="+31">Países Bajos (+31)</option>
+                            <option value="+41">Suiza (+41)</option>
+                            <option value="+65">Singapur (+65)</option>
+                            <option value="+54">Argentina (+54)</option>
+                            <option value="+56">Chile (+56)</option>
+                            <option value="+57">Colombia (+57)</option>
+                            <option value="+51">Perú (+51)</option>
+                            <option value="+58">Venezuela (+58)</option>
+                            <option value="+503">El Salvador (+503)</option>
+                            <option value="+506">Costa Rica (+506)</option>
+                            <option value="+593">Ecuador (+593)</option>
+                            <option value="+504">Honduras (+504)</option>
+                            <option value="+502">Guatemala (+502)</option>
+                            <option value="+595">Paraguay (+595)</option>
+                            <option value="+598">Uruguay (+598)</option>
+                            <option value="+591">Bolivia (+591)</option>
+                            <option value="+509">Haití (+509)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-8 col-md-8">
+                    <div class="form-group required">
+                        <input type="text" class="form-control" name="phone" id="phone"
+                            placeholder="Número de teléfono" value="<?php echo session()->get('phone', old('phone')); ?>">
+                    </div>
+                </div>
 
-      <!--
+            </div>
+            <div class="col-12  col-md-6  ml-auto"><small class="form-text text-muted">
+                    <p>El teléfono debe ingresarse con guion para celular XXXX-XXXX y para local XXX-XXXX</p>
+                </small>
+            </div>
+
+
+            <!--
       <div class="col-12 col-md-6">
         <div class="form-group required">
           <select  id="country_code" name="country_code">
@@ -279,53 +336,97 @@
         <div class="form-group">
           <select id="want_to_do" name="want_to_do">
             <option value="">¿Que deseas hacer en Ciudad del Saber?</option>
-            <option value="event" <?php echo session()->get('want_to_do') == 'event' ? 'selected="selected"' : '' ?>>Quiero cotizar un evento</option>
-            <option value="residency" <?php echo session()->get('want_to_do') == 'residency' ? 'selected="selected"' : '' ?>>Quiero mudarme a Ciudad del Saber</option>
+            <option value="event" <?php echo session()->get('want_to_do') == 'event' ? 'selected="selected"' : ''; ?>>Quiero cotizar un evento</option>
+            <option value="residency" <?php echo session()->get('want_to_do') == 'residency' ? 'selected="selected"' : ''; ?>>Quiero mudarme a Ciudad del Saber</option>
           </select>
         </div>
       </div>
       -->
-
-      <div class="col-12">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="1" id="show-company-fields" <?php if (session()->get('company', old('company'))) : ?>checked="checked"<?php endif ?>>
-            <label class="form-check-label" for="show-company-fields" style="font-size:13px; font-family: 'Roboto', sans-serif">
-              ¿Deseas que la factura se genere a nombre de tu organización?
-            </label>
-          </div>
-      </div>
-
-      <div class="col-12 company-fields w-100" style="display:<?php echo session()->get('company') ? 'block' : 'none' ?>">
-        <div class="row mt-3">
-          <div class="col-12"><small>Por favor ingresa la siguiente información</small></div>
-          <div class="col-12 col-md-6">
-            <div class="{{ $venue == 'Salas de eventos' ? 'form-group required' :'form-group' }}">
-              <input type="text" class="form-control" name="company" id="company" placeholder="Organización" value="<?php echo session()->get('company', old('company')) ?>">
+            <?php  if($venue !== 'Salas de eventos') :?>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="1" id="show-company-fields"
+                        <?php if (session()->get('company', old('company'))) : ?>checked="checked"<?php endif ?>>
+                    <label class="form-check-label" for="show-company-fields"
+                        style="font-size:13px; font-family: 'Roboto', sans-serif">
+                        ¿Deseas que la factura se genere a nombre de tu organización?
+                    </label>
+                </div>
             </div>
-          </div>
-          <div class="col-12 col-md-6">
-            <div class="{{ $venue == 'Salas de eventos' ? 'form-group required' :'form-group' }}">
-              <input type="text" class="form-control" name="00N3m00000QQOde" id="identification" placeholder="RUC (Número de identificación fiscal)" value="<?php echo session()->get('00N3m00000QQOde', old('00N3m00000QQOde')) ?>">
+
+            <div class="col-12 company-fields w-100" style="display:<?php echo session()->get('company') ? 'block' : 'none'; ?>">
+                <div class="row mt-3">
+                    <div class="col-12"><small>Por favor ingresa la siguiente información</small></div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="company" id="company"
+                                placeholder="Organización" value="<?php echo session()->get('company', old('company')); ?>">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="00N3m00000QQOde" id="identification"
+                                placeholder="RUC (Número de identificación fiscal)" value="<?php echo session()->get('00N3m00000QQOde', old('00N3m00000QQOde')); ?>">
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+            <?php endif ?>
+
+            <?php  if($venue == 'Salas de eventos') :?>
+            <div class="col-12 company-fields w-100" style="display:block">
+                <div class="row mt-3">
+                    <div class="col-12 col-md-6">
+                        <div class="form-group required">
+                            <input type="text" class="form-control" name="company" id="company"
+                                placeholder="Organización" value="<?php echo session()->get('company', old('company')); ?>">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 d-flex p-0">
+                        <div class="col-8 col-md-9 pr-0">
+                            <div class="form-group required">
+                                <input type="text" class="form-control" name="00N3m00000QQOde"
+                                    id="identification" placeholder="RUC (Número de identificación fiscal)"
+                                    value="<?php echo session()->get('00N3m00000QQOde', old('00N3m00000QQOde')); ?>">
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-3 ">
+                            <div class="form-group  ">
+                                <input type="text" class="form-control" name="00NRb000000Ex1p" id="dv"
+                                    placeholder="DV" value="<?php echo session()->get('00NRb000000Ex1p', old('00NRb000000Ex1p')); ?>">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-12 col-md-6   ml-auto"><small class="form-text text-muted">
+                            <p>a. Empresas Jurídicas: Se debe registrar los dos dígitos del DV.</p>
+                            <p>b. Personas Naturales (contribuyentes): Se debe registrar los dos dígitos del DV, si
+                                tiene un solo número agregar un 0.</p>
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <?php endif ?>
+
+            <div class="col-12 mt-4">
+                <a href="#"><small>* Campos obligatorios</small></a>
+            </div>
         </div>
-      </div>
-      
-
-      <div class="col-12 mt-4">
-        <a href="#"><small>* Campos obligatorios</small></a>
-      </div>
+        <div class="row buttons">
+            <div class="col-12 text-center">
+                <a href="/" class="btn btn-primary disabled">Anterior</a>
+                <button type="submit" class="btn btn-primary submit-form">Siguiente</button>
+            </div>
+        </div>
     </div>
-    <div class="row buttons">
-      <div class="col-12 text-center">
-        <a href="/" class="btn btn-primary disabled">Anterior</a>
-        <button type="submit" class="btn btn-primary submit-form">Siguiente</button>
-      </div>
-    </div>
-  </div>
 </div>
 <?php if (session()->get('country_code')) : ?>
+
+
 <script>
-document.getElementById('country_code').value = "<?php echo session()->get('country_code') ?>"
+    document.getElementById('country_code').value = "<?php echo session()->get('country_code'); ?>"
 </script>
 <?php endif ?>

@@ -801,6 +801,9 @@ setTimeout(function() {
         <input type="hidden" value="<?php echo session()->get('recordType') ?>" name="recordType" id="recordType" />
         <input type="hidden" value="<?php echo session()->get('00N3m00000QeHcG') ?>" name="00N3m00000QeHcG" id="00N3m00000QeHcG" /> 
         <input type="hidden" value="<?php echo session()->get('00N3m00000Qpiz4') ?>" name="00N3m00000Qpiz4" id="00N3m00000Qpiz4" />
+
+        <input type="hidden" value="<?php echo session()->get('00NRb000000Ex1p'); ?>" name="00NRb000000Ex1p" id="00NRb000000Ex1p" />
+
       <?php
        if($rootid == '02i3m00000D9DaPAAV')
        {
