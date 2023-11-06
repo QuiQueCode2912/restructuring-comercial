@@ -1584,6 +1584,10 @@ class IndexController extends Controller
                 $company = session()->get('company', null);
                 $idenruc = session()->get('00N3m00000QQOde', null);
                 $thisSession = session()->get('00N3m00000QeGlb', null);
+                
+                $dv = session()->get('00NRb000000Ex1p', null);
+                $codPais = session()->get('00NRb000000Ex0D', null);
+
                 session()->flush();
                 session()->put('is-cds-user', $isUser);
                 session()->put('cds-user-email', $userEmail);
@@ -1595,6 +1599,10 @@ class IndexController extends Controller
                 session()->put('company', $company);
                 session()->put('00N3m00000QQOde', $idenruc);
                 session()->put('00N3m00000QeGlb', $thisSession);
+
+                session()->put('00NRb000000Ex1p', $dv);
+                session()->put('00NRb000000Ex0D', $codPais);
+
                 switch ($venuep->parent_id) {
                     case '02i3m00000D9DaPAAV':
                         $step = '4-p';
