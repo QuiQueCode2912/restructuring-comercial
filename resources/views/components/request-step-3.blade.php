@@ -24,7 +24,7 @@
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
-          Codigo de pais: <?php echo session()->get('pho00NRb000000Ex0Dne') ?>
+          Codigo de pais: <?php echo session()->get('00NRb000000Ex0D') ?>
           <a href="/cotizacion/datos-contacto#00NRb000000Ex0D">Editar</a>
         </div>
       </div>
