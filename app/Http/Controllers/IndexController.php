@@ -1140,6 +1140,10 @@ class IndexController extends Controller
                     session(['00NRb000000Ex1p' => $_COOKIE['00NRb000000Ex1p']]);
                 }
 
+                if (isset($_COOKIE['00NRb000000Ex0D'])) {
+                    session(['00NRb000000Ex0D' => $_COOKIE['00NRb000000Ex0D']]);
+                }
+
 
                 session(['00N3m00000QeGyG' => 'Adulto']);
                 if ($request->id) {
@@ -1179,6 +1183,8 @@ class IndexController extends Controller
                     setcookie('company', $request->company, time() + (86400 * 365 * 5), "/");
                     setcookie('00N3m00000QQOde', $request['00N3m00000QQOde'], time() + (86400 * 365 * 5), "/");
                     setcookie('00NRb000000Ex1p', $request['00NRb000000Ex1p'], time() + (86400 * 365 * 5), "/");
+                    setcookie('00NRb000000Ex0D', $request['00NRb000000Ex0D'], time() + (86400 * 365 * 5), "/");
+
                     session($inputs);
                     return redirect()->to($inputs['want_to_do'] == 'event' ? '/cotizacion/datos-evento' : '/cotizacion/datos-residencia');
                 }
