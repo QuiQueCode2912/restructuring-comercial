@@ -817,10 +817,8 @@ setTimeout(function() {
         <input type="hidden" value="<?php echo session()->get('00NRb000000Ex1p'); ?>" name="00NRb000000Ex1p" id="00NRb000000Ex1p" />
         <input type="hidden" value="<?php 
                                       $encodedText = session()->get('00NRb000000Ex0D');
-                                      // Decoding URL-encoded text and removing special characters
-                                      $decodedText = urldecode($encodedText);
-                                      $cleanText = str_replace(['%28', '%29', '%20','%2B'], ['(', ')', ' ','+'], $decodedText);
-                                      echo $cleanText;?>" name="00NRb000000Ex0D" id="00NRb000000Ex0D" />
+                                      $decodedText = rawurldecode($encodedText);
+                                      echo $decodedText;?>" name="00NRb000000Ex0D" id="00NRb000000Ex0D" />
 
       <?php
        if($rootid == '02i3m00000D9DaPAAV')
