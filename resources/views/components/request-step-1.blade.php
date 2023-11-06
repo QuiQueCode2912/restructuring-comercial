@@ -31,8 +31,8 @@
             <div class="col-12 col-md-6 d-flex p-0">
                 <div class="col-4 col-md-4 pr-0">
                     <div class="form-group required">
-                        <select id="codigo_pais" name="00NRb000000Ex0D" class="form-control" id="codigo_pais"
-                            placeholder="(+000)" value="<?php echo session()->get('00NRb000000Ex0D', old('00NRb000000Ex0D')); ?>">
+                        <select id="codigo_pais" name="00NRb000000ExHx" class="form-control" id="codigo_pais"
+                            placeholder="(+000)" value="<?php echo session()->get('00NRb000000ExHx', old('00NRb000000ExHx')); ?>">
                             <option value="Panamá (+507)">Panamá (+507)</option>
                             <option value="+1">EE. UU. (+1)</option>
                             <option value="+44">Reino Unido (+44)</option>

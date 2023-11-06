@@ -1176,11 +1176,11 @@ class IndexController extends Controller
                     setcookie('company', $request->company, time() + (86400 * 365 * 5), "/");
                     setcookie('00N3m00000QQOde', $request['00N3m00000QQOde'], time() + (86400 * 365 * 5), "/");
                     setcookie('00NRb000000Ex1p', $request['00NRb000000Ex1p'], time() + (86400 * 365 * 5), "/");
-                    setcookie('00NRb000000Ex0D', $request['00NRb000000Ex0D'], time() + (86400 * 365 * 5), "/");
+                    setcookie('00NRb000000ExHx', $request['00NRb000000ExHx'], time() + (86400 * 365 * 5), "/");
                     
                     session(['00NRb000000Ex1p' => $request['00NRb000000Ex1p']]);
-                    session(['00NRb000000Ex0D' => $request['00NRb000000Ex0D']]);
-                    
+                    session(['00NRb000000ExHx' => $request['00NRb000000ExHx']]);
+
                     session($inputs);
                     return redirect()->to($inputs['want_to_do'] == 'event' ? '/cotizacion/datos-evento' : '/cotizacion/datos-residencia');
                 }
@@ -1580,7 +1580,7 @@ class IndexController extends Controller
                 $thisSession = session()->get('00N3m00000QeGlb', null);
 
                 $dv = session()->get('00NRb000000Ex1p', null);
-                $codPais = session()->get('00NRb000000Ex0D', null);
+                $codPais = session()->get('00NRb000000ExHx', null);
 
                 session()->flush();
                 session()->put('is-cds-user', $isUser);
@@ -1595,7 +1595,7 @@ class IndexController extends Controller
                 session()->put('00N3m00000QeGlb', $thisSession);
 
                 session()->put('00NRb000000Ex1p', $dv);
-                session()->put('00NRb000000Ex0D', $codPais);
+                session()->put('00NRb000000ExHx', $codPais);
 
                 switch ($venuep->parent_id) {
                     case '02i3m00000D9DaPAAV':
