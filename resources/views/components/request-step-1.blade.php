@@ -65,7 +65,7 @@
                             <option value="+504">Honduras (+504)</option>
                             <option value="+502">Guatemala (+502)</option>
                             <option value="+595">Paraguay (+595)</option>
-                            <option value="+598">Uruguay (+598)</option>
+                            <option value="598">Uruguay (+598)</option>
                             <option value="+591">Bolivia (+591)</option>
                             <option value="+509">Haití (+509)</option>
                         </select>
