@@ -24,8 +24,8 @@
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
-          Codigo de pais: <?php echo session()->get('00NRb000000ExHx') ?>
-          <a href="/cotizacion/datos-contacto#00NRb000000ExHx">Editar</a>
+          Codigo de pais: <?php echo session()->get('00NRb000000Ex0D') ?>
+          <a href="/cotizacion/datos-contacto#00NRb000000Ex0D">Editar</a>
         </div>
       </div>
       <div class="col-12 col-md-6">
@@ -815,7 +815,12 @@ setTimeout(function() {
         <input type="hidden" value="<?php echo session()->get('00N3m00000Qpiz4') ?>" name="00N3m00000Qpiz4" id="00N3m00000Qpiz4" />
 
         <input type="hidden" value="<?php echo session()->get('00NRb000000Ex1p'); ?>" name="00NRb000000Ex1p" id="00NRb000000Ex1p" />
-        <input type="hidden" value="<?php echo session()->get('00NRb000000ExHx'); ?>" name="00NRb000000ExHx" id="00NRb000000ExHx" />
+        <input type="hidden" value="<?php 
+                                      $encodedText = session()->get('00NRb000000Ex0D');
+                                      // Decoding URL-encoded text and removing special characters
+                                      $decodedText = urldecode($encodedText);
+                                      $cleanText = str_replace(['%28', '%29', '%20'], ['(', ')', ' '], $decodedText);
+                                      echo $cleanText;?>" name="00NRb000000Ex0D" id="00NRb000000Ex0D" />
 
       <?php
        if($rootid == '02i3m00000D9DaPAAV')
