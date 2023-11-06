@@ -1177,16 +1177,10 @@ class IndexController extends Controller
                     setcookie('00N3m00000QQOde', $request['00N3m00000QQOde'], time() + (86400 * 365 * 5), "/");
                     setcookie('00NRb000000Ex1p', $request['00NRb000000Ex1p'], time() + (86400 * 365 * 5), "/");
                     setcookie('00NRb000000Ex0D', $request['00NRb000000Ex0D'], time() + (86400 * 365 * 5), "/");
-
                     
-                    if (isset($_COOKIE['00NRb000000Ex1p'])) {
-                        session(['00NRb000000Ex1p' => $_COOKIE['00NRb000000Ex1p']]);
-                    }
-
-                    if (isset($_COOKIE['00NRb000000Ex0D'])) {
-                        session(['00NRb000000Ex0D' => $_COOKIE['00NRb000000Ex0D']]);
-                    }
-
+                    session(['00NRb000000Ex1p' => $request['00NRb000000Ex1p']]);
+                    session(['00NRb000000Ex0D' => $request['00NRb000000Ex0D']]);
+                    
                     session($inputs);
                     return redirect()->to($inputs['want_to_do'] == 'event' ? '/cotizacion/datos-evento' : '/cotizacion/datos-residencia');
                 }
@@ -1584,7 +1578,7 @@ class IndexController extends Controller
                 $company = session()->get('company', null);
                 $idenruc = session()->get('00N3m00000QQOde', null);
                 $thisSession = session()->get('00N3m00000QeGlb', null);
-                
+
                 $dv = session()->get('00NRb000000Ex1p', null);
                 $codPais = session()->get('00NRb000000Ex0D', null);
 
