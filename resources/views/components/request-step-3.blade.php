@@ -819,7 +819,7 @@ setTimeout(function() {
                                       $encodedText = session()->get('00NRb000000Ex0D');
                                       // Decoding URL-encoded text and removing special characters
                                       $decodedText = urldecode($encodedText);
-                                      $cleanText = str_replace(['%28', '%29', '%20'], ['(', ')', ' '], $decodedText);
+                                      $cleanText = str_replace(['%28', '%29', '%20','%2B'], ['(', ')', ' ','+'], $decodedText);
                                       echo $cleanText;?>" name="00NRb000000Ex0D" id="00NRb000000Ex0D" />
 
       <?php
