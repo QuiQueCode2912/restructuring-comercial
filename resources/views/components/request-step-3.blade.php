@@ -24,6 +24,12 @@
       </div>
       <div class="col-12 col-md-6">
         <div class="form-group-preview">
+          Codigo de pais: <?php echo session()->get('pho00NRb000000Ex0Dne') ?>
+          <a href="/cotizacion/datos-contacto#00NRb000000Ex0D">Editar</a>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="form-group-preview">
           Teléfono: <?php echo session()->get('phone') ?>
           <a href="/cotizacion/datos-contacto#phone">Editar</a>
         </div>
