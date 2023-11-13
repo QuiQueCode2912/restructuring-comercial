@@ -594,10 +594,18 @@ class IndexController extends Controller
                 ->orderBy('venuesorder', 'asc')
                 ->get();
         } else {
-            $venues = Venue::where('parent_id', '=', $parent->id)
+            if($parent->id == '02i3m00000Didu7AAB' || $parent->id == '02i3m00000Didu3AAB'){
+                $venues = Venue::where('parent_id', '=', $parent->id)
+                ->where('id', '!=', $parent->id)
+                ->where('show_on_website', 'Si')
+                ->orderBy('venuesorder', 'asc')
+                ->get();
+            }else{
+                $venues = Venue::where('parent_id', '=', $parent->id)
                 ->where('id', '!=', $parent->id)
                 ->where('show_on_website', 'Si')
                 ->get();
+            }
         }
 
         $fixedVenues = [];
