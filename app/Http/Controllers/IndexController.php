@@ -162,8 +162,10 @@ class IndexController extends Controller
 
         if ($clients_response) {
             $clients_response = json_decode($clients_response);
-            foreach ($clients_response as $cr) {
-                $clients[] = ['name' => $cr->commercial_name, 'logo' => $cr->logo, 'url' => 'https://ciudaddelsaber.org/directorio/' . $cr->nice_name . '/',];
+            if (is_array($clients_response) || is_object($clients_response)){
+                foreach ($clients_response as $cr) {
+                    $clients[] = ['name' => $cr->commercial_name, 'logo' => $cr->logo, 'url' => 'https://ciudaddelsaber.org/directorio/' . $cr->nice_name . '/',];
+                }
             }
         }
         shuffle($clients);
