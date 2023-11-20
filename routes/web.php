@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SalesforceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -101,6 +102,8 @@ Route::post('/set-session', 'App\Http\Controllers\SessionController@setSession')
 Route::post('/update-variable', 'App\Http\Controllers\SessionController@updateVariable');
 
 Route::post('/cancelar/reserva/evento/inactividad/{leadId}', 'App\Http\Controllers\IndexController@cancelEventForInactivity');
+
+Route::post('/process-consult-sf', [SalesforceController::class, 'createConsultaWeb'])->name('process-consult-sf');
     
 
 Route::get('/email/quote', function () {

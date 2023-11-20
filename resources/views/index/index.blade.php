@@ -192,6 +192,10 @@
 
 <x-clients clients="{{ $clients }}" />
 
+@if($pvax == 'parque-cds')
+  <x-contact-parque />
+@endif
+
 <?php if ($show_contact_form) : ?>
 <x-contact />
 <?php endif ?>
