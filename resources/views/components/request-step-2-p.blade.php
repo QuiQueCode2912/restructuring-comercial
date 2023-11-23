@@ -1090,6 +1090,7 @@ if ($designs) {
                             setCurrentDay(dayOfWeek);
                             setCurrentSchedule(event.detail.currentDate);
                             setSelectedHour(null);
+                            setIsNext(false);
                         };
 
                         //event dispach from  CORE.JS LINE 143
