@@ -1089,6 +1089,7 @@ if ($designs) {
                             const dayOfWeek = moment(event.detail.currentDate).day();
                             setCurrentDay(dayOfWeek);
                             setCurrentSchedule(event.detail.currentDate);
+                            setSelectedHour(null);
                         };
 
                         //event dispach from  CORE.JS LINE 143
