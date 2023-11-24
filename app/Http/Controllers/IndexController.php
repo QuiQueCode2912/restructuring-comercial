@@ -1863,9 +1863,13 @@ class IndexController extends Controller
                     $result = $salesforce->query($query);
                 }
              
-                if($resultContact['totalSize'] > 0){
+                $queryContact = "SELECT Id FROM Contact WHERE Id = '{$request->token}'";
+                $resultContact = $salesforce->query($queryContact);
+
+                if ($resultContact['totalSize'] > 0) {
                     return redirect()->to('/confirmacion-pago/' . $resultContact['records'][0]['Id']);
                 }
+
 
                 if ($result['totalSize'] > 0  && $result['records'][0]['Precio_Estimado__c'] == '0') {
                     try {
