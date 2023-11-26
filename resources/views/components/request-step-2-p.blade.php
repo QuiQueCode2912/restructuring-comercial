@@ -110,10 +110,21 @@ if ($designs) {
         padding-top:150px;
         background-color: rgba(255,255,255,0.7);
     }
+
+    .unclickable {
+      cursor: not-allowed;
+      pointer-events: none;
+      border: 1px solid silver;
+      color: silver;
+    }
+
 </style>
 
 <div id="pageMessages"></div>
 <script>
+
+    
+
     function chkCambio(e) {
         var fecha = $("#start-date").val();
         var nombreVenue = e.target.getAttribute("data-venuename")
@@ -121,6 +132,8 @@ if ($designs) {
         //tarCont = "#" + tarCont.replace('chk','');
         var tarChk = e.target.id;
         tarChk = "#" + tarChk;
+
+      
 
         $(tarChk).off('mouseenter mouseleave');
 
@@ -161,6 +174,7 @@ if ($designs) {
                         console.log("No se permite!");
                         return false;
                     }
+                    validateBasketCourt(e.target.dataset.venueid,e.target.dataset.time,false);
                 } else {
                     almacenarVenue(tarCont, fecha, nombreVenue, reemplazar);
                 }
@@ -173,6 +187,8 @@ if ($designs) {
                 $("[id$='" + clave + "']").not('.disabled').removeClass("secundary");
             }
             $(tarChk).removeClass("selected");
+            validateBasketCourt(e.target.dataset.venueid,e.target.dataset.time,true);
+
         }
         console.log('chkCambio: ' + tarCont + ' / ' + fecha);
 
@@ -890,7 +906,10 @@ if ($designs) {
                                             ?>
                                             <td class="long">
                                                 <?php if($horaActual <= 17 || ($luminarias == 1 && $horaActual > 17)) : ?>
-                                                <div class="spBtn" data-venuename="{{ $grupo->name }}"
+                                                <div class="spBtn" 
+                                                    data-venuename="{{ $grupo->name }}"
+                                                    data-venueid="{{$grupo->id}}"
+                                                    data-time="{{ $horaActual24STR }}"
                                                     id="chkhora{{ $horaActual24STR }}{{ $grupo->id }}"
                                                     name="chkhora{{ $horaActual24STR }}{{ $grupo->id }}"
                                                     onclick="chkCambio(event)">
@@ -1518,7 +1537,7 @@ if ($designs) {
                                 <div class="row buttons">
                                     <div class="col-12 text-center">
                                         <a href="/cotizacion/datos-contacto" class="btn btn-primary">Anterior</a>
-                                        <button  class="btn btn-primary" onClick={handleClick} disabled={isNext}>Siguiente</button>
+                                        <button  class="btn btn-primary" onClick={handleClick} disabled={isNext}  >Siguiente</button>
                                         <button type="submit" class="btn btn-primary submit-form d-none"  ref={buttonRef}>Siguiente</button>
                                     </div>
                                 </div>
