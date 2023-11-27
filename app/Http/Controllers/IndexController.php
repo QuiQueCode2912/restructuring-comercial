@@ -1436,17 +1436,24 @@ class IndexController extends Controller
                          
 
                             if ($calcular) {
-                                if ($thisVenue->employeediscount) {
+                                $isClientUsingEmail =  app('App\Http\Controllers\SalesforceController')->isClientEmail(session()->get('email'));
+
+                                if ($thisVenue->employeediscount && !$isClientUsingEmail ) {
                                     $tarifaUsar = $tarifaUsar * (1.0 + ($descuentoColaboradores / 100));
                                 }
-                                if ($thisVenue->residentdiscount) {
+                                if ($thisVenue->residentdiscount && !$isClientUsingEmail) {
                                     $tarifaUsar = $tarifaUsar * (1.0 + ($descuentoResidente / 100));
                                 }
-                                if ($thisVenue->retireddiscount) {
+                                if ($thisVenue->retireddiscount && !$isClientUsingEmail) {
                                     $tarifaUsar = $tarifaUsar * (1.0 + ($descuentoJubilados / 100));
                                 }
-                                if ($thisVenue->kidsdiscount) {
+                                if ($thisVenue->kidsdiscount && !$isClientUsingEmail ) {
                                     $tarifaUsar = $tarifaUsar * (1.0 + ($descuentoNinos / 100));
+                                }
+
+                                if($isClientUsingEmail){
+                                    $discountClient = Rates::where('name', '=', 'Descuento - Dominio - Cliente')->first()->percentage;
+                                    $tarifaUsar = $tarifaUsar * (1.0 + ($discountClient / 100));
                                 }
 
                                 $debugCalculo = $debugCalculo . " Esta tarifa:" . $tarifaUsar;

@@ -30,6 +30,23 @@ class SalesforceController extends Controller
         }
     }
 
+    public function  isClientEmail($email){
+        $salesforce = $this->salesforce();
+        $domain = substr(strrchr($email, "@"), 1);
+
+        $query = "SELECT 
+                    Id, Name
+                    FROM Account 
+                    WHERE Dominio__c = '{$domain}' LIMIT 1";
+
+        $accounts = $salesforce->query($query);
+
+        if($accounts['totalSize'] > 0){
+            return true;
+        }
+        return false;
+    }
+
     private function salesforce()
     {
         $salesforce = new \EHAERER\Salesforce\Authentication\PasswordAuthentication(['grant_type' => 'password', 'client_id' => env('SF_CONSUMER_KEY'), 'client_secret' => env('SF_CONSUMER_SECRET'), 'username' => 'dnavas00@hotmail.com', 'password' => '19801980MAFdwvjyJArqvVOiKp9PdmPFFN']);
