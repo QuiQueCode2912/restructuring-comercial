@@ -1567,6 +1567,11 @@ input[type="file"] + label {
   border-bottom: 1px solid #000000;
   transform: rotate(-45deg);
 }
+
+.v-characteristics-mobile{
+  display: none;
+}
+
 .venue-characteristics {
   position: absolute;
   display: none;
@@ -1967,8 +1972,4 @@ footer #twitter-timeline .twitter-embed-header {
 
 ._hj-G09L+__MinimizedWidgetMiddle__container,._hj-1QuqW__MinimizedWidgetMiddle__left {
   top: 30% !important;
-}
-
-.yappy-logo{
-    width: 80px;
 }

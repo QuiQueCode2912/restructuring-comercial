@@ -153,6 +153,14 @@
   </div>
   -->
   <a name="venue-location"></a>
+
+  
+  <div class="row  v-characteristics-mobile">
+    <div class="col-12 col-md-9">
+      <x-venue-characteristics type="{{ $venues ? $venues[0]->type : 'venues' }}" maxpax="{{ $max_pax }}" facilities="{{ $facilities }}" venues="{{ count($venues) }}" venue="{{ $venueName }}" showpolicies="{{ $show_policies ?? true }}" venueid="{{ isset($venueid) ? $venueid : '' }}" parentid="{{ isset($parentid) ? $parentid : '' }}"/>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col-12 col-md-9">
     <!--

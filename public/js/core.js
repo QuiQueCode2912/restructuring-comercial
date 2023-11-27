@@ -688,21 +688,23 @@
                     }
 
                     if ($(".venue-characteristics").length > 0) {
-                        $(".venue-characteristics").css({
-                            left:
-                                "calc(50% + " +
-                                parseInt($(".header .container").width()) *
-                                    0.25 +
-                                "px)",
-                            top: $(".venues-list").offset().top,
-                        });
-                        $(".venue-characteristics ul").css({
-                            width:
-                                parseInt($(".header .container").width()) *
-                                    0.25 +
-                                "px",
-                        });
-                        $(".venue-characteristics").show();
+                        if (window.innerWidth > 700) {
+                            $(".venue-characteristics").css({
+                                left:
+                                    "calc(50% + " +
+                                    parseInt($(".header .container").width()) *
+                                        0.25 +
+                                    "px)",
+                                top: $(".venues-list").offset().top,
+                            });
+                            $(".venue-characteristics ul").css({
+                                width:
+                                    parseInt($(".header .container").width()) *
+                                        0.25 +
+                                    "px",
+                            });
+                            $(".venue-characteristics").show();
+                        }
                     }
                     window.createAlert = function (
                         title,
