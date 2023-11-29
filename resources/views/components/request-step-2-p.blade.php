@@ -118,6 +118,12 @@ if ($designs) {
       color: silver;
     }
 
+    .espacios-seleccionados{
+        display: flex; 
+        flex-flow: wrap; 
+        gap: 5px;
+    }
+
 </style>
 
 <div id="pageMessages"></div>
@@ -1019,7 +1025,7 @@ if ($designs) {
 
                     const [groups, setGroups] = React.useState([]);
 
-                    const [selectedHour, setSelectedHour] = React.useState(null);
+                    const [selectedHour, setSelectedHour] = React.useState([]);
 
                     
                     const [schedules, setSchedules] = React.useState([]);
@@ -1108,7 +1114,7 @@ if ($designs) {
                             const dayOfWeek = moment(event.detail.currentDate).day();
                             setCurrentDay(dayOfWeek);
                             setCurrentSchedule(event.detail.currentDate);
-                            setSelectedHour(null);
+                            setSelectedHour([]);
                             setIsNext(false);
                         };
 
@@ -1138,7 +1144,8 @@ if ($designs) {
                         };
                     }, []);
 
-                    const  handleSelectHour = (hourSelected,index,time)=>{
+                    const  handleSelectHour = (hourSelected,index,time,currentTime)=>{
+                        console.log('Init hours');
                         
                         //Rest time to persons
                         setPersAdults(0);
@@ -1148,13 +1155,94 @@ if ($designs) {
                         setVenue(hourSelected);
                         setIsRefresh(true);
                         let newArr = [...groups]; // copying the old datas array
-                        newArr[index].selected=true;// replace e.target.value with whatever you want to change it to
-                        newArr[index].selectedTime = time.startTimeToShow + '-'+ time.endTimeToShow;
-                        newArr[index].startTime = time.startTime;
-                        newArr[index].endTime = time.endTime;
-                        newArr[index].selectedStartTime = currentSchedule ?  currentSchedule+' '+time.startTimeToShow :  moment().format('YYYY-MM-DD')+' ' +time.startTimeToShow;
+                        var targetDate = moment(newArr[index].selectedStartTime, 'YYYY-MM-DD hh:mm A');
+                        var targetDateTwo = moment(newArr[index].selectedStartTimeTwo, 'YYYY-MM-DD hh:mm A');
+
+                        
+
+
+                        if(newArr[index].selected == true  &&  targetDate.isSame(currentTime)){
+                            newArr[index].selected=false;
+                            newArr[index].startTime='';
+
+                            let dateCurrentSelOne = moment(newArr[index].selectedStartTime).format('YYYY-MM-DD');
+                            
+                            if( targetDate.isSame(targetDateTwo,'day')){
+                                window.agregarBoton(dateCurrentSelOne,1);
+                            }else{
+                                window.eliminarBoton(dateCurrentSelOne);
+                            }
+
+                            newArr[index].selectedStartTime ='';
+                            targetDate = '';
+                           
+
+
+                        }else if(!newArr[index].selected && !newArr[index].startTimeTwo){
+                            newArr[index].selected=true;
+                            newArr[index].selectedTime = time.startTimeToShow + '-'+ time.endTimeToShow;
+                            newArr[index].startTime = time.startTime;
+                            newArr[index].endTime = time.endTime;
+                            newArr[index].selectedStartTime = currentSchedule ?  currentSchedule+' '+time.startTimeToShow :  moment().format('YYYY-MM-DD')+' ' +time.startTimeToShow;
+                            targetDate = moment(newArr[index].selectedStartTime,'YYYY-MM-DD hh:mm A');
+                            window.agregarBoton(moment(newArr[index].selectedStartTime).format('YYYY-MM-DD'),1);
+                        }
+
+                        if(newArr[index].selected == true && !newArr[index].selectedTwo && !targetDate.isSame(currentTime)){
+                            newArr[index].selectedTwo=true;
+                            newArr[index].selectedTimeTwo = time.startTimeToShow + '-'+ time.endTimeToShow;
+                            newArr[index].startTimeTwo = time.startTime;
+                            newArr[index].endTimeTwo = time.endTime;
+                            newArr[index].selectedStartTimeTwo = currentSchedule ?  currentSchedule+' '+time.startTimeToShow :  moment().format('YYYY-MM-DD')+' ' +time.startTimeToShow;
+                            targetDateTwo = moment(newArr[index].selectedStartTimeTwo,'YYYY-MM-DD hh:mm A');
+                            
+                            let dateCurrentSelOne = moment(newArr[index].selectedStartTime).format('YYYY-MM-DD');
+                            let dateCurrentSelTwo = moment(newArr[index].selectedStartTimeTwo).format('YYYY-MM-DD');
+
+                            if(dateCurrentSelOne == dateCurrentSelTwo ){
+                                window.agregarBoton(dateCurrentSelTwo,2);
+                            }else{
+                                window.agregarBoton(dateCurrentSelTwo,1);
+                            }
+
+
+                        }else if(newArr[index].selectedTwo == true && targetDateTwo.isSame(currentTime)){
+                            newArr[index].selectedTwo=false;
+                            newArr[index].startTimeTwo='';
+
+                            let dateCurrentSelOne = moment(newArr[index].selectedStartTime).format('YYYY-MM-DD');
+                            let dateCurrentSelTwo = moment(newArr[index].selectedStartTimeTwo).format('YYYY-MM-DD');
+
+                            if(dateCurrentSelOne == dateCurrentSelTwo ){
+                                window.agregarBoton(dateCurrentSelTwo,1);
+                            }else{
+                                window.eliminarBoton(dateCurrentSelTwo);
+                            }
+
+                            newArr[index].selectedStartTimeTwo ='';
+                            targetDateTwo = '';
+                            
+                          
+                            
+                        }
+
+                      
+                        if(!newArr[index].selectedTwo && !newArr[index].selected){
+                            let dateCurrentSelTwo = moment(newArr[index].selectedStartTimeTwo).format('YYYY-MM-DD');
+                            let dateCurrentSelOne = moment(newArr[index].selectedStartTime).format('YYYY-MM-DD');
+                            window.eliminarBoton(dateCurrentSelOne);
+                            window.eliminarBoton(dateCurrentSelTwo);
+                        }
+                        
+
+                     
+                      
+
+                   
                         setGroups(newArr);
-                        setSelectedHour(newArr);
+                        setSelectedHour([...selectedHour,newArr[0]]);
+                        
+                        
                         if(slotsSelected){
                             let cantPers = 0;
                             
@@ -1179,8 +1267,8 @@ if ($designs) {
                             }else{
                                 setPersAssist(totalPers);
                             }
+                            
                         }
-
                         setIsRefresh(false);
 
                     }
@@ -1245,47 +1333,94 @@ if ($designs) {
 
                     const  handleClick = async e=>{
                         e.preventDefault();
-                        console.log(selectedHour);
-                        let objAux = {};
-                        objAux.fecha = (currentSchedule==null) ? moment().format('YYYY-MM-DD') : currentSchedule;
-                        objAux.id = 'chkhora'+selectedHour[0].startTime+venue.id;
-                        objAux.venue = venue.name;
-                        objAux.subtotal= 3.50;
-                        objAux.calcularFact= true;
-                        objAux.personJubCount= persJub;
-                        objAux.personChildCount= persChilds;
-                        objAux.personAdultCount= persAdults;
-                        // Input time as a string
-                        var inputTime = selectedHour[0].startTime;
-
-                        // Parse the input time using Moment.js
-                        var time = moment(inputTime, "HH-mm");
-
-                        // Add 4 hours to the time
-                        time.add(5, "hours");
-
-                        // Format the result as "HH-MM"
-                        var formattedTime = time.format("HH-mm");
-                        objAux.startTime= formattedTime.replace('-',':');
-
+                        let lsHoursToSchedule = [];
+                        if(groups[0].selected){
+                            let objAux = {};
+                            objAux.fecha = groups[0].selectedStartTime;
+                            objAux.id = 'chkhora'+groups[0].startTime+venue.id;
+                            objAux.venue = venue.name;
+                            objAux.subtotal= 3.50;
+                            objAux.calcularFact= true;
+                            objAux.personJubCount= persJub;
+                            objAux.personChildCount= persChilds;
+                            objAux.personAdultCount= persAdults;
                             // Input time as a string
-                        var inputTimeFinish = selectedHour[0].endTime;
+                            var inputTime = groups[0].startTime;
 
-                        // Parse the input time using Moment.js
-                        var timeF = moment(inputTimeFinish, "HH-mm");
+                            // Parse the input time using Moment.js
+                            var time = moment(inputTime, "HH-mm");
 
-                        // Add 4 hours to the time
-                        timeF.add(5, "hours");
+                            // Add 4 hours to the time
+                            time.add(5, "hours");
 
-                        // Format the result as "HH-MM"
-                        var formattedTimeF = timeF.format("HH-mm");
-                        objAux.finishTime= formattedTimeF.replace('-',':');
+                            // Format the result as "HH-MM"
+                            var formattedTime = time.format("HH-mm");
+                            objAux.startTime= formattedTime.replace('-',':');
 
-                        let tot= persJub + persChilds + persAdults;
-                        objAux.totalPersons = tot.toString();
+                                // Input time as a string
+                            var inputTimeFinish = groups[0].endTime;
 
-                        document.getElementById('ReservasSeleccionadas').value = JSON.stringify([objAux]);
+                            // Parse the input time using Moment.js
+                            var timeF = moment(inputTimeFinish, "HH-mm");
 
+                            // Add 4 hours to the time
+                            timeF.add(5, "hours");
+
+                            // Format the result as "HH-MM"
+                            var formattedTimeF = timeF.format("HH-mm");
+                            objAux.finishTime= formattedTimeF.replace('-',':');
+
+                            let tot= persJub + persChilds + persAdults;
+                            objAux.totalPersons = tot.toString();
+
+                            lsHoursToSchedule.push(objAux);
+                        }
+                        if(groups[0].selectedTwo){
+                            let objAux = {};
+                            objAux.fecha = groups[0].selectedStartTimeTwo;
+                            objAux.id = 'chkhora'+groups[0].startTimeTwo+venue.id;
+                            objAux.venue = venue.name;
+                            objAux.subtotal= 3.50;
+                            objAux.calcularFact= true;
+                            objAux.personJubCount= persJub;
+                            objAux.personChildCount= persChilds;
+                            objAux.personAdultCount= persAdults;
+                            // Input time as a string
+                            var inputTime = groups[0].startTimeTwo;
+
+                            // Parse the input time using Moment.js
+                            var time = moment(inputTime, "HH-mm");
+
+                            // Add 4 hours to the time
+                            time.add(5, "hours");
+
+                            // Format the result as "HH-MM"
+                            var formattedTime = time.format("HH-mm");
+                            objAux.startTime= formattedTime.replace('-',':');
+
+                                // Input time as a string
+                            var inputTimeFinish = groups[0].endTimeTwo;
+
+                            // Parse the input time using Moment.js
+                            var timeF = moment(inputTimeFinish, "HH-mm");
+
+                            // Add 4 hours to the time
+                            timeF.add(5, "hours");
+
+                            // Format the result as "HH-MM"
+                            var formattedTimeF = timeF.format("HH-mm");
+                            objAux.finishTime= formattedTimeF.replace('-',':');
+
+                            let tot= persJub + persChilds + persAdults;
+                            objAux.totalPersons = tot.toString();
+
+                            lsHoursToSchedule.push(objAux);
+                        }
+
+                        
+                       
+                       
+                        document.getElementById('ReservasSeleccionadas').value = JSON.stringify(lsHoursToSchedule);
                         buttonRef.current.click();
                     }
 
@@ -1346,19 +1481,24 @@ if ($designs) {
                                                         {groups.length > 0  && isRefresh==false && 
                                                                 groups.map((element,i)=>{
                                                                     let isCurrentTimeSelected =false;
+                                                                    let isCurrentTimeSelectedTwo =false;
 
                                                                 
                                                                         if(element['selected']){
                                                                             if(element.selectedStartTime == currentInputValue) isCurrentTimeSelected = true;
                                                                         } 
+                                                                        if(element['selectedTwo']){
+                                                                            if(element.selectedStartTimeTwo == currentInputValue) isCurrentTimeSelectedTwo = true;
+                                                                        } 
                                                                         return  ( <td className='text-center position-relative' key={i}  >
-                                                                                <div  className={isCurrentTimeSelected ? 'spBtn selected' : 'spBtn' } onClick={e=>{
+                                                                                <div  className={(isCurrentTimeSelected || isCurrentTimeSelectedTwo) ? 'spBtn selected' : 'spBtn' } onClick={e=>{
                                                                                     e.preventDefault();
-                                                                                    handleSelectHour(element,i,sch);
+                                                                                    handleSelectHour(element,i,sch,targetDate);
                                                                                 }}
                                                                                 id={i}>
                                                                         
                                                                                     {isCurrentTimeSelected && element.selectedTime}
+                                                                                    {isCurrentTimeSelectedTwo && element.selectedTimeTwo}
                                                                                     
                                                                                     </div>
                                                                                     {isCurrentTimeSelected &&  <div class=" position-absolute  stl-persons d-none align-items-center " aria-labelledby={i}>
@@ -1483,8 +1623,8 @@ if ($designs) {
                             
                             </div>
                             <hr/>
-                            {
-                                selectedHour && <div >
+                            {selectedHour && 
+                                selectedHour.length > 0 && <div >
                                         <h4 className='w-100 text-left'> Cupos disponibles : {persAssist} </h4>
                                         <div className=' '>
                                             <div className='p-2 d-flex align-items-center'>
@@ -1526,6 +1666,13 @@ if ($designs) {
                             }
                             
                             <div class="row">
+                                <div id="espaciosSeleccionados" class="col-12 col-md-12 espacios-seleccionados">
+                                    <a id="esPlaceholder" href="#"><small>Debes seleccionar al menos un
+                                            espacio!</small></a>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
                                 <div class="col-12 col-md-12">
                                         <div class="form-group">
                                             <label for="description"><small>Describe tu
@@ -1537,7 +1684,7 @@ if ($designs) {
                                 <div class="row buttons">
                                     <div class="col-12 text-center">
                                         <a href="/cotizacion/datos-contacto" class="btn btn-primary">Anterior</a>
-                                        <button  class="btn btn-primary" onClick={handleClick} disabled={isNext}  >Siguiente</button>
+                                        <button  class="btn btn-primary" onClick={handleClick} disabled={isNext} >Siguiente</button>
                                         <button type="submit" class="btn btn-primary submit-form d-none"  ref={buttonRef}>Siguiente</button>
                                     </div>
                                 </div>
