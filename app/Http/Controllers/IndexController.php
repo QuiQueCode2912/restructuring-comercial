@@ -1535,6 +1535,13 @@ class IndexController extends Controller
 
                                 $tarifaTotal = 0;
 
+                                $isClientUsingEmail =  app('App\Http\Controllers\SalesforceController')->isClientEmail(session()->get('email'));
+
+                                if($isClientUsingEmail){
+                                    $discountClient = Rates::where('name', '=', 'Descuento - Dominio - Cliente')->first()->percentage;
+                                    $trarifa = $trarifa * (1.0 + ($discountClient / 100));
+                                }
+
                                 if ($reserva->personAdultCount) {
                                     $tarifaTotal +=  $trarifa * $reserva->personAdultCount ;
                                 }
