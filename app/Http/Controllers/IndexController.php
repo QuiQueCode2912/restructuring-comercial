@@ -1585,14 +1585,8 @@ class IndexController extends Controller
                 else
                     session()->put('00N3m00000QeHcG', 'Visitante');
 
-                $appEnv  =getenv('APP_ENV');
+                $form_url = 'https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DO90000018vOj';
 
-                if($appEnv == 'staging'){
-                    $form_url = 'https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DO90000018vOj';
-                }else{
-                    $form_url = 'https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
-                }
-                
                 session()->put('00N3m00000QeGlb', session()->getId() . '-' . time());
                 break;
             case 'solicitud-enviada':
