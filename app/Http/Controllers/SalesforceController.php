@@ -61,7 +61,7 @@ class SalesforceController extends Controller
     {
         $appEnv  =getenv('APP_ENV');
         $endPoint='';
-
+        //Credenciales de QA en Salesforce
         $options = [
             'grant_type' => 'password',
             'client_id' => '3MVG9snQZy6aQDh1bhQninXsB8K1bDq_.WHDblgC5FDfztTLSpMs7oGMfTP1BZfXZDEbhh0iWzECRg3VCJpab', /* insert consumer key here */
