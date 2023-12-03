@@ -1331,9 +1331,6 @@
                 <input type="hidden" value="<?php echo session()->get('00N3m00000QeHcG'); ?>" name="00N3m00000QeHcG" id="00N3m00000QeHcG" />
                 <input type="hidden" value="<?php echo session()->get('00N3m00000Qpiz4'); ?>" name="00N3m00000Qpiz4" id="00N3m00000Qpiz4" />
 
-                <input type="hidden" name="debug" value=1 />                           
-                 <input type="hidden" name="debugEmail"    value="three3brains@gmail.com" />      
-
                 <input type="hidden" value="<?php echo session()->get('00NRb000000Ex1p'); ?>" name="00NRb000000Ex1p" id="00NRb000000Ex1p" />
                 <input type="hidden" value="<?php
                 $encodedText = session()->get('00NRb000000Ex0D');
