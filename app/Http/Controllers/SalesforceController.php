@@ -62,27 +62,16 @@ class SalesforceController extends Controller
         $appEnv  =getenv('APP_ENV');
         $endPoint='';
 
-        if($appEnv == 'staging'){
-            $options = [
-                'grant_type' => 'password',
-                'client_id' => '3MVG9snQZy6aQDh1bhQninXsB8K1bDq_.WHDblgC5FDfztTLSpMs7oGMfTP1BZfXZDEbhh0iWzECRg3VCJpab', /* insert consumer key here */
-                'client_secret' => '35FE5C2EA82CA584AE3B517C9EB518B5BEBDBCF7EA42CA5E66EECF44943D9EAA', /* insert consumer secret here */
-                'username' => 'dnavas00@hotmail.com.qa', /* insert Salesforce username here */
-                'password' => 'fcds@2023NYDAFDWTqbUqdmk7QE5rDp4w' /* insert Salesforce user password and security token here */
-            ];
-           $endPoint = 'https://test.salesforce.com/';
-
-        } else{
-            $options = [
-                'grant_type' => 'password',
-                'client_id' => '3MVG9mclR62wycM2Mqd4UzUSZenQRQBsvUMM_N71sEPWjlCO.P.f._icAYjwflXcrUn99V22Y8ws20UMRXCPr', /* insert consumer key here */
-                'client_secret' => '21A7AAE37073A238564E7EE3860B9BC04A9ABCB96FB39AF7B200D0655A343C21', /* insert consumer secret here */
-                'username' => 'dnavas00@hotmail.com', /* insert Salesforce username here */
-                'password' => '19801980MAFdwvjyJArqvVOiKp9PdmPFFN' /* insert Salesforce user password and security token here */
-            ];
-           $endPoint = getenv('SF_LOGIN_URL');
-        }
-
+        $options = [
+            'grant_type' => 'password',
+            'client_id' => '3MVG9snQZy6aQDh1bhQninXsB8K1bDq_.WHDblgC5FDfztTLSpMs7oGMfTP1BZfXZDEbhh0iWzECRg3VCJpab', /* insert consumer key here */
+            'client_secret' => '35FE5C2EA82CA584AE3B517C9EB518B5BEBDBCF7EA42CA5E66EECF44943D9EAA', /* insert consumer secret here */
+            'username' => 'dnavas00@hotmail.com.qa', /* insert Salesforce username here */
+            'password' => 'fcds@2023NYDAFDWTqbUqdmk7QE5rDp4w' /* insert Salesforce user password and security token here */
+        ];
+       $endPoint = 'https://test.salesforce.com/';
+  
+        /**/
         $salesforce = new \EHAERER\Salesforce\Authentication\PasswordAuthentication($options);
         $salesforce->setEndpoint($endPoint);
         $salesforce->authenticate();
