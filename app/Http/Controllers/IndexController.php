@@ -1585,7 +1585,7 @@ class IndexController extends Controller
                 else
                     session()->put('00N3m00000QeHcG', 'Visitante');
 
-                $form_url = 'https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DO90000018vOj';
+                $form_url = 'https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
 
                 session()->put('00N3m00000QeGlb', session()->getId() . '-' . time());
                 break;
