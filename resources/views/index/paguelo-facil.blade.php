@@ -206,7 +206,7 @@
                             <p><b style="color:#686868; ">Elige tu medio de pago</b></p> <br>
                             <div id="acordeon">
                                 <div class="card">
-                                    <button type="submit" id="Paguelofacil_button" class="ecommerce brand">
+                                    <button type="submit" id="Paguelofacil_button" class="ecommerce brand d-none">
                                         PagueloFacil&nbsp;<img src="/assets/images/cards.png">
                                     </button>
                                 </div>
