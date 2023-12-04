@@ -1281,7 +1281,7 @@ if ($designs) {
                         e.preventDefault();
                         setSelectedHour((prevData) =>
                             prevData.map((item) => {
-                                if(item.id === id &&  item.totalPers!=0 && item.persAdults > -1)  return { ...item, totalPers: item.totalPers - 1,persAdults:item.persAdults + 1  } 
+                                if(item.id === id &&  currentSchedule==item.currentSchedule &&  item.totalPers!=0 && item.persAdults > -1)  return { ...item, totalPers: item.totalPers - 1,persAdults:item.persAdults + 1  } 
                                 return  item
                             })
                         );
@@ -1292,7 +1292,7 @@ if ($designs) {
                         e.preventDefault();
                         setSelectedHour((prevData) =>
                             prevData.map((item) => {
-                                if(item.id === id &&  item.totalPers >-1 && item.persAdults > 0)  return { ...item, totalPers: item.totalPers + 1,persAdults:item.persAdults - 1  } 
+                                if(item.id === id &&  currentSchedule==item.currentSchedule && item.totalPers >-1 && item.persAdults > 0)  return { ...item, totalPers: item.totalPers + 1,persAdults:item.persAdults - 1  } 
                                 return  item
                             })
                         );
@@ -1305,7 +1305,7 @@ if ($designs) {
                      
                         setSelectedHour((prevData) =>
                             prevData.map((item) => {
-                                if(item.id === id &&  item.totalPers!=0 && item.persChilds > -1)  return { ...item, totalPers: item.totalPers - 1,persChilds:item.persChilds + 1  } 
+                                if(item.id === id &&  currentSchedule==item.currentSchedule && item.totalPers!=0 && item.persChilds > -1)  return { ...item, totalPers: item.totalPers - 1,persChilds:item.persChilds + 1  } 
                                 return  item
                             })
                         );
@@ -1315,7 +1315,7 @@ if ($designs) {
                         e.preventDefault();
                         setSelectedHour((prevData) =>
                             prevData.map((item) => {
-                                if(item.id === id &&  item.totalPers >-1 && item.persChilds > 0)  return { ...item, totalPers: item.totalPers + 1,persChilds:item.persChilds - 1  } 
+                                if(item.id === id &&  currentSchedule==item.currentSchedule &&  item.totalPers >-1 && item.persChilds > 0)  return { ...item, totalPers: item.totalPers + 1,persChilds:item.persChilds - 1  } 
                                 return  item
                             })
                         );
@@ -1325,7 +1325,7 @@ if ($designs) {
                         e.preventDefault();
                         setSelectedHour((prevData) =>
                             prevData.map((item) => {
-                                if(item.id === id &&  item.totalPers!=0 && item.persJub > -1)  return { ...item, totalPers: item.totalPers - 1,persJub:item.persJub + 1  } 
+                                if(item.id === id && currentSchedule==item.currentSchedule && item.totalPers!=0 && item.persJub > -1)  return { ...item, totalPers: item.totalPers - 1,persJub:item.persJub + 1  } 
                                 return  item
                             })
                         );
@@ -1335,7 +1335,7 @@ if ($designs) {
                         e.preventDefault();
                         setSelectedHour((prevData) =>
                             prevData.map((item) => {
-                                if(item.id === id &&  item.totalPers >-1 && item.persJub > 0)  return { ...item, totalPers: item.totalPers + 1,persJub:item.persJub - 1  } 
+                                if(item.id === id && currentSchedule==item.currentSchedule && item.totalPers >-1 && item.persJub > 0)  return { ...item, totalPers: item.totalPers + 1,persJub:item.persJub - 1  } 
                                 return  item
                             })
                         );
