@@ -128,6 +128,7 @@ if ($designs) {
 <div id="pageMessages"></div>
 <script>
     function chkCambio(e) {
+        console.log('hereeeee');
         var fecha = $("#start-date").val();
         var nombreVenue = e.target.getAttribute("data-venuename")
         var tarCont = e.target.id;
@@ -1103,7 +1104,10 @@ if ($designs) {
                             const dayOfWeek = moment(event.detail.currentDate).day();
                             setCurrentDay(dayOfWeek);
                             setCurrentSchedule(event.detail.currentDate);
-                            setSelectedHour([]);
+                            //setSelectedHour([]);
+                            $("[id^='chkhora']").removeClass("selected");
+                            $("[id^='chkhora']").removeClass("secundary");
+                          
                             setIsNext(false);
                         };
 
@@ -1434,16 +1438,7 @@ if ($designs) {
                                                         <th  className='headcol'  >{sch.startTimeToShow} </th>   
                                                         {groups.length > 0  && isRefresh==false && 
                                                                 groups.map((element,i)=>{
-                                                                    let isCurrentTimeSelected =false;
-                                                                    let isCurrentTimeSelectedTwo =false;
-
-                                                                
-                                                                        if(element['selected']){
-                                                                            if(element.selectedStartTime == currentInputValue) isCurrentTimeSelected = true;
-                                                                        } 
-                                                                        if(element['selectedTwo']){
-                                                                            if(element.selectedStartTimeTwo == currentInputValue) isCurrentTimeSelectedTwo = true;
-                                                                        } 
+                                                        
                                                                         return  ( <td className='text-center position-relative' key={i}  >
                                                                                 <div  className='spBtn' onClick={e=>{
                                                                                     e.preventDefault();
@@ -1468,7 +1463,7 @@ if ($designs) {
                                                                                                 }
                                                                                             });
                                                                                             let totalPers = 25-cantPers;
-                                                                                            let checkIfExistHour =  selectedHour.find(hour => hour.id == e.target.id);
+                                                                                            let checkIfExistHour =  selectedHour.find(hour => hour.id == e.target.id && currentSchedule == hour.currentSchedule);
                                                                                             
                                                                                             if(checkIfExistHour){
                                                                                                 const updatedArray = selectedHour.filter(item => item.id !== e.target.id);
@@ -1483,7 +1478,8 @@ if ($designs) {
                                                                                                         persChilds:0,
                                                                                                         persJub: 0 ,
                                                                                                         startTime:sch.startTime,
-                                                                                                        endTime:sch.endTime
+                                                                                                        endTime:sch.endTime,
+                                                                                                        currentSchedule:currentSchedule
                                                                                                     }]
                                                                                                 );
                                                                                             }
@@ -1501,12 +1497,6 @@ if ($designs) {
                                                                                     
                                                                                     
                                                                                     </div>
-                                                                                    {isCurrentTimeSelected &&  <div class=" position-absolute  stl-persons d-none align-items-center " aria-labelledby={i}>
-                                                                                            <input type="number"  className="form-control text-center  " min="1" oninput="this.value = Math.abs(this.value)"  value={cantPersonas}
-                                                                                                onChange={e=>setCantPersonas(e.target.value)} 
-                                                                                                        name="cantidadPersonas"  placeholder="" />
-                                                                                                        <i class="bi bi-people-fill ml-2 icon-bt" ></i>
-                                                                                    </div>}
                                                                                 
                                                                             </td>);
                                                                     
@@ -1626,45 +1616,48 @@ if ($designs) {
                             <hr/>
                             {selectedHour && 
                                 selectedHour.length > 0 &&  selectedHour.map((item)=>{
-                                    return(<div >
-                                        <h4 className='w-100 text-left'> Cupos disponibles ({item.timeSelected && item.timeSelected}) : { item.totalPers && item.totalPers} </h4>
-                                        <div className=' '>
-                                            <div className='p-2 d-flex align-items-center'>
-                                                <p className='mb-1'>Adultos</p>
-                                                <div className='d-flex  align-items-center ml-2  '>
-                                                    <input type="number" value={item.persAdults} className="form-control  text-center w-25 "  readonly min="1" oninput="this.value = Math.abs(this.value)"  
-                                                                                                                            name="cantidadPersonas" />
-                                                    <div className=''>
-                                                        <button className='btn btn-primary  ml-1' onClick={e=>handleAdultsSum(e,item.id)}>+</button>
-                                                        <button className='btn btn-primary  ml-1' onClick={e=>handleAdultsRest(e,item.id)}>-</button>
+                                    if(currentSchedule == item.currentSchedule ){
+                                        return(<div >
+                                                <h4 className='w-100 text-left'> Cupos disponibles  ({item.currentSchedule} {item.timeSelected && item.timeSelected}) : { item.totalPers && item.totalPers} </h4>
+                                                <div className=' '>
+                                                    <div className='p-2 d-flex align-items-center'>
+                                                        <p className='mb-1'>Adultos</p>
+                                                        <div className='d-flex  align-items-center ml-2  '>
+                                                            <input type="number" value={item.persAdults} className="form-control  text-center w-25 "  readonly min="1" oninput="this.value = Math.abs(this.value)"  
+                                                                                                                                    name="cantidadPersonas" />
+                                                            <div className=''>
+                                                                <button className='btn btn-primary  ml-1' onClick={e=>handleAdultsSum(e,item.id)}>+</button>
+                                                                <button className='btn btn-primary  ml-1' onClick={e=>handleAdultsRest(e,item.id)}>-</button>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div className='p-2 d-flex align-items-center'>
-                                                <p className='mb-1'>Niños</p>
-                                                <div className='d-flex  align-items-center ml-2  '>
-                                                    <input type="number" value={item.persChilds} className="form-control  text-center w-25 "  readonly min="1" oninput="this.value = Math.abs(this.value)"  
-                                                                                                                            name="cantidadPersonas" />
-                                                    <div className=''>
-                                                        <button className='btn btn-primary  ml-1' onClick={e=>handleChildSum(e,item.id)}>+</button>
-                                                        <button className='btn btn-primary  ml-1' onClick={e=>handleChildRest(e,item.id)}>-</button>
+                                                    <div className='p-2 d-flex align-items-center'>
+                                                        <p className='mb-1'>Niños</p>
+                                                        <div className='d-flex  align-items-center ml-2  '>
+                                                            <input type="number" value={item.persChilds} className="form-control  text-center w-25 "  readonly min="1" oninput="this.value = Math.abs(this.value)"  
+                                                                                                                                    name="cantidadPersonas" />
+                                                            <div className=''>
+                                                                <button className='btn btn-primary  ml-1' onClick={e=>handleChildSum(e,item.id)}>+</button>
+                                                                <button className='btn btn-primary  ml-1' onClick={e=>handleChildRest(e,item.id)}>-</button>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div className='p-2 d-flex align-items-center'>
-                                                <p className='mb-1'>Jubilados</p>
-                                                <div className='d-flex  align-items-center ml-2  '>
-                                                    <input type="number" value={item.persJub} className="form-control  text-center w-25 "  readonly min="1" oninput="this.value = Math.abs(this.value)"  
-                                                                                                                            name="cantidadPersonas" />
-                                                    <div className=''>
-                                                        <button className='btn btn-primary  ml-1' onClick={e=>handleJubSum(e,item.id)}>+</button>
-                                                        <button className='btn btn-primary  ml-1' onClick={e=>handleJubRest(e,item.id)}>-</button>
+                                                    <div className='p-2 d-flex align-items-center'>
+                                                        <p className='mb-1'>Jubilados</p>
+                                                        <div className='d-flex  align-items-center ml-2  '>
+                                                            <input type="number" value={item.persJub} className="form-control  text-center w-25 "  readonly min="1" oninput="this.value = Math.abs(this.value)"  
+                                                                                                                                    name="cantidadPersonas" />
+                                                            <div className=''>
+                                                                <button className='btn btn-primary  ml-1' onClick={e=>handleJubSum(e,item.id)}>+</button>
+                                                                <button className='btn btn-primary  ml-1' onClick={e=>handleJubRest(e,item.id)}>-</button>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </div>
-            
-                                        </div>                                                                                                    
-                                </div>);
+                    
+                                                </div>                                                                                                    
+                                        </div>);
+                                    }
+                               
                                 })
                             }
                             
