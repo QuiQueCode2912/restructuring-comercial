@@ -1443,8 +1443,8 @@ if ($designs) {
                                                                                 <div  className='spBtn' onClick={e=>{
                                                                                     e.preventDefault();
                                                                                    // handleSelectHour(element,i,sch,targetDate);
-                                                                                    chkCambio(e);
-                                                                                    if(slotsSelected){
+                                                                                    var isAdded = chkCambio(e);
+                                                                                    if(slotsSelected && isAdded!=false){
                                                                                             let cantPers = 0;
                                                                                             
                                                                                             slotsSelected.forEach(slot => {
