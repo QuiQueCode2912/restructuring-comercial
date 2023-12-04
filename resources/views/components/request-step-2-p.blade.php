@@ -106,31 +106,27 @@ if ($designs) {
         font-size: 18px;
     }
 
-    .spinner-styles{
-        padding-top:150px;
-        background-color: rgba(255,255,255,0.7);
+    .spinner-styles {
+        padding-top: 150px;
+        background-color: rgba(255, 255, 255, 0.7);
     }
 
     .unclickable {
-      cursor: not-allowed;
-      pointer-events: none;
-      border: 1px solid silver;
-      color: silver;
+        cursor: not-allowed;
+        pointer-events: none;
+        border: 1px solid silver;
+        color: silver;
     }
 
-    .espacios-seleccionados{
-        display: flex; 
-        flex-flow: wrap; 
+    .espacios-seleccionados {
+        display: flex;
+        flex-flow: wrap;
         gap: 5px;
     }
-
 </style>
 
 <div id="pageMessages"></div>
 <script>
-
-    
-
     function chkCambio(e) {
         var fecha = $("#start-date").val();
         var nombreVenue = e.target.getAttribute("data-venuename")
@@ -139,7 +135,7 @@ if ($designs) {
         var tarChk = e.target.id;
         tarChk = "#" + tarChk;
 
-      
+
 
         $(tarChk).off('mouseenter mouseleave');
 
@@ -180,7 +176,7 @@ if ($designs) {
                         console.log("No se permite!");
                         return false;
                     }
-                    validateBasketCourt(e.target.dataset.venueid,e.target.dataset.time,false);
+                    validateBasketCourt(e.target.dataset.venueid, e.target.dataset.time, false);
                 } else {
                     almacenarVenue(tarCont, fecha, nombreVenue, reemplazar);
                 }
@@ -193,7 +189,7 @@ if ($designs) {
                 $("[id$='" + clave + "']").not('.disabled').removeClass("secundary");
             }
             $(tarChk).removeClass("selected");
-            validateBasketCourt(e.target.dataset.venueid,e.target.dataset.time,true);
+            validateBasketCourt(e.target.dataset.venueid, e.target.dataset.time, true);
 
         }
         console.log('chkCambio: ' + tarCont + ' / ' + fecha);
@@ -513,12 +509,12 @@ if ($designs) {
 
 
             <div class="col-12 col-md-12">
-                @if($parentid == '02i3m00000DiduZAAR')
+                @if ($parentid == '02i3m00000DiduZAAR')
                     <div><small>Selecciona el horario (la duración de cada turno es de una(1) hora)</small></div>
                 @else
                     <div><small>Selecciona el horario (puedes reservar en múltiples días)</small></div>
                 @endif
-                
+
                 <div id="overlay" class=""
                     style="padding-top:150px;background-color: rgba(255,255,255,0.7);">
                     <div class="spinner-border" role="status">
@@ -615,202 +611,196 @@ if ($designs) {
                     <?php $newValue = 'testing'; ?>
 
 
-                    <?php  //PISCINA HORARIOS ?>
+                    <?php //PISCINA HORARIOS
+                    ?>
                     <?php
-                        
-                        if($parentid == '02i3m00000DiduZAAR') {
-                                
-                                class Timetable {
-                                    public $startTime;
-                                    public $startTimeToShow;
-                                    public $endTime;
-                                    public $endTimeToShow;
-                                }
-
-                                $timeOne = new Timetable();
-                                $timeOne->startTime = '05-30';
-                                $timeOne->startTimeToShow = '05:30 AM';
-                                $timeOne->endTime = '06-30';
-                                $timeOne->endTimeToShow = '06:30 AM';
-
-                                $timeTwo = new Timetable();
-                                $timeTwo->startTime = '07-00';
-                                $timeTwo->startTimeToShow = '07:00 AM';
-                                $timeTwo->endTime = '08-00';
-                                $timeTwo->endTimeToShow = '08:00 AM';
-
-                                $timeThree = new Timetable();
-                                $timeThree->startTime = '08-30';
-                                $timeThree->startTimeToShow = '08:30 AM';
-                                $timeThree->endTime = '09-30';
-                                $timeThree->endTimeToShow = '09:30 AM';
-
-                                $timeFour = new Timetable();
-                                $timeFour->startTime = '10-00';
-                                $timeFour->startTimeToShow = '10:00 AM';
-                                $timeFour->endTime = '11-00';
-                                $timeFour->endTimeToShow = '11:00 AM';
-
-                                $timeFive = new Timetable();
-                                $timeFive->startTime = '11-30';
-                                $timeFive->startTimeToShow = '11:30 AM';
-                                $timeFive->endTime = '12-30';
-                                $timeFive->endTimeToShow = '12:30 PM';
-
-                                $timeSix = new Timetable();
-                                $timeSix->startTime = '13-00';
-                                $timeSix->startTimeToShow = '01:00 PM';
-                                $timeSix->endTime = '14-00';
-                                $timeSix->endTimeToShow = '02:00 PM';
-
-                                
-                                $timeSeven = new Timetable();
-                                $timeSeven->startTime = '14-30';
-                                $timeSeven->startTimeToShow = '02:30 PM';
-                                $timeSeven->endTime = '15-30';
-                                $timeSeven->endTimeToShow = '03:30 PM';
-
-                                $timeOct = new Timetable();
-                                $timeOct->startTime = '16-00';
-                                $timeOct->startTimeToShow = '04:00 PM';
-                                $timeOct->endTime = '17-00';
-                                $timeOct->endTimeToShow = '05:00 PM';
-
-                                $timeNine = new Timetable();
-                                $timeNine->startTime = '17-30';
-                                $timeNine->startTimeToShow = '05:30 PM';
-                                $timeNine->endTime = '18-30';
-                                $timeNine->endTimeToShow = '06:30 PM';
-
-                                $timeTen = new Timetable();
-                                $timeTen->startTime = '19-00';
-                                $timeTen->startTimeToShow = '07:00 PM';
-                                $timeTen->endTime = '20-00';
-                                $timeTen->endTimeToShow = '08:00 PM';
-
-
-                                $lsTimeTables = array($timeOne,$timeTwo,$timeThree,$timeFour,$timeFive,$timeSix,$timeSeven,$timeOct,$timeNine,$timeTen);
-
-                                //Sabado
-                                $timeOneS = new Timetable();
-                                $timeOneS->startTime = '08-00';
-                                $timeOneS->startTimeToShow = '08:00 AM';
-                                $timeOneS->endTime = '09-00';
-                                $timeOneS->endTimeToShow = '09:00 AM';
-
-                                $timeTwoS = new Timetable();
-                                $timeTwoS->startTime = '09-00';
-                                $timeTwoS->startTimeToShow = '09:00 AM';
-                                $timeTwoS->endTime = '10-00';
-                                $timeTwoS->endTimeToShow = '10:00 AM';
-
-                                $timeThreeS = new Timetable();
-                                $timeThreeS->startTime = '10-00';
-                                $timeThreeS->startTimeToShow = '10:00 AM';
-                                $timeThreeS->endTime = '11-00';
-                                $timeThreeS->endTimeToShow = '11:00 AM';
-                
-
-                                $timeFiveS = new Timetable();
-                                $timeFiveS->startTime = '11-00';
-                                $timeFiveS->startTimeToShow = '11:00 AM';
-                                $timeFiveS->endTime = '12-00';
-                                $timeFiveS->endTimeToShow = '12:00 PM';
-
-                                $timeSixS = new Timetable();
-                                $timeSixS->startTime = '12-00';
-                                $timeSixS->startTimeToShow = '12:00 PM';
-                                $timeSixS->endTime = '13-00';
-                                $timeSixS->endTimeToShow = '01:00 PM';
-
-
-                                $timeSevenS = new Timetable();
-                                $timeSevenS->startTime = '13-00';
-                                $timeSevenS->startTimeToShow = '01:00 PM';
-                                $timeSevenS->endTime = '14-00';
-                                $timeSevenS->endTimeToShow = '02:00 PM';
-
-
-                                $timeEigthS = new Timetable();
-                                $timeEigthS->startTime = '14-30';
-                                $timeEigthS->startTimeToShow = '02:30 PM';
-                                $timeEigthS->endTime = '15-30';
-                                $timeEigthS->endTimeToShow = '03:30 PM';
-
-                                $timeNineS = new Timetable();
-                                $timeNineS->startTime = '16-00';
-                                $timeNineS->startTimeToShow = '04:00 PM';
-                                $timeNineS->endTime = '17-00';
-                                $timeNineS->endTimeToShow = '05:00 PM';
-
-
-                                $timeTenS = new Timetable();
-                                $timeTenS->startTime = '17-30';
-                                $timeTenS->startTimeToShow = '05:30 PM';
-                                $timeTenS->endTime = '18-30';
-                                $timeTenS->endTimeToShow = '06:30 PM';
-
-                                $lsTimeTablesS = array($timeSevenS,$timeEigthS,$timeNineS,$timeTenS);
-
-                                //Domingo
-                                $timeOneD = new Timetable();
-                                $timeOneD->startTime = '08-00';
-                                $timeOneD->startTimeToShow = '08:00 AM';
-                                $timeOneD->endTime = '09-00';
-                                $timeOneD->endTimeToShow = '09:00 AM';
-
-                                $timeTwoD = new Timetable();
-                                $timeTwoD->startTime = '09-30';
-                                $timeTwoD->startTimeToShow = '09:30 AM';
-                                $timeTwoD->endTime = '10-30';
-                                $timeTwoD->endTimeToShow = '10:30 AM';
-                                
-                                $timeThreeD = new Timetable();
-                                $timeThreeD->startTime = '11-00';
-                                $timeThreeD->startTimeToShow = '11:00 AM';
-                                $timeThreeD->endTime = '12-00';
-                                $timeThreeD->endTimeToShow = '12:00 PM';
-                                
-                                $timeFourD = new Timetable();
-                                $timeFourD->startTime = '12-00';
-                                $timeFourD->startTimeToShow = '12:00 PM';
-                                $timeFourD->endTime = '13-00';
-                                $timeFourD->endTimeToShow = '01:00 PM';
-
-                                $timeFiveD = new Timetable();
-                                $timeFiveD->startTime = '13-00';
-                                $timeFiveD->startTimeToShow = '01:00 PM';
-                                $timeFiveD->endTime = '14-00';
-                                $timeFiveD->endTimeToShow = '02:00 PM';
-
-                                $timeSixD = new Timetable();
-                                $timeSixD->startTime = '14-30';
-                                $timeSixD->startTimeToShow = '02:30 PM';
-                                $timeSixD->endTime = '15-30';
-                                $timeSixD->endTimeToShow = '03:30 PM';
-
-                                $timeNineD = new Timetable();
-                                $timeNineD->startTime = '16-00';
-                                $timeNineD->startTimeToShow = '04:00 PM';
-                                $timeNineD->endTime = '17-00';
-                                $timeNineD->endTimeToShow = '05:00 PM';
-
-                                $timeSevenD = new Timetable();
-                                $timeSevenD->startTime = '17-30';
-                                $timeSevenD->startTimeToShow = '05:30 PM';
-                                $timeSevenD->endTime = '18-30';
-                                $timeSevenD->endTimeToShow = '06:30 PM';
-
-                                $lsTimeTablesD = array($timeOneD,$timeTwoD,$timeThreeD,$timeFourD,$timeFiveD,$timeSixD,$timeNineD,$timeSevenD);
-
+                    
+                    if ($parentid == '02i3m00000DiduZAAR') {
+                        class Timetable
+                        {
+                            public $startTime;
+                            public $startTimeToShow;
+                            public $endTime;
+                            public $endTimeToShow;
                         }
+                    
+                        $timeOne = new Timetable();
+                        $timeOne->startTime = '05-30';
+                        $timeOne->startTimeToShow = '05:30 AM';
+                        $timeOne->endTime = '06-30';
+                        $timeOne->endTimeToShow = '06:30 AM';
+                    
+                        $timeTwo = new Timetable();
+                        $timeTwo->startTime = '07-00';
+                        $timeTwo->startTimeToShow = '07:00 AM';
+                        $timeTwo->endTime = '08-00';
+                        $timeTwo->endTimeToShow = '08:00 AM';
+                    
+                        $timeThree = new Timetable();
+                        $timeThree->startTime = '08-30';
+                        $timeThree->startTimeToShow = '08:30 AM';
+                        $timeThree->endTime = '09-30';
+                        $timeThree->endTimeToShow = '09:30 AM';
+                    
+                        $timeFour = new Timetable();
+                        $timeFour->startTime = '10-00';
+                        $timeFour->startTimeToShow = '10:00 AM';
+                        $timeFour->endTime = '11-00';
+                        $timeFour->endTimeToShow = '11:00 AM';
+                    
+                        $timeFive = new Timetable();
+                        $timeFive->startTime = '11-30';
+                        $timeFive->startTimeToShow = '11:30 AM';
+                        $timeFive->endTime = '12-30';
+                        $timeFive->endTimeToShow = '12:30 PM';
+                    
+                        $timeSix = new Timetable();
+                        $timeSix->startTime = '13-00';
+                        $timeSix->startTimeToShow = '01:00 PM';
+                        $timeSix->endTime = '14-00';
+                        $timeSix->endTimeToShow = '02:00 PM';
+                    
+                        $timeSeven = new Timetable();
+                        $timeSeven->startTime = '14-30';
+                        $timeSeven->startTimeToShow = '02:30 PM';
+                        $timeSeven->endTime = '15-30';
+                        $timeSeven->endTimeToShow = '03:30 PM';
+                    
+                        $timeOct = new Timetable();
+                        $timeOct->startTime = '16-00';
+                        $timeOct->startTimeToShow = '04:00 PM';
+                        $timeOct->endTime = '17-00';
+                        $timeOct->endTimeToShow = '05:00 PM';
+                    
+                        $timeNine = new Timetable();
+                        $timeNine->startTime = '17-30';
+                        $timeNine->startTimeToShow = '05:30 PM';
+                        $timeNine->endTime = '18-30';
+                        $timeNine->endTimeToShow = '06:30 PM';
+                    
+                        $timeTen = new Timetable();
+                        $timeTen->startTime = '19-00';
+                        $timeTen->startTimeToShow = '07:00 PM';
+                        $timeTen->endTime = '20-00';
+                        $timeTen->endTimeToShow = '08:00 PM';
+                    
+                        $lsTimeTables = [$timeOne, $timeTwo, $timeThree, $timeFour, $timeFive, $timeSix, $timeSeven, $timeOct, $timeNine, $timeTen];
+                    
+                        //Sabado
+                        $timeOneS = new Timetable();
+                        $timeOneS->startTime = '08-00';
+                        $timeOneS->startTimeToShow = '08:00 AM';
+                        $timeOneS->endTime = '09-00';
+                        $timeOneS->endTimeToShow = '09:00 AM';
+                    
+                        $timeTwoS = new Timetable();
+                        $timeTwoS->startTime = '09-00';
+                        $timeTwoS->startTimeToShow = '09:00 AM';
+                        $timeTwoS->endTime = '10-00';
+                        $timeTwoS->endTimeToShow = '10:00 AM';
+                    
+                        $timeThreeS = new Timetable();
+                        $timeThreeS->startTime = '10-00';
+                        $timeThreeS->startTimeToShow = '10:00 AM';
+                        $timeThreeS->endTime = '11-00';
+                        $timeThreeS->endTimeToShow = '11:00 AM';
+                    
+                        $timeFiveS = new Timetable();
+                        $timeFiveS->startTime = '11-00';
+                        $timeFiveS->startTimeToShow = '11:00 AM';
+                        $timeFiveS->endTime = '12-00';
+                        $timeFiveS->endTimeToShow = '12:00 PM';
+                    
+                        $timeSixS = new Timetable();
+                        $timeSixS->startTime = '12-00';
+                        $timeSixS->startTimeToShow = '12:00 PM';
+                        $timeSixS->endTime = '13-00';
+                        $timeSixS->endTimeToShow = '01:00 PM';
+                    
+                        $timeSevenS = new Timetable();
+                        $timeSevenS->startTime = '13-00';
+                        $timeSevenS->startTimeToShow = '01:00 PM';
+                        $timeSevenS->endTime = '14-00';
+                        $timeSevenS->endTimeToShow = '02:00 PM';
+                    
+                        $timeEigthS = new Timetable();
+                        $timeEigthS->startTime = '14-30';
+                        $timeEigthS->startTimeToShow = '02:30 PM';
+                        $timeEigthS->endTime = '15-30';
+                        $timeEigthS->endTimeToShow = '03:30 PM';
+                    
+                        $timeNineS = new Timetable();
+                        $timeNineS->startTime = '16-00';
+                        $timeNineS->startTimeToShow = '04:00 PM';
+                        $timeNineS->endTime = '17-00';
+                        $timeNineS->endTimeToShow = '05:00 PM';
+                    
+                        $timeTenS = new Timetable();
+                        $timeTenS->startTime = '17-30';
+                        $timeTenS->startTimeToShow = '05:30 PM';
+                        $timeTenS->endTime = '18-30';
+                        $timeTenS->endTimeToShow = '06:30 PM';
+                    
+                        $lsTimeTablesS = [$timeSevenS, $timeEigthS, $timeNineS, $timeTenS];
+                    
+                        //Domingo
+                        $timeOneD = new Timetable();
+                        $timeOneD->startTime = '08-00';
+                        $timeOneD->startTimeToShow = '08:00 AM';
+                        $timeOneD->endTime = '09-00';
+                        $timeOneD->endTimeToShow = '09:00 AM';
+                    
+                        $timeTwoD = new Timetable();
+                        $timeTwoD->startTime = '09-30';
+                        $timeTwoD->startTimeToShow = '09:30 AM';
+                        $timeTwoD->endTime = '10-30';
+                        $timeTwoD->endTimeToShow = '10:30 AM';
+                    
+                        $timeThreeD = new Timetable();
+                        $timeThreeD->startTime = '11-00';
+                        $timeThreeD->startTimeToShow = '11:00 AM';
+                        $timeThreeD->endTime = '12-00';
+                        $timeThreeD->endTimeToShow = '12:00 PM';
+                    
+                        $timeFourD = new Timetable();
+                        $timeFourD->startTime = '12-00';
+                        $timeFourD->startTimeToShow = '12:00 PM';
+                        $timeFourD->endTime = '13-00';
+                        $timeFourD->endTimeToShow = '01:00 PM';
+                    
+                        $timeFiveD = new Timetable();
+                        $timeFiveD->startTime = '13-00';
+                        $timeFiveD->startTimeToShow = '01:00 PM';
+                        $timeFiveD->endTime = '14-00';
+                        $timeFiveD->endTimeToShow = '02:00 PM';
+                    
+                        $timeSixD = new Timetable();
+                        $timeSixD->startTime = '14-30';
+                        $timeSixD->startTimeToShow = '02:30 PM';
+                        $timeSixD->endTime = '15-30';
+                        $timeSixD->endTimeToShow = '03:30 PM';
+                    
+                        $timeNineD = new Timetable();
+                        $timeNineD->startTime = '16-00';
+                        $timeNineD->startTimeToShow = '04:00 PM';
+                        $timeNineD->endTime = '17-00';
+                        $timeNineD->endTimeToShow = '05:00 PM';
+                    
+                        $timeSevenD = new Timetable();
+                        $timeSevenD->startTime = '17-30';
+                        $timeSevenD->startTimeToShow = '05:30 PM';
+                        $timeSevenD->endTime = '18-30';
+                        $timeSevenD->endTimeToShow = '06:30 PM';
+                    
+                        $lsTimeTablesD = [$timeOneD, $timeTwoD, $timeThreeD, $timeFourD, $timeFiveD, $timeSixD, $timeNineD, $timeSevenD];
+                    }
                     ?>
 
-                    
-                    @if($parentid == '02i3m00000DiduZAAR')
-                    <input class="form-control" required type="hidden" name="ReservasSeleccionadas"
-                    id="ReservasSeleccionadas" width="100%"  />
-                        <div id="root"></div>                 
+
+                    @if ($parentid == '02i3m00000DiduZAAR')
+                        <input class="form-control" required type="hidden" name="ReservasSeleccionadas"
+                            id="ReservasSeleccionadas" width="100%" />
+                        <div id="root"></div>
                     @else
                         <div class="tDiv   ">
                             <div class="btn-group-toggle" data-toggle="buttons" id="tabContainer">
@@ -845,7 +835,7 @@ if ($designs) {
                                             <?php endforeach ?>
                                             <?php endif ?>
                                         </tr>
-                                    <?php
+                                        <?php
                                         if($parentid !== '02i3m00000DiduZAAR'){
                                                 $horaInicial = 7;
                                                 $horaFinal = 20;
@@ -912,9 +902,8 @@ if ($designs) {
                                             ?>
                                             <td class="long">
                                                 <?php if($horaActual <= 17 || ($luminarias == 1 && $horaActual > 17)) : ?>
-                                                <div class="spBtn" 
-                                                    data-venuename="{{ $grupo->name }}"
-                                                    data-venueid="{{$grupo->id}}"
+                                                <div class="spBtn" data-venuename="{{ $grupo->name }}"
+                                                    data-venueid="{{ $grupo->id }}"
                                                     data-time="{{ $horaActual24STR }}"
                                                     id="chkhora{{ $horaActual24STR }}{{ $grupo->id }}"
                                                     name="chkhora{{ $horaActual24STR }}{{ $grupo->id }}"
@@ -943,72 +932,72 @@ if ($designs) {
                             </div>
                         </div>
                     @endif
-                    
 
-                
+
+
 
                 </center>
             </div>
 
         </div>
-        @if($parentid != '02i3m00000DiduZAAR')
-        <div class="row">
-            <div class="col-12 col-md-12">
-                <div class="form-group">
-                    <label for="description"><small>Espacios que deseas reservar</small></label>
-                    <input class="form-control" required type="hidden" name="ReservasSeleccionadas"
-                        id="ReservasSeleccionadas" width="100%" value='<?php echo session()->get('ReservasSeleccionadas', old('ReservasSeleccionadas')); ?>' />
-                    <div class="row">
-                        <div id="espaciosSeleccionados" class="col-12 col-md-12"
-                            style="display: flex; flex-flow: wrap; gap: 5px;">
+        @if ($parentid != '02i3m00000DiduZAAR')
+            <div class="row">
+                <div class="col-12 col-md-12">
+                    <div class="form-group">
+                        <label for="description"><small>Espacios que deseas reservar</small></label>
+                        <input class="form-control" required type="hidden" name="ReservasSeleccionadas"
+                            id="ReservasSeleccionadas" width="100%" value='<?php echo session()->get('ReservasSeleccionadas', old('ReservasSeleccionadas')); ?>' />
+                        <div class="row">
+                            <div id="espaciosSeleccionados" class="col-12 col-md-12"
+                                style="display: flex; flex-flow: wrap; gap: 5px;">
 
-                            <a id="esPlaceholder" href="#"><small>Debes seleccionar al menos un
-                                    espacio!</small></a>
+                                <a id="esPlaceholder" href="#"><small>Debes seleccionar al menos un
+                                        espacio!</small></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <?php if ($venue ?? '') : ?>
-        <div class="row" style="margin-top:10px; display: none;">
-            <div class="col-12 col-md-12">
-                <div class="form-group-preview"
-                    style="background:#ffffff; border:1px solid #000000; padding:12px 20px">
-                    Venue: <?php echo $venue; ?>
+            <?php if ($venue ?? '') : ?>
+            <div class="row" style="margin-top:10px; display: none;">
+                <div class="col-12 col-md-12">
+                    <div class="form-group-preview"
+                        style="background:#ffffff; border:1px solid #000000; padding:12px 20px">
+                        Venue: <?php echo $venue; ?>
+                    </div>
+                </div>
+
+            </div>
+            <?php endif ?>
+            <div class="row">
+                <div class="col-12 col-md-12">
+                    <div class="form-group">
+                        <label for="description"><small>Describe tu
+                                reserva</small>&nbsp;&nbsp;&nbsp;<?php if ($grupos[0]->parent_id == '02i3m00000DiduVAAR') {
+                                    echo "<a href='#'><small>(obligatorio)</small></a>";
+                                } else {
+                                    echo '<small>(opcional)</small>';
+                                } ?></label>
+                        <textarea name="description" <?php if ($grupos[0]->parent_id == '02i3m00000DiduVAAR') {
+                            echo 'required';
+                        } else {
+                            echo '';
+                        } ?> id="description"><?php echo session()->get('description', old('description')); ?></textarea>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row buttons">
+                <div class="col-12 text-center">
+                    <a href="/cotizacion/datos-contacto" class="btn btn-primary">Anterior</a>
+                    <button type="submit" class="btn btn-primary submit-form">Siguiente</button>
                 </div>
             </div>
-
-        </div>
-        <?php endif ?>
-        <div class="row">
-            <div class="col-12 col-md-12">
-                <div class="form-group">
-                    <label for="description"><small>Describe tu
-                            reserva</small>&nbsp;&nbsp;&nbsp;<?php if ($grupos[0]->parent_id == '02i3m00000DiduVAAR') {
-                                echo "<a href='#'><small>(obligatorio)</small></a>";
-                            } else {
-                                echo '<small>(opcional)</small>';
-                            } ?></label>
-                    <textarea name="description" <?php if ($grupos[0]->parent_id == '02i3m00000DiduVAAR') {
-                        echo 'required';
-                    } else {
-                        echo '';
-                    } ?> id="description"><?php echo session()->get('description', old('description')); ?></textarea>
-                </div>
-            </div>
-
-        </div>
-        <div class="row buttons">
-            <div class="col-12 text-center">
-                <a href="/cotizacion/datos-contacto" class="btn btn-primary">Anterior</a>
-                <button type="submit" class="btn btn-primary submit-form">Siguiente</button>
-            </div>
-        </div>
         @endif
     </div>
-    
-    @if($parentid == '02i3m00000DiduZAAR')
+
+    @if ($parentid == '02i3m00000DiduZAAR')
         <script>
             var phpVariable = @json($grupos);
             var jsonSchedules = @json($lsTimeTables);
@@ -1018,7 +1007,7 @@ if ($designs) {
         </script>
     @endif
 
-    @if($parentid == '02i3m00000DiduZAAR')
+    @if ($parentid == '02i3m00000DiduZAAR')
         <script type="text/babel">    
             const App = () => {
                     const buttonRef = React.useRef(null);
@@ -1143,7 +1132,7 @@ if ($designs) {
                             window.removeEventListener('slotsSelected', eventListener);
                         };
                     }, []);
-
+                    /*
                     const  handleSelectHour = (hourSelected,index,time,currentTime)=>{
                         console.log('Init hours');
                         
@@ -1169,7 +1158,7 @@ if ($designs) {
                             return false;
                         }
 
-                        /*
+                        
 
                         if(newArr[index].selected == true  &&  targetDate.isSame(currentTime)){
                             newArr[index].selected=false;
@@ -1245,7 +1234,7 @@ if ($designs) {
                         }
                         
 
-                        */
+                        
                       
 
                    
@@ -1281,81 +1270,89 @@ if ($designs) {
                         }
                         setIsRefresh(false);
 
+                    }*/
+
+
+                    const  handleAdultsSum = (e,id)=>{
+                        e.preventDefault();
+                        setSelectedHour((prevData) =>
+                            prevData.map((item) => {
+                                if(item.id === id &&  item.totalPers!=0 && item.persAdults > -1)  return { ...item, totalPers: item.totalPers - 1,persAdults:item.persAdults + 1  } 
+                                return  item
+                            })
+                        );
+
+                    }
+
+                    const  handleAdultsRest = (e,id)=>{
+                        e.preventDefault();
+                        setSelectedHour((prevData) =>
+                            prevData.map((item) => {
+                                if(item.id === id &&  item.totalPers >-1 && item.persAdults > 0)  return { ...item, totalPers: item.totalPers + 1,persAdults:item.persAdults - 1  } 
+                                return  item
+                            })
+                        );
+
                     }
 
 
-                    const  handleAdultsSum = e=>{
+                    const  handleChildSum = (e,id)=>{
                         e.preventDefault();
-                        if(persAssist!=0 && persAdults>-1){
-                            setPersAdults(persAdults + 1);
-                            setPersAssist(persAssist - 1);
-                            
-
-                        }
-                    }
-
-                    const  handleAdultsRest = e=>{
-                        e.preventDefault();
-                        if(persAssist>-1 && persAdults>0){
-                            setPersAdults(persAdults - 1);
-                            setPersAssist(persAssist + 1);
-                        
-                        }
-                    }
-
-
-                    const  handleChildSum = e=>{
-                        e.preventDefault();
-                        if(persAssist!=0 && persChilds>-1){
-                            setPersChilds(persChilds + 1);
-                            setPersAssist(persAssist - 1);
-                           
-
-                        }
-                    }
-
-                    const  handleChildRest = e=>{
-                        e.preventDefault();
-                        if(persAssist>-1&& persChilds>0){
-                            setPersChilds(persChilds - 1);
-                            setPersAssist(persAssist + 1);
                      
-
-                        }
+                        setSelectedHour((prevData) =>
+                            prevData.map((item) => {
+                                if(item.id === id &&  item.totalPers!=0 && item.persChilds > -1)  return { ...item, totalPers: item.totalPers - 1,persChilds:item.persChilds + 1  } 
+                                return  item
+                            })
+                        );
                     }
 
-                    const  handleJubSum = e=>{
+                    const  handleChildRest = (e,id)=>{
                         e.preventDefault();
-                        if(persAssist!=0 && persJub>-1){
-                            setPersJub(persJub + 1);
-                            setPersAssist(persAssist - 1);
-                            
-                        }
+                        setSelectedHour((prevData) =>
+                            prevData.map((item) => {
+                                if(item.id === id &&  item.totalPers >-1 && item.persChilds > 0)  return { ...item, totalPers: item.totalPers + 1,persChilds:item.persChilds - 1  } 
+                                return  item
+                            })
+                        );
                     }
 
-                    const  handleJubRest = e=>{
+                    const  handleJubSum = (e,id)=>{
                         e.preventDefault();
-                        if(persAssist>-1 && persJub>0){
-                            setPersJub(persJub - 1);
-                            setPersAssist(persAssist + 1);
-                        }
+                        setSelectedHour((prevData) =>
+                            prevData.map((item) => {
+                                if(item.id === id &&  item.totalPers!=0 && item.persJub > -1)  return { ...item, totalPers: item.totalPers - 1,persJub:item.persJub + 1  } 
+                                return  item
+                            })
+                        );
+                    }
+
+                    const  handleJubRest = (e,id)=>{
+                        e.preventDefault();
+                        setSelectedHour((prevData) =>
+                            prevData.map((item) => {
+                                if(item.id === id &&  item.totalPers >-1 && item.persJub > 0)  return { ...item, totalPers: item.totalPers + 1,persJub:item.persJub - 1  } 
+                                return  item
+                            })
+                        );
                     }
 
                     const  handleClick = async e=>{
                         e.preventDefault();
                         let lsHoursToSchedule = [];
-                        if(groups[0].selected){
+                        selectedHour.forEach(element => {
                             let objAux = {};
-                            objAux.fecha = groups[0].selectedStartTime;
-                            objAux.id = 'chkhora'+groups[0].startTime+venue.id;
-                            objAux.venue = venue.name;
+                            objAux.fecha = element.fecha;
+                            objAux.id = element.id;
+                            objAux.venue = groups[0].name;
                             objAux.subtotal= 3.50;
                             objAux.calcularFact= true;
-                            objAux.personJubCount= persJub;
-                            objAux.personChildCount= persChilds;
-                            objAux.personAdultCount= persAdults;
+                            objAux.personJubCount= element.persJub;
+                            objAux.personChildCount= element.persChilds;
+                            objAux.personAdultCount= element.persAdults;
+
                             // Input time as a string
-                            var inputTime = groups[0].startTime;
+                            var inputTime = element.startTime;
 
                             // Parse the input time using Moment.js
                             var time = moment(inputTime, "HH-mm");
@@ -1366,9 +1363,9 @@ if ($designs) {
                             // Format the result as "HH-MM"
                             var formattedTime = time.format("HH-mm");
                             objAux.startTime= formattedTime.replace('-',':');
-
-                                // Input time as a string
-                            var inputTimeFinish = groups[0].endTime;
+                            
+                            // Input time as a string
+                            var inputTimeFinish =  element.endTime;
 
                             // Parse the input time using Moment.js
                             var timeF = moment(inputTimeFinish, "HH-mm");
@@ -1384,67 +1381,14 @@ if ($designs) {
                             objAux.totalPersons = tot.toString();
 
                             lsHoursToSchedule.push(objAux);
-                        }
-                        if(groups[0].selectedTwo){
-                            let objAux = {};
-                            objAux.fecha = groups[0].selectedStartTimeTwo;
-                            objAux.id = 'chkhora'+groups[0].startTimeTwo+venue.id;
-                            objAux.venue = venue.name;
-                            objAux.subtotal= 3.50;
-                            objAux.calcularFact= true;
-                            objAux.personJubCount= persJub;
-                            objAux.personChildCount= persChilds;
-                            objAux.personAdultCount= persAdults;
-                            // Input time as a string
-                            var inputTime = groups[0].startTimeTwo;
+                                
+                        });
 
-                            // Parse the input time using Moment.js
-                            var time = moment(inputTime, "HH-mm");
-
-                            // Add 4 hours to the time
-                            time.add(5, "hours");
-
-                            // Format the result as "HH-MM"
-                            var formattedTime = time.format("HH-mm");
-                            objAux.startTime= formattedTime.replace('-',':');
-
-                                // Input time as a string
-                            var inputTimeFinish = groups[0].endTimeTwo;
-
-                            // Parse the input time using Moment.js
-                            var timeF = moment(inputTimeFinish, "HH-mm");
-
-                            // Add 4 hours to the time
-                            timeF.add(5, "hours");
-
-                            // Format the result as "HH-MM"
-                            var formattedTimeF = timeF.format("HH-mm");
-                            objAux.finishTime= formattedTimeF.replace('-',':');
-
-                            let tot= persJub + persChilds + persAdults;
-                            objAux.totalPersons = tot.toString();
-
-                            lsHoursToSchedule.push(objAux);
-                        }
-
-                        
-                       
-                       
                         document.getElementById('ReservasSeleccionadas').value = JSON.stringify(lsHoursToSchedule);
                         buttonRef.current.click();
                     }
 
-                    React.useEffect(() => {
-                            if(persChilds > 0 || persAdults > 0 || persJub > 0 ){
-                                    setIsNext(false);
-                            }else{
-                                    setIsNext(true);
-                            }
-                        
-                        return () => {
-                            null
-                        }
-                    }, [persChilds,persAdults,persJub])
+  
                  
 
                     return (
@@ -1501,14 +1445,60 @@ if ($designs) {
                                                                             if(element.selectedStartTimeTwo == currentInputValue) isCurrentTimeSelectedTwo = true;
                                                                         } 
                                                                         return  ( <td className='text-center position-relative' key={i}  >
-                                                                                <div  className={(isCurrentTimeSelected || isCurrentTimeSelectedTwo) ? 'spBtn selected' : 'spBtn' } onClick={e=>{
+                                                                                <div  className='spBtn' onClick={e=>{
                                                                                     e.preventDefault();
-                                                                                    handleSelectHour(element,i,sch,targetDate);
+                                                                                   // handleSelectHour(element,i,sch,targetDate);
+                                                                                    chkCambio(e);
+                                                                                    if(slotsSelected){
+                                                                                            let cantPers = 0;
+                                                                                            
+                                                                                            slotsSelected.forEach(slot => {
+                                                                                                if(slot.StartDateTime){
+                                                                                                    let convertStartTime = moment.utc(slot.StartDateTime);
+                                                                                                    convertStartTime.subtract(5,'hours');
+                                                                                                    
+                                                                                                // Get the hours and minutes
+                                                                                                var hours = convertStartTime.format('HH');
+                                                                                                var minutes = convertStartTime.format('mm');
+
+                                                                                                var [startHours, startMinutes] =e.target.dataset.time.split('-');
+                                                                                                if(hours === startHours && minutes === startMinutes && slot.Cantidad_de_asistentes__c){
+                                                                                                        cantPers+=slot.Cantidad_de_asistentes__c;
+                                                                                                }
+                                                                                                }
+                                                                                            });
+                                                                                            let totalPers = 25-cantPers;
+                                                                                            let checkIfExistHour =  selectedHour.find(hour => hour.id == e.target.id);
+                                                                                            
+                                                                                            if(checkIfExistHour){
+                                                                                                const updatedArray = selectedHour.filter(item => item.id !== e.target.id);
+                                                                                                setSelectedHour(updatedArray);
+                                                                                            }else{
+                                                                                                setSelectedHour((prevData) => [...prevData,
+                                                                                                    { id : e.target.id ,
+                                                                                                        fecha:currentInputValue,
+                                                                                                        totalPers : totalPers, 
+                                                                                                        timeSelected : sch.startTimeToShow+'-'+sch.endTimeToShow , 
+                                                                                                        persAdults: 0 ,
+                                                                                                        persChilds:0,
+                                                                                                        persJub: 0 ,
+                                                                                                        startTime:sch.startTime,
+                                                                                                        endTime:sch.endTime
+                                                                                                    }]
+                                                                                                );
+                                                                                            }
+                                                                                    }
+                                                                                    
                                                                                 }}
-                                                                                id={i}>
+                                                                                id={"chkhora"+sch.startTime + groups[0].id}
+                                                                                name={"chkhora"+sch.startTime + groups[0].id}
+                                                                                data-venuename={groups[0].name}
+                                                                                data-venueid={groups[0].id}
+                                                                                data-time={sch.startTime}
+                                                                               >
                                                                         
-                                                                                    {isCurrentTimeSelected && element.selectedTime}
-                                                                                    {isCurrentTimeSelectedTwo && element.selectedTimeTwo}
+                                                                                    {sch.startTimeToShow}- {sch.endTimeToShow}
+                                                                                    
                                                                                     
                                                                                     </div>
                                                                                     {isCurrentTimeSelected &&  <div class=" position-absolute  stl-persons d-none align-items-center " aria-labelledby={i}>
@@ -1554,6 +1544,7 @@ if ($designs) {
                                                                                 <div  className={isCurrentTimeSelected ? 'spBtn selected' : 'spBtn' } onClick={e=>{
                                                                                     e.preventDefault();
                                                                                     handleSelectHour(element,i,sch);
+                                                                                    chkCambio(e);
                                                                                 }}
                                                                                 id={i}>
                                                                         
@@ -1634,45 +1625,47 @@ if ($designs) {
                             </div>
                             <hr/>
                             {selectedHour && 
-                                selectedHour.length > 0 && <div >
-                                        <h4 className='w-100 text-left'> Cupos disponibles : {persAssist} </h4>
+                                selectedHour.length > 0 &&  selectedHour.map((item)=>{
+                                    return(<div >
+                                        <h4 className='w-100 text-left'> Cupos disponibles ({item.timeSelected && item.timeSelected}) : { item.totalPers && item.totalPers} </h4>
                                         <div className=' '>
                                             <div className='p-2 d-flex align-items-center'>
                                                 <p className='mb-1'>Adultos</p>
                                                 <div className='d-flex  align-items-center ml-2  '>
-                                                    <input type="number" value={persAdults} className="form-control  text-center w-25 "  readonly min="1" oninput="this.value = Math.abs(this.value)"  
+                                                    <input type="number" value={item.persAdults} className="form-control  text-center w-25 "  readonly min="1" oninput="this.value = Math.abs(this.value)"  
                                                                                                                             name="cantidadPersonas" />
                                                     <div className=''>
-                                                        <button className='btn btn-primary  ml-1' onClick={handleAdultsSum}>+</button>
-                                                        <button className='btn btn-primary  ml-1' onClick={handleAdultsRest}>-</button>
+                                                        <button className='btn btn-primary  ml-1' onClick={e=>handleAdultsSum(e,item.id)}>+</button>
+                                                        <button className='btn btn-primary  ml-1' onClick={e=>handleAdultsRest(e,item.id)}>-</button>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className='p-2 d-flex align-items-center'>
                                                 <p className='mb-1'>Niños</p>
                                                 <div className='d-flex  align-items-center ml-2  '>
-                                                    <input type="number" value={persChilds} className="form-control  text-center w-25 "  readonly min="1" oninput="this.value = Math.abs(this.value)"  
+                                                    <input type="number" value={item.persChilds} className="form-control  text-center w-25 "  readonly min="1" oninput="this.value = Math.abs(this.value)"  
                                                                                                                             name="cantidadPersonas" />
                                                     <div className=''>
-                                                        <button className='btn btn-primary  ml-1' onClick={handleChildSum}>+</button>
-                                                        <button className='btn btn-primary  ml-1' onClick={handleChildRest}>-</button>
+                                                        <button className='btn btn-primary  ml-1' onClick={e=>handleChildSum(e,item.id)}>+</button>
+                                                        <button className='btn btn-primary  ml-1' onClick={e=>handleChildRest(e,item.id)}>-</button>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className='p-2 d-flex align-items-center'>
                                                 <p className='mb-1'>Jubilados</p>
                                                 <div className='d-flex  align-items-center ml-2  '>
-                                                    <input type="number" value={persJub} className="form-control  text-center w-25 "  readonly min="1" oninput="this.value = Math.abs(this.value)"  
+                                                    <input type="number" value={item.persJub} className="form-control  text-center w-25 "  readonly min="1" oninput="this.value = Math.abs(this.value)"  
                                                                                                                             name="cantidadPersonas" />
                                                     <div className=''>
-                                                        <button className='btn btn-primary  ml-1' onClick={handleJubSum}>+</button>
-                                                        <button className='btn btn-primary  ml-1' onClick={handleJubRest}>-</button>
+                                                        <button className='btn btn-primary  ml-1' onClick={e=>handleJubSum(e,item.id)}>+</button>
+                                                        <button className='btn btn-primary  ml-1' onClick={e=>handleJubRest(e,item.id)}>-</button>
                                                     </div>
                                                 </div>
                                             </div>
             
                                         </div>                                                                                                    
-                                </div>
+                                </div>);
+                                })
                             }
                             
                             <div class="row">

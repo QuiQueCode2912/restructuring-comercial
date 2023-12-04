@@ -59,8 +59,7 @@ class SalesforceController extends Controller
 
     private function salesforce()
     {
-        $appEnv  =getenv('APP_ENV');
-        $endPoint='';
+ 
         //Credenciales de QA en Salesforce
         $options = [
             'grant_type' => 'password',
