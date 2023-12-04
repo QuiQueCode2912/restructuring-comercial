@@ -519,7 +519,7 @@ if ($designs) {
                     <div><small>Selecciona el horario (puedes reservar en múltiples días)</small></div>
                 @endif
                 
-                <div id="overlay" class="d-none"
+                <div id="overlay" class=""
                     style="padding-top:150px;background-color: rgba(255,255,255,0.7);">
                     <div class="spinner-border" role="status">
                         <span class="sr-only">Loading...</span>
@@ -1157,9 +1157,19 @@ if ($designs) {
                         let newArr = [...groups]; // copying the old datas array
                         var targetDate = moment(newArr[index].selectedStartTime, 'YYYY-MM-DD hh:mm A');
                         var targetDateTwo = moment(newArr[index].selectedStartTimeTwo, 'YYYY-MM-DD hh:mm A');
+                        let dateCurrentSelOne = moment(currentTime).format('YYYY-MM-DD');
 
-                        
 
+                        var sePermite = window.almacenarVenue(newArr[index].Id, dateCurrentSelOne, newArr[index].name, false);
+                        if (!sePermite) {
+                            createAlert('', '',
+                                '<b>Sólo se permiten 2 horas por día!</b><br/>Puedes cambiar tus horas seleccionadas para este día si lo deseas.',
+                                'warning', true, true, 'pageMessages');
+                            console.log("No se permite!");
+                            return false;
+                        }
+
+                        /*
 
                         if(newArr[index].selected == true  &&  targetDate.isSame(currentTime)){
                             newArr[index].selected=false;
@@ -1235,7 +1245,7 @@ if ($designs) {
                         }
                         
 
-                     
+                        */
                       
 
                    
