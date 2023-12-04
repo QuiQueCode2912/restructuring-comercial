@@ -1381,7 +1381,7 @@ if ($designs) {
                             var formattedTimeF = timeF.format("HH-mm");
                             objAux.finishTime= formattedTimeF.replace('-',':');
 
-                            let tot= persJub + persChilds + persAdults;
+                            let tot= element.persJub +  element.persChilds + element.persAdults;
                             objAux.totalPersons = tot.toString();
 
                             lsHoursToSchedule.push(objAux);
