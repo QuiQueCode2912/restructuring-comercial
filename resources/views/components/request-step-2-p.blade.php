@@ -1524,29 +1524,67 @@ if ($designs) {
                                                         <th  className='headcol'  >{sch.startTimeToShow} </th>   
                                                         {groups.length > 0  && isRefresh==false && 
                                                                 groups.map((element,i)=>{
-                                                                    let isCurrentTimeSelected =false;
 
-                                                                
-                                                                        if(element['selected']){
-                                                                            if(element.selectedStartTime == currentInputValue) isCurrentTimeSelected = true;
-                                                                        } 
                                                                         return  ( <td className='text-center position-relative' key={i}  >
-                                                                                <div  className={isCurrentTimeSelected ? 'spBtn selected' : 'spBtn' } onClick={e=>{
+                                                                                <div  className='spBtn' onClick={e=>{
                                                                                     e.preventDefault();
                                                                                     handleSelectHour(element,i,sch);
-                                                                                    chkCambio(e);
+                                                                                    var isAdded = chkCambio(e);
+                                                                                    if(slotsSelected && isAdded!=false){
+                                                                                            let cantPers = 0;
+                                                                                            
+                                                                                            slotsSelected.forEach(slot => {
+                                                                                                if(slot.StartDateTime){
+                                                                                                    let convertStartTime = moment.utc(slot.StartDateTime);
+                                                                                                    convertStartTime.subtract(5,'hours');
+                                                                                                    
+                                                                                                // Get the hours and minutes
+                                                                                                var hours = convertStartTime.format('HH');
+                                                                                                var minutes = convertStartTime.format('mm');
+
+                                                                                                var [startHours, startMinutes] =e.target.dataset.time.split('-');
+                                                                                                if(hours === startHours && minutes === startMinutes && slot.Cantidad_de_asistentes__c){
+                                                                                                        cantPers+=slot.Cantidad_de_asistentes__c;
+                                                                                                }
+                                                                                                }
+                                                                                            });
+                                                                                            let totalPers = 25-cantPers;
+                                                                                            let checkIfExistHour =  selectedHour.find(hour => hour.id == e.target.id && currentSchedule == hour.currentSchedule);
+                                                                                            
+                                                                                            if(checkIfExistHour){
+                                                                                                const updatedArray = selectedHour.filter(item => item.id !== e.target.id);
+                                                                                                setSelectedHour(updatedArray);
+                                                                                            }else{
+                                                                                                setSelectedHour((prevData) => [...prevData,
+                                                                                                    { id : e.target.id ,
+                                                                                                        fecha:currentInputValue,
+                                                                                                        totalPers : totalPers, 
+                                                                                                        timeSelected : sch.startTimeToShow+'-'+sch.endTimeToShow , 
+                                                                                                        persAdults: 0 ,
+                                                                                                        persChilds:0,
+                                                                                                        persJub: 0 ,
+                                                                                                        startTime:sch.startTime,
+                                                                                                        endTime:sch.endTime,
+                                                                                                        currentSchedule:currentSchedule
+                                                                                                    }]
+                                                                                                );
+                                                                                            }
+                                                                                    }
                                                                                 }}
-                                                                                id={i}>
+
+                                                                                id={i}
+                                                                                id={"chkhora"+sch.startTime + groups[0].id}
+                                                                                name={"chkhora"+sch.startTime + groups[0].id}
+                                                                                data-venuename={groups[0].name}
+                                                                                data-venueid={groups[0].id}
+                                                                                data-time={sch.startTime}
+
+                                                                                >
                                                                         
                                                                                     {isCurrentTimeSelected && element.selectedTime}
                                                                                     
                                                                                     </div>
-                                                                                    {isCurrentTimeSelected &&  <div class=" position-absolute  stl-persons d-none align-items-center " aria-labelledby={i}>
-                                                                                            <input type="number"  className="form-control text-center  " min="1" oninput="this.value = Math.abs(this.value)"  value={cantPersonas}
-                                                                                                onChange={e=>setCantPersonas(e.target.value)} 
-                                                                                                        name="cantidadPersonas"  placeholder="" />
-                                                                                                        <i class="bi bi-people-fill ml-2 icon-bt" ></i>
-                                                                                    </div>}
+                                                                                
                                                                                 
                                                                             </td>);
                                                                     
@@ -1574,28 +1612,65 @@ if ($designs) {
                                                         <th  className='headcol'  >{sch.startTimeToShow} </th>   
                                                         {groups.length > 0  && isRefresh==false && 
                                                                 groups.map((element,i)=>{
-                                                                    let isCurrentTimeSelected =false;
-
-                                                                
-                                                                        if(element['selected']){
-                                                                            if(element.selectedStartTime == currentInputValue) isCurrentTimeSelected = true;
-                                                                        } 
+                                                                 
                                                                         return  ( <td className='text-center position-relative' key={i}  >
-                                                                                <div  className={isCurrentTimeSelected ? 'spBtn selected' : 'spBtn' } onClick={e=>{
+                                                                                <div  className='spBtn'  onClick={e=>{
                                                                                     e.preventDefault();
                                                                                     handleSelectHour(element,i,sch);
+                                                                                    var isAdded = chkCambio(e);
+                                                                                    if(slotsSelected && isAdded!=false){
+                                                                                            let cantPers = 0;
+                                                                                            
+                                                                                            slotsSelected.forEach(slot => {
+                                                                                                if(slot.StartDateTime){
+                                                                                                    let convertStartTime = moment.utc(slot.StartDateTime);
+                                                                                                    convertStartTime.subtract(5,'hours');
+                                                                                                    
+                                                                                                // Get the hours and minutes
+                                                                                                var hours = convertStartTime.format('HH');
+                                                                                                var minutes = convertStartTime.format('mm');
+
+                                                                                                var [startHours, startMinutes] =e.target.dataset.time.split('-');
+                                                                                                if(hours === startHours && minutes === startMinutes && slot.Cantidad_de_asistentes__c){
+                                                                                                        cantPers+=slot.Cantidad_de_asistentes__c;
+                                                                                                }
+                                                                                                }
+                                                                                            });
+                                                                                            let totalPers = 25-cantPers;
+                                                                                            let checkIfExistHour =  selectedHour.find(hour => hour.id == e.target.id && currentSchedule == hour.currentSchedule);
+                                                                                            
+                                                                                            if(checkIfExistHour){
+                                                                                                const updatedArray = selectedHour.filter(item => item.id !== e.target.id);
+                                                                                                setSelectedHour(updatedArray);
+                                                                                            }else{
+                                                                                                setSelectedHour((prevData) => [...prevData,
+                                                                                                    { id : e.target.id ,
+                                                                                                        fecha:currentInputValue,
+                                                                                                        totalPers : totalPers, 
+                                                                                                        timeSelected : sch.startTimeToShow+'-'+sch.endTimeToShow , 
+                                                                                                        persAdults: 0 ,
+                                                                                                        persChilds:0,
+                                                                                                        persJub: 0 ,
+                                                                                                        startTime:sch.startTime,
+                                                                                                        endTime:sch.endTime,
+                                                                                                        currentSchedule:currentSchedule
+                                                                                                    }]
+                                                                                                );
+                                                                                            }
+                                                                                    }
                                                                                 }}
-                                                                                id={i}>
+
+                                                                                id={i}
+                                                                                id={"chkhora"+sch.startTime + groups[0].id}
+                                                                                name={"chkhora"+sch.startTime + groups[0].id}
+                                                                                data-venuename={groups[0].name}
+                                                                                data-venueid={groups[0].id}
+                                                                                data-time={sch.startTime}>
                                                                         
                                                                                     {isCurrentTimeSelected && element.selectedTime}
                                                                                     
                                                                                     </div>
-                                                                                    {isCurrentTimeSelected &&  <div class=" position-absolute  stl-persons d-none align-items-center " aria-labelledby={i}>
-                                                                                            <input type="number"  className="form-control text-center  " min="1" oninput="this.value = Math.abs(this.value)"  value={cantPersonas}
-                                                                                                onChange={e=>setCantPersonas(e.target.value)} 
-                                                                                                        name="cantidadPersonas"  placeholder="" />
-                                                                                                        <i class="bi bi-people-fill ml-2 icon-bt" ></i>
-                                                                                    </div>}
+                                                                                 
                                                                                 
                                                                             </td>);
                                                                     
