@@ -84,8 +84,29 @@ if ($response && $response['success']) {
     }
     public function doneYappy(Request $request) {
         $salesforce = $this->salesforce();
-      //  $salesforce->update('Lead', $request->token, ['Pago_confirmado__c' => 'true']);
-        return redirect()->to('/confirmacion-pago/' . $request->token);
+        
+        $query = "SELECT Id,Precio_Estimado__c FROM  LEAD  WHERE  Id='{$request->token}'";
+        $result = $salesforce->query($query);
+
+        if ($result['totalSize'] > 0) {
+            //Add  Recibo
+            $date = new \DateTime(date('Y-m-d H:i:s'));
+
+            $receiptData = ['Confirmado__c' => false, 
+                            'Lead__c' => $request->token, 
+                            'Monto__c' => $result['records'][0]['Precio_Estimado__c'], 
+                            'Fecha_de_pago__c' => $date->format('Y-m-d\TH:i:s.000\Z'), 
+                            'Tipo__c' => 'Yappy'
+            ];
+
+            $receiptId = $salesforce->create('Recibo__c', $receiptData);
+
+            if ($receiptId) {
+                $salesforce->update('Lead', $request->token, ['Pago_confirmado__c' => 'true']);
+                return redirect()->to('/confirmacion-pago/' . $request->token);
+            }
+        }
+
     }
 
 
