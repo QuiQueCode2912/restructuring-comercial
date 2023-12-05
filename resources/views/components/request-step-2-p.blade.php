@@ -1581,7 +1581,7 @@ if ($designs) {
 
                                                                                 >
                                                                         
-                                                                                    {isCurrentTimeSelected && element.selectedTime}
+                                                                                {sch.startTimeToShow}- {sch.endTimeToShow}
                                                                                     
                                                                                     </div>
                                                                                 
@@ -1667,7 +1667,7 @@ if ($designs) {
                                                                                 data-venueid={groups[0].id}
                                                                                 data-time={sch.startTime}>
                                                                         
-                                                                                    {isCurrentTimeSelected && element.selectedTime}
+                                                                                {sch.startTimeToShow}- {sch.endTimeToShow}
                                                                                     
                                                                                     </div>
                                                                                  
