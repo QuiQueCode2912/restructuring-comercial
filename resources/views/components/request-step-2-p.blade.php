@@ -819,7 +819,7 @@ if ($designs) {
                                                     data-content="And here's some amazing content. It's very engaging. Right?">
                                                     <a href=""
                                                         onclick="showVenueInfo('{{ $grupo->name }}','{{ $grupo->venue_facilities }}','<?php echo $configuration ? max($configuration) : 0; ?>','{{ $grupo->hour_fee }}','{{ $grupo->mid_day_fee }}','{{ $grupo->all_day_fee }}','{{ $grupo->monthly_fee }}','{{ $grupo->image }}')"
-                                                        style=""><b>{{ $grupo->name }}</b></a>
+                                                        style="white-space: break-spaces;"><b>{{ $grupo->name }}</b></a>
                                                 </div>
                                             </td>
                                             <?php
