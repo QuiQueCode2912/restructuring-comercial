@@ -1528,7 +1528,7 @@ if ($designs) {
                                                                         return  ( <td className='text-center position-relative' key={i}  >
                                                                                 <div  className='spBtn' onClick={e=>{
                                                                                     e.preventDefault();
-                                                                                    handleSelectHour(element,i,sch);
+                                                                                    //handleSelectHour(element,i,sch);
                                                                                     var isAdded = chkCambio(e);
                                                                                     if(slotsSelected && isAdded!=false){
                                                                                             let cantPers = 0;
@@ -1616,7 +1616,7 @@ if ($designs) {
                                                                         return  ( <td className='text-center position-relative' key={i}  >
                                                                                 <div  className='spBtn'  onClick={e=>{
                                                                                     e.preventDefault();
-                                                                                    handleSelectHour(element,i,sch);
+                                                                                   // handleSelectHour(element,i,sch);
                                                                                     var isAdded = chkCambio(e);
                                                                                     if(slotsSelected && isAdded!=false){
                                                                                             let cantPers = 0;
