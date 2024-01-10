@@ -1424,6 +1424,10 @@ if ($designs) {
 
                                     {/* MARTES A VIERNES */}
                                     {schedules.length > 0 && currentDay < 6  &&  currentDay > 1    && schedules.map((sch,i)=>{
+                                             //Chequear para la piscina si ese dia feriado  o lluvias
+                                                if(slotsSelected && slotsSelected.find(item => item.IsAllDayEvent == true)){
+                                                                                return null;
+                                                }
                                                 let currentDate = moment();
                                                 let currentInputValue = currentSchedule ? currentSchedule+ ' ' +sch.startTimeToShow : moment().format('YYYY-MM-DD') +' ' +sch.startTimeToShow;
 
@@ -1439,10 +1443,7 @@ if ($designs) {
                                                         {groups.length > 0  && isRefresh==false && 
                                                                 groups.map((element,i)=>{
 
-                                                                        //Chequear para la piscina si ese dia feriado  o lluvias
-                                                                        if(slotsSelected && slotsSelected.find(item => item.IsAllDayEvent == true)){
-                                                                                return null;
-                                                                        }
+                                                                   
                                                         
                                                                         return  ( <td className='text-center position-relative' key={i}  >
                                                                                 <div  className='spBtn' onClick={e=>{
