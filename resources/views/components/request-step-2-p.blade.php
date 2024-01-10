@@ -1136,146 +1136,7 @@ if ($designs) {
                             window.removeEventListener('slotsSelected', eventListener);
                         };
                     }, []);
-                    /*
-                    const  handleSelectHour = (hourSelected,index,time,currentTime)=>{
-                        console.log('Init hours');
-                        
-                        //Rest time to persons
-                        setPersAdults(0);
-                        setPersChilds(0);
-                        setPersJub(0);
-
-                        setVenue(hourSelected);
-                        setIsRefresh(true);
-                        let newArr = [...groups]; // copying the old datas array
-                        var targetDate = moment(newArr[index].selectedStartTime, 'YYYY-MM-DD hh:mm A');
-                        var targetDateTwo = moment(newArr[index].selectedStartTimeTwo, 'YYYY-MM-DD hh:mm A');
-                        let dateCurrentSelOne = moment(currentTime).format('YYYY-MM-DD');
-
-
-                        var sePermite = window.almacenarVenue(newArr[index].Id, dateCurrentSelOne, newArr[index].name, false);
-                        if (!sePermite) {
-                            createAlert('', '',
-                                '<b>Sólo se permiten 2 horas por día!</b><br/>Puedes cambiar tus horas seleccionadas para este día si lo deseas.',
-                                'warning', true, true, 'pageMessages');
-                            console.log("No se permite!");
-                            return false;
-                        }
-
-                        
-
-                        if(newArr[index].selected == true  &&  targetDate.isSame(currentTime)){
-                            newArr[index].selected=false;
-                            newArr[index].startTime='';
-
-                            let dateCurrentSelOne = moment(newArr[index].selectedStartTime).format('YYYY-MM-DD');
-                            
-                            if( targetDate.isSame(targetDateTwo,'day')){
-                                window.agregarBoton(dateCurrentSelOne,1);
-                            }else{
-                                window.eliminarBoton(dateCurrentSelOne);
-                            }
-
-                            newArr[index].selectedStartTime ='';
-                            targetDate = '';
-                           
-
-
-                        }else if(!newArr[index].selected && !newArr[index].startTimeTwo){
-                            newArr[index].selected=true;
-                            newArr[index].selectedTime = time.startTimeToShow + '-'+ time.endTimeToShow;
-                            newArr[index].startTime = time.startTime;
-                            newArr[index].endTime = time.endTime;
-                            newArr[index].selectedStartTime = currentSchedule ?  currentSchedule+' '+time.startTimeToShow :  moment().format('YYYY-MM-DD')+' ' +time.startTimeToShow;
-                            targetDate = moment(newArr[index].selectedStartTime,'YYYY-MM-DD hh:mm A');
-                            window.agregarBoton(moment(newArr[index].selectedStartTime).format('YYYY-MM-DD'),1);
-                        }
-
-                        if(newArr[index].selected == true && !newArr[index].selectedTwo && !targetDate.isSame(currentTime)){
-                            newArr[index].selectedTwo=true;
-                            newArr[index].selectedTimeTwo = time.startTimeToShow + '-'+ time.endTimeToShow;
-                            newArr[index].startTimeTwo = time.startTime;
-                            newArr[index].endTimeTwo = time.endTime;
-                            newArr[index].selectedStartTimeTwo = currentSchedule ?  currentSchedule+' '+time.startTimeToShow :  moment().format('YYYY-MM-DD')+' ' +time.startTimeToShow;
-                            targetDateTwo = moment(newArr[index].selectedStartTimeTwo,'YYYY-MM-DD hh:mm A');
-                            
-                            let dateCurrentSelOne = moment(newArr[index].selectedStartTime).format('YYYY-MM-DD');
-                            let dateCurrentSelTwo = moment(newArr[index].selectedStartTimeTwo).format('YYYY-MM-DD');
-
-                            if(dateCurrentSelOne == dateCurrentSelTwo ){
-                                window.agregarBoton(dateCurrentSelTwo,2);
-                            }else{
-                                window.agregarBoton(dateCurrentSelTwo,1);
-                            }
-
-
-                        }else if(newArr[index].selectedTwo == true && targetDateTwo.isSame(currentTime)){
-                            newArr[index].selectedTwo=false;
-                            newArr[index].startTimeTwo='';
-
-                            let dateCurrentSelOne = moment(newArr[index].selectedStartTime).format('YYYY-MM-DD');
-                            let dateCurrentSelTwo = moment(newArr[index].selectedStartTimeTwo).format('YYYY-MM-DD');
-
-                            if(dateCurrentSelOne == dateCurrentSelTwo ){
-                                window.agregarBoton(dateCurrentSelTwo,1);
-                            }else{
-                                window.eliminarBoton(dateCurrentSelTwo);
-                            }
-
-                            newArr[index].selectedStartTimeTwo ='';
-                            targetDateTwo = '';
-                            
-                          
-                            
-                        }
-
-                      
-                        if(!newArr[index].selectedTwo && !newArr[index].selected){
-                            let dateCurrentSelTwo = moment(newArr[index].selectedStartTimeTwo).format('YYYY-MM-DD');
-                            let dateCurrentSelOne = moment(newArr[index].selectedStartTime).format('YYYY-MM-DD');
-                            window.eliminarBoton(dateCurrentSelOne);
-                            window.eliminarBoton(dateCurrentSelTwo);
-                        }
-                        
-
-                        
-                      
-
-                   
-                        setGroups(newArr);
-                        setSelectedHour([...selectedHour,newArr[0]]);
-                        
-                        
-                        if(slotsSelected){
-                            let cantPers = 0;
-                            
-                            slotsSelected.forEach(slot => {
-                                if(slot.StartDateTime){
-                                    let convertStartTime = moment.utc(slot.StartDateTime);
-                                    convertStartTime.subtract(5,'hours');
-                                    
-                                   // Get the hours and minutes
-                                   var hours = convertStartTime.format('HH');
-                                   var minutes = convertStartTime.format('mm');
-
-                                   var [startHours, startMinutes] = time.startTime.split('-');
-                                   if(hours === startHours && minutes === startMinutes && slot.Cantidad_de_asistentes__c){
-                                        cantPers+=slot.Cantidad_de_asistentes__c;
-                                   }
-                                }
-                            });
-                             let totalPers = 25-cantPers;
-                            if(totalPers<=0){
-                                setPersAssist(0);
-                            }else{
-                                setPersAssist(totalPers);
-                            }
-                            
-                        }
-                        setIsRefresh(false);
-
-                    }*/
-
+                    
 
                     const  handleAdultsSum = (e,id)=>{
                         e.preventDefault();
@@ -1392,9 +1253,13 @@ if ($designs) {
                         buttonRef.current.click();
                     }
 
-  
-                 
 
+                    const  checkIfExistBlockDay = (selectedSchedule) => {
+                        if(slotsSelected.find(item => item.IsAllDayEvent == true && moment(item.StartDateTime, 'YYYY-MM-DD').isSame(selectedSchedule) ) ) return true;
+                        return  false;
+                    }
+
+  
                     return (
                         <div>
                             <div id="overlay" class="spinner-styles" hidden={isLoading} >
@@ -1424,10 +1289,12 @@ if ($designs) {
 
                                     {/* MARTES A VIERNES */}
                                     {schedules.length > 0 && currentDay < 6  &&  currentDay > 1    && schedules.map((sch,i)=>{
-                                             //Chequear para la piscina si ese dia feriado  o lluvias
-                                                if(slotsSelected && slotsSelected.find(item => item.IsAllDayEvent == true)){
-                                                                                return null;
-                                                }
+                                                
+                                                //Chequear para la piscina si ese dia feriado  o lluvias
+                                                if(currentSchedule){
+                                                    if(checkIfExistBlockDay(currentSchedule)) return  null;
+                                                }  
+                                                
                                                 let currentDate = moment();
                                                 let currentInputValue = currentSchedule ? currentSchedule+ ' ' +sch.startTimeToShow : moment().format('YYYY-MM-DD') +' ' +sch.startTimeToShow;
 
