@@ -1446,6 +1446,11 @@ if ($designs) {
                                                                                     var isAdded = chkCambio(e);
                                                                                     if(slotsSelected && isAdded!=false){
                                                                                             let cantPers = 0;
+
+                                                                                            //Chequear para la piscina si ese dia feriado  o lluvias
+                                                                                            if(slotsSelected.find(item => item.IsAllDayEvent == true)){
+                                                                                                return null;
+                                                                                            }
                                                                                             
                                                                                             slotsSelected.forEach(slot => {
                                                                                                 if(slot.StartDateTime){
