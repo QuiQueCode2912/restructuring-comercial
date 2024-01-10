@@ -1438,6 +1438,11 @@ if ($designs) {
                                                         <th  className='headcol'  >{sch.startTimeToShow} </th>   
                                                         {groups.length > 0  && isRefresh==false && 
                                                                 groups.map((element,i)=>{
+
+                                                                        //Chequear para la piscina si ese dia feriado  o lluvias
+                                                                        if(slotsSelected && slotsSelected.find(item => item.IsAllDayEvent == true)){
+                                                                                return null;
+                                                                        }
                                                         
                                                                         return  ( <td className='text-center position-relative' key={i}  >
                                                                                 <div  className='spBtn' onClick={e=>{
@@ -1447,11 +1452,6 @@ if ($designs) {
                                                                                     if(slotsSelected && isAdded!=false){
                                                                                             let cantPers = 0;
 
-                                                                                            //Chequear para la piscina si ese dia feriado  o lluvias
-                                                                                            if(slotsSelected.find(item => item.IsAllDayEvent == true)){
-                                                                                                return null;
-                                                                                            }
-                                                                                            
                                                                                             slotsSelected.forEach(slot => {
                                                                                                 if(slot.StartDateTime){
                                                                                                     let convertStartTime = moment.utc(slot.StartDateTime);
