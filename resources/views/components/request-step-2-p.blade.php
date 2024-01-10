@@ -1383,6 +1383,11 @@ if ($designs) {
 
                                     {/*SABADO*/}
                                     {schedulesSaturday.length > 0 && currentDay == 6  && schedulesSaturday.map((sch,i)=>{
+                                                //Chequear para la piscina si ese dia feriado  o lluvias
+                                                if(currentSchedule){
+                                                        if(checkIfExistBlockDay(currentSchedule)) return  null;
+                                                }  
+
                                                 let currentDate = moment();
                                                 let currentInputValue = currentSchedule ? currentSchedule+ ' ' +sch.startTimeToShow : moment().format('YYYY-MM-DD') +' ' +sch.startTimeToShow;
 
@@ -1471,6 +1476,10 @@ if ($designs) {
 
                                         {/* DOMINGO */}
                                         {schedulesSunday.length > 0 && currentDay == 0  && schedulesSunday.map((sch,i)=>{
+                                              //Chequear para la piscina si ese dia feriado  o lluvias
+                                              if(currentSchedule){
+                                                        if(checkIfExistBlockDay(currentSchedule)) return  null;
+                                                }  
                                             let currentDate = moment();
                                                 let currentInputValue = currentSchedule ? currentSchedule+ ' ' +sch.startTimeToShow : moment().format('YYYY-MM-DD') +' ' +sch.startTimeToShow;
 
