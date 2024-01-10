@@ -26,8 +26,8 @@ $pvax = isset($parentVenue) ? $parentVenue : $venue['name'];
                 @if ($venueroute == 'parque-cds')
                     @if ($parentid != '02i3m00000Fx0PJAAZ')
                         <!-- 02i3m00000D9BANAA4  ESTE ID ES DE LA PISCINA  -->
-                        <!-- 02i3m00000D9BANAA4  ESTE ID ES DE LA -Baloncesto individual   -->
-                        @if ($hourfee > 0 && $id != '02i3m00000D9BANAA4' && $id != '02iRb0000009jVlIAI')
+                        <!-- 02i3m00000D9Gu9AAF  ESTE ID ES DE LA -Baloncesto individual   -->
+                        @if ($hourfee > 0 && $id != '02i3m00000D9BANAA4' && $id != '02i3m00000D9Gu9AAF')
                             <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=hora"
                                 class="btn btn-primary btn-sm">Reservar horas</a>
                         @endif
@@ -48,7 +48,7 @@ $pvax = isset($parentVenue) ? $parentVenue : $venue['name'];
                         @endif
 
                         <!--Baloncesto individual -->
-                        @if ($id == '02iRb0000009jVlIAI')
+                        @if ($id == '02i3m00000D9Gu9AAF')
                           <span style="font-family: roboto; font-weight: 600; text-transform: none;">Para utilizar el Área
                               de Pesas debes realizar el pago por ventanilla en el Gimnasio, Edificio 183.<br>
                               <br>Lunes a Viernes de 6:00 am a 9:00 pm.<br>Sábados y Domingos de 6:00 am a 6:00 pm.
