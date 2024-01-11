@@ -49,8 +49,7 @@ $pvax = isset($parentVenue) ? $parentVenue : $venue['name'];
 
                         <!--Baloncesto individual -->
                         @if ($id == '02iRb0000009jcDIAQ')
-                          <span style="font-family: roboto; font-weight: 600; text-transform: none;">Para utilizar el Área
-                              de Pesas debes realizar el pago por ventanilla en el Gimnasio, Edificio 183.<br>
+                          <span style="font-family: roboto; font-weight: 600; text-transform: none;">Para utilizar la cancha para tirar pelota debes realizar el pago por ventanilla en el Gimnasio, Edificio 183.<br>
                               <br>Lunes a Viernes de 6:00 am a 9:00 pm.<br>Sábados y Domingos de 6:00 am a 6:00 pm.
                           </span>
                         @endif
