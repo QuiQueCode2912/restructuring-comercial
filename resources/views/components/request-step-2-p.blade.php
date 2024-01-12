@@ -190,7 +190,7 @@ if ($designs) {
                 $("[id$='" + clave + "']").not('.disabled').removeClass("secundary");
             }
             $(tarChk).removeClass("selected");
-            validateBasketCourt(e.target.dataset.venueid, e.target.dataset.time, true);
+            if(e.target.dataset.venueid != '02i3m00000D9BANAA3') validateBasketCourt(e.target.dataset.venueid, e.target.dataset.time, true);
 
         }
         console.log('chkCambio: ' + tarCont + ' / ' + fecha);
