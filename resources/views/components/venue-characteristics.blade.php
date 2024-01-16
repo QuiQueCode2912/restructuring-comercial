@@ -14,9 +14,9 @@
                 <ul>
                     <li>Las reservas realizadas a través de la página web recibirán un correo de confirmación.</li>
                     <li>Para cancelar una reserva se debe acceder al correo de confirmación para desde allí cancelar la reserva.</li>
-                    <li>Las cancelaciones realizadas 12 horas antes de la fecha reservada recibirán un reembolso del 100%.</li>
-                    <li>Las cancelaciones realizadas dentro de las 12 horas antes de la fecha reservada recibirán un reembolso del 50%.</li>
-                    <li>Por favor, tenga en cuenta que los reembolsos sólo se tramitarán por ACH.</li>
+                    <li>Las cancelaciones realizadas <b>12 horas antes</b> de la fecha reservada recibirán un reembolso del <b>100%</b>.</li>
+                    <li>Las cancelaciones realizadas <b>dentro de las 12 horas</b> antes de la fecha reservada recibirán un reembolso del <b>50%</b>.</li>
+                    <li><b>Por favor, tenga en cuenta que los reembolsos sólo se tramitarán por ACH</b>.</li>
                 </ul>
                         
             </div>
