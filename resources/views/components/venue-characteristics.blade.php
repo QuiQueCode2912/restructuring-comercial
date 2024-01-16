@@ -261,7 +261,7 @@
     @if ($venue == 'Parque Ciudad del Saber')
         <a href="" data-toggle="modal" data-target="#myModal" style="cursor: pointer;"><b>Políticas de reserva y
                 cancelación de espacios de CDS</b></a>
-        <a href="" data-toggle="modal" data-target="#modalParque" style="cursor: pointer;"><b>Reglamentos de uso del Parque Ciudad del Saber </b></a>
+        <a href="" data-toggle="modal" data-target="#modalParque" style="cursor: pointer;display:block;margin-top:1%"><b>Reglamentos de uso del Parque Ciudad del Saber </b></a>
                 
         @if (
             $parentid == '02i3m00000DiduZAAR' ||
@@ -272,7 +272,7 @@
                 $parentid == '02i3m00000DidtxAAB')
 
             <a href="" data-toggle="modal" data-target="#modalInfoSpaces"
-                style="cursor: pointer;display:block;margin-top:2%">
+                style="cursor: pointer;display:block;margin-top:1%">
                 <b>Reglamentos de uso del área deportiva </b>
             </a>
         @endif
