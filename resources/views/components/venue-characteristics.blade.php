@@ -203,7 +203,6 @@
 
                 <!-- Raquetbol -->
                 @if ($parentid == '02i3m00000Fx0PEAAZ')
-                    <p><strong>Reglas adicionales en canchas de Ráquetbol:</strong></p>
                     <ul>
                         <li>El cliente debe traer su raqueta y pelotas para jugar.</li>
                         <li>Es obligatorio el uso de lentes de protección para ingresar a las canchas.</li>
