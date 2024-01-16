@@ -267,33 +267,7 @@
 
             <a href="" data-toggle="modal" data-target="#modalInfoSpaces"
                 style="cursor: pointer;display:block;margin-top:2%">
-                <b>Reglamentos de uso de
-                    @if ($parentid == '02i3m00000DiduZAAR')
-                        Piscina
-                    @endif
-
-                    @if ($parentid == '02i3m00000DidtxAAB')
-                        Canchas de Baloncesto
-                    @endif
-
-                    @if ($parentid == '02i3m00000Didu3AAB')
-                        Canchas de Voleibol
-                    @endif
-
-                    @if ($parentid == '02i3m00000Didu7AAB')
-                        Tenis
-                    @endif
-
-                    @if ($parentid == '02i3m00000FbwwjAAB')
-                        Boxeo
-                    @endif
-
-                    @if ($parentid == '02i3m00000Fx0PEAAZ')
-                        Ráquetbol
-                    @endif
-                    
-
-                </b>
+                <b>Reglamentos de uso del área deportiva </b>
             </a>
         @endif
 
