@@ -11,9 +11,6 @@
                 </button>
             </div>
             <div class="modal-body">
-
-                <p><strong>Por favor, tenga en cuenta las siguientes normas y políticas durante su visita al Parque
-                        Ciudad del Saber:</strong></p>
                 <ul>
                     <li>Las reservas realizadas a través de la página web recibirán un correo de confirmación.</li>
                     <li>Para cancelar una reserva se debe acceder al correo de confirmación para desde allí cancelar la reserva.</li>
