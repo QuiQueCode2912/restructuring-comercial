@@ -15,42 +15,47 @@
                 <p><strong>Por favor, tenga en cuenta las siguientes normas y políticas durante su visita al Parque
                         Ciudad del Saber:</strong></p>
                 <ul>
+                    <li>Las reservas realizadas a través de la página web recibirán un correo de confirmación.</li>
+                    <li>Para cancelar una reserva se debe acceder al correo de confirmación para desde allí cancelar la reserva.</li>
+                    <li>Las cancelaciones realizadas 12 horas antes de la fecha reservada recibirán un reembolso del 100%.</li>
+                    <li>Las cancelaciones realizadas dentro de las 12 horas antes de la fecha reservada recibirán un reembolso del 50%.</li>
+                    <li>Por favor, tenga en cuenta que los reembolsos sólo se tramitarán por ACH.</li>
+                </ul>
+                        
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Inicio segundo Modal  -->
+
+<div class="modal fade" id="modalParque" tabindex="-1" role="dialog" aria-labelledby="modalParque" aria-hidden="true">
+    <div class="modal-dialog  modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalParque">Reglamentos de uso del Parque Ciudad del Saber </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul>
                     <li>No se permite el consumo y venta de bebidas alcohólicas.</li>
                     <li>No se permite la venta de comida y bebidas (sodas, aguas, bebidas energizantes, etc.).</li>
                     <li>No se permite fumar.</li>
-                    <li>Cumplir con el uso apropiado de los estacionamientos. No se pueden estacionar en los
-                        laterales
-                        de la vía principal del Parque.</li>
-                    <li>No se permite el uso de murgas, troneras, parlantes, bocinas, micrófonos y otros
-                        instrumentos de
-                        ruido excesivo.</li>
-                    <li>Se le solicita depositar los desechos de basura que se produzcan durante el uso de la
-                        instalación en los cestos de basura. Se le hará un cargo de B/. 100.00 en caso de encontrar
-                        algún tipo de desecho en el área asignada.</li>
-                    <li>LA FUNDACIÓN por condiciones climatológicas se reserva el derecho de uso de las
-                        instalaciones
-                        para preservar el buen estado de estas.</li>
-                    <li>LA FUNDACIÓN no se hará responsable por la pérdida de objetos de valor (prendas, celulares,
-                        equipos deportivos, etc.) durante el desarrollo de las actividades.</li>
-                    <li>El Cliente exonera a LA FUNDACIÓN de cualquier imprevisto, lesión o accidente que ocurra con
-                        algún participante durante las actividades del evento.</li>
-                    <li>Respetar y obedecer las instrucciones del personal del Parque Ciudad del Saber y agentes de
-                        Seguridad de CdS.</li>
-                    <li>Se prohibe los actos de violencia, riña y palabras ofensivas durante las actividades. De
-                        ocurrir
-                        algunos de estos hechos, El Cliente deberá expulsar al equipo o persona que incurrió en la
-                        falta
-                        y, de tratarse de la barra, está deberá abandonar las instalaciones.</li>
-                    <li>El marcado del cuadro o la cancha será por cuenta de El Cliente.</li>
-                    <li>Las cancelaciones realizadas <strong>12 horas antes</strong> de la fecha reservada recibirán
-                        un
-                        reembolso del <strong>100%</strong>.</li>
-                    <li>Las cancelaciones realizadas <strong>dentro de las 12 horas</strong> antes de la fecha
-                        reservada
-                        recibirán un reembolso del <strong>50%</strong>.</li>
-                    <li><strong>Por favor, tenga en cuenta que los reembolsos sólo se tramitarán por ACH</strong>.
-                    </li>
+                    <li>Cumplir con el uso apropiado de los estacionamientos. No se pueden estacionar en los laterales de la vía principal del Parque.</li>
+                    <li>No se permite el uso de murgas, troneras, parlantes, bocinas, micrófonos y otros instrumentos de ruido excesivo.</li>
+                    <li>Se le solicita depositar los desechos de basura que se produzcan durante el uso de la instalación en los cestos de basura. Se le hará un cargo de B/. 100.00 en caso de encontrar algún tipo de desecho en el área asignada.</li>
+                    <li>LA FUNDACIÓN por condiciones climatológicas se reserva el derecho de uso de las instalaciones para preservar el buen estado de estas.</li>
+                    <li>LA FUNDACIÓN no se hará responsable por la pérdida de objetos de valor (prendas, celulares, equipos deportivos, etc.) durante el desarrollo de las actividades.</li>
+                    <li>El Cliente exonera a LA FUNDACIÓN de cualquier imprevisto, lesión o accidente que ocurra con algún participante durante las actividades del evento.</li>
+                    <li>Respetar y obedecer las instrucciones del personal del Parque Ciudad del Saber y agentes de Seguridad de CdS.</li>
+                    <li>Se prohíbe los actos de violencia, riña y palabras ofensivas durante las actividades. De ocurrir algunos de estos hechos, El Cliente deberá expulsar al equipo o persona que incurrió en la falta y, de tratarse de la barra, esta deberá abandonar las instalaciones.</li>
                 </ul>
+                        
+                        
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -59,7 +64,7 @@
     </div>
 </div>
 
-<!-- Inicio Segundo Modal  -->
+<!-- Inicio tecer Modal  -->
 
 <div class="modal fade" id="modalInfoSpaces" tabindex="-1" role="dialog" aria-labelledby="modalInfoSpaces"
     aria-hidden="true">
@@ -256,7 +261,8 @@
     @if ($venue == 'Parque Ciudad del Saber')
         <a href="" data-toggle="modal" data-target="#myModal" style="cursor: pointer;"><b>Políticas de reserva y
                 cancelación de espacios de CDS</b></a>
-
+        <a href="" data-toggle="modal" data-target="#modalParque" style="cursor: pointer;"><b>Reglamentos de uso del Parque Ciudad del Saber </b></a>
+                
         @if (
             $parentid == '02i3m00000DiduZAAR' ||
                 $parentid == '02i3m00000Didu3AAB' ||
