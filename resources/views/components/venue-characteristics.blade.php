@@ -127,8 +127,6 @@
                         <li>Cada persona usa estas instalaciones bajo su propia responsabilidad, teniendo en cuenta sus
                             condiciones y limitaciones físicas y de salud.</li>
 
-                        <hr />
-                        <p>El marcado del cuadro o la cancha será por cuenta de El Cliente.</p>
 
                     </ul>
                 @endif
