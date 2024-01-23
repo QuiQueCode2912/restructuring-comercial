@@ -15,7 +15,7 @@ class Venue extends Model
     protected $fillable = [
       'id', 'name', 'main_text', 'secondary_text', 'parent_id',
       'type', 'hour_fee', 'mid_day_fee', 'all_day_fee', 'monthly_fee', 'url',
-      'status', 'show_on_website', 'seasonal_hour_fee', 
+      'status', 'show_on_website', 'seasonal_hour_fee','showInCalendar',
       'seasonal_mid_day_fee', 'seasonal_all_day_fee','nightcharge','weekendcharge','holidaycharge','residentdiscount','retireddiscount','kiddiscount','employeediscount','tipo_uso','venuesorder'
     ];
 
