@@ -900,7 +900,7 @@ if ($designs) {
                                             if (strpos($facilidadesVenue, 'Luminarias') !== false) {
                                                 $luminarias = 1;
                                             }
-                                            if($grupo->showInCalendar == 'No')){
+                                            if($grupo->showInCalendar == 'No'){
                                                 return;
                                             }
                                             ?>
