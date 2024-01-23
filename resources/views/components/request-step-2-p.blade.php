@@ -178,6 +178,7 @@ if ($designs) {
                         return false;
                     }
                     if(e.target.dataset.venueid != '02i3m00000D9BANAA3') validateBasketCourt(e.target.dataset.venueid, e.target.dataset.time, false);
+                    
                 } else {
                     almacenarVenue(tarCont, fecha, nombreVenue, reemplazar);
                 }
@@ -826,7 +827,6 @@ if ($designs) {
                                             if ($grupo->nightcharge == 1) {
                                                 $hayNocturnos = 1;
                                             }
-                                       
                                             $facilidadesVenue = $grupo->venue_facilities;
                                             if (strpos($facilidadesVenue, 'Luminarias') !== false) {
                                                 $hayNocturnos = 1;
@@ -901,7 +901,6 @@ if ($designs) {
                                             if (strpos($facilidadesVenue, 'Luminarias') !== false) {
                                                 $luminarias = 1;
                                             }
-                                          
                                             ?>
                                             <td class="long">
                                                 <?php if($horaActual <= 17 || ($luminarias == 1 && $horaActual > 17)) : ?>
