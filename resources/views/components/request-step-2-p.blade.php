@@ -900,6 +900,9 @@ if ($designs) {
                                             if (strpos($facilidadesVenue, 'Luminarias') !== false) {
                                                 $luminarias = 1;
                                             }
+                                            if($grupo->showInCalendar == 'No')){
+                                                return;
+                                            }
                                             ?>
                                             <td class="long">
                                                 <?php if($horaActual <= 17 || ($luminarias == 1 && $horaActual > 17)) : ?>
