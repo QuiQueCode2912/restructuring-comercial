@@ -579,7 +579,8 @@ class IndexController extends Controller
 
         $parent = Venue::find($routeName->uri);
         //  CODIGO PARA MOSTRAR SÓLO TENIS - PARA QUE SEA NORMAL COMENTAR DE 640 - 645 Y DESCOMENTAR 647 - 650 - RECUERDA! Cambiar index.blade.php las DISCIPLINAS
-        $includeIds = ['02i3m00000Didu7AAB', '02i3m00000Fx0PEAAZ', '02i3m00000Fx0PJAAZ', '02i3m00000DidtxAAB', '02i3m00000Didu3AAB', '02i3m00000FbwwjAAB', '02i3m00000DiduZAAR','02i3m00000DiduCAAR'];
+        $includeIds = ['02i3m00000Didu7AAB', '02i3m00000Fx0PEAAZ', '02i3m00000Fx0PJAAZ', '02i3m00000DidtxAAB', '02i3m00000Didu3AAB', 
+                        '02i3m00000FbwwjAAB', '02i3m00000DiduZAAR','02i3m00000DiduCAAR','02i3m00000DiduVAAR'];
         if (!in_array($parent->id, $includeIds)) {
             $venues = Venue::where('parent_id', '=', $parent->id)
                 ->where('id', '!=', $parent->id)
@@ -591,7 +592,8 @@ class IndexController extends Controller
                         ->orWhere('id', '=', '02i3m00000DidtxAAB')
                         ->orWhere('id', '=', '02i3m00000Didu3AAB')
                         ->orWhere('id', '=', '02i3m00000DiduCAAR')
-                        ->orWhere('id', '=', '02i3m00000FbwwjAAB');
+                        ->orWhere('id', '=', '02i3m00000FbwwjAAB')
+                        ->orWhere('id', '=', '02i3m00000DiduVAAR');
                 })
                 ->where('show_on_website', 'Si')
                 ->orderBy('venuesorder', 'asc')
