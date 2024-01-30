@@ -1337,6 +1337,9 @@ if ($designs) {
                                                                                                 }
                                                                                             });
                                                                                             let totalPers = 25-cantPers;
+                                                                                            if(totalPers < 0){
+                                                                                                totalPers = 0;
+                                                                                            }
                                                                                             let checkIfExistHour =  selectedHour.find(hour => hour.id == e.target.id && currentSchedule == hour.currentSchedule);
                                                                                             
                                                                                             if(checkIfExistHour){
@@ -1584,8 +1587,8 @@ if ($designs) {
                                                             <input type="number" value={item.persAdults} className="form-control  text-center w-25 "  readonly min="1" oninput="this.value = Math.abs(this.value)"  
                                                                                                                                     name="cantidadPersonas" />
                                                             <div className=''>
-                                                                <button className='btn btn-primary  ml-1' onClick={e=>handleAdultsSum(e,item.id)}>+</button>
-                                                                <button className='btn btn-primary  ml-1' onClick={e=>handleAdultsRest(e,item.id)}>-</button>
+                                                                <button className='btn btn-primary  ml-1' disabled={item.totalPers < 0 ?  true : false} onClick={e=>handleAdultsSum(e,item.id)}>+</button>
+                                                                <button className='btn btn-primary  ml-1' disabled={item.totalPers < 0 ?  true : false}  onClick={e=>handleAdultsRest(e,item.id)}>-</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1595,8 +1598,8 @@ if ($designs) {
                                                             <input type="number" value={item.persChilds} className="form-control  text-center w-25 "  readonly min="1" oninput="this.value = Math.abs(this.value)"  
                                                                                                                                     name="cantidadPersonas" />
                                                             <div className=''>
-                                                                <button className='btn btn-primary  ml-1' onClick={e=>handleChildSum(e,item.id)}>+</button>
-                                                                <button className='btn btn-primary  ml-1' onClick={e=>handleChildRest(e,item.id)}>-</button>
+                                                                <button className='btn btn-primary  ml-1' disabled={item.totalPers < 0 ?  true : false} onClick={e=>handleChildSum(e,item.id)}>+</button>
+                                                                <button className='btn btn-primary  ml-1'  disabled={item.totalPers < 0 ?  true : false} onClick={e=>handleChildRest(e,item.id)}>-</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1606,8 +1609,8 @@ if ($designs) {
                                                             <input type="number" value={item.persJub} className="form-control  text-center w-25 "  readonly min="1" oninput="this.value = Math.abs(this.value)"  
                                                                                                                                     name="cantidadPersonas" />
                                                             <div className=''>
-                                                                <button className='btn btn-primary  ml-1' onClick={e=>handleJubSum(e,item.id)}>+</button>
-                                                                <button className='btn btn-primary  ml-1' onClick={e=>handleJubRest(e,item.id)}>-</button>
+                                                                <button className='btn btn-primary  ml-1' disabled={item.totalPers < 0 ?  true : false}  onClick={e=>handleJubSum(e,item.id)}>+</button>
+                                                                <button className='btn btn-primary  ml-1' disabled={item.totalPers < 0 ?  true : false}  onClick={e=>handleJubRest(e,item.id)}>-</button>
                                                             </div>
                                                         </div>
                                                     </div>
