@@ -19,7 +19,7 @@ switch (app('request')->step) {
     case 3 : $path = 'vista-previa'; break;
   }
   ?>
-  <li><a href="/cotizacion/<?php echo $path ?>" class="<?php echo $i < $current ? 'done' : ($i == $current ? 'current' : '') ?>"></a></li>
+  <li><a onclick="return func(0)" class="<?php echo $i < $current ? 'done' : ($i == $current ? 'current' : '') ?>"></a></li>
 <?php endfor ?>
 </ul>
 
