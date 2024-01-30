@@ -1208,6 +1208,9 @@ class IndexController extends Controller
                     case '02i3m00000D9DaPAAV':
                         //TODO: VERIFICAR SI ES CONSULTIVA
                         $step = '2-p';
+                        if ($venuep->id == '02i3m00000DiduVAAR') {
+                            $step = '2';
+                        }
                         switch (session()->get('franja')) {
                             case 'mes':
                                 if ($venuep->id == '02i3m00000Didu7AAB') {
