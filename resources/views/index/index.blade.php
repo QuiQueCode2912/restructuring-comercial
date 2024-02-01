@@ -45,7 +45,7 @@
         <a href="<?php echo $venue['url'] ?>"><img src="<?php echo substr($venue['image'], 0, strrpos($venue['image'], '.')) . '_480.' . substr($venue['image'], strrpos($venue['image'], '.') + 1) ?>"></a>
         <a href="<?php echo $venue['url'] ?>" class="venue-name"><?php echo  $venue['name'] ?></a>
         <?php
-        $max_pax = 0; 
+        $max_pax = 0;
         $ppd = 0;
         $sppd = 0;
         if ($venue['venues']) {
@@ -91,12 +91,12 @@
             {
             if($pvax != 'parque-cds')
               echo "Disciplinas";
-            else 
-              if($venue['name']=='Piscina') 
+            else
+              if($venue['name']=='Piscina')
                 echo 'Piscinas';
               else
                 echo "Canchas";
-              
+
             }
             ?></dt>
             <dd><?php
@@ -127,12 +127,12 @@
               desde
               @if($sppd < $ppd && $sppd > 0)
               <span class="strike">$<?php echo $ppd ?></span>
-              <span class="text-danger">$<?php echo $sppd < $ppd ? $sppd : $ppd ?></span> 
+              <span class="text-danger">$<?php echo $sppd < $ppd ? $sppd : $ppd ?></span>
               @else
               @if(($ppd < $pph && $ppd > 0 ) || ($pvax != 'parque-cds'  && $pvax != 'Parque Ciudad del Saber'))
-              $<?php echo $sppd < $ppd ? $sppd : $ppd ?> 
+              $<?php echo $sppd < $ppd ? $sppd : $ppd ?>
               @else
-              $<?php echo $pph ?> 
+              $<?php echo $pph ?>
               @endif
               @endif
               <span style="color:#0088ff">/*</span>
@@ -192,13 +192,14 @@
 
 <x-clients clients="{{ $clients }}" />
 
+<!--
 @if($pvax == 'parque-cds')
   <x-contact-parque />
 @endif
 
 <?php if ($show_contact_form) : ?>
 <x-contact />
-<?php endif ?>
+<?php endif ?> -->
 
 <x-footer />
 <x-security-policies />
