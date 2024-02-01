@@ -1246,7 +1246,7 @@ if ($designs) {
                             let tot= element.persJub +  element.persChilds + element.persAdults;
                             objAux.totalPersons = tot.toString();
 
-                            lsHoursToSchedule.push(objAux);
+                            if(tot > 0 ) lsHoursToSchedule.push(objAux);
                                 
                         });
 
