@@ -145,7 +145,7 @@
           <dl>
             <dt>Eventos con alcohol</dt>
             <dd>
-            @if($pvax != 'parque-cds'  && $pvax != 'Parque Ciudad del Saber')
+            @if($pvax != 'parque-cds'  && $pvax != 'Parque Ciudad del Saber' && $pvax!='Complejo de hospedaje')
             Permitidos
             @else
             No permitidos
