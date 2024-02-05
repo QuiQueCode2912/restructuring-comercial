@@ -286,7 +286,7 @@ function Counter() {
           <tbody >
 
             {/* MARTES A VIERNES */}
-            {schedules.length > 0 &&  currentDay < 6  &&  currentDay >= 0 &&  schedules.map((sch, i) => {
+            {schedules.length > 0 &&  currentDay < 6  &&  currentDay >= 1 &&  schedules.map((sch, i) => {
 
               //Chequear para la piscina si ese dia feriado  o lluvias
               if (currentSchedule) {
