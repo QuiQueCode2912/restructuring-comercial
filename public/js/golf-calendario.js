@@ -8,6 +8,9 @@ function Counter() {
   const [isNext, setIsNext] = React.useState(true);
   const [slotsSelected, setSlotsSelected] = React.useState([]);
 
+  const [currentDay, setCurrentDay] = React.useState(null);
+
+
   const [groups, setGroups] = React.useState([
     {
       "venue_id": 159,
@@ -107,21 +110,7 @@ function Counter() {
     }
   ]);
 
-  React.useEffect(() => {
-    // Add an event listener to capture the custom event
-    const eventListener = async (event) => {
-      if (event.detail.slotsSelected) setSlotsSelected(JSON.parse(event.detail.slotsSelected));
-      setIsLoading(true);
-    };
 
-    //event dispach from  CORE.JS LINE 160
-    window.addEventListener('slotsSelected', eventListener);
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener('slotsSelected', eventListener);
-    };
-  }, []);
 
   const handleClick = async e => {
     e.preventDefault();
@@ -225,6 +214,55 @@ function Counter() {
     );
   }
 
+  React.useEffect(() => {
+    // Add an event listener to capture the custom event
+    const eventListener = async (event) => {
+      if (event.detail.slotsSelected) setSlotsSelected(JSON.parse(event.detail.slotsSelected));
+      setIsLoading(true);
+    };
+
+    //event dispach from  CORE.JS LINE 160
+    window.addEventListener('slotsSelected', eventListener);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('slotsSelected', eventListener);
+    };
+  }, []);
+
+  React.useEffect(()=>{
+      if(currentDay == null ){
+          const date = new Date();
+          const dayOfWeek = date.getDay();
+          setCurrentDay(dayOfWeek);
+      }
+  },[currentDay])
+
+                
+  React.useEffect(() => {
+    // Add an event listener to capture the custom event
+    const eventListener = async(event) => {    
+        setIsLoading(false); 
+        const dayOfWeek = moment(event.detail.currentDate).day();
+        setCurrentDay(dayOfWeek);
+        setCurrentSchedule(event.detail.currentDate);
+        //setSelectedHour([]);
+        $("[id^='chkhora']").removeClass("selected");
+        $("[id^='chkhora']").removeClass("secundary");
+      
+        setIsNext(false);
+    };
+
+    //event dispach from  CORE.JS LINE 143
+    window.addEventListener('dateSelected', eventListener);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+        window.removeEventListener('dateSelected', eventListener);
+    };
+}, []);
+
+
 
   return (
     <div>
@@ -248,7 +286,7 @@ function Counter() {
           <tbody >
 
             {/* MARTES A VIERNES */}
-            {schedules.length > 0 && schedules.map((sch, i) => {
+            {schedules.length > 0 &&  currentDay < 6  &&  currentDay >= 0 &&  schedules.map((sch, i) => {
 
               //Chequear para la piscina si ese dia feriado  o lluvias
               if (currentSchedule) {
