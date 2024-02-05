@@ -803,6 +803,10 @@ if ($designs) {
                         <input class="form-control" required type="hidden" name="ReservasSeleccionadas"
                             id="ReservasSeleccionadas" width="100%" />
                         <div id="root"></div>
+                    @elseif ($parentid == '02i3m00000DiduCAAR')
+                        <input class="form-control" required type="hidden" name="ReservasSeleccionadas"
+                            id="ReservasSeleccionadas" width="100%" />
+                        <div id="rootGolf"></div>
                     @else
                         <div class="tDiv   ">
                             <div class="btn-group-toggle" data-toggle="buttons" id="tabContainer">
@@ -942,7 +946,7 @@ if ($designs) {
             </div>
 
         </div>
-        @if ($parentid != '02i3m00000DiduZAAR')
+        @if ($parentid != '02i3m00000DiduZAAR' && $parentid != '02i3m00000DiduCAAR')
             <div class="row">
                 <div class="col-12 col-md-12">
                     <div class="form-group">
@@ -1655,4 +1659,9 @@ if ($designs) {
         </script>
     @endif
 
+    
+    @if ($parentid == '02i3m00000DiduCAAR')
+        <script type="text/babel" src="{{ asset('/js/golf-calendario.js') }}">
+        </script>
+    @endif
 </div>
