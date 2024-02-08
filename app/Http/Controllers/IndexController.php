@@ -1272,7 +1272,9 @@ class IndexController extends Controller
 
                 if ($request->isMethod('post')) {
                     if ($step == '2') {
-                        $inputs = $request->validate(['00N3m00000QQOdA' => 'required|string', '00N3m00000QMsCF' => 'required|string', '00N3m00000QMsCA' => 'required|string', '00N3m00000QMsC5' => 'required|string', '00N3m00000QMwta' => 'required|string', '00N3m00000QMwtf' => 'required|string', '00N3m00000QMwta-hour' => 'required|string', '00N3m00000QMwtf-hour' => 'required|string', '00N3m00000QQOdy' => 'nullable|string', '00N3m00000QMsCK' => 'required|string', '00N3m00000QMsCP' => 'required|string', '00N3m00000QMzL7' => 'nullable|string', '00N3m00000QQOe8' => 'nullable|string', 'description' => 'required|string',]);
+                        $inputs = $request->validate(['00N3m00000QQOdA' => 'required|string', '00N3m00000QMsCF' => 'required|string', '00N3m00000QMsCA' => 'required|string', '00N3m00000QMsC5' => 'required|string', '00N3m00000QMwta' => 'required|string', '00N3m00000QMwtf' => 'required|string', '00N3m00000QMwta-hour' => 'required|string', '00N3m00000QMwtf-hour' => 'required|string', '00N3m00000QQOdy' => 'nullable|string', '00N3m00000QMsCK' => 'required|string', '00N3m00000QMsCP' => 'required|string', '00N3m00000QMzL7' => 'nullable|string', '00N3m00000QQOe8' => 'nullable|string',  
+                        '00NO9000001soor'=>'nullable|string',
+                        'description' => 'required|string',]);
                     } else {
                         if ($request['ReservasSeleccionadas'] == '[]') {
                             $request['ReservasSeleccionadas'] = null;
