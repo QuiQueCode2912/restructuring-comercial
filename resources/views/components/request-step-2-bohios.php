@@ -118,12 +118,12 @@ if (is_null($to_hour)) {
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input type="checkbox" class="custom-control-input" value="1" name="00NO9000001t2AI" id="variable-dates" <?php echo session()->get('00NO9000001t2AI', old('00NO9000001t2AI')) == 1 ? 'checked="checked"' : ''; ?>>
-                        <label class="custom-control-label" for="variable-dates"><small>Bohíos adicionales</small></label>
+                        <input type="checkbox" class="custom-control-input" value="1" name="00NO9000001t2AI" id="00NO9000001t2AI" <?php echo session()->get('00NO9000001t2AI', old('00NO9000001t2AI')) == 1 ? 'checked="checked"' : ''; ?>>
+                        <label class="custom-control-label" for="00NO9000001t2AI"><small>Bohíos adicionales</small></label>
                     </div>
                     <div class="form-check">
-                        <input type="checkbox" class="custom-control-input" value="1" name="00NO9000001t2AH" id="variable-dates" <?php echo session()->get('00NO9000001t2AH', old('00NO9000001t2AH')) == 1 ? 'checked="checked"' : ''; ?>>
-                        <label class="custom-control-label" for="variable-dates"><small>Alquiler de sillas y Mesas</small></label>
+                        <input type="checkbox" class="custom-control-input" value="1" name="00NO9000001t2AH" id="00NO9000001t2AH" <?php echo session()->get('00NO9000001t2AH', old('00NO9000001t2AH')) == 1 ? 'checked="checked"' : ''; ?>>
+                        <label class="custom-control-label" for="00NO9000001t2AH"><small>Alquiler de sillas y Mesas</small></label>
                     </div>
                 </div>
 
