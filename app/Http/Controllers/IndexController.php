@@ -1649,16 +1649,20 @@ class IndexController extends Controller
 
                 session()->put('00NRb000000Ex1p', $dv);
                 session()->put('00NRb000000Ex0D', $codPais);
-
-                switch ($venuep->parent_id) {
-                    case '02i3m00000D9DaPAAV':
-                        $step = '4-p';
-                        $form_url = '/solicitud-pago';
-                        break;
-                    default:
-                        $step = '4';
-                        break;
+                if ($venuep->id != '02i3m00000DiduVAAR') {
+                    switch ($venuep->parent_id) {
+                        case '02i3m00000D9DaPAAV':
+                            $step = '4-p';
+                            $form_url = '/solicitud-pago';
+                            break;
+                        default:
+                            $step = '4';
+                            break;
+                    }
+                }else{
+                    $step = '4';
                 }
+                
                 $stepName = 'Solicitud enviada';
                 break;
             case 'datos-hospedaje':
