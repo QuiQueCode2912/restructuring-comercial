@@ -848,6 +848,15 @@
                 </div>
             </div>
         </div>
+        <div class="row" style="margin-top:40px">
+            <div class="col-12 col-md-6">
+                <div class="form-group-preview">
+                    Requiere otro venue  : <?php echo session()->get('00NO9000001soor'); ?>
+                    <a href="/cotizacion/datos-evento#layout">Editar</a>
+                </div>
+            </div>
+        </div>
+
         <?php endif ?>
         <div class="row" style="<?php echo $venue ?? '' ? '' : 'margin-top:40px'; ?>">
             <div class="col-12 col-md-6">
@@ -1330,6 +1339,7 @@
                 <input type="hidden" value="<?php echo session()->get('recordType'); ?>" name="recordType" id="recordType" />
                 <input type="hidden" value="<?php echo session()->get('00N3m00000QeHcG'); ?>" name="00N3m00000QeHcG" id="00N3m00000QeHcG" />
                 <input type="hidden" value="<?php echo session()->get('00N3m00000Qpiz4'); ?>" name="00N3m00000Qpiz4" id="00N3m00000Qpiz4" />
+                <input type="hidden" value="<?php echo session()->get('00NO9000001soor'); ?>" name="00NO9000001soor" id="00NO9000001soor" />
 
                 <input type="hidden" value="<?php echo session()->get('00NRb000000Ex1p'); ?>" name="00NRb000000Ex1p" id="00NRb000000Ex1p" />
                 <input type="hidden" value="<?php
