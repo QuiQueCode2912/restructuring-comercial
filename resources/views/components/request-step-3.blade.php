@@ -1134,6 +1134,32 @@
             <?php endif ?>
 
         </div>
+
+        @if (session()->get('venueParentId') == '02i3m00000DiduVAAR')
+            <div class="row" style="margin-top:40px">
+                <div class="col-12 col-md-6">
+                    <div class="form-group-preview">
+                        ¿Quisiera reservar una cancha deportiva?: <?php echo session()->get('00NO9000001szab'); ?>
+                        <a href="/cotizacion/datos-contacto#how">Editar</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-group-preview">
+                        Bohíos adicionales: <?php echo session()->get('00NO9000001t2AI'); ?>
+                        <a href="/cotizacion/datos-contacto#00NO9000001t2AI">Editar</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-group-preview">
+                        Alquiler de sillas y Mesas: <?php echo session()->get('00NO9000001t2AH'); ?>
+                        <a href="/cotizacion/datos-contacto#00NO9000001t2AH">Editar</a>
+                    </div>
+                </div>
+            </div>
+        @endif
+
+    
+
         <?php
        if($rootid == '02i3m00000D9DaPAAV' &&  session()->get('venueParentId') != '02i3m00000DiduVAAR')
        {
