@@ -1313,7 +1313,7 @@ class IndexController extends Controller
                                 break;
                         }
                     }else{
-                        $inputs['recordType'] = '0123m0000012tH4';
+                        $inputs['recordType'] = '012Rb000000cxFCIAY';
                     }
                    
                     // RECUERDA EL DUPLICATE RULE DONDE TIENES QUE EXCLUIR EL RECORD TYPE QUE ESTÉS AGREGANDO
