@@ -64,6 +64,9 @@ if (is_null($to_hour)) {
       <div class="col-12 col-md-4">
         <div class="form-group required">
           <input type="text" class="form-control datepicker" name="00N3m00000QMwta" id="start-date" placeholder="Fecha de inicio" value="<?php echo session()->get('00N3m00000QMwta', old('00N3m00000QMwta')) ?>">
+          <p style="margin:5px 0 0; line-height:1rem">
+            <small>Estas fechas están sujetas a evaluación de disponibilidad, la solicitud de la cotización no es una reserva del espacio.</small>
+          </p>
         </div>
       </div>
       <div class="col-12 col-md-2">
@@ -113,13 +116,13 @@ if (is_null($to_hour)) {
       <div class="col-12 col-md-6">
         <div class="form-group required">
           <select class="form-control" name="00N3m00000QQOe8" id="layout">
-            <option value="">Montaje del evento</option>  
+            <option value="">Montaje del evento</option>
             <?php $designs = json_decode(html_entity_decode($designs)) ?>
             <?php if ($designs) : ?>
             <?php foreach ($designs as $design) : ?>
             <option <?php echo session()->get('00N3m00000QQOe8', old('00N3m00000QQOe8')) == $design->layout ? 'selected="selected"' : '' ?>><?php echo $design->layout ?></option>
             <?php endforeach ?>
-            <?php endif ?>  
+            <?php endif ?>
           </select>
         </div>
       </div>
@@ -129,7 +132,7 @@ if (is_null($to_hour)) {
       <div class="col-12 col-md-6">
         <div class="form-group required">
           <select class="form-control" name="00N3m00000QMsCK" id="lodging">
-            <option value="">¿Necesitas hospedaje para tu evento?</option>            
+            <option value="">¿Necesitas hospedaje para tu evento?</option>
             <option <?php echo session()->get('00N3m00000QMsCK', old('00N3m00000QMsCK')) == 'Si' ? 'selected="selected"' : '' ?>>Si</option>
             <option <?php echo session()->get('00N3m00000QMsCK', old('00N3m00000QMsCK')) == 'No' ? 'selected="selected"' : '' ?>>No</option>
           </select>
@@ -138,7 +141,7 @@ if (is_null($to_hour)) {
       <div class="col-12 col-md-6">
         <div class="form-group required">
           <select class="form-control" name="00N3m00000QMsCP" id="catering">
-            <option value="">¿Necesitas catering para tu evento?</option>          
+            <option value="">¿Necesitas catering para tu evento?</option>
             <option <?php echo session()->get('00N3m00000QMsCP', old('00N3m00000QMsCP')) == 'Si' ? 'selected="selected"' : '' ?>>Si</option>
             <option <?php echo session()->get('00N3m00000QMsCP', old('00N3m00000QMsCP')) == 'No' ? 'selected="selected"' : '' ?>>No</option>
           </select>
@@ -155,6 +158,14 @@ if (is_null($to_hour)) {
         </select>
       </div>
     </div>
+
+    <div class="row">
+    <div class="col-12 col-md-6">
+        <label for="RequiereOtroVenue"><small>Requiere otro Venue?</small></label>
+        <textarea name="000000000000000AAA" required id="000000000000000AAA"><?php echo session()->get('requiereOtroVenue__c', old('requiereOtroVenue__c')) ?></textarea>
+    </div>
+    </div>
+
     <div class="row">
       <div class="col-12 col-md-6">
         <div class="form-group required">
@@ -163,8 +174,8 @@ if (is_null($to_hour)) {
         </div>
       </div>
       <div class="col-12 col-md-6">
-        <p style="margin:35px 0 0; line-height:1rem"><small>Puedes compartir la agenda de tu evento,  material 
-          promocional o cualquier otro documento que nos ayude a 
+        <p style="margin:35px 0 0; line-height:1rem"><small>Puedes compartir la agenda de tu evento,  material
+          promocional o cualquier otro documento que nos ayude a
           entender mejor tus necesidades</small></p>
         <p style="margin:0"><small>Archivos .pdf o .docx - Máximo 3 archivos de 5MB</small></p>
         <div class="form-group">
