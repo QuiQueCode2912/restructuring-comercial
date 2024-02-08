@@ -1193,6 +1193,8 @@ class IndexController extends Controller
                     
                     session(['00NRb000000Ex1p' => $request['00NRb000000Ex1p']]);
                     session(['00NRb000000Ex0D' => $request['00NRb000000Ex0D']]);
+                    session(['00NO9000001soor' => $request['00NO9000001soor']]);
+
 
                     session($inputs);
                     return redirect()->to($inputs['want_to_do'] == 'event' ? '/cotizacion/datos-evento' : '/cotizacion/datos-residencia');
