@@ -1335,6 +1335,7 @@ class IndexController extends Controller
                 }
                 break;
             case 'vista-previa':
+                //02i3m00000DiduVAAR Bohios id
                 $venuep = Venue::find($venue->parent_id);
                 $rootid = Venue::find($venuep->parent_id);
                 // $venuesgrupo = Venue::where('parent_id', '=', $venuesgrupo)->get();
@@ -1342,262 +1343,265 @@ class IndexController extends Controller
                 $stepName = 'Vista previa';
                 $esEmpleado = session()->has('is-cds-user') ? session()->get('is-cds-user') : false;
                 $esCliente = session()->has('is-cds-customer') ? session()->get('is-cds-customer') : false;
-                switch ($venuep->parent_id) {
-                    case '02i3m00000D9DaPAAV':
-                        $selVenues = session('ReservasSeleccionadas');
-                        $reservas = json_decode(session('ReservasSeleccionadas'));
-                       
+            
+                if ($venuep->id != '02i3m00000DiduVAAR') {
+                    switch ($venuep->parent_id) {
+                        case '02i3m00000D9DaPAAV':
+                            $selVenues = session('ReservasSeleccionadas');
+                            $reservas = json_decode(session('ReservasSeleccionadas'));
+                        
 
-                        $recargoNoche = Rates::where('name', '=', 'Recargo - Noche')->first();
-                        $recargoFin = Rates::where('name', '=', 'Recargo - Fin de semana')->first();
-                        $recargoFeriado = Rates::where('name', '=', 'Recargo - Feriado')->first();
+                            $recargoNoche = Rates::where('name', '=', 'Recargo - Noche')->first();
+                            $recargoFin = Rates::where('name', '=', 'Recargo - Fin de semana')->first();
+                            $recargoFeriado = Rates::where('name', '=', 'Recargo - Feriado')->first();
 
 
-                        if ($esEmpleado) {
-                            $descuentoColaboradores = Rates::where('name', '=', 'Descuento - Colaboradores')->first()->percentage;
-                            $descuentoResidente = 0.00;
-                        } else {
-                            $descuentoColaboradores = 0.00;
-                            if ($esCliente) {
-                                $descuentoResidente = Rates::where('name', '=', 'Descuento - Residente')->first()->percentage;
-                            } else {
+                            if ($esEmpleado) {
+                                $descuentoColaboradores = Rates::where('name', '=', 'Descuento - Colaboradores')->first()->percentage;
                                 $descuentoResidente = 0.00;
-                            }
-                        }
-                        if (session()->get('00N3m00000QeGyG') == 'Jubilado') {
-                            $descuentoJubilados = Rates::where('name', '=', 'Descuento - Jubilados')->first()->percentage;
-                            $descuentoNinos = 0.00;
-                        } else {
-                            $descuentoJubilados = 0.00;
-                            if (session()->get('00N3m00000QeGyG') == 'Niño') {
-                                $descuentoNinos = Rates::where('name', '=', 'Descuento - Niños')->first()->percentage;
                             } else {
+                                $descuentoColaboradores = 0.00;
+                                if ($esCliente) {
+                                    $descuentoResidente = Rates::where('name', '=', 'Descuento - Residente')->first()->percentage;
+                                } else {
+                                    $descuentoResidente = 0.00;
+                                }
+                            }
+                            if (session()->get('00N3m00000QeGyG') == 'Jubilado') {
+                                $descuentoJubilados = Rates::where('name', '=', 'Descuento - Jubilados')->first()->percentage;
                                 $descuentoNinos = 0.00;
+                            } else {
+                                $descuentoJubilados = 0.00;
+                                if (session()->get('00N3m00000QeGyG') == 'Niño') {
+                                    $descuentoNinos = Rates::where('name', '=', 'Descuento - Niños')->first()->percentage;
+                                } else {
+                                    $descuentoNinos = 0.00;
+                                }
                             }
-                        }
 
 
-                        $costoTotal = 0;
+                            $costoTotal = 0;
 
-                        $debugCalculo = "";
-                        $venuesdia = "";
-                        $venuesmes = "";
-                        // si ambos son false, entonces es visitante
-                        foreach ($reservas as $reserva) {
-                            $debugCalculo = $debugCalculo . "\r\nFranja:" . session()->get('franja') . "\r\n";
-                            $idActual = $reserva->id;
-                            $fechaActual = $reserva->fecha;
-                            $fechaActualCarbon = Carbon::parse($fechaActual);
-                            $fechaActualCarbon->addHours(5);
+                            $debugCalculo = "";
+                            $venuesdia = "";
+                            $venuesmes = "";
+                            // si ambos son false, entonces es visitante
+                            foreach ($reservas as $reserva) {
+                                $debugCalculo = $debugCalculo . "\r\nFranja:" . session()->get('franja') . "\r\n";
+                                $idActual = $reserva->id;
+                                $fechaActual = $reserva->fecha;
+                                $fechaActualCarbon = Carbon::parse($fechaActual);
+                                $fechaActualCarbon->addHours(5);
 
-                            // Si deseas actualizar el campo fecha en el objeto reserva
-                            $fechaActual = $fechaActualCarbon;
-                            if($reserva->venue == 'PISCINA'){
-                                $horaInicio = substr($idActual, 7, 4);
-                                $sfAssetId = substr($idActual, 12);
+                                // Si deseas actualizar el campo fecha en el objeto reserva
+                                $fechaActual = $fechaActualCarbon;
+                                if($reserva->venue == 'PISCINA'){
+                                    $horaInicio = substr($idActual, 7, 4);
+                                    $sfAssetId = substr($idActual, 12);
 
-                                //Aqui se debe de agregar  el custom  time
-                                $reserva->customTime = true;
-                            }else{
-                                $horaInicio = substr($idActual, 7, 2);
-                                $sfAssetId = substr($idActual, 9);
-                            }
-                     
+                                    //Aqui se debe de agregar  el custom  time
+                                    $reserva->customTime = true;
+                                }else{
+                                    $horaInicio = substr($idActual, 7, 2);
+                                    $sfAssetId = substr($idActual, 9);
+                                }
+                        
 
-                            $debugCalculo = $debugCalculo . " " . $sfAssetId;
+                                $debugCalculo = $debugCalculo . " " . $sfAssetId;
 
-                            $thisVenue = Venue::where('id', '=', $sfAssetId)->first();
+                                $thisVenue = Venue::where('id', '=', $sfAssetId)->first();
 
-                            $costoHora = $thisVenue->hour_fee;
-                            $costoMedio = $thisVenue->mid_day_fee; // MUY PROBABLE NO SE UTILICE
-                            $costoDia = $thisVenue->all_day_fee;
-                            $costoMes = $thisVenue->monthly_fee;
+                                $costoHora = $thisVenue->hour_fee;
+                                $costoMedio = $thisVenue->mid_day_fee; // MUY PROBABLE NO SE UTILICE
+                                $costoDia = $thisVenue->all_day_fee;
+                                $costoMes = $thisVenue->monthly_fee;
 
 
-                            //TODO: DEFINIR OTROS CALCULOS - MODIFICAR FORMULARIO STEP 1
-                            $calcular = true;
+                                //TODO: DEFINIR OTROS CALCULOS - MODIFICAR FORMULARIO STEP 1
+                                $calcular = true;
 
-                            switch (session()->get('franja')) {
-                                case 'mes':
-                                    if (strpos($venuesmes, $sfAssetId) === false) {
-                                        $venuesmes .= $sfAssetId;
-                                    } else {
-                                        $calcular = false;
-                                    }
-                                    $tarifaUsar = $costoMes;
-                                    break;
-                                case 'medio':
-                                    //if(strpos($venuesmedio, $fechaActual.$sfAssetId) === false){
-                                    //    $venuesmedio .= $fechaActual.$sfAssetId;
-                                    //} else { $calcular = false; }
-                                    $tarifaUsar = $costoDia;
-                                    break;
-                                case 'dia':
-                                    $tarifaUsar = $costoDia;
-                                    if ($tarifaUsar == 0) {
-                                        $tarifaUsar = $costoHora;
-                                    } else {
-                                        if (strpos($venuesdia, $fechaActual . $sfAssetId) === false) {
-                                            $venuesdia .= $fechaActual . $sfAssetId;
+                                switch (session()->get('franja')) {
+                                    case 'mes':
+                                        if (strpos($venuesmes, $sfAssetId) === false) {
+                                            $venuesmes .= $sfAssetId;
                                         } else {
                                             $calcular = false;
                                         }
-                                    }
-                                    break;
-                                default:
-                                    $tarifaUsar = $costoHora;
-                                    if ($tarifaUsar == 0) {
+                                        $tarifaUsar = $costoMes;
+                                        break;
+                                    case 'medio':
+                                        //if(strpos($venuesmedio, $fechaActual.$sfAssetId) === false){
+                                        //    $venuesmedio .= $fechaActual.$sfAssetId;
+                                        //} else { $calcular = false; }
                                         $tarifaUsar = $costoDia;
-                                        if (strpos($venuesdia, $fechaActual . $sfAssetId) === false) {
-                                            $venuesdia .= $fechaActual . $sfAssetId;
+                                        break;
+                                    case 'dia':
+                                        $tarifaUsar = $costoDia;
+                                        if ($tarifaUsar == 0) {
+                                            $tarifaUsar = $costoHora;
                                         } else {
-                                            $calcular = false;
+                                            if (strpos($venuesdia, $fechaActual . $sfAssetId) === false) {
+                                                $venuesdia .= $fechaActual . $sfAssetId;
+                                            } else {
+                                                $calcular = false;
+                                            }
+                                        }
+                                        break;
+                                    default:
+                                        $tarifaUsar = $costoHora;
+                                        if ($tarifaUsar == 0) {
+                                            $tarifaUsar = $costoDia;
+                                            if (strpos($venuesdia, $fechaActual . $sfAssetId) === false) {
+                                                $venuesdia .= $fechaActual . $sfAssetId;
+                                            } else {
+                                                $calcular = false;
+                                            }
+                                        }
+                                }
+                            
+
+                                if ($calcular) {
+                                    $isClientUsingEmail =  app('App\Http\Controllers\SalesforceController')->isClientEmail(session()->get('email'));
+
+                                    if ($thisVenue->employeediscount && !$isClientUsingEmail ) {
+                                        $tarifaUsar = $tarifaUsar * (1.0 + ($descuentoColaboradores / 100));
+                                    }
+                                    if ($thisVenue->residentdiscount && !$isClientUsingEmail) {
+                                        $tarifaUsar = $tarifaUsar * (1.0 + ($descuentoResidente / 100));
+                                    }
+                                    if ($thisVenue->retireddiscount && !$isClientUsingEmail) {
+                                        $tarifaUsar = $tarifaUsar * (1.0 + ($descuentoJubilados / 100));
+                                    }
+                                    if ($thisVenue->kidsdiscount && !$isClientUsingEmail ) {
+                                        $tarifaUsar = $tarifaUsar * (1.0 + ($descuentoNinos / 100));
+                                    }
+
+                                    if($isClientUsingEmail){
+                                        $discountClient = Rates::where('name', '=', 'Descuento - Dominio - Cliente')->first()->percentage;
+                                        $tarifaUsar = $tarifaUsar * (1.0 + ($discountClient / 100));
+                                    }
+
+                                    $debugCalculo = $debugCalculo . " Esta tarifa:" . $tarifaUsar;
+
+                                    $recargo = false;
+                                    if ($thisVenue->nightcharge) {
+                                        if ($horaInicio > 16) {
+                                            $recargo = true;
+                                            $reserva->recargo = "Noche";
+                                            $debugCalculo = $debugCalculo . " noche";
+                                            $tarifaUsar = $tarifaUsar + $tarifaUsar * $recargoNoche->percentage / 100;
                                         }
                                     }
-                            }
-                         
 
-                            if ($calcular) {
-                                $isClientUsingEmail =  app('App\Http\Controllers\SalesforceController')->isClientEmail(session()->get('email'));
+                                    if ($thisVenue->weekendcharge && !$recargo) {
+                                        $diaSemana = date("w", strtotime($fechaActual));
 
-                                if ($thisVenue->employeediscount && !$isClientUsingEmail ) {
-                                    $tarifaUsar = $tarifaUsar * (1.0 + ($descuentoColaboradores / 100));
-                                }
-                                if ($thisVenue->residentdiscount && !$isClientUsingEmail) {
-                                    $tarifaUsar = $tarifaUsar * (1.0 + ($descuentoResidente / 100));
-                                }
-                                if ($thisVenue->retireddiscount && !$isClientUsingEmail) {
-                                    $tarifaUsar = $tarifaUsar * (1.0 + ($descuentoJubilados / 100));
-                                }
-                                if ($thisVenue->kidsdiscount && !$isClientUsingEmail ) {
-                                    $tarifaUsar = $tarifaUsar * (1.0 + ($descuentoNinos / 100));
-                                }
+                                        if ($diaSemana == 6) {
+                                            $recargo = true;
+                                            $reserva->recargo = "Sábado";
+                                            $debugCalculo = $debugCalculo . " sabado";
+                                            $tarifaUsar = $tarifaUsar + $tarifaUsar * $recargoFin->percentage / 100;
+                                        } else if ($diaSemana == 0) {
+                                            $recargo = true;
+                                            $reserva->recargo = "Domingo";
+                                            $debugCalculo = $debugCalculo . " domingo";
+                                            $tarifaUsar = $tarifaUsar + $tarifaUsar * $recargoFin->percentage / 100;
+                                        }
+                                    }
 
-                                if($isClientUsingEmail){
-                                    $discountClient = Rates::where('name', '=', 'Descuento - Dominio - Cliente')->first()->percentage;
-                                    $tarifaUsar = $tarifaUsar * (1.0 + ($discountClient / 100));
+                                    if ($thisVenue->holidaycharge  && !$recargo) {
+                                        $libre = Holidays::where('fecha', '=', $fechaActualCarbon->format('Y-m-d'))->first();
+                                        if ($libre != null) {
+                                            $recargo = true;
+                                            $reserva->recargo = "Feriado";
+                                            $debugCalculo = $debugCalculo . " feriado";
+                                            $tarifaUsar = $tarifaUsar + $tarifaUsar * $recargoFeriado->percentage / 100;
+                                        }
+                                    }
+                                } else {
+                                    $tarifaUsar = 0;
                                 }
+                                //$debugCalculo .= "Ajustada: " . $tarifaUsar . " calcular: " . $calcular;
+                                if(isset($reserva->calcularFact)){
+                                    $trarifa =  $thisVenue->hour_fee;
+                                    $recargo = false;
 
-                                $debugCalculo = $debugCalculo . " Esta tarifa:" . $tarifaUsar;
+                                    if($thisVenue->employeediscount)
+                                    {
+                                        $trarifa = $trarifa * (1.0 + ($descuentoColaboradores/100));
+                                    }
+                                    if($thisVenue->residentdiscount)
+                                    {
+                                        $trarifa = $trarifa * (1.0 + ($descuentoResidente/100));
+                                    }
 
-                                $recargo = false;
-                                if ($thisVenue->nightcharge) {
-                                    if ($horaInicio > 16) {
+                                    if($horaInicio > 18){
                                         $recargo = true;
                                         $reserva->recargo = "Noche";
                                         $debugCalculo = $debugCalculo . " noche";
-                                        $tarifaUsar = $tarifaUsar + $tarifaUsar * $recargoNoche->percentage / 100;
+                                        $trarifa  = $trarifa + $trarifa * $recargoNoche->percentage / 100;
                                     }
-                                }
 
-                                if ($thisVenue->weekendcharge && !$recargo) {
-                                    $diaSemana = date("w", strtotime($fechaActual));
+                                    if ($thisVenue->weekendcharge && !$recargo) {
+                                        $diaSemana = date("w", strtotime($fechaActual));
 
-                                    if ($diaSemana == 6) {
-                                        $recargo = true;
-                                        $reserva->recargo = "Sábado";
-                                        $debugCalculo = $debugCalculo . " sabado";
-                                        $tarifaUsar = $tarifaUsar + $tarifaUsar * $recargoFin->percentage / 100;
-                                    } else if ($diaSemana == 0) {
-                                        $recargo = true;
-                                        $reserva->recargo = "Domingo";
-                                        $debugCalculo = $debugCalculo . " domingo";
-                                        $tarifaUsar = $tarifaUsar + $tarifaUsar * $recargoFin->percentage / 100;
+                                        if ($diaSemana == 6) {
+                                            $recargo = true;
+                                            $reserva->recargo = "Sábado";
+                                            $debugCalculo = $debugCalculo . " sabado";
+                                            $trarifa = $trarifa + $trarifa * $recargoFin->percentage / 100;
+                                        } else if ($diaSemana == 0) {
+                                            $recargo = true;
+                                            $reserva->recargo = "Domingo";
+                                            $debugCalculo = $debugCalculo . " domingo";
+                                            $trarifa = $trarifa + $trarifa * $recargoFin->percentage / 100;
+                                        }
                                     }
-                                }
 
-                                if ($thisVenue->holidaycharge  && !$recargo) {
-                                    $libre = Holidays::where('fecha', '=', $fechaActualCarbon->format('Y-m-d'))->first();
-                                    if ($libre != null) {
-                                        $recargo = true;
-                                        $reserva->recargo = "Feriado";
-                                        $debugCalculo = $debugCalculo . " feriado";
-                                        $tarifaUsar = $tarifaUsar + $tarifaUsar * $recargoFeriado->percentage / 100;
+                                    $tarifaTotal = 0;
+
+                                    $isClientUsingEmail =  app('App\Http\Controllers\SalesforceController')->isClientEmail(session()->get('email'));
+
+                                    if($isClientUsingEmail){
+                                        $discountClient = Rates::where('name', '=', 'Descuento - Dominio - Cliente')->first()->percentage;
+                                        $trarifa = $trarifa * (1.0 + ($discountClient / 100));
                                     }
-                                }
-                            } else {
-                                $tarifaUsar = 0;
-                            }
-                            //$debugCalculo .= "Ajustada: " . $tarifaUsar . " calcular: " . $calcular;
-                            if(isset($reserva->calcularFact)){
-                                $trarifa =  $thisVenue->hour_fee;
-                                $recargo = false;
 
-                                if($thisVenue->employeediscount)
-                                {
-                                    $trarifa = $trarifa * (1.0 + ($descuentoColaboradores/100));
-                                }
-                                if($thisVenue->residentdiscount)
-                                {
-                                    $trarifa = $trarifa * (1.0 + ($descuentoResidente/100));
-                                }
-
-                                if($horaInicio > 18){
-                                    $recargo = true;
-                                    $reserva->recargo = "Noche";
-                                    $debugCalculo = $debugCalculo . " noche";
-                                    $trarifa  = $trarifa + $trarifa * $recargoNoche->percentage / 100;
-                                }
-
-                                if ($thisVenue->weekendcharge && !$recargo) {
-                                    $diaSemana = date("w", strtotime($fechaActual));
-
-                                    if ($diaSemana == 6) {
-                                        $recargo = true;
-                                        $reserva->recargo = "Sábado";
-                                        $debugCalculo = $debugCalculo . " sabado";
-                                        $trarifa = $trarifa + $trarifa * $recargoFin->percentage / 100;
-                                    } else if ($diaSemana == 0) {
-                                        $recargo = true;
-                                        $reserva->recargo = "Domingo";
-                                        $debugCalculo = $debugCalculo . " domingo";
-                                        $trarifa = $trarifa + $trarifa * $recargoFin->percentage / 100;
+                                    if ($reserva->personAdultCount) {
+                                        $tarifaTotal +=  $trarifa * $reserva->personAdultCount ;
                                     }
+
+                                    if ($reserva->personJubCount) {
+                                        $descuentoNinos = Rates::where('name', '=', 'Descuento - Niños')->first()->percentage;
+                                        $trarifaJub = $trarifa  * (1.0 + ($descuentoNinos / 100)); //
+                                        $tarifaTotal += $trarifaJub * $reserva->personJubCount ;
+                                    }
+                                    if ($reserva->personChildCount) {
+                                        $descuentoNinos = Rates::where('name', '=', 'Descuento - Niños')->first()->percentage;
+                                        $tarifaChilds = $trarifa  * (1.0 + ($descuentoNinos / 100));
+                                        $tarifaTotal += $tarifaChilds * $reserva->personChildCount ;
+                                    }
+                                
+                                    $reserva->subtotal =  $tarifaTotal;
+                                    $costoTotal =  $costoTotal + $tarifaTotal;
+                                }else{
+
+                                    $reserva->subtotal =  $tarifaUsar;
+                                    $costoTotal =  $costoTotal + $tarifaUsar;
                                 }
 
-                                $tarifaTotal = 0;
+                            } // este es el end del foreach
 
-                                $isClientUsingEmail =  app('App\Http\Controllers\SalesforceController')->isClientEmail(session()->get('email'));
+                        
 
-                                if($isClientUsingEmail){
-                                    $discountClient = Rates::where('name', '=', 'Descuento - Dominio - Cliente')->first()->percentage;
-                                    $trarifa = $trarifa * (1.0 + ($discountClient / 100));
-                                }
-
-                                if ($reserva->personAdultCount) {
-                                    $tarifaTotal +=  $trarifa * $reserva->personAdultCount ;
-                                }
-
-                                if ($reserva->personJubCount) {
-                                    $descuentoNinos = Rates::where('name', '=', 'Descuento - Niños')->first()->percentage;
-                                    $trarifaJub = $trarifa  * (1.0 + ($descuentoNinos / 100)); //
-                                    $tarifaTotal += $trarifaJub * $reserva->personJubCount ;
-                                }
-                                if ($reserva->personChildCount) {
-                                    $descuentoNinos = Rates::where('name', '=', 'Descuento - Niños')->first()->percentage;
-                                    $tarifaChilds = $trarifa  * (1.0 + ($descuentoNinos / 100));
-                                    $tarifaTotal += $tarifaChilds * $reserva->personChildCount ;
-                                }
-                              
-                                $reserva->subtotal =  $tarifaTotal;
-                                $costoTotal =  $costoTotal + $tarifaTotal;
-                            }else{
-
-                                $reserva->subtotal =  $tarifaUsar;
-                                $costoTotal =  $costoTotal + $tarifaUsar;
-                            }
-
-                        } // este es el end del foreach
-
-                       
-
-                        $formatted_costoTotal = number_format($costoTotal, 2, '.', ',');
+                            $formatted_costoTotal = number_format($costoTotal, 2, '.', ',');
 
 
-                        $estimacion =  $formatted_costoTotal;
-                        //   $estimacion = $estimacion . "\r\n" . $debugCalculo . $horaInicio . "\r\n" . $fechaActualCarbon->format('Y-m-d');
-                        session(['ReservasSeleccionadas' => json_encode($reservas)]);
-                        break;
+                            $estimacion =  $formatted_costoTotal;
+                            //   $estimacion = $estimacion . "\r\n" . $debugCalculo . $horaInicio . "\r\n" . $fechaActualCarbon->format('Y-m-d');
+                            session(['ReservasSeleccionadas' => json_encode($reservas)]);
+                            break;
+                    }
                 }
 
                 if ($esEmpleado)
@@ -1610,6 +1614,7 @@ class IndexController extends Controller
                 $form_url = 'https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
 
                 session()->put('00N3m00000QeGlb', session()->getId() . '-' . time());
+                session()->put('venueParentId', $venuep->id);
                 break;
             case 'solicitud-enviada':
                 // return view('index.request', ['page_title' => 'Servicios - Cotización - ' . $stepName, 'step' => '4-p', 'venue' => $venue, 'designs' => null, 'file_upload' => null, 'form_url' => null, 'grupos' => null, 'rootid' => null, 'estimacion' => null]);

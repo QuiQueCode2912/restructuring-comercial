@@ -883,7 +883,7 @@
       }
       ?>
         <?php
-       if($rootid == '02i3m00000D9DaPAAV')
+       if($rootid == '02i3m00000D9DaPAAV' && session()->get('venueParentId') != '02i3m00000DiduVAAR')
        {
     ?>
         <div class="row">
@@ -1135,7 +1135,7 @@
 
         </div>
         <?php
-       if($rootid == '02i3m00000D9DaPAAV')
+       if($rootid == '02i3m00000D9DaPAAV' &&  session()->get('venueParentId') != '02i3m00000DiduVAAR')
        {
     ?>
         <div class="row">
@@ -1354,7 +1354,7 @@
                 echo $decodedText; ?>" name="00NRb000000Ex0D" id="00NRb000000Ex0D" />
 
                 <?php
-       if($rootid == '02i3m00000D9DaPAAV')
+       if($rootid == '02i3m00000D9DaPAAV'  && session()->get('venueParentId') != '02i3m00000DiduVAAR')
        {
     ?>
 
@@ -1399,7 +1399,7 @@
 
 
                 <a href="/cotizacion/datos-evento" class="btn btn-primary">Anterior</a>
-                @if ($rootid == '02i3m00000D9DaPAAV')
+                @if ($rootid == '02i3m00000D9DaPAAV' && session()->get('venueParentId') != '02i3m00000DiduVAAR')
                     <button type="submit" id="confirm-button" class="btn btn-primary disabled submit-form" disabled
                         onclick="if (this.value !== 'Enviando...') { this.disabled=true; this.value='Enviando...'; this.form.submit(); }">Confirmar</button>
                 @else
