@@ -1341,6 +1341,12 @@
                 <input type="hidden" value="<?php echo session()->get('00N3m00000Qpiz4'); ?>" name="00N3m00000Qpiz4" id="00N3m00000Qpiz4" />
                 <input type="hidden" value="<?php echo session()->get('00NO9000001soor'); ?>" name="00NO9000001soor" id="00NO9000001soor" />
 
+                <!-- Bohios  inputs -->
+                <input type="hidden" value="<?php echo session()->get('00NO9000001szab'); ?>" name="00NO9000001szab" id="00NO9000001szab" />
+                <input type="hidden" value="<?php echo session()->get('00NO9000001t2AI'); ?>" name="00NO9000001t2AI" id="00NO9000001t2AI" />
+                <input type="hidden" value="<?php echo session()->get('00NO9000001t2AH'); ?>" name="00NO9000001t2AH" id="00NO9000001t2AH" />
+
+
                 <input type="hidden" value="<?php echo session()->get('00NRb000000Ex1p'); ?>" name="00NRb000000Ex1p" id="00NRb000000Ex1p" />
                 <input type="hidden" value="<?php
                 $encodedText = session()->get('00NRb000000Ex0D');
