@@ -1425,7 +1425,7 @@
 
 
                 <a href="/cotizacion/datos-evento" class="btn btn-primary">Anterior</a>
-                @if ($rootid == '02i3m00000D9DaPAAV' && session()->get('venueParentId') != '02i3m00000DiduVAAR')
+                @if ($rootid == '02i3m00000D9DaPAAV')
                     <button type="submit" id="confirm-button" class="btn btn-primary disabled submit-form" disabled
                         onclick="if (this.value !== 'Enviando...') { this.disabled=true; this.value='Enviando...'; this.form.submit(); }">Confirmar</button>
                 @else
