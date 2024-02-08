@@ -1139,19 +1139,19 @@
             <div class="row" style="margin-top:40px">
                 <div class="col-12 col-md-6">
                     <div class="form-group-preview">
-                        ¿Quisiera reservar una cancha deportiva?: <?php echo session()->get('00NO9000001szab'); ?>
-                        <a href="/cotizacion/datos-contacto#how">Editar</a>
+                        ¿Cancha deportiva?: <?php echo session()->get('00NO9000001szab'); ?>
+                        <a href="/cotizacion/datos-contacto#00NO9000001szab">Editar</a>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-group-preview">
-                        Bohíos adicionales: <input class="form-check-input" type="checkbox" value=<?php echo session()->get('00NO9000001t2AI'); ?> readonly>
+                        Bohíos adicionales: <input class="form-check-input" type="checkbox" value='1'  <?php echo session()->get('00NO9000001t2AI', old('00NO9000001t2AI')) == 1 ? 'checked="checked"' : ''; ?> readonly>
                         <a href="/cotizacion/datos-contacto#00NO9000001t2AI">Editar</a>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-group-preview">
-                        Alquiler de sillas y Mesas: <input class="form-check-input" type="checkbox" value=<?php echo session()->get('00NO9000001t2AH'); ?> readonly>
+                        Alquiler de sillas y Mesas: <input class="form-check-input" type="checkbox" value='1' <?php echo session()->get('00NO9000001t2AH', old('00NO9000001t2AH')) == 1 ? 'checked="checked"' : ''; ?> readonly>
                         <a href="/cotizacion/datos-contacto#00NO9000001t2AH">Editar</a>
                     </div>
                 </div>

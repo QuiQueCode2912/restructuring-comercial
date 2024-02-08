@@ -48,7 +48,7 @@ if (is_null($to_hour)) {
             </div>
             <div class="col-12 col-md-6">
                 <div class="form-group">
-                    <select class="form-control" id="how" name="00NO9000001szab">
+                    <select class="form-control" id="00NO9000001szab" name="00NO9000001szab">
                         <option value="">¿Quisiera reservar una cancha deportiva?</option>
                         <option <?php echo session()->get('00NO9000001szab', old('00NO9000001szab')) == 'Baloncesto' ? 'selected="selected"' : ''; ?> value="Baloncesto">Baloncesto</option>
                         <option <?php echo session()->get('00NO9000001szab', old('00NO9000001szab')) == 'Futbol' ? 'selected="selected"' : ''; ?> value="Futbol">Futbol</option>
