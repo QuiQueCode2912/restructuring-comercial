@@ -852,7 +852,7 @@
             <div class="col-12 col-md-6">
                 <div class="form-group-preview">
                     Requiere otro venue  : <?php echo session()->get('00NO9000001soor'); ?>
-                    <a href="/cotizacion/datos-evento#layout">Editar</a>
+                    <a href="/cotizacion/datos-evento#otro-venue">Editar</a>
                 </div>
             </div>
         </div>
