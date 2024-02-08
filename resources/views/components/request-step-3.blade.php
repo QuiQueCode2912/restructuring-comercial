@@ -1145,13 +1145,13 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-group-preview">
-                        Bohíos adicionales: <input class="form-check-input" type="checkbox" value='1'  <?php echo session()->get('00NO9000001t2AI', old('00NO9000001t2AI')) == 1 ? 'checked="checked"' : ''; ?> readonly>
+                        Bohíos adicionales: <input class="" type="checkbox" value='1'  <?php echo session()->get('00NO9000001t2AI', old('00NO9000001t2AI')) == 1 ? 'checked="checked"' : ''; ?> disabled>
                         <a href="/cotizacion/datos-contacto#00NO9000001t2AI">Editar</a>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-group-preview">
-                        Alquiler de sillas y Mesas: <input class="form-check-input" type="checkbox" value='1' <?php echo session()->get('00NO9000001t2AH', old('00NO9000001t2AH')) == 1 ? 'checked="checked"' : ''; ?> readonly>
+                        Alquiler de sillas y Mesas: <input class="" type="checkbox" value='1' <?php echo session()->get('00NO9000001t2AH', old('00NO9000001t2AH')) == 1 ? 'checked="checked"' : ''; ?> disabled>
                         <a href="/cotizacion/datos-contacto#00NO9000001t2AH">Editar</a>
                     </div>
                 </div>
