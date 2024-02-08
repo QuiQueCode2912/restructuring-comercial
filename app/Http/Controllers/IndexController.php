@@ -1301,16 +1301,21 @@ class IndexController extends Controller
                     }
                     if (isset($request['description']))
                         $inputs['description'] = $request['description'];
-                    switch ($venuep->parent_id) {
-                        case '02i3m00000D9DaPAAV':
-                            //<input type="hidden" name="00N3m00000QeH7c" id="00N3m00000QeH7c" value='Reserva desatendida'/> TODO: VERIFICAR SI ES CONSULTIVA
-                            $inputs['00N3m00000QeGyG'] = $request['00N3m00000QeGyG'];
-                            $inputs['recordType'] = '0123m000001AzQ4';
-                            break;
-                        default:
-                            $inputs['recordType'] = '0123m0000012tH4';
-                            break;
+                    if ($venuep->id != '02i3m00000DiduVAAR') {
+                        switch ($venuep->parent_id) {
+                            case '02i3m00000D9DaPAAV':
+                                //<input type="hidden" name="00N3m00000QeH7c" id="00N3m00000QeH7c" value='Reserva desatendida'/> TODO: VERIFICAR SI ES CONSULTIVA
+                                $inputs['00N3m00000QeGyG'] = $request['00N3m00000QeGyG'];
+                                $inputs['recordType'] = '0123m000001AzQ4';
+                                break;
+                            default:
+                                $inputs['recordType'] = '0123m0000012tH4';
+                                break;
+                        }
+                    }else{
+                        $inputs['recordType'] = '0123m0000012tH4';
                     }
+                   
                     // RECUERDA EL DUPLICATE RULE DONDE TIENES QUE EXCLUIR EL RECORD TYPE QUE ESTÉS AGREGANDO
 
 
