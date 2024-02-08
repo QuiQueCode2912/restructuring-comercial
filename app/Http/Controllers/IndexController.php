@@ -1343,7 +1343,7 @@ class IndexController extends Controller
                 $esEmpleado = session()->has('is-cds-user') ? session()->get('is-cds-user') : false;
                 $esCliente = session()->has('is-cds-customer') ? session()->get('is-cds-customer') : false;
                 switch ($venuep->parent_id) {
-                    case ('02i3m00000D9DaPAAV' && $venuep->id != '02i3m00000DiduVAAR'):
+                    case '02i3m00000D9DaPAAV':
                         $selVenues = session('ReservasSeleccionadas');
                         $reservas = json_decode(session('ReservasSeleccionadas'));
                        
