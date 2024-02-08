@@ -162,7 +162,7 @@ if (is_null($to_hour)) {
     <div class="row">
      <div class="col-12 col-md-6">
         <div class="form-group">
-          <label for="00NO9000001soor"><small>Describe tu evento</small></label>
+          <label for="00NO9000001soor"><small>¿Requiere otro Venue?</small></label>
           <textarea name="00NO9000001soor" required id="otro-venue"><?php echo session()->get('00NO9000001soor', old('00NO9000001soor')) ?></textarea>
         </div>
       </div>
