@@ -162,7 +162,7 @@ if (is_null($to_hour)) {
     <div class="row">
     <div class="col-12 col-md-6">
         <label for="RequiereOtroVenue"><small>Requiere otro Venue?</small></label>
-        <textarea name="00NO9000001soor" required id="00NO9000001soor"><?php echo session()->get('requiereOtroVenue__c', old('requiereOtroVenue__c')) ?></textarea>
+        <textarea name="00NO9000001soor" required id="00NO9000001soor"><?php echo session()->get('00NO9000001soor', old('00NO9000001soor')) ?></textarea>
     </div>
     </div>
 
