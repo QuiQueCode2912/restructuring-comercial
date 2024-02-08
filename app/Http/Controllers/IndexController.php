@@ -1211,7 +1211,7 @@ class IndexController extends Controller
                         //TODO: VERIFICAR SI ES CONSULTIVA
                         $step = '2-p';
                         if ($venuep->id == '02i3m00000DiduVAAR') {
-                            $step = '2';
+                            $step = '2-bohios';
                         }
                         switch (session()->get('franja')) {
                             case 'mes':
