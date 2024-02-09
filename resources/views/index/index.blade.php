@@ -92,11 +92,16 @@
             if($pvax != 'parque-cds')
               echo "Disciplinas";
             else
-              if($venue['name']=='Piscina')
+              if($venue['name']=='Piscina'){
                 echo 'Piscinas';
-              else
-                echo "Canchas";
-
+              }else{
+                if($venue['name'] == 'Bohios'){
+                  echo 'Bohíos';
+                }else{
+                  echo "Canchas";
+                }
+                
+              }
             }
             ?></dt>
             <dd><?php
@@ -111,7 +116,7 @@
 	              echo count($venue['venues']);
             else
               echo "1";
-}
+            }
 
             ?></dd>
           </dl>
@@ -132,7 +137,7 @@
               @if(($ppd < $pph && $ppd > 0 ) || ($pvax != 'parque-cds'  && $pvax != 'Parque Ciudad del Saber'))
               $<?php echo $sppd < $ppd ? $sppd : $ppd ?>
               @else
-              $<?php echo $pph ?>
+              $<?php echo $pph?>
               @endif
               @endif
               <span style="color:#0088ff">/*</span>

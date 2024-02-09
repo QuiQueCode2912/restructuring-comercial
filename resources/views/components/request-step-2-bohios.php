@@ -50,7 +50,9 @@ if (is_null($to_hour)) {
                 <div class="form-group">
                     <select class="form-control" id="00NO9000001szab" name="00NO9000001szab">
                         <option value="">¿Quisiera reservar una cancha deportiva?</option>
+                        <option value="">No</option>
                         <option <?php echo session()->get('00NO9000001szab', old('00NO9000001szab')) == 'Baloncesto' ? 'selected="selected"' : ''; ?> value="Baloncesto">Baloncesto</option>
+                        <option <?php echo session()->get('00NO9000001szab', old('00NO9000001szab')) == 'Piscina' ? 'selected="selected"' : ''; ?> value="Piscina">Piscina</option>
                         <option <?php echo session()->get('00NO9000001szab', old('00NO9000001szab')) == 'Futbol' ? 'selected="selected"' : ''; ?> value="Futbol">Futbol</option>
                         <option <?php echo session()->get('00NO9000001szab', old('00NO9000001szab')) == 'Beisbol' ? 'selected="selected"' : ''; ?> value="Beisbol">Beisbol</option>
                         <option <?php echo session()->get('00NO9000001szab', old('00NO9000001szab')) == 'Voleibol' ? 'selected="selected"' : ''; ?> value="Voleibol">Voleibol</option>
@@ -132,7 +134,8 @@ if (is_null($to_hour)) {
         <div class="row">
             <div class="col-12">
                 <div class="form-group required">
-                    <label for="description"><small>Describe tu evento</small></label>
+                    <label for="description" class="font-weight-bold" style="font-size: 1rem !important; " ><small>Describe tu evento</small></label>
+                    <p class="small" style="font-size: 0.7rem !important;">Compartenos la agenda de tu evento y en caso de solicitar canchas, sillas, mesas y/o bohios adicionales añade aquí las especificaciones sobre estos elementos adicionales.</p>
                     <textarea name="description" required id="description"><?php echo session()->get('description', old('description')); ?></textarea>
                 </div>
             </div>
