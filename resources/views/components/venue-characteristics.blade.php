@@ -87,6 +87,9 @@
                     @if ($parentid == '02i3m00000Fx0PEAAZ')
                         Ráquetbol
                     @endif
+                    @if ($parentid == '02i3m00000DiduVAAR')
+                        Bohíos
+                    @endif
                 </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -208,6 +211,20 @@
                         <li>Es obligatorio el uso de lentes de protección para ingresar a las canchas.</li>
                     </ul>
                 @endif
+
+                <!-- Bohios -->
+                @if ($parentid == '02i3m00000DiduVAAR')
+                    <ul>
+                        <li>Aplican todos los reglamentos de uso del Parque Ciudad del Saber</li>
+                        <li>No se permite juegos acuáticos ni granja de animales.</li>
+                        <li>No se permite el uso de barbacoas. Todos los alimentos deben venir preparados.</li>
+                        <li>Si desea traer inflables o trampolines, debe proporcionar su propio generador de energía (planta eléctrica).</li>
+                        <li>Si no cumple con la cantidad de personas estipuladas de los bohíos, el PCdS podrá proceder con la cancelación de su actividad por incumplimiento.</li>
+                        <li>La FUNDACIÓN, por condiciones climatológicas, se reserva el derecho de uso de las áreas verdes para preservar el buen estado de estas.</li>
+                    </ul>
+                @endif
+
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -269,6 +286,13 @@
             <a href="" data-toggle="modal" data-target="#modalInfoSpaces"
                 style="cursor: pointer;display:block;margin-top:1%">
                 <b>Reglamentos de uso del área deportiva </b>
+            </a>
+        @endif
+
+        @if ($parentid == '02i3m00000DiduVAAR')
+            <a href="" data-toggle="modal" data-target="#modalInfoSpaces"
+                style="cursor: pointer;display:block;margin-top:1%">
+                <b>Reglamento de área de Bohíos</b>
             </a>
         @endif
 
