@@ -55,6 +55,15 @@
             $ppd = $subvenue['all_day_fee'] > $ppd ? $subvenue['all_day_fee'] : $ppd;
             $sppd = $subvenue['seasonal_all_day_fee'] > $sppd ? $subvenue['seasonal_all_day_fee'] : $sppd;
           }
+          // Use array_map to extract the 'hour_fee' values
+          $hourFees = [];
+          foreach ($venue['venues'] as $subvenue) {
+             if($subvenue['hour_fee'] >  0) array_push($hourFees,$subvenue['hour_fee']);
+          }
+          if($hourFees){
+            $pph =min($hourFees);
+          }
+          
         }
         if($venue['type'] == 'Habitaciones')
         {
