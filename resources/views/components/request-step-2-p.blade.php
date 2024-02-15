@@ -179,7 +179,7 @@ if ($designs) {
                     }
                     if(sePermite == 'LimitGolf8'){
                         createAlert('', '',
-                            '<b>Sólo se permiten seleccionar 8 veces!</b><br/>Puedes cambiar tus horas seleccionadas para este día si lo deseas.',
+                            '<b>Sólo se permiten seleccionar 2 horas por zona  y hasta 4 zonas!</b><br/>Puedes cambiar tus horas seleccionadas para este día si lo deseas.',
                             'warning', true, true, 'pageMessages');
                         console.log("No se permite!");
                         return false;
