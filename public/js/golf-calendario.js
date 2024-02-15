@@ -61,7 +61,7 @@ function GolfCalendar() {
             objAux.venue = element.name;
             objAux.totalBolas = element.totalBolas;
             objAux.isGolf = true;
-            objAux.isDescountJub = element.isDescountJub; // Chequear  por si es jubilado  aplicar descuento
+            objAux.isDescountJub = element.isDescountJub ? element.isDescountJub : false ; // Chequear  por si es jubilado  aplicar descuento
             // Input time as a string
             var inputTime = element.startTime;
 

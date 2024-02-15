@@ -1434,6 +1434,8 @@ class IndexController extends Controller
                                         if($reserva->isDescountJub == true){
                                             $descuentoJubilados = Rates::where('name', '=', 'Descuento - Jubilados')->first()->percentage;
                                             $descuentoNinos = 0.00;
+                                        }else{
+                                            $descuentoJubilados =  0.00;
                                         }
                                        
                                     }
