@@ -828,12 +828,13 @@
                           
                         }
                     }
-
+                    
                     window.almacenarVenue = function (
                         venueId,
                         fechaActual,
                         nombreVenue,
-                        reemplazar = false
+                        reemplazar = false,
+                        venueParentId = null
                     ) {
                         var selVenues = $("#ReservasSeleccionadas").val()
                             ? JSON.parse($("#ReservasSeleccionadas").val())
@@ -854,10 +855,27 @@
                             id: id,
                             venue: nombreVenue,
                         };
+                        var elementosPorRango;
 
-                        var elementosPorRango = selVenues.filter(
-                            (x) => x.fecha === fechaActual
-                        ).length;
+                        //02i3m00000D9GuYAAV GOLF
+                        if(venueParentId=='02i3m00000D9GuYAAV'){
+                             elementosPorRango = selVenues.filter(
+                                (x) => (x.fecha === fechaActual &&  nombreVenue == x.venue  )
+                            ).length; 
+                            var elementosPorRangoFecha = selVenues.filter(
+                                (x) => x.fecha === fechaActual
+                            ).length;
+                            if(elementosPorRangoFecha>=8){
+                                console.log(
+                                    "Se ha alcanzado el límite de 8 elementos para zona Golf"
+                                );
+                                return 'LimitGolf8'
+                            }
+                        }else{
+                            var elementosPorRango = selVenues.filter(
+                                (x) => x.fecha === fechaActual
+                            ).length;
+                        }
                         console.log(
                             "elementosPorRango: " + (elementosPorRango + 1)
                         );
@@ -867,6 +885,8 @@
                             );
                             return false;
                         }
+
+
 
                         if (
                             !selVenues.find(

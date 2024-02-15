@@ -1228,6 +1228,9 @@ class IndexController extends Controller
                                 $venuesgrupo = Venue::where('parent_id', '=', $venuep->id)->where('show_on_website', '=', 'Si')->where('all_day_fee', '>', 0)->orderBy('name', 'asc')->get();
                                 //$venuesgrupo = Venue::where('parent_id', '=', $venuep->id)->where('show_on_website', '=', 'Si')->where(function($query) { $query->where('all_day_fee', '>', 0)->orWhere('hour_fee', '>', 0);})->orderBy('name','asc')->get();
                                 break;
+                            case ($venueId == '02i3m00000D9GuYAAV'):
+                                $venuesgrupo = Venue::where('parent_id', '=', $venueId)->where('show_on_website', '=', 'Si')->where('hour_fee', '>', 0)->where('showInCalendar', '!=', 'No')->orderBy('name', 'asc')->get();
+                                break;
                             default:
                                 $venuesgrupo = Venue::where('parent_id', '=', $venuep->id)->where('show_on_website', '=', 'Si')->where('hour_fee', '>', 0)->where('showInCalendar', '!=', 'No')->orderBy('name', 'asc')->get();
                         }
@@ -1241,18 +1244,20 @@ class IndexController extends Controller
 
                 $venue_ids = $venuesgrupo->pluck('id')->toArray();
                 $venue_images = VenueFile::whereIn('venue_id', $venue_ids)->first();
+                if($venue_images){
+                    foreach ($venuesgrupo as $venueAX) {
+                        $images = $venue_images->where('venue_id', $venueAX->id);
+                        if ($images->count() > 0) {
 
-                foreach ($venuesgrupo as $venueAX) {
-                    $images = $venue_images->where('venue_id', $venueAX->id);
-                    if ($images->count() > 0) {
-
-                        $this_image = $images->pluck('path')->first();
-                        $this_image = substr($this_image, 0, strpos($this_image, '.')) . '_480.' . substr($this_image, strpos($this_image, '.') + 1);
-                        $venueAX->image = image_url('storage/venues/' . $this_image);
-                    } else {
-                        $venueAX->image = image_url('/assets/images/placeholder-image.jpg');
+                            $this_image = $images->pluck('path')->first();
+                            $this_image = substr($this_image, 0, strpos($this_image, '.')) . '_480.' . substr($this_image, strpos($this_image, '.') + 1);
+                            $venueAX->image = image_url('storage/venues/' . $this_image);
+                        } else {
+                            $venueAX->image = image_url('/assets/images/placeholder-image.jpg');
+                        }
                     }
                 }
+
 
                 //   $images = [];
                 //   if ($venue_images->count() > 0)
@@ -1372,7 +1377,7 @@ class IndexController extends Controller
                                     $descuentoResidente = 0.00;
                                 }
                             }
-                            if (session()->get('00N3m00000QeGyG') == 'Jubilado') {
+                            if (session()->get('00N3m00000QeGyG') == 'Jubilado' ) {
                                 $descuentoJubilados = Rates::where('name', '=', 'Descuento - Jubilados')->first()->percentage;
                                 $descuentoNinos = 0.00;
                             } else {
@@ -1408,7 +1413,7 @@ class IndexController extends Controller
                                     $reserva->customTime = true;
                                 }else{
                                     $horaInicio = substr($idActual, 7, 2);
-                                    $sfAssetId = substr($idActual, 9);
+                                    $sfAssetId = substr($idActual, 9); 
                                 }
                         
 
@@ -1421,6 +1426,15 @@ class IndexController extends Controller
                                 $costoDia = $thisVenue->all_day_fee;
                                 $costoMes = $thisVenue->monthly_fee;
 
+                                if(isset($reserva->isGolf)){
+                                    if($reserva->totalBolas == 100 ){
+                                        $costoHora = ($costoHora * 2)  - 1;
+                                    }
+                                    if(isset($reserva->isDescountJub)){
+                                        $descuentoJubilados = Rates::where('name', '=', 'Descuento - Jubilados')->first()->percentage;
+                                        $descuentoNinos = 0.00;
+                                    }
+                                }
 
                                 //TODO: DEFINIR OTROS CALCULOS - MODIFICAR FORMULARIO STEP 1
                                 $calcular = true;

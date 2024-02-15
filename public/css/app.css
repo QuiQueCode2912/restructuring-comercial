@@ -1977,3 +1977,21 @@ footer #twitter-timeline .twitter-embed-header {
 .yappy-logo{
   width: 80px;
 }
+
+
+.card-subtitle{
+  font-size: 12px;
+}
+
+.card-button{
+  width: 48% !important;
+  margin: 1%;
+  padding: 1%;
+}
+
+.card-col{
+  border-radius: 15px;
+  box-shadow: 1px 1px 5px 1px rgba(98, 98, 98, 0.3);
+  padding: 5%;
+  margin: 3%;
+}

@@ -169,10 +169,17 @@ if ($designs) {
             } else {
                 console.log("tarChk: " + tarChk + " tarCont: " + tarCont + " nombreVenue: " + nombreVenue);
                 if (franja == 'hora') {
-                    var sePermite = almacenarVenue(tarCont, fecha, nombreVenue, reemplazar);
+                    var sePermite = almacenarVenue(tarCont, fecha, nombreVenue, reemplazar,e.target.dataset?.parentid);
                     if (!sePermite) {
                         createAlert('', '',
                             '<b>Sólo se permiten 2 horas por día!</b><br/>Puedes cambiar tus horas seleccionadas para este día si lo deseas.',
+                            'warning', true, true, 'pageMessages');
+                        console.log("No se permite!");
+                        return false;
+                    }
+                    if(sePermite == 'LimitGolf8'){
+                        createAlert('', '',
+                            '<b>Sólo se permiten seleccionar 8 veces!</b><br/>Puedes cambiar tus horas seleccionadas para este día si lo deseas.',
                             'warning', true, true, 'pageMessages');
                         console.log("No se permite!");
                         return false;
@@ -1661,6 +1668,10 @@ if ($designs) {
 
     
     @if ($parentid == '02i3m00000DiduCAAR')
+        <script>
+                   var phpVariable = @json($grupos);
+                   var moment = moment();
+        </script>
         <script type="text/babel" src="{{ asset('/js/golf-calendario.js') }}">
         </script>
     @endif
