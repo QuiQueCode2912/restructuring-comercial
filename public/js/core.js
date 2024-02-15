@@ -146,7 +146,7 @@
                         },
                       });
                     window.dispatchEvent(customEve);
-
+                    
                     //  alert(venueId + ' : ' + selDate);
                     $.ajax({
                         url: "/getAvailableSlots",
@@ -445,6 +445,7 @@
                             }, 2000);
                         },
                     });
+                   
                 }
 
                 $("#start-date").load("ajax/ignorar.html", function () {

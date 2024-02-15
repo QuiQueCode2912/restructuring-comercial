@@ -2235,7 +2235,7 @@ class IndexController extends Controller
             'client_id' => '3MVG9snQZy6aQDh1bhQninXsB8K1bDq_.WHDblgC5FDfztTLSpMs7oGMfTP1BZfXZDEbhh0iWzECRg3VCJpab', /* insert consumer key here */
             'client_secret' => '35FE5C2EA82CA584AE3B517C9EB518B5BEBDBCF7EA42CA5E66EECF44943D9EAA', /* insert consumer secret here */
             'username' => 'dnavas00@hotmail.com.qa', /* insert Salesforce username here */
-            'password' => 'fcds@2023NYDAFDWTqbUqdmk7QE5rDp4w' /* insert Salesforce user password and security token here */
+            'password' => 'fcds@20248oRIVFxk9tOVB5wFCQP322884' /* insert Salesforce user password and security token here */
         ];
        $endPoint = 'https://test.salesforce.com/';
   
@@ -2325,9 +2325,6 @@ class IndexController extends Controller
     {
         $venueId = $request->venueId;
         $salesforce = $this->salesforce();
-        if($request->venueId == '02i3m00000D9GuYAAV' ){
-            $venueId = '02i3m00000DiduCAAR';
-        }
         $thisVenue = Venue::where('id', '=', $venueId)->first();
         $parentId = $thisVenue->parent_id;
 
