@@ -1229,7 +1229,7 @@ class IndexController extends Controller
                                 //$venuesgrupo = Venue::where('parent_id', '=', $venuep->id)->where('show_on_website', '=', 'Si')->where(function($query) { $query->where('all_day_fee', '>', 0)->orWhere('hour_fee', '>', 0);})->orderBy('name','asc')->get();
                                 break;
                             case ($venueId == '02i3m00000D9GuYAAV'):
-                                $venuesgrupo = Venue::where('parent_id', '=', $venueId)->where('show_on_website', '=', 'Si')->where('hour_fee', '>', 0)->where('showInCalendar', '!=', 'No')->orderBy('name', 'asc')->get();
+                                $venuesgrupo = Venue::where('parent_id', '=', '02i3m00000DiduCAAR')->where('show_on_website', '=', 'No')->where('hour_fee', '>', 0)->where('showInCalendar', '!=', 'No')->orderBy('name', 'asc')->get();
                                 break;
                             default:
                                 $venuesgrupo = Venue::where('parent_id', '=', $venuep->id)->where('show_on_website', '=', 'Si')->where('hour_fee', '>', 0)->where('showInCalendar', '!=', 'No')->orderBy('name', 'asc')->get();
