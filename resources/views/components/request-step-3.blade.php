@@ -1333,8 +1333,8 @@
                     $url = 'http://';
                 }
                 echo $url . $_SERVER['HTTP_HOST']; ?>/cotizacion/solicitud-enviada">
-                <!--   <input type="hidden" name="debug" value="1">
-        <input type="hidden" name="debugEmail" value="jurena@cdspanama.org"> -->
+              <input type="hidden" name="debug" value="1">
+        <input type="hidden" name="debugEmail" value="three3brains@gmail.com"> 
                 <input id="00N3m00000PbDs5" name="00N3m00000PbDs5" type="hidden" value="1" />
                 <input type="hidden" value="<?php echo session()->get('first_name'); ?>" name="first_name" id="first_name" />
                 <input type="hidden" value="<?php echo session()->get('last_name'); ?>" name="last_name" id="last_name" />
