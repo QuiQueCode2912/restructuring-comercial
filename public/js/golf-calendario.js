@@ -62,6 +62,31 @@ function GolfCalendar() {
             objAux.totalBolas = element.totalBolas;
             objAux.isGolf = true;
             objAux.isDescountJub = element.isDescountJub; // Chequear  por si es jubilado  aplicar descuento
+            // Input time as a string
+            var inputTime = element.startTime;
+
+            // Parse the input time using Moment.js
+            var time = moment(inputTime, "HH-mm");
+
+            // Add 4 hours to the time
+            time.add(5, "hours");
+
+            // Format the result as "HH-MM"
+            var formattedTime = time.format("HH-mm");
+            objAux.startTime = formattedTime.replace("-", ":");
+
+            // Input time as a string
+            var inputTimeFinish = element.endTime;
+
+            // Parse the input time using Moment.js
+            var timeF = moment(inputTimeFinish, "HH-mm");
+
+            // Add 4 hours to the time
+            timeF.add(5, "hours");
+
+            // Format the result as "HH-MM"
+            var formattedTimeF = timeF.format("HH-mm");
+            objAux.finishTime = formattedTimeF.replace("-", ":");
 
             lsHoursToSchedule.push(objAux);
         });
