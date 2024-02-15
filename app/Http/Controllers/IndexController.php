@@ -2325,6 +2325,9 @@ class IndexController extends Controller
     {
         $venueId = $request->venueId;
         $salesforce = $this->salesforce();
+        if($request->venueId == '02i3m00000D9GuYAAV' ){
+            $venueId = '02i3m00000DiduCAAR';
+        }
         $thisVenue = Venue::where('id', '=', $venueId)->first();
         $parentId = $thisVenue->parent_id;
 
