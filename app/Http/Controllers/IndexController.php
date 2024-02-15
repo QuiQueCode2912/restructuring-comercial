@@ -1431,8 +1431,11 @@ class IndexController extends Controller
                                         $costoHora = ($costoHora * 2)  - 1;
                                     }
                                     if(isset($reserva->isDescountJub)){
-                                        $descuentoJubilados = Rates::where('name', '=', 'Descuento - Jubilados')->first()->percentage;
-                                        $descuentoNinos = 0.00;
+                                        if($reserva->isDescountJub == true){
+                                            $descuentoJubilados = Rates::where('name', '=', 'Descuento - Jubilados')->first()->percentage;
+                                            $descuentoNinos = 0.00;
+                                        }
+                                       
                                     }
                                 }
 

@@ -858,7 +858,7 @@
                         };
                         var elementosPorRango;
 
-                        //02i3m00000D9GuYAAV GOLF
+                        //02i3m00000DiduCAAR GOLF
                         if(venueParentId=='02i3m00000DiduCAAR'){
                              elementosPorRango = selVenues.filter(
                                 (x) => (x.fecha === fechaActual &&  nombreVenue == x.venue  )
