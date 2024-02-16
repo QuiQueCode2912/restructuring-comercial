@@ -896,11 +896,18 @@
                                 <td><b>Venue</b></td>
                                 <td><b>Fecha / Hora</b></td>
                                 <td><b>Recargos</b></td>
+
+                                @if (session()->get('venueParentId') == '02i3m00000DiduCAAR' ) 
+                                    <td><b>Bolas</b></td>
+                                    <td><b>Jubilado</b></td>
+                                @endif
+                               
                                 <td style='text-align:right'><b>Subtotal</b></td>
                             </tr>
                             <script>
                                 var reservas = JSON.parse('<?php echo session()->get('ReservasSeleccionadas'); ?>');
-
+                                var parentId ="<?php echo session()->get('venueParentId'); ?>";
+    
                                 var formatReservas = function(reservas) {
                                     var result = "";
 
@@ -913,9 +920,14 @@
                                         var horaFinFormateada = reserva.venue != 'PISCINA' ? formatHora(parseInt(horaInicio) + 1) :
                                             formatPiscinaHoraForEndEvent(horaInicio);
                                         var tarifaLinea = formatNumber(reserva.subtotal);
+                                        var bolasGolfComp="";
+                                        if(parentId == '02i3m00000DiduCAAR' ){
+                                            bolasGolfComp = "<td>"+reserva.totalBolas+"</td>"
+                                            bolasGolfComp += "<td><input type='checkbox'"+(reserva.isDescountJub ? "checked" : " ") +" onclick='return false;'/></td>"
+                                        }
                                         result += "<tr><td>" + reserva.venue + "</td><td>" + reserva.fecha + " " +
                                             horaInicioFormateada + " - " + horaFinFormateada + "</td><td>" + recargo +
-                                            "</td><td style='text-align:right'>" + tarifaLinea + "</td></tr>";
+                                            "</td>"+bolasGolfComp+"<td style='text-align:right'>" + tarifaLinea + "</td></tr>";
 
                                         // if (index !== reservas.length - 1) {
                                         //    result += "<br/>";

@@ -76,19 +76,6 @@
           <td><?php echo $data['method'] ?></td>
         </tr>
         @endif
-        @if (session()->get('venueParentId') == '02i3m00000DiduCAAR' )
-          <tr>
-            <th>Jubilado</th>
-            <td>
-            @if (isset($data['LeadId']))
-            <?php echo $data['Concepto'] ?>
-            @else
-            Abono - <?php echo $opportunity['Name'] ?>
-            @endif
-            </td>
-          </tr>
-        @endif
-
         <tr>
           <th>Concepto</th>
           <td>
