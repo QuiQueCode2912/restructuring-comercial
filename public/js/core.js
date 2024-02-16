@@ -866,11 +866,26 @@
                             var elementosPorRangoFecha = selVenues.filter(
                                 (x) => x.fecha === fechaActual
                             ).length;
+                            // Use the map function to extract the 'name' property
+                            let namesArray = selVenues.map(obj => obj.venue);
+                            // Use a Set to store unique values
+                            let uniqueNamesSet = new Set(namesArray);
+
+                            // Get the count of unique values
+                            let uniqueNamesCount = uniqueNamesSet.size;
+
+                          
                             if(elementosPorRangoFecha>=8){
                                 console.log(
                                     "Se ha alcanzado el límite de 8 elementos para zona Golf"
                                 );
                                 return 'LimitGolf8'
+                            }
+                            if(uniqueNamesCount>3 && !uniqueNamesSet.has(nombreVenue)){
+                                console.log(
+                                    "Se ha alcanzado el límite de 4 zonas"
+                                );
+                                return 'LimitGolfZonas'
                             }
                         }else{
                             var elementosPorRango = selVenues.filter(

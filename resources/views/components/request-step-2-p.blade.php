@@ -184,6 +184,13 @@ if ($designs) {
                         console.log("No se permite!");
                         return false;
                     }
+                    if(sePermite == 'LimitGolfZonas'){
+                        createAlert('', '',
+                            '<b>Sólo se permiten seleccionar hasta 4 zonas por día!</b>',
+                            'warning', true, true, 'pageMessages');
+                        console.log("No se permite!");
+                        return false;
+                    }
                     if(e.target.dataset.venueid != '02i3m00000D9BANAA3') validateBasketCourt(e.target.dataset.venueid, e.target.dataset.time, false);
                     
                 } else {

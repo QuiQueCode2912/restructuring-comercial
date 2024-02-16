@@ -1029,11 +1029,21 @@
                     <br />
                     <a href="/cotizacion/datos-evento#ReservasSeleccionadas">Editar</a>
                 </div>
+                @if (session()->get('venueParentId') == '02i3m00000DiduCAAR' )
+                <div class="row" style="margin-top:40px">
+                    <div class="col-12 text-center">
+                        <p style="color:#0088ff; font-family:'Roboto', sans-serif; font-size:14px">
+                            La asignación de la zona será realizada por el instructural al llegar al espacio en el horario seleccionado.</p>
+                    </div>
+                </div>
+                @endif
             </div>
         </div>
         <?php
       }
       ?>
+
+
         <div class="row">
             <div class="col-12 col-md-<?php if ($rootid != '02i3m00000D9DaPAAV') {
                 echo '6';
@@ -1225,6 +1235,9 @@
         <?php
     }
     ?>
+        
+     
+
         <div class="row" style="margin-top:40px">
             <div class="col-12 text-center">
                 <p style="color:#0088ff; font-family:'Roboto', sans-serif; font-size:14px">
@@ -1232,6 +1245,7 @@
                     momento de ser procesada por el equipo de Ciudad del Saber.</p>
             </div>
         </div>
+        
 
         <div class="row">
             @if ($rootid == '02i3m00000D9DaPAAV')
