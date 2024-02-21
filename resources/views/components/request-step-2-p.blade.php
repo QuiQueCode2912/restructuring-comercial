@@ -1354,11 +1354,11 @@ if ($designs) {
 
                                                                                                 //Cuerrent input date
                                                                                                 const timestamp = parseInt(e.target.dataset.currentday, 10);
-                                                                                                const formattedDate = moment(timestamp).format('YYYY-MM-DD HH:mm:ss');
-                                                                                                var currentScheduleInput =formattedDate.format('d');
+                                                                                                const formattedDate = moment(timestamp).format('d');
+                                                                                                
 
                                                                                                 var [startHours, startMinutes] =e.target.dataset.time.split('-');
-                                                                                                if(hours === startHours && numericDayOfWeek == currentScheduleInput && minutes === startMinutes && slot.Cantidad_de_asistentes__c){
+                                                                                                if(hours === startHours && numericDayOfWeek == formattedDate && minutes === startMinutes && slot.Cantidad_de_asistentes__c){
                                                                                                         cantPers+=slot.Cantidad_de_asistentes__c;
                                                                                                 }
                                                                                                 }
