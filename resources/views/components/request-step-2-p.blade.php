@@ -1352,7 +1352,9 @@ if ($designs) {
                                                                                                 var minutes = convertStartTime.format('mm');
                                                                                                 var numericDayOfWeek = convertStartTime.format('d');
 
-                                                                                                const formattedDate = moment(e.target.dataset.currentday).format('YYYY-MM-DD HH:mm:ss');
+                                                                                                //Cuerrent input date
+                                                                                                const timestamp = parseInt(e.target.dataset.currentday, 10);
+                                                                                                const formattedDate = moment(timestamp).format('YYYY-MM-DD HH:mm:ss');
                                                                                                 var currentScheduleInput =formattedDate.format('d');
 
                                                                                                 var [startHours, startMinutes] =e.target.dataset.time.split('-');
