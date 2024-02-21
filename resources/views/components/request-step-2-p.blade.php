@@ -169,7 +169,7 @@ if ($designs) {
             } else {
                 console.log("tarChk: " + tarChk + " tarCont: " + tarCont + " nombreVenue: " + nombreVenue);
                 if (franja == 'hora') {
-                    var sePermite = almacenarVenue(tarCont, fecha, nombreVenue, reemplazar,e.target.dataset?.parentid);
+                    var sePermite = almacenarVenue(tarCont, fecha, nombreVenue, reemplazar, e.target.dataset?.parentid);
                     if (!sePermite) {
                         createAlert('', '',
                             '<b>Sólo se permiten 2 horas por día!</b><br/>Puedes cambiar tus horas seleccionadas para este día si lo deseas.',
@@ -177,22 +177,23 @@ if ($designs) {
                         console.log("No se permite!");
                         return false;
                     }
-                    if(sePermite == 'LimitGolf8'){
+                    if (sePermite == 'LimitGolf8') {
                         createAlert('', '',
                             '<b>Sólo se permiten seleccionar 2 horas por zona  y hasta 4 zonas!</b><br/>Puedes cambiar tus horas seleccionadas para este día si lo deseas.',
                             'warning', true, true, 'pageMessages');
                         console.log("No se permite!");
                         return false;
                     }
-                    if(sePermite == 'LimitGolfZonas'){
+                    if (sePermite == 'LimitGolfZonas') {
                         createAlert('', '',
                             '<b>Sólo se permiten seleccionar hasta 4 zonas por día!</b>',
                             'warning', true, true, 'pageMessages');
                         console.log("No se permite!");
                         return false;
                     }
-                    if(e.target.dataset.venueid != '02i3m00000D9BANAA3') validateBasketCourt(e.target.dataset.venueid, e.target.dataset.time, false);
-                    
+                    if (e.target.dataset.venueid != '02i3m00000D9BANAA3') validateBasketCourt(e.target.dataset.venueid,
+                        e.target.dataset.time, false);
+
                 } else {
                     almacenarVenue(tarCont, fecha, nombreVenue, reemplazar);
                 }
@@ -205,7 +206,8 @@ if ($designs) {
                 $("[id$='" + clave + "']").not('.disabled').removeClass("secundary");
             }
             $(tarChk).removeClass("selected");
-            if(e.target.dataset.venueid != '02i3m00000D9BANAA3') validateBasketCourt(e.target.dataset.venueid, e.target.dataset.time, true);
+            if (e.target.dataset.venueid != '02i3m00000D9BANAA3') validateBasketCourt(e.target.dataset.venueid, e.target
+                .dataset.time, true);
 
         }
         console.log('chkCambio: ' + tarCont + ' / ' + fecha);
@@ -1350,7 +1352,8 @@ if ($designs) {
                                                                                                 var minutes = convertStartTime.format('mm');
                                                                                                 var numericDayOfWeek = convertStartTime.format('d');
 
-                                                                                                var currentScheduleInput = e.target.dataset.currentday.format('d');
+                                                                                                const formattedDate = moment(e.target.dataset.currentday).format('YYYY-MM-DD HH:mm:ss');
+                                                                                                var currentScheduleInput =formattedDate.format('d');
 
                                                                                                 var [startHours, startMinutes] =e.target.dataset.time.split('-');
                                                                                                 if(hours === startHours && numericDayOfWeek == currentScheduleInput && minutes === startMinutes && slot.Cantidad_de_asistentes__c){
@@ -1678,11 +1681,11 @@ if ($designs) {
         </script>
     @endif
 
-    
+
     @if ($parentid == '02i3m00000DiduCAAR')
         <script>
-                   var phpVariable = @json($grupos);
-                   var moment = moment();
+            var phpVariable = @json($grupos);
+            var moment = moment();
         </script>
         <script type="text/babel" src="{{ asset('/js/golf-calendario.js') }}">
         </script>
