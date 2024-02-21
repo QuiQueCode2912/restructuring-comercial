@@ -1451,9 +1451,14 @@ if ($designs) {
                                                                                                 // Get the hours and minutes
                                                                                                 var hours = convertStartTime.format('HH');
                                                                                                 var minutes = convertStartTime.format('mm');
+                                                                                                var numericDayOfWeek = convertStartTime.format('d');
+
+                                                                                                //Cuerrent input date
+                                                                                                const timestamp = parseInt(e.target.dataset.currentday, 10);
+                                                                                                const formattedDate = moment(timestamp).format('d');
 
                                                                                                 var [startHours, startMinutes] =e.target.dataset.time.split('-');
-                                                                                                if(hours === startHours && minutes === startMinutes && slot.Cantidad_de_asistentes__c){
+                                                                                                if(hours === startHours && numericDayOfWeek == formattedDate && minutes === startMinutes && slot.Cantidad_de_asistentes__c){
                                                                                                         cantPers+=slot.Cantidad_de_asistentes__c;
                                                                                                 }
                                                                                                 }
@@ -1488,6 +1493,7 @@ if ($designs) {
                                                                                 data-venuename={groups[0].name}
                                                                                 data-venueid={groups[0].id}
                                                                                 data-time={sch.startTime}
+                                                                                data-currentday={targetDate}
 
                                                                                 >
                                                                         
@@ -1543,9 +1549,14 @@ if ($designs) {
                                                                                                 // Get the hours and minutes
                                                                                                 var hours = convertStartTime.format('HH');
                                                                                                 var minutes = convertStartTime.format('mm');
+                                                                                                var numericDayOfWeek = convertStartTime.format('d');
+
+                                                                                                //Cuerrent input date
+                                                                                                const timestamp = parseInt(e.target.dataset.currentday, 10);
+                                                                                                const formattedDate = moment(timestamp).format('d');
 
                                                                                                 var [startHours, startMinutes] =e.target.dataset.time.split('-');
-                                                                                                if(hours === startHours && minutes === startMinutes && slot.Cantidad_de_asistentes__c){
+                                                                                                if(hours === startHours && numericDayOfWeek == formattedDate &&minutes === startMinutes && slot.Cantidad_de_asistentes__c){
                                                                                                         cantPers+=slot.Cantidad_de_asistentes__c;
                                                                                                 }
                                                                                                 }
@@ -1579,7 +1590,9 @@ if ($designs) {
                                                                                 name={"chkhora"+sch.startTime + groups[0].id}
                                                                                 data-venuename={groups[0].name}
                                                                                 data-venueid={groups[0].id}
-                                                                                data-time={sch.startTime}>
+                                                                                data-time={sch.startTime}
+                                                                                data-currentday={targetDate}
+                                                                                >
                                                                         
                                                                                 {sch.startTimeToShow}- {sch.endTimeToShow}
                                                                                     
