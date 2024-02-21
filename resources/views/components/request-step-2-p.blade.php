@@ -1343,13 +1343,17 @@ if ($designs) {
                                                                                                 if(slot.StartDateTime){
                                                                                                     let convertStartTime = moment.utc(slot.StartDateTime);
                                                                                                     convertStartTime.subtract(5,'hours');
-                                                                                                    
+                                                                                               
+
                                                                                                 // Get the hours and minutes
                                                                                                 var hours = convertStartTime.format('HH');
                                                                                                 var minutes = convertStartTime.format('mm');
+                                                                                                var numericDayOfWeek = convertStartTime.format('d');
+
+                                                                                                var currentScheduleInput = e.target.dataset.currentday.format('d');
 
                                                                                                 var [startHours, startMinutes] =e.target.dataset.time.split('-');
-                                                                                                if(hours === startHours && minutes === startMinutes && slot.Cantidad_de_asistentes__c){
+                                                                                                if(hours === startHours && numericDayOfWeek == currentScheduleInput && minutes === startMinutes && slot.Cantidad_de_asistentes__c){
                                                                                                         cantPers+=slot.Cantidad_de_asistentes__c;
                                                                                                 }
                                                                                                 }
@@ -1386,6 +1390,7 @@ if ($designs) {
                                                                                 data-venuename={groups[0].name}
                                                                                 data-venueid={groups[0].id}
                                                                                 data-time={sch.startTime}
+                                                                                data-currentday={targetDate}
                                                                                >
                                                                         
                                                                                     {sch.startTimeToShow}- {sch.endTimeToShow}
