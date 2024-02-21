@@ -2237,10 +2237,10 @@ class IndexController extends Controller
         //Credenciales de QA en Salesforce
         $options = [
             'grant_type' => 'password',
-            'client_id' => '3MVG9snQZy6aQDh1bhQninXsB8K1bDq_.WHDblgC5FDfztTLSpMs7oGMfTP1BZfXZDEbhh0iWzECRg3VCJpab', /* insert consumer key here */
-            'client_secret' => '35FE5C2EA82CA584AE3B517C9EB518B5BEBDBCF7EA42CA5E66EECF44943D9EAA', /* insert consumer secret here */
+            'client_id' => '3MVG9qOtrzqonpGPTnRKnDPbfLUxczLVWYAr0SgwYgTPHYjP89GXr2ZtrnQf8uKIZRUBga3gjcpZ2t4Vs3vvZ', /* insert consumer key here */
+            'client_secret' => '41B465ACC4804E727AA23C948FA375999B738BB33DE1417B56B70829379A88DD', /* insert consumer secret here */
             'username' => 'dnavas00@hotmail.com.qa', /* insert Salesforce username here */
-            'password' => 'fcds@2024J1trPgRNL2okEEiiboLHZgjs' /* insert Salesforce user password and security token here */
+            'password' => 'fcds@20249KjUYQx3vVGdY3FxqsT13ZWxH' /* insert Salesforce user password and security token here */
         ];
        $endPoint = 'https://test.salesforce.com/';
   
