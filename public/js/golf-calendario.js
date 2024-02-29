@@ -441,7 +441,16 @@ function GolfCalendar() {
                         }
                     })}
             </div>
-
+            <div class="row">
+                <div
+                    id=""
+                    class="col-12 col-md-12 espacios-seleccionados"
+                >
+                    <a id="" href="#">
+                        <small>Se puede separar maximo 2 horas por zona al día y hasta 4 zonas por reserva.</small>
+                    </a>
+                </div>
+            </div>
             <div class="row">
                 <div
                     id="espaciosSeleccionados"
@@ -453,6 +462,7 @@ function GolfCalendar() {
                 </div>
             </div>
 
+            
             <div class="row">
                 <div class="col-12 col-md-12">
                     <div class="form-group">
