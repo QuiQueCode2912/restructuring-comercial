@@ -11,7 +11,7 @@ function GolfCalendar() {
     const [currentDay, setCurrentDay] = React.useState(null);
 
     const [groups, setGroups] = React.useState([]);
-    
+
     const [schedules, setSchedules] = React.useState([
         {
             startTime: "13",
@@ -61,7 +61,9 @@ function GolfCalendar() {
             objAux.venue = element.name;
             objAux.totalBolas = element.totalBolas;
             objAux.isGolf = true;
-            objAux.isDescountJub = element.isDescountJub ? element.isDescountJub : false ; // Chequear  por si es jubilado  aplicar descuento
+            objAux.isDescountJub = element.isDescountJub
+                ? element.isDescountJub
+                : false; // Chequear  por si es jubilado  aplicar descuento
             // Input time as a string
             var inputTime = element.startTime;
 
@@ -149,14 +151,10 @@ function GolfCalendar() {
         );
     };
 
-    
     const handleToggleCheckbox = (e, id) => {
         setSelectedHour((prevData) =>
             prevData.map((item) => {
-                if (
-                    item.id === id &&
-                    currentSchedule == item.currentSchedule
-                )
+                if (item.id === id && currentSchedule == item.currentSchedule)
                     return { ...item, isDescountJub: e.target.checked };
                 return item;
             })
@@ -227,10 +225,9 @@ function GolfCalendar() {
         };
     }, []);
 
-    
     React.useEffect(() => {
         // Access the PHP variable here
-        if(phpVariable){
+        if (phpVariable) {
             setGroups(phpVariable);
         }
     }, [phpVariable]);
@@ -244,7 +241,7 @@ function GolfCalendar() {
                             <th className="headcol"></th>
                             {groups.length > 0 &&
                                 groups.map((element, i) => {
-                                    if(i<4){
+                                    if (i < 4) {
                                         return (
                                             <th className="text-center" key={i}>
                                                 <div
@@ -263,9 +260,8 @@ function GolfCalendar() {
                                                 </div>
                                             </th>
                                         );
-                                    })}
                                     }
-                               
+                                })}
                         </tr>
                     </thead>
                     <tbody>
@@ -375,11 +371,14 @@ function GolfCalendar() {
                                             {item.name}
                                         </h4>
                                         <p className="w-100 text-center card-subtitle mb-2 text-muted">
-                                            {item.startTime +':00 PM' } - {item.endTime +':00 PM'}
+                                            {item.startTime + ":00 PM"} -{" "}
+                                            {item.endTime + ":00 PM"}
                                         </p>
                                         <div className=" ">
                                             <div className="w-100 d-flex ">
-                                                <p className="mb-1 w-50">Bolas</p>
+                                                <p className="mb-1 w-50">
+                                                    Bolas
+                                                </p>
                                                 <input
                                                     type="text"
                                                     value={item.totalBolas}
@@ -392,7 +391,6 @@ function GolfCalendar() {
                                             </div>
 
                                             <div className="">
-                                            
                                                 <button
                                                     className="btn btn-outline-primary  card-button mt-2 "
                                                     onClick={(e) =>
@@ -421,12 +419,17 @@ function GolfCalendar() {
                                                 <input
                                                     type="checkbox"
                                                     class="custom-control-input"
-                                                    id={'checbox-'+item.id}
-                                                    onChange={(e)=>handleToggleCheckbox(e,item.id)}
+                                                    id={"checbox-" + item.id}
+                                                    onChange={(e) =>
+                                                        handleToggleCheckbox(
+                                                            e,
+                                                            item.id
+                                                        )
+                                                    }
                                                 />
                                                 <label
                                                     class="custom-control-label"
-                                                    for={'checbox-'+item.id}
+                                                    for={"checbox-" + item.id}
                                                 >
                                                     <small>Jubilado</small>
                                                 </label>
