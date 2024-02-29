@@ -301,55 +301,57 @@ function GolfCalendar() {
                                             {groups.length > 0 &&
                                                 isRefresh == false &&
                                                 groups.map((element, i) => {
-                                                    return (
-                                                        <td
-                                                            className="text-center position-relative"
-                                                            key={i}
-                                                        >
-                                                            <div
-                                                                className="spBtn"
-                                                                onClick={
-                                                                    handleSelect
-                                                                }
-                                                                id={
-                                                                    "chkhora" +
-                                                                    sch.startTime +
-                                                                    element.id
-                                                                }
-                                                                name={
-                                                                    "chkhora" +
-                                                                    sch.startTime +
-                                                                    element.id
-                                                                }
-                                                                data-venuename={
-                                                                    element.name
-                                                                }
-                                                                data-venueid={
-                                                                    element.id
-                                                                }
-                                                                data-time={
-                                                                    sch.startTime
-                                                                }
-                                                                data-input={
-                                                                    currentInputValue
-                                                                }
-                                                                data-schedule={JSON.stringify(
-                                                                    sch
-                                                                )}
-                                                                data-parentid={
-                                                                    element.parent_id
-                                                                }
+                                                    if (i < 4) {
+                                                        return (
+                                                            <td
+                                                                className="text-center position-relative"
+                                                                key={i}
                                                             >
-                                                                {
-                                                                    sch.startTimeToShow
-                                                                }
-                                                                -{" "}
-                                                                {
-                                                                    sch.endTimeToShow
-                                                                }
-                                                            </div>
-                                                        </td>
-                                                    );
+                                                                <div
+                                                                    className="spBtn"
+                                                                    onClick={
+                                                                        handleSelect
+                                                                    }
+                                                                    id={
+                                                                        "chkhora" +
+                                                                        sch.startTime +
+                                                                        element.id
+                                                                    }
+                                                                    name={
+                                                                        "chkhora" +
+                                                                        sch.startTime +
+                                                                        element.id
+                                                                    }
+                                                                    data-venuename={
+                                                                        element.name
+                                                                    }
+                                                                    data-venueid={
+                                                                        element.id
+                                                                    }
+                                                                    data-time={
+                                                                        sch.startTime
+                                                                    }
+                                                                    data-input={
+                                                                        currentInputValue
+                                                                    }
+                                                                    data-schedule={JSON.stringify(
+                                                                        sch
+                                                                    )}
+                                                                    data-parentid={
+                                                                        element.parent_id
+                                                                    }
+                                                                >
+                                                                    {
+                                                                        sch.startTimeToShow
+                                                                    }
+                                                                    -{" "}
+                                                                    {
+                                                                        sch.endTimeToShow
+                                                                    }
+                                                                </div>
+                                                            </td>
+                                                        );
+                                                    }
                                                 })}
                                         </tr>
                                     );
