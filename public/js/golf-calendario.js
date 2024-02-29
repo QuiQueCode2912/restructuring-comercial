@@ -244,25 +244,28 @@ function GolfCalendar() {
                             <th className="headcol"></th>
                             {groups.length > 0 &&
                                 groups.map((element, i) => {
-                                    return (
-                                        <th className="text-center" key={i}>
-                                            <div
-                                                id="diaDisclaimer"
-                                                data-toggle="popover"
-                                                data-placement="bottom"
-                                                title="Dismissible popover"
-                                                data-content="And here's some amazing content. It's very engaging. Right?"
-                                            >
-                                                <a
-                                                    href="/"
-                                                    className="col-head"
+                                    if(i<4){
+                                        return (
+                                            <th className="text-center" key={i}>
+                                                <div
+                                                    id="diaDisclaimer"
+                                                    data-toggle="popover"
+                                                    data-placement="bottom"
+                                                    title="Dismissible popover"
+                                                    data-content="And here's some amazing content. It's very engaging. Right?"
                                                 >
-                                                    <b>{element.name}</b>
-                                                </a>
-                                            </div>
-                                        </th>
-                                    );
-                                })}
+                                                    <a
+                                                        href="/"
+                                                        className="col-head"
+                                                    >
+                                                        <b>{element.name}</b>
+                                                    </a>
+                                                </div>
+                                            </th>
+                                        );
+                                    })}
+                                    }
+                               
                         </tr>
                     </thead>
                     <tbody>
