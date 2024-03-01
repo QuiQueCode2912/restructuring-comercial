@@ -1454,19 +1454,18 @@
 
                 <a href="/cotizacion/datos-evento" class="btn btn-primary">Anterior</a>
                 @if ($rootid == '02i3m00000D9DaPAAV')
-                    <button type="submit" id="confirm-button" class="btn btn-primary disabled submit-form" disabled
-                        onclick="if (this.value !== 'Enviando...') { this.disabled=true; this.value='Enviando...'; this.form.submit(); }">Confirmar</button>
-                @else
                     @if(session()->get('venueParentId') == '02i3m00000DiduVAAR') 
-    
-                    <button type="submit" id="confirm-button" class="btn btn-primary submit-form"
-                    onclick="if (this.value !== 'Enviando...') { this.disabled=true; this.value='Enviando...'; this.form.submit(); }">Enviar</button>
-                    
+                        <button type="submit" id="confirm-button" class="btn btn-primary submit-form"
+                            onclick="if (this.value !== 'Enviando...') { this.disabled=true; this.value='Enviando...'; this.form.submit(); }">Enviar</button>
                     @else
-                    <button type="submit" id="confirm-button" class="btn btn-primary submit-form"
-                        onclick="if (this.value !== 'Enviando...') { this.disabled=true; this.value='Enviando...'; this.form.submit(); }">Confirmar</button>
+                        <button type="submit" id="confirm-button" class="btn btn-primary disabled submit-form" disabled
+                            onclick="if (this.value !== 'Enviando...') { this.disabled=true; this.value='Enviando...'; this.form.submit(); }">Confirmar2</button>
                     @endif
                 
+                @else
+                    <button type="submit" id="confirm-button" class="btn btn-primary submit-form"
+                        onclick="if (this.value !== 'Enviando...') { this.disabled=true; this.value='Enviando...'; this.form.submit(); }">Confirmar</button>
+
                 @endif
             </div>
         </div>
