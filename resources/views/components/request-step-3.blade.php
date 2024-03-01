@@ -1459,7 +1459,7 @@
                             onclick="if (this.value !== 'Enviando...') { this.disabled=true; this.value='Enviando...'; this.form.submit(); }">Enviar</button>
                     @else
                         <button type="submit" id="confirm-button" class="btn btn-primary disabled submit-form" disabled
-                            onclick="if (this.value !== 'Enviando...') { this.disabled=true; this.value='Enviando...'; this.form.submit(); }">Confirmar2</button>
+                            onclick="if (this.value !== 'Enviando...') { this.disabled=true; this.value='Enviando...'; this.form.submit(); }">Confirmar</button>
                     @endif
                 
                 @else
