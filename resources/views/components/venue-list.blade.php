@@ -27,9 +27,17 @@ $pvax = isset($parentVenue) ? $parentVenue : $venue['name'];
                     @if ($parentid != '02i3m00000Fx0PJAAZ')
                         <!-- 02i3m00000D9BANAA4  ESTE ID ES DE LA PISCINA  -->
                         <!-- 02i3m00000D9Gu9AAF  ESTE ID ES DE LA -Baloncesto individual   -->
-                        @if ($hourfee > 0 && $id != '02i3m00000D9BANAA4' && $id != '02iRb0000009jcDIAQ')
+                        <!-- 02i3m00000DiduVAAR  ESTE ID ES DE Bohios   -->
+                        @if ($hourfee > 0 && 
+                            $id != '02i3m00000D9BANAA4' 
+                            && $parentid !='02i3m00000DiduVAAR' && $id != '02iRb0000009jcDIAQ')
                             <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=hora"
                                 class="btn btn-primary btn-sm">Reservar horas</a>
+                        @endif
+                        
+                        @if ($hourfee > 0 && $parentid =='02i3m00000DiduVAAR')
+                            <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=hora"
+                            class="btn btn-primary btn-sm">Cotizar</a>
                         @endif
                         @if ($alldayfee > 0)
                             <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=dia"
