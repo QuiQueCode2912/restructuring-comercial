@@ -133,10 +133,10 @@ function GolfCalendar() {
                         },
                     ];
                     let prevDataHoursSorted = prevDataHours.sort(function (a, b) {
-                        if (a.firstname < b.name) {
+                        if (a.name < b.name) {
                             return -1;
                         }
-                        if (a.firstname > b.name) {
+                        if (a.name > b.name) {
                             return 1;
                         }
                         return 0;
