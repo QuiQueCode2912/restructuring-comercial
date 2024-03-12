@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/confirmacion-pago/{token}/fcds', 'App\Http\Controllers\IndexController@paymentConfirmation');

@@ -2084,6 +2084,14 @@ class IndexController extends Controller
                             $data['Concepto'] = nl2br($lead['records'][0]['Espacios_que_desea_reservar__c']);
                         }
                     }
+                       // Check if the request is from the API
+                    if ($request->header('Accept') === 'application/json') {
+                        // Request is from the API
+                        return response()->json(['message' => 'API request']);
+                    } else { 
+                        // The URL does not contain 'api'
+                        return view('index.payment-confirmation', ['data' => $data, 'opportunity' => $lead['totalSize'] > 0 ? $lead['records'][0] : null]);
+                    }
 
                     return view('index.payment-confirmation', ['data' => $data, 'opportunity' => $lead['totalSize'] > 0 ? $lead['records'][0] : null]);
                 } else {
