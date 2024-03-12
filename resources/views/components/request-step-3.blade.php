@@ -781,9 +781,13 @@
       </div>-->
         </div>
 
-        <?php if (session()->get('recordType') == '0123m0000012tH4' || session()->get('recordType') == '0123m000001AzQ4') : ?>
+        {{$rootid}}
+
+        <?php if (session()->get('recordType') == '0123m0000012tH4' 
+        || session()->get('recordType') == '0123m000001AzQ4' 
+        ||  session()->get('venueParentId') == '02i3m00000DiduVAAR') : ?>
         <?php
-       if($rootid != '02i3m00000D9DaPAAV')
+       if($rootid != '02i3m00000D9DaPAAV' || session()->get('venueParentId') == '02i3m00000DiduVAAR')
        {
     ?>
         <div class="row" style="margin-top:40px">
@@ -1099,60 +1103,62 @@
     }
     ?>
             <?php else : ?>
-            <div class="row" style="margin-top:40px">
-                <div class="col-12 col-md-6">
-                    <div class="form-group-preview">
-                        <?php echo session()->get('00N3m00000QMzL7'); ?> persona<?php echo session()->get('00N3m00000QMzL7') != 1 ? 's' : ''; ?> se mudarán a CDS
-                        <a href="/cotizacion/datos-residencia#quantity">Editar</a>
+            @if (session()->get('venueParentId')!='02i3m00000DiduVAAR')
+                <div class="row" style="margin-top:40px">
+                    <div class="col-12 col-md-6">
+                        <div class="form-group-preview">
+                            <?php echo session()->get('00N3m00000QMzL7'); ?> persona<?php echo session()->get('00N3m00000QMzL7') != 1 ? 's' : ''; ?> se mudarán a CDS
+                            <a href="/cotizacion/datos-residencia#quantity">Editar</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-group-preview">
+                            <?php echo session()->get('00N3m00000QMzLH') == 'Si' ? 'SI' : 'NO'; ?> tenemos mascotas
+                            <a href="/cotizacion/datos-residencia#pets">Editar</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-group-preview">
+                            Fecha de instalación: <?php echo session()->get('00N3m00000QMwta'); ?>
+                            <a href="/cotizacion/datos-residencia#start-date">Editar</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-group-preview">
+                            Estadía: <?php echo session()->get('00N3m00000QMzLC'); ?> año<?php echo session()->get('00N3m00000QMzLC') != 1 ? 's' : ''; ?>
+                            <a href="/cotizacion/datos-residencia#duration">Editar</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-group-preview">
+                            <?php echo session()->get('work-in-campus') == 'Si' ? 'SI' : 'NO'; ?> trabajo en una organización del campus
+                            <a href="/cotizacion/datos-residencia#work-in-campus">Editar</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6" style="margin-bottom:20px; display:<?php echo session()->get('work-in-campus') == 'Si' ? 'block' : 'none'; ?>">
+                        <div class="form-group-preview">
+                            Organización: <?php echo session()->get('00N3m00000QMzLM'); ?>
+                            <a href="/cotizacion/datos-residencia#campus-organization">Editar</a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group-preview">
+                            <small>¿Por qué elegiste CDS para rentar vivienda?</small>
+                            <?php echo session()->get('00N3m00000QMzLR'); ?>
+                            <br /><br /><br />
+                            <a href="/cotizacion/datos-residencia#why-cds">Editar</a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group-preview">
+                            <small>Actividades a realizar en CDS</small>
+                            <?php echo session()->get('00N3m00000QMzLW'); ?>
+                            <br /><br /><br />
+                            <a href="/cotizacion/datos-residencia#to-do-cds">Editar</a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-group-preview">
-                        <?php echo session()->get('00N3m00000QMzLH') == 'Si' ? 'SI' : 'NO'; ?> tenemos mascotas
-                        <a href="/cotizacion/datos-residencia#pets">Editar</a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-group-preview">
-                        Fecha de instalación: <?php echo session()->get('00N3m00000QMwta'); ?>
-                        <a href="/cotizacion/datos-residencia#start-date">Editar</a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-group-preview">
-                        Estadía: <?php echo session()->get('00N3m00000QMzLC'); ?> año<?php echo session()->get('00N3m00000QMzLC') != 1 ? 's' : ''; ?>
-                        <a href="/cotizacion/datos-residencia#duration">Editar</a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-group-preview">
-                        <?php echo session()->get('work-in-campus') == 'Si' ? 'SI' : 'NO'; ?> trabajo en una organización del campus
-                        <a href="/cotizacion/datos-residencia#work-in-campus">Editar</a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6" style="margin-bottom:20px; display:<?php echo session()->get('work-in-campus') == 'Si' ? 'block' : 'none'; ?>">
-                    <div class="form-group-preview">
-                        Organización: <?php echo session()->get('00N3m00000QMzLM'); ?>
-                        <a href="/cotizacion/datos-residencia#campus-organization">Editar</a>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="form-group-preview">
-                        <small>¿Por qué elegiste CDS para rentar vivienda?</small>
-                        <?php echo session()->get('00N3m00000QMzLR'); ?>
-                        <br /><br /><br />
-                        <a href="/cotizacion/datos-residencia#why-cds">Editar</a>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="form-group-preview">
-                        <small>Actividades a realizar en CDS</small>
-                        <?php echo session()->get('00N3m00000QMzLW'); ?>
-                        <br /><br /><br />
-                        <a href="/cotizacion/datos-residencia#to-do-cds">Editar</a>
-                    </div>
-                </div>
-            </div>
+            @endif
             <?php endif ?>
 
         </div>
