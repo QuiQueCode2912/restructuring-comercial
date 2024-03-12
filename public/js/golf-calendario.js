@@ -97,7 +97,7 @@ function GolfCalendar() {
             JSON.stringify(lsHoursToSchedule);
         buttonRef.current.click();
     };
-    const handleSelect = (e) => {
+    const handleSelect = async (e) => {
         e.preventDefault();
         console.log(e);
         let sch = JSON.parse(e.target.dataset.schedule);
@@ -117,7 +117,7 @@ function GolfCalendar() {
                 );
                 setSelectedHour(updatedArray);
             } else {
-                setSelectedHour((prevData) => [
+                await  setSelectedHour((prevData) => [
                     ...prevData,
                     {
                         id: e.target.id,
@@ -131,13 +131,14 @@ function GolfCalendar() {
                         currentSchedule: currentSchedule,
                     },
                 ]);
+                let selectedHoursSorted = selectedHour.sort(function(a, b){
+                    if(a.firstname < b.name) { return -1; }
+                    if(a.firstname > b.name) { return 1; }
+                    return 0;
+                });
+                setSelectedHour(selectedHoursSorted);
             }
-            let selectedHoursSorted = selectedHour.sort(function(a, b){
-                if(a.firstname < b.name) { return -1; }
-                if(a.firstname > b.name) { return 1; }
-                return 0;
-            });
-            setSelectedHour(selectedHoursSorted);
+           
         }
     };
 
