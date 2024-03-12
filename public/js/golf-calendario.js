@@ -132,7 +132,7 @@ function GolfCalendar() {
                             currentSchedule: currentSchedule,
                         },
                     ];
-                    prevDataHours.sort(function (a, b) {
+                    let prevDataHoursSorted = prevDataHours.sort(function (a, b) {
                         if (a.firstname < b.name) {
                             return -1;
                         }
@@ -141,7 +141,7 @@ function GolfCalendar() {
                         }
                         return 0;
                     });
-                    return prevDataHours;
+                    return prevDataHoursSorted;
                 });
             }
         }
