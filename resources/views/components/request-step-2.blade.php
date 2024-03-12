@@ -170,8 +170,8 @@ if (is_null($to_hour)) {
 
     <div class="row">
       <div class="col-12 col-md-6">
-        <div class="form-group ">
-          <label for="description"><small><span style="color: #0088ff;">*</span>Describe tu evento</small></label>
+        <div class="form-group required">
+          <label for="description"><small>Describe tu evento</small></label>
           <textarea name="description" required id="description"><?php echo session()->get('description', old('description')) ?></textarea>
         </div>
       </div>

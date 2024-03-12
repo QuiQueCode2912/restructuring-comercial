@@ -134,8 +134,8 @@ if (is_null($to_hour)) {
         <?php endif ?>
         <div class="row">
             <div class="col-12">
-                <div class="form-group required">
-                    <label for="description" class="font-weight-bold" style="font-size: 1rem !important; " ><small>Describe tu evento</small></label>
+                <div class="form-group ">
+                    <label for="description" class="font-weight-bold" style="font-size: 1rem !important; " > <span style="color: #0088ff;">*</span><small>Describe tu evento</small></label>
                     <p class="small" style="font-size: 0.7rem !important;">Compartenos la agenda de tu evento y en caso de solicitar canchas, sillas, mesas y/o bohios adicionales añade aquí las especificaciones sobre estos elementos adicionales.</p>
                     <textarea name="description" required id="description"><?php echo session()->get('description', old('description')); ?></textarea>
                 </div>
