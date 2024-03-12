@@ -132,6 +132,12 @@ function GolfCalendar() {
                     },
                 ]);
             }
+            let selectedHoursSorted = selectedHour.sort(function(a, b){
+                if(a.firstname < b.name) { return -1; }
+                if(a.firstname > b.name) { return 1; }
+                return 0;
+            });
+            setSelectedHour(selectedHoursSorted);
         }
     };
 
