@@ -117,28 +117,33 @@ function GolfCalendar() {
                 );
                 setSelectedHour(updatedArray);
             } else {
-                await  setSelectedHour((prevData) => [
-                    ...prevData,
-                    {
-                        id: e.target.id,
-                        name: e.target.dataset.venuename,
-                        fecha: e.target.dataset.input,
-                        totalBolas: 50,
-                        timeSelected:
-                            sch.startTimeToShow + "-" + sch.endTimeToShow,
-                        startTime: sch.startTime,
-                        endTime: sch.endTime,
-                        currentSchedule: currentSchedule,
-                    },
-                ]);
-                let selectedHoursSorted = selectedHour.sort(function(a, b){
-                    if(a.firstname < b.name) { return -1; }
-                    if(a.firstname > b.name) { return 1; }
-                    return 0;
+                await setSelectedHour((prevData) => {
+                    let prevDataHours = [
+                        ...prevData,
+                        {
+                            id: e.target.id,
+                            name: e.target.dataset.venuename,
+                            fecha: e.target.dataset.input,
+                            totalBolas: 50,
+                            timeSelected:
+                                sch.startTimeToShow + "-" + sch.endTimeToShow,
+                            startTime: sch.startTime,
+                            endTime: sch.endTime,
+                            currentSchedule: currentSchedule,
+                        },
+                    ];
+                    prevDataHours.sort(function (a, b) {
+                        if (a.firstname < b.name) {
+                            return -1;
+                        }
+                        if (a.firstname > b.name) {
+                            return 1;
+                        }
+                        return 0;
+                    });
+                    return prevDataHours;
                 });
-                setSelectedHour(selectedHoursSorted);
             }
-           
         }
     };
 
@@ -451,12 +456,12 @@ function GolfCalendar() {
                     })}
             </div>
             <div class="row">
-                <div
-                    id=""
-                    class="col-12 col-md-12 espacios-seleccionados"
-                >
+                <div id="" class="col-12 col-md-12 espacios-seleccionados">
                     <a id="" href="#">
-                        <small>Se puede separar maximo 2 horas por zona al día y hasta 4 zonas por reserva.</small>
+                        <small>
+                            Se puede separar maximo 2 horas por zona al día y
+                            hasta 4 zonas por reserva.
+                        </small>
                     </a>
                 </div>
             </div>
@@ -471,7 +476,6 @@ function GolfCalendar() {
                 </div>
             </div>
 
-            
             <div class="row">
                 <div class="col-12 col-md-12">
                     <div class="form-group">
