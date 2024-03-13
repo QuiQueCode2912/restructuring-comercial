@@ -20,4 +20,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/confirmacion-pago/{token}/fcds', 'App\Http\Controllers\IndexController@paymentConfirmation');
+Route::post('/confirmacion-pago', 'App\Http\Controllers\IndexController@paymentConfirmationPost');
+
+Route::get('/test', function () {
+    
+// Get the URL from the request
+    $url = "https://comercial.ciudaddelsaber.org/confirmacion-pago/00QRb000007ERxEMAW?PARM_1=70621";
+    $request = Request::create($url);
+
+    // Get the 'id' parameter value
+    $id = basename($request->path());
+
+    // Output the result
+    return $id;
+});

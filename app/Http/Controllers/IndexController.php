@@ -2084,14 +2084,8 @@ class IndexController extends Controller
                             $data['Concepto'] = nl2br($lead['records'][0]['Espacios_que_desea_reservar__c']);
                         }
                     }
-                       // Check if the request is from the API
-                    if ($request->header('Accept') === 'application/json') {
-                        // Request is from the API
-                        return response()->json(['message' => 'API request']);
-                    } else { 
                         // The URL does not contain 'api'
-                        return view('index.payment-confirmation', ['data' => $data, 'opportunity' => $lead['totalSize'] > 0 ? $lead['records'][0] : null]);
-                    }
+                    return view('index.payment-confirmation', ['data' => $data, 'opportunity' => $lead['totalSize'] > 0 ? $lead['records'][0] : null]);
 
                     return view('index.payment-confirmation', ['data' => $data, 'opportunity' => $lead['totalSize'] > 0 ? $lead['records'][0] : null]);
                 } else {
@@ -2121,6 +2115,56 @@ class IndexController extends Controller
             }
         }
     }
+
+    public function  paymentConfirmationPost(Request  $request){
+        $tokenId= $request->returnUrl;
+        $salesforce = $this->salesforce();
+        $query = "SELECT 
+            Id, Precio_Estimado__c, Pago_confirmado__c, Espacios_que_desea_reservar__c,WebSessionId__c,VenueID__c
+            FROM Lead	
+            WHERE Id = '{$request->token}'";
+
+        $lead = $salesforce->query($query);
+
+        $lead_id = null;
+        if ($lead['totalSize'] > 0) {
+
+            if (isset($data['Estado']) && substr($data['Estado'], 0, 6) == 'Aproba') {
+                $lead_id = $lead['records'][0]['Id'];
+                $concepto = nl2br($lead['records'][0]['Espacios_que_desea_reservar__c']);
+                $date = new \DateTime(isset($data['date']) ? $data['date'] . ' ' . date('H:i:s') : date('Y-m-d H:i:s'));
+
+                $uploaded_file = null;
+                if ($request->hasFile('file')) {
+                    $file = $request->file('file');
+                    $filename = $file->getClientOriginalName();
+                    $filepath = time() . '-' . rand(100000, 999999) . '-' . $filename;
+                    $uploaded_file = url('/storage/requests/' . $filepath);
+                    $file->storeAs('public/requests', $filepath);
+                }
+                if (isset($data['TotalPagado'])) {
+                    $receiptData = ['Confirmado__c' => false, 'Lead__c' => $lead_id, 'Monto__c' => $data['TotalPagado'], 'Soporte__c' => $uploaded_file, 'Numero_de_transaccion__c' => $data['Oper'], 'Fecha_de_pago__c' => $date->format('Y-m-d\TH:i:s.000\Z'), 'Tipo__c' => (isset($data['method']) ? $data['method'] : 'Páguelo Fácil')];
+                    $receiptId = $salesforce->create('Recibo__c', $receiptData);
+                    $data['Fecha'] = $date->format('Y-m-d');
+                    $data['Hora'] = $date->format('H:i:s');
+                    $data['method'] = $receiptData['Tipo__c'];
+                    $data['LeadId'] = $lead_id;
+                    $data['Concepto'] = $concepto;
+                    if ($receiptId) {
+                        $salesforce->update('Lead', $lead_id, ['Pago_confirmado__c' => 'true']);
+                    }
+                }
+            } else {
+                $date = new \DateTime(isset($data['date']) ? $data['date'] . ' ' . date('H:i:s') : date('Y-m-d H:i:s'));
+                $data['LeadId'] = "Reservas Parque Ciudad del Saber";
+                $data['Fecha'] = $date->format('Y-m-d');
+                $data['Hora'] = $date->format('H:i:s');
+                $data['Concepto'] = nl2br($lead['records'][0]['Espacios_que_desea_reservar__c']);
+            }
+        }
+        return  ["Success"=>"Payment complete"];
+    }
+
     public function cancelarReserva(Request $request)
     {
         if ($request->isMethod('post')) {
