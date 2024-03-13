@@ -30,7 +30,7 @@ if (is_null($to_hour)) {
                     <select class="form-control" id="type" name="00N3m00000QMsCF">
                         <option value="">Tipo de actividad</option>
                         <option <?php echo session()->get('00N3m00000QMsCF', old('00N3m00000QMsCF')) == 'Cumpleaños' ? 'selected="selected"' : ''; ?>>Cumpleaños</option>
-                        <option <?php echo session()->get('00N3m00000QMsCF', old('00N3m00000QMsCF')) == 'Revelación de genero' ? 'selected="selected"' : ''; ?>>Revelación de genero</option>
+                        <option <?php echo session()->get('00N3m00000QMsCF', old('00N3m00000QMsCF')) == 'Revelación de género' ? 'selected="selected"' : ''; ?>>Revelación de género</option>
                         <option <?php echo session()->get('00N3m00000QMsCF', old('00N3m00000QMsCF')) == 'Reunión Familiar' ? 'selected="selected"' : ''; ?>>Reunión Familiar</option>
                         <option <?php echo session()->get('00N3m00000QMsCF', old('00N3m00000QMsCF')) == 'Taller de cuerdas' ? 'selected="selected"' : ''; ?>>Taller de cuerdas</option>
                         <option <?php echo session()->get('00N3m00000QMsCF', old('00N3m00000QMsCF')) == 'Otros' ? 'selected="selected"' : ''; ?>>Otros</option>
