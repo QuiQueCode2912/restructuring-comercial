@@ -1995,3 +1995,14 @@ footer #twitter-timeline .twitter-embed-header {
   padding: 5%;
   margin: 3%;
 }
+
+
+
+.custom-ast{
+    top: 10px;
+    left: 7px;
+    position: absolute;
+    color: #0088ff;
+}
+
+

@@ -135,8 +135,9 @@ if (is_null($to_hour)) {
         <div class="row">
             <div class="col-12">
                 <p class="small" style="font-size: 0.7rem !important;">Compartenos la agenda de tu evento y en caso de solicitar canchas, sillas, mesas y/o bohios adicionales añade aquí las especificaciones sobre estos elementos adicionales.</p>
-                <div class="form-group required ">
-                    <textarea name="description" placeholder="Describe tu evento" required id="description"><?php echo session()->get('description', old('description')); ?></textarea>
+                <div class="position-relative ">
+                    <span class="custom-ast">*</span>
+                    <textarea name="description"  style="padding-left: 16.5px;" placeholder=" Describe tu evento" required id="descriptionBohios"><?php echo session()->get('description', old('description')); ?></textarea>
                 </div>
             </div>
         </div>

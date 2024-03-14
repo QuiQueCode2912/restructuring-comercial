@@ -781,18 +781,9 @@
       </div>-->
         </div>
 
-        {{$rootid}}
+        @if (session()->get('venueParentId') == '02i3m00000DiduVAAR')
 
-        <?php if (session()->get('recordType') == '0123m0000012tH4' 
-        || session()->get('recordType') == '0123m000001AzQ4' 
-        ||  session()->get('venueParentId') == '02i3m00000DiduVAAR') : ?>
-        <?php
-       if($rootid != '02i3m00000D9DaPAAV' || session()->get('venueParentId') == '02i3m00000DiduVAAR')
-       {
-    ?>
         <div class="row" style="margin-top:40px">
-
-
             <div class="col-12 col-md-6">
                 <div class="form-group-preview">
                     Evento: <?php echo session()->get('00N3m00000QQOdA'); ?>
@@ -813,9 +804,96 @@
             </div>
             <div class="col-12 col-md-6">
                 <div class="form-group-preview">
-                    Cómo imaginas tu actividad: <?php echo session()->get('00N3m00000QMsC5'); ?>
-                    <a href="/cotizacion/datos-evento#how">Editar</a>
+                    ¿Cancha deportiva?: <?php echo session()->get('00NO9000001szab'); ?>
+                    <a href="/cotizacion/datos-contacto#00NO9000001szab">Editar</a>
                 </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-group-preview">
+                    Desde: <?php echo session()->get('00N3m00000QMwta') . ' ' . session()->get('00N3m00000QMwta-hour'); ?>
+                    <a href="/cotizacion/datos-evento#start-date">Editar</a>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <div class="form-group-preview">
+                    Hasta: <?php echo session()->get('00N3m00000QMwtf') . ' ' . session()->get('00N3m00000QMwtf-hour'); ?>
+                    <a href="/cotizacion/datos-evento#end-date">Editar</a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+            </div>
+          
+            <div class="col-12 col-md-6">
+                <div class="form-group-preview">
+                    Mis fechas <?php echo session()->get('00N3m00000QQOdy') == 1 ? 'SI' : 'NO'; ?> son flexibles
+                    <a href="/cotizacion/datos-evento#variable-dates">Editar</a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-group-preview">
+                    Venue: <?php echo $venue; ?>
+                </div>
+            </div>
+            
+                <div class="col-12 col-md-6">
+                    <div class="form-group-preview">
+                        Bohíos adicionales: <input class="" type="checkbox" value='1'  <?php echo session()->get('00NO9000001t2AI', old('00NO9000001t2AI')) == 1 ? 'checked="checked"' : ''; ?> disabled>
+                        <a href="/cotizacion/datos-contacto#00NO9000001t2AI">Editar</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-group-preview">
+                        Alquiler de sillas y Mesas: <input class="" type="checkbox" value='1' <?php echo session()->get('00NO9000001t2AH', old('00NO9000001t2AH')) == 1 ? 'checked="checked"' : ''; ?> disabled>
+                        <a href="/cotizacion/datos-contacto#00NO9000001t2AH">Editar</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12">
+                    <div class="form-group-preview mt-4">
+                        <small>Describe tu evento</small>
+                        <?php echo session()->get('description'); ?>
+                        <br /><br /><br />
+                        <a href="/cotizacion/datos-evento#description">Editar</a>
+                    </div>
+                </div>
+           
+        </div>
+
+        @endif
+
+
+        <?php if (session()->get('recordType') == '0123m0000012tH4' 
+        || session()->get('recordType') == '0123m000001AzQ4') : ?>
+        <?php
+       if($rootid != '02i3m00000D9DaPAAV' )
+       {
+    ?>
+        <div class="row" style="margin-top:40px">
+            <div class="col-12 col-md-6">
+                <div class="form-group-preview">
+                    Evento: <?php echo session()->get('00N3m00000QQOdA'); ?>
+                    <a href="/cotizacion/datos-evento#name">Editar</a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-group-preview">
+                    Tipo de actividad: <?php echo session()->get('00N3m00000QMsCF'); ?>
+                    <a href="/cotizacion/datos-evento#type">Editar</a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-group-preview">
+                    Cantidad de personas: <?php echo session()->get('00N3m00000QMsCA'); ?>
+                    <a href="/cotizacion/datos-evento#quantity">Editar</a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                    <div class="form-group-preview">
+                        Cómo imaginas tu actividad: <?php echo session()->get('00N3m00000QMsC5'); ?>
+                        <a href="/cotizacion/datos-evento#how">Editar</a>
+                    </div>
             </div>
             <div class="col-12 col-md-6">
                 <div class="form-group-preview">
@@ -1162,29 +1240,6 @@
             <?php endif ?>
 
         </div>
-
-        @if (session()->get('venueParentId') == '02i3m00000DiduVAAR')
-            <div class="row" style="margin-top:40px">
-                <div class="col-12 col-md-6">
-                    <div class="form-group-preview">
-                        ¿Cancha deportiva?: <?php echo session()->get('00NO9000001szab'); ?>
-                        <a href="/cotizacion/datos-contacto#00NO9000001szab">Editar</a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-group-preview">
-                        Bohíos adicionales: <input class="" type="checkbox" value='1'  <?php echo session()->get('00NO9000001t2AI', old('00NO9000001t2AI')) == 1 ? 'checked="checked"' : ''; ?> disabled>
-                        <a href="/cotizacion/datos-contacto#00NO9000001t2AI">Editar</a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-group-preview">
-                        Alquiler de sillas y Mesas: <input class="" type="checkbox" value='1' <?php echo session()->get('00NO9000001t2AH', old('00NO9000001t2AH')) == 1 ? 'checked="checked"' : ''; ?> disabled>
-                        <a href="/cotizacion/datos-contacto#00NO9000001t2AH">Editar</a>
-                    </div>
-                </div>
-            </div>
-        @endif
 
     
 
