@@ -54,7 +54,7 @@ class IndexController extends Controller
 
         if ($isUser && strpos($userEmail, '@cdspanama.org') > 0) {
             $parents[] = '02i3m0000092sJmAAI'; // E-104
-            //    $parents[] = '02i3m0000092sIyAAI'; // E-109
+            $parents[] = '02i3m0000092sIyAAI'; // E-109
             $parents[] = '02i3m0000092s8rAAA'; // E-300
             $parents[] = '02i3m0000092s2PAAQ'; // L-173
             $parents[] = '02i3m0000092s88AAA'; // G-214ABC
