@@ -401,7 +401,7 @@ class IndexController extends Controller
         //    return redirect()->to('/');
         //  }
         $parent = Venue::find('02i3m0000092sIyAAI');
-        $venues = Venue::where('id', '=', '02i3m00000AalSXAAZ')->get();
+        $venues = Venue::where('id', '=', '02i3m00000AalSXAAZ')->take(1)->get();
 
         $max_pax = 0;
         if ($venues) {
