@@ -401,17 +401,18 @@ class IndexController extends Controller
         //    return redirect()->to('/');
         //  }
         $parent = Venue::find('02i3m0000092sIyAAI');
-        $venues = Venue::where('iD', '=', '02i3m00000AalSXAAZ')->get();
+        //$venues = Venue::where('id', '=', '02i3m00000AalSXAAZ')->get();
+        $venues = null;
 
         $max_pax = 0;
-        if ($venues) {
+       /* if ($venues) {
             foreach ($venues as $venue) {
                 $venue_max_pax = $venue->designs()
                     ->max('max_pax');
                 $max_pax = $venue_max_pax > $max_pax ? $venue_max_pax : $max_pax;
             }
             $facilities = $venues ? $venues[0]->facilities : null;
-        }
+        }*/
 
         $venue_images = VenueFile::where('venue_id', $parent->id)
             ->get();
