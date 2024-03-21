@@ -28,9 +28,10 @@ $pvax = isset($parentVenue) ? $parentVenue : $venue['name'];
                         <!-- 02i3m00000D9BANAA4  ESTE ID ES DE LA PISCINA  -->
                         <!-- 02i3m00000D9Gu9AAF  ESTE ID ES DE LA -Baloncesto individual   -->
                         <!-- 02i3m00000DiduVAAR  ESTE ID ES DE Bohios   -->
+                        <!-- 02i3m00000D9GuWAAV  ESTE ID ES DE Boxeo   -->
                         @if ($hourfee > 0 && 
                             $id != '02i3m00000D9BANAA4' 
-                            && $parentid !='02i3m00000DiduVAAR' && $id != '02iRb0000009jcDIAQ')
+                            && $parentid !='02i3m00000DiduVAAR' && $id != '02iRb0000009jcDIAQ' && $id!='02i3m00000D9GuWAAV')
                             <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=hora"
                                 class="btn btn-primary btn-sm">Reservar horas</a>
                         @endif
@@ -58,6 +59,12 @@ $pvax = isset($parentVenue) ? $parentVenue : $venue['name'];
                         <!--Baloncesto individual -->
                         @if ($id == '02iRb0000009jcDIAQ')
                           <span style="font-family: roboto; font-weight: 600; text-transform: none;">Para utilizar la cancha para tirar pelota debes realizar el pago por ventanilla en el Gimnasio, Edificio 183.<br>
+                              <br>Lunes a Viernes de 6:00 am a 9:00 pm.<br>Sábados y Domingos de 6:00 am a 6:00 pm.
+                          </span>
+                        @endif
+                          <!--Boxeo -->
+                        @if ($id == '02i3m00000D9GuWAAV')
+                          <span style="font-family: roboto; font-weight: 600; text-transform: none;">Para utilizar el Área de Boxeo debes realizar el pago por ventanilla en el Gimnasio, Edificio 183.<br>
                               <br>Lunes a Viernes de 6:00 am a 9:00 pm.<br>Sábados y Domingos de 6:00 am a 6:00 pm.
                           </span>
                         @endif
