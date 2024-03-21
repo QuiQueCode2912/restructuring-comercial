@@ -173,7 +173,7 @@ $pvax = isset($parentVenue) ? $parentVenue : $venue['name'];
                 <?php
           }
           ?>
-                @if ($parentid != '02i3m00000Fx0PJAAZ')
+                @if ($parentid != '02i3m00000Fx0PJAAZ' && $id !='02i3m00000D9GuWAAV')
                     <dl>
                         <dt>Capacidad máxima</dt>
                         <dd><?php echo $configuration ? max($configuration) : 0; ?> personas</dd>
