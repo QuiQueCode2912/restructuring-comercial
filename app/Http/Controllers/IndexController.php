@@ -1609,7 +1609,9 @@ class IndexController extends Controller
                                     $reserva->subtotal =  $tarifaTotal;
                                     $costoTotal =  $costoTotal + $tarifaTotal;
                                 }else{
-
+                                    if(isset($reserva->isGolf)){
+                                        $tarifaUsar = $tarifaUsar * (1.0 + ($descuentoJubilados / 100));
+                                    }
                                     $reserva->subtotal =  $tarifaUsar;
                                     $costoTotal =  $costoTotal + $tarifaUsar;
                                 }
