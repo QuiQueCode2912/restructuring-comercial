@@ -2006,3 +2006,6 @@ footer #twitter-timeline .twitter-embed-header {
 }
 
 
+.disabled{
+  pointer-events:none !important;
+}
