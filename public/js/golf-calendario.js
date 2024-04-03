@@ -56,7 +56,7 @@ function GolfCalendar() {
         let lsHoursToSchedule = [];
         selectedHour.forEach((element) => {
             let objAux = {};
-            objAux.fecha = moment(element.fecha).format("YYYY-MM-DD");
+            objAux.fecha = element.fecha.slice(0, 10);
             objAux.id = element.id;
             objAux.venue = element.name;
             objAux.totalBolas = element.totalBolas;
