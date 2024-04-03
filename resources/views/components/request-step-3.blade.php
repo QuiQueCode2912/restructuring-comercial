@@ -1269,15 +1269,6 @@
             </div>
         </div>
 
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                var previousUrl = "{{ url()->previous() }}";
-                if (previousUrl.includes('reagendar')) {
-                    $('#apply-coupon').prop('disabled', true);
-                }
-            });
-        </script>
-
         <script type="text/javascript">
             function ready() {
 
