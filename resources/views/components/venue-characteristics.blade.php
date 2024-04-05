@@ -90,6 +90,12 @@
                     @if ($parentid == '02i3m00000DiduVAAR')
                         Bohíos
                     @endif
+                    @if ($parentid == '02i3m00000DiduVAAR')
+                        Bohíos
+                    @endif
+                    @if ($parentid == '02i3m00000DiduCAAR')
+                        Golf
+                    @endif
                 </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -224,6 +230,17 @@
                     </ul>
                 @endif
 
+                <!-- Golf -->
+                @if ($parentid == '02i3m00000DiduCAAR')
+                    <ul>
+                        <li>Traer sus propios implementos de golf. La Administración solo proporciona la canasta con la cantidad reservada.</li>
+                        <li>No se permite más de una persona por zona.</li>
+                        <li>Deben cumplir con el horario reservado.</li>
+                        <li>Las bolas reservadas deben utilizarse en su totalidad, no se realizará reembolso por el uso parcial de las bolas reservadas.</li>
+                        <li>Se permite un máximo de 200 bolas por cliente.</li>
+                    </ul>
+                @endif
+                
 
             </div>
             <div class="modal-footer">
@@ -281,6 +298,7 @@
                 $parentid == '02i3m00000Didu7AAB' ||
                 $parentid == '02i3m00000Fx0PEAAZ' ||
                 $parentid == '02i3m00000FbwwjAAB' ||
+                $parentid == '02i3m00000DiduCAAR' ||
                 $parentid == '02i3m00000DidtxAAB')
 
             <a href="" data-toggle="modal" data-target="#modalInfoSpaces"
