@@ -90,9 +90,6 @@
                     @if ($parentid == '02i3m00000DiduVAAR')
                         Bohíos
                     @endif
-                    @if ($parentid == '02i3m00000DiduVAAR')
-                        Bohíos
-                    @endif
                     @if ($parentid == '02i3m00000DiduCAAR')
                         Golf
                     @endif
