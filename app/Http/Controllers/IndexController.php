@@ -2575,25 +2575,28 @@ class IndexController extends Controller
 
     public function aplicarCupon(Request $request)
     {
-        $fechaActual = Carbon::now();
-        $cupon = Cupon::where('codigo', $request->input('cupon'))
-            ->where('fechainicial', '<=', $fechaActual)
-            ->where('fechafinal', '>=', $fechaActual)
-            ->where('cantidad', '>', 0)
-            ->first();
+        $salesforce = $this->salesforce();
+        $query = "SELECT 
+            Id,ValorDecimal__c,Cantidad__c
+            FROM Cupon__c 
+            WHERE Voucher__c = '{$request->input('cupon')}' LIMIT 1";
 
-        if ($cupon) { // Verifica que el cupón exista y no haya sido usado
-            $valordecimalFormateado = 'B/. ' . number_format($cupon->valordecimal, 2, '.', ',');
-            session(['00N3m00000Qpiz4' => $cupon->sfid]);
-            if ($cupon->cantidad == 0)
+        $result = $salesforce->query($query);
+
+        if ($result['totalSize'] > 0) {
+            $cupon = $result['records'][0];
+            $valordecimalFormateado = 'B/. ' . number_format($cupon['ValorDecimal__c'], 2, '.', ',');
+            session(['00N3m00000Qpiz4' => $cupon['Id']]);
+            if ($cupon['Cantidad__c'] == 0)
                 $valordecimalFormateado .= ' * USADO';
             session(['cupon' => "Descuento: " . $valordecimalFormateado]);
-            return response()->json(['sfid' => $cupon->sfid, 'valordecimal' => $valordecimalFormateado, 'valororiginal' => $cupon->valordecimal]);
+            return response()->json(['sfid' =>$cupon['Id'], 'valordecimal' => $valordecimalFormateado, 'valororiginal' =>$cupon['ValorDecimal__c']]);
         } else {
             session(['00N3m00000Qpiz4' => ""]);
             session(['cupon' => ""]);
             // Maneja el caso en que el cupón no existe o ya ha sido usado
         }
+        
     }
 
     public function  cancelEventForInactivity(Request $request)
