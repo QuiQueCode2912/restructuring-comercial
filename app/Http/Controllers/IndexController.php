@@ -1311,14 +1311,14 @@ class IndexController extends Controller
                             case '02i3m00000D9DaPAAV':
                                 //<input type="hidden" name="00N3m00000QeH7c" id="00N3m00000QeH7c" value='Reserva desatendida'/> TODO: VERIFICAR SI ES CONSULTIVA
                                 $inputs['00N3m00000QeGyG'] = $request['00N3m00000QeGyG'];
-                                $inputs['RecordType'] = '0123m000001AzQ4';
+                                $inputs['recordType'] = '0123m000001AzQ4';
                                 break;
                             default:
-                                $inputs['RecordType'] = '0123m0000012tH4';
+                                $inputs['recordType'] = '0123m0000012tH4';
                                 break;
                         }
                     }else{
-                        $inputs['RecordType'] = '012Rb000000cxFC';
+                        $inputs['recordType'] = '012Rb000000cxFC';
                     }
                    
                     // RECUERDA EL DUPLICATE RULE DONDE TIENES QUE EXCLUIR EL RECORD TYPE QUE ESTÉS AGREGANDO
