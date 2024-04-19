@@ -1306,7 +1306,7 @@ class IndexController extends Controller
                     }
                     if (isset($request['description']))
                         $inputs['description'] = $request['description'];
-                    if ($venuep->id != '02i3m00000DiduVAAR') {
+                    if ($step != '2-bohios') {
                         switch ($venuep->parent_id) {
                             case '02i3m00000D9DaPAAV':
                                 //<input type="hidden" name="00N3m00000QeH7c" id="00N3m00000QeH7c" value='Reserva desatendida'/> TODO: VERIFICAR SI ES CONSULTIVA
