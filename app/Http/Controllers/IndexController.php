@@ -1286,6 +1286,8 @@ class IndexController extends Controller
                                                         '00N3m00000QMsCA' => 'required|string', 
                                                         '00N3m00000QMwta' => 'required|string',
                                                         '00N3m00000QMwtf' => 'required|string',
+                                                        '00N3m00000QMwta-hour' => 'required|string',
+                                                        '00N3m00000QMwtf-hour' => 'required|string',
                                                         '00NO9000001szab'=>  'nullable|string',
                                                         '00N3m00000QQOdy' => 'nullable|string',
                                                         '00NO9000001t2AI'=>'nullable|string',
