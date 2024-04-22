@@ -804,7 +804,7 @@
             </div>
             <div class="col-12 col-md-6">
                 <div class="form-group-preview">
-                    ¿Cancha deportiva?: <?php echo session()->get('00NO9000001szab'); ?>
+                    ¿Cancha deportiva?: <?php echo session()->get('00NO9000001szab')  == '' ? 'No' : session()->get('00NO9000001szab'); ?>
                     <a href="/cotizacion/datos-contacto#00NO9000001szab">Editar</a>
                 </div>
             </div>
