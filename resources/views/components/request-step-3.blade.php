@@ -1421,7 +1421,7 @@
                 }
                 echo $url . $_SERVER['HTTP_HOST']; ?>/cotizacion/solicitud-enviada">
                  
-                         <input type="hidden" name="debug" value="1">
+                <input type="hidden" name="debug" value="1">
                 <input type="hidden" name="debugEmail" value="three3brains@gmail.com">           
                 
             
