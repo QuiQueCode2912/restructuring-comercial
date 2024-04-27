@@ -804,8 +804,8 @@
             </div>
             <div class="col-12 col-md-6">
                 <div class="form-group-preview">
-                    ¿Cancha deportiva?: <?php echo session()->get('00NO9000001szab')  == '' ? 'No' : session()->get('00NO9000001szab'); ?>
-                    <a href="/cotizacion/datos-contacto#00NO9000001szab">Editar</a>
+                    ¿Cancha deportiva?: <?php echo session()->get('00NRb000001kQmx')  == '' ? 'No' : session()->get('00NRb000001kQmx'); ?>
+                    <a href="/cotizacion/datos-contacto#00NRb000001kQmx">Editar</a>
                 </div>
             </div>
             <div class="col-12 col-md-6">
@@ -838,16 +838,16 @@
             
                 <div class="col-12 col-md-6">
                     <div class="form-group-preview">
-                        Bohíos adicionales: <input class="" type="checkbox" value='1'  <?php echo session()->get('00NO9000001t2AI', old('00NO9000001t2AI')) == 1 ? 'checked="checked"' : ''; ?> disabled>
-                        <a href="/cotizacion/datos-contacto#00NO9000001t2AI">Editar</a>
+                        Bohíos adicionales: <input class="" type="checkbox" value='1'  <?php echo session()->get('00NRb000001kQmw', old('00NRb000001kQmw')) == 1 ? 'checked="checked"' : ''; ?> disabled>
+                        <a href="/cotizacion/datos-contacto#00NRb000001kQmw">Editar</a>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-group-preview">
-                        Alquiler de sillas y Mesas: <input class="" type="checkbox" value='1' <?php echo session()->get('00NO9000001t2AH', old('00NO9000001t2AH')) == 1 ? 'checked="checked"' : ''; ?> disabled>
-                        <a href="/cotizacion/datos-contacto#00NO9000001t2AH">Editar</a>
+                        Alquiler de sillas y Mesas: <input class="" type="checkbox" value='1' <?php echo session()->get('00NRb000001kQmv', old('00NRb000001kQmv')) == 1 ? 'checked="checked"' : ''; ?> disabled>
+                        <a href="/cotizacion/datos-contacto#00NRb000001kQmv">Editar</a>
                     </div>
                 </div>
                 <div class="col-12 col-md-12">
@@ -1460,9 +1460,9 @@
                 <input type="hidden" value="<?php echo session()->get('00NO9000001soor'); ?>" name="00NO9000001soor" id="00NO9000001soor" />
 
                 <!-- Bohios  inputs -->
-                <input type="hidden" value="<?php echo session()->get('00NO9000001szab'); ?>" name="00NO9000001szab" id="00NO9000001szab" />
-                <input type="hidden" value="<?php echo session()->get('00NO9000001t2AI'); ?>" name="00NO9000001t2AI" id="00NO9000001t2AI" />
-                <input type="hidden" value="<?php echo session()->get('00NO9000001t2AH'); ?>" name="00NO9000001t2AH" id="00NO9000001t2AH" />
+                <input type="hidden" value="<?php echo session()->get('00NRb000001kQmx'); ?>" name="00NRb000001kQmx" id="00NRb000001kQmx" />
+                <input type="hidden" value="<?php echo session()->get('00NRb000001kQmw'); ?>" name="00NRb000001kQmw" id="00NRb000001kQmw" />
+                <input type="hidden" value="<?php echo session()->get('00NRb000001kQmv'); ?>" name="00NRb000001kQmv" id="00NRb000001kQmv" />
 
 
                 <input type="hidden" value="<?php echo session()->get('00NRb000000Ex1p'); ?>" name="00NRb000000Ex1p" id="00NRb000000Ex1p" />

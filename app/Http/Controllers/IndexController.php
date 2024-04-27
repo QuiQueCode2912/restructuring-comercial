@@ -1288,10 +1288,10 @@ class IndexController extends Controller
                                                         '00N3m00000QMwtf' => 'required|string',
                                                         '00N3m00000QMwta-hour' => 'required|string',
                                                         '00N3m00000QMwtf-hour' => 'required|string',
-                                                        '00NO9000001szab'=>  'nullable|string',
+                                                        '00NRb000001kQmx'=>  'nullable|string',
                                                         '00N3m00000QQOdy' => 'nullable|string',
-                                                        '00NO9000001t2AI'=>'nullable|string',
-                                                        '00NO9000001t2AH'=>'nullable|string',
+                                                        '00NRb000001kQmw'=>'nullable|string',
+                                                        '00NRb000001kQmv'=>'nullable|string',
                                                         'description' => 'required|string',]);   
 
                     } else {

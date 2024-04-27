@@ -49,15 +49,15 @@ if (is_null($to_hour)) {
             </div>
             <div class="col-12 col-md-6">
                 <div class="form-group">
-                    <select class="form-control" id="00NO9000001szab" name="00NO9000001szab">
+                    <select class="form-control" id="00NRb000001kQmx" name="00NRb000001kQmx">
                         <option value="">¿Quisiera reservar una cancha deportiva?</option>
                         <option value="">No</option>
-                        <option <?php echo session()->get('00NO9000001szab', old('00NO9000001szab')) == 'Baloncesto' ? 'selected="selected"' : ''; ?> value="Baloncesto">Baloncesto</option>
-                        <option <?php echo session()->get('00NO9000001szab', old('00NO9000001szab')) == 'Piscina' ? 'selected="selected"' : ''; ?> value="Piscina">Piscina</option>
-                        <option <?php echo session()->get('00NO9000001szab', old('00NO9000001szab')) == 'Futbol' ? 'selected="selected"' : ''; ?> value="Futbol">Futbol</option>
-                        <option <?php echo session()->get('00NO9000001szab', old('00NO9000001szab')) == 'Beisbol' ? 'selected="selected"' : ''; ?> value="Beisbol">Beisbol</option>
-                        <option <?php echo session()->get('00NO9000001szab', old('00NO9000001szab')) == 'Voleibol' ? 'selected="selected"' : ''; ?> value="Voleibol">Voleibol</option>
-                        <option <?php echo session()->get('00NO9000001szab', old('00NO9000001szab')) == 'Tenis' ? 'selected="selected"' : ''; ?> value="Tenis ">Tenis</option>
+                        <option <?php echo session()->get('00NRb000001kQmx', old('00NRb000001kQmx')) == 'Baloncesto' ? 'selected="selected"' : ''; ?> value="Baloncesto">Baloncesto</option>
+                        <option <?php echo session()->get('00NRb000001kQmx', old('00NRb000001kQmx')) == 'Piscina' ? 'selected="selected"' : ''; ?> value="Piscina">Piscina</option>
+                        <option <?php echo session()->get('00NRb000001kQmx', old('00NRb000001kQmx')) == 'Futbol' ? 'selected="selected"' : ''; ?> value="Futbol">Futbol</option>
+                        <option <?php echo session()->get('00NRb000001kQmx', old('00NRb000001kQmx')) == 'Beisbol' ? 'selected="selected"' : ''; ?> value="Beisbol">Beisbol</option>
+                        <option <?php echo session()->get('00NRb000001kQmx', old('00NRb000001kQmx')) == 'Voleibol' ? 'selected="selected"' : ''; ?> value="Voleibol">Voleibol</option>
+                        <option <?php echo session()->get('00NRb000001kQmx', old('00NRb000001kQmx')) == 'Tenis' ? 'selected="selected"' : ''; ?> value="Tenis ">Tenis</option>
                     </select>
                 </div>
             </div>
@@ -121,12 +121,12 @@ if (is_null($to_hour)) {
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-check">
-                        <input type="checkbox" class="custom-control-input" value="1" name="00NO9000001t2AI" id="00NO9000001t2AI" <?php echo session()->get('00NO9000001t2AI', old('00NO9000001t2AI')) == 1 ? 'checked="checked"' : ''; ?>>
-                        <label class="custom-control-label" for="00NO9000001t2AI"><small>Bohíos adicionales</small></label>
+                        <input type="checkbox" class="custom-control-input" value="1" name="00NRb000001kQmw" id="00NRb000001kQmw" <?php echo session()->get('00NRb000001kQmw', old('00NRb000001kQmw')) == 1 ? 'checked="checked"' : ''; ?>>
+                        <label class="custom-control-label" for="00NRb000001kQmw"><small>Bohíos adicionales</small></label>
                     </div>
                     <div class="form-check">
-                        <input type="checkbox" class="custom-control-input" value="1" name="00NO9000001t2AH" id="00NO9000001t2AH" <?php echo session()->get('00NO9000001t2AH', old('00NO9000001t2AH')) == 1 ? 'checked="checked"' : ''; ?>>
-                        <label class="custom-control-label" for="00NO9000001t2AH"><small>Alquiler de sillas y Mesas</small></label>
+                        <input type="checkbox" class="custom-control-input" value="1" name="00NRb000001kQmv" id="00NRb000001kQmv" <?php echo session()->get('00NRb000001kQmv', old('00NRb000001kQmv')) == 1 ? 'checked="checked"' : ''; ?>>
+                        <label class="custom-control-label" for="00NRb000001kQmv"><small>Alquiler de sillas y Mesas</small></label>
                     </div>
                 </div>
 
