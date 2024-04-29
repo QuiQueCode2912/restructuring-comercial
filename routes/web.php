@@ -40,6 +40,7 @@ Route::get('/parque-cds/gimnasio', 'App\Http\Controllers\IndexController@parqueC
 Route::get('/parque-cds/piscina', 'App\Http\Controllers\IndexController@parqueCds');
 Route::get('/parque-cds/voleibol', 'App\Http\Controllers\IndexController@parqueCds');
 Route::get('/parque-cds/bohios', 'App\Http\Controllers\IndexController@parqueCds');
+Route::get('/parque-cds/carritos', 'App\Http\Controllers\IndexController@parqueCds');
 
 
 Route::get('/e-104', 'App\Http\Controllers\IndexController@e104');

@@ -107,7 +107,11 @@
                 if($venue['name'] == 'Bohios'){
                   echo 'Bohíos';
                 }else{
-                  echo "Canchas";
+                  if($venue['name'] == 'Reserva de carrito de golf'){
+                    echo "Carritos";
+                  }else{
+                    echo "Canchas";
+                  }
                 }
                 
               }
@@ -119,7 +123,7 @@
             echo 96;
             } else {
             if($pvax != 'Parque Ciudad del Saber' )
-              if($venue['name']=='Piscina')
+              if($venue['name']=='Piscina' || $venue['name']=='Reserva de carrito de golf')
                 echo "1";
               else
 	              echo count($venue['venues']);
