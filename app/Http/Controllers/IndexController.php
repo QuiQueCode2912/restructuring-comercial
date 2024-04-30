@@ -745,7 +745,6 @@ class IndexController extends Controller
                  'venue_subtitle' => $venue_subtitle
             ]);
         } else {
-            return  $venue;
             return view('venues.venue', [
                 'page_title' => 'Servicios - Parque Ciudad del Saber',
                 'venue' => 'parque-cds',
