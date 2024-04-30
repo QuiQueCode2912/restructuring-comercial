@@ -730,9 +730,22 @@ class IndexController extends Controller
         $venue_title = 'XXX';
         $venue_subtitle = 'XXX Conecta con tus audiencias';
         if ($routeName->uri == '02i3m00000D9DaPAAV') {
-            return view('index.index', ['page_title' => 'Canchas, Gimnasio y Piscina', 'venues' => $fixedVenues, 'clients' => json_encode(null), 'show_featured_text' => false, 'show_contact_form' => false, 'show_carousel' => false, 'show_venues_menu' => true, 'venue' => 'parque-cds', 'parentVenue' => 'parque-cds', 'venue_image' => ($venue_images->count() > 0 ? image_url('storage/venues/' . $venue_images[0]->path) : null), 'venue_title' => $venue_title, 'venue_subtitle' => $venue_subtitle]);
+            return view('index.index', [
+                'page_title' => 'Canchas, Gimnasio y Piscina',
+                 'venues' => $fixedVenues, 
+                 'clients' => json_encode(null), 
+                 'show_featured_text' => false, 
+                 'show_contact_form' => false, 
+                 'show_carousel' => false, 
+                 'show_venues_menu' => true, 
+                 'venue' => 'parque-cds', 
+                 'parentVenue' => 'parque-cds', 
+                 'venue_image' => ($venue_images->count() > 0 ? image_url('storage/venues/' . $venue_images[0]->path) : null), 
+                 'venue_title' => $venue_title, 
+                 'venue_subtitle' => $venue_subtitle
+            ]);
         } else {
-
+            return  $venue;
             return view('venues.venue', [
                 'page_title' => 'Servicios - Parque Ciudad del Saber',
                 'venue' => 'parque-cds',
