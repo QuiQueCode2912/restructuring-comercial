@@ -122,7 +122,7 @@ if (is_null($to_hour)) {
                 <div class="col-12 col-md-6">
                     <div class="form-check">
                         <input type="checkbox" class="custom-control-input" value="1" name="00NRb000001kQmw" id="00NRb000001kQmw" <?php echo session()->get('00NRb000001kQmw', old('00NRb000001kQmw')) == 1 ? 'checked="checked"' : ''; ?>>
-                        <label class="custom-control-label" for="00NRb000001kQmw"><small>Bohíos adicionales</small></label>
+                        <label class="custom-control-label" for="00NRb000001kQmw"><small>Gazebos adicionales</small></label>
                     </div>
                     <div class="form-check">
                         <input type="checkbox" class="custom-control-input" value="1" name="00NRb000001kQmv" id="00NRb000001kQmv" <?php echo session()->get('00NRb000001kQmv', old('00NRb000001kQmv')) == 1 ? 'checked="checked"' : ''; ?>>
