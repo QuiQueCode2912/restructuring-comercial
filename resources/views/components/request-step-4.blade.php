@@ -4,7 +4,7 @@
       <div class="col-12 col-md-10">
         <i class="fe fe-check round text-white bg-success" style="background-color:#63AF3F !important"></i>
       </div>
-      <p style="font-size:20px; margin:0; font-weight:600; color:#63AF3F !important" class="text-success text-center">Muchas gracias por solicitar los servicios comerciales de Ciudad del Saber.</p>
+      <p style="font-size:20px; margin:0; font-weight:600; color:#63AF3F !important" class="text-success text-center">Muchas gracias por solicitar los espacios del Parque de Ciudad del Saber.</p>
       <p class="text-center" style="margin:0 0 40px; font-family:'Trola', sans-serif; font-size:18px">Hemos recibido tu solicitud y te haremos llegar tu cotización en un período máximo de 72 horas.</p>
     </div>
     <div class="row">
