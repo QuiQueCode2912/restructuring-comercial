@@ -1633,7 +1633,7 @@ class IndexController extends Controller
                                 }else{
                                     if(isset($reserva->isGolf)){
                                         if($reserva->totalBolas == 100 ){
-                                            $tarifaUsar = $tarifaUsar * (2.0 + ($descuentoJubilados / 100));
+                                            $tarifaUsar = ($tarifaUsar * (1.0 + ($descuentoJubilados / 100))) * 2;
                                         }else{
                                             $tarifaUsar = $tarifaUsar * (1.0 + ($descuentoJubilados / 100));
                                         }
