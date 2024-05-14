@@ -1464,6 +1464,9 @@ if ($designs) {
                                                                                                 }
                                                                                             });
                                                                                             let totalPers = 25-cantPers;
+                                                                                            if(totalPers < 0){
+                                                                                                totalPers = 0;
+                                                                                            }
                                                                                             let checkIfExistHour =  selectedHour.find(hour => hour.id == e.target.id && currentSchedule == hour.currentSchedule);
                                                                                             
                                                                                             if(checkIfExistHour){
@@ -1562,6 +1565,9 @@ if ($designs) {
                                                                                                 }
                                                                                             });
                                                                                             let totalPers = 25-cantPers;
+                                                                                            if(totalPers < 0){
+                                                                                                totalPers = 0;
+                                                                                            }
                                                                                             let checkIfExistHour =  selectedHour.find(hour => hour.id == e.target.id && currentSchedule == hour.currentSchedule);
                                                                                             
                                                                                             if(checkIfExistHour){
