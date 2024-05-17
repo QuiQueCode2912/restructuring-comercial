@@ -7,6 +7,7 @@ use Illuminate\Http\Request, App\Models\Venue, App\Models\VenueFile, App\Models\
 use Monolog\Handler\NullHandler;
 use Carbon\Carbon;
 use App\Models\Cupon;
+use Exception;
 
 class IndexController extends Controller
 {
@@ -1922,8 +1923,13 @@ class IndexController extends Controller
                 $isUser = session()->get('is-cds-user', false);
 
                 if ($isUser) {
-                    $salesforce->update('Lead', $request->token, ['Pago_confirmado__c' => 'true']);
-                    return redirect()->to('/confirmacion-pago/' . $request->token);
+                    try {
+                        $salesforce->update('Lead', $request->token, ['Pago_confirmado__c' => 'true']);
+                        return redirect()->to('/confirmacion-pago/' . $request->token);
+                      } catch (Exception $error){
+
+                      }
+                    
                 }
 
                 $userEmail = session()->get('cds-user-email', null);
