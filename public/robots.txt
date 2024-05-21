@@ -1,2 +1,2 @@
 User-agent: *
-Disallow: /parque-cds/bohios
+Disallow: /
