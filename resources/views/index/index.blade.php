@@ -4,6 +4,8 @@
 <!-- COVID <x-covid /> -->
 <x-header menu="true" />
 
+<meta name="robots" content="noindex, nofollow">
+
 <?php if ($show_venues_menu) : ?>
 <x-venues-menu venue="{{ $venue }}" />
 <?php endif ?>
