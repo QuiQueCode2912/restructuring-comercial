@@ -1142,6 +1142,7 @@ class IndexController extends Controller
 
         switch ($step) {
             case 'datos-contacto':
+              
                 $step = 1;
                 $stepName = 'Datos de contacto';
                 // TODO: ESTO NO SE SI ES NECESARIO - LAS 3 LINEAS QUE SIGUEN
@@ -1181,6 +1182,12 @@ class IndexController extends Controller
                 //    session(['ReservasSeleccionadas'=> null]);
                 // TODO: VERIFICAR QUE NO DE PROBLEMA 
                 if ($request->isMethod('post')) {
+
+                    //Fix para bohios en staging NO DEPLOYAR
+                    if($request->email != 'mabrego@cdspanama.org' && $venue->parent_id =='02i3m00000DiduVAAR'){
+                        return redirect()->to('https://comercial.ciudaddelsaber.org/');
+                    }
+
                     $inputs = $request->validate([
                         'first_name' => 'required|string', 'last_name' => 'nullable|string', 'email' => 'required|string|email', 'phone' => 'required|string', 'company' => 'nullable|string',
                         //'country_code' => 'nullable|string',
@@ -1215,7 +1222,6 @@ class IndexController extends Controller
                     session(['00NRb000000Ex1p' => $request['00NRb000000Ex1p']]);
                     session(['00NRb000000Ex0D' => $request['00NRb000000Ex0D']]);
                     session(['00NO9000001soor' => $request['00NO9000001soor']]);
-
 
                     session($inputs);
                     return redirect()->to($inputs['want_to_do'] == 'event' ? '/cotizacion/datos-evento' : '/cotizacion/datos-residencia');
