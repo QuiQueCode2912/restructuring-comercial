@@ -88,9 +88,11 @@ if (is_null($to_hour)) {
             <div class="col-12 col-md-2">
                 <div class="form-group required">
                     <select class="form-control" id="end-date-hour" name="00N3m00000QMwtf-hour">
-                        <?php for ($i = 0; $i <= 23; $i++) : ?>
+                        <?php for  ($i = 8; $i <= 18; $i++) : ?>
                             <option <?php echo session()->get('00N3m00000QMwtf-hour', old('00N3m00000QMwtf-hour')) == str_pad($i, 2, 0, STR_PAD_LEFT) . ':00' ? 'selected' : ''; ?> value="<?php echo str_pad($i, 2, 0, STR_PAD_LEFT); ?>:00"><?php echo str_pad($i, 2, 0, STR_PAD_LEFT); ?>:00</option>
-                            <option <?php echo session()->get('00N3m00000QMwtf-hour', old('00N3m00000QMwtf-hour')) == str_pad($i, 2, 0, STR_PAD_LEFT) . ':30' ? 'selected' : ''; ?> value="<?php echo str_pad($i, 2, 0, STR_PAD_LEFT); ?>:30"><?php echo str_pad($i, 2, 0, STR_PAD_LEFT); ?>:30</option>
+                            <?php if($i != 18): ?>
+                                <option <?php echo session()->get('00N3m00000QMwtf-hour', old('00N3m00000QMwtf-hour')) == str_pad($i, 2, 0, STR_PAD_LEFT) . ':30' ? 'selected' : ''; ?> value="<?php echo str_pad($i, 2, 0, STR_PAD_LEFT); ?>:30"><?php echo str_pad($i, 2, 0, STR_PAD_LEFT); ?>:30</option>
+                            <?php endif; ?>
                         <?php endfor ?>
                     </select>
                 </div>
