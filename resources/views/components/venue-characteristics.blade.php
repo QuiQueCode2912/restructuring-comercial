@@ -222,7 +222,7 @@
                         <li>No se permite juegos acuáticos ni granja de animales.</li>
                         <li>No se permite el uso de barbacoas. Todos los alimentos deben venir preparados.</li>
                         <li>Si desea traer inflables o trampolines, debe proporcionar su propio generador de energía (planta eléctrica).</li>
-                        <li>Si no cumple con la cantidad de personas estipuladas de los bohíos, el PCdS podrá proceder con la cancelación de su actividad por incumplimiento.</li>
+                        <li>Si no cumple con la cantidad de personas estipuladas de los bohíos, el PFCDS podrá proceder con la cancelación de su actividad por incumplimiento.</li>
                         <li>La FUNDACIÓN, por condiciones climatológicas, se reserva el derecho de uso de las áreas verdes para preservar el buen estado de estas.</li>
                     </ul>
                 @endif
