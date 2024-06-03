@@ -13,6 +13,23 @@
 
 <x-venue-characteristics type="{{ $venues ? $venues[0]->type : 'venues' }}" maxpax="{{ $max_pax }}" facilities="{{ $facilities }}" venues="{{ count($venues) }}" venue="{{ $venueName }}" showpolicies="{{ $show_policies ?? true }}" venueid="{{ isset($venueid) ? $venueid : '' }}" parentid="{{ isset($parentid) ? $parentid : '' }}"/>
 
+  // Inside your Blade template file
+@if(request()->has('openmodal'))
+    <input type="hidden" id="openmodal" value="{{ request('openmodal') }}">
+@endif
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var variableValue = document.getElementById('openmodal');
+        if (variableValue) {
+            var bohioButton = document.getElementById('BohiosButton');
+            if (bohioButton) {
+                bohioButton.click();
+            }
+        }
+    });
+</script>
+
 <div class="container" style="margin:0 auto; padding:0; position:relative">
   <?php if ($images) : ?>
     <?php foreach ($images as $image) : ?>

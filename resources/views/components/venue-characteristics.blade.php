@@ -305,7 +305,7 @@
         @endif
 
         @if ($parentid == '02i3m00000DiduVAAR')
-            <a href="" data-toggle="modal" data-target="#modalInfoSpaces"
+            <a href="" data-toggle="modal" data-target="#modalInfoSpaces" id="BohiosButton"
                 style="cursor: pointer;display:block;margin-top:1%">
                 <b>Reglamento de área de Bohíos</b>
             </a>
