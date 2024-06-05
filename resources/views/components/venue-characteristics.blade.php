@@ -88,7 +88,7 @@
                         Ráquetbol
                     @endif
                     @if ($parentid == '02i3m00000DiduVAAR')
-                        Bohíos
+                        Gazebos
                     @endif
                     @if ($parentid == '02i3m00000DiduCAAR')
                         Golf
@@ -222,7 +222,7 @@
                         <li>No se permite juegos acuáticos ni granja de animales.</li>
                         <li>No se permite el uso de barbacoas. Todos los alimentos deben venir preparados.</li>
                         <li>Si desea traer inflables o trampolines, debe proporcionar su propio generador de energía (planta eléctrica).</li>
-                        <li>Si no cumple con la cantidad de personas estipuladas de los bohíos, el Parque Ciudad del Saber podrá proceder con la cancelación de su actividad por incumplimiento.</li>
+                        <li>Si no cumple con la cantidad de personas estipuladas de los gazebos, el Parque Ciudad del Saber podrá proceder con la cancelación de su actividad por incumplimiento.</li>
                         <li>La FUNDACIÓN, por condiciones climatológicas, se reserva el derecho de uso de las áreas verdes para preservar el buen estado de estas.</li>
                     </ul>
                 @endif
@@ -307,7 +307,7 @@
         @if ($parentid == '02i3m00000DiduVAAR')
             <a href="" data-toggle="modal" data-target="#modalInfoSpaces" id="BohiosButton"
                 style="cursor: pointer;display:block;margin-top:1%">
-                <b>Reglamento de área de Bohíos</b>
+                <b>Reglamento de área de Gazebos</b>
             </a>
         @endif
 

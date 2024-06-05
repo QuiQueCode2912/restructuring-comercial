@@ -838,7 +838,7 @@
             
                 <div class="col-12 col-md-6">
                     <div class="form-group-preview">
-                        Bohíos adicionales: <input class="" type="checkbox" value='1'  <?php echo session()->get('00NRb000001kQmw', old('00NRb000001kQmw')) == 1 ? 'checked="checked"' : ''; ?> disabled>
+                        Gazebos adicionales: <input class="" type="checkbox" value='1'  <?php echo session()->get('00NRb000001kQmw', old('00NRb000001kQmw')) == 1 ? 'checked="checked"' : ''; ?> disabled>
                         <a href="/cotizacion/datos-contacto#00NRb000001kQmw">Editar</a>
                     </div>
                 </div>

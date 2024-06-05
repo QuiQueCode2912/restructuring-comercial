@@ -56,8 +56,8 @@
       <div class="col-12 col-md-2">
         <h3>10</h3>
         <p>
-          <strong>BOHIOS</strong>
-          Bohíos para tus eventos y reuniones
+          <strong>Gazebos</strong>
+          Gazebos para tus eventos y reuniones
         </p>
       </div>
     </div>
