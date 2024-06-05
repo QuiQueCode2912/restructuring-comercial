@@ -106,7 +106,7 @@
               if($venue['name']=='Piscina'){
                 echo 'Piscinas';
               }else{
-                if($venue['name'] == 'Bohios'){
+                if($venue['name'] == 'Gazebos'){
                   echo 'Gazebos';
                 }else{
                   if($venue['name'] == 'Reserva de carrito de golf'){
