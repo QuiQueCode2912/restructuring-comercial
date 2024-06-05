@@ -665,7 +665,7 @@ class IndexController extends Controller
                         $url = 'parque-cds/piscina';
                         break;
                     case '02i3m00000DiduVAAR':
-                        $name = 'Bohios';
+                        $name = 'Gazebos';
                         $url = 'parque-cds/bohios';
                         break;
                     case '02i3m00000FbwwjAAB':
