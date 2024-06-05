@@ -1184,7 +1184,13 @@ class IndexController extends Controller
                 if ($request->isMethod('post')) {
 
                     //Fix para bohios en staging NO DEPLOYAR
-                    if($request->email != 'mabrego@cdspanama.org' && $venue->parent_id =='02i3m00000DiduVAAR'){
+                    if((
+                        $request->email != 'mabrego@cdspanama.org' 
+                        || $request->email != 'mwong@cdspanama.org'
+                        || $request->email != 'smiranda@cdspanama.org'
+                        || $request->email != 'parque@cdspanama.org'
+                    ) 
+                    && $venue->parent_id =='02i3m00000DiduVAAR'){
                         return redirect()->to('https://comercial.ciudaddelsaber.org/');
                     }
 
