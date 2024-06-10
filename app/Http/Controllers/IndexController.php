@@ -1183,14 +1183,13 @@ class IndexController extends Controller
                 // TODO: VERIFICAR QUE NO DE PROBLEMA 
                 if ($request->isMethod('post')) {
 
-                    //Fix para bohios en staging NO DEPLOYAR
+                    //Solo para Staging para que no hagan reservas
                     if((
                         $request->email != 'mabrego@cdspanama.org' 
                         && $request->email != 'mwong@cdspanama.org'
                         && $request->email != 'smiranda@cdspanama.org'
                         && $request->email != 'parque@cdspanama.org'
-                    ) 
-                    && $venue->parent_id =='02i3m00000DiduVAAR'){
+                    )){
                         return redirect()->to('https://comercial.ciudaddelsaber.org/');
                     }
 
