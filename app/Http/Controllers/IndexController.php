@@ -313,18 +313,6 @@ class IndexController extends Controller
 
     public function e108(Request $request)
     {
-        $isUser = session()->get('is-cds-user', false);
-        $userEmail = session()->get('cds-user-email', null);
-
-        if ($isUser == false || strpos($userEmail, '@cdspanama.org') == false) {
-            session()->put('is-cds-user', false);
-            session()
-                ->put('cds-user-email', null);
-
-            return redirect()
-                ->to('/');
-        }
-
         $parent = Venue::find('02i3m0000092sJ1AAI');
         $venues = Venue::where('parent_id', '=', $parent->id)
             ->where('show_on_website', 'Si')
