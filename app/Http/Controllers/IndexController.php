@@ -20,6 +20,7 @@ class IndexController extends Controller
             '02i3m0000092rzDAAQ', // Complejo de hospedaje 3
             '02i3m00000D9DaPAAV', // Parque Ciudad del Saber 4
             '02i3m0000092sIyAAI', // E-109 5
+            '02i3m0000092sJ1AAI'
         ];
 
         $randId = rand(0, 4);
@@ -61,6 +62,7 @@ class IndexController extends Controller
             $parents[] = '02i3m0000092s88AAA'; // G-214ABC
             $parents[] = '02i3m0000092sP3AAI'; // Parque de los Lagos
             $parents[] = '02i3m00000D9DaPAAV'; // Parque Ciudad del Saber
+            $parents[] = '02i3m0000092sJ1AAI'; // Parque Ciudad del Saber
 
         }
 
@@ -115,6 +117,10 @@ class IndexController extends Controller
                     case '02i3m0000092sEkAAI':
                         $name = 'Aulas 220';
                         $url = '/aulas-220';
+                        break;
+                    case '02i3m0000092sJ1AAI':
+                        $name = 'E-108';
+                        $url = '/e-108';
                         break;
                     case '02i3m0000092rzDAAQ':
                         $name = 'Complejo de hospedaje';
