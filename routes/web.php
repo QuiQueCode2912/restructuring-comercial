@@ -46,6 +46,7 @@ Route::get('/parque-cds/carritos', 'App\Http\Controllers\IndexController@parqueC
 Route::get('/e-104', 'App\Http\Controllers\IndexController@e104');
 Route::get('/e-109', 'App\Http\Controllers\IndexController@e109');
 Route::get('/e-300', 'App\Http\Controllers\IndexController@e300');
+Route::get('/e-108', 'App\Http\Controllers\IndexController@e108');
 Route::get('/ateneo', 'App\Http\Controllers\IndexController@ateneo');
 Route::get('/centro-convenciones', 'App\Http\Controllers\IndexController@centroConvenciones');
 Route::get('/aulas-105', 'App\Http\Controllers\IndexController@aulas105');

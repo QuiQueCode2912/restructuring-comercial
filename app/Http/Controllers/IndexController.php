@@ -311,6 +311,49 @@ class IndexController extends Controller
         return view('venues.venue', ['page_title' => 'Servicios - E-104', 'venue' => 'espacios-fcds', 'venueName' => 'E-104', 'subtitle' => '', 'parent' => $parent, 'venues' => $venues, 'images' => $images, 'facilities' => $facilities, 'max_pax' => $max_pax]);
     }
 
+    public function e108(Request $request)
+    {
+        $isUser = session()->get('is-cds-user', false);
+        $userEmail = session()->get('cds-user-email', null);
+
+        if ($isUser == false || strpos($userEmail, '@cdspanama.org') == false) {
+            session()->put('is-cds-user', false);
+            session()
+                ->put('cds-user-email', null);
+
+            return redirect()
+                ->to('/');
+        }
+
+        $parent = Venue::find('02i3m0000092sJ1AAI');
+        $venues = Venue::where('parent_id', '=', $parent->id)
+            ->where('show_on_website', 'Si')
+            ->get();
+
+        $max_pax = 0;
+        if ($venues) {
+            foreach ($venues as $venue) {
+                $venue_max_pax = $venue->designs()
+                    ->max('max_pax');
+                $max_pax = $venue_max_pax > $max_pax ? $venue_max_pax : $max_pax;
+            }
+            $facilities = $venues ? $venues[0]->facilities : null;
+        }
+
+        $venue_images = VenueFile::where('venue_id', $parent->id)
+            ->get();
+        $images = [];
+        if ($venue_images->count() > 0) {
+            foreach ($venue_images as $image) {
+                $images[] = image_url('storage/venues/' . $image->path);
+            }
+        } else {
+            $images[] = '/assets/images/placeholder-image.jpg';
+        }
+
+        return view('venues.venue', ['page_title' => 'Servicios - E-104', 'venue' => 'espacios-fcds', 'venueName' => 'E-104', 'subtitle' => '', 'parent' => $parent, 'venues' => $venues, 'images' => $images, 'facilities' => $facilities, 'max_pax' => $max_pax]);
+    }
+
     public function l173(Request $request)
     {
         $isUser = session()->get('is-cds-user', false);
