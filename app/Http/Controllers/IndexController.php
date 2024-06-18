@@ -316,6 +316,7 @@ class IndexController extends Controller
         $parent = Venue::find('02i3m0000092sJ1AAI');
         $venues = Venue::where('parent_id', '=', $parent->id)
             ->where('show_on_website', 'Si')
+            ->where('id','!=', $parent->id)
             ->get();
 
         $max_pax = 0;
