@@ -45,6 +45,13 @@
 
       <div class="venue">
         @if ($venue['name'] == 'Gazebos')
+          <style>
+              .next-venue{
+                position: absolute !important;
+                width: 100%;
+                font-weight: 600;
+              }
+          </style>
           <div class="bg-danger text-center next-venue">
             Próximo lanzamiento
           </div>
