@@ -1875,7 +1875,7 @@ footer #twitter-timeline .twitter-embed-header {
 }
 
 .next-venue{
-  position: absolute;
+  position: absolute !important;
   width: 100%;
   font-weight: 600;
 }
