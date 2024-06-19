@@ -44,6 +44,12 @@
 <div class="col-12 col-md-6 col-lg-4">
 
       <div class="venue">
+        @if ($venue['name'] == 'Gazebos')
+          <div class="bg-danger text-center next-venue">
+            Próximo lanzamiento
+          </div>
+        @endif
+       
         <a href="<?php echo $venue['url'] ?>"><img src="<?php echo substr($venue['image'], 0, strrpos($venue['image'], '.')) . '_480.' . substr($venue['image'], strrpos($venue['image'], '.') + 1) ?>"></a>
         <a href="<?php echo $venue['url'] ?>" class="venue-name"><?php echo  $venue['name'] ?></a>
         <?php
