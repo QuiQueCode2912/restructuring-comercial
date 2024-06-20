@@ -130,7 +130,7 @@ if (is_null($to_hour)) {
                     </div>
                     <div class="form-check">
                         <input type="checkbox" class="custom-control-input" value="1" name="00NRb000001kQmv" id="00NRb000001kQmv" <?php echo session()->get('00NRb000001kQmv', old('00NRb000001kQmv')) == 1 ? 'checked="checked"' : ''; ?>>
-                        <label class="custom-control-label" for="00NRb000001kQmv"><small>Alquiler de sillas y Mesas</small></label>
+                        <label class="custom-control-label" for="00NRb000001kQmv"><small>Alquiler de sillas y mesas</small></label>
                     </div>
                 </div>
 
