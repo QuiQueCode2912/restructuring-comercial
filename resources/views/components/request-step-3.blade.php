@@ -846,7 +846,7 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-group-preview">
-                        Alquiler de sillas y Mesas: <input class="" type="checkbox" value='1' <?php echo session()->get('00NRb000001kQmv', old('00NRb000001kQmv')) == 1 ? 'checked="checked"' : ''; ?> disabled>
+                        Alquiler de sillas y mesas: <input class="" type="checkbox" value='1' <?php echo session()->get('00NRb000001kQmv', old('00NRb000001kQmv')) == 1 ? 'checked="checked"' : ''; ?> disabled>
                         <a href="/cotizacion/datos-contacto#00NRb000001kQmv">Editar</a>
                     </div>
                 </div>

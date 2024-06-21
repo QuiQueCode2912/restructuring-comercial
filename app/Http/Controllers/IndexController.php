@@ -1228,6 +1228,7 @@ class IndexController extends Controller
                         && $request->email != 'smiranda@cdspanama.org'
                         && $request->email != 'parque@cdspanama.org'
                         && $request->email != 'threebrains@gmail.com'
+                        && $request->email != 'osoto@cdspanama.org'
                     )){
                         return redirect()->to('https://comercial.ciudaddelsaber.org/');
                     }
