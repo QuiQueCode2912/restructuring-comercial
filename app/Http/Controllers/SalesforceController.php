@@ -66,7 +66,7 @@ class SalesforceController extends Controller
             'client_id' => '3MVG9qOtrzqonpGPTnRKnDPbfLUxczLVWYAr0SgwYgTPHYjP89GXr2ZtrnQf8uKIZRUBga3gjcpZ2t4Vs3vvZ', /* insert consumer key here */
             'client_secret' => '41B465ACC4804E727AA23C948FA375999B738BB33DE1417B56B70829379A88DD', /* insert consumer secret here */
             'username' => 'dnavas00@hotmail.com.qa', /* insert Salesforce username here */
-            'password' => 'fcds@20249KjUYQx3vVGdY3FxqsT13ZWxH' /* insert Salesforce user password and security token here */
+            'password' => 'fcds@2024NZJ5AKxFUiLywkGzUjLoZFkxI' /* insert Salesforce user password and security token here */
         ];
        $endPoint = 'https://test.salesforce.com/';
   
