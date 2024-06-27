@@ -106,7 +106,11 @@
               </div>
               <a name="description"></a>
 
-              <h3 style="color:#505152; margin:30px 0 5px">Venue: <?php echo $parent ? $parent->name : '' ?></h3>
+              <h3 style="color:#505152; margin:30px 0 5px">Venue: 
+                @if ($parent->id == '02i3m0000092sJ1AAI')
+                   La Casa
+                @endif
+                <?php echo ($parent && $parent->id != '02i3m0000092sJ1AAI') ? $parent->name : '' ?></h3>
               @if($show_not_included ?? true)
               <small>
                 <span style="color:#0088ff">/*
