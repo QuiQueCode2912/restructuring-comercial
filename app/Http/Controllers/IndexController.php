@@ -62,7 +62,7 @@ class IndexController extends Controller
             $parents[] = '02i3m0000092s88AAA'; // G-214ABC
             $parents[] = '02i3m0000092sP3AAI'; // Parque de los Lagos
             $parents[] = '02i3m00000D9DaPAAV'; // Parque Ciudad del Saber
-            $parents[] = '02i3m0000092sJ1AAI'; // Parque Ciudad del Saber
+            $parents[] = '02i3m0000092sJ1AAI'; // La casa
 
         }
 
@@ -119,7 +119,7 @@ class IndexController extends Controller
                         $url = '/aulas-220';
                         break;
                     case '02i3m0000092sJ1AAI':
-                        $name = 'E-108';
+                        $name = 'La Casa';
                         $url = '/e-108';
                         break;
                     case '02i3m0000092rzDAAQ':
@@ -340,7 +340,7 @@ class IndexController extends Controller
             $images[] = '/assets/images/placeholder-image.jpg';
         }
 
-        return view('venues.venue', ['page_title' => 'Servicios - E-104', 'venue' => 'espacios-fcds', 'venueName' => 'E-104', 'subtitle' => '', 'parent' => $parent, 'venues' => $venues, 'images' => $images, 'facilities' => $facilities, 'max_pax' => $max_pax]);
+        return view('venues.venue', ['page_title' => 'Servicios - La Casa', 'venue' => 'espacios-fcds', 'venueName' => 'La Casa', 'subtitle' => '', 'parent' => $parent, 'venues' => $venues, 'images' => $images, 'facilities' => $facilities, 'max_pax' => $max_pax]);
     }
 
     public function l173(Request $request)
