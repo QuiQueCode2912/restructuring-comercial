@@ -1492,10 +1492,10 @@
                 <?php
     }
     ?>
-      
-                    <input type="hidden" name="debug" value="1">
-                    <input type="hidden" name="debugEmail" value="three3brains@gmail.com">
-          
+                <?php if (config('app.env') == 'local') : ?>
+                <!--<input type="hidden" name="debug" value="1">
+                 <input type="hidden" name="debugEmail" value="dnavas00@hotmail.com">-->
+                <?php endif ?>
 
                 <?php 
         $files = session()->get('files') ? session()->get('files') : [];
