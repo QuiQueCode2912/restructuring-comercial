@@ -179,20 +179,23 @@ $pvax = isset($parentVenue) ? $parentVenue : $venue['name'];
                         <dd><?php echo $configuration ? max($configuration) : 0; ?> personas</dd>
                     </dl>
                 @endif
-                @if ($pvax != 'parque-cds' && $pvax != 'Parque Ciudad del Saber')
-                    <dl>
-                        <dt>Precio por medio día</dt>
-                        <dd>
-                            desde
-                            @if ($seasonalmiddayfee > 0 && $seasonalmiddayfee < $middayfee)
-                                <span class="strike">$<?php echo $middayfee; ?></span>
-                                <span class="text-danger">$<?php echo $seasonalmiddayfee < $middayfee ? $seasonalmiddayfee : $middayfee; ?></span>
-                            @else
-                                $<?php echo $seasonalmiddayfee > 0 && $seasonalmiddayfee < $middayfee ? $seasonalmiddayfee : $middayfee; ?>
-                            @endif
-                            <span style="color:#0088ff">/*</span>
-                        </dd>
-                    </dl>
+                @if ($pvax != 'parque-cds' && $pvax != 'Parque Ciudad del Saber' )
+                    @if ($parentid != '02i3m0000092sJ1AAI')
+                        <dl>
+                            <dt>Precio por medio día</dt>
+                            <dd>
+                                desde
+                                @if ($seasonalmiddayfee > 0 && $seasonalmiddayfee < $middayfee)
+                                    <span class="strike">$<?php echo $middayfee; ?></span>
+                                    <span class="text-danger">$<?php echo $seasonalmiddayfee < $middayfee ? $seasonalmiddayfee : $middayfee; ?></span>
+                                @else
+                                    $<?php echo $seasonalmiddayfee > 0 && $seasonalmiddayfee < $middayfee ? $seasonalmiddayfee : $middayfee; ?>
+                                @endif
+                                <span style="color:#0088ff">/*</span>
+                            </dd>
+                        </dl>
+                    @endif
+               
                     <dl>
                         <dt>Precio por día entero</dt>
                         <dd>
