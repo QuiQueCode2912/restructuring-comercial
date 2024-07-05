@@ -63,8 +63,8 @@ class SalesforceController extends Controller
         //Credenciales de QA en Salesforce
         $options = [
             'grant_type' => 'password',
-            'client_id' => '3MVG9qOtrzqonpGPTnRKnDPbfLUxczLVWYAr0SgwYgTPHYjP89GXr2ZtrnQf8uKIZRUBga3gjcpZ2t4Vs3vvZ', /* insert consumer key here */
-            'client_secret' => '41B465ACC4804E727AA23C948FA375999B738BB33DE1417B56B70829379A88DD', /* insert consumer secret here */
+            'client_id' => '3MVG9x3BHiue58jW05YVW2cVFK9SW7Kdx_NW4jAavy1fOKf9WyYVjXaK0C38W9xHzOwpyF3Jk7juXx8GFBhjZ', /* insert consumer key here */
+            'client_secret' => 'DD5465E3365D29014881BF920B23995351363D625A7E230A61B301ED321B3B58', /* insert consumer secret here */
             'username' => 'dnavas00@hotmail.com.qa', /* insert Salesforce username here */
             'password' => 'fcds@2024NZJ5AKxFUiLywkGzUjLoZFkxI' /* insert Salesforce user password and security token here */
         ];

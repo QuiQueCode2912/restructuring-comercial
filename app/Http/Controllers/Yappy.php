@@ -115,8 +115,8 @@ if ($response && $response['success']) {
         $salesforce = new \EHAERER\Salesforce\Authentication\PasswordAuthentication(['grant_type' => 'password', 'client_id' => env('SF_CONSUMER_KEY'), 'client_secret' => env('SF_CONSUMER_SECRET'), 'username' => 'dnavas00@hotmail.com', 'password' => '19801980MAFdwvjyJArqvVOiKp9PdmPFFN']);
         $options = [
             'grant_type' => 'password',
-            'client_id' => '3MVG9mclR62wycM2Mqd4UzUSZenQRQBsvUMM_N71sEPWjlCO.P.f._icAYjwflXcrUn99V22Y8ws20UMRXCPr', /* insert consumer key here */
-            'client_secret' => '21A7AAE37073A238564E7EE3860B9BC04A9ABCB96FB39AF7B200D0655A343C21', /* insert consumer secret here */
+            'client_id' => '3MVG9x3BHiue58jW05YVW2cVFK9SW7Kdx_NW4jAavy1fOKf9WyYVjXaK0C38W9xHzOwpyF3Jk7juXx8GFBhjZ', /* insert consumer key here */
+            'client_secret' => 'DD5465E3365D29014881BF920B23995351363D625A7E230A61B301ED321B3B58', /* insert consumer secret here */
             'username' => 'dnavas00@hotmail.com', /* insert Salesforce username here */
             'password' => '19801980MAFdwvjyJArqvVOiKp9PdmPFFN' /* insert Salesforce user password and security token here */
         ];
