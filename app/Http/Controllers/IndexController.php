@@ -1416,6 +1416,9 @@ class IndexController extends Controller
                         $inputs['files'] = $uploaded_files;
                     }
                     // session(['ReservasSeleccionadas' => json_encode($inputs['ReservasSeleccionadas'])]);
+                    if($step != '2-bohios'){
+                        $inputs['00NRb000000Tkib'] = 'solicitud de cotización de Gazebos';
+                    }
                     session($inputs);
                     return redirect()->to('/cotizacion/vista-previa');
                 }
