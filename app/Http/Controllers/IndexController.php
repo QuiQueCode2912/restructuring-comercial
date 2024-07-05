@@ -1355,6 +1355,8 @@ class IndexController extends Controller
                         '00NO9000001soor'=>'nullable|string',
                         'description' => 'required|string',]);
                     }else if($step == '2-bohios'){
+                        session('00NRb000000Tkib','solicitud de cotización de Gazebos');
+
                         $inputs =   $request->validate(['00N3m00000QQOdA' => 'required|string', 
                                                         '00N3m00000QMsCF' => 'required|string', 
                                                         '00N3m00000QMsCA' => 'required|string', 
@@ -1416,9 +1418,7 @@ class IndexController extends Controller
                         $inputs['files'] = $uploaded_files;
                     }
                     // session(['ReservasSeleccionadas' => json_encode($inputs['ReservasSeleccionadas'])]);
-                    if($step != '2-bohios'){
-                        $inputs['00NRb000000Tkib'] = 'solicitud de cotización de Gazebos';
-                    }
+
                     session($inputs);
                     return redirect()->to('/cotizacion/vista-previa');
                 }
