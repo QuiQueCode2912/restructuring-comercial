@@ -1388,7 +1388,7 @@ class IndexController extends Controller
                             case '02i3m00000D9DaPAAV':
                                 //<input type="hidden" name="00N3m00000QeH7c" id="00N3m00000QeH7c" value='Reserva desatendida'/> TODO: VERIFICAR SI ES CONSULTIVA
                                 $inputs['00N3m00000QeGyG'] = $request['00N3m00000QeGyG'];
-                                $inputs['00NRb000000Tkib'] = 'solicitud de cotización de Gazebos';
+                               
                                 $inputs['recordType'] = '0123m000001AzQ4';
                                 break;
                             default:
@@ -1396,6 +1396,7 @@ class IndexController extends Controller
                                 break;
                         }
                     }else{
+                        $inputs['00NRb000000Tkib'] = 'solicitud de cotización de Gazebos';
                         $inputs['recordType'] = '012Rb000000cxFC';
                     }
                    
