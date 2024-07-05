@@ -1355,7 +1355,6 @@ class IndexController extends Controller
                         '00NO9000001soor'=>'nullable|string',
                         'description' => 'required|string',]);
                     }else if($step == '2-bohios'){
-                        session('00NRb000000Tkib','solicitud de cotización de Gazebos');
 
                         $inputs =   $request->validate(['00N3m00000QQOdA' => 'required|string', 
                                                         '00N3m00000QMsCF' => 'required|string', 
@@ -1368,6 +1367,7 @@ class IndexController extends Controller
                                                         '00N3m00000QQOdy' => 'nullable|string',
                                                         '00NRb000001kQmw'=>'nullable|string',
                                                         '00NRb000001kQmv'=>'nullable|string',
+                                                        '00NRb000000Tkib','solicitud de cotización de Gazebos',
                                                         'description' => 'required|string',]);   
 
                     } else {
