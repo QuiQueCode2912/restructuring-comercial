@@ -40,7 +40,7 @@ $pvax = isset($parentVenue) ? $parentVenue : $venue['name'];
                             <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=hora"
                             class="btn btn-primary btn-sm">Cotizar</a>
                         @endif
-                        @if ($alldayfee > 0)
+                        @if ($alldayfee > 0 && $parentid !='02i3m00000DiduVAAR' )
                             <a href="/cotizacion/datos-contacto?id={{ $id }}&franja=dia"
                                 class="btn btn-primary btn-sm">Reservar días</a>
                         @endif
