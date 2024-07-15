@@ -1,6 +1,9 @@
 @if ($menu == "true")
 <div class="header">
   <div class="container">
+
+    <div id="hello-react"></div>
+
     <a href="#" class="menu-toggle"><i class="fe fe-menu"></i></a>
     <ul class="menu">
       <li class="has-childs">
