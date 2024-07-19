@@ -19,6 +19,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.css" integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipuiaD5ymEo9520lyoVOo9jCQOCA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="/css/app.css?t=<?php echo $token ?>" />
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="stylesheet" href="/css/responsive.css?t=<?php echo $token ?>" />
     <!-- Hotjar Tracking Code for https://comercial.ciudaddelsaber.org -->
 <script>
@@ -34,7 +35,6 @@
   </head>
   <body class="antialiased">
     <div class="main-container">
-      
       @yield('content')
     
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

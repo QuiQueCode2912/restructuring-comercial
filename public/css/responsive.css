@@ -80,8 +80,8 @@
     left: 25px;
   }
   .carousel#home-carousel .carousel-inner .carousel-item img {
-    width: 100% !important;
-    height: 320px !important;
+    width: auto !important;
+    height: 300px;
   }
   .carousel#home-carousel > .container {
     display: none;
@@ -131,7 +131,7 @@
     border: none;
   }
   .featured h1 {
-    font-size: 32px;
+    font-size: 48px;
     margin: 25px 0;
   }
   .featured h1 span:nth-child(2) {
@@ -173,30 +173,11 @@
   .searcher.aside {
     display: none !important;
   }
-
-  .v-characteristics-mobile{
-    display: block !important;
-    margin-bottom: 10%;
-  }
-
-  .v-characteristics-mobile > .col-12 >.venue-characteristics{
-    border: 1px solid #000000 !important;
-
-  }
-  .v-characteristics-mobile> .col-12  > .venue-characteristics,
-  .searcher.aside{
-    display: block !important;
-    position: relative !important;
-    top: 0 !important;
-    left: 0 !important;
-  }
-
-
   .venue-detail {
     padding: 0 40px;
   }
   .venue-detail h6 {
-    font-size: 24px;
+    font-size: 21px;
   }
   .venue-name {
     margin-top: 10px;
@@ -298,3 +279,4 @@
     top: 50px;
   }
 }
+
