@@ -49,6 +49,7 @@ class IndexController extends Controller
                 $venue_title = 'Parque Ciudad del Saber';
                 $venue_subtitle = 'Actividades deportivas, natación, esparcimiento';
                 break;
+            
         }
 
         $isUser = session()->get('is-cds-user', false);

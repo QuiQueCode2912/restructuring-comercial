@@ -105,7 +105,10 @@ body {
 }
 
 body .main-container {
-  padding: 0;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
   margin: 0 auto;
   background: #e6e6e6;
 }
@@ -987,30 +990,6 @@ form button {
   text-decoration: underline;
 }
 
-footer {
-  color: #dddddd;
-  background: #292B33;
-  padding: 25px 0;
-  font-size: 13px;
-}
-footer .logo {
-  width: 320px;
-  display: inline-block;
-}
-footer .logo img {
-  width: 100%;
-}
-footer p {
-  position: relative;
-  margin: 10px 0;
-  padding-left: 45px;
-}
-footer p i.fe {
-  position: absolute;
-  left: 5px;
-  top: 4px;
-  font-size: 24px;
-}
 
 .request {
   position: relative;
@@ -1874,4 +1853,42 @@ footer #twitter-timeline .twitter-embed-header {
 
 .transition-height {
   transition: height 1s ease-in-out;
+}
+
+.nwpcontainer {
+  width: 100%;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (min-width: 640px) {
+  .nwpcontainer {
+    max-width: 640px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+@media (min-width: 768px) {
+  .nwpcontainer {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nwpcontainer {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .nwpcontainer {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .nwpcontainer {
+    max-width: 1536px;
+  }
 }

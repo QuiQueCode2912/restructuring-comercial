@@ -1799,6 +1799,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 // React Components
 __webpack_require__(/*! ./components/HelloReact */ "./resources/js/components/HelloReact.js");
 __webpack_require__(/*! ./components/header/NwpHeader */ "./resources/js/components/header/NwpHeader.js");
+__webpack_require__(/*! ./components/footer/NwpFooter */ "./resources/js/components/footer/NwpFooter.js");
 
 /***/ }),
 
@@ -1871,6 +1872,288 @@ if (document.getElementById('hello-react')) {
 
 /***/ }),
 
+/***/ "./resources/js/components/footer/NwpFooter.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/footer/NwpFooter.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ NwpFooter)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _icons_LogoCds__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../icons/LogoCds */ "./resources/js/components/icons/LogoCds.js");
+/* harmony import */ var _icons_SocialNetworks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../icons/SocialNetworks */ "./resources/js/components/icons/SocialNetworks.js");
+/* harmony import */ var _icons_Arrows__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../icons/Arrows */ "./resources/js/components/icons/Arrows.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+
+
+function NwpFooter() {
+  var menuOptions = [{
+    label: 'Afíliate',
+    url: '#',
+    subOptions: [{
+      label: 'Vincula tu organización',
+      url: '#'
+    }, {
+      label: 'Tipos de organización',
+      url: '#'
+    }, {
+      label: 'Directorio afiliados',
+      url: '#'
+    }]
+  }, {
+    label: 'Emprende',
+    url: '#',
+    subOptions: [{
+      label: 'Centro de innovación',
+      url: '#'
+    }, {
+      label: 'Programas',
+      url: '#'
+    }, {
+      label: 'Directorio de startups y emprendedores',
+      url: '#'
+    }, {
+      label: 'Estudio global de emprendimiento',
+      url: '#'
+    }]
+  }, {
+    label: 'Reserva espacios',
+    url: '#',
+    subOptions: [{
+      label: 'Eventos y reuniones',
+      url: '#'
+    }, {
+      label: 'Recreación y deporte',
+      url: '#'
+    }]
+  }, {
+    label: 'Enlaces de interés',
+    url: '#',
+    subOptions: [{
+      label: 'Eventos',
+      url: '#'
+    }, {
+      label: 'Noticias',
+      url: '#'
+    }, {
+      label: 'Oportunidades',
+      url: '#'
+    }]
+  }, {
+    label: 'Portales y recursos',
+    url: '#',
+    subOptions: [{
+      label: 'Portal clientes',
+      url: '#'
+    }, {
+      label: 'Portales emprendimiento',
+      url: '#'
+    }, {
+      label: 'Portal proveedores',
+      url: '#'
+    }, {
+      label: 'Recursos comunicaciones y prensa',
+      url: '#'
+    }]
+  }];
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState2 = _slicedToArray(_useState, 2),
+    openMenuIndex = _useState2[0],
+    setOpenMenuIndex = _useState2[1];
+  var handleMenuClick = function handleMenuClick(index) {
+    setOpenMenuIndex(openMenuIndex === index ? null : index);
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    className: "w-full bg-black",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      className: "w-full grid grid-cols-10 h-6",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "col-span-1 h-full bg-cdsblue"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "col-span-1 h-full bg-cdsazuldark"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "col-span-1 h-full bg-cdscian"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "col-span-1 h-full bg-cdsgrisverde"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "col-span-1 h-full bg-cdsyellow"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "col-span-1 h-full bg-cdsorange"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "col-span-1 h-full bg-cdsverde"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "col-span-1 h-full bg-cdsgrisverdedark"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "col-span-1 h-full bg-cdsrosa"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "col-span-1 h-full bg-cdsrojo"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      className: "md:pt-14 pt-6 pb-8 grid grid-flow-row md:grid-flow-col md:grid-cols-11 gap-y-6 md:gap-y-0 md:gap-x-4 nwpcontainer mx-auto",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: "col-span-2 -mt-6",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_LogoCds__WEBPACK_IMPORTED_MODULE_2__.LogoCdsBlueWhite, {
+          width: 200
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "w-full flex gap-x-4 mx-auto pl-2",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+            href: "#",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_SocialNetworks__WEBPACK_IMPORTED_MODULE_3__.FacebookIcon, {
+              className: "fill-white w-12 h-12"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+            href: "#",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_SocialNetworks__WEBPACK_IMPORTED_MODULE_3__.InstagramIcon, {
+              className: "fill-black w-12 h-12 hover:stroke-white stroke-white"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+            href: "#",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_SocialNetworks__WEBPACK_IMPORTED_MODULE_3__.YouTubeIcon, {
+              className: "fill-white w-12 h-12"
+            })
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: "col-span-3 text-lg text-gray-200",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h6", {
+          className: "font-semibold text-cdsblue text-xl",
+          children: "Cont\xE1ctanos"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "pt-4 flex flex-col gap-y-2",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+            children: "(507) 306-3700"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+            children: "(507) 317-3799"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+            children: "ciudaddelsaber@cdspanama.org"
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: "col-span-3 text-lg text-gray-200",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h6", {
+          className: "font-semibold text-cdsblue text-xl",
+          children: "Vis\xEDtanos"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          className: "pt-4 flex flex-col gap-y-2",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+            children: "Fundaci\xF3n Ciudad del Saber, Edificio 104, Calle Luis Bonilla Clayton, Panam\xE1"
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: "col-span-3 text-lg text-gray-200",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h6", {
+          className: "font-semibold text-cdsblue text-xl",
+          children: "Suscr\xEDbete al Newsletter"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "pt-4 flex flex-col gap-y-2",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+            children: "Ent\xE9rate de las novedades de la comunidad"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+            className: "px-4 py-3 w-40 font-semibold rounded-xl bg-white hover:bg-gray-200 duration-150 text-black",
+            children: "Suscr\xEDbete"
+          })]
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      className: "hidden md:grid grid-cols-5 gap-x-4 nwpcontainer mx-auto py-8 border-t border-zinc-800",
+      children: menuOptions.map(function (option, index) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "col-span-1 text-lg text-gray-200",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h6", {
+            className: "font-semibold text-cdsblue text-xl",
+            children: option.label
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+            className: "pt-4 flex flex-col gap-y-2",
+            children: option.subOptions.map(function (subOption, subIndex) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+                  className: "hover:text-white",
+                  href: subOption.url,
+                  children: subOption.label
+                })
+              }, subIndex);
+            })
+          })]
+        }, index);
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul", {
+      className: "flex flex-col gap-y-4 font-semibold py-4 md:hidden border-y border-zinc-800",
+      children: menuOptions.map(function (option, index) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("li", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("button", {
+            className: "flex justify-between items-center w-full outline-none focus:outline-none ".concat(openMenuIndex === index ? 'text-cdsblue' : 'text-cdsblue'),
+            onClick: function onClick() {
+              return handleMenuClick(index);
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+              className: "text-start text-xl font-semibold text-cdsblue",
+              children: option.label
+            }), option.subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_4__.ArrowIcon, {
+              color: "".concat(openMenuIndex === index ? '#0088ff' : '#0088ff'),
+              rotate: openMenuIndex === index
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+            className: "overflow-hidden transition-max-height duration-500 ease-in-out ".concat(openMenuIndex === index ? 'max-h-screen' : 'max-h-0'),
+            children: option.subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul", {
+              className: "bg-black py-2 border-b border-zinc-800",
+              children: option.subOptions.map(function (subOption, subIndex) {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+                    href: subOption.url,
+                    className: "text-start block py-2 px-4 text-white",
+                    children: subOption.label
+                  })
+                }, subIndex);
+              })
+            })
+          })]
+        }, index);
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      className: "flex flex-col gap-y-2 md:gap-y-0 md:flex-row md:divide-x md:px-0 px-4 divide-white py-4 md:border-t border-zinc-800 nwpcontainer mx-auto",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+        className: "underline text-white hover:text-white",
+        href: "#",
+        children: "Mapa de sitio"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+        className: "underline text-white hover:text-white",
+        href: "#",
+        children: "T\xE9rminos y condiciones"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+        className: "underline text-white hover:text-white",
+        href: "#",
+        children: "Pol\xEDtica de cookies"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+        className: "text-white",
+        children: "\xA9 Copyright 2024. Todos los derechos reservados"
+      })]
+    })]
+  });
+}
+var container = document.getElementById('nwp-footer');
+if (container) {
+  var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(NwpFooter, {}));
+}
+
+/***/ }),
+
 /***/ "./resources/js/components/header/NwpHeader.js":
 /*!*****************************************************!*\
   !*** ./resources/js/components/header/NwpHeader.js ***!
@@ -1884,10 +2167,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _icons_LogoCds__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../icons/LogoCds */ "./resources/js/components/icons/LogoCds.js");
 /* harmony import */ var _icons_Arrows__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../icons/Arrows */ "./resources/js/components/icons/Arrows.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _NwpMobileHeader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./NwpMobileHeader */ "./resources/js/components/header/NwpMobileHeader.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -1899,22 +2183,24 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
+
 var menuOptions = [{
   label: 'Conócenos',
-  url: '#',
   subOptions: [{
     label: 'Qué es ciudad del saber',
-    url: '#'
+    url: 'https://tailwindcss.com'
   }, {
     label: 'Historia',
     url: '#'
   }, {
     label: 'Impacto',
-    url: '#',
-    // URL added
     subOptions: [{
+      label: 'Ir a Impacto',
+      url: '#',
+      arrow: true
+    }, {
       label: 'Académico',
-      url: '#'
+      url: 'https://tailwindcss.com/docs/container'
     }, {
       label: 'Empresarial',
       url: '#'
@@ -1932,33 +2218,32 @@ var menuOptions = [{
       url: '#'
     }]
   }, {
-    label: 'Gobierno corporativo',
-    url: '#'
-  }, {
-    label: 'Cultura Organizacional',
-    url: '#'
-  }, {
-    label: 'Trabaja con nosotros',
-    url: '#',
-    // URL added
+    label: 'Fundación Ciudad del Saber',
     subOptions: [{
-      label: 'Vacantes de empleo',
+      label: 'Gobierno corporativo',
+      url: '#'
+    }, {
+      label: 'Cultura Organizacional',
+      url: '#'
+    }, {
+      label: 'Sé parte del equipo',
       url: '#'
     }, {
       label: 'Programas de pasantías',
       url: '#'
     }]
+  }, {
+    label: 'Publicaciones',
+    url: '#',
+    external: true
   }]
 }, {
   label: 'Afíliate',
-  url: '#',
   subOptions: [{
     label: 'Vincula tu organización',
     url: '#'
   }, {
     label: 'Tipos de organizaciones',
-    url: '#',
-    // URL added
     subOptions: [{
       label: 'Empresa',
       url: '#'
@@ -1978,28 +2263,29 @@ var menuOptions = [{
   }]
 }, {
   label: 'Emprende',
-  url: '#',
   subOptions: [{
-    label: 'Centro de innovación',
+    label: 'Ir a Centro de innovación',
+    url: '#',
+    arrow: true
+  }, {
+    label: 'Conviertete en miembro',
     url: '#'
   }, {
     label: 'Programas de startups y emprendedores',
-    url: '#',
-    // URL added
     subOptions: [{
-      label: 'Innovar: Fase inicial',
+      label: 'Programa innovar',
       url: '#'
     }, {
-      label: 'Incubación y desarrollo',
+      label: 'Canal de empresarias',
       url: '#'
     }, {
-      label: 'Aceleración y crecimiento',
+      label: 'Incubación de startups',
       url: '#'
     }, {
-      label: 'Programas con aliados',
+      label: 'Aceleración de startups',
       url: '#'
     }, {
-      label: 'Conviértete en miembro',
+      label: 'Emprendimientos avanzados',
       url: '#'
     }]
   }, {
@@ -2009,23 +2295,23 @@ var menuOptions = [{
     label: 'Estudio global de emprendimiento',
     url: '#'
   }, {
-    label: 'Portales',
-    url: '#'
+    label: 'Portal Aprende en Ciudad del Saber',
+    url: '#',
+    external: true
   }]
 }, {
   label: 'Ven al campus',
-  url: '#',
   subOptions: [{
     label: 'Conoce el campus',
     url: '#'
   }, {
     label: 'La plaza',
-    url: '#',
     subOptions: [{
-      label: 'Oferta gastronómica',
-      url: '#'
+      label: 'Ir a La Plaza',
+      url: '#',
+      arrow: true
     }, {
-      label: 'Tiendas y servicios',
+      label: 'Oferta gastronómica y servicios comerciales',
       url: '#'
     }, {
       label: 'Mercado Urbano',
@@ -2033,8 +2319,11 @@ var menuOptions = [{
     }]
   }, {
     label: 'Parque Ciudad del Saber',
-    url: '#',
     subOptions: [{
+      label: 'Ir a Parque Ciudad del Saber',
+      url: '#',
+      arrow: true
+    }, {
       label: 'Piscina',
       url: '#'
     }, {
@@ -2047,7 +2336,7 @@ var menuOptions = [{
       label: 'Cancha de ráquetbol',
       url: '#'
     }, {
-      label: 'Cancha de tennis',
+      label: 'Cancha de tenis',
       url: '#'
     }, {
       label: 'Cancha de voleibol',
@@ -2077,41 +2366,13 @@ var menuOptions = [{
   }]
 }, {
   label: 'Reserva espacios',
-  url: '#',
   subOptions: [{
-    label: 'Espacios para recreación y deporte',
-    url: '#',
-    // URL added
-    subOptions: [{
-      label: 'Piscina',
-      url: '#'
-    }, {
-      label: 'Canchas de baloncesto',
-      url: '#'
-    }, {
-      label: 'Cancha de golf',
-      url: '#'
-    }, {
-      label: 'Cancha de ráquetbol',
-      url: '#'
-    }, {
-      label: 'Cancha de tennis',
-      url: '#'
-    }, {
-      label: 'Cancha de voleibol',
-      url: '#'
-    }, {
-      label: 'Gimnasio',
-      url: '#'
-    }, {
-      label: 'Gazebos',
-      url: '#'
-    }]
-  }, {
     label: 'Espacios para eventos y reuniones',
-    url: '#',
-    // URL added
     subOptions: [{
+      label: 'Ir a Espacios para eventos y reuniones',
+      url: '#',
+      arrow: true
+    }, {
       label: 'Teatro Ateneo',
       url: '#'
     }, {
@@ -2133,6 +2394,37 @@ var menuOptions = [{
       label: 'Auditorio Innova',
       url: '#'
     }]
+  }, {
+    label: 'Espacios para recreación y deporte',
+    subOptions: [{
+      label: 'Ir a Parque Ciudad del Saber',
+      url: '#',
+      arrow: true
+    }, {
+      label: 'Piscina',
+      url: '#'
+    }, {
+      label: 'Canchas de baloncesto',
+      url: '#'
+    }, {
+      label: 'Cancha de golf',
+      url: '#'
+    }, {
+      label: 'Cancha de ráquetbol',
+      url: '#'
+    }, {
+      label: 'Cancha de tenis',
+      url: '#'
+    }, {
+      label: 'Cancha de voleibol',
+      url: '#'
+    }, {
+      label: 'Gimnasio',
+      url: '#'
+    }, {
+      label: 'Gazebos',
+      url: '#'
+    }]
   }]
 }, {
   label: 'Eventos',
@@ -2147,178 +2439,407 @@ function NwpHeader() {
     _useState4 = _slicedToArray(_useState3, 2),
     openSubMenuIndex = _useState4[0],
     setOpenSubMenuIndex = _useState4[1];
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('auto'),
-    _useState6 = _slicedToArray(_useState5, 2),
-    menuHeight = _useState6[0],
-    setMenuHeight = _useState6[1];
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
-    _useState8 = _slicedToArray(_useState7, 2),
-    offsetRight = _useState8[0],
-    setOffsetRight = _useState8[1];
   var mainMenuRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  var subMenuRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  var closeMenuTimeout = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  var subMenuOutOfBounds = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(false);
-  var handleMenuMouseEnter = function handleMenuMouseEnter(index) {
-    clearTimeout(closeMenuTimeout.current);
-    setOpenMenuIndex(index);
+  var handleMenuClick = function handleMenuClick(index) {
+    setOpenMenuIndex(function (prevIndex) {
+      return prevIndex === index ? null : index;
+    });
+    setOpenSubMenuIndex(null);
   };
-  var handleMenuMouseLeave = function handleMenuMouseLeave() {
-    closeMenuTimeout.current = setTimeout(function () {
-      setOpenMenuIndex(null);
-      setOpenSubMenuIndex(null);
-      setOffsetRight(0);
-    }, 20);
-  };
-  var handleSubMenuMouseEnter = function handleSubMenuMouseEnter(index, hasSubMenu) {
-    clearTimeout(closeMenuTimeout.current);
+  var handleSubMenuClick = function handleSubMenuClick(index, hasSubMenu, event) {
     if (hasSubMenu) {
-      setOpenSubMenuIndex(index);
+      event.preventDefault();
+      setOpenSubMenuIndex(function (prevIndex) {
+        return prevIndex === index ? null : index;
+      });
     }
-  };
-  var handleSubMenuMouseLeave = function handleSubMenuMouseLeave() {
-    closeMenuTimeout.current = setTimeout(function () {
-      setOpenSubMenuIndex(null);
-    }, 0);
   };
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (openMenuIndex !== null && mainMenuRef.current && subMenuRef.current) {
-      var mainMenuHeight = mainMenuRef.current.clientHeight;
-      var subMenuHeight = subMenuRef.current.clientHeight;
-      setMenuHeight("".concat(Math.max(mainMenuHeight, subMenuHeight), "px"));
-      var subMenuRect = subMenuRef.current.getBoundingClientRect();
-      var viewportWidth = window.innerWidth;
-      if (subMenuRect.right > viewportWidth) {
-        setOffsetRight(subMenuRect.right - viewportWidth + 60);
-        subMenuOutOfBounds.current = true;
-      } else if (!subMenuOutOfBounds.current) {
-        setOffsetRight(0);
+    function handleClickOutside(event) {
+      if (mainMenuRef.current && !mainMenuRef.current.contains(event.target)) {
+        setOpenMenuIndex(null);
+        setOpenSubMenuIndex(null);
       }
-    } else {
-      setMenuHeight('auto');
-      setOffsetRight(0);
-      subMenuOutOfBounds.current = false;
     }
-  }, [openMenuIndex, openSubMenuIndex]);
-  var isSubMenuOpen = openSubMenuIndex !== null;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("header", {
-    className: "hidden md:block md:fixed md:top-0 md:left-0 md:right-0 md:z-50",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "mx-auto py-2 bg-cdsblue px-8",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: "max-w-[1536px] mx-auto flex justify-end gap-x-8 divide-x divide-white",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ul", {
-          className: "flex gap-x-8",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
-              className: "text-white font-semibold",
-              href: "#",
-              children: "Directorio"
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
-              className: "text-white font-semibold",
-              href: "#",
-              children: "Noticias"
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
-              className: "text-white font-semibold",
-              href: "#",
-              children: "Oportunidades"
+    document.addEventListener('mousedown', handleClickOutside);
+    return function () {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [mainMenuRef]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (openMenuIndex !== null) {
+      var menuElement = mainMenuRef.current;
+      var rect = menuElement.getBoundingClientRect();
+      if (rect.right > window.innerWidth) {
+        menuElement.style.transform = "translateX(-".concat(rect.right - window.innerWidth + 80, "px)");
+      } else {
+        menuElement.style.transform = 'translateX(0)';
+      }
+    }
+  }, [openMenuIndex]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("header", {
+      className: "hidden md:block md:fixed md:top-0 md:left-0 md:right-0 md:z-20 h-[120px]",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "mx-auto bg-cdsblue px-8 h-12",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "nwpcontainer mx-auto h-full flex items-center justify-end gap-x-8 divide-x divide-white",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("ul", {
+            className: "flex gap-x-8",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+                className: "text-white font-semibold",
+                href: "#",
+                children: "Directorio"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+                className: "text-white font-semibold",
+                href: "#",
+                children: "Noticias"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+                className: "text-white font-semibold",
+                href: "#",
+                children: "Oportunidades"
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+            className: "text-white font-semibold pl-8",
+            href: "#",
+            children: "Portal de clientes"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+            className: "text-white font-semibold pl-8",
+            children: "\uD83C\uDF0D"
+          })]
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "bg-white mx-auto h-[72px]",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "nwpcontainer mx-auto h-full flex items-center justify-between  z-20",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_LogoCds__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            width: 180,
+            height: 48
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+            className: "hidden h-full md:flex pt-4 gap-x-4",
+            children: menuOptions.map(function (option, index) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                className: "relative",
+                children: [!option.subOptions ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+                  href: option.url,
+                  className: "font-semibold flex transition-colors hover:no-underline hover:text-cdsblue h-full hover:border-b-4 border-cdsblue duration-200 z-20 ".concat(openMenuIndex === index ? 'text-cdsblue' : 'text-gray-800'),
+                  children: option.label
+                }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("button", {
+                  className: "focus:outline-none group font-semibold flex transition-colors hover:text-cdsblue h-full hover:border-b-4 border-cdsblue duration-200 z-20 ".concat(openMenuIndex === index ? 'text-cdsblue ' : 'text-gray-800'),
+                  onClick: function onClick() {
+                    return handleMenuClick(index);
+                  },
+                  children: [option.label, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowIcon, {
+                    color: openMenuIndex === index ? '#0088ff' : '#000',
+                    className: "ml-1 w-5 h-5 group-hover:fill-cdsblue",
+                    rotate: openMenuIndex === index
+                  })]
+                }), openMenuIndex === index && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                  className: "absolute top-0 border border-cdsgray600 rounded-lg overflow-hidden mt-7 flex w-[800px] transition-transform duration-300 z-50",
+                  ref: mainMenuRef,
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul", {
+                    className: "bg-cdsgray700 py-6 w-1/2 flex flex-col ",
+                    children: option.subOptions.map(function (subOption, subIndex) {
+                      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+                        className: "group w-full",
+                        children: !subOption.subOptions ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+                          href: subOption.url,
+                          className: "font-semibold w-full h-12 flex items-center text-start justify-between transition-colors duration-200 group-hover:bg-white px-6 hover:border-r-8 border-cdsblue hover:no-underline",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                            className: "flex items-center justify-between text-start h-12 py-2 group-hover:text-black w-full",
+                            children: [subOption.label, subOption.external && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.RedirectArrow, {
+                              className: "h-8 w-8 text-black pl-2"
+                            })]
+                          })
+                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+                          className: "focus:outline-none font-semibold w-full text-start h-12 flex items-center justify-between transition-colors duration-200 group-hover:bg-white px-6 hover:border-r-8 border-cdsblue hover:no-underline",
+                          onClick: function onClick(event) {
+                            return handleSubMenuClick(subIndex, subOption.subOptions, event);
+                          },
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                            className: "flex items-center h-12 justify-between py-2 group-hover:text-black w-full",
+                            children: [subOption.label, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowIconRight, {
+                              className: "w-5 h-5 ml-2"
+                            })]
+                          })
+                        })
+                      }, subIndex);
+                    })
+                  }), openSubMenuIndex !== null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul", {
+                    className: " border-gray-100   bg-white py-6 w-1/2 flex flex-col transition-all duration-300",
+                    children: menuOptions[openMenuIndex].subOptions[openSubMenuIndex].subOptions.map(function (subSubOption, subSubIndex) {
+                      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+                        className: "group flex w-full",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+                          href: subSubOption.url,
+                          className: "font-semibold w-full flex items-center justify-between transition-colors duration-75 group-hover:bg-cdsgray600 px-6 hover:no-underline",
+                          onClick: function onClick(event) {
+                            return event.stopPropagation();
+                          },
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                            className: "flex items-center group-hover:text-black w-full ".concat(subSubOption.arrow ? 'h-[72px]' : 'h-12'),
+                            children: [subSubOption.label, subSubOption.arrow && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                              className: "h-8 w-8 ml-2 bg-cdsblue rounded-full grid place-content-center",
+                              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowWhitBg, {
+                                className: "h-6 w-6"
+                              })
+                            })]
+                          })
+                        })
+                      }, subSubIndex);
+                    })
+                  }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                    className: "border-gray-100  bg-white rounded-r-lg py-6 w-1/2  min-w-96 flex flex-col z-50 transition-all duration-300"
+                  })]
+                })]
+              }, index);
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
-          className: "text-white font-semibold pl-8",
-          href: "#",
-          children: "Portal de clientes"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-          className: "text-white font-semibold pl-8",
-          href: "#",
-          children: "\uD83C\uDF0D"
-        })]
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "bg-white mx-auto py-3",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: "max-w-[1536px] mx-auto flex items-center justify-between gap-x-8 z-20",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_icons_LogoCds__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          width: 200,
-          height: 52.75
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-          className: "hidden md:flex gap-x-4",
-          children: menuOptions.map(function (option, index) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-              className: "relative",
-              onMouseEnter: function onMouseEnter() {
-                return handleMenuMouseEnter(index);
-              },
-              onMouseLeave: handleMenuMouseLeave,
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
-                href: option.url,
-                className: "font-semibold flex transition-colors hover:text-cdsblue duration-200 ".concat(openMenuIndex === index ? 'text-cdsblue' : 'text-gray-800'),
-                children: [option.label, option.subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowIcon, {
-                  color: openMenuIndex === index ? '#0088ff' : '#000',
-                  className: "ml-1 w-5 h-5",
-                  rotate: openMenuIndex === index
-                })]
-              }), openMenuIndex === index && option.subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul", {
-                ref: mainMenuRef,
-                style: {
-                  height: menuHeight,
-                  right: offsetRight
-                },
-                className: "absolute top-0 right-0 mt-7 bg-gray-100 rounded-l-lg py-6 min-w-96 flex flex-col z-50 transition-all duration-300 ".concat(isSubMenuOpen ? 'rounded-r-none' : 'rounded-r-lg'),
-                children: option.subOptions.map(function (subOption, subIndex) {
-                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("li", {
-                    className: "group flex w-full",
-                    onMouseEnter: function onMouseEnter() {
-                      return handleSubMenuMouseEnter(subIndex, subOption.subOptions);
-                    },
-                    onMouseLeave: handleSubMenuMouseLeave,
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
-                      href: subOption.url,
-                      className: "font-semibold w-full flex items-center justify-between transition-colors duration-200 group-hover:bg-white pl-4 hover:no-underline",
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-                        className: "flex items-center justify-between py-2 group-hover:text-black w-full",
-                        children: [subOption.label, subOption.subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowIconRight, {
-                          className: "w-5 h-5 ml-2"
-                        })]
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                        className: "min-h-5 h-full w-2 group-hover:bg-cdsblue transition-colors duration-200"
-                      })]
-                    }), openSubMenuIndex === subIndex && subOption.subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul", {
-                      ref: subMenuRef,
-                      style: {
-                        height: menuHeight
-                      },
-                      className: "absolute top-0 left-full mt-0 bg-white border-y border-r border-gray-100 rounded-r-lg py-6 min-w-96 flex flex-col z-50 transition-all duration-300",
-                      children: subOption.subOptions.map(function (subSubOption, subSubIndex) {
-                        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-                          className: "group flex w-full",
-                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
-                            href: subSubOption.url,
-                            className: "font-semibold w-full flex items-center justify-between transition-colors duration-200 group-hover:bg-white pl-4 hover:no-underline",
-                            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                              className: "flex items-center justify-between py-2 group-hover:text-black w-full",
-                              children: subSubOption.label
-                            })
-                          })
-                        }, subSubIndex);
-                      })
-                    })]
-                  }, subIndex);
-                })
-              })]
-            }, index);
-          })
-        })]
-      })
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_NwpMobileHeader__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      menuOptions: menuOptions
     })]
   });
 }
-if (document.getElementById('nwp-header')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NwpHeader, {}), document.getElementById('nwp-header'));
+var container = document.getElementById('nwp-header');
+if (container) {
+  var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(NwpHeader, {}));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/header/NwpMobileHeader.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/header/NwpMobileHeader.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ NwpMobileHeader)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _icons_LogoCds__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../icons/LogoCds */ "./resources/js/components/icons/LogoCds.js");
+/* harmony import */ var _icons_Arrows__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../icons/Arrows */ "./resources/js/components/icons/Arrows.js");
+/* harmony import */ var _icons_MenuIcon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../icons/MenuIcon */ "./resources/js/components/icons/MenuIcon.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+
+function NwpMobileHeader(_ref) {
+  var menuOptions = _ref.menuOptions;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState2 = _slicedToArray(_useState, 2),
+    menuOpen = _useState2[0],
+    setMenuOpen = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState4 = _slicedToArray(_useState3, 2),
+    openMenuIndex = _useState4[0],
+    setOpenMenuIndex = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState6 = _slicedToArray(_useState5, 2),
+    openSubMenuIndex = _useState6[0],
+    setOpenSubMenuIndex = _useState6[1];
+  var toggleMenu = function toggleMenu() {
+    setMenuOpen(!menuOpen);
+    setOpenMenuIndex(null);
+    setOpenSubMenuIndex(null);
+  };
+  var handleMenuClick = function handleMenuClick(index) {
+    if (openMenuIndex === index) {
+      setOpenMenuIndex(null);
+      setOpenSubMenuIndex(null);
+    } else {
+      setOpenMenuIndex(index);
+      setOpenSubMenuIndex(null);
+    }
+  };
+  var handleSubMenuClick = function handleSubMenuClick(index) {
+    if (openSubMenuIndex === index) {
+      setOpenSubMenuIndex(null);
+    } else {
+      setOpenSubMenuIndex(index);
+    }
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("header", {
+    className: "fixed top-0 left-0 right-0 z-40 bg-white md:hidden",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      className: "flex justify-between items-center border-b border-gray-300 py-2 px-4 h-20",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        className: "h-full",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_icons_LogoCds__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          className: "h-12",
+          width: 170,
+          height: 60
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+        onClick: toggleMenu,
+        className: "outline-none focus:outline-none",
+        children: menuOpen ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_icons_MenuIcon__WEBPACK_IMPORTED_MODULE_3__.CloseIcon, {
+          className: "h-7 w-7 text-black transition-transform duration-300 transform rotate-180"
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_icons_MenuIcon__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          className: "h-7 w-7 text-black transition-transform duration-300 transform rotate-0"
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: "bg-white overflow-hidden transition-max-height duration-500 ease-in-out ".concat(menuOpen ? 'max-h-screen' : 'max-h-0'),
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        className: "pt-4 flex flex-col z-50",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "flex flex-col justify-between h-[calc(100vh-5rem)] max-h-[calc(200vh-5rem)] overflow-y-auto",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul", {
+            className: "flex flex-col text-semibold mx-4",
+            children: menuOptions.map(function (option, index) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("li", {
+                children: [!option.subOptions ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
+                  href: option.url,
+                  className: "flex justify-between text-semibold items-center w-full py-2 outline-none focus:outline-none ".concat(openMenuIndex === index ? 'text-cdsblue border-b border-gray-300' : 'text-black'),
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                    className: "text-start font-semibold ".concat(openMenuIndex === index ? 'text-cdsblue' : 'text-black'),
+                    children: option.label
+                  }), option.external && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_2__.RedirectArrow, {
+                    className: "h-5 w-5 ml-2"
+                  })]
+                }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("button", {
+                  className: "flex justify-between text-semibold items-center w-full py-2 outline-none focus:outline-none ".concat(openMenuIndex === index ? 'text-cdsblue border-b border-gray-300' : 'text-black'),
+                  onClick: function onClick() {
+                    return handleMenuClick(index);
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                    className: "text-start font-semibold ".concat(openMenuIndex === index ? 'text-cdsblue' : 'text-black'),
+                    children: option.label
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_2__.ArrowIcon, {
+                    color: "".concat(openMenuIndex === index ? '#0088ff' : 'black'),
+                    rotate: openMenuIndex === index
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                  className: "overflow-hidden transition-max-height duration-500 ease-in-out ".concat(openMenuIndex === index ? 'max-h-screen' : 'max-h-0'),
+                  children: option.subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul", {
+                    className: "bg-white py-2 border-b border-gray-300",
+                    children: option.subOptions.map(function (subOption, subIndex) {
+                      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("li", {
+                        children: [!subOption.subOptions ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
+                          href: subOption.url,
+                          className: "flex justify-between text-semibold items-center w-full py-2 px-4 outline-none focus:outline-none ".concat(openSubMenuIndex === subIndex ? 'text-black' : 'text-black'),
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                            className: "text-start font-semibold ".concat(openSubMenuIndex === subIndex ? 'text-cdsblue' : 'text-black'),
+                            children: subOption.label
+                          }), subOption.external && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_2__.RedirectArrow, {
+                            className: "h-5 w-5 ml-2"
+                          })]
+                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("button", {
+                          className: "flex justify-between text-semibold items-center w-full py-2 px-4 outline-none focus:outline-none ".concat(openSubMenuIndex === subIndex ? 'text-black' : 'text-black'),
+                          onClick: function onClick() {
+                            return handleSubMenuClick(subIndex);
+                          },
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                            className: "text-start font-semibold ".concat(openSubMenuIndex === subIndex ? 'text-cdsblue' : 'text-black'),
+                            children: subOption.label
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_2__.ArrowIcon, {
+                            color: "".concat(openSubMenuIndex === subIndex ? '#0088ff' : 'black'),
+                            rotate: openSubMenuIndex === subIndex
+                          })]
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                          className: "overflow-hidden transition-max-height duration-500 ease-in-out ".concat(openSubMenuIndex === subIndex ? 'max-h-screen' : 'max-h-0'),
+                          children: subOption.subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul", {
+                            className: "bg-gray-100",
+                            children: subOption.subOptions.map(function (subSubOption, subSubIndex) {
+                              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+                                children: !subSubOption.subOptions ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+                                  href: subSubOption.url,
+                                  className: "text-start px-4 text-gray-800 flex items-center justify-between ".concat(subSubOption.arrow ? 'h-[72px]' : 'h-12'),
+                                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                                    className: "flex items-center h-full",
+                                    children: [subSubOption.label, subSubOption.arrow && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                                      className: "h-8 w-8 ml-2 bg-cdsblue rounded-full grid place-content-center",
+                                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_2__.ArrowWhitBg, {
+                                        className: "h-6 w-6"
+                                      })
+                                    }), subSubOption.external && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_2__.RedirectArrow, {
+                                      className: "h-5 w-5 ml-2"
+                                    })]
+                                  })
+                                }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+                                  className: "text-start block py-2 px-4 text-gray-800 flex items-center justify-between",
+                                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                                    className: "flex items-center",
+                                    children: [subSubOption.label, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_2__.ArrowIconRight, {
+                                      color: "".concat(openSubMenuIndex === subSubIndex ? '#0088ff' : 'black'),
+                                      rotate: openSubMenuIndex === subSubIndex
+                                    })]
+                                  })
+                                })
+                              }, subSubIndex);
+                            })
+                          })
+                        })]
+                      }, subIndex);
+                    })
+                  })
+                })]
+              }, index);
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ul", {
+            className: "flex flex-col gap-y-4 bg-cdsblue text-semibold px-4 pb-8 pt-6 h-68 w-full",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+              className: "w-full",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+                className: "text-white py-2 font-semibold w-full",
+                href: "#",
+                children: "Directorio"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+              className: "w-full",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+                className: "text-white py-2 font-semibold w-full",
+                href: "#",
+                children: "Noticias"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+              className: "w-full",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+                className: "text-white py-2 font-semibold w-full",
+                href: "#",
+                children: "Oportunidades"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+              className: "w-full border-y border-white py-2",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+                className: "text-white font-semibold w-full",
+                href: "#",
+                children: "Portal de clientes"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+              className: "w-full",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+                className: "text-white py-2 font-semibold w-full",
+                href: "#",
+                children: "Idioma"
+              })
+            })]
+          })]
+        })
+      })
+    })]
+  });
 }
 
 /***/ }),
@@ -2333,7 +2854,9 @@ if (document.getElementById('nwp-header')) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ArrowIcon: () => (/* binding */ ArrowIcon),
-/* harmony export */   ArrowIconRight: () => (/* binding */ ArrowIconRight)
+/* harmony export */   ArrowIconRight: () => (/* binding */ ArrowIconRight),
+/* harmony export */   ArrowWhitBg: () => (/* binding */ ArrowWhitBg),
+/* harmony export */   RedirectArrow: () => (/* binding */ RedirectArrow)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -2380,6 +2903,35 @@ var ArrowIconRight = function ArrowIconRight(_ref2) {
     })
   });
 };
+var ArrowWhitBg = function ArrowWhitBg(_ref3) {
+  var className = _ref3.className;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#FFFFFF",
+    className: className,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"
+    })
+  });
+};
+var RedirectArrow = function RedirectArrow(_ref4) {
+  var className = _ref4.className;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+    width: "24",
+    height: "24",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    className: className,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M18 19H6C5.45 19 5 18.55 5 18V6C5 5.45 5.45 5 6 5H11C11.55 5 12 4.55 12 4C12 3.45 11.55 3 11 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V13C21 12.45 20.55 12 20 12C19.45 12 19 12.45 19 13V18C19 18.55 18.55 19 18 19ZM14 4C14 4.55 14.45 5 15 5H17.59L8.46 14.13C8.07 14.52 8.07 15.15 8.46 15.54C8.85 15.93 9.48 15.93 9.87 15.54L19 6.41V9C19 9.55 19.45 10 20 10C20.55 10 21 9.55 21 9V3H15C14.45 3 14 3.45 14 4Z",
+      fill: "black"
+    })
+  });
+};
 
 /***/ }),
 
@@ -2392,6 +2944,7 @@ var ArrowIconRight = function ArrowIconRight(_ref2) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   LogoCdsBlueWhite: () => (/* binding */ LogoCdsBlueWhite),
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
@@ -2421,7 +2974,176 @@ var LogoCds = function LogoCds(_ref) {
     })]
   });
 };
+var LogoCdsBlueWhite = function LogoCdsBlueWhite(_ref2) {
+  var _ref2$width = _ref2.width,
+    width = _ref2$width === void 0 ? 446 : _ref2$width,
+    _ref2$height = _ref2.height,
+    height = _ref2$height === void 0 ? 119 : _ref2$height;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+    width: width,
+    height: height,
+    viewBox: "0 0 446 119",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+      d: "M102.737 24.5252C102.737 25.1959 102.198 25.7456 101.527 25.7456C101.197 25.7456 100.911 25.6247 100.691 25.4158C90.2408 15.8171 75.6328 9.65994 59.2868 10.6715C35.8458 12.1338 19.0378 24.6351 20.1378 42.3591C20.3798 46.0974 21.4578 49.7697 23.3718 53.1122C26.6498 58.8516 31.9738 62.9747 38.3538 64.7229C44.7338 66.4601 51.4218 65.6135 57.1638 62.337C62.0038 59.5772 66.4148 59.3243 70.4628 60.4238C74.8078 61.6113 78.4158 64.415 80.6598 68.3182C81.8698 70.4403 82.6618 72.7382 82.8158 75.1132C83.7838 90.5721 65.8428 98.1257 50.7398 98.9943C45.6028 99.2912 40.3888 98.7414 35.2848 97.356C22.9098 93.9806 12.5808 85.9872 6.21177 74.8383C3.47277 70.0445 1.62477 64.9208 0.656766 59.6322C0.634766 59.5442 0.634766 59.4563 0.634766 59.3683C0.634766 58.6976 1.17377 58.1479 1.85577 58.1479C2.36177 58.1479 2.79077 58.4447 2.97777 58.8955C2.98877 58.9065 2.99977 58.9175 3.01077 58.9395C3.67077 60.4568 4.39677 61.9521 5.24377 63.4145C16.9698 83.9421 44.2828 93.7937 68.0098 80.1159C69.9128 79.0164 70.5728 76.6085 69.4838 74.7063C68.3948 72.8042 65.9858 72.1445 64.0718 73.222C44.2608 84.5249 21.8208 76.3556 12.1848 59.5003C7.20177 50.7702 5.91477 40.6109 8.56577 30.9133C11.2168 21.2157 17.4868 13.1344 26.2208 8.15362C40.0258 0.27021 55.4698 -2.01675 71.0018 2.23832C83.8168 5.74572 94.8058 13.3433 102.561 23.8985C102.66 24.0744 102.737 24.2943 102.737 24.5252ZM110.195 57.939C109.249 52.6284 107.379 47.4717 104.629 42.6449C98.2708 31.496 87.9418 23.5026 75.5558 20.1272C70.4518 18.7308 65.2378 18.1921 60.1008 18.4889C45.9108 19.2916 26.7158 26.6032 28.0358 42.524C28.2338 44.8329 28.9818 47.0869 30.1698 49.165C32.4138 53.0682 36.0218 55.8719 40.3668 57.0594C44.4038 58.1589 48.8258 57.917 53.6658 55.1462C59.4078 51.8697 66.0958 51.0231 72.4758 52.7603C78.8668 54.4975 84.1908 58.6207 87.4688 64.371C89.3828 67.7135 90.4718 71.3859 90.6918 75.1132C91.8028 92.8371 74.9838 105.338 51.5538 106.801C35.1418 107.823 20.4898 101.611 10.0508 91.9685C9.84177 91.7926 9.56677 91.6826 9.28077 91.6826C8.59877 91.6826 8.05977 92.2214 8.05977 92.9031C8.05977 93.1339 8.12577 93.3319 8.23577 93.5188C15.9908 104.118 27.0018 111.737 39.8388 115.245C55.3818 119.5 70.8258 117.213 84.6308 109.33C93.3648 104.349 99.6238 96.2565 102.275 86.5589C104.926 76.8614 103.628 66.702 98.6558 57.9829C89.0088 41.1166 66.5908 32.9583 46.7688 44.2502C44.8658 45.3387 42.4568 44.668 41.3678 42.7769C40.2788 40.8747 40.9498 38.4558 42.8418 37.3673C66.6568 23.6346 93.8268 33.4421 105.608 54.0687C106.433 55.5311 107.181 57.0154 107.83 58.5327C107.841 58.5547 107.852 58.5657 107.863 58.5877C108.05 59.0275 108.479 59.3353 108.985 59.3353C109.656 59.3353 110.206 58.7856 110.206 58.1149C110.217 58.0489 110.206 57.9939 110.195 57.939Z",
+      fill: "#0088FF"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+      d: "M145.131 28.0216C145.131 37.3783 151.544 44.3272 160.058 44.3272C165.679 44.3272 169.276 42.0292 173.258 38.3129C173.709 37.8951 174.413 37.9061 174.842 38.3459L180.342 43.9094C180.771 44.3492 180.782 45.0528 180.353 45.4926C174.314 51.7818 168.165 54.4646 159.783 54.4646C145.263 54.4646 133.889 42.9748 133.889 28.2965C133.889 13.1673 145.175 1.8535 160.135 1.8535C170.332 1.8535 175.887 5.84468 179.979 9.7479C180.419 10.1657 180.452 10.8584 180.056 11.3202L174.567 17.6423C174.369 17.8732 174.072 18.0161 173.764 18.0271C173.456 18.0381 173.159 17.9392 172.928 17.7193C168.649 13.7501 164.678 11.9799 160.069 11.9799C151.544 11.9909 145.131 18.8738 145.131 28.0216ZM194.345 14.6407H185.93C185.303 14.6407 184.786 15.1464 184.786 15.7842V52.4855C184.786 53.1122 185.292 53.6289 185.93 53.6289H194.345C194.972 53.6289 195.489 53.1232 195.489 52.4855V15.7842C195.478 15.1574 194.972 14.6407 194.345 14.6407ZM195.753 2.16135C195.753 1.53464 195.247 1.01788 194.609 1.01788H185.567C184.94 1.01788 184.423 1.52364 184.423 2.16135V10.1547C184.423 10.7814 184.929 11.2982 185.567 11.2982H194.609C195.236 11.2982 195.753 10.7924 195.753 10.1547V2.16135ZM215.905 54.3876C220.008 54.3876 223.418 52.9472 226.245 50.0116V52.4855C226.245 53.1122 226.751 53.6289 227.389 53.6289H235.804C236.431 53.6289 236.948 53.1232 236.948 52.4855V15.7842C236.948 15.1574 236.442 14.6407 235.804 14.6407H227.389C226.762 14.6407 226.245 15.1464 226.245 15.7842V36.4987C226.245 41.4135 223.506 44.4701 219.106 44.4701C214.772 44.4701 212.385 41.6884 212.385 36.6417V15.7842C212.385 15.1574 211.879 14.6407 211.241 14.6407H202.826C202.199 14.6407 201.682 15.1464 201.682 15.7842V39.1375C201.693 48.5492 207.138 54.3876 215.905 54.3876ZM271.961 0.600067H280.376C281.003 0.600067 281.52 1.10584 281.52 1.74355V52.4855C281.52 53.1122 281.014 53.6289 280.376 53.6289H271.961C271.334 53.6289 270.817 53.1232 270.817 52.4855V49.5388C267.682 52.7933 263.931 54.3876 259.432 54.3876C250.621 54.3876 241.26 47.3178 241.26 34.2008C241.26 20.8089 250.401 13.871 259.432 13.871C263.876 13.871 267.616 15.3883 270.817 18.4889V1.74355C270.817 1.11683 271.334 0.600067 271.961 0.600067ZM261.456 23.4587C255.901 23.4587 252.018 27.8237 252.018 34.0688C252.018 40.259 256.077 44.8219 261.456 44.8219C266.131 44.8219 270.96 40.8528 270.96 34.2118C270.96 27.175 266.065 23.4587 261.456 23.4587ZM301.166 28.6153C304.961 28.6153 307.634 29.0551 310.142 29.7478C309.823 25.8446 307.172 23.8765 302.277 23.8765C298.328 23.8765 295.391 24.7561 292.212 26.0865C291.915 26.2074 291.596 26.2074 291.299 26.0755C291.013 25.9435 290.793 25.7016 290.694 25.4048L288.406 18.6648C288.219 18.1041 288.483 17.4994 289.022 17.2575C293.257 15.3663 297.327 14.1019 303.465 14.1019C314.608 14.1019 320.735 20.0062 320.735 30.7374V52.4965C320.735 53.1232 320.229 53.6399 319.591 53.6399H311.242C310.615 53.6399 310.109 53.1342 310.109 52.4965V50.7263C307.216 53.1452 303.542 54.4096 299.351 54.4096C290.98 54.4096 285.139 49.2859 285.139 41.9413C285.15 33.5411 291.134 28.6153 301.166 28.6153ZM303.047 36.8066C300.858 36.8066 295.765 37.2464 295.765 41.3695C295.765 44.668 298.977 45.7895 301.716 45.7895C306.776 45.7895 310.318 43.0847 310.318 39.2145V37.9281C308.173 37.2024 305.566 36.8066 303.047 36.8066ZM364.768 1.74355V52.4855C364.768 53.1122 364.262 53.6289 363.624 53.6289H355.209C354.582 53.6289 354.065 53.1232 354.065 52.4855V49.5388C350.93 52.7933 347.179 54.3876 342.68 54.3876C333.869 54.3876 324.508 47.3178 324.508 34.2008C324.508 20.8089 333.649 13.871 342.68 13.871C347.124 13.871 350.864 15.3883 354.065 18.4889V1.74355C354.065 1.11683 354.571 0.600067 355.209 0.600067H363.624C364.251 0.600067 364.768 1.11683 364.768 1.74355ZM344.704 23.4587C339.149 23.4587 335.266 27.8237 335.266 34.0688C335.266 40.259 339.325 44.8219 344.704 44.8219C349.379 44.8219 354.208 40.8528 354.208 34.2118C354.208 27.175 349.313 23.4587 344.704 23.4587ZM133.185 97.9828C133.185 84.5909 142.326 77.664 151.357 77.664C155.801 77.664 159.541 79.1813 162.731 82.2819V65.5255C162.731 64.8988 163.237 64.382 163.875 64.382H172.29C172.917 64.382 173.434 64.8878 173.434 65.5255V116.267C173.434 116.894 172.928 117.411 172.29 117.411H163.875C163.248 117.411 162.731 116.905 162.731 116.267V113.321C159.596 116.575 155.845 118.17 151.357 118.17C142.546 118.17 133.185 111.089 133.185 97.9828ZM153.381 108.593C158.056 108.593 162.885 104.624 162.885 97.9828C162.885 90.957 157.99 87.2296 153.381 87.2296C147.826 87.2296 143.954 91.5947 143.954 97.8398C143.943 104.03 148.002 108.593 153.381 108.593ZM196.633 77.653C209.569 77.653 215.366 88.1422 215.366 98.5325C215.366 99.2692 215.3 100.006 215.234 100.797L215.223 100.984C215.179 101.578 214.684 102.029 214.09 102.029H188.493C189.637 106.46 192.992 109.066 197.667 109.066C201.209 109.066 203.86 107.889 206.819 105.009C207.248 104.591 207.919 104.58 208.37 104.976L213.309 109.352C213.771 109.758 213.826 110.462 213.43 110.935C209.393 115.773 204.047 118.225 197.535 118.225C185.952 118.225 177.548 109.736 177.548 98.0377C177.559 86.3721 185.754 77.653 196.633 77.653ZM204.564 94.2005C203.816 90.4292 201.407 86.8118 196.567 86.8118C192.541 86.8118 189.439 89.6705 188.405 94.2005H204.564ZM229.534 117.4C230.161 117.4 230.678 116.894 230.678 116.256V65.5145C230.678 64.8878 230.172 64.371 229.534 64.371H221.119C220.492 64.371 219.975 64.8768 219.975 65.5145V116.256C219.975 116.883 220.481 117.4 221.119 117.4H229.534ZM275.437 108.241C270.08 108.241 265.713 106.438 260.818 102.194C260.587 101.996 260.279 101.886 259.982 101.919C259.674 101.941 259.399 102.084 259.201 102.315L254.053 108.428C253.657 108.901 253.701 109.604 254.163 110.011C260.081 115.289 267.363 118.082 275.228 118.082C286.481 118.082 293.752 111.935 293.752 102.271C293.752 92.3093 285.81 88.9998 277.23 86.9108C267.616 84.6128 266.56 83.0845 266.56 80.2368C266.56 77.4661 269.288 75.6079 273.347 75.6079C277.472 75.6079 281.564 77.1692 285.876 80.3908C286.118 80.5777 286.437 80.6546 286.734 80.5997C287.042 80.5557 287.306 80.3798 287.482 80.1379L292.069 73.6728C292.421 73.178 292.322 72.5074 291.849 72.1225C286.514 67.8345 280.497 65.7564 273.479 65.7564C263.018 65.7564 255.714 72.0236 255.714 81.1494C255.714 90.781 261.973 94.1675 272.797 96.7843C282.202 98.9503 282.906 100.699 282.906 103.249C282.917 106.284 279.98 108.241 275.437 108.241ZM314.311 77.8619C325.454 77.8619 331.581 83.7772 331.581 94.4974V116.256C331.581 116.883 331.075 117.4 330.437 117.4H322.088C321.461 117.4 320.944 116.894 320.944 116.256V114.486C318.051 116.905 314.377 118.159 310.186 118.159C301.815 118.159 295.974 113.035 295.974 105.69C295.974 97.3121 301.969 92.3863 311.99 92.3863C315.796 92.3863 318.458 92.8261 320.977 93.5188C320.658 89.6156 318.007 87.6475 313.101 87.6475C309.152 87.6475 306.215 88.5271 303.036 89.8575C302.739 89.9784 302.42 89.9784 302.123 89.8465C301.837 89.7145 301.617 89.4726 301.518 89.1758L299.219 82.4358C299.032 81.8751 299.296 81.2704 299.835 81.0285C304.103 79.1263 308.173 77.8619 314.311 77.8619ZM313.893 100.578C311.704 100.578 306.622 101.017 306.622 105.141C306.622 108.439 309.834 109.56 312.573 109.56C317.633 109.56 321.175 106.856 321.175 102.985V101.699C319.019 100.984 316.423 100.578 313.893 100.578ZM377.495 97.8398C377.495 111.232 368.31 118.17 359.246 118.17C354.857 118.17 351.062 116.63 347.938 113.585V116.267C347.938 116.894 347.432 117.411 346.805 117.411H338.39C337.763 117.411 337.246 116.905 337.246 116.267V65.5255C337.246 64.8988 337.752 64.382 338.39 64.382H346.805C347.432 64.382 347.938 64.8878 347.938 65.5255V82.5128C351.062 79.2583 354.791 77.664 359.246 77.664C371.093 77.653 377.495 88.0543 377.495 97.8398ZM357.299 87.2296C351.843 87.2296 347.729 91.7926 347.729 97.8398C347.729 104.03 351.843 108.593 357.299 108.593C362.81 108.593 366.66 104.228 366.66 97.9828C366.66 91.6936 362.722 87.2296 357.299 87.2296ZM417.546 98.5325C417.546 99.2692 417.48 100.006 417.414 100.797L417.403 100.984C417.359 101.578 416.864 102.029 416.27 102.029H390.673C391.817 106.46 395.172 109.066 399.847 109.066C403.4 109.066 406.051 107.889 408.999 105.009C409.428 104.591 410.11 104.58 410.55 104.976L415.489 109.352C415.951 109.758 416.006 110.462 415.61 110.935C411.573 115.773 406.227 118.225 399.715 118.225C388.132 118.225 379.728 109.736 379.728 98.0377C379.728 86.3501 387.934 77.642 398.813 77.642C411.76 77.653 417.546 88.1422 417.546 98.5325ZM390.585 94.2005H406.755C406.007 90.4292 403.598 86.8118 398.758 86.8118C394.721 86.8118 391.619 89.6705 390.585 94.2005ZM431.23 78.4227H422.815C422.188 78.4227 421.671 78.9284 421.671 79.5661V116.267C421.671 116.894 422.177 117.411 422.815 117.411H431.23C431.857 117.411 432.374 116.905 432.374 116.267V102.293C432.374 93.7827 436.521 88.9009 443.759 88.9009H444.243C444.87 88.9009 445.387 88.3951 445.387 87.7574V78.8624C445.387 78.2577 444.903 77.752 444.298 77.73C439.326 77.4881 435.256 79.5332 432.385 83.4584V79.5661C432.363 78.9284 431.857 78.4227 431.23 78.4227Z",
+      fill: "white"
+    })]
+  });
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (LogoCds);
+
+/***/ }),
+
+/***/ "./resources/js/components/icons/MenuIcon.js":
+/*!***************************************************!*\
+  !*** ./resources/js/components/icons/MenuIcon.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CloseIcon: () => (/* binding */ CloseIcon),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+var MenuIcon = function MenuIcon(_ref) {
+  var className = _ref.className;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "24",
+    height: "24",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "3",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    className: className,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+      x1: "3",
+      x2: "21",
+      y1: "6",
+      y2: "6"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+      x1: "3",
+      x2: "21",
+      y1: "12",
+      y2: "12"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+      x1: "3",
+      x2: "21",
+      y1: "18",
+      y2: "18"
+    })]
+  });
+};
+var CloseIcon = function CloseIcon(_ref2) {
+  var className = _ref2.className;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "24",
+    height: "24",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "3",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    className: className,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M18 6 6 18"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "m6 6 12 12"
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MenuIcon);
+
+/***/ }),
+
+/***/ "./resources/js/components/icons/SocialNetworks.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/icons/SocialNetworks.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   FacebookIcon: () => (/* binding */ FacebookIcon),
+/* harmony export */   InstagramIcon: () => (/* binding */ InstagramIcon),
+/* harmony export */   YouTubeIcon: () => (/* binding */ YouTubeIcon)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+var FacebookIcon = function FacebookIcon(_ref) {
+  var className = _ref.className;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    className: className,
+    viewBox: "0 0 24 24",
+    fill: "currentColor",
+    stroke: "currentColor",
+    strokeWidth: "0",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+    })
+  });
+};
+var InstagramIcon = function InstagramIcon(_ref2) {
+  var className = _ref2.className;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    className: className,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+      width: "20",
+      height: "20",
+      x: "2",
+      y: "2",
+      rx: "5",
+      ry: "5"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+      x1: "17.5",
+      x2: "17.51",
+      y1: "6.5",
+      y2: "6.5"
+    })]
+  });
+};
+var YouTubeIcon = function YouTubeIcon(_ref3) {
+  var className = _ref3.className;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    className: className,
+    viewBox: "0 0 50 50",
+    strokeWidth: "0",
+    fill: "currentColor",
+    stroke: "currentColor",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M 44.898438 14.5 C 44.5 12.300781 42.601563 10.699219 40.398438 10.199219 C 37.101563 9.5 31 9 24.398438 9 C 17.800781 9 11.601563 9.5 8.300781 10.199219 C 6.101563 10.699219 4.199219 12.199219 3.800781 14.5 C 3.398438 17 3 20.5 3 25 C 3 29.5 3.398438 33 3.898438 35.5 C 4.300781 37.699219 6.199219 39.300781 8.398438 39.800781 C 11.898438 40.5 17.898438 41 24.5 41 C 31.101563 41 37.101563 40.5 40.601563 39.800781 C 42.800781 39.300781 44.699219 37.800781 45.101563 35.5 C 45.5 33 46 29.398438 46.101563 25 C 45.898438 20.5 45.398438 17 44.898438 14.5 Z M 19 32 L 19 18 L 31.199219 25 Z"
+    })
+  });
+};
 
 /***/ }),
 
@@ -49794,6 +50516,39 @@ if (
 }
         
   })();
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/react-dom/client.js":
+/*!******************************************!*\
+  !*** ./node_modules/react-dom/client.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var m = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+if (false) {} else {
+  var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+  exports.createRoot = function(c, o) {
+    i.usingClientEntryPoint = true;
+    try {
+      return m.createRoot(c, o);
+    } finally {
+      i.usingClientEntryPoint = false;
+    }
+  };
+  exports.hydrateRoot = function(c, h, o) {
+    i.usingClientEntryPoint = true;
+    try {
+      return m.hydrateRoot(c, h, o);
+    } finally {
+      i.usingClientEntryPoint = false;
+    }
+  };
 }
 
 
