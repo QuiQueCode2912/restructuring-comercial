@@ -8,17 +8,17 @@ const menuOptions = [
   {
     label: 'Conócenos',
     subOptions: [
-      { label: 'Qué es ciudad del saber', url: 'https://tailwindcss.com' },
+      { label: 'Qué es Ciudad del Saber', url: 'https://tailwindcss.com' },
       { label: 'Historia', url: '#' },
       {
         label: 'Impacto',
         subOptions: [
-          { label: 'Ir a Impacto', url: '#', arrow: true, },
+          { label: 'Ir a Impacto', url: '#', arrow: true },
           { label: 'Académico', url: 'https://tailwindcss.com/docs/container' },
           { label: 'Empresarial', url: '#' },
           { label: 'Humanitario', url: '#' },
           { label: 'Innovación y emprendimiento', url: '#' },
-          { label: 'Proyecto país', url: '#' },
+          { label: 'Proyecto País', url: '#' },
           { label: 'Sostenibilidad', url: '#' },
         ],
       },
@@ -26,7 +26,7 @@ const menuOptions = [
         label: 'Fundación Ciudad del Saber',
         subOptions: [
           { label: 'Gobierno corporativo', url: '#' },
-          { label: 'Cultura Organizacional', url: '#' },
+          { label: 'Cultura organizacional', url: '#' },
           { label: 'Sé parte del equipo', url: '#' },
           { label: 'Programas de pasantías', url: '#' },
         ],
@@ -53,31 +53,31 @@ const menuOptions = [
   {
     label: 'Emprende',
     subOptions: [
-      { label: 'Ir a Centro de innovación', url: '#', arrow: true, },
-      { label: 'Conviertete en miembro', url: '#' },
+      { label: 'Ir a Centro de Innovación', url: '#', arrow: true },
+      { label: 'Conviértete en miembro', url: '#' },
       {
         label: 'Programas de startups y emprendedores',
         subOptions: [
-          { label: 'Programa innovar', url: '#' },
-          { label: 'Canal de empresarias', url: '#' },
+          { label: 'Programa Innovar', url: '#' },
+          { label: 'Canal de Empresarias', url: '#' },
           { label: 'Incubación de startups', url: '#' },
           { label: 'Aceleración de startups', url: '#' },
           { label: 'Emprendimientos avanzados', url: '#' },
         ],
       },
       { label: 'Directorio startups y emprendedores', url: '#' },
-      { label: 'Estudio global de emprendimiento', url: '#' },
+      { label: 'Estudio Global de Emprendimiento', url: '#' },
       { label: 'Portal Aprende en Ciudad del Saber', url: '#', external: true },
     ],
   },
   {
-    label: 'Ven al campus',
+    label: 'Ven al Campus',
     subOptions: [
-      { label: 'Conoce el campus', url: '#' },
+      { label: 'Conoce el Campus', url: '#' },
       {
-        label: 'La plaza',
+        label: 'La Plaza',
         subOptions: [
-          { label: 'Ir a La Plaza', url: '#', arrow: true, },
+          { label: 'Ir a La Plaza', url: '#', arrow: true },
           { label: 'Oferta gastronómica y servicios comerciales', url: '#' },
           { label: 'Mercado Urbano', url: '#' },
         ],
@@ -85,7 +85,7 @@ const menuOptions = [
       {
         label: 'Parque Ciudad del Saber',
         subOptions: [
-          { label: 'Ir a Parque Ciudad del Saber', url: '#', arrow: true, },
+          { label: 'Ir a Parque Ciudad del Saber', url: '#', arrow: true },
           { label: 'Piscina', url: '#' },
           { label: 'Canchas de baloncesto', url: '#' },
           { label: 'Cancha de golf', url: '#' },
@@ -96,22 +96,22 @@ const menuOptions = [
           { label: 'Gazebos', url: '#' },
         ],
       },
-      { label: 'Parque Los lagos', url: '#' },
+      { label: 'Parque Los Lagos', url: '#' },
       { label: 'Reserva Forestal', url: '#' },
-      { label: 'Espacios convives', url: '#' },
-      { label: 'Casa museo', url: '#' },
-      { label: 'Centro de reciclaje', url: '#' },
+      { label: 'Espacios convivies', url: '#' },
+      { label: 'Casa Museo', url: '#' },
+      { label: 'Centro de Reciclaje', url: '#' },
     ],
   },
   {
-    label: 'Reserva espacios',
+    label: 'Reserva Espacios',
     subOptions: [
       {
         label: 'Espacios para eventos y reuniones',
         subOptions: [
-          { label: 'Ir a Espacios para eventos y reuniones', url: '#', arrow: true, },
+          { label: 'Ir a Espacios para eventos y reuniones', url: '#', arrow: true },
           { label: 'Teatro Ateneo', url: '#' },
-          { label: 'Centro de convenciones', url: '#' },
+          { label: 'Centro de Convenciones', url: '#' },
           { label: 'Salas de reuniones', url: '#' },
           { label: 'Aulas', url: '#' },
           { label: 'Casa Museo', url: '#' },
@@ -122,7 +122,7 @@ const menuOptions = [
       {
         label: 'Espacios para recreación y deporte',
         subOptions: [
-          { label: 'Ir a Parque Ciudad del Saber', url: '#', arrow: true, },
+          { label: 'Ir a Parque Ciudad del Saber', url: '#', arrow: true },
           { label: 'Piscina', url: '#' },
           { label: 'Canchas de baloncesto', url: '#' },
           { label: 'Cancha de golf', url: '#' },
@@ -137,6 +137,7 @@ const menuOptions = [
   },
   { label: 'Eventos', url: '#' },
 ];
+
 
 export default function NwpHeader() {
   const [openMenuIndex, setOpenMenuIndex] = useState(null);
@@ -184,43 +185,43 @@ export default function NwpHeader() {
   return (
     <>
       <header className='hidden md:block md:fixed md:top-0 md:left-0 md:right-0 md:z-20 h-[120px]'>
-        <div className='mx-auto bg-cdsblue px-8 h-12'>
-          <div className='nwpcontainer mx-auto h-full flex items-center justify-end gap-x-8 divide-x divide-white'>
+        <div className='mx-auto bg-cdsblue  h-12 px-8'>
+          <div className='nwp-container mx-auto h-full flex  items-center justify-end gap-x-8 divide-x divide-white'>
             <ul className='flex gap-x-8'>
               <li>
-                <a className='text-white font-semibold' href='#'>Directorio</a>
+                <a className='text-white font-semibold ' href='#'>Directorio</a>
               </li>
               <li>
-                <a className='text-white font-semibold' href='#'>Noticias</a>
+                <a className='text-white font-semibold ' href='#'>Noticias</a>
               </li>
               <li>
-                <a className='text-white font-semibold' href='#'>Oportunidades</a>
+                <a className='text-white font-semibold ' href='#'>Oportunidades</a>
               </li>
             </ul>
-            <a className='text-white font-semibold pl-8' href='#'>Portal de clientes</a>
-            <button className='text-white font-semibold pl-8'>🌍</button>
+            <a className='text-white font-semibold  pl-8' href='#'>Portal de clientes</a>
+            <button className='text-white font-semibold  pl-8'>🌍</button>
           </div>
         </div>
-        <div className='bg-white mx-auto h-[72px]'>
-          <div className='nwpcontainer mx-auto h-full flex items-center justify-between  z-20'>
+        <div className='bg-white mx-auto h-[72px] px-8'>
+          <div className='nwp-container mx-auto h-full flex items-center justify-between  z-20'>
             <LogoCds width={180} height={48} />
-            <div className="hidden h-full md:flex pt-4 gap-x-4">
+            <div className="flex h-full  items-center gap-x-4 xl:gap-x-8 ">
               {menuOptions.map((option, index) => (
                 <div key={index} className="relative">
                   {!option.subOptions ? (
                     <a
                       href={option.url}
-                      className={`font-semibold flex transition-colors hover:no-underline hover:text-cdsblue h-full hover:border-b-4 border-cdsblue duration-200 z-20 ${openMenuIndex === index ? 'text-cdsblue' : 'text-gray-800'}`}
+                      className={`font-semibold flex transition-colors hover:no-underline hover:text-cdsblue h-full duration-200 z-20 ${openMenuIndex === index ? 'text-cdsblue' : 'text-gray-800'}`}
                     >
                       {option.label}
                     </a>
                   ) : (
                     <button
-                      className={`focus:outline-none group font-semibold flex transition-colors hover:text-cdsblue h-full hover:border-b-4 border-cdsblue duration-200 z-20 ${openMenuIndex === index ? 'text-cdsblue ' : 'text-gray-800'}`}
+                      className={`focus:outline-none group font-semibold flex items-center transition-colors hover:text-cdsblue h-full duration-200 z-20 ${openMenuIndex === index ? 'text-cdsblue ' : 'text-gray-800'}`}
                       onClick={() => handleMenuClick(index)}
                     >
                       {option.label}
-                      <ArrowIcon color={openMenuIndex === index ? '#0088ff' : '#000'} className='ml-1 w-5 h-5 group-hover:fill-cdsblue' rotate={openMenuIndex === index} />
+                      <ArrowIcon color={openMenuIndex === index ? '#0088ff' : '#000'} className='w-5 h-5 group-hover:fill-cdsblue' rotate={openMenuIndex === index} />
                     </button>
                   )}
 
@@ -278,7 +279,7 @@ export default function NwpHeader() {
                             ))}
                           </ul>
                         ) : (
-                          <div className="border-gray-100  bg-white rounded-r-lg py-6 w-1/2  min-w-96 flex flex-col z-50 transition-all duration-300">
+                          <div className="border-gray-100  bg-white py-6 w-1/2  min-w-96 flex flex-col z-50 transition-all duration-300">
                             
                           </div>
                         )}
