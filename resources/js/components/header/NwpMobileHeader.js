@@ -33,7 +33,7 @@ export default function NwpMobileHeader({ menuOptions }) {
   };
 
   return (
-    <header className='fixed top-0 left-0 right-0 z-40 bg-white md:hidden'>
+    <header className='fixed top-0 left-0 right-0 z-40 bg-white lg:hidden'>
       <div className='flex justify-between items-center border-b border-gray-300 py-2 px-4 h-20'>
         <div className='h-full'>
           <LogoCds className="h-12" width={170} height={60} />

@@ -982,12 +982,6 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-.bg-opacity-45 {
-  --tw-bg-opacity: 0.45;
-}
-.bg-opacity-90 {
-  --tw-bg-opacity: 0.9;
-}
 .bg-\[url\(\"https\:\/\/images\.unsplash\.com\/photo-1663622438610-00a72c139d8c\?q\=80\&w\=1470\&auto\=format\&fit\=crop\&ixlib\=rb-4\.0\.3\&ixid\=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA\%3D\%3D\"\)\] {
   background-image: url("https://images.unsplash.com/photo-1663622438610-00a72c139d8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
 }
@@ -1210,9 +1204,6 @@ video {
 }
 .opacity-80 {
   opacity: 0.8;
-}
-.opacity-50 {
-  opacity: 0.5;
 }
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
@@ -3090,7 +3081,7 @@ footer #twitter-timeline .twitter-embed-header {
 }
 @media (min-width: 1280px) {
   .nwp-container {
-    max-width: 1180px;
+    max-width: 1280px;
   }
 }
 
@@ -3194,10 +3185,6 @@ footer #twitter-timeline .twitter-embed-header {
 
 @media (min-width: 768px) {
 
-  .md\:fixed {
-    position: fixed;
-  }
-
   .md\:absolute {
     position: absolute;
   }
@@ -3206,24 +3193,12 @@ footer #twitter-timeline .twitter-embed-header {
     position: relative;
   }
 
-  .md\:left-0 {
-    left: 0px;
-  }
-
   .md\:left-1\/2 {
     left: 50%;
   }
 
-  .md\:right-0 {
-    right: 0px;
-  }
-
   .md\:top-0 {
     top: 0px;
-  }
-
-  .md\:z-20 {
-    z-index: 20;
   }
 
   .md\:col-span-1 {
@@ -3237,10 +3212,6 @@ footer #twitter-timeline .twitter-embed-header {
 
   .md\:mt-14 {
     margin-top: 3.5rem;
-  }
-
-  .md\:block {
-    display: block;
   }
 
   .md\:inline-block {
@@ -3257,10 +3228,6 @@ footer #twitter-timeline .twitter-embed-header {
 
   .md\:hidden {
     display: none;
-  }
-
-  .md\:h-\[120px\] {
-    height: 120px;
   }
 
   .md\:h-\[152px\] {
@@ -3391,6 +3358,18 @@ footer #twitter-timeline .twitter-embed-header {
 }
 
 @media (min-width: 1024px) {
+
+  .lg\:block {
+    display: block;
+  }
+
+  .lg\:hidden {
+    display: none;
+  }
+
+  .lg\:h-\[120px\] {
+    height: 120px;
+  }
 
   .lg\:w-1\/2 {
     width: 50%;

@@ -184,7 +184,7 @@ export default function NwpHeader() {
 
   return (
     <>
-      <header className='hidden md:block md:fixed md:top-0 md:left-0 md:right-0 md:z-20 h-[120px]'>
+      <header className='hidden lg:block fixed top-0 left-0 right-0 z-20 h-[120px]'>
         <div className='mx-auto bg-cdsblue  h-12 px-8'>
           <div className='nwp-container mx-auto h-full flex  items-center justify-end gap-x-8 divide-x divide-white'>
             <ul className='flex gap-x-8'>
@@ -204,10 +204,10 @@ export default function NwpHeader() {
         </div>
         <div className='bg-white mx-auto h-[72px] px-8'>
           <div className='nwp-container mx-auto h-full flex items-center justify-between  z-20'>
-            <LogoCds width={180} height={48} />
+            <LogoCds width={160} height={48} />
             <div className="flex h-full  items-center gap-x-4 xl:gap-x-8 ">
               {menuOptions.map((option, index) => (
-                <div key={index} className="relative">
+                <div key={index} className="relative ">
                   {!option.subOptions ? (
                     <a
                       href={option.url}
@@ -227,7 +227,7 @@ export default function NwpHeader() {
 
                   {openMenuIndex === index && (
                     <div 
-                      className="absolute top-0 border border-cdsgray600 rounded-lg overflow-hidden mt-7 flex w-[800px] transition-transform duration-300 z-50"
+                      className="absolute top-0  border border-cdsgray600 rounded-lg overflow-hidden mt-7 flex w-[800px] transition-transform duration-300 z-50"
                       ref={mainMenuRef}
                     >
                       <ul className='bg-cdsgray700 py-6 w-1/2 flex flex-col '>

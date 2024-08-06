@@ -2156,7 +2156,7 @@ var PublicSpaceHero = function PublicSpaceHero(_ref) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "hidden md:absolute md:left-1/2 md:top-0 col-span-1 text-white font-bold md:grid grid-cols-2 h-[600px]",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "col-span-1 bg-cdsverde grid place-content-center",
+          className: "col-span-1 w-full bg-cdsverde grid place-content-center",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
               className: "text-xl",
@@ -2845,7 +2845,7 @@ function NwpHeader() {
   }, [openMenuIndex]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("header", {
-      className: "hidden md:block md:fixed md:top-0 md:left-0 md:right-0 md:z-20 h-[120px]",
+      className: "hidden lg:block fixed top-0 left-0 right-0 z-20 h-[120px]",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
         className: "mx-auto bg-cdsblue  h-12 px-8",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
@@ -2885,13 +2885,13 @@ function NwpHeader() {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "nwp-container mx-auto h-full flex items-center justify-between  z-20",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_LogoCds__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            width: 180,
+            width: 160,
             height: 48
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
             className: "flex h-full  items-center gap-x-4 xl:gap-x-8 ",
             children: menuOptions.map(function (option, index) {
               return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                className: "relative",
+                className: "relative ",
                 children: [!option.subOptions ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
                   href: option.url,
                   className: "font-semibold flex transition-colors hover:no-underline hover:text-cdsblue h-full duration-200 z-20 ".concat(openMenuIndex === index ? 'text-cdsblue' : 'text-gray-800'),
@@ -2907,7 +2907,7 @@ function NwpHeader() {
                     rotate: openMenuIndex === index
                   })]
                 }), openMenuIndex === index && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                  className: "absolute top-0 border border-cdsgray600 rounded-lg overflow-hidden mt-7 flex w-[800px] transition-transform duration-300 z-50",
+                  className: "absolute top-0  border border-cdsgray600 rounded-lg overflow-hidden mt-7 flex w-[800px] transition-transform duration-300 z-50",
                   ref: mainMenuRef,
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul", {
                     className: "bg-cdsgray700 py-6 w-1/2 flex flex-col ",
@@ -3046,7 +3046,7 @@ function NwpMobileHeader(_ref) {
     }
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("header", {
-    className: "fixed top-0 left-0 right-0 z-40 bg-white md:hidden",
+    className: "fixed top-0 left-0 right-0 z-40 bg-white lg:hidden",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: "flex justify-between items-center border-b border-gray-300 py-2 px-4 h-20",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {

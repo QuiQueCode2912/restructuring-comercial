@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- COVID <x-covid /> -->
-<x-header menu="true" />
+<x-header  menu="true" />
 @if(request()->is('parque-cds'))
     <div id="nwp-parque-hero"></div>
     <div id="nwp-paruqe-section01"></div>
@@ -70,14 +70,13 @@
                                 </div>
                             @endif-->
                             <div class=" relative h-[200px] w-full overflow-hidden">
-                              <img class="absolute inset-0 h-full w-full object-cover transition-transform duration-150 transform group-hover:scale-110" src="<?php echo substr($venue['image'], 0, strrpos($venue['image'], '.')) . '_480.' . substr($venue['image'], strrpos($venue['image'], '.') + 1) ?>">
+                              <img class="absolute inset-0 h-full w-full object-cover transition-transform duration-200 transform group-hover:scale-110" src="<?php echo substr($venue['image'], 0, strrpos($venue['image'], '.')) . '_480.' . substr($venue['image'], strrpos($venue['image'], '.') + 1) ?>">
                             </div>
 
                             <div class="p-4 flex flex-col justify-between h-[294px]">
                               <a href="<?php echo $venue['url'] ?>" class="no-underline hover:no-underline hover:text-cdsblue font-bold text-lg"><?php echo $venue['name'] ?></a>
                               <p>
-                                Lorem ipsum dolor sit amet consectetur. In elementum iaculis rhoncus pharetra
-                                lectus fermentum. 
+                                <?php echo isset($venue['description']) ? $venue['description']:'' ?>
                               </p>
                               <?php
                               $max_pax = 0;

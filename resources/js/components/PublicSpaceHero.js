@@ -20,7 +20,7 @@ const PublicSpaceHero = ({ title, content, buttonLabel, onButtonClick, images })
           <div className='md:col-span-1 '></div>
         </div>
         <div className='hidden md:absolute md:left-1/2 md:top-0 col-span-1 text-white font-bold md:grid grid-cols-2 h-[600px]'>
-          <div className='col-span-1 bg-cdsverde grid place-content-center'>
+          <div className='col-span-1 w-full bg-cdsverde grid place-content-center'>
             <div>
               <p className='text-xl'>Explora</p>
               <p className='text-3xl'>A tu ritmo</p>
