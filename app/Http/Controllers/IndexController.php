@@ -154,7 +154,7 @@ class IndexController extends Controller
                     }
                 }
 
-                $fixedVenues[] = ['name' => $name, 'url' => $url, 'image' => $image, 'venues' => $subvenues, 'designs' => $designs, 'type' => $venue->type];
+                $fixedVenues[] = ['name' => $name,'description' => $venue->description, 'url' => $url, 'image' => $image, 'venues' => $subvenues, 'designs' => $designs, 'type' => $venue->type];
             }
         }
 

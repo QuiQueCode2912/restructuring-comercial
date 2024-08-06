@@ -2,81 +2,13 @@
   body {
     padding: 0;
   }
-  .header {
-    padding: 15px 0;
-    height: 82px;
-  }
-  .header .container .menu-toggle {
-    color: #ffffff;
-    float: right;
-    display: inline-block;
-    font-size: 30px;
-    margin: 5px 25px 0 -25px;
-  }
-  .header .container .menu {
-    display: none;
-  }
-  .header .container .menu.show {
-    position: absolute;
-    top: 66px;
-    z-index: 200;
-    background: #ffffff;
-    height: auto;
-    display: block;
-  }
-  .header .container .menu.show li {
-    width: 100%;
-    float: none;
-  }
-  .header .container .menu.show li a {
-    display: block;
-    padding: 14px 22px;
-    color: #333;
-    font-size: 17px;
-    font-weight: 400;
-    text-align: center;
-    border-bottom: 1px solid #dddddd;
-  }
-  .header .container .menu.show li:nth-child(8),
-  .header .container .menu.show li:nth-child(9),
-  .header .container .menu.show li:nth-child(10),
-  .header .container .menu.show li:nth-child(11),
-  .header .container .menu.show li:nth-child(12) {
-    display: none;
-  }
-  .header .container .menu.show li.has-childs ul {
-    box-shadow: none;
-    width: 100%;
-    position: relative;
-    border-bottom: 1px solid #dddddd
-  }
-  .header .container .menu.show li.has-childs ul li a {
-    font-size: 16px;
-  }
-  .header .container .logo {
-    display: block;
-  }
-  .header .container .logo img {
-    width: 50%;
-    margin: 0 auto;
-    min-width: 280px;
-    display: block;
-  }
-  .header.small .container .logo {
-    display: block;
-    padding: 7px 0 0;
-    margin: -12px 0 0;
-  }
-  .header.small .container .logo img {
-    min-width: 198px;
-  }
-
+  
   .carousel#home-carousel .carousel-inner .carousel-item .container h3 {
     left: 25px;
     right: 25px;
   }
   .carousel#home-carousel .carousel-inner .carousel-item .container h4 {
-    padding-left: 15px;
+    
     left: 25px;
   }
   .carousel#home-carousel .carousel-inner .carousel-item img {
