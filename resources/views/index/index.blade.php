@@ -5,8 +5,19 @@
 <x-header  menu="true" />
 @if(request()->is('parque-cds'))
     <div id="nwp-parque-hero"></div>
-    <div id="nwp-paruqe-section01"></div>
-    <div id="nwp-paruqe-section02"></div>
+    <div class="nwp-padding-x-container bg-cdsgray700">
+        <!-- Tabla de contenidos -->
+        <nav class="nwp-container mx-auto"> 
+            <ul class="py-3 flex flex-col md:flex-row md:divide-x divide-cdsgray500 gap-y-2 md:gap-y-0">
+                <li><a class="md:px-6 hover:no-underline hover:text-black font-semibold" href="#nwp-parque-section02 ">Qué hacer</a></li>
+                <li><a class="md:px-6 hover:no-underline hover:text-black font-semibold" href="#nwp-venues-table">Espacios del parque</a></li>
+                <li><a class="md:px-6 hover:no-underline hover:text-black font-semibold" href="#nwp-parque-headband">Conéctate</a></li>
+                <li><a class="md:px-6 hover:no-underline hover:text-black font-semibold" href="#nwp-parque-faq">Preguntas frecuentes</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="nwp-parque-section01"></div>
+    <div id="nwp-parque-section02"></div>
 @endif
 
 <meta name="robots" content="noindex, nofollow">
@@ -21,7 +32,7 @@
     <x-featured />
 <?php endif ?>
 
-<div class="bg-white nwp-padding-x-container ">
+<div id="nwp-venues-table" class="bg-white nwp-padding-x-container ">
     <div class="relative mx-auto nwp-container py-20">
       <div class="  hidden md:inline-block md:absolute -top-32 right-0">
         <svg width="379" height="405" viewBox="0 0 379 405" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -236,7 +247,8 @@
 <?php endif ?> -->
 
 @if(request()->is('parque-cds'))
-    <div id="nwp-headband"></div>
+    <div id="nwp-parque-headband"></div>
+    <div id="nwp-parque-faq"></div>
 @endif
 
 <x-footer />

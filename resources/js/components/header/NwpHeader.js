@@ -202,7 +202,7 @@ export default function NwpHeader() {
             <button className='text-white font-semibold  pl-8'>🌍</button>
           </div>
         </div>
-        <div className='bg-white mx-auto h-[72px] px-8'>
+        <div className='bg-white border-b border-cdsgray600 mx-auto h-[72px] px-8'>
           <div className='nwp-container mx-auto h-full flex items-center justify-between  z-20'>
             <LogoCds width={160} height={48} />
             <div className="flex h-full  items-center gap-x-4 xl:gap-x-8 ">

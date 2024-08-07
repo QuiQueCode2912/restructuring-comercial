@@ -1806,6 +1806,7 @@ __webpack_require__(/*! ./components/parque/NwpParqueHero */ "./resources/js/com
 __webpack_require__(/*! ./components/parque/NwpParqueSection1 */ "./resources/js/components/parque/NwpParqueSection1.js");
 __webpack_require__(/*! ./components/parque/NwpParqueSection2 */ "./resources/js/components/parque/NwpParqueSection2.js");
 __webpack_require__(/*! ./components/parque/NwpHeadband */ "./resources/js/components/parque/NwpHeadband.js");
+__webpack_require__(/*! ./components/parque/NwpFaq */ "./resources/js/components/parque/NwpFaq.js");
 
 /***/ }),
 
@@ -1842,6 +1843,88 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/Faq.js":
+/*!****************************************!*\
+  !*** ./resources/js/components/Faq.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Faq)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _icons_Arrows__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icons/Arrows */ "./resources/js/components/icons/Arrows.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+function Faq(_ref) {
+  var faqTitle = _ref.faqTitle,
+    faqItems = _ref.faqItems;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState2 = _slicedToArray(_useState, 2),
+    activeIndex = _useState2[0],
+    setActiveIndex = _useState2[1];
+  var toggleAccordion = function toggleAccordion(index) {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "nwp-padding-x-container bg-white",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "nwp-container mx-auto py-20",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "max-w-[750px] mx-auto",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h6", {
+          className: " text-3xl md:text-5xl font-bold text-black text-center",
+          children: faqTitle
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: " mt-8",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: "accordion",
+            children: faqItems.map(function (item, index) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                className: "accordion-item border-b border-gray-300",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
+                  className: "w-full font-bold text-left py-4  flex justify-between items-center focus:outline-none ".concat(activeIndex === index ? 'text-cdsblue' : 'text-gray-800'),
+                  "aria-expanded": activeIndex === index,
+                  onClick: function onClick() {
+                    return toggleAccordion(index);
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                    className: "accordion-title",
+                    children: item.title
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_1__.ArrowIcon, {
+                    color: activeIndex === index ? '#0088ff' : '#000',
+                    className: "w-8 h-8 group-hover:fill-cdsblue",
+                    rotate: activeIndex === index
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                  className: "accordion-content ".concat(activeIndex === index ? 'opacity-100 max-h-screen py-2' : 'opacity-0 max-h-0', " overflow-hidden transition-all duration-200"),
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                    className: "text-gray-600",
+                    children: item.content
+                  })
+                })]
+              }, index);
+            })
+          })
+        })]
+      })
+    })
+  });
+}
 
 /***/ }),
 
@@ -2374,30 +2457,30 @@ function NwpFooter() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "col-span-2 -mt-6 ",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_LogoCds__WEBPACK_IMPORTED_MODULE_2__.LogoCdsBlueWhite, {
-            width: 200
+            width: 160
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             className: "w-full flex gap-x-4 mx-auto pl-2",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
               href: "#",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_SocialNetworks__WEBPACK_IMPORTED_MODULE_3__.FacebookIcon, {
-                className: "fill-white w-12 h-12"
+                className: "fill-white w-10 h-10"
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
               href: "#",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_SocialNetworks__WEBPACK_IMPORTED_MODULE_3__.InstagramIcon, {
-                className: "fill-black w-12 h-12 hover:stroke-white stroke-white"
+                className: "fill-black w-10 h-10 hover:stroke-white stroke-white"
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
               href: "#",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_SocialNetworks__WEBPACK_IMPORTED_MODULE_3__.YouTubeIcon, {
-                className: "fill-white w-12 h-12"
+                className: "fill-white w-10 h-10"
               })
             })]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-          className: "col-span-3 text-lg text-gray-200 nwp-container",
+          className: "col-span-3 text-base text-gray-200 nwp-container",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h6", {
-            className: "font-semibold text-cdsblue text-xl",
+            className: "font-semibold text-cdsblue",
             children: "Cont\xE1ctanos"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             className: "pt-4 flex flex-col gap-y-2",
@@ -2410,9 +2493,9 @@ function NwpFooter() {
             })]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-          className: "col-span-3 text-lg text-gray-200",
+          className: "col-span-3 text-base text-gray-200",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h6", {
-            className: "font-semibold text-cdsblue text-xl",
+            className: "font-semibold text-cdsblue",
             children: "Vis\xEDtanos"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
             className: "pt-4 flex flex-col gap-y-2",
@@ -2421,9 +2504,9 @@ function NwpFooter() {
             })
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-          className: "col-span-3 text-lg text-gray-200",
+          className: "col-span-3 text-base text-gray-200",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h6", {
-            className: "font-semibold text-cdsblue text-xl",
+            className: "font-semibold text-cdsblue",
             children: "Suscr\xEDbete al Newsletter"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             className: "pt-4 flex flex-col gap-y-2",
@@ -2439,16 +2522,16 @@ function NwpFooter() {
         className: "hidden md:grid grid-cols-5 nwp-container gap-x-4 nwpcontainer mx-auto py-8 border-t border-zinc-800",
         children: menuOptions.map(function (option, index) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-            className: "col-span-1 text-lg text-gray-200",
+            className: "col-span-1 text-base text-gray-200",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h6", {
-              className: "font-semibold text-cdsblue text-xl",
+              className: "font-semibold text-cdsblue ",
               children: option.label
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
               className: "pt-4 flex flex-col gap-y-2",
               children: option.subOptions.map(function (subOption, subIndex) {
                 return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-                    className: "hover:text-white",
+                    className: "hover:text-white ",
                     href: subOption.url,
                     children: subOption.label
                   })
@@ -2881,7 +2964,7 @@ function NwpHeader() {
           })]
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        className: "bg-white mx-auto h-[72px] px-8",
+        className: "bg-white border-b border-cdsgray600 mx-auto h-[72px] px-8",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "nwp-container mx-auto h-full flex items-center justify-between  z-20",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_LogoCds__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -3550,6 +3633,59 @@ var YouTubeIcon = function YouTubeIcon(_ref4) {
 
 /***/ }),
 
+/***/ "./resources/js/components/parque/NwpFaq.js":
+/*!**************************************************!*\
+  !*** ./resources/js/components/parque/NwpFaq.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ NwpFaq)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _Faq__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Faq */ "./resources/js/components/Faq.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+var faqItems = [{
+  title: 'Why is the moon sometimes out during the day?',
+  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+}, {
+  title: 'Why is the sky blue?',
+  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+}, {
+  title: 'Will we ever discover aliens?',
+  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+}, {
+  title: 'How much does the Earth weigh?',
+  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+}, {
+  title: 'How do airplanes stay up?',
+  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+}];
+function NwpFaq() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    className: "App",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Faq__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      faqTitle: "Preguntas frecuentes sobre el Parque Ciudad del Saber",
+      faqItems: faqItems
+    })
+  });
+}
+var container = document.getElementById('nwp-parque-faq');
+if (container) {
+  var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(NwpFaq, {}));
+}
+
+/***/ }),
+
 /***/ "./resources/js/components/parque/NwpHeadband.js":
 /*!*******************************************************!*\
   !*** ./resources/js/components/parque/NwpHeadband.js ***!
@@ -3580,7 +3716,7 @@ function NwpHeadband() {
     instagramHandle: "@parquecds"
   });
 }
-var container = document.getElementById('nwp-headband');
+var container = document.getElementById('nwp-parque-headband');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
   root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(NwpHeadband, {}));
@@ -3663,7 +3799,7 @@ function NwpParqueSection1() {
     images: images
   });
 }
-var container = document.getElementById('nwp-paruqe-section01');
+var container = document.getElementById('nwp-parque-section01');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
   root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(NwpParqueSection1, {}));
@@ -3710,7 +3846,7 @@ function NwpParqueSection2() {
     activities: activities
   });
 }
-var container = document.getElementById('nwp-paruqe-section02');
+var container = document.getElementById('nwp-parque-section02');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
   root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(NwpParqueSection2, {}));
