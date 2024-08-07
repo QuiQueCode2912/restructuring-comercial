@@ -31,7 +31,7 @@ export default function NwpParqueSection2() {
 
 }
 
-const container = document.getElementById('nwp-paruqe-section02');
+const container = document.getElementById('nwp-parque-section02');
 if (container) {
   const root = createRoot(container);
   root.render(<NwpParqueSection2 />);

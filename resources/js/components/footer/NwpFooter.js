@@ -77,37 +77,37 @@ export default function NwpFooter() {
       <div className='nwp-padding-x-container'>
         <div className='md:pt-14 pt-6 pb-8 grid grid-flow-row md:grid-flow-col md:grid-cols-11 gap-y-6 md:gap-y-0 md:gap-x-4  nwp-container mx-auto'>
           <div className='col-span-2 -mt-6 '>
-            <LogoCdsBlueWhite width={200} />
+            <LogoCdsBlueWhite width={160} />
             <div className='w-full flex gap-x-4 mx-auto pl-2'>
               <a href='#'>
-                <FacebookIcon className='fill-white w-12 h-12'/>
+                <FacebookIcon className='fill-white w-10 h-10'/>
               </a>
               <a href='#'>
-                <InstagramIcon className='fill-black w-12 h-12 hover:stroke-white stroke-white' />
+                <InstagramIcon className='fill-black w-10 h-10 hover:stroke-white stroke-white' />
               </a>
               <a href='#'>
-                <YouTubeIcon className='fill-white w-12 h-12'/>
+                <YouTubeIcon className='fill-white w-10 h-10'/>
               </a>
             </div>
           </div>
-          <div className='col-span-3 text-lg text-gray-200 nwp-container'>
-            <h6 className='font-semibold text-cdsblue text-xl'>Contáctanos</h6>
+          <div className='col-span-3 text-base text-gray-200 nwp-container'>
+            <h6 className='font-semibold text-cdsblue'>Contáctanos</h6>
             <div className='pt-4 flex flex-col gap-y-2'>
               <p>(507) 306-3700</p>
               <p>(507) 317-3799</p>
               <p>ciudaddelsaber@cdspanama.org</p>
             </div>
           </div>
-          <div className='col-span-3 text-lg text-gray-200'>
-            <h6 className='font-semibold text-cdsblue text-xl'>Visítanos</h6>
+          <div className='col-span-3 text-base text-gray-200'>
+            <h6 className='font-semibold text-cdsblue'>Visítanos</h6>
             <div className='pt-4 flex flex-col gap-y-2'>
               <p>Fundación Ciudad del Saber,
                   Edificio 104, Calle Luis Bonilla
                   Clayton, Panamá</p>
             </div>
           </div>
-          <div className='col-span-3 text-lg text-gray-200'>
-            <h6 className='font-semibold text-cdsblue text-xl'>Suscríbete al Newsletter</h6>
+          <div className='col-span-3 text-base text-gray-200'>
+            <h6 className='font-semibold text-cdsblue'>Suscríbete al Newsletter</h6>
             <div className='pt-4 flex flex-col gap-y-2'>
               <p>Entérate de las novedades de la comunidad</p>
               <button className='px-4 py-3 w-40 font-semibold rounded-xl bg-white hover:bg-gray-200 duration-150 text-black'>Suscríbete</button>
@@ -116,12 +116,12 @@ export default function NwpFooter() {
         </div>
         <div className='hidden md:grid grid-cols-5 nwp-container gap-x-4 nwpcontainer mx-auto py-8 border-t border-zinc-800'>
           {menuOptions.map((option, index) => (
-            <div key={index} className='col-span-1 text-lg text-gray-200'>
-              <h6 className='font-semibold text-cdsblue text-xl'>{option.label}</h6>
+            <div key={index} className='col-span-1 text-base text-gray-200'>
+              <h6 className='font-semibold text-cdsblue '>{option.label}</h6>
               <div className='pt-4 flex flex-col gap-y-2'>
                 {option.subOptions.map((subOption, subIndex) => (
                   <p key={subIndex}>
-                    <a className='hover:text-white' href={subOption.url}>{subOption.label}</a>
+                    <a className='hover:text-white ' href={subOption.url}>{subOption.label}</a>
                   </p>
                 ))}
               </div>

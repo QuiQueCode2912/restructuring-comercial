@@ -20,7 +20,7 @@ export default function NwpHeadband() {
   )
 }
 
-const container = document.getElementById('nwp-headband');
+const container = document.getElementById('nwp-parque-headband');
 if (container) {
   const root = createRoot(container);
   root.render(<NwpHeadband />);

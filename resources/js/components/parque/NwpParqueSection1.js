@@ -25,7 +25,7 @@ export default function NwpParqueSection1() {
   );
 }
 
-const container = document.getElementById('nwp-paruqe-section01');
+const container = document.getElementById('nwp-parque-section01');
 if (container) {
   const root = createRoot(container);
   root.render(<NwpParqueSection1 />);
