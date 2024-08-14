@@ -250,7 +250,7 @@
     <div id="nwp-parque-headband"></div>
     <div id="nwp-parque-faq"></div>
 @endif
-
+<div id="nwp-featured-spaces"></div>
 <x-footer />
 <x-security-policies />
 @endsection

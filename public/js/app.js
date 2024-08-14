@@ -1801,12 +1801,15 @@ __webpack_require__(/*! ./components/HelloReact */ "./resources/js/components/He
 __webpack_require__(/*! ./components/header/NwpHeader */ "./resources/js/components/header/NwpHeader.js");
 __webpack_require__(/*! ./components/footer/NwpFooter */ "./resources/js/components/footer/NwpFooter.js");
 
-// React compponents parque
+// React components parque
 __webpack_require__(/*! ./components/parque/NwpParqueHero */ "./resources/js/components/parque/NwpParqueHero.js");
 __webpack_require__(/*! ./components/parque/NwpParqueSection1 */ "./resources/js/components/parque/NwpParqueSection1.js");
 __webpack_require__(/*! ./components/parque/NwpParqueSection2 */ "./resources/js/components/parque/NwpParqueSection2.js");
 __webpack_require__(/*! ./components/parque/NwpHeadband */ "./resources/js/components/parque/NwpHeadband.js");
 __webpack_require__(/*! ./components/parque/NwpFaq */ "./resources/js/components/parque/NwpFaq.js");
+
+//common components
+__webpack_require__(/*! ./components/FeaturedSpaces */ "./resources/js/components/FeaturedSpaces.js");
 
 /***/ }),
 
@@ -1924,6 +1927,105 @@ function Faq(_ref) {
       })
     })
   });
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/FeaturedSpaces.js":
+/*!***************************************************!*\
+  !*** ./resources/js/components/FeaturedSpaces.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ FeaturedSpaces)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+function FeaturedSpaces() {
+  var cards = [{
+    title: "20 Restaurantes",
+    description: "La plaza: Oferta gastronómica, tiendas y más",
+    imageUrl: "https://images.unsplash.com/photo-1663622438610-00a72c139d8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    borderColor: "border-cdsrosa",
+    link: "#"
+  }, {
+    title: "+20 Hectáreas verdes",
+    description: "Parque Ciudad del Saber: Recreación y deporte",
+    imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    borderColor: "border-cdsverde",
+    link: "#"
+  }, {
+    title: "+500 eventos al año",
+    description: "Espacios para eventos y reuniones",
+    imageUrl: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    borderColor: "border-cdsgrisverdedark",
+    link: "#"
+  }];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "nwp-padding-x-container bg-cdsgray700 py-20",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "nwp-container mx-auto",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+        className: "text-4xl font-bold py-14",
+        children: "Aprovecha, conecta y visita"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "grid grid-cols-1 md:grid-cols-3 gap-8",
+        children: cards.map(function (card, index) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: "relative h-64 w-full overflow-hidden group",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
+              href: card.link,
+              className: "block h-full w-full",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                className: "h-full w-full bg-center transition-transform duration-300 ease-in-out transform group-hover:scale-105",
+                style: {
+                  backgroundImage: "url(".concat(card.imageUrl, ")"),
+                  backgroundSize: 'cover'
+                }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                className: "absolute inset-0 bg-black bg-opacity-60 ".concat(card.borderColor, " border-t-8 p-6 flex flex-col justify-between text-white"),
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                  className: "uppercase text-base font-semibold",
+                  children: card.title
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                  className: "text-2xl font-bold",
+                  children: card.description
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                  className: "font-semibold hover:no-underline group-hover:text-cdsblue flex gap-x-2 items-center",
+                  children: ["Conoce m\xE1s", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                    className: "h-8 w-8 bg-white rounded-full grid place-content-center transition-all duration-150 ease-in-out text-black group-hover:translate-x-1 group-hover:text-cdsblue",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+                      xmlns: "http://www.w3.org/2000/svg",
+                      height: "24px",
+                      viewBox: "0 -960 960 960",
+                      width: "32px",
+                      fill: "currentColor",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                        d: "M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z"
+                      })
+                    })
+                  })]
+                })]
+              })]
+            })
+          }, index);
+        })
+      })]
+    })
+  });
+}
+var container = document.getElementById('nwp-featured-spaces');
+if (container) {
+  var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(FeaturedSpaces, {}));
 }
 
 /***/ }),
