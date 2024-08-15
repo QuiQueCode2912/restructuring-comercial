@@ -728,6 +728,9 @@ video {
 .h-full {
   height: 100%;
 }
+.h-\[400px\] {
+  height: 400px;
+}
 .max-h-0 {
   max-height: 0px;
 }
@@ -912,6 +915,9 @@ video {
 .border-t-8 {
   border-top-width: 8px;
 }
+.border-t-0 {
+  border-top-width: 0px;
+}
 .border-cdsblue {
   --tw-border-opacity: 1;
   border-color: rgb(0 136 255 / var(--tw-border-opacity));
@@ -919,6 +925,10 @@ video {
 .border-cdsgray600 {
   --tw-border-opacity: 1;
   border-color: rgb(211 211 211 / var(--tw-border-opacity));
+}
+.border-cdsgrisverdedark {
+  --tw-border-opacity: 1;
+  border-color: rgb(84 109 90 / var(--tw-border-opacity));
 }
 .border-cdsrosa {
   --tw-border-opacity: 1;
@@ -943,10 +953,6 @@ video {
 .border-zinc-800 {
   --tw-border-opacity: 1;
   border-color: rgb(39 39 42 / var(--tw-border-opacity));
-}
-.border-cdsgrisverdedark {
-  --tw-border-opacity: 1;
-  border-color: rgb(84 109 90 / var(--tw-border-opacity));
 }
 .bg-black {
   --tw-bg-opacity: 1;
@@ -1149,6 +1155,12 @@ video {
 .pt-6 {
   padding-top: 1.5rem;
 }
+.pb-14 {
+  padding-bottom: 3.5rem;
+}
+.pt-14 {
+  padding-top: 3.5rem;
+}
 .text-left {
   text-align: left;
 }
@@ -1184,6 +1196,10 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 .font-bold {
   font-weight: 700;
@@ -3454,6 +3470,11 @@ footer #twitter-timeline .twitter-embed-header {
 
   .lg\:pb-0 {
     padding-bottom: 0px;
+  }
+
+  .lg\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
   }
 }
 
