@@ -14,5 +14,5 @@ require('./components/parque/NwpFaq')
 
 //common components
 require('./components/FeaturedSpaces')
-
+require('./components/FeaturedVenues')
 
