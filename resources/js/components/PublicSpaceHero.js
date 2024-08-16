@@ -20,7 +20,7 @@ const PublicSpaceHero = ({ title, content, buttonLabel, onButtonClick, images })
           <div className='md:col-span-1 '></div>
         </div>
         <div className='hidden md:absolute md:left-1/2 md:top-0 col-span-1 text-white font-bold md:grid grid-cols-2 h-[600px]'>
-          <div className='col-span-1 w-full bg-cdsverde grid place-content-center'>
+          <div className='col-span-1 w-full bg-verde-habitat-accesible grid place-content-center'>
             <div>
               <p className='text-xl'>Explora</p>
               <p className='text-3xl'>A tu ritmo</p>
@@ -32,7 +32,7 @@ const PublicSpaceHero = ({ title, content, buttonLabel, onButtonClick, images })
           <div className='col-span-1'>
             <img src={images[1]} alt="Image 3" className='w-full h-full object-cover' />
           </div>
-          <div className='col-span-1 bg-cdsverde grid place-content-center'>
+          <div className='col-span-1 bg-verde-habitat-accesible grid place-content-center'>
             <div>
               <p className='text-xl'>Con familia</p>
               <p className='text-3xl'>O tu mascota</p>
@@ -41,7 +41,7 @@ const PublicSpaceHero = ({ title, content, buttonLabel, onButtonClick, images })
         </div>
       </div>
       <div className='md:col-span-1 md:hidden h-[374px] text-white font-bold grid grid-cols-2'>
-        <div className='col-span-1 bg-cdsverde grid place-content-center'>
+        <div className='col-span-1 bg-verde-habitat-accesible grid place-content-center'>
           <p className='text-base'>Explora</p>
           <p className='text-xl'>A tu ritmo</p>
         </div>
@@ -51,7 +51,7 @@ const PublicSpaceHero = ({ title, content, buttonLabel, onButtonClick, images })
         <div className='col-span-1'>
           <img src={images[1]} alt="Image 3" className='w-full h-full object-cover' />
         </div>
-        <div className='col-span-1 bg-cdsverde grid place-content-center'>
+        <div className='col-span-1 bg-verde-habitat-accesible grid place-content-center'>
           <p className='text-base'>Con familia</p>
           <p className='text-xl'>O tu mascota</p>
         </div>
