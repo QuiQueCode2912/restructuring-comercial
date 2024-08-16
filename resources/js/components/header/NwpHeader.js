@@ -37,7 +37,7 @@ const menuOptions = [
   {
     label: 'Afíliate',
     subOptions: [
-      { label: 'Vincula tu organización', url: '#' },
+      { label: 'Vincula tu organización', url: '#', arrow: true },
       {
         label: 'Tipos de organizaciones',
         subOptions: [
@@ -138,55 +138,94 @@ const menuOptions = [
   { label: 'Eventos', url: '#' },
 ];
 
-
 export default function NwpHeader() {
+  // Estado para rastrear qué menú principal está abierto
   const [openMenuIndex, setOpenMenuIndex] = useState(null);
+  
+  // Estado para rastrear qué submenú está abierto
   const [openSubMenuIndex, setOpenSubMenuIndex] = useState(null);
-  const mainMenuRef = useRef(null);
+  
+  // Referencia para el timeout que cierra el menú después de un tiempo
+  const closeTimeoutRef = useRef(null);
+  
+  // Referencia al menú para ajustar la posición si se sale de la pantalla
+  const menuRef = useRef(null);
+  
+  // Referencia al submenú para manejar su visibilidad
+  const subMenuRef = useRef(null);
 
+  // Función que se llama cuando se hace clic en un menú
   const handleMenuClick = (index) => {
-    setOpenMenuIndex(prevIndex => (prevIndex === index ? null : index));
-    setOpenSubMenuIndex(null);
-  };
-
-  const handleSubMenuClick = (index, hasSubMenu, event) => {
-    if (hasSubMenu) {
-      event.preventDefault();
-      setOpenSubMenuIndex(prevIndex => (prevIndex === index ? null : index));
+    clearTimeout(closeTimeoutRef.current); // Limpiar cualquier timeout activo
+    if (openMenuIndex === index) {
+      // Si se hace clic en un menú ya abierto, se cierra
+      setOpenMenuIndex(null);
+      setOpenSubMenuIndex(null);
+    } else {
+      // Si se hace clic en un menú diferente, se abre
+      setOpenMenuIndex(index);
+      setOpenSubMenuIndex(null);
     }
   };
 
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (mainMenuRef.current && !mainMenuRef.current.contains(event.target)) {
-        setOpenMenuIndex(null);
-        setOpenSubMenuIndex(null);
-      }
-    }
+  // Función que se llama cuando el mouse entra en un menú principal
+  const handleMouseEnter = (index) => {
+    clearTimeout(closeTimeoutRef.current); // Limpiar cualquier timeout activo
+    setOpenMenuIndex(index); // Abrir el menú correspondiente
+    setOpenSubMenuIndex(null); // Cerrar cualquier submenú abierto
+  };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [mainMenuRef]);
+  // Función que se llama cuando el mouse sale del menú
+  const handleMouseLeave = () => {
+    // Establecer un timeout para cerrar el menú después de un pequeño retraso
+    closeTimeoutRef.current = setTimeout(() => {
+      setOpenMenuIndex(null);
+      setOpenSubMenuIndex(null);
+    }, 100); // 50 ms de retraso para permitir la navegación
+  };
 
+  const handleMouseLeave1 = () => {
+    
+      setOpenMenuIndex(null);
+      setOpenSubMenuIndex(null);
+
+  };
+
+  // Función que se llama cuando el mouse entra en un submenú
+  const handleSubMenuEnter = (index) => {
+    clearTimeout(closeTimeoutRef.current); // Limpiar cualquier timeout activo
+    setOpenSubMenuIndex(index); // Abrir el submenú correspondiente
+  };
+
+  // Función que se llama cuando el mouse sale de un submenú
+  const handleSubMenuLeave = () => {
+    // Establecer un timeout para cerrar el submenú después de un retraso
+    closeTimeoutRef.current = setTimeout(() => {
+      setOpenSubMenuIndex(null);
+    }, 100); // 100 ms de retraso
+  };
+
+  // Efecto que ajusta la posición del menú si se sale de la pantalla
   useEffect(() => {
-    if (openMenuIndex !== null) {
-      const menuElement = mainMenuRef.current;
-      const rect = menuElement.getBoundingClientRect();
-      if (rect.right > window.innerWidth) {
-        menuElement.style.transform = `translateX(-${rect.right - window.innerWidth + 80}px)`;
+    if (menuRef.current) {
+      const rect = menuRef.current.getBoundingClientRect();
+      const overflowRight = rect.right > window.innerWidth - 40;
+      if (overflowRight) {
+        // Si el menú se sale por la derecha, ajustarlo
+        menuRef.current.style.left = `-${rect.right - window.innerWidth + 120}px`;
       } else {
-        menuElement.style.transform = 'translateX(0)';
+        // Posición normal del menú
+        menuRef.current.style.left = `-80px`;
       }
     }
-  }, [openMenuIndex]);
+  }, [openMenuIndex]); // Efecto se dispara cuando openMenuIndex cambia
 
   return (
     <>
       <header className='hidden lg:block fixed top-0 left-0 right-0 z-20 h-[120px]'>
-        <div className='mx-auto bg-cdsblue  h-12 px-8'>
-          <div className='nwp-container mx-auto h-full flex  items-center justify-end gap-x-8 divide-x divide-white'>
+        {/* Contenedor superior con opciones de navegación y portal */}
+        <div className='mx-auto bg-cdsblue h-12 px-8'>
+          <div className='nwp-container mx-auto h-full flex items-center justify-end gap-x-8 divide-x divide-white'>
             <ul className='flex gap-x-8'>
               <li>
                 <a className='text-white font-semibold ' href='#'>Directorio</a>
@@ -202,91 +241,97 @@ export default function NwpHeader() {
             <button className='text-white font-semibold  pl-8'>🌍</button>
           </div>
         </div>
+        {/* Contenedor principal con logo y menú */}
         <div className='bg-white border-b border-cdsgray600 mx-auto h-[72px] px-8'>
-          <div className='nwp-container mx-auto h-full flex items-center justify-between  z-20'>
+          <div className='nwp-container mx-auto bg-white h-full flex items-center justify-between z-20'>
             <LogoCds width={160} height={48} />
-            <div className="flex h-full  items-center gap-x-4 xl:gap-x-8 ">
-              {menuOptions.map((option, index) => (
-                <div key={index} className="relative ">
-                  {!option.subOptions ? (
-                    <a
-                      href={option.url}
-                      className={`font-semibold flex transition-colors hover:no-underline hover:text-cdsblue h-full duration-200 z-20 ${openMenuIndex === index ? 'text-cdsblue' : 'text-gray-800'}`}
+            <div className="flex h-full items-center gap-x-4 lg:gap-x-8">
+              <nav>
+                <ul className="flex gap-x-4">
+                  {menuOptions.map((option, index) => (
+                    <li 
+                      key={index} 
+                      className="relative"
+                      onMouseEnter={() => handleMouseEnter(index)}
+                      onMouseLeave={handleMouseLeave1}
                     >
-                      {option.label}
-                    </a>
-                  ) : (
-                    <button
-                      className={`focus:outline-none group font-semibold flex items-center transition-colors hover:text-cdsblue h-full duration-200 z-20 ${openMenuIndex === index ? 'text-cdsblue ' : 'text-gray-800'}`}
-                      onClick={() => handleMenuClick(index)}
-                    >
-                      {option.label}
-                      <ArrowIcon color={openMenuIndex === index ? '#0088ff' : '#000'} className='w-5 h-5 group-hover:fill-cdsblue' rotate={openMenuIndex === index} />
-                    </button>
-                  )}
-
-                  {openMenuIndex === index && (
-                    <div 
-                      className="absolute top-0  border border-cdsgray600 rounded-lg overflow-hidden mt-7 flex w-[800px] transition-transform duration-300 z-50"
-                      ref={mainMenuRef}
-                    >
-                      <ul className='bg-cdsgray700 py-6 w-1/2 flex flex-col '>
-                        {option.subOptions.map((subOption, subIndex) => (
-                          <li className="group w-full" key={subIndex}>
-                            {!subOption.subOptions ? (
-                              <a
-                                href={subOption.url}
-                                className="font-semibold w-full h-12 flex items-center text-start justify-between transition-colors duration-200 group-hover:bg-white px-6 hover:border-r-8 border-cdsblue hover:no-underline"
-                              >
-                                <div className="flex items-center justify-between text-start h-12 py-2 group-hover:text-black w-full">
-                                  {subOption.label}
-                                  {subOption.external && ( <RedirectArrow className="h-8 w-8 text-black pl-2" />)}
-                                </div>
-                              </a>
-                            ) : (
-                              <button
-                                className="focus:outline-none font-semibold w-full text-start h-12 flex items-center justify-between transition-colors duration-200 group-hover:bg-white px-6 hover:border-r-8 border-cdsblue hover:no-underline"
-                                onClick={(event) => handleSubMenuClick(subIndex, subOption.subOptions, event)}
-                              >
-                                <div className="flex items-center h-12 justify-between py-2 group-hover:text-black w-full">
-                                  {subOption.label}
-                                  <ArrowIconRight className="w-5 h-5 ml-2" />
-                                </div>
-                              </button>
-                            )}
-                          </li>
-                        ))}
-                      </ul>
-                      {openSubMenuIndex !== null ? (
-                          <ul className=" border-gray-100   bg-white py-6 w-1/2 flex flex-col transition-all duration-300">
-                            {menuOptions[openMenuIndex].subOptions[openSubMenuIndex].subOptions.map((subSubOption, subSubIndex) => (
-                              <li className="group flex w-full" key={subSubIndex}>
-                                <a
-                                  href={subSubOption.url}
-                                  className="font-semibold w-full flex items-center justify-between transition-colors duration-75 group-hover:bg-cdsgray600 px-6 hover:no-underline"
-                                  onClick={(event) => event.stopPropagation()}
-                                >
-                                  <div className={`flex items-center group-hover:text-black w-full ${subSubOption.arrow ? 'h-[72px]' : 'h-12'}`}>
-                                    {subSubOption.label}
-                                    {subSubOption.arrow && (
-                                      <div className="h-8 w-8 ml-2 bg-cdsblue rounded-full grid place-content-center">
-                                        <ArrowWhitBg className="h-6 w-6" />
-                                      </div>
-                                    )}
-                                  </div>
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
-                        ) : (
-                          <div className="border-gray-100  bg-white py-6 w-1/2  min-w-96 flex flex-col z-50 transition-all duration-300">
+                      {option.subOptions ? (
+                        <button 
+                          onClick={() => handleMenuClick(index)} 
+                          className={`focus:outline-none group font-semibold flex items-center transition-colors hover:text-cdsblue h-full duration-200 z-20 ${openMenuIndex === index ? 'text-cdsblue ' : 'text-gray-800'}`}
+                        >
+                          {option.label}
+                          <ArrowIcon color={openMenuIndex === index ? '#0088ff' : '#000'} className='w-5 h-5 group-hover:fill-cdsblue' rotate={openMenuIndex === index} />
+                        </button>
+                      ) : (
+                        <a 
+                          href={option.url} 
+                          className="text-gray-800 font-semibold hover:no-underline hover:text-cdsblue transition-colors duration-200 h-full flex items-center"
+                        >
+                          {option.label}
+                        </a>
+                      )}
+                      {openMenuIndex === index && option.subOptions && (
+                        <div 
+                          ref={menuRef}
+                          onMouseEnter={() => clearTimeout(closeTimeoutRef.current)}
+                          onMouseLeave={handleMouseLeave}
+                          className='absolute z-10 pt-2'
+                        >
+                          <div className='flex w-[800px] rounded-md overflow-hidden bg-white border border-cdsgray600 '>
                             
+                            {/* Menú de opciones secundarias */}
+                            <ul className="w-1/2 py-6 bg-cdsgray700">
+                              {option.subOptions.map((subOption, subIndex) => (
+                                <li 
+                                  key={subIndex} 
+                                  className="hover:bg-white h-12 font-semibold flex items-center justify-between group"
+                                  onMouseEnter={() => handleSubMenuEnter(subIndex)}
+                                  onMouseLeave={handleSubMenuLeave}
+                                >
+                                  {subOption.url ? (
+                                    <a href={subOption.url} className="flex items-center justify-between px-4  hover:no-underline h-full w-full hover:text-black border-r-8 border-cdsgray700 hover:border-cdsblue">
+                                      {subOption.label}
+                                      {subOption.arrow && <ArrowWhitBg className="rounded-full bg-cdsblue p-1 h-8 w-8" />}
+                                      {subOption.external && <RedirectArrow className=" h-6 w-6" />}
+                                    </a>
+                                  ) : (
+                                    <div className='flex items-center justify-between px-4 h-full w-full hover:text-black border-r-8 border-cdsgray700 hover:border-cdsblue'>
+                                      <span className=''>{subOption.label}</span>
+                                      {subOption.subOptions && <ArrowIconRight className="ml-2 h-6 w-6" />}
+                                    </div>
+                                  )}
+                                </li>
+                              ))}
+                            </ul>
+                            {/* Submenú de tercer nivel */}
+                            <div 
+                              className="w-1/2 bg-cdsgray200 py-4"
+                              onMouseEnter={() => clearTimeout(closeTimeoutRef.current)}
+                              onMouseLeave={handleSubMenuLeave}
+                              ref={subMenuRef}
+                            >
+                              {openSubMenuIndex !== null && option.subOptions[openSubMenuIndex].subOptions && (
+                                <ul>
+                                  {option.subOptions[openSubMenuIndex].subOptions.map((subOption, subIndex) => (
+                                    <li key={subIndex} className="h-12 font-semibold bg-white  flex items-center justify-between">
+                                      <a href={subOption.url} className="flex items-center px-4 h-full w-full hover:bg-cdsgray600 hover:no-underline hover:text-black">
+                                        {subOption.label}
+                                        {subOption.arrow && <ArrowWhitBg className="ml-2 rounded-full bg-cdsblue p-1 h-8 w-8" />}
+                                      </a>
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+                            </div>
+
                           </div>
-                        )}
-                    </div>
-                  )}
-                </div>
-              ))}
+                        </div>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </nav>
             </div>
           </div>
         </div>

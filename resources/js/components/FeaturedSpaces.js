@@ -29,7 +29,7 @@ export default function FeaturedSpaces() {
   return (
     <div className='nwp-padding-x-container bg-cdsgray700 py-20'>
       <div className='nwp-container mx-auto'>
-        <h4 className='text-4xl lg:text-5xl font-bold  pb-14'>Aprovecha, conecta y visita</h4>
+        <h4 className='text-4xl lg:text-5xl font-bold text-black  pb-14'>Aprovecha, conecta y visita</h4>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
           {cards.map((card, index) => (
             <div key={index} className='relative h-64 w-full overflow-hidden group'>
@@ -42,10 +42,10 @@ export default function FeaturedSpaces() {
                 <div className={`absolute inset-0 bg-black bg-opacity-60 ${card.borderColor} border-t-8 p-6 flex flex-col justify-between text-white`}>
                   <p className='uppercase text-base font-semibold'>{card.title}</p>
                   <p className='text-2xl font-bold'>{card.description}</p>
-                  <div className="font-semibold hover:no-underline group-hover:text-cdsblue flex gap-x-2 items-center">
+                  <div className="font-semibold hover:no-underline group-hover:text-white flex gap-x-2 items-center">
                     Conoce más
-                    <div className="h-8 w-8 bg-white rounded-full grid place-content-center transition-all duration-150 ease-in-out text-black group-hover:translate-x-1 group-hover:text-cdsblue">
-                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="32px" fill="currentColor"><path d="M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z"/></svg>
+                    <div className="h-8 w-8 bg-white rounded-full grid place-content-center transition-all duration-150 ease-in-out  group-hover:translate-x-1 ">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="32px" fill="#000"><path d="M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z"/></svg>
                     </div>
                   </div>
                 </div>

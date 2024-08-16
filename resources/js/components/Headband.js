@@ -8,7 +8,7 @@ export default function Headband ({ imageSrc, mainTitle, subtitle, instagramLink
         <img src={imageSrc} alt="Image" className='w-full h-full object-cover object-center' />
       </div>
 
-      <div className='nwp-padding-x-container bg-cdsverde'>
+      <div className='nwp-padding-x-container bg-verde-habitat-accesible'>
         <div className='nwp-container mx-auto md:h-[152px] flex flex-col md:flex-row gap-6 md:gap-0 items-center justify-between py-8 text-white'>
           <div className='nwp-aling-text'>
             <h3 className='uppercase text-4xl font-bold'>{mainTitle}</h3>

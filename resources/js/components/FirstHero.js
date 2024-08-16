@@ -7,7 +7,7 @@ const FirstHero = ({ title, subtitle, schedule, location, onButtonClick }) => {
         className='bg-cover bg-center relative h-full  
         bg-[url("https://images.unsplash.com/photo-1663622438610-00a72c139d8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")]'
       >
-        <div className='absolute inset-0 h-full nwp-padding-x-container bg-gradient-to-t md:bg-gradient-to-r from-cdsverde via-cdsverde to-transparent'>
+        <div className='absolute inset-0 h-full nwp-padding-x-container bg-gradient-to-t md:bg-gradient-to-r from-verde-habitat-accesible via-verde-habitat-accesible to-transparent'>
           <div className='md:mx-auto nwp-container h-full flex flex-col justify-end'>
             <h1 className='pt-0 md:pt-[174px] text-4xl w-full md:w-2/3 lg:w-1/2 md:text-6xl text-white font-bold'>
               {title}

@@ -247,6 +247,7 @@
 <?php endif ?> -->
 
 @if(request()->is('parque-cds'))
+    <div id="nwp-academics"></div>
     <div id="nwp-parque-headband"></div>
     <div id="nwp-parque-faq"></div>
 @endif

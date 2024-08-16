@@ -1811,6 +1811,7 @@ __webpack_require__(/*! ./components/parque/NwpFaq */ "./resources/js/components
 //common components
 __webpack_require__(/*! ./components/FeaturedSpaces */ "./resources/js/components/FeaturedSpaces.js");
 __webpack_require__(/*! ./components/FeaturedVenues */ "./resources/js/components/FeaturedVenues.js");
+__webpack_require__(/*! ./components/Academics */ "./resources/js/components/Academics.js");
 
 /***/ }),
 
@@ -1847,6 +1848,77 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/Academics.js":
+/*!**********************************************!*\
+  !*** ./resources/js/components/Academics.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Academics)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+function Academics() {
+  var cards = [{
+    title: "Feroz cervecería artesanal",
+    description: "Descubre sabores unicos, con amigos, después del trabajo",
+    openingTime: "7:30 PM",
+    closingTime: "9:00 PM",
+    imageUrl: "https://images.unsplash.com/photo-1663622438610-00a72c139d8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    link: "#"
+  }, {
+    title: "Clayton Bowling",
+    description: "Regresa en el tiempo y diviértete con familia y amigos",
+    openingTime: "7:30 PM",
+    closingTime: "9:00 PM",
+    imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    link: "#"
+  }];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "nwp-padding-x-container bg-white pb-20",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "nwp-container mx-auto grid grid-cols-1 md:grid-cols-3 gap-y-4 lg:gap-x-8",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: " col-span-1 h-80 md:h-[400px] w-full",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+          className: "object-cover h-full w-full",
+          src: "https://images.unsplash.com/photo-1663622438610-00a72c139d8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: " col-span-2",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+          className: "text-4xl lg:text-5xl font-bold py-4 text-black",
+          children: "Conoce las academias que brindan sus servicios en el parque"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          className: "pb-4",
+          children: "Lorem ipsum dolor sit amet consectetur. Cursus amet nunc massa aliquam malesuada. At turpis eu laoreet fames scelerisque interdum. Blandit consequat mi euismod habitant nec quis faucibus lorem. Ut eget netus metus at et enim adipiscing fermentum lectus."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
+          children: ["Cont\xE1ctanos: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+            className: "text-cdsblue font-semibold underline",
+            href: "#",
+            children: "studyabroad@cdspanama.org"
+          })]
+        })]
+      })]
+    })
+  });
+}
+var container = document.getElementById('nwp-academics');
+if (container) {
+  var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Academics, {}));
+}
 
 /***/ }),
 
@@ -1975,7 +2047,7 @@ function FeaturedSpaces() {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "nwp-container mx-auto",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
-        className: "text-4xl lg:text-5xl font-bold  pb-14",
+        className: "text-4xl lg:text-5xl font-bold text-black  pb-14",
         children: "Aprovecha, conecta y visita"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "grid grid-cols-1 md:grid-cols-3 gap-8",
@@ -2000,15 +2072,15 @@ function FeaturedSpaces() {
                   className: "text-2xl font-bold",
                   children: card.description
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                  className: "font-semibold hover:no-underline group-hover:text-cdsblue flex gap-x-2 items-center",
+                  className: "font-semibold hover:no-underline group-hover:text-white flex gap-x-2 items-center",
                   children: ["Conoce m\xE1s", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                    className: "h-8 w-8 bg-white rounded-full grid place-content-center transition-all duration-150 ease-in-out text-black group-hover:translate-x-1 group-hover:text-cdsblue",
+                    className: "h-8 w-8 bg-white rounded-full grid place-content-center transition-all duration-150 ease-in-out  group-hover:translate-x-1 ",
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
                       xmlns: "http://www.w3.org/2000/svg",
                       height: "24px",
                       viewBox: "0 -960 960 960",
                       width: "32px",
-                      fill: "currentColor",
+                      fill: "#000",
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
                         d: "M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z"
                       })
@@ -2070,7 +2142,7 @@ function FeaturedVenues() {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "nwp-container mx-auto",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
-        className: "text-4xl lg:text-5xl font-bold pb-14",
+        className: "text-4xl lg:text-5xl font-bold pb-14 text-black",
         children: "Disfruta del campus"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "grid grid-cols-1 md:grid-cols-2 gap-8",
@@ -2098,9 +2170,9 @@ function FeaturedVenues() {
                   className: "text-xl font-bold",
                   children: ["Abierto de ", card.openingTime, " a ", card.closingTime]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                  className: "font-semibold hover:no-underline group-hover:text-cdsblue flex gap-x-2 items-center",
+                  className: "font-semibold hover:no-underline group-hover:text-white flex gap-x-2 items-center",
                   children: ["Conoce m\xE1s", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                    className: "h-8 w-8 bg-white rounded-full grid place-content-center transition-all duration-150 ease-in-out text-black group-hover:translate-x-1 group-hover:text-cdsblue",
+                    className: "h-8 w-8 bg-white rounded-full grid place-content-center transition-all duration-150 ease-in-out text-black group-hover:translate-x-1",
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
                       xmlns: "http://www.w3.org/2000/svg",
                       height: "24px",
@@ -2156,7 +2228,7 @@ var FirstHero = function FirstHero(_ref) {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "bg-cover bg-center relative h-full  \r bg-[url(\"https://images.unsplash.com/photo-1663622438610-00a72c139d8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\")]",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "absolute inset-0 h-full nwp-padding-x-container bg-gradient-to-t md:bg-gradient-to-r from-cdsverde via-cdsverde to-transparent",
+        className: "absolute inset-0 h-full nwp-padding-x-container bg-gradient-to-t md:bg-gradient-to-r from-verde-habitat-accesible via-verde-habitat-accesible to-transparent",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           className: "md:mx-auto nwp-container h-full flex flex-col justify-end",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
@@ -2231,7 +2303,7 @@ function Headband(_ref) {
         className: "w-full h-full object-cover object-center"
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "nwp-padding-x-container bg-cdsverde",
+      className: "nwp-padding-x-container bg-verde-habitat-accesible",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "nwp-container mx-auto md:h-[152px] flex flex-col md:flex-row gap-6 md:gap-0 items-center justify-between py-8 text-white",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
@@ -2440,7 +2512,7 @@ var PublicSpaceHero = function PublicSpaceHero(_ref) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "hidden md:absolute md:left-1/2 md:top-0 col-span-1 text-white font-bold md:grid grid-cols-2 h-[600px]",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "col-span-1 w-full bg-cdsverde grid place-content-center",
+          className: "col-span-1 w-full bg-verde-habitat-accesible grid place-content-center",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
               className: "text-xl",
@@ -2465,7 +2537,7 @@ var PublicSpaceHero = function PublicSpaceHero(_ref) {
             className: "w-full h-full object-cover"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "col-span-1 bg-cdsverde grid place-content-center",
+          className: "col-span-1 bg-verde-habitat-accesible grid place-content-center",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
               className: "text-xl",
@@ -2480,7 +2552,7 @@ var PublicSpaceHero = function PublicSpaceHero(_ref) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "md:col-span-1 md:hidden h-[374px] text-white font-bold grid grid-cols-2",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "col-span-1 bg-cdsverde grid place-content-center",
+        className: "col-span-1 bg-verde-habitat-accesible grid place-content-center",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
           className: "text-base",
           children: "Explora"
@@ -2503,7 +2575,7 @@ var PublicSpaceHero = function PublicSpaceHero(_ref) {
           className: "w-full h-full object-cover"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "col-span-1 bg-cdsverde grid place-content-center",
+        className: "col-span-1 bg-verde-habitat-accesible grid place-content-center",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
           className: "text-base",
           children: "Con familia"
@@ -2891,7 +2963,8 @@ var menuOptions = [{
   label: 'Afíliate',
   subOptions: [{
     label: 'Vincula tu organización',
-    url: '#'
+    url: '#',
+    arrow: true
   }, {
     label: 'Tipos de organizaciones',
     subOptions: [{
@@ -3081,59 +3154,97 @@ var menuOptions = [{
   url: '#'
 }];
 function NwpHeader() {
+  // Estado para rastrear qué menú principal está abierto
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
     _useState2 = _slicedToArray(_useState, 2),
     openMenuIndex = _useState2[0],
     setOpenMenuIndex = _useState2[1];
+
+  // Estado para rastrear qué submenú está abierto
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
     _useState4 = _slicedToArray(_useState3, 2),
     openSubMenuIndex = _useState4[0],
     setOpenSubMenuIndex = _useState4[1];
-  var mainMenuRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+
+  // Referencia para el timeout que cierra el menú después de un tiempo
+  var closeTimeoutRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+
+  // Referencia al menú para ajustar la posición si se sale de la pantalla
+  var menuRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+
+  // Referencia al submenú para manejar su visibilidad
+  var subMenuRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+
+  // Función que se llama cuando se hace clic en un menú
   var handleMenuClick = function handleMenuClick(index) {
-    setOpenMenuIndex(function (prevIndex) {
-      return prevIndex === index ? null : index;
-    });
+    clearTimeout(closeTimeoutRef.current); // Limpiar cualquier timeout activo
+    if (openMenuIndex === index) {
+      // Si se hace clic en un menú ya abierto, se cierra
+      setOpenMenuIndex(null);
+      setOpenSubMenuIndex(null);
+    } else {
+      // Si se hace clic en un menú diferente, se abre
+      setOpenMenuIndex(index);
+      setOpenSubMenuIndex(null);
+    }
+  };
+
+  // Función que se llama cuando el mouse entra en un menú principal
+  var handleMouseEnter = function handleMouseEnter(index) {
+    clearTimeout(closeTimeoutRef.current); // Limpiar cualquier timeout activo
+    setOpenMenuIndex(index); // Abrir el menú correspondiente
+    setOpenSubMenuIndex(null); // Cerrar cualquier submenú abierto
+  };
+
+  // Función que se llama cuando el mouse sale del menú
+  var handleMouseLeave = function handleMouseLeave() {
+    // Establecer un timeout para cerrar el menú después de un pequeño retraso
+    closeTimeoutRef.current = setTimeout(function () {
+      setOpenMenuIndex(null);
+      setOpenSubMenuIndex(null);
+    }, 100); // 50 ms de retraso para permitir la navegación
+  };
+  var handleMouseLeave1 = function handleMouseLeave1() {
+    setOpenMenuIndex(null);
     setOpenSubMenuIndex(null);
   };
-  var handleSubMenuClick = function handleSubMenuClick(index, hasSubMenu, event) {
-    if (hasSubMenu) {
-      event.preventDefault();
-      setOpenSubMenuIndex(function (prevIndex) {
-        return prevIndex === index ? null : index;
-      });
-    }
+
+  // Función que se llama cuando el mouse entra en un submenú
+  var handleSubMenuEnter = function handleSubMenuEnter(index) {
+    clearTimeout(closeTimeoutRef.current); // Limpiar cualquier timeout activo
+    setOpenSubMenuIndex(index); // Abrir el submenú correspondiente
   };
+
+  // Función que se llama cuando el mouse sale de un submenú
+  var handleSubMenuLeave = function handleSubMenuLeave() {
+    // Establecer un timeout para cerrar el submenú después de un retraso
+    closeTimeoutRef.current = setTimeout(function () {
+      setOpenSubMenuIndex(null);
+    }, 100); // 100 ms de retraso
+  };
+
+  // Efecto que ajusta la posición del menú si se sale de la pantalla
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    function handleClickOutside(event) {
-      if (mainMenuRef.current && !mainMenuRef.current.contains(event.target)) {
-        setOpenMenuIndex(null);
-        setOpenSubMenuIndex(null);
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside);
-    return function () {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [mainMenuRef]);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (openMenuIndex !== null) {
-      var menuElement = mainMenuRef.current;
-      var rect = menuElement.getBoundingClientRect();
-      if (rect.right > window.innerWidth) {
-        menuElement.style.transform = "translateX(-".concat(rect.right - window.innerWidth + 80, "px)");
+    if (menuRef.current) {
+      var rect = menuRef.current.getBoundingClientRect();
+      var overflowRight = rect.right > window.innerWidth - 40;
+      if (overflowRight) {
+        // Si el menú se sale por la derecha, ajustarlo
+        menuRef.current.style.left = "-".concat(rect.right - window.innerWidth + 120, "px");
       } else {
-        menuElement.style.transform = 'translateX(0)';
+        // Posición normal del menú
+        menuRef.current.style.left = "-80px";
       }
     }
-  }, [openMenuIndex]);
+  }, [openMenuIndex]); // Efecto se dispara cuando openMenuIndex cambia
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("header", {
       className: "hidden lg:block fixed top-0 left-0 right-0 z-20 h-[120px]",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        className: "mx-auto bg-cdsblue  h-12 px-8",
+        className: "mx-auto bg-cdsblue h-12 px-8",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-          className: "nwp-container mx-auto h-full flex  items-center justify-end gap-x-8 divide-x divide-white",
+          className: "nwp-container mx-auto h-full flex items-center justify-end gap-x-8 divide-x divide-white",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("ul", {
             className: "flex gap-x-8",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
@@ -3167,88 +3278,100 @@ function NwpHeader() {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
         className: "bg-white border-b border-cdsgray600 mx-auto h-[72px] px-8",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-          className: "nwp-container mx-auto h-full flex items-center justify-between  z-20",
+          className: "nwp-container mx-auto bg-white h-full flex items-center justify-between z-20",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_LogoCds__WEBPACK_IMPORTED_MODULE_2__["default"], {
             width: 160,
             height: 48
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-            className: "flex h-full  items-center gap-x-4 xl:gap-x-8 ",
-            children: menuOptions.map(function (option, index) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                className: "relative ",
-                children: [!option.subOptions ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-                  href: option.url,
-                  className: "font-semibold flex transition-colors hover:no-underline hover:text-cdsblue h-full duration-200 z-20 ".concat(openMenuIndex === index ? 'text-cdsblue' : 'text-gray-800'),
-                  children: option.label
-                }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("button", {
-                  className: "focus:outline-none group font-semibold flex items-center transition-colors hover:text-cdsblue h-full duration-200 z-20 ".concat(openMenuIndex === index ? 'text-cdsblue ' : 'text-gray-800'),
-                  onClick: function onClick() {
-                    return handleMenuClick(index);
-                  },
-                  children: [option.label, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowIcon, {
-                    color: openMenuIndex === index ? '#0088ff' : '#000',
-                    className: "w-5 h-5 group-hover:fill-cdsblue",
-                    rotate: openMenuIndex === index
-                  })]
-                }), openMenuIndex === index && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                  className: "absolute top-0  border border-cdsgray600 rounded-lg overflow-hidden mt-7 flex w-[800px] transition-transform duration-300 z-50",
-                  ref: mainMenuRef,
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul", {
-                    className: "bg-cdsgray700 py-6 w-1/2 flex flex-col ",
-                    children: option.subOptions.map(function (subOption, subIndex) {
-                      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
-                        className: "group w-full",
-                        children: !subOption.subOptions ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-                          href: subOption.url,
-                          className: "font-semibold w-full h-12 flex items-center text-start justify-between transition-colors duration-200 group-hover:bg-white px-6 hover:border-r-8 border-cdsblue hover:no-underline",
-                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                            className: "flex items-center justify-between text-start h-12 py-2 group-hover:text-black w-full",
-                            children: [subOption.label, subOption.external && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.RedirectArrow, {
-                              className: "h-8 w-8 text-black pl-2"
-                            })]
-                          })
-                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
-                          className: "focus:outline-none font-semibold w-full text-start h-12 flex items-center justify-between transition-colors duration-200 group-hover:bg-white px-6 hover:border-r-8 border-cdsblue hover:no-underline",
-                          onClick: function onClick(event) {
-                            return handleSubMenuClick(subIndex, subOption.subOptions, event);
-                          },
-                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                            className: "flex items-center h-12 justify-between py-2 group-hover:text-black w-full",
-                            children: [subOption.label, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowIconRight, {
-                              className: "w-5 h-5 ml-2"
-                            })]
-                          })
-                        })
-                      }, subIndex);
-                    })
-                  }), openSubMenuIndex !== null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul", {
-                    className: " border-gray-100   bg-white py-6 w-1/2 flex flex-col transition-all duration-300",
-                    children: menuOptions[openMenuIndex].subOptions[openSubMenuIndex].subOptions.map(function (subSubOption, subSubIndex) {
-                      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
-                        className: "group flex w-full",
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-                          href: subSubOption.url,
-                          className: "font-semibold w-full flex items-center justify-between transition-colors duration-75 group-hover:bg-cdsgray600 px-6 hover:no-underline",
-                          onClick: function onClick(event) {
-                            return event.stopPropagation();
-                          },
-                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                            className: "flex items-center group-hover:text-black w-full ".concat(subSubOption.arrow ? 'h-[72px]' : 'h-12'),
-                            children: [subSubOption.label, subSubOption.arrow && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                              className: "h-8 w-8 ml-2 bg-cdsblue rounded-full grid place-content-center",
-                              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowWhitBg, {
-                                className: "h-6 w-6"
+            className: "flex h-full items-center gap-x-4 lg:gap-x-8",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("nav", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul", {
+                className: "flex gap-x-4",
+                children: menuOptions.map(function (option, index) {
+                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("li", {
+                    className: "relative",
+                    onMouseEnter: function onMouseEnter() {
+                      return handleMouseEnter(index);
+                    },
+                    onMouseLeave: handleMouseLeave1,
+                    children: [option.subOptions ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("button", {
+                      onClick: function onClick() {
+                        return handleMenuClick(index);
+                      },
+                      className: "focus:outline-none group font-semibold flex items-center transition-colors hover:text-cdsblue h-full duration-200 z-20 ".concat(openMenuIndex === index ? 'text-cdsblue ' : 'text-gray-800'),
+                      children: [option.label, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowIcon, {
+                        color: openMenuIndex === index ? '#0088ff' : '#000',
+                        className: "w-5 h-5 group-hover:fill-cdsblue",
+                        rotate: openMenuIndex === index
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+                      href: option.url,
+                      className: "text-gray-800 font-semibold hover:no-underline hover:text-cdsblue transition-colors duration-200 h-full flex items-center",
+                      children: option.label
+                    }), openMenuIndex === index && option.subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                      ref: menuRef,
+                      onMouseEnter: function onMouseEnter() {
+                        return clearTimeout(closeTimeoutRef.current);
+                      },
+                      onMouseLeave: handleMouseLeave,
+                      className: "absolute z-10 pt-2",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                        className: "flex w-[800px] rounded-md overflow-hidden bg-white border border-cdsgray600 ",
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul", {
+                          className: "w-1/2 py-6 bg-cdsgray700",
+                          children: option.subOptions.map(function (subOption, subIndex) {
+                            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+                              className: "hover:bg-white h-12 font-semibold flex items-center justify-between group",
+                              onMouseEnter: function onMouseEnter() {
+                                return handleSubMenuEnter(subIndex);
+                              },
+                              onMouseLeave: handleSubMenuLeave,
+                              children: subOption.url ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("a", {
+                                href: subOption.url,
+                                className: "flex items-center justify-between px-4  hover:no-underline h-full w-full hover:text-black border-r-8 border-cdsgray700 hover:border-cdsblue",
+                                children: [subOption.label, subOption.arrow && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowWhitBg, {
+                                  className: "rounded-full bg-cdsblue p-1 h-8 w-8"
+                                }), subOption.external && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.RedirectArrow, {
+                                  className: " h-6 w-6"
+                                })]
+                              }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                                className: "flex items-center justify-between px-4 h-full w-full hover:text-black border-r-8 border-cdsgray700 hover:border-cdsblue",
+                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+                                  className: "",
+                                  children: subOption.label
+                                }), subOption.subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowIconRight, {
+                                  className: "ml-2 h-6 w-6"
+                                })]
                               })
-                            })]
+                            }, subIndex);
                           })
-                        })
-                      }, subSubIndex);
-                    })
-                  }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                    className: "border-gray-100  bg-white py-6 w-1/2  min-w-96 flex flex-col z-50 transition-all duration-300"
-                  })]
-                })]
-              }, index);
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                          className: "w-1/2 bg-cdsgray200 py-4",
+                          onMouseEnter: function onMouseEnter() {
+                            return clearTimeout(closeTimeoutRef.current);
+                          },
+                          onMouseLeave: handleSubMenuLeave,
+                          ref: subMenuRef,
+                          children: openSubMenuIndex !== null && option.subOptions[openSubMenuIndex].subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul", {
+                            children: option.subOptions[openSubMenuIndex].subOptions.map(function (subOption, subIndex) {
+                              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+                                className: "h-12 font-semibold bg-white  flex items-center justify-between",
+                                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("a", {
+                                  href: subOption.url,
+                                  className: "flex items-center px-4 h-full w-full hover:bg-cdsgray600 hover:no-underline hover:text-black",
+                                  children: [subOption.label, subOption.arrow && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowWhitBg, {
+                                    className: "ml-2 rounded-full bg-cdsblue p-1 h-8 w-8"
+                                  })]
+                                })
+                              }, subIndex);
+                            })
+                          })
+                        })]
+                      })
+                    })]
+                  }, index);
+                })
+              })
             })
           })]
         })

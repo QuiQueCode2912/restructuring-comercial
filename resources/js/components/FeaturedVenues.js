@@ -24,7 +24,7 @@ export default function FeaturedVenues() {
   return (
     <div className='nwp-padding-x-container bg-cdsgray700 pb-20'>
       <div className='nwp-container mx-auto'>
-        <h4 className='text-4xl lg:text-5xl font-bold pb-14'>Disfruta del campus</h4>
+        <h4 className='text-4xl lg:text-5xl font-bold pb-14 text-black'>Disfruta del campus</h4>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
           {cards.map((card, index) => (
             <div key={index} className='relative h-[400px] w-full overflow-hidden group'>
@@ -38,9 +38,9 @@ export default function FeaturedVenues() {
                   <p className='text-2xl font-bold'>{card.title}</p>
                   <p className='text-base'>{card.description}</p>
                   <p className='text-xl font-bold'>Abierto de {card.openingTime} a {card.closingTime}</p>
-                  <div className="font-semibold hover:no-underline group-hover:text-cdsblue flex gap-x-2 items-center">
+                  <div className="font-semibold hover:no-underline group-hover:text-white flex gap-x-2 items-center">
                     Conoce más
-                    <div className="h-8 w-8 bg-white rounded-full grid place-content-center transition-all duration-150 ease-in-out text-black group-hover:translate-x-1 group-hover:text-cdsblue">
+                    <div className="h-8 w-8 bg-white rounded-full grid place-content-center transition-all duration-150 ease-in-out text-black group-hover:translate-x-1">
                       <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="32px" fill="currentColor"><path d="M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z"/></svg>
                     </div>
                   </div>
