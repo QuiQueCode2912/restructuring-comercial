@@ -3,7 +3,8 @@
 @section('content')
 <!-- COVID <x-covid /> -->
 <x-header menu="true" />
-<x-venues-menu venue="{{ $venue }}" />
+
+
 
 
 <!-- Modal -->
@@ -13,7 +14,6 @@
 
 <x-venue-characteristics type="{{ $venues ? $venues[0]->type : 'venues' }}" maxpax="{{ $max_pax }}" facilities="{{ $facilities }}" venues="{{ count($venues) }}" venue="{{ $venueName }}" showpolicies="{{ $show_policies ?? true }}" venueid="{{ isset($venueid) ? $venueid : '' }}" parentid="{{ isset($parentid) ? $parentid : '' }}"/>
 
-  // Inside your Blade template file
 @if(request()->has('openmodal'))
     <input type="hidden" id="openmodal" value="{{ request('openmodal') }}">
 @endif
@@ -29,6 +29,12 @@
         }
     });
 </script>
+
+@if(request()->is('parque-cds/piscina'))
+    <div id="nwp-hero-piscina"></div>
+    <div id="nwp-piscina-section-1"></div>
+@endif
+
 
 <div class="container" style="margin:0 auto; padding:0; position:relative">
   <?php if ($images) : ?>

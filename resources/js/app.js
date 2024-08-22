@@ -12,6 +12,9 @@ require('./components/parque/NwpParqueSection2')
 require('./components/parque/NwpHeadband')
 require('./components/parque/NwpFaq')
 
+require('./components/parque/piscina/NwpVenueHero')
+require('./components/parque/piscina/NwpPiscinaSection1')
+
 //common components
 require('./components/FeaturedSpaces')
 require('./components/FeaturedVenues')

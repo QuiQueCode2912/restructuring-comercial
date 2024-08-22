@@ -1,6 +1,22 @@
-import React from 'react';
+import React from "react";
 
-export const ArrowIcon = ({ className = '', color = '#e8eaed', size = '32px', rotate = 0, ariaLabel = 'arrow icon' }) => (
+export const IconHome = ({ className = '', color = '#e8eaed', size = '24px', rotate = 0, ariaLabel = 'home icon' }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    height={size}
+    viewBox="0 -960 960 960"
+    width={size}
+    fill={color}
+    className={className}
+    aria-label={ariaLabel}
+    role="img"
+    style={{ transform: `rotate(${rotate}deg)` }}
+  >
+    <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/>
+  </svg>
+);
+
+export const IconArrowDown = ({ className = '', color = '#e8eaed', size = '32px', rotate = 0, ariaLabel = 'arrow icon' }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     height={size}
@@ -16,7 +32,7 @@ export const ArrowIcon = ({ className = '', color = '#e8eaed', size = '32px', ro
   </svg>
 );
 
-export const ArrowIconRight = ({ className = '', color = 'currentColor', size = '32px', rotate = -90, ariaLabel = 'arrow right icon', isBlue = false }) => (
+export const IconArrowRight = ({ className = '', color = 'currentColor', size = '32px', rotate = -90, ariaLabel = 'arrow right icon', isBlue = false }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     height={size}

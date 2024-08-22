@@ -1807,6 +1807,8 @@ __webpack_require__(/*! ./components/parque/NwpParqueSection1 */ "./resources/js
 __webpack_require__(/*! ./components/parque/NwpParqueSection2 */ "./resources/js/components/parque/NwpParqueSection2.js");
 __webpack_require__(/*! ./components/parque/NwpHeadband */ "./resources/js/components/parque/NwpHeadband.js");
 __webpack_require__(/*! ./components/parque/NwpFaq */ "./resources/js/components/parque/NwpFaq.js");
+__webpack_require__(/*! ./components/parque/piscina/NwpVenueHero */ "./resources/js/components/parque/piscina/NwpVenueHero.js");
+__webpack_require__(/*! ./components/parque/piscina/NwpPiscinaSection1 */ "./resources/js/components/parque/piscina/NwpPiscinaSection1.js");
 
 //common components
 __webpack_require__(/*! ./components/FeaturedSpaces */ "./resources/js/components/FeaturedSpaces.js");
@@ -2214,7 +2216,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _icons_Icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icons/Icons */ "./resources/js/components/icons/Icons.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 var FirstHero = function FirstHero(_ref) {
@@ -2222,42 +2226,73 @@ var FirstHero = function FirstHero(_ref) {
     subtitle = _ref.subtitle,
     schedule = _ref.schedule,
     location = _ref.location,
-    onButtonClick = _ref.onButtonClick;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    className: "h-[5000px] md:h-[524px] max-h-[524px]",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "bg-cover bg-center relative h-full  \r bg-[url(\"https://images.unsplash.com/photo-1663622438610-00a72c139d8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\")]",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "absolute inset-0 h-full nwp-padding-x-container bg-gradient-to-t md:bg-gradient-to-r from-verde-habitat-accesible via-verde-habitat-accesible to-transparent",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    onButtonClick = _ref.onButtonClick,
+    gradientColor = _ref.gradientColor,
+    backgroundImageUrl = _ref.backgroundImageUrl,
+    buttonText = _ref.buttonText,
+    isVenue = _ref.isVenue;
+  var containerHeight = subtitle ? 'md:h-[524px]' : 'md:h-[406px]';
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "h-[5000px] ".concat(containerHeight, " max-h-[524px]"),
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "bg-cover bg-center relative h-full",
+      style: {
+        backgroundImage: "url(".concat(backgroundImageUrl, ")")
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "absolute inset-0 h-full nwp-padding-x-container bg-gradient-to-t md:bg-gradient-to-r ".concat(gradientColor),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "md:mx-auto nwp-container h-full flex flex-col justify-end",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
-            className: "pt-0 md:pt-[174px] text-4xl w-full md:w-2/3 lg:w-1/2 md:text-6xl text-white font-bold",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "inline-flex justify-center gap-2 h-9 py-2 px-3 text-sm rounded-full bg-black bg-opacity-45 text-white md:mb-14 ".concat(isVenue === true ? 'w-52' : 'w-24'),
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
+              className: "underline hover:text-white flex gap-1",
+              href: "",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons_Icons__WEBPACK_IMPORTED_MODULE_1__.IconHome, {
+                color: "#fff",
+                size: "20px",
+                rotate: 0,
+                className: "hover:text-blue-500 fill-white"
+              }), "Home"]
+            }), isVenue && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons_Icons__WEBPACK_IMPORTED_MODULE_1__.IconArrowRight, {
+                color: "#fff",
+                size: "20px",
+                rotate: 270,
+                className: "hover:text-blue-500 fill-white"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+                className: "underline hover:text-white flex gap-1",
+                href: "",
+                children: "El Parque"
+              })]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+            className: "pt-0 text-4xl w-full md:w-2/3 lg:w-1/2 md:text-6xl text-white font-bold",
             children: title
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          }), subtitle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
             className: "text-lg md:text-2xl font-bold text-white pt-2 pb-4 md:pb-0 lg:pb-0",
             children: subtitle
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             className: "md:mt-14",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
               className: "border-t py-4 border-white flex flex-col md:flex-row gap-y-4 md:gap-y-0 md:items-center md:justify-between text-white font-semibold",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
                 className: "flex flex-col md:flex-row gap-y-4 md:gap-y-0 md:gap-x-8",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
-                  children: ["Horario: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
+                  children: ["Horario: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
                     className: "font-normal",
                     children: schedule
                   })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
-                  children: ["Ubicaci\xF3n: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
+                  children: ["Ubicaci\xF3n: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
                     className: "font-normal",
                     children: location
                   })]
                 })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
                 className: "px-4 py-2 bg-white flex gap-x-4 justify-center rounded-lg font-semibold text-black hover:bg-cdsgray600 duration-150 ease-in-out focus:outline-none focus:scale-95",
                 onClick: onButtonClick,
-                children: "Descargar el mapa"
+                children: buttonText
               })]
             })
           })]
@@ -2588,6 +2623,76 @@ var PublicSpaceHero = function PublicSpaceHero(_ref) {
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PublicSpaceHero);
+
+/***/ }),
+
+/***/ "./resources/js/components/PublicSpaceHero2.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/PublicSpaceHero2.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+var PublicSpaceHero2 = function PublicSpaceHero2(_ref) {
+  var title = _ref.title,
+    content = _ref.content,
+    buttonLabel = _ref.buttonLabel,
+    onButtonClick = _ref.onButtonClick,
+    image = _ref.image;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "md:relative nwp-padding-x-container md:h-[600px] bg-white",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "mx-auto nwp-container md:grid md:grid-cols-2 md:h-full md:gap-x-8",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "flex flex-col md:col-span-1 gap-y-4 justify-center md:h-full pb-20 md:pb-0 pt-20",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+            className: "font-bold text-3xl md:text-4xl",
+            children: title
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+            className: "pb-2",
+            children: content
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
+            className: "font-semibold text-start flex gap-x-2 items-center",
+            onClick: onButtonClick,
+            children: [buttonLabel, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+              className: "bg-cdsblue rounded-full h-8 w-8 grid place-content-center",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+                xmlns: "http://www.w3.org/2000/svg",
+                height: "28px",
+                viewBox: "0 -960 960 960",
+                width: "28px",
+                fill: "#FFFFFF",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                  d: "M480-315.33 284.67-510.67l47.33-48L446.67-444v-356h66.66v356L628-558.67l47.33 48L480-315.33ZM226.67-160q-27 0-46.84-19.83Q160-199.67 160-226.67V-362h66.67v135.33h506.66V-362H800v135.33q0 27-19.83 46.84Q760.33-160 733.33-160H226.67Z"
+                })
+              })
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "md:col-span-1 "
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "hidden  md:absolute md:left-1/2 md:top-0 col-span-1 text-white font-bold md:grid grid-cols-1 h-[600px]",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          src: image,
+          alt: "Piscina",
+          className: "w-[1200px] h-[600px] object-cover"
+        })
+      })]
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PublicSpaceHero2);
 
 /***/ }),
 
@@ -3637,20 +3742,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ArrowIcon = function ArrowIcon(_ref) {
-  var _ref$color = _ref.color,
-    color = _ref$color === void 0 ? '#e8eaed' : _ref$color,
-    _ref$className = _ref.className,
+  var _ref$className = _ref.className,
     className = _ref$className === void 0 ? '' : _ref$className,
-    rotate = _ref.rotate;
+    _ref$color = _ref.color,
+    color = _ref$color === void 0 ? '#e8eaed' : _ref$color,
+    _ref$size = _ref.size,
+    size = _ref$size === void 0 ? '32px' : _ref$size,
+    _ref$rotate = _ref.rotate,
+    rotate = _ref$rotate === void 0 ? 0 : _ref$rotate,
+    _ref$ariaLabel = _ref.ariaLabel,
+    ariaLabel = _ref$ariaLabel === void 0 ? 'arrow icon' : _ref$ariaLabel;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
-    height: "32px",
+    height: size,
     viewBox: "0 -960 960 960",
-    width: "32px",
+    width: size,
     fill: color,
     className: className,
+    "aria-label": ariaLabel,
+    role: "img",
     style: {
-      transform: rotate ? 'rotate(180deg)' : 'rotate(0deg)',
+      transform: "rotate(".concat(rotate, "deg)"),
       transition: 'transform 0.3s ease'
     },
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
@@ -3661,47 +3773,252 @@ var ArrowIcon = function ArrowIcon(_ref) {
 var ArrowIconRight = function ArrowIconRight(_ref2) {
   var _ref2$className = _ref2.className,
     className = _ref2$className === void 0 ? '' : _ref2$className,
+    _ref2$color = _ref2.color,
+    color = _ref2$color === void 0 ? 'currentColor' : _ref2$color,
+    _ref2$size = _ref2.size,
+    size = _ref2$size === void 0 ? '32px' : _ref2$size,
+    _ref2$rotate = _ref2.rotate,
+    rotate = _ref2$rotate === void 0 ? -90 : _ref2$rotate,
+    _ref2$ariaLabel = _ref2.ariaLabel,
+    ariaLabel = _ref2$ariaLabel === void 0 ? 'arrow right icon' : _ref2$ariaLabel,
     _ref2$isBlue = _ref2.isBlue,
     isBlue = _ref2$isBlue === void 0 ? false : _ref2$isBlue;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
-    height: "32px",
+    height: size,
     viewBox: "0 -960 960 960",
-    width: "32px",
-    fill: "currentColor",
+    width: size,
+    fill: color,
     className: "text-black ".concat(isBlue ? 'text-cdsblue' : '', " ").concat(className),
+    "aria-label": ariaLabel,
+    role: "img",
+    style: {
+      transform: "rotate(".concat(rotate, "deg)")
+    },
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-      d: "M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z",
-      transform: "rotate(-90, 480, -480)"
+      d: "M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"
     })
   });
 };
 var ArrowWhitBg = function ArrowWhitBg(_ref3) {
-  var className = _ref3.className;
+  var _ref3$className = _ref3.className,
+    className = _ref3$className === void 0 ? '' : _ref3$className,
+    _ref3$color = _ref3.color,
+    color = _ref3$color === void 0 ? '#FFFFFF' : _ref3$color,
+    _ref3$size = _ref3.size,
+    size = _ref3$size === void 0 ? '24px' : _ref3$size,
+    _ref3$rotate = _ref3.rotate,
+    rotate = _ref3$rotate === void 0 ? 0 : _ref3$rotate,
+    _ref3$ariaLabel = _ref3.ariaLabel,
+    ariaLabel = _ref3$ariaLabel === void 0 ? 'arrow with background icon' : _ref3$ariaLabel;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
-    height: "24px",
+    height: size,
     viewBox: "0 -960 960 960",
-    width: "24px",
-    fill: "#FFFFFF",
+    width: size,
+    fill: color,
     className: className,
+    "aria-label": ariaLabel,
+    role: "img",
+    style: {
+      transform: "rotate(".concat(rotate, "deg)")
+    },
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
       d: "M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"
     })
   });
 };
 var RedirectArrow = function RedirectArrow(_ref4) {
-  var className = _ref4.className;
+  var _ref4$className = _ref4.className,
+    className = _ref4$className === void 0 ? '' : _ref4$className,
+    _ref4$color = _ref4.color,
+    color = _ref4$color === void 0 ? 'black' : _ref4$color,
+    _ref4$size = _ref4.size,
+    size = _ref4$size === void 0 ? '24px' : _ref4$size,
+    _ref4$rotate = _ref4.rotate,
+    rotate = _ref4$rotate === void 0 ? 0 : _ref4$rotate,
+    _ref4$ariaLabel = _ref4.ariaLabel,
+    ariaLabel = _ref4$ariaLabel === void 0 ? 'redirect arrow icon' : _ref4$ariaLabel;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
-    width: "24",
-    height: "24",
-    viewBox: "0 0 24 24",
-    fill: "none",
     xmlns: "http://www.w3.org/2000/svg",
+    height: size,
+    viewBox: "0 0 24 24",
+    width: size,
+    fill: color,
     className: className,
+    "aria-label": ariaLabel,
+    role: "img",
+    style: {
+      transform: "rotate(".concat(rotate, "deg)")
+    },
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-      d: "M18 19H6C5.45 19 5 18.55 5 18V6C5 5.45 5.45 5 6 5H11C11.55 5 12 4.55 12 4C12 3.45 11.55 3 11 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V13C21 12.45 20.55 12 20 12C19.45 12 19 12.45 19 13V18C19 18.55 18.55 19 18 19ZM14 4C14 4.55 14.45 5 15 5H17.59L8.46 14.13C8.07 14.52 8.07 15.15 8.46 15.54C8.85 15.93 9.48 15.93 9.87 15.54L19 6.41V9C19 9.55 19.45 10 20 10C20.55 10 21 9.55 21 9V3H15C14.45 3 14 3.45 14 4Z",
-      fill: "black"
+      d: "M18 19H6C5.45 19 5 18.55 5 18V6C5 5.45 5.45 5 6 5H11C11.55 5 12 4.55 12 4C12 3.45 11.55 3 11 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V13C21 12.45 20.55 12 20 12C19.45 12 19 12.45 19 13V18C19 18.55 18.55 19 18 19ZM14 4C14 4.55 14.45 5 15 5H17.59L8.46 14.13C8.07 14.52 8.07 15.15 8.46 15.54C8.85 15.93 9.48 15.93 9.87 15.54L19 6.41V9C19 9.55 19.45 10 20 10C20.55 10 21 9.55 21 9V3H15C14.45 3 14 3.45 14 4Z"
+    })
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/components/icons/Icons.js":
+/*!************************************************!*\
+  !*** ./resources/js/components/icons/Icons.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ArrowWhitBg: () => (/* binding */ ArrowWhitBg),
+/* harmony export */   IconArrowDown: () => (/* binding */ IconArrowDown),
+/* harmony export */   IconArrowRight: () => (/* binding */ IconArrowRight),
+/* harmony export */   IconHome: () => (/* binding */ IconHome),
+/* harmony export */   RedirectArrow: () => (/* binding */ RedirectArrow)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+var IconHome = function IconHome(_ref) {
+  var _ref$className = _ref.className,
+    className = _ref$className === void 0 ? '' : _ref$className,
+    _ref$color = _ref.color,
+    color = _ref$color === void 0 ? '#e8eaed' : _ref$color,
+    _ref$size = _ref.size,
+    size = _ref$size === void 0 ? '24px' : _ref$size,
+    _ref$rotate = _ref.rotate,
+    rotate = _ref$rotate === void 0 ? 0 : _ref$rotate,
+    _ref$ariaLabel = _ref.ariaLabel,
+    ariaLabel = _ref$ariaLabel === void 0 ? 'home icon' : _ref$ariaLabel;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: size,
+    viewBox: "0 -960 960 960",
+    width: size,
+    fill: color,
+    className: className,
+    "aria-label": ariaLabel,
+    role: "img",
+    style: {
+      transform: "rotate(".concat(rotate, "deg)")
+    },
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"
+    })
+  });
+};
+var IconArrowDown = function IconArrowDown(_ref2) {
+  var _ref2$className = _ref2.className,
+    className = _ref2$className === void 0 ? '' : _ref2$className,
+    _ref2$color = _ref2.color,
+    color = _ref2$color === void 0 ? '#e8eaed' : _ref2$color,
+    _ref2$size = _ref2.size,
+    size = _ref2$size === void 0 ? '32px' : _ref2$size,
+    _ref2$rotate = _ref2.rotate,
+    rotate = _ref2$rotate === void 0 ? 0 : _ref2$rotate,
+    _ref2$ariaLabel = _ref2.ariaLabel,
+    ariaLabel = _ref2$ariaLabel === void 0 ? 'arrow icon' : _ref2$ariaLabel;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: size,
+    viewBox: "0 -960 960 960",
+    width: size,
+    fill: color,
+    className: className,
+    "aria-label": ariaLabel,
+    role: "img",
+    style: {
+      transform: "rotate(".concat(rotate, "deg)"),
+      transition: 'transform 0.3s ease'
+    },
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"
+    })
+  });
+};
+var IconArrowRight = function IconArrowRight(_ref3) {
+  var _ref3$className = _ref3.className,
+    className = _ref3$className === void 0 ? '' : _ref3$className,
+    _ref3$color = _ref3.color,
+    color = _ref3$color === void 0 ? 'currentColor' : _ref3$color,
+    _ref3$size = _ref3.size,
+    size = _ref3$size === void 0 ? '32px' : _ref3$size,
+    _ref3$rotate = _ref3.rotate,
+    rotate = _ref3$rotate === void 0 ? -90 : _ref3$rotate,
+    _ref3$ariaLabel = _ref3.ariaLabel,
+    ariaLabel = _ref3$ariaLabel === void 0 ? 'arrow right icon' : _ref3$ariaLabel,
+    _ref3$isBlue = _ref3.isBlue,
+    isBlue = _ref3$isBlue === void 0 ? false : _ref3$isBlue;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: size,
+    viewBox: "0 -960 960 960",
+    width: size,
+    fill: color,
+    className: "text-black ".concat(isBlue ? 'text-cdsblue' : '', " ").concat(className),
+    "aria-label": ariaLabel,
+    role: "img",
+    style: {
+      transform: "rotate(".concat(rotate, "deg)")
+    },
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"
+    })
+  });
+};
+var ArrowWhitBg = function ArrowWhitBg(_ref4) {
+  var _ref4$className = _ref4.className,
+    className = _ref4$className === void 0 ? '' : _ref4$className,
+    _ref4$color = _ref4.color,
+    color = _ref4$color === void 0 ? '#FFFFFF' : _ref4$color,
+    _ref4$size = _ref4.size,
+    size = _ref4$size === void 0 ? '24px' : _ref4$size,
+    _ref4$rotate = _ref4.rotate,
+    rotate = _ref4$rotate === void 0 ? 0 : _ref4$rotate,
+    _ref4$ariaLabel = _ref4.ariaLabel,
+    ariaLabel = _ref4$ariaLabel === void 0 ? 'arrow with background icon' : _ref4$ariaLabel;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: size,
+    viewBox: "0 -960 960 960",
+    width: size,
+    fill: color,
+    className: className,
+    "aria-label": ariaLabel,
+    role: "img",
+    style: {
+      transform: "rotate(".concat(rotate, "deg)")
+    },
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"
+    })
+  });
+};
+var RedirectArrow = function RedirectArrow(_ref5) {
+  var _ref5$className = _ref5.className,
+    className = _ref5$className === void 0 ? '' : _ref5$className,
+    _ref5$color = _ref5.color,
+    color = _ref5$color === void 0 ? 'black' : _ref5$color,
+    _ref5$size = _ref5.size,
+    size = _ref5$size === void 0 ? '24px' : _ref5$size,
+    _ref5$rotate = _ref5.rotate,
+    rotate = _ref5$rotate === void 0 ? 0 : _ref5$rotate,
+    _ref5$ariaLabel = _ref5.ariaLabel,
+    ariaLabel = _ref5$ariaLabel === void 0 ? 'redirect arrow icon' : _ref5$ariaLabel;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: size,
+    viewBox: "0 0 24 24",
+    width: size,
+    fill: color,
+    className: className,
+    "aria-label": ariaLabel,
+    role: "img",
+    style: {
+      transform: "rotate(".concat(rotate, "deg)")
+    },
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M18 19H6C5.45 19 5 18.55 5 18V6C5 5.45 5.45 5 6 5H11C11.55 5 12 4.55 12 4C12 3.45 11.55 3 11 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V13C21 12.45 20.55 12 20 12C19.45 12 19 12.45 19 13V18C19 18.55 18.55 19 18 19ZM14 4C14 4.55 14.45 5 15 5H17.59L8.46 14.13C8.07 14.52 8.07 15.15 8.46 15.54C8.85 15.93 9.48 15.93 9.87 15.54L19 6.41V9C19 9.55 19.45 10 20 10C20.55 10 21 9.55 21 9V3H15C14.45 3 14 3.45 14 4Z"
     })
   });
 };
@@ -4078,7 +4395,11 @@ function NwpParqueHero() {
     subtitle: "Un espacio para todos: Recreaci\xF3n, deporte y diversi\xF3n",
     schedule: "6:30 am - 8:00 pm",
     location: "C. Victor Garibaldo, Panam\xE1",
-    onButtonClick: handleButtonClick
+    onButtonClick: handleButtonClick,
+    gradientColor: "from-cdsverde via-cdsverde to-transparent",
+    backgroundImageUrl: "https://images.unsplash.com/photo-1663622438610-00a72c139d8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    buttonText: "Descargar el mapa",
+    isVenue: false
   });
 }
 var container = document.getElementById('nwp-parque-hero');
@@ -4174,6 +4495,92 @@ var container = document.getElementById('nwp-parque-section02');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
   root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(NwpParqueSection2, {}));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/parque/piscina/NwpPiscinaSection1.js":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/parque/piscina/NwpPiscinaSection1.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ NwpPiscinaSection1)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _PublicSpaceHero2__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../PublicSpaceHero2 */ "./resources/js/components/PublicSpaceHero2.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+function NwpPiscinaSection1() {
+  var handleButtonClick = function handleButtonClick() {
+    // Lógica para descargar el reglamento de uso
+    console.log('Botón clickeado');
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_PublicSpaceHero2__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: "La piscina m\xE1s profunda de Panama",
+    content: "Construida en 1948, esta piscina ha sido testigo de\r innumerables momentos de entrenamiento y esparcimiento\r para generaciones de militares. Hoy, abre sus puertas a toda\r la comunidad para que disfrutes de sus aguas cristalinas y de\r un ambiente familiar y acogedor.",
+    buttonLabel: "Descarga el reglamento de uso",
+    onButtonClick: handleButtonClick,
+    image: "https://images.unsplash.com/photo-1691253104600-ccfd27782f3e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  });
+}
+var container = document.getElementById('nwp-piscina-section-1');
+if (container) {
+  var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(NwpPiscinaSection1, {}));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/parque/piscina/NwpVenueHero.js":
+/*!****************************************************************!*\
+  !*** ./resources/js/components/parque/piscina/NwpVenueHero.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ NwpVenueHero)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _FirstHero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../FirstHero */ "./resources/js/components/FirstHero.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+function NwpVenueHero() {
+  var handleButtonClick = function handleButtonClick() {
+    // Lógica para descargar el mapa
+    console.log('Botón clickeado');
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: "La Piscina",
+    subtitle: "",
+    schedule: "6:30 am - 8:00 pm",
+    location: "C. Victor Garibaldo, Panam\xE1",
+    onButtonClick: handleButtonClick,
+    gradientColor: "from-cdsverde via-cdsverde to-transparent",
+    backgroundImageUrl: "https://plus.unsplash.com/premium_photo-1668623041724-c9b6c84c436b?q=80&w=1329&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    buttonText: "Reserva tu espacio",
+    isVenue: true
+  });
+}
+var container = document.getElementById('nwp-hero-piscina');
+if (container) {
+  var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(NwpVenueHero, {}));
 }
 
 /***/ }),
