@@ -5,7 +5,6 @@ import PublicSpaceHero2 from '../../PublicSpaceHero2';
 export default function NwpPiscinaSection1() {
 
   const handleButtonClick = () => {
-    // Lógica para descargar el reglamento de uso
     console.log('Botón clickeado');
   };
 

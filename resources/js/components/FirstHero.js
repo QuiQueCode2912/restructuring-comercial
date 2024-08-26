@@ -11,7 +11,7 @@ const FirstHero = ({ title, subtitle, schedule, location, onButtonClick, gradien
         style={{ backgroundImage: `url(${backgroundImageUrl})` }}
       >
         <div className={`absolute inset-0 h-full nwp-padding-x-container bg-gradient-to-t md:bg-gradient-to-r ${gradientColor}`}>
-          <div className='md:mx-auto nwp-container h-full flex flex-col justify-end'>
+          <div className='md:mx-auto nwp-container h-full flex flex-col justify-between md:pt-20'>
 
             <div className={`inline-flex justify-center gap-2 h-9 py-2 px-3 text-sm rounded-full bg-black bg-opacity-45 text-white md:mb-14 ${isVenue === true ? 'w-52' : 'w-24'}`}>
               <a className='underline hover:text-white flex gap-1' href=''>
@@ -42,7 +42,7 @@ const FirstHero = ({ title, subtitle, schedule, location, onButtonClick, gradien
                   <p>Horario: <span className='font-normal'>{schedule}</span></p>
                   <p>Ubicación: <span className='font-normal'>{location}</span></p>
                 </div>
-                <button 
+                <button
                   className='px-4 py-2 bg-white flex gap-x-4 justify-center rounded-lg font-semibold text-black hover:bg-cdsgray600 duration-150 ease-in-out focus:outline-none focus:scale-95'
                   onClick={onButtonClick}
                 >

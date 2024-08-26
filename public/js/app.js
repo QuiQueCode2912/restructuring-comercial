@@ -2242,7 +2242,7 @@ var FirstHero = function FirstHero(_ref) {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "absolute inset-0 h-full nwp-padding-x-container bg-gradient-to-t md:bg-gradient-to-r ".concat(gradientColor),
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "md:mx-auto nwp-container h-full flex flex-col justify-end",
+          className: "md:mx-auto nwp-container h-full flex flex-col justify-between md:pt-20",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
             className: "inline-flex justify-center gap-2 h-9 py-2 px-3 text-sm rounded-full bg-black bg-opacity-45 text-white md:mb-14 ".concat(isVenue === true ? 'w-52' : 'w-24'),
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
@@ -2665,7 +2665,7 @@ var PublicSpaceHero2 = function PublicSpaceHero2(_ref) {
             className: "font-semibold text-start flex gap-x-2 items-center",
             onClick: onButtonClick,
             children: [buttonLabel, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-              className: "bg-cdsblue rounded-full h-8 w-8 grid place-content-center",
+              className: "bg-cdsblue rounded-full h-8 w-8 grid place-content-center ",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
                 xmlns: "http://www.w3.org/2000/svg",
                 height: "28px",
@@ -4521,7 +4521,6 @@ __webpack_require__.r(__webpack_exports__);
 
 function NwpPiscinaSection1() {
   var handleButtonClick = function handleButtonClick() {
-    // Lógica para descargar el reglamento de uso
     console.log('Botón clickeado');
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_PublicSpaceHero2__WEBPACK_IMPORTED_MODULE_2__["default"], {
