@@ -1867,49 +1867,70 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 
 function Academics() {
-  var cards = [{
-    title: "Feroz cervecería artesanal",
-    description: "Descubre sabores unicos, con amigos, después del trabajo",
-    openingTime: "7:30 PM",
-    closingTime: "9:00 PM",
-    imageUrl: "https://images.unsplash.com/photo-1663622438610-00a72c139d8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    link: "#"
-  }, {
-    title: "Clayton Bowling",
-    description: "Regresa en el tiempo y diviértete con familia y amigos",
-    openingTime: "7:30 PM",
-    closingTime: "9:00 PM",
-    imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    link: "#"
-  }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.useLanguage)(),
+    language = _useLanguage.language; // Acceder al idioma seleccionado
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState2 = _slicedToArray(_useState, 2),
+    content = _useState2[0],
+    setContent = _useState2[1]; // Estado para guardar el contenido traducido
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
+    var translations = {
+      es: {
+        title: "Conoce las academias que brindan sus servicios en el parque",
+        description: "Lorem ipsum dolor sit amet consectetur. Cursus amet nunc massa aliquam malesuada. At turpis eu laoreet fames scelerisque interdum. Blandit consequat mi euismod habitant nec quis faucibus lorem. Ut eget netus metus at et enim adipiscing fermentum lectus.",
+        contactText: "Contáctanos:",
+        contactEmail: "studyabroad@cdspanama.org"
+      },
+      en: {
+        title: "Learn about the academies offering their services in the park",
+        description: "Lorem ipsum dolor sit amet consectetur. Cursus amet nunc massa aliquam malesuada. At turpis eu laoreet fames scelerisque interdum. Blandit consequat mi euismod habitant nec quis faucibus lorem. Ut eget netus metus at et enim adipiscing fermentum lectus.",
+        contactText: "Contact us:",
+        contactEmail: "studyabroad@cdspanama.org"
+      }
+    };
+
+    // Actualizar el estado con el contenido traducido
+    setContent(translations[language]);
+  }, [language]); // Dependencia en el idioma
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
     className: "nwp-padding-x-container bg-white pb-20",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "nwp-container mx-auto grid grid-cols-1 md:grid-cols-3 gap-y-4 lg:gap-x-8",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: " col-span-1 h-80 md:h-[400px] w-full",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
           className: "object-cover h-full w-full",
           src: "https://images.unsplash.com/photo-1663622438610-00a72c139d8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: " col-span-2",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h4", {
           className: "text-4xl lg:text-5xl font-bold py-4 text-black",
-          children: "Conoce las academias que brindan sus servicios en el parque"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: content.title
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
           className: "pb-4",
-          children: "Lorem ipsum dolor sit amet consectetur. Cursus amet nunc massa aliquam malesuada. At turpis eu laoreet fames scelerisque interdum. Blandit consequat mi euismod habitant nec quis faucibus lorem. Ut eget netus metus at et enim adipiscing fermentum lectus."
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
-          children: ["Cont\xE1ctanos: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+          children: content.description
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
+          children: [content.contactText, " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
             className: "text-cdsblue font-semibold underline",
             href: "#",
-            children: "studyabroad@cdspanama.org"
+            children: content.contactEmail
           })]
         })]
       })]
@@ -1919,7 +1940,9 @@ function Academics() {
 var container = document.getElementById('nwp-academics');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Academics, {}));
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Academics, {})
+  }));
 }
 
 /***/ }),
@@ -1950,7 +1973,8 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 function Faq(_ref) {
   var faqTitle = _ref.faqTitle,
-    faqItems = _ref.faqItems;
+    _ref$faqItems = _ref.faqItems,
+    faqItems = _ref$faqItems === void 0 ? [] : _ref$faqItems;
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
     _useState2 = _slicedToArray(_useState, 2),
     activeIndex = _useState2[0],
@@ -2020,70 +2044,121 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 
 function FeaturedSpaces() {
-  var cards = [{
-    title: "20 Restaurantes",
-    description: "La plaza: Oferta gastronómica, tiendas y más",
-    imageUrl: "https://images.unsplash.com/photo-1663622438610-00a72c139d8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    borderColor: "border-cdsrosa",
-    link: "#"
-  }, {
-    title: "+20 Hectáreas verdes",
-    description: "Parque Ciudad del Saber: Recreación y deporte",
-    imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    borderColor: "border-cdsverde",
-    link: "#"
-  }, {
-    title: "+500 eventos al año",
-    description: "Espacios para eventos y reuniones",
-    imageUrl: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    borderColor: "border-cdsgrisverdedark",
-    link: "#"
-  }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.useLanguage)(),
+    language = _useLanguage.language; // Acceder al idioma seleccionado
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState2 = _slicedToArray(_useState, 2),
+    content = _useState2[0],
+    setContent = _useState2[1]; // Estado para guardar el contenido traducido
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
+    var translations = {
+      es: {
+        title: "Aprovecha, conecta y visita",
+        moreInfoText: "Conoce más",
+        cards: [{
+          title: "20 Restaurantes",
+          description: "La plaza: Oferta gastronómica, tiendas y más",
+          imageUrl: "https://images.unsplash.com/photo-1663622438610-00a72c139d8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          borderColor: "border-cdsrosa",
+          link: "#"
+        }, {
+          title: "+20 Hectáreas verdes",
+          description: "Parque Ciudad del Saber: Recreación y deporte",
+          imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          borderColor: "border-cdsverde",
+          link: "#"
+        }, {
+          title: "+500 eventos al año",
+          description: "Espacios para eventos y reuniones",
+          imageUrl: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          borderColor: "border-cdsgrisverdedark",
+          link: "#"
+        }]
+      },
+      en: {
+        title: "Take advantage, connect, and visit",
+        moreInfoText: "Learn more",
+        cards: [{
+          title: "20 Restaurants",
+          description: "La Plaza: Gastronomic offer, shops, and more",
+          imageUrl: "https://images.unsplash.com/photo-1663622438610-00a72c139d8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          borderColor: "border-cdsrosa",
+          link: "#"
+        }, {
+          title: "+20 Green hectares",
+          description: "Ciudad del Saber Park: Recreation and sports",
+          imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          borderColor: "border-cdsverde",
+          link: "#"
+        }, {
+          title: "+500 events per year",
+          description: "Spaces for events and meetings",
+          imageUrl: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          borderColor: "border-cdsgrisverdedark",
+          link: "#"
+        }]
+      }
+    };
+
+    // Actualizar el estado con el contenido traducido
+    setContent(translations[language]);
+  }, [language]); // Dependencia en el idioma
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
     className: "nwp-padding-x-container bg-cdsgray700 py-20",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "nwp-container mx-auto",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h4", {
         className: "text-4xl lg:text-5xl font-bold text-black  pb-14",
-        children: "Aprovecha, conecta y visita"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        children: content.title
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "grid grid-cols-1 md:grid-cols-3 gap-8",
-        children: cards.map(function (card, index) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        children: content.cards && content.cards.map(function (card, index) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
             className: "relative h-64 w-full overflow-hidden group",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("a", {
               href: card.link,
               className: "block h-full w-full",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
                 className: "h-full w-full bg-center transition-transform duration-300 ease-in-out transform group-hover:scale-105",
                 style: {
                   backgroundImage: "url(".concat(card.imageUrl, ")"),
                   backgroundSize: 'cover'
                 }
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                 className: "absolute inset-0 bg-black bg-opacity-60 ".concat(card.borderColor, " border-t-8 p-6 flex flex-col justify-between text-white"),
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
                   className: "uppercase text-base font-semibold",
                   children: card.title
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
                   className: "text-2xl font-bold",
                   children: card.description
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                   className: "font-semibold hover:no-underline group-hover:text-white flex gap-x-2 items-center",
-                  children: ["Conoce m\xE1s", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                  children: [content.moreInfoText, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
                     className: "h-8 w-8 bg-white rounded-full grid place-content-center transition-all duration-150 ease-in-out  group-hover:translate-x-1 ",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("svg", {
                       xmlns: "http://www.w3.org/2000/svg",
                       height: "24px",
                       viewBox: "0 -960 960 960",
                       width: "32px",
                       fill: "#000",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
                         d: "M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z"
                       })
                     })
@@ -2100,7 +2175,9 @@ function FeaturedSpaces() {
 var container = document.getElementById('nwp-featured-spaces');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(FeaturedSpaces, {}));
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(FeaturedSpaces, {})
+  }));
 }
 
 /***/ }),
@@ -2119,69 +2196,116 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 
 function FeaturedVenues() {
-  var cards = [{
-    title: "Feroz cervecería artesanal",
-    description: "Descubre sabores unicos, con amigos, después del trabajo",
-    openingTime: "7:30 PM",
-    closingTime: "9:00 PM",
-    imageUrl: "https://images.unsplash.com/photo-1663622438610-00a72c139d8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    link: "#"
-  }, {
-    title: "Clayton Bowling",
-    description: "Regresa en el tiempo y diviértete con familia y amigos",
-    openingTime: "7:30 PM",
-    closingTime: "9:00 PM",
-    imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    link: "#"
-  }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.useLanguage)(),
+    language = _useLanguage.language; // Acceder al idioma seleccionado
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState2 = _slicedToArray(_useState, 2),
+    content = _useState2[0],
+    setContent = _useState2[1]; // Estado para guardar el contenido traducido
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
+    var translations = {
+      es: {
+        title: "Disfruta del campus",
+        moreInfoText: "Conoce más",
+        cards: [{
+          title: "Feroz cervecería artesanal",
+          description: "Descubre sabores únicos, con amigos, después del trabajo",
+          openingTime: "7:30 PM",
+          closingTime: "9:00 PM",
+          imageUrl: "https://images.unsplash.com/photo-1663622438610-00a72c139d8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          link: "#"
+        }, {
+          title: "Clayton Bowling",
+          description: "Regresa en el tiempo y diviértete con familia y amigos",
+          openingTime: "7:30 PM",
+          closingTime: "9:00 PM",
+          imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          link: "#"
+        }]
+      },
+      en: {
+        title: "Enjoy the campus",
+        moreInfoText: "Learn more",
+        cards: [{
+          title: "Feroz Craft Brewery",
+          description: "Discover unique flavors, with friends, after work",
+          openingTime: "7:30 PM",
+          closingTime: "9:00 PM",
+          imageUrl: "https://images.unsplash.com/photo-1663622438610-00a72c139d8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          link: "#"
+        }, {
+          title: "Clayton Bowling",
+          description: "Step back in time and have fun with family and friends",
+          openingTime: "7:30 PM",
+          closingTime: "9:00 PM",
+          imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          link: "#"
+        }]
+      }
+    };
+
+    // Actualizar el estado con el contenido traducido
+    setContent(translations[language]);
+  }, [language]); // Dependencia en el idioma
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
     className: "nwp-padding-x-container bg-cdsgray700 pb-20",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "nwp-container mx-auto",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h4", {
         className: "text-4xl lg:text-5xl font-bold pb-14 text-black",
-        children: "Disfruta del campus"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        children: content.title
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "grid grid-cols-1 md:grid-cols-2 gap-8",
-        children: cards.map(function (card, index) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        children: content.cards && content.cards.map(function (card, index) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
             className: "relative h-[400px] w-full overflow-hidden group",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("a", {
               href: card.link,
               className: "block h-full w-full",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
                 className: "h-full w-full bg-center transition-transform duration-300 ease-in-out transform group-hover:scale-105",
                 style: {
                   backgroundImage: "url(".concat(card.imageUrl, ")"),
                   backgroundSize: 'cover'
                 }
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                 className: "absolute inset-0 bg-black bg-opacity-60 border-t-0 p-6 flex flex-col gap-y-4 justify-end text-white",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
                   className: "text-2xl font-bold",
                   children: card.title
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
                   className: "text-base",
                   children: card.description
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
                   className: "text-xl font-bold",
                   children: ["Abierto de ", card.openingTime, " a ", card.closingTime]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                   className: "font-semibold hover:no-underline group-hover:text-white flex gap-x-2 items-center",
-                  children: ["Conoce m\xE1s", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                  children: [content.moreInfoText, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
                     className: "h-8 w-8 bg-white rounded-full grid place-content-center transition-all duration-150 ease-in-out text-black group-hover:translate-x-1",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("svg", {
                       xmlns: "http://www.w3.org/2000/svg",
                       height: "24px",
                       viewBox: "0 -960 960 960",
                       width: "32px",
                       fill: "currentColor",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
                         d: "M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z"
                       })
                     })
@@ -2198,7 +2322,9 @@ function FeaturedVenues() {
 var container = document.getElementById('nwp-featured-venues');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(FeaturedVenues, {}));
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(FeaturedVenues, {})
+  }));
 }
 
 /***/ }),
@@ -2217,7 +2343,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _icons_Icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icons/Icons */ "./resources/js/components/icons/Icons.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -2231,65 +2359,81 @@ var FirstHero = function FirstHero(_ref) {
     backgroundImageUrl = _ref.backgroundImageUrl,
     buttonText = _ref.buttonText,
     isVenue = _ref.isVenue;
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.useLanguage)(),
+    language = _useLanguage.language;
+  var translations = {
+    es: {
+      homeText: "Inicio",
+      parkText: "El Parque",
+      scheduleLabel: "Horario",
+      locationLabel: "Ubicación"
+    },
+    en: {
+      homeText: "Home",
+      parkText: "The Park",
+      scheduleLabel: "Schedule",
+      locationLabel: "Location"
+    }
+  };
   var containerHeight = subtitle ? 'md:h-[524px]' : 'md:h-[406px]';
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
     className: "h-[5000px] ".concat(containerHeight, " max-h-[524px]"),
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       className: "bg-cover bg-center relative h-full",
       style: {
         backgroundImage: "url(".concat(backgroundImageUrl, ")")
       },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "absolute inset-0 h-full nwp-padding-x-container bg-gradient-to-t md:bg-gradient-to-r ".concat(gradientColor),
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "md:mx-auto nwp-container h-full flex flex-col justify-between md:pt-20",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "md:mx-auto nwp-container h-full flex flex-col justify-between pt-8 md:pt-20",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
             className: "inline-flex justify-center gap-2 h-9 py-2 px-3 text-sm rounded-full bg-black bg-opacity-45 text-white md:mb-14 ".concat(isVenue === true ? 'w-52' : 'w-24'),
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("a", {
               className: "underline hover:text-white flex gap-1",
               href: "",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons_Icons__WEBPACK_IMPORTED_MODULE_1__.IconHome, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_icons_Icons__WEBPACK_IMPORTED_MODULE_1__.IconHome, {
                 color: "#fff",
                 size: "20px",
                 rotate: 0,
                 className: "hover:text-blue-500 fill-white"
-              }), "Home"]
-            }), isVenue && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons_Icons__WEBPACK_IMPORTED_MODULE_1__.IconArrowRight, {
+              }), translations[language].homeText]
+            }), isVenue && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_icons_Icons__WEBPACK_IMPORTED_MODULE_1__.IconArrowRight, {
                 color: "#fff",
                 size: "20px",
                 rotate: 270,
                 className: "hover:text-blue-500 fill-white"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
                 className: "underline hover:text-white flex gap-1",
                 href: "",
-                children: "El Parque"
+                children: translations[language].parkText
               })]
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
             className: "pt-0 text-4xl w-full md:w-2/3 lg:w-1/2 md:text-6xl text-white font-bold",
             children: title
-          }), subtitle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          }), subtitle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
             className: "text-lg md:text-2xl font-bold text-white pt-2 pb-4 md:pb-0 lg:pb-0",
             children: subtitle
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
             className: "md:mt-14",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
               className: "border-t py-4 border-white flex flex-col md:flex-row gap-y-4 md:gap-y-0 md:items-center md:justify-between text-white font-semibold",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                 className: "flex flex-col md:flex-row gap-y-4 md:gap-y-0 md:gap-x-8",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
-                  children: ["Horario: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
+                  children: [translations[language].scheduleLabel, ": ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
                     className: "font-normal",
                     children: schedule
                   })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
-                  children: ["Ubicaci\xF3n: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
+                  children: [translations[language].locationLabel, ": ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
                     className: "font-normal",
                     children: location
                   })]
                 })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
                 className: "px-4 py-2 bg-white flex gap-x-4 justify-center rounded-lg font-semibold text-black hover:bg-cdsgray600 duration-150 ease-in-out focus:outline-none focus:scale-95",
                 onClick: onButtonClick,
                 children: buttonText
@@ -2502,7 +2646,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 var PublicSpaceHero = function PublicSpaceHero(_ref) {
@@ -2511,112 +2657,128 @@ var PublicSpaceHero = function PublicSpaceHero(_ref) {
     buttonLabel = _ref.buttonLabel,
     onButtonClick = _ref.onButtonClick,
     images = _ref.images;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_1__.useLanguage)(),
+    language = _useLanguage.language;
+  var translations = {
+    es: {
+      exploreText: "Explora",
+      paceText: "A tu ritmo",
+      familyText: "Con familia",
+      petText: "O tu mascota"
+    },
+    en: {
+      exploreText: "Explore",
+      paceText: "At your pace",
+      familyText: "With family",
+      petText: "Or your pet"
+    }
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "md:relative nwp-padding-x-container md:h-[600px] bg-white",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "mx-auto nwp-container md:grid md:grid-cols-2 md:h-full md:gap-x-8",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "flex flex-col md:col-span-1 gap-y-4 justify-center md:h-full pb-20 md:pb-0 pt-20",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
             className: "font-bold text-3xl md:text-4xl",
             children: title
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
             className: "pb-2",
             children: content
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
             className: "font-semibold text-start flex gap-x-2 items-center",
             onClick: onButtonClick,
-            children: [buttonLabel, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            children: [buttonLabel, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
               className: "bg-cdsblue rounded-full h-8 w-8 grid place-content-center",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
                 xmlns: "http://www.w3.org/2000/svg",
                 height: "28px",
                 viewBox: "0 -960 960 960",
                 width: "28px",
                 fill: "#FFFFFF",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
                   d: "M480-315.33 284.67-510.67l47.33-48L446.67-444v-356h66.66v356L628-558.67l47.33 48L480-315.33ZM226.67-160q-27 0-46.84-19.83Q160-199.67 160-226.67V-362h66.67v135.33h506.66V-362H800v135.33q0 27-19.83 46.84Q760.33-160 733.33-160H226.67Z"
                 })
               })
             })]
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "md:col-span-1 "
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "hidden md:absolute md:left-1/2 md:top-0 col-span-1 text-white font-bold md:grid grid-cols-2 h-[600px]",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "col-span-1 w-full bg-verde-habitat-accesible grid place-content-center",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
               className: "text-xl",
-              children: "Explora"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+              children: translations[language].exploreText
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
               className: "text-3xl",
-              children: "A tu ritmo"
+              children: translations[language].paceText
             })]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "col-span-1",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
             src: images[0],
             alt: "Image 2",
             className: "w-full h-full object-cover"
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "col-span-1",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
             src: images[1],
             alt: "Image 3",
             className: "w-full h-full object-cover"
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "col-span-1 bg-verde-habitat-accesible grid place-content-center",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
               className: "text-xl",
-              children: "Con familia"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+              children: translations[language].familyText
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
               className: "text-3xl",
-              children: "O tu mascota"
+              children: translations[language].petText
             })]
           })
         })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "md:col-span-1 md:hidden h-[374px] text-white font-bold grid grid-cols-2",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "col-span-1 bg-verde-habitat-accesible grid place-content-center",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
           className: "text-base",
-          children: "Explora"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          children: translations[language].exploreText
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
           className: "text-xl",
-          children: "A tu ritmo"
+          children: translations[language].paceText
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "col-span-1",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
           src: images[0],
           alt: "Image 2",
           className: "w-full h-full object-cover"
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "col-span-1",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
           src: images[1],
           alt: "Image 3",
           className: "w-full h-full object-cover"
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "col-span-1 bg-verde-habitat-accesible grid place-content-center",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
           className: "text-base",
-          children: "Con familia"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          children: translations[language].familyText
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
           className: "text-xl",
-          children: "O tu mascota"
+          children: translations[language].petText
         })]
       })]
     })]
@@ -2696,6 +2858,57 @@ var PublicSpaceHero2 = function PublicSpaceHero2(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/components/context/LanguageProvider.js":
+/*!*************************************************************!*\
+  !*** ./resources/js/components/context/LanguageProvider.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   LanguageProvider: () => (/* binding */ LanguageProvider),
+/* harmony export */   useLanguage: () => (/* binding */ useLanguage)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+var LanguageContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)();
+var LanguageProvider = function LanguageProvider(_ref) {
+  var children = _ref.children;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(function () {
+      return localStorage.getItem('language') || 'es';
+    }),
+    _useState2 = _slicedToArray(_useState, 2),
+    language = _useState2[0],
+    setLanguage = _useState2[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    localStorage.setItem('language', language);
+  }, [language]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(LanguageContext.Provider, {
+    value: {
+      language: language,
+      setLanguage: setLanguage
+    },
+    children: children
+  });
+};
+
+// Hook para usar el contexto
+var useLanguage = function useLanguage() {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(LanguageContext);
+};
+
+/***/ }),
+
 /***/ "./resources/js/components/footer/NwpFooter.js":
 /*!*****************************************************!*\
   !*** ./resources/js/components/footer/NwpFooter.js ***!
@@ -2713,7 +2926,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _icons_LogoCds__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../icons/LogoCds */ "./resources/js/components/icons/LogoCds.js");
 /* harmony import */ var _icons_SocialNetworks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../icons/SocialNetworks */ "./resources/js/components/icons/SocialNetworks.js");
 /* harmony import */ var _icons_Arrows__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../icons/Arrows */ "./resources/js/components/icons/Arrows.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -2726,189 +2940,319 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
+
 function NwpFooter() {
-  var menuOptions = [{
-    label: 'Afíliate',
-    url: '#',
-    subOptions: [{
-      label: 'Vincula tu organización',
-      url: '#'
-    }, {
-      label: 'Tipos de organización',
-      url: '#'
-    }, {
-      label: 'Directorio afiliados',
-      url: '#'
-    }]
-  }, {
-    label: 'Emprende',
-    url: '#',
-    subOptions: [{
-      label: 'Centro de innovación',
-      url: '#'
-    }, {
-      label: 'Programas',
-      url: '#'
-    }, {
-      label: 'Directorio de startups y emprendedores',
-      url: '#'
-    }, {
-      label: 'Estudio global de emprendimiento',
-      url: '#'
-    }]
-  }, {
-    label: 'Reserva espacios',
-    url: '#',
-    subOptions: [{
-      label: 'Eventos y reuniones',
-      url: '#'
-    }, {
-      label: 'Recreación y deporte',
-      url: '#'
-    }]
-  }, {
-    label: 'Enlaces de interés',
-    url: '#',
-    subOptions: [{
-      label: 'Eventos',
-      url: '#'
-    }, {
-      label: 'Noticias',
-      url: '#'
-    }, {
-      label: 'Oportunidades',
-      url: '#'
-    }]
-  }, {
-    label: 'Portales y recursos',
-    url: '#',
-    subOptions: [{
-      label: 'Portal clientes',
-      url: '#'
-    }, {
-      label: 'Portales emprendimiento',
-      url: '#'
-    }, {
-      label: 'Portal proveedores',
-      url: '#'
-    }, {
-      label: 'Recursos comunicaciones y prensa',
-      url: '#'
-    }]
-  }];
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_5__.useLanguage)(),
+    language = _useLanguage.language; // Acceder al idioma seleccionado
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
     _useState2 = _slicedToArray(_useState, 2),
-    openMenuIndex = _useState2[0],
-    setOpenMenuIndex = _useState2[1];
+    content = _useState2[0],
+    setContent = _useState2[1]; // Estado para guardar el contenido traducido
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
+    var translations = {
+      es: {
+        contactTitle: "Contáctanos",
+        visitTitle: "Visítanos",
+        subscribeTitle: "Suscríbete al Newsletter",
+        subscribeButton: "Suscríbete",
+        subscribeText: "Entérate de las novedades de la comunidad",
+        phone1: "(507) 306-3700",
+        phone2: "(507) 317-3799",
+        email: "ciudaddelsaber@cdspanama.org",
+        address: "Fundación Ciudad del Saber, Edificio 104, Calle Luis Bonilla, Clayton, Panamá",
+        footerLinks: [{
+          label: "Mapa de sitio",
+          url: "#"
+        }, {
+          label: "Términos y condiciones",
+          url: "#"
+        }, {
+          label: "Política de cookies",
+          url: "#"
+        }],
+        copyright: "© Copyright 2024. Todos los derechos reservados",
+        menuOptions: [{
+          label: 'Afíliate',
+          url: '#',
+          subOptions: [{
+            label: 'Vincula tu organización',
+            url: '#'
+          }, {
+            label: 'Tipos de organización',
+            url: '#'
+          }, {
+            label: 'Directorio afiliados',
+            url: '#'
+          }]
+        }, {
+          label: 'Emprende',
+          url: '#',
+          subOptions: [{
+            label: 'Centro de innovación',
+            url: '#'
+          }, {
+            label: 'Programas',
+            url: '#'
+          }, {
+            label: 'Directorio de startups y emprendedores',
+            url: '#'
+          }, {
+            label: 'Estudio global de emprendimiento',
+            url: '#'
+          }]
+        }, {
+          label: 'Reserva espacios',
+          url: '#',
+          subOptions: [{
+            label: 'Eventos y reuniones',
+            url: '#'
+          }, {
+            label: 'Recreación y deporte',
+            url: '#'
+          }]
+        }, {
+          label: 'Enlaces de interés',
+          url: '#',
+          subOptions: [{
+            label: 'Eventos',
+            url: '#'
+          }, {
+            label: 'Noticias',
+            url: '#'
+          }, {
+            label: 'Oportunidades',
+            url: '#'
+          }]
+        }, {
+          label: 'Portales y recursos',
+          url: '#',
+          subOptions: [{
+            label: 'Portal clientes',
+            url: '#'
+          }, {
+            label: 'Portales emprendimiento',
+            url: '#'
+          }, {
+            label: 'Portal proveedores',
+            url: '#'
+          }, {
+            label: 'Recursos comunicaciones y prensa',
+            url: '#'
+          }]
+        }]
+      },
+      en: {
+        contactTitle: "Contact Us",
+        visitTitle: "Visit Us",
+        subscribeTitle: "Subscribe to the Newsletter",
+        subscribeButton: "Subscribe",
+        subscribeText: "Stay informed about community news",
+        phone1: "(507) 306-3700",
+        phone2: "(507) 317-3799",
+        email: "ciudaddelsaber@cdspanama.org",
+        address: "Ciudad del Saber Foundation, Building 104, Luis Bonilla Street, Clayton, Panama",
+        footerLinks: [{
+          label: "Site Map",
+          url: "#"
+        }, {
+          label: "Terms and Conditions",
+          url: "#"
+        }, {
+          label: "Cookie Policy",
+          url: "#"
+        }],
+        copyright: "© Copyright 2024. All rights reserved",
+        menuOptions: [{
+          label: 'Join Us',
+          url: '#',
+          subOptions: [{
+            label: 'Connect Your Organization',
+            url: '#'
+          }, {
+            label: 'Types of Organizations',
+            url: '#'
+          }, {
+            label: 'Affiliate Directory',
+            url: '#'
+          }]
+        }, {
+          label: 'Entrepreneurship',
+          url: '#',
+          subOptions: [{
+            label: 'Innovation Center',
+            url: '#'
+          }, {
+            label: 'Programs',
+            url: '#'
+          }, {
+            label: 'Startup and Entrepreneur Directory',
+            url: '#'
+          }, {
+            label: 'Global Entrepreneurship Study',
+            url: '#'
+          }]
+        }, {
+          label: 'Reserve Spaces',
+          url: '#',
+          subOptions: [{
+            label: 'Events and Meetings',
+            url: '#'
+          }, {
+            label: 'Recreation and Sports',
+            url: '#'
+          }]
+        }, {
+          label: 'Useful Links',
+          url: '#',
+          subOptions: [{
+            label: 'Events',
+            url: '#'
+          }, {
+            label: 'News',
+            url: '#'
+          }, {
+            label: 'Opportunities',
+            url: '#'
+          }]
+        }, {
+          label: 'Portals and Resources',
+          url: '#',
+          subOptions: [{
+            label: 'Client Portal',
+            url: '#'
+          }, {
+            label: 'Entrepreneurship Portals',
+            url: '#'
+          }, {
+            label: 'Supplier Portal',
+            url: '#'
+          }, {
+            label: 'Communications and Press Resources',
+            url: '#'
+          }]
+        }]
+      }
+    };
+
+    // Actualizar el estado con el contenido traducido
+    setContent(translations[language]);
+  }, [language]); // Dependencia en el idioma
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState4 = _slicedToArray(_useState3, 2),
+    openMenuIndex = _useState4[0],
+    setOpenMenuIndex = _useState4[1];
   var handleMenuClick = function handleMenuClick(index) {
     setOpenMenuIndex(openMenuIndex === index ? null : index);
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
     className: "w-full bg-black",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
       className: "w-full grid grid-cols-10 h-6",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         className: "col-span-1 h-full bg-cdsblue"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         className: "col-span-1 h-full bg-cdsazuldark"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         className: "col-span-1 h-full bg-cdscian"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         className: "col-span-1 h-full bg-cdsgrisverde"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         className: "col-span-1 h-full bg-cdsyellow"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         className: "col-span-1 h-full bg-cdsorange"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         className: "col-span-1 h-full bg-cdsverde"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         className: "col-span-1 h-full bg-cdsgrisverdedark"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         className: "col-span-1 h-full bg-cdsrosa"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         className: "col-span-1 h-full bg-cdsrojo"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
       className: "nwp-padding-x-container",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        className: "md:pt-14 pt-6 pb-8 grid grid-flow-row md:grid-flow-col md:grid-cols-11 gap-y-6 md:gap-y-0 md:gap-x-4  nwp-container mx-auto",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "md:pt-14 pt-6 pb-8 grid grid-flow-row md:grid-flow-col md:grid-cols-11 gap-y-6 md:gap-y-0 md:gap-x-4 nwp-container mx-auto",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
           className: "col-span-2 -mt-6 ",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_LogoCds__WEBPACK_IMPORTED_MODULE_2__.LogoCdsBlueWhite, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_icons_LogoCds__WEBPACK_IMPORTED_MODULE_2__.LogoCdsBlueWhite, {
             width: 160
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
             className: "w-full flex gap-x-4 mx-auto pl-2",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("a", {
               href: "#",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_SocialNetworks__WEBPACK_IMPORTED_MODULE_3__.FacebookIcon, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_icons_SocialNetworks__WEBPACK_IMPORTED_MODULE_3__.FacebookIcon, {
                 className: "fill-white w-10 h-10"
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("a", {
               href: "#",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_SocialNetworks__WEBPACK_IMPORTED_MODULE_3__.InstagramIcon, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_icons_SocialNetworks__WEBPACK_IMPORTED_MODULE_3__.InstagramIcon, {
                 className: "fill-black w-10 h-10 hover:stroke-white stroke-white"
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("a", {
               href: "#",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_SocialNetworks__WEBPACK_IMPORTED_MODULE_3__.YouTubeIcon, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_icons_SocialNetworks__WEBPACK_IMPORTED_MODULE_3__.YouTubeIcon, {
                 className: "fill-white w-10 h-10"
               })
             })]
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
           className: "col-span-3 text-base text-gray-200 nwp-container",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h6", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h6", {
             className: "font-semibold text-cdsblue",
-            children: "Cont\xE1ctanos"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+            children: content.contactTitle
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
             className: "pt-4 flex flex-col gap-y-2",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
-              children: "(507) 306-3700"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
-              children: "(507) 317-3799"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
-              children: "ciudaddelsaber@cdspanama.org"
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
+              children: content.phone1
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
+              children: content.phone2
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
+              children: content.email
             })]
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
           className: "col-span-3 text-base text-gray-200",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h6", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h6", {
             className: "font-semibold text-cdsblue",
-            children: "Vis\xEDtanos"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+            children: content.visitTitle
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
             className: "pt-4 flex flex-col gap-y-2",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
-              children: "Fundaci\xF3n Ciudad del Saber, Edificio 104, Calle Luis Bonilla Clayton, Panam\xE1"
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
+              children: content.address
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
           className: "col-span-3 text-base text-gray-200",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h6", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h6", {
             className: "font-semibold text-cdsblue",
-            children: "Suscr\xEDbete al Newsletter"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+            children: content.subscribeTitle
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
             className: "pt-4 flex flex-col gap-y-2",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
-              children: "Ent\xE9rate de las novedades de la comunidad"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
+              children: content.subscribeText
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
               className: "px-4 py-3 w-40 font-semibold rounded-xl bg-white hover:bg-gray-200 duration-150 text-black",
-              children: "Suscr\xEDbete"
+              children: content.subscribeButton
             })]
           })]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         className: "hidden md:grid grid-cols-5 nwp-container gap-x-4 nwpcontainer mx-auto py-8 border-t border-zinc-800",
-        children: menuOptions.map(function (option, index) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        children: content.menuOptions && content.menuOptions.map(function (option, index) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
             className: "col-span-1 text-base text-gray-200",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h6", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h6", {
               className: "font-semibold text-cdsblue ",
               children: option.label
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
               className: "pt-4 flex flex-col gap-y-2",
               children: option.subOptions.map(function (subOption, subIndex) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("a", {
                     className: "hover:text-white ",
                     href: subOption.url,
                     children: subOption.label
@@ -2918,29 +3262,29 @@ function NwpFooter() {
             })]
           }, index);
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("ul", {
         className: "flex flex-col gap-y-4 nwp-container font-semibold py-4 md:hidden border-y border-zinc-800",
-        children: menuOptions.map(function (option, index) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("li", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("button", {
+        children: content.menuOptions && content.menuOptions.map(function (option, index) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("li", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("button", {
               className: "flex justify-between items-center w-full outline-none focus:outline-none ".concat(openMenuIndex === index ? 'text-cdsblue' : 'text-cdsblue'),
               onClick: function onClick() {
                 return handleMenuClick(index);
               },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
                 className: "text-start text-xl font-semibold text-cdsblue",
                 children: option.label
-              }), option.subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_4__.ArrowIcon, {
+              }), option.subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_4__.ArrowIcon, {
                 color: "".concat(openMenuIndex === index ? '#0088ff' : '#0088ff'),
                 rotate: openMenuIndex === index
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
               className: "overflow-hidden transition-max-height duration-500 ease-in-out ".concat(openMenuIndex === index ? 'max-h-screen' : 'max-h-0'),
-              children: option.subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul", {
+              children: option.subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("ul", {
                 className: "bg-black py-2 border-b border-zinc-800",
                 children: option.subOptions.map(function (subOption, subIndex) {
-                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("a", {
                       href: subOption.url,
                       className: "text-start block py-2 px-4 text-white",
                       children: subOption.label
@@ -2951,23 +3295,17 @@ function NwpFooter() {
             })]
           }, index);
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
         className: "flex flex-col nwp-container gap-y-2 md:gap-y-0 md:flex-row gap-x-2 md:gap-x-0 md:divide-x md:px-0 divide-white py-4 md:border-t border-zinc-800 nwpcontainer mx-auto",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-          className: "underline text-white hover:text-white px-2",
-          href: "#",
-          children: "Mapa de sitio"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-          className: "underline text-white hover:text-white px-2",
-          href: "#",
-          children: "T\xE9rminos y condiciones"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-          className: "underline text-white hover:text-white px-2",
-          href: "#",
-          children: "Pol\xEDtica de cookies"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+        children: [content.footerLinks && content.footerLinks.map(function (link, index) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("a", {
+            className: "underline text-white hover:text-white px-2",
+            href: link.url,
+            children: link.label
+          }, index);
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
           className: "text-white px-2",
-          children: "\xA9 Copyright 2024. Todos los derechos reservados"
+          children: content.copyright
         })]
       })]
     })]
@@ -2976,8 +3314,60 @@ function NwpFooter() {
 var container = document.getElementById('nwp-footer');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(NwpFooter, {}));
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_5__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(NwpFooter, {})
+  }));
 }
+
+/***/ }),
+
+/***/ "./resources/js/components/header/LanguageSelect.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/header/LanguageSelect.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+var LanguageSelect = function LanguageSelect() {
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_1__.useLanguage)(),
+    language = _useLanguage.language,
+    setLanguage = _useLanguage.setLanguage;
+  var handleLanguageChange = function handleLanguageChange(newLanguage) {
+    setLanguage(newLanguage);
+    window.location.reload(); // Recargar la página
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
+      children: ["Idioma seleccionado: ", language]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+      onClick: function onClick() {
+        return handleLanguageChange('es');
+      },
+      disabled: language === 'es' // Deshabilitar si ya está en español
+      ,
+      children: "Cambiar a Espa\xF1ol"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+      onClick: function onClick() {
+        return handleLanguageChange('en');
+      },
+      disabled: language === 'en' // Deshabilitar si ya está en inglés
+      ,
+      children: "Cambiar a Ingl\xE9s"
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (LanguageSelect);
 
 /***/ }),
 
@@ -2998,7 +3388,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _icons_LogoCds__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../icons/LogoCds */ "./resources/js/components/icons/LogoCds.js");
 /* harmony import */ var _icons_Arrows__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../icons/Arrows */ "./resources/js/components/icons/Arrows.js");
 /* harmony import */ var _NwpMobileHeader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./NwpMobileHeader */ "./resources/js/components/header/NwpMobileHeader.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var _LanguageSelect__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./LanguageSelect */ "./resources/js/components/header/LanguageSelect.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -3011,460 +3403,451 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
-var menuOptions = [{
-  label: 'Conócenos',
-  subOptions: [{
-    label: 'Qué es Ciudad del Saber',
-    url: 'https://tailwindcss.com'
-  }, {
-    label: 'Historia',
-    url: '#'
-  }, {
-    label: 'Impacto',
-    subOptions: [{
-      label: 'Ir a Impacto',
-      url: '#',
-      arrow: true
-    }, {
-      label: 'Académico',
-      url: 'https://tailwindcss.com/docs/container'
-    }, {
-      label: 'Empresarial',
-      url: '#'
-    }, {
-      label: 'Humanitario',
-      url: '#'
-    }, {
-      label: 'Innovación y emprendimiento',
-      url: '#'
-    }, {
-      label: 'Proyecto País',
-      url: '#'
-    }, {
-      label: 'Sostenibilidad',
-      url: '#'
-    }]
-  }, {
-    label: 'Fundación Ciudad del Saber',
-    subOptions: [{
-      label: 'Gobierno corporativo',
-      url: '#'
-    }, {
-      label: 'Cultura organizacional',
-      url: '#'
-    }, {
-      label: 'Sé parte del equipo',
-      url: '#'
-    }, {
-      label: 'Programas de pasantías',
-      url: '#'
-    }]
-  }, {
-    label: 'Publicaciones',
-    url: '#',
-    external: true
-  }]
-}, {
-  label: 'Afíliate',
-  subOptions: [{
-    label: 'Vincula tu organización',
-    url: '#',
-    arrow: true
-  }, {
-    label: 'Tipos de organizaciones',
-    subOptions: [{
-      label: 'Empresa',
-      url: '#'
-    }, {
-      label: 'Programas académicos',
-      url: '#'
-    }, {
-      label: 'Organismos internacionales y ONG',
-      url: '#'
-    }, {
-      label: 'Entidades gubernamentales',
-      url: '#'
-    }]
-  }, {
-    label: 'Directorio de afiliados',
-    url: '#'
-  }]
-}, {
-  label: 'Emprende',
-  subOptions: [{
-    label: 'Ir a Centro de Innovación',
-    url: '#',
-    arrow: true
-  }, {
-    label: 'Conviértete en miembro',
-    url: '#'
-  }, {
-    label: 'Programas de startups y emprendedores',
-    subOptions: [{
-      label: 'Programa Innovar',
-      url: '#'
-    }, {
-      label: 'Canal de Empresarias',
-      url: '#'
-    }, {
-      label: 'Incubación de startups',
-      url: '#'
-    }, {
-      label: 'Aceleración de startups',
-      url: '#'
-    }, {
-      label: 'Emprendimientos avanzados',
-      url: '#'
-    }]
-  }, {
-    label: 'Directorio startups y emprendedores',
-    url: '#'
-  }, {
-    label: 'Estudio Global de Emprendimiento',
-    url: '#'
-  }, {
-    label: 'Portal Aprende en Ciudad del Saber',
-    url: '#',
-    external: true
-  }]
-}, {
-  label: 'Ven al Campus',
-  subOptions: [{
-    label: 'Conoce el Campus',
-    url: '#'
-  }, {
-    label: 'La Plaza',
-    subOptions: [{
-      label: 'Ir a La Plaza',
-      url: '#',
-      arrow: true
-    }, {
-      label: 'Oferta gastronómica y servicios comerciales',
-      url: '#'
-    }, {
-      label: 'Mercado Urbano',
-      url: '#'
-    }]
-  }, {
-    label: 'Parque Ciudad del Saber',
-    subOptions: [{
-      label: 'Ir a Parque Ciudad del Saber',
-      url: '#',
-      arrow: true
-    }, {
-      label: 'Piscina',
-      url: '#'
-    }, {
-      label: 'Canchas de baloncesto',
-      url: '#'
-    }, {
-      label: 'Cancha de golf',
-      url: '#'
-    }, {
-      label: 'Cancha de ráquetbol',
-      url: '#'
-    }, {
-      label: 'Cancha de tenis',
-      url: '#'
-    }, {
-      label: 'Cancha de voleibol',
-      url: '#'
-    }, {
-      label: 'Gimnasio',
-      url: '#'
-    }, {
-      label: 'Gazebos',
-      url: '#'
-    }]
-  }, {
-    label: 'Parque Los Lagos',
-    url: '#'
-  }, {
-    label: 'Reserva Forestal',
-    url: '#'
-  }, {
-    label: 'Espacios convivies',
-    url: '#'
-  }, {
-    label: 'Casa Museo',
-    url: '#'
-  }, {
-    label: 'Centro de Reciclaje',
-    url: '#'
-  }]
-}, {
-  label: 'Reserva Espacios',
-  subOptions: [{
-    label: 'Espacios para eventos y reuniones',
-    subOptions: [{
-      label: 'Ir a Espacios para eventos y reuniones',
-      url: '#',
-      arrow: true
-    }, {
-      label: 'Teatro Ateneo',
-      url: '#'
-    }, {
-      label: 'Centro de Convenciones',
-      url: '#'
-    }, {
-      label: 'Salas de reuniones',
-      url: '#'
-    }, {
-      label: 'Aulas',
-      url: '#'
-    }, {
-      label: 'Casa Museo',
-      url: '#'
-    }, {
-      label: 'Casa 39',
-      url: '#'
-    }, {
-      label: 'Auditorio Innova',
-      url: '#'
-    }]
-  }, {
-    label: 'Espacios para recreación y deporte',
-    subOptions: [{
-      label: 'Ir a Parque Ciudad del Saber',
-      url: '#',
-      arrow: true
-    }, {
-      label: 'Piscina',
-      url: '#'
-    }, {
-      label: 'Canchas de baloncesto',
-      url: '#'
-    }, {
-      label: 'Cancha de golf',
-      url: '#'
-    }, {
-      label: 'Cancha de ráquetbol',
-      url: '#'
-    }, {
-      label: 'Cancha de tenis',
-      url: '#'
-    }, {
-      label: 'Cancha de voleibol',
-      url: '#'
-    }, {
-      label: 'Gimnasio',
-      url: '#'
-    }, {
-      label: 'Gazebos',
-      url: '#'
-    }]
-  }]
-}, {
-  label: 'Eventos',
-  url: '#'
-}];
+
+
 function NwpHeader() {
-  // Estado para rastrear qué menú principal está abierto
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_5__.useLanguage)(),
+    language = _useLanguage.language; // Acceder al idioma seleccionado
+
+  // Definir las traducciones para los textos
+  var translations = {
+    es: {
+      directory: 'Directorio',
+      news: 'Noticias',
+      opportunities: 'Oportunidades',
+      clientPortal: 'Portal de clientes'
+    },
+    en: {
+      directory: 'Directory',
+      news: 'News',
+      opportunities: 'Opportunities',
+      clientPortal: 'Client Portal'
+    }
+  };
+  var menuOptions = [{
+    label: language === 'es' ? 'Conócenos' : 'About Us',
+    subOptions: [{
+      label: language === 'es' ? 'Qué es Ciudad del Saber' : 'What is Ciudad del Saber',
+      url: 'https://tailwindcss.com'
+    }, {
+      label: language === 'es' ? 'Historia' : 'History',
+      url: '#'
+    }, {
+      label: language === 'es' ? 'Impacto' : 'Impact',
+      subOptions: [{
+        label: language === 'es' ? 'Ir a Impacto' : 'Go to Impact',
+        url: '#',
+        arrow: true
+      }, {
+        label: language === 'es' ? 'Académico' : 'Academic',
+        url: 'https://tailwindcss.com/docs/container'
+      }, {
+        label: language === 'es' ? 'Empresarial' : 'Business',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Humanitario' : 'Humanitarian',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Innovación y emprendimiento' : 'Innovation and Entrepreneurship',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Proyecto País' : 'Country Project',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Sostenibilidad' : 'Sustainability',
+        url: '#'
+      }]
+    }, {
+      label: language === 'es' ? 'Fundación Ciudad del Saber' : 'Ciudad del Saber Foundation',
+      subOptions: [{
+        label: language === 'es' ? 'Gobierno corporativo' : 'Corporate Governance',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Cultura organizacional' : 'Organizational Culture',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Sé parte del equipo' : 'Join the Team',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Programas de pasantías' : 'Internship Programs',
+        url: '#'
+      }]
+    }, {
+      label: language === 'es' ? 'Publicaciones' : 'Publications',
+      url: '#',
+      external: true
+    }]
+  }, {
+    label: language === 'es' ? 'Afíliate' : 'Join Us',
+    subOptions: [{
+      label: language === 'es' ? 'Vincula tu organización' : 'Link Your Organization',
+      url: '#',
+      arrow: true
+    }, {
+      label: language === 'es' ? 'Tipos de organizaciones' : 'Types of Organizations',
+      subOptions: [{
+        label: language === 'es' ? 'Empresa' : 'Company',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Programas académicos' : 'Academic Programs',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Organismos internacionales y ONG' : 'International Organizations and NGOs',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Entidades gubernamentales' : 'Government Entities',
+        url: '#'
+      }]
+    }, {
+      label: language === 'es' ? 'Directorio de afiliados' : 'Affiliate Directory',
+      url: '#'
+    }]
+  }, {
+    label: language === 'es' ? 'Emprende' : 'Entrepreneurship',
+    subOptions: [{
+      label: language === 'es' ? 'Ir a Centro de Innovación' : 'Go to Innovation Center',
+      url: '#',
+      arrow: true
+    }, {
+      label: language === 'es' ? 'Conviértete en miembro' : 'Become a Member',
+      url: '#'
+    }, {
+      label: language === 'es' ? 'Programas de startups y emprendedores' : 'Startup and Entrepreneur Programs',
+      subOptions: [{
+        label: language === 'es' ? 'Programa Innovar' : 'Innovate Program',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Canal de Empresarias' : 'Women Entrepreneurs Channel',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Incubación de startups' : 'Startup Incubation',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Aceleración de startups' : 'Startup Acceleration',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Emprendimientos avanzados' : 'Advanced Ventures',
+        url: '#'
+      }]
+    }, {
+      label: language === 'es' ? 'Directorio startups y emprendedores' : 'Startup and Entrepreneur Directory',
+      url: '#'
+    }, {
+      label: language === 'es' ? 'Estudio Global de Emprendimiento' : 'Global Entrepreneurship Study',
+      url: '#'
+    }, {
+      label: language === 'es' ? 'Portal Aprende en Ciudad del Saber' : 'Learn at Ciudad del Saber Portal',
+      url: '#',
+      external: true
+    }]
+  }, {
+    label: language === 'es' ? 'Ven al Campus' : 'Visit the Campus',
+    subOptions: [{
+      label: language === 'es' ? 'Conoce el Campus' : 'Explore the Campus',
+      url: '#'
+    }, {
+      label: language === 'es' ? 'La Plaza' : 'The Plaza',
+      subOptions: [{
+        label: language === 'es' ? 'Ir a La Plaza' : 'Go to The Plaza',
+        url: '#',
+        arrow: true
+      }, {
+        label: language === 'es' ? 'Oferta gastronómica y servicios comerciales' : 'Gastronomic and Commercial Services',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Mercado Urbano' : 'Urban Market',
+        url: '#'
+      }]
+    }, {
+      label: language === 'es' ? 'Parque Ciudad del Saber' : 'Ciudad del Saber Park',
+      subOptions: [{
+        label: language === 'es' ? 'Ir a Parque Ciudad del Saber' : 'Go to Ciudad del Saber Park',
+        url: '#',
+        arrow: true
+      }, {
+        label: language === 'es' ? 'Piscina' : 'Swimming Pool',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Canchas de baloncesto' : 'Basketball Courts',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Cancha de golf' : 'Golf Course',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Cancha de ráquetbol' : 'Racquetball Court',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Cancha de tenis' : 'Tennis Court',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Cancha de voleibol' : 'Volleyball Court',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Gimnasio' : 'Gym',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Gazebos' : 'Gazebos',
+        url: '#'
+      }]
+    }, {
+      label: language === 'es' ? 'Parque Los Lagos' : 'Los Lagos Park',
+      url: '#'
+    }, {
+      label: language === 'es' ? 'Reserva Forestal' : 'Forest Reserve',
+      url: '#'
+    }, {
+      label: language === 'es' ? 'Espacios convivies' : 'Gathering Spaces',
+      url: '#'
+    }, {
+      label: language === 'es' ? 'Casa Museo' : 'Museum House',
+      url: '#'
+    }, {
+      label: language === 'es' ? 'Centro de Reciclaje' : 'Recycling Center',
+      url: '#'
+    }]
+  }, {
+    label: language === 'es' ? 'Reserva Espacios' : 'Reserve Spaces',
+    subOptions: [{
+      label: language === 'es' ? 'Espacios para eventos y reuniones' : 'Event and Meeting Spaces',
+      subOptions: [{
+        label: language === 'es' ? 'Ir a Espacios para eventos y reuniones' : 'Go to Event and Meeting Spaces',
+        url: '#',
+        arrow: true
+      }, {
+        label: language === 'es' ? 'Teatro Ateneo' : 'Ateneo Theater',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Centro de Convenciones' : 'Convention Center',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Salas de reuniones' : 'Meeting Rooms',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Aulas' : 'Classrooms',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Casa Museo' : 'Museum House',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Casa 39' : 'House 39',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Auditorio Innova' : 'Innova Auditorium',
+        url: '#'
+      }]
+    }, {
+      label: language === 'es' ? 'Espacios para recreación y deporte' : 'Recreation and Sports Spaces',
+      subOptions: [{
+        label: language === 'es' ? 'Ir a Parque Ciudad del Saber' : 'Go to Ciudad del Saber Park',
+        url: '#',
+        arrow: true
+      }, {
+        label: language === 'es' ? 'Piscina' : 'Swimming Pool',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Canchas de baloncesto' : 'Basketball Courts',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Cancha de golf' : 'Golf Course',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Cancha de ráquetbol' : 'Racquetball Court',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Cancha de tenis' : 'Tennis Court',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Cancha de voleibol' : 'Volleyball Court',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Gimnasio' : 'Gym',
+        url: '#'
+      }, {
+        label: language === 'es' ? 'Gazebos' : 'Gazebos',
+        url: '#'
+      }]
+    }]
+  }, {
+    label: language === 'es' ? 'Eventos' : 'Events',
+    url: '#'
+  }];
+
+  // Estados y lógica de manejo de menús
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
     _useState2 = _slicedToArray(_useState, 2),
     openMenuIndex = _useState2[0],
     setOpenMenuIndex = _useState2[1];
-
-  // Estado para rastrear qué submenú está abierto
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
     _useState4 = _slicedToArray(_useState3, 2),
     openSubMenuIndex = _useState4[0],
     setOpenSubMenuIndex = _useState4[1];
-
-  // Referencia para el timeout que cierra el menú después de un tiempo
   var closeTimeoutRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-
-  // Referencia al menú para ajustar la posición si se sale de la pantalla
   var menuRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-
-  // Referencia al submenú para manejar su visibilidad
   var subMenuRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-
-  // Función que se llama cuando se hace clic en un menú
   var handleMenuClick = function handleMenuClick(index) {
-    clearTimeout(closeTimeoutRef.current); // Limpiar cualquier timeout activo
+    clearTimeout(closeTimeoutRef.current);
     if (openMenuIndex === index) {
-      // Si se hace clic en un menú ya abierto, se cierra
       setOpenMenuIndex(null);
       setOpenSubMenuIndex(null);
     } else {
-      // Si se hace clic en un menú diferente, se abre
       setOpenMenuIndex(index);
       setOpenSubMenuIndex(null);
     }
   };
-
-  // Función que se llama cuando el mouse entra en un menú principal
   var handleMouseEnter = function handleMouseEnter(index) {
-    clearTimeout(closeTimeoutRef.current); // Limpiar cualquier timeout activo
-    setOpenMenuIndex(index); // Abrir el menú correspondiente
-    setOpenSubMenuIndex(null); // Cerrar cualquier submenú abierto
+    clearTimeout(closeTimeoutRef.current);
+    setOpenMenuIndex(index);
+    setOpenSubMenuIndex(null);
   };
-
-  // Función que se llama cuando el mouse sale del menú
   var handleMouseLeave = function handleMouseLeave() {
-    // Establecer un timeout para cerrar el menú después de un pequeño retraso
     closeTimeoutRef.current = setTimeout(function () {
       setOpenMenuIndex(null);
       setOpenSubMenuIndex(null);
-    }, 100); // 50 ms de retraso para permitir la navegación
+    }, 100);
   };
   var handleMouseLeave1 = function handleMouseLeave1() {
     setOpenMenuIndex(null);
     setOpenSubMenuIndex(null);
   };
-
-  // Función que se llama cuando el mouse entra en un submenú
   var handleSubMenuEnter = function handleSubMenuEnter(index) {
-    clearTimeout(closeTimeoutRef.current); // Limpiar cualquier timeout activo
-    setOpenSubMenuIndex(index); // Abrir el submenú correspondiente
+    clearTimeout(closeTimeoutRef.current);
+    setOpenSubMenuIndex(index);
   };
-
-  // Función que se llama cuando el mouse sale de un submenú
   var handleSubMenuLeave = function handleSubMenuLeave() {
-    // Establecer un timeout para cerrar el submenú después de un retraso
     closeTimeoutRef.current = setTimeout(function () {
       setOpenSubMenuIndex(null);
-    }, 100); // 100 ms de retraso
+    }, 100);
   };
-
-  // Efecto que ajusta la posición del menú si se sale de la pantalla
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (menuRef.current) {
       var rect = menuRef.current.getBoundingClientRect();
       var overflowRight = rect.right > window.innerWidth - 40;
       if (overflowRight) {
-        // Si el menú se sale por la derecha, ajustarlo
         menuRef.current.style.left = "-".concat(rect.right - window.innerWidth + 120, "px");
       } else {
-        // Posición normal del menú
         menuRef.current.style.left = "-80px";
       }
     }
-  }, [openMenuIndex]); // Efecto se dispara cuando openMenuIndex cambia
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("header", {
+  }, [openMenuIndex]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("header", {
       className: "hidden lg:block fixed top-0 left-0 right-0 z-20 h-[120px]",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "mx-auto bg-cdsblue h-12 px-8",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
           className: "nwp-container mx-auto h-full flex items-center justify-end gap-x-8 divide-x divide-white",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("ul", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("ul", {
             className: "flex gap-x-8",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
                 className: "text-white font-semibold ",
                 href: "#",
-                children: "Directorio"
+                children: translations[language].directory
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
                 className: "text-white font-semibold ",
                 href: "#",
-                children: "Noticias"
+                children: translations[language].news
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
                 className: "text-white font-semibold ",
                 href: "#",
-                children: "Oportunidades"
+                children: translations[language].opportunities
               })
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-            className: "text-white font-semibold  pl-8",
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
+            className: "text-white font-semibold pl-8",
             href: "#",
-            children: "Portal de clientes"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
-            className: "text-white font-semibold  pl-8",
-            children: "\uD83C\uDF0D"
-          })]
+            children: translations[language].clientPortal
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_LanguageSelect__WEBPACK_IMPORTED_MODULE_6__["default"], {})]
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "bg-white border-b border-cdsgray600 mx-auto h-[72px] px-8",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
           className: "nwp-container mx-auto bg-white h-full flex items-center justify-between z-20",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_LogoCds__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_icons_LogoCds__WEBPACK_IMPORTED_MODULE_2__["default"], {
             width: 160,
             height: 48
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
             className: "flex h-full items-center gap-x-4 lg:gap-x-8",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("nav", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("nav", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("ul", {
                 className: "flex gap-x-4",
                 children: menuOptions.map(function (option, index) {
-                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("li", {
+                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("li", {
                     className: "relative",
                     onMouseEnter: function onMouseEnter() {
                       return handleMouseEnter(index);
                     },
                     onMouseLeave: handleMouseLeave1,
-                    children: [option.subOptions ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("button", {
+                    children: [option.subOptions ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("button", {
                       onClick: function onClick() {
                         return handleMenuClick(index);
                       },
                       className: "focus:outline-none group font-semibold flex items-center transition-colors hover:text-cdsblue h-full duration-200 z-20 ".concat(openMenuIndex === index ? 'text-cdsblue ' : 'text-gray-800'),
-                      children: [option.label, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowIcon, {
+                      children: [option.label, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowIcon, {
                         color: openMenuIndex === index ? '#0088ff' : '#000',
                         className: "w-5 h-5 group-hover:fill-cdsblue",
                         rotate: openMenuIndex === index
                       })]
-                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
                       href: option.url,
                       className: "text-gray-800 font-semibold hover:no-underline hover:text-cdsblue transition-colors duration-200 h-full flex items-center",
                       children: option.label
-                    }), openMenuIndex === index && option.subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                    }), openMenuIndex === index && option.subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
                       ref: menuRef,
                       onMouseEnter: function onMouseEnter() {
                         return clearTimeout(closeTimeoutRef.current);
                       },
                       onMouseLeave: handleMouseLeave,
                       className: "absolute z-10 pt-2",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                         className: "flex w-[800px] rounded-md overflow-hidden bg-white border border-cdsgray600 ",
-                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("ul", {
                           className: "w-1/2 py-6 bg-cdsgray700",
                           children: option.subOptions.map(function (subOption, subIndex) {
-                            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+                            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("li", {
                               className: "hover:bg-white h-12 font-semibold flex items-center justify-between group",
                               onMouseEnter: function onMouseEnter() {
                                 return handleSubMenuEnter(subIndex);
                               },
                               onMouseLeave: handleSubMenuLeave,
-                              children: subOption.url ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("a", {
+                              children: subOption.url ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("a", {
                                 href: subOption.url,
-                                className: "flex items-center justify-between px-4  hover:no-underline h-full w-full hover:text-black border-r-8 border-cdsgray700 hover:border-cdsblue",
-                                children: [subOption.label, subOption.arrow && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowWhitBg, {
+                                className: "flex items-center justify-between px-4 hover:no-underline h-full w-full hover:text-black border-r-8 border-cdsgray700 hover:border-cdsblue",
+                                children: [subOption.label, subOption.arrow && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowWhitBg, {
                                   className: "rounded-full bg-cdsblue p-1 h-8 w-8"
-                                }), subOption.external && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.RedirectArrow, {
-                                  className: " h-6 w-6"
+                                }), subOption.external && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.RedirectArrow, {
+                                  className: "h-6 w-6"
                                 })]
-                              }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                              }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                                 className: "flex items-center justify-between px-4 h-full w-full hover:text-black border-r-8 border-cdsgray700 hover:border-cdsblue",
-                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
                                   className: "",
                                   children: subOption.label
-                                }), subOption.subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowIconRight, {
+                                }), subOption.subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowIconRight, {
                                   className: "ml-2 h-6 w-6"
                                 })]
                               })
                             }, subIndex);
                           })
-                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
                           className: "w-1/2 bg-cdsgray200 py-4",
                           onMouseEnter: function onMouseEnter() {
                             return clearTimeout(closeTimeoutRef.current);
                           },
                           onMouseLeave: handleSubMenuLeave,
                           ref: subMenuRef,
-                          children: openSubMenuIndex !== null && option.subOptions[openSubMenuIndex].subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul", {
+                          children: openSubMenuIndex !== null && option.subOptions[openSubMenuIndex].subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("ul", {
                             children: option.subOptions[openSubMenuIndex].subOptions.map(function (subOption, subIndex) {
-                              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
-                                className: "h-12 font-semibold bg-white  flex items-center justify-between",
-                                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("a", {
+                              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("li", {
+                                className: "h-12 font-semibold bg-white flex items-center justify-between",
+                                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("a", {
                                   href: subOption.url,
                                   className: "flex items-center px-4 h-full w-full hover:bg-cdsgray600 hover:no-underline hover:text-black",
-                                  children: [subOption.label, subOption.arrow && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowWhitBg, {
+                                  children: [subOption.label, subOption.arrow && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowWhitBg, {
                                     className: "ml-2 rounded-full bg-cdsblue p-1 h-8 w-8"
                                   })]
                                 })
@@ -3481,7 +3864,7 @@ function NwpHeader() {
           })]
         })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_NwpMobileHeader__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_NwpMobileHeader__WEBPACK_IMPORTED_MODULE_4__["default"], {
       menuOptions: menuOptions
     })]
   });
@@ -3489,7 +3872,9 @@ function NwpHeader() {
 var container = document.getElementById('nwp-header');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(NwpHeader, {}));
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_5__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(NwpHeader, {})
+  }));
 }
 
 /***/ }),
@@ -4289,40 +4674,88 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _Faq__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Faq */ "./resources/js/components/Faq.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
 
-var faqItems = [{
-  title: 'Why is the moon sometimes out during the day?',
-  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
-}, {
-  title: 'Why is the sky blue?',
-  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
-}, {
-  title: 'Will we ever discover aliens?',
-  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
-}, {
-  title: 'How much does the Earth weigh?',
-  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
-}, {
-  title: 'How do airplanes stay up?',
-  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
-}];
+
 function NwpFaq() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
+    language = _useLanguage.language; // Acceder al idioma seleccionado
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState2 = _slicedToArray(_useState, 2),
+    content = _useState2[0],
+    setContent = _useState2[1]; // Estado para guardar el contenido traducido
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
+    var translations = {
+      es: {
+        faqTitle: "Preguntas frecuentes sobre el Parque Ciudad del Saber",
+        faqItems: [{
+          title: '¿Por qué a veces la luna está visible durante el día?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }, {
+          title: '¿Por qué el cielo es azul?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }, {
+          title: '¿Descubriremos alguna vez extraterrestres?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }, {
+          title: '¿Cuánto pesa la Tierra?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }, {
+          title: '¿Cómo se mantienen los aviones en el aire?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }]
+      },
+      en: {
+        faqTitle: "Frequently Asked Questions about Ciudad del Saber Park",
+        faqItems: [{
+          title: 'Why is the moon sometimes out during the day?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }, {
+          title: 'Why is the sky blue?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }, {
+          title: 'Will we ever discover aliens?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }, {
+          title: 'How much does the Earth weigh?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }, {
+          title: 'How do airplanes stay up?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }]
+      }
+    };
+
+    // Actualizar el estado con el contenido traducido
+    setContent(translations[language]);
+  }, [language]); // Dependencia en el idioma
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
     className: "App",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Faq__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      faqTitle: "Preguntas frecuentes sobre el Parque Ciudad del Saber",
-      faqItems: faqItems
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Faq__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      faqTitle: content.faqTitle,
+      faqItems: content.faqItems
     })
   });
 }
 var container = document.getElementById('nwp-parque-faq');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(NwpFaq, {}));
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NwpFaq, {})
+  }));
 }
 
 /***/ }),
@@ -4342,25 +4775,64 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _Headband__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Headband */ "./resources/js/components/Headband.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 
 
 function NwpHeadband() {
-  var images = ['https://comercial.ciudaddelsaber.org/storage/venues/7a7b41702666a764ed05d401a73da351248d2577d3b5e988c513954bc39ec680_2048.jpg'];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Headband__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    imageSrc: images[0],
-    mainTitle: "Vive el campus",
-    subtitle: "Un espacio para compartir, entrenar y divertirse",
-    instagramLink: "https://www.instagram.com/parquecds/?hl=es",
-    instagramHandle: "@parquecds"
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
+    language = _useLanguage.language; // Acceder al idioma seleccionado
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState2 = _slicedToArray(_useState, 2),
+    content = _useState2[0],
+    setContent = _useState2[1]; // Estado para guardar el contenido traducido
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
+    var translations = {
+      es: {
+        mainTitle: "Vive el campus",
+        subtitle: "Un espacio para compartir, entrenar y divertirse",
+        instagramLink: "https://www.instagram.com/parquecds/?hl=es",
+        instagramHandle: "@parquecds",
+        imageSrc: 'https://comercial.ciudaddelsaber.org/storage/venues/7a7b41702666a764ed05d401a73da351248d2577d3b5e988c513954bc39ec680_2048.jpg'
+      },
+      en: {
+        mainTitle: "Experience the campus",
+        subtitle: "A space to share, train, and have fun",
+        instagramLink: "https://www.instagram.com/parquecds/?hl=en",
+        instagramHandle: "@parquecds",
+        imageSrc: 'https://comercial.ciudaddelsaber.org/storage/venues/7a7b41702666a764ed05d401a73da351248d2577d3b5e988c513954bc39ec680_2048.jpg'
+      }
+    };
+
+    // Actualizar el estado con el contenido traducido
+    setContent(translations[language]);
+  }, [language]); // Dependencia en el idioma
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Headband__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    imageSrc: content.imageSrc,
+    mainTitle: content.mainTitle,
+    subtitle: content.subtitle,
+    instagramLink: content.instagramLink,
+    instagramHandle: content.instagramHandle
   });
 }
 var container = document.getElementById('nwp-parque-headband');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(NwpHeadband, {}));
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NwpHeadband, {})
+  }));
 }
 
 /***/ }),
@@ -4380,32 +4852,72 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _FirstHero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../FirstHero */ "./resources/js/components/FirstHero.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 
 
 function NwpParqueHero() {
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
+    language = _useLanguage.language; // Acceder al idioma seleccionado
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState2 = _slicedToArray(_useState, 2),
+    content = _useState2[0],
+    setContent = _useState2[1]; // Estado para guardar el contenido traducido
+
+  console.log(language);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
+    var translations = {
+      es: {
+        title: "Parque Ciudad del Saber",
+        subtitle: "Un espacio para todos: Recreación, deporte y diversión",
+        schedule: "6:30 am - 8:00 pm",
+        location: "C. Victor Garibaldo, Panamá",
+        buttonText: "Descargar el mapa"
+      },
+      en: {
+        title: "Ciudad del Saber Park",
+        subtitle: "A space for everyone: Recreation, sports, and fun",
+        schedule: "6:30 am - 8:00 pm",
+        location: "Victor Garibaldo St., Panama",
+        buttonText: "Download the map"
+      }
+    };
+
+    // Actualizar el estado con el contenido traducido
+    setContent(translations[language]);
+  }, [language]); // Dependencia en el idioma
+
   var handleButtonClick = function handleButtonClick() {
-    // Lógica para descargar el mapa
-    console.log('Botón clickeado');
+    console.log('Button clicked');
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: "Parque Ciudad del Saber",
-    subtitle: "Un espacio para todos: Recreaci\xF3n, deporte y diversi\xF3n",
-    schedule: "6:30 am - 8:00 pm",
-    location: "C. Victor Garibaldo, Panam\xE1",
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: content.title,
+    subtitle: content.subtitle,
+    schedule: content.schedule,
+    location: content.location,
     onButtonClick: handleButtonClick,
     gradientColor: "from-cdsverde via-cdsverde to-transparent",
     backgroundImageUrl: "https://images.unsplash.com/photo-1663622438610-00a72c139d8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    buttonText: "Descargar el mapa",
+    buttonText: content.buttonText,
     isVenue: false
   });
 }
 var container = document.getElementById('nwp-parque-hero');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(NwpParqueHero, {}));
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NwpParqueHero, {})
+  }));
 }
 
 /***/ }),
@@ -4425,21 +4937,55 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _PublicSpaceHero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../PublicSpaceHero */ "./resources/js/components/PublicSpaceHero.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 
 
 function NwpParqueSection1() {
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
+    language = _useLanguage.language; // Acceder al idioma seleccionado
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState2 = _slicedToArray(_useState, 2),
+    content = _useState2[0],
+    setContent = _useState2[1]; // Estado para guardar el contenido traducido
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
+    var translations = {
+      es: {
+        title: "Un espacio abierto al público",
+        content: "El corazón verde del campus, ideal para realizar actividades recreativas, deportivas o de esparcimiento. Parque Ciudad del Saber está abierto a sus visitantes de forma gratuita todos los días del año.",
+        buttonLabel: "Descarga el reglamento de uso"
+      },
+      en: {
+        title: "A public open space",
+        content: "The green heart of the campus, ideal for recreational, sports, or leisure activities. Ciudad del Saber Park is open to visitors free of charge every day of the year.",
+        buttonLabel: "Download the usage regulations"
+      }
+    };
+
+    // Actualizar el estado con el contenido traducido
+    setContent(translations[language]);
+  }, [language]); // Dependencia en el idioma
+
   var handleButtonClick = function handleButtonClick() {
     // Lógica para descargar el reglamento de uso
-    console.log('Botón clickeado');
+    console.log('Button clicked');
   };
   var images = ['https://images.unsplash.com/photo-1498955472675-532cdee9d6b4?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cGFya3xlbnwwfHwwfHx8MA%3D%3D', 'https://images.unsplash.com/photo-1564409972016-2825589beaed?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGFya3xlbnwwfHwwfHx8MA%3D%3D'];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_PublicSpaceHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: "Un espacio abierto al p\xFAblico",
-    content: "El coraz\xF3n verde del campus, ideal para realizar actividades recreativas, deportivas o de esparcimiento. Parque Ciudad del Saber est\xE1 abierto a sus visitantes de forma gratuita todos los d\xEDas del a\xF1o.",
-    buttonLabel: "Descarga el reglamento de uso",
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_PublicSpaceHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: content.title,
+    content: content.content,
+    buttonLabel: content.buttonLabel,
     onButtonClick: handleButtonClick,
     images: images
   });
@@ -4447,7 +4993,9 @@ function NwpParqueSection1() {
 var container = document.getElementById('nwp-parque-section01');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(NwpParqueSection1, {}));
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NwpParqueSection1, {})
+  }));
 }
 
 /***/ }),
@@ -4467,25 +5015,72 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _ParkActivities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../ParkActivities */ "./resources/js/components/ParkActivities.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 
 
 function NwpParqueSection2() {
-  var activities = [{
-    iconPath: "M281.33-40 403-660.67q5.33-25.66 24.33-39.16 19-13.5 40-13.5T506.5-704q18.17 9.33 29.5 27.33l39.33 64q18.67 31 50.5 55.5 31.84 24.5 74.17 37.5v-73.66h46.67V-40H700v-411.33q-50-11-93.67-37.67-43.66-26.67-77-65.67L502-418l84.67 80.67V-40H520v-242.67l-94.67-90L352-40h-70.67Zm17-400.33L220-455q-12-2.33-20-14.17-8-11.83-5.67-24.83l30-157q5.34-30 30.67-46.5 25.33-16.5 55.33-11.17l39.34 7.67-51.34 260.67Zm235-309q-31 0-53.16-22.17Q458-793.67 458-824.67t22.17-53.16Q502.33-900 533.33-900q31 0 53.17 22.17 22.17 22.16 22.17 53.16 0 31-22.17 53.17t-53.17 22.17Z",
-    text: "Recorre 21km de sendero en nuestra reserva forestal"
-  }, {
-    iconPath: "M720.05-724.67q-31.05 0-53.22-22.11-22.16-22.11-22.16-53.17 0-31.05 22.11-53.22 22.11-22.16 53.17-22.16 31.05 0 53.22 22.11 22.16 22.11 22.16 53.17 0 31.05-22.11 53.22-22.11 22.16-53.17 22.16ZM666.67-80v-330.67q0-33.33-16.84-60-16.83-26.66-46.83-40L642-625q8-25 29.5-40t48.5-15q27 0 48.5 15t29.5 40l102 298.33H793.33V-80H666.67Zm-170-420q-25 0-42.5-17.5t-17.5-42.5q0-25 17.5-42.5t42.5-17.5q25 0 42.5 17.5t17.5 42.5q0 25-17.5 42.5t-42.5 17.5ZM220.05-724.67q-31.05 0-53.22-22.11-22.16-22.11-22.16-53.17 0-31.05 22.11-53.22 22.11-22.16 53.17-22.16 31.05 0 53.22 22.11 22.16 22.11 22.16 53.17 0 31.05-22.11 53.22-22.11 22.16-53.17 22.16ZM146.67-80v-286.67H80v-246.66q0-27.5 19.58-47.09Q119.17-680 146.67-680h146.66q27.5 0 47.09 19.58Q360-640.83 360-613.33v246.66h-66.67V-80H146.67ZM440-80v-166.67h-46.67v-164q0-20.55 14.39-34.94Q422.11-460 442.67-460h108q20.55 0 34.94 14.39Q600-431.22 600-410.67v164h-46.67V-80H440Z",
-    text: "Diviértete en familia en el parque para niños y niñas"
-  }, {
-    iconPath: "M173.24-481.67q-39.24 0-66.24-27.09-27-27.09-27-66.33 0-39.24 27.09-66.24 27.1-27 66.34-27t66.24 27.09q27 27.09 27 66.33 0 39.24-27.1 66.24-27.09 27-66.33 27Zm183.33-166.66q-39.24 0-66.24-27.1-27-27.09-27-66.33 0-39.24 27.1-66.24 27.09-27 66.33-27Q396-835 423-807.91q27 27.1 27 66.34t-27.09 66.24q-27.1 27-66.34 27Zm246.67 0q-39.24 0-66.24-27.1-27-27.09-27-66.33Q510-781 537.09-808q27.1-27 66.34-27t66.24 27.09q27 27.1 27 66.34t-27.1 66.24q-27.09 27-66.33 27Zm183.33 166.66q-39.24 0-66.24-27.09-27-27.09-27-66.33 0-39.24 27.1-66.24 27.09-27 66.33-27 39.24 0 66.24 27.09 27 27.09 27 66.33 0 39.24-27.09 66.24-27.1 27-66.34 27ZM266-75q-43 0-71.17-32.52-28.16-32.51-28.16-76.81 0-45.34 28.83-80 28.83-34.67 59.83-67.34 24.34-25 44-53.5 19.67-28.5 40.67-56.5 26.67-38 60.33-69 33.67-31 79.67-31T560-511q34 30.67 60.67 69.34 20.66 27.99 40.16 56.33 19.5 28.33 43.84 53.66 31 32.67 59.83 67.34 28.83 34.66 28.83 80 0 44.3-28.16 76.81Q737-75 694-75q-54 0-107-9t-107-9q-54 0-107 9t-107 9Z",
-    text: "Disfruta de un espacio amigable en el parque para mascotas"
-  }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ParkActivities__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: "\xBFQu\xE9 hacer un d\xEDa en el parque?",
-    content: "En el parque de Ciudad del Saber, encontrar\xE1s una variedad de actividades para disfrutar. Ofrecemos opciones gratuitas y abiertas a todo el p\xFAblico, perfectas para compartir con tu familia, amigos e incluso tu mascota.",
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
+    language = _useLanguage.language; // Acceder al idioma seleccionado
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState2 = _slicedToArray(_useState, 2),
+    content = _useState2[0],
+    setContent = _useState2[1]; // Estado para guardar el contenido traducido
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState4 = _slicedToArray(_useState3, 2),
+    activities = _useState4[0],
+    setActivities = _useState4[1]; // Estado para guardar las actividades traducidas
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
+    var translations = {
+      es: {
+        title: "¿Qué hacer un día en el parque?",
+        content: "En el parque de Ciudad del Saber, encontrarás una variedad de actividades para disfrutar. Ofrecemos opciones gratuitas y abiertas a todo el público, perfectas para compartir con tu familia, amigos e incluso tu mascota.",
+        activities: [{
+          iconPath: "M281.33-40 403-660.67q5.33-25.66 24.33-39.16 19-13.5 40-13.5T506.5-704q18.17 9.33 29.5 27.33l39.33 64q18.67 31 50.5 55.5 31.84 24.5 74.17 37.5v-73.66h46.67V-40H700v-411.33q-50-11-93.67-37.67-43.66-26.67-77-65.67L502-418l84.67 80.67V-40H520v-242.67l-94.67-90L352-40h-70.67Zm17-400.33L220-455q-12-2.33-20-14.17-8-11.83-5.67-24.83l30-157q5.34-30 30.67-46.5 25.33-16.5 55.33-11.17l39.34 7.67-51.34 260.67Zm235-309q-31 0-53.16-22.17Q458-793.67 458-824.67t22.17-53.16Q502.33-900 533.33-900q31 0 53.17 22.17 22.17 22.16 22.17 53.16 0 31-22.17 53.17t-53.17 22.17Z",
+          text: "Recorre 21km de sendero en nuestra reserva forestal"
+        }, {
+          iconPath: "M720.05-724.67q-31.05 0-53.22-22.11-22.16-22.11-22.16-53.17 0-31.05 22.11-53.22 22.11-22.16 53.17-22.16 31.05 0 53.22 22.11 22.16 22.11 22.16 53.17 0 31.05-22.11 53.22-22.11 22.16-53.17 22.16ZM666.67-80v-330.67q0-33.33-16.84-60-16.83-26.66-46.83-40L642-625q8-25 29.5-40t48.5-15q27 0 48.5 15t29.5 40l102 298.33H793.33V-80H666.67Zm-170-420q-25 0-42.5-17.5t-17.5-42.5q0-25 17.5-42.5t42.5-17.5q25 0 42.5 17.5t17.5 42.5q0 25-17.5 42.5t-42.5 17.5ZM220.05-724.67q-31.05 0-53.22-22.11-22.16-22.11-22.16-53.17 0-31.05 22.11-53.22 22.11-22.16 53.17-22.16 31.05 0 53.22 22.11 22.16 22.11 22.16 53.17 0 31.05-22.11 53.22-22.11 22.16-53.17 22.16ZM146.67-80v-286.67H80v-246.66q0-27.5 19.58-47.09Q119.17-680 146.67-680h146.66q27.5 0 47.09 19.58Q360-640.83 360-613.33v246.66h-66.67V-80H146.67ZM440-80v-166.67h-46.67v-164q0-20.55 14.39-34.94Q422.11-460 442.67-460h108q20.55 0 34.94 14.39Q600-431.22 600-410.67v164h-46.67V-80H440Z",
+          text: "Diviértete en familia en el parque para niños y niñas"
+        }, {
+          iconPath: "M173.24-481.67q-39.24 0-66.24-27.09-27-27.09-27-66.33 0-39.24 27.09-66.24 27.1-27 66.34-27t66.24 27.09q27 27.09 27 66.33 0 39.24-27.1 66.24-27.09 27-66.33 27Zm183.33-166.66q-39.24 0-66.24-27.1-27-27.09-27-66.33 0-39.24 27.1-66.24 27.09-27 66.33-27Q396-835 423-807.91q27 27.1 27 66.34t-27.09 66.24q-27.1 27-66.34 27Zm246.67 0q-39.24 0-66.24-27.1-27-27.09-27-66.33Q510-781 537.09-808q27.1-27 66.34-27t66.24 27.09q27 27.1 27 66.34t-27.1 66.24q-27.09 27-66.33 27Zm183.33 166.66q-39.24 0-66.24-27.09-27-27.09-27-66.33 0-39.24 27.1-66.24 27.09-27 66.33-27 39.24 0 66.24 27.09 27 27.09 27 66.33 0 39.24-27.09 66.24-27.1 27-66.34 27ZM266-75q-43 0-71.17-32.52-28.16-32.51-28.16-76.81 0-45.34 28.83-80 28.83-34.67 59.83-67.34 24.34-25 44-53.5 19.67-28.5 40.67-56.5 26.67-38 60.33-69 33.67-31 79.67-31T560-511q34 30.67 60.67 69.34 20.66 27.99 40.16 56.33 19.5 28.33 43.84 53.66 31 32.67 59.83 67.34 28.83 34.66 28.83 80 0 44.3-28.16 76.81Q737-75 694-75q-54 0-107-9t-107-9q-54 0-107 9t-107 9Z",
+          text: "Disfruta de un espacio amigable en el parque para mascotas"
+        }]
+      },
+      en: {
+        title: "What to do on a day at the park?",
+        content: "At Ciudad del Saber Park, you'll find a variety of activities to enjoy. We offer free and open options for the public, perfect for sharing with your family, friends, and even your pet.",
+        activities: [{
+          iconPath: "M281.33-40 403-660.67q5.33-25.66 24.33-39.16 19-13.5 40-13.5T506.5-704q18.17 9.33 29.5 27.33l39.33 64q18.67 31 50.5 55.5 31.84 24.5 74.17 37.5v-73.66h46.67V-40H700v-411.33q-50-11-93.67-37.67-43.66-26.67-77-65.67L502-418l84.67 80.67V-40H520v-242.67l-94.67-90L352-40h-70.67Zm17-400.33L220-455q-12-2.33-20-14.17-8-11.83-5.67-24.83l30-157q5.34-30 30.67-46.5 25.33-16.5 55.33-11.17l39.34 7.67-51.34 260.67Zm235-309q-31 0-53.16-22.17Q458-793.67 458-824.67t22.17-53.16Q502.33-900 533.33-900q31 0 53.17 22.17 22.17 22.16 22.17 53.16 0 31-22.17 53.17t-53.17 22.17Z",
+          text: "Walk 21km of trail in our forest reserve"
+        }, {
+          iconPath: "M720.05-724.67q-31.05 0-53.22-22.11-22.16-22.11-22.16-53.17 0-31.05 22.11-53.22 22.11-22.16 53.17-22.16 31.05 0 53.22 22.11 22.16 22.11 22.16 53.17 0 31.05-22.11 53.22-22.11 22.16-53.17 22.16ZM666.67-80v-330.67q0-33.33-16.84-60-16.83-26.66-46.83-40L642-625q8-25 29.5-40t48.5-15q27 0 48.5 15t29.5 40l102 298.33H793.33V-80H666.67Zm-170-420q-25 0-42.5-17.5t-17.5-42.5q0-25 17.5-42.5t42.5-17.5q25 0 42.5 17.5t17.5 42.5q0 25-17.5 42.5t-42.5 17.5ZM220.05-724.67q-31.05 0-53.22-22.11-22.16-22.11-22.16-53.17 0-31.05 22.11-53.22 22.11-22.16 53.17-22.16 31.05 0 53.22 22.11 22.16 22.11 22.16 53.17 0 31.05-22.11 53.22-22.11 22.16-53.17 22.16ZM146.67-80v-286.67H80v-246.66q0-27.5 19.58-47.09Q119.17-680 146.67-680h146.66q27.5 0 47.09 19.58Q360-640.83 360-613.33v246.66h-66.67V-80H146.67ZM440-80v-166.67h-46.67v-164q0-20.55 14.39-34.94Q422.11-460 442.67-460h108q20.55 0 34.94 14.39Q600-431.22 600-410.67v164h-46.67V-80H440Z",
+          text: "Have fun with your family at the children's park"
+        }, {
+          iconPath: "M173.24-481.67q-39.24 0-66.24-27.09-27-27.09-27-66.33 0-39.24 27.09-66.24 27.1-27 66.34-27t66.24 27.09q27 27.09 27 66.33 0 39.24-27.1 66.24-27.09 27-66.33 27Zm183.33-166.66q-39.24 0-66.24-27.1-27-27.09-27-66.33 0-39.24 27.1-66.24 27.09-27 66.33-27Q396-835 423-807.91q27 27.1 27 66.34t-27.09 66.24q-27.1 27-66.34 27Zm246.67 0q-39.24 0-66.24-27.1-27-27.09-27-66.33Q510-781 537.09-808q27.1-27 66.34-27t66.24 27.09q27 27.1 27 66.34t-27.1 66.24q-27.09 27-66.33 27Zm183.33 166.66q-39.24 0-66.24-27.09-27-27.09-27-66.33 0-39.24 27.1-66.24 27.09-27 66.33-27 39.24 0 66.24 27.09 27 27.09 27 66.33 0 39.24-27.09 66.24-27.1 27-66.34 27ZM266-75q-43 0-71.17-32.52-28.16-32.51-28.16-76.81 0-45.34 28.83-80 28.83-34.67 59.83-67.34 24.34-25 44-53.5 19.67-28.5 40.67-56.5 26.67-38 60.33-69 33.67-31 79.67-31T560-511q34 30.67 60.67 69.34 20.66 27.99 40.16 56.33 19.5 28.33 43.84 53.66 31 32.67 59.83 67.34 28.83 34.66 28.83 80 0 44.3-28.16 76.81Q737-75 694-75q-54 0-107-9t-107-9q-54 0-107 9t-107 9Z",
+          text: "Enjoy a pet-friendly space at the pet park"
+        }]
+      }
+    };
+
+    // Actualizar el estado con el contenido traducido
+    setContent(translations[language]);
+    setActivities(translations[language].activities);
+  }, [language]); // Dependencia en el idioma
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ParkActivities__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: content.title,
+    content: content.content,
     backgroundImage: "https://images.unsplash.com/photo-1498955472675-532cdee9d6b4?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cGFya3xlbnwwfHwwfHx8MA%3D%3D",
     videoUrl: "https://www.youtube.com/watch?v=aRZ1W2apiDY",
     activities: activities
@@ -4494,7 +5089,9 @@ function NwpParqueSection2() {
 var container = document.getElementById('nwp-parque-section02');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(NwpParqueSection2, {}));
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NwpParqueSection2, {})
+  }));
 }
 
 /***/ }),
