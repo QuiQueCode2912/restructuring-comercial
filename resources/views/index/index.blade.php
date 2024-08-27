@@ -8,8 +8,8 @@
     <div class="nwp-padding-x-container bg-cdsgray700">
         <!-- Tabla de contenidos -->
         <nav class="nwp-container mx-auto"> 
-            <ul class="py-3 flex flex-col md:flex-row md:divide-x divide-cdsgray500 gap-y-2 md:gap-y-0">
-                <li><a class="md:px-6 hover:no-underline hover:text-black font-semibold" href="#nwp-parque-section02 ">Qué hacer</a></li>
+            <ul class="py-3 -ml-0 md:-ml-6 flex flex-col md:flex-row md:divide-x divide-cdsgray500 gap-y-2 md:gap-y-0">
+                <li><a class="md:px-6 hover:no-underline hover:text-black font-semibold" href="#nwp-parque-section02">Qué hacer</a></li>
                 <li><a class="md:px-6 hover:no-underline hover:text-black font-semibold" href="#nwp-venues-table">Espacios del parque</a></li>
                 <li><a class="md:px-6 hover:no-underline hover:text-black font-semibold" href="#nwp-parque-headband">Conéctate</a></li>
                 <li><a class="md:px-6 hover:no-underline hover:text-black font-semibold" href="#nwp-parque-faq">Preguntas frecuentes</a></li>
@@ -18,6 +18,26 @@
     </div>
     <div id="nwp-parque-section01"></div>
     <div id="nwp-parque-section02"></div>
+
+    <!-- Script para cambiar el contenido basado en el idioma -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const language = localStorage.getItem('language') || 'es';
+
+            // Cambia los textos en base al idioma seleccionado
+            if (language === 'es') {
+                document.querySelector('a[href="#nwp-parque-section02"]').textContent = 'Qué hacer';
+                document.querySelector('a[href="#nwp-venues-table"]').textContent = 'Espacios del parque';
+                document.querySelector('a[href="#nwp-parque-headband"]').textContent = 'Conéctate';
+                document.querySelector('a[href="#nwp-parque-faq"]').textContent = 'Preguntas frecuentes';
+            } else if (language === 'en') {
+                document.querySelector('a[href="#nwp-parque-section02"]').textContent = 'What to do';
+                document.querySelector('a[href="#nwp-venues-table"]').textContent = 'Park Spaces';
+                document.querySelector('a[href="#nwp-parque-headband"]').textContent = 'Connect';
+                document.querySelector('a[href="#nwp-parque-faq"]').textContent = 'FAQs';
+            }
+        });
+    </script>
 @endif
 
 <meta name="robots" content="noindex, nofollow">
@@ -48,18 +68,19 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <h6 class="font-bold md:w-1/2 text-4xl">
-                  Descubre un mundo de diversión y bienestar al aire libre
+                <h6 id="venues-title" class="font-bold md:w-1/2 text-4xl">
+                    Descubre un mundo de diversión y bienestar al aire libre
                 </h6>
-                <p class="md:w-1/2 py-4">
-                  Lorem ipsum dolor sit amet consectetur. In elementum iaculis rhoncus pharetra
-                  lectus fermentum. Ultrices felis condimentum nisi ullamcorper. Vel dictum faucibus
-                  diam sed arcu diam nisi. 
+                <p id="venues-description" class="md:w-1/2 py-4">
+                    Lorem ipsum dolor sit amet consectetur. In elementum iaculis rhoncus pharetra
+                    lectus fermentum. Ultrices felis condimentum nisi ullamcorper. Vel dictum faucibus
+                    diam sed arcu diam nisi. 
                 </p>
                 <div class="rounded-lg bg-cdsgray700 font-semibold border-l-8 border-cdsblue flex gap-x-2 p-2 md:w-1/2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class=" stroke-2" height="40px" viewBox="0 -960 960 960" width="40px" fill="#0088ff"><path d="M479.99-280q15.01 0 25.18-10.15 10.16-10.16 10.16-25.17 0-15.01-10.15-25.18-10.16-10.17-25.17-10.17-15.01 0-25.18 10.16-10.16 10.15-10.16 25.17 0 15.01 10.15 25.17Q464.98-280 479.99-280Zm-31.32-155.33h66.66V-684h-66.66v248.67ZM480.18-80q-82.83 0-155.67-31.5-72.84-31.5-127.18-85.83Q143-251.67 111.5-324.56T80-480.33q0-82.88 31.5-155.78Q143-709 197.33-763q54.34-54 127.23-85.5T480.33-880q82.88 0 155.78 31.5Q709-817 763-763t85.5 127Q880-563 880-480.18q0 82.83-31.5 155.67Q817-251.67 763-197.46q-54 54.21-127 85.84Q563-80 480.18-80Zm.15-66.67q139 0 236-97.33t97-236.33q0-139-96.87-236-96.88-97-236.46-97-138.67 0-236 96.87-97.33 96.88-97.33 236.46 0 138.67 97.33 236 97.33 97.33 236.33 97.33ZM480-480Z"/></svg>
-                  Los precios listados pueden variar de acuerdo a recargos por noche,
-                  fin de semana y feriados
+                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-2" height="40px" viewBox="0 -960 960 960" width="40px" fill="#0088ff">
+                        <path d="M479.99-280q15.01 0 25.18-10.15 10.16-10.16 10.16-25.17 0-15.01-10.15-25.18-10.16-10.17-25.17-10.17-15.01 0-25.18 10.16-10.16 10.15-10.16 25.17 0 15.01 10.15 25.17Q464.98-280 479.99-280Zm-31.32-155.33h66.66V-684h-66.66v248.67ZM480.18-80q-82.83 0-155.67-31.5-72.84-31.5-127.18-85.83Q143-251.67 111.5-324.56T80-480.33q0-82.88 31.5-155.78Q143-709 197.33-763q54.34-54 127.23-85.5T480.33-880q82.88 0 155.78 31.5Q709-817 763-763t85.5 127Q880-563 880-480.18q0 82.83-31.5 155.67Q817-251.67 763-197.46q-54 54.21-127 85.84Q563-80 480.18-80Zm.15-66.67q139 0 236-97.33t97-236.33q0-139-96.87-236-96.88-97-236.46-97-138.67 0-236 96.87-97.33 96.88-97.33 236.46 0 138.67 97.33 236 97.33 97.33 236.33 97.33ZM480-480Z"/>
+                    </svg>
+                    <span id="venues-prices">Los precios listados pueden variar de acuerdo a recargos por noche, fin de semana y feriados</span>
                 </div>
             </div>
         </div>
@@ -152,25 +173,27 @@
                                       <dd></dd>
                                   </dl>
                                   <dl>
-                                      <dd class="font-bold">
-                                          Desde
-                                          @if($sppd < $ppd && $sppd > 0)
-                                              <span class="strike">$<?php echo $ppd ?></span>
-                                              <span class="text-danger">$<?php echo $sppd < $ppd ? $sppd : $ppd ?></span>
-                                          @else
-                                              @if(($ppd < $pph && $ppd > 0 ) || ($pvax != 'parque-cds' && $pvax != 'Parque Ciudad del Saber'))
-                                                  $<?php echo $sppd < $ppd ? $sppd : $ppd ?>
-                                              @else
-                                                  $<?php echo $pph?>
-                                              @endif
-                                          @endif
-                                          <span>
-                                            @if($pvax != 'parque-cds' && $pvax != 'Parque Ciudad del Saber')
-                                                por día*
-                                            @else
-                                                por hora*
-                                            @endif
-                                          </span>
+                                      <dd class="font-bold price-text">
+                                            Desde
+                                            <span class="price-value">
+                                                <?php if ($sppd < $ppd && $sppd > 0) : ?>
+                                                    <span class="strike">$<?php echo $ppd ?></span>
+                                                    <span class="text-danger">$<?php echo $sppd < $ppd ? $sppd : $ppd ?></span>
+                                                <?php else : ?>
+                                                    <?php if (($ppd < $pph && $ppd > 0 ) || ($pvax != 'parque-cds' && $pvax != 'Parque Ciudad del Saber')) : ?>
+                                                        $<?php echo $sppd < $ppd ? $sppd : $ppd ?>
+                                                    <?php else : ?>
+                                                        $<?php echo $pph?>
+                                                    <?php endif ?>
+                                                <?php endif ?>
+                                            </span>
+                                            <span class="price-unit">
+                                                <?php if ($pvax != 'parque-cds' && $pvax != 'Parque Ciudad del Saber') : ?>
+                                                    por día*
+                                                <?php else : ?>
+                                                    por hora*
+                                                <?php endif ?>
+                                            </span>
                                       </dd>
                                   </dl>
                                   <?php
@@ -204,7 +227,7 @@
                               <!-- <p>
                                   <a href="#security-policies" data-bs-toggle="modal" data-bs-target="#security-policies">Revisa la política  para este venue</a>
                               </p> -->
-                              <a href="<?php echo $venue['url'] ?>" class="font-semibold hover:no-underline hover:text-cdsblue flex gap-x-2 items-center">
+                              <a href="<?php echo $venue['url'] ?>" class="font-semibold hover:no-underline hover:text-cdsblue flex gap-x-2 items-center reserve-now">
                                 Reserva Ahora
                                 <div class="h-8 w-8 bg-cdsblue rounded-full grid place-content-center">
                                   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="32px" fill="#e8eaed"><path d="M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z"/></svg>
@@ -216,6 +239,39 @@
                     </div>
                 <?php endforeach ?>
             <?php endif ?>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const language = localStorage.getItem('language') || 'es';
+
+                    // Traducción de "Desde {precio} la hora" y "Desde {precio} por día"
+                    document.querySelectorAll('.price-text').forEach(function(element) {
+                        if (language === 'es') {
+                            element.childNodes[0].textContent = 'Desde ';
+                        } else if (language === 'en') {
+                            element.childNodes[0].textContent = 'From ';
+                        }
+                    });
+
+                    // Traducción de "por hora" y "por día"
+                    document.querySelectorAll('.price-unit').forEach(function(element) {
+                        if (language === 'es') {
+                            element.textContent = element.textContent.includes('día') ? 'por día*' : 'por hora*';
+                        } else if (language === 'en') {
+                            element.textContent = element.textContent.includes('día') ? 'per day*' : 'per hour*';
+                        }
+                    });
+
+                    // Traducción de "Reserva Ahora"
+                    document.querySelectorAll('.reserve-now').forEach(function(element) {
+                        if (language === 'es') {
+                            element.childNodes[0].textContent = 'Reserva Ahora';
+                        } else if (language === 'en') {
+                            element.childNodes[0].textContent = 'Book Now';
+                        }
+                    });
+                });
+            </script>
+
 
             <!--<div class="col-12">
                 <p class="text-center" style="color:#0088ff">
@@ -230,6 +286,24 @@
             </div>-->
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const language = localStorage.getItem('language') || 'es';
+
+            // Cambia los textos en base al idioma seleccionado
+            if (language === 'es') {
+                document.getElementById('venues-title').textContent = 'Descubre un mundo de diversión y bienestar al aire libre';
+                document.getElementById('venues-description').textContent = 'Lorem ipsum dolor sit amet consectetur. In elementum iaculis rhoncus pharetra lectus fermentum. Ultrices felis condimentum nisi ullamcorper. Vel dictum faucibus diam sed arcu diam nisi.';
+                document.getElementById('venues-prices').textContent = 'Los precios listados pueden variar de acuerdo a recargos por noche, fin de semana y feriados';
+            } else if (language === 'en') {
+                document.getElementById('venues-title').textContent = 'Discover a world of outdoor fun and wellness';
+                document.getElementById('venues-description').textContent = 'Lorem ipsum dolor sit amet consectetur. In elementum iaculis rhoncus pharetra lectus fermentum. Ultrices felis condimentum nisi ullamcorper. Vel dictum faucibus diam sed arcu diam nisi.';
+                document.getElementById('venues-prices').textContent = 'Listed prices may vary depending on nightly, weekend, and holiday surcharges';
+            }
+        });
+    </script>
+
 </div>
 
 

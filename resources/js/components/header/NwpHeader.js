@@ -3,222 +3,220 @@ import { createRoot } from 'react-dom/client';
 import LogoCds from '../icons/LogoCds';
 import { ArrowIcon, ArrowIconRight, ArrowWhitBg, RedirectArrow } from '../icons/Arrows';
 import NwpMobileHeader from './NwpMobileHeader';
-
-const menuOptions = [
-  {
-    label: 'Conócenos',
-    subOptions: [
-      { label: 'Qué es Ciudad del Saber', url: 'https://tailwindcss.com' },
-      { label: 'Historia', url: '#' },
-      {
-        label: 'Impacto',
-        subOptions: [
-          { label: 'Ir a Impacto', url: '#', arrow: true },
-          { label: 'Académico', url: 'https://tailwindcss.com/docs/container' },
-          { label: 'Empresarial', url: '#' },
-          { label: 'Humanitario', url: '#' },
-          { label: 'Innovación y emprendimiento', url: '#' },
-          { label: 'Proyecto País', url: '#' },
-          { label: 'Sostenibilidad', url: '#' },
-        ],
-      },
-      {
-        label: 'Fundación Ciudad del Saber',
-        subOptions: [
-          { label: 'Gobierno corporativo', url: '#' },
-          { label: 'Cultura organizacional', url: '#' },
-          { label: 'Sé parte del equipo', url: '#' },
-          { label: 'Programas de pasantías', url: '#' },
-        ],
-      },
-      { label: 'Publicaciones', url: '#', external: true },
-    ],
-  },
-  {
-    label: 'Afíliate',
-    subOptions: [
-      { label: 'Vincula tu organización', url: '#', arrow: true },
-      {
-        label: 'Tipos de organizaciones',
-        subOptions: [
-          { label: 'Empresa', url: '#' },
-          { label: 'Programas académicos', url: '#' },
-          { label: 'Organismos internacionales y ONG', url: '#' },
-          { label: 'Entidades gubernamentales', url: '#' },
-        ],
-      },
-      { label: 'Directorio de afiliados', url: '#' },
-    ],
-  },
-  {
-    label: 'Emprende',
-    subOptions: [
-      { label: 'Ir a Centro de Innovación', url: '#', arrow: true },
-      { label: 'Conviértete en miembro', url: '#' },
-      {
-        label: 'Programas de startups y emprendedores',
-        subOptions: [
-          { label: 'Programa Innovar', url: '#' },
-          { label: 'Canal de Empresarias', url: '#' },
-          { label: 'Incubación de startups', url: '#' },
-          { label: 'Aceleración de startups', url: '#' },
-          { label: 'Emprendimientos avanzados', url: '#' },
-        ],
-      },
-      { label: 'Directorio startups y emprendedores', url: '#' },
-      { label: 'Estudio Global de Emprendimiento', url: '#' },
-      { label: 'Portal Aprende en Ciudad del Saber', url: '#', external: true },
-    ],
-  },
-  {
-    label: 'Ven al Campus',
-    subOptions: [
-      { label: 'Conoce el Campus', url: '#' },
-      {
-        label: 'La Plaza',
-        subOptions: [
-          { label: 'Ir a La Plaza', url: '#', arrow: true },
-          { label: 'Oferta gastronómica y servicios comerciales', url: '#' },
-          { label: 'Mercado Urbano', url: '#' },
-        ],
-      },
-      {
-        label: 'Parque Ciudad del Saber',
-        subOptions: [
-          { label: 'Ir a Parque Ciudad del Saber', url: '#', arrow: true },
-          { label: 'Piscina', url: '#' },
-          { label: 'Canchas de baloncesto', url: '#' },
-          { label: 'Cancha de golf', url: '#' },
-          { label: 'Cancha de ráquetbol', url: '#' },
-          { label: 'Cancha de tenis', url: '#' },
-          { label: 'Cancha de voleibol', url: '#' },
-          { label: 'Gimnasio', url: '#' },
-          { label: 'Gazebos', url: '#' },
-        ],
-      },
-      { label: 'Parque Los Lagos', url: '#' },
-      { label: 'Reserva Forestal', url: '#' },
-      { label: 'Espacios convivies', url: '#' },
-      { label: 'Casa Museo', url: '#' },
-      { label: 'Centro de Reciclaje', url: '#' },
-    ],
-  },
-  {
-    label: 'Reserva Espacios',
-    subOptions: [
-      {
-        label: 'Espacios para eventos y reuniones',
-        subOptions: [
-          { label: 'Ir a Espacios para eventos y reuniones', url: '#', arrow: true },
-          { label: 'Teatro Ateneo', url: '#' },
-          { label: 'Centro de Convenciones', url: '#' },
-          { label: 'Salas de reuniones', url: '#' },
-          { label: 'Aulas', url: '#' },
-          { label: 'Casa Museo', url: '#' },
-          { label: 'Casa 39', url: '#' },
-          { label: 'Auditorio Innova', url: '#' },
-        ],
-      },
-      {
-        label: 'Espacios para recreación y deporte',
-        subOptions: [
-          { label: 'Ir a Parque Ciudad del Saber', url: '#', arrow: true },
-          { label: 'Piscina', url: '#' },
-          { label: 'Canchas de baloncesto', url: '#' },
-          { label: 'Cancha de golf', url: '#' },
-          { label: 'Cancha de ráquetbol', url: '#' },
-          { label: 'Cancha de tenis', url: '#' },
-          { label: 'Cancha de voleibol', url: '#' },
-          { label: 'Gimnasio', url: '#' },
-          { label: 'Gazebos', url: '#' },
-        ],
-      },
-    ],
-  },
-  { label: 'Eventos', url: '#' },
-];
+import { LanguageProvider, useLanguage } from '../context/LanguageProvider';
+import LanguageSelect from './LanguageSelect';
 
 export default function NwpHeader() {
-  // Estado para rastrear qué menú principal está abierto
+  const { language } = useLanguage();  // Acceder al idioma seleccionado
+
+  // Definir las traducciones para los textos
+  const translations = {
+    es: {
+      directory: 'Directorio',
+      news: 'Noticias',
+      opportunities: 'Oportunidades',
+      clientPortal: 'Portal de clientes',
+    },
+    en: {
+      directory: 'Directory',
+      news: 'News',
+      opportunities: 'Opportunities',
+      clientPortal: 'Client Portal',
+    },
+  };
+
+  const menuOptions = [
+    {
+      label: language === 'es' ? 'Conócenos' : 'About Us',
+      subOptions: [
+        { label: language === 'es' ? 'Qué es Ciudad del Saber' : 'What is Ciudad del Saber', url: 'https://tailwindcss.com' },
+        { label: language === 'es' ? 'Historia' : 'History', url: '#' },
+        {
+          label: language === 'es' ? 'Impacto' : 'Impact',
+          subOptions: [
+            { label: language === 'es' ? 'Ir a Impacto' : 'Go to Impact', url: '#', arrow: true },
+            { label: language === 'es' ? 'Académico' : 'Academic', url: 'https://tailwindcss.com/docs/container' },
+            { label: language === 'es' ? 'Empresarial' : 'Business', url: '#' },
+            { label: language === 'es' ? 'Humanitario' : 'Humanitarian', url: '#' },
+            { label: language === 'es' ? 'Innovación y emprendimiento' : 'Innovation and Entrepreneurship', url: '#' },
+            { label: language === 'es' ? 'Proyecto País' : 'Country Project', url: '#' },
+            { label: language === 'es' ? 'Sostenibilidad' : 'Sustainability', url: '#' },
+          ],
+        },
+        {
+          label: language === 'es' ? 'Fundación Ciudad del Saber' : 'Ciudad del Saber Foundation',
+          subOptions: [
+            { label: language === 'es' ? 'Gobierno corporativo' : 'Corporate Governance', url: '#' },
+            { label: language === 'es' ? 'Cultura organizacional' : 'Organizational Culture', url: '#' },
+            { label: language === 'es' ? 'Sé parte del equipo' : 'Join the Team', url: '#' },
+            { label: language === 'es' ? 'Programas de pasantías' : 'Internship Programs', url: '#' },
+          ],
+        },
+        { label: language === 'es' ? 'Publicaciones' : 'Publications', url: '#', external: true },
+      ],
+    },
+    {
+      label: language === 'es' ? 'Afíliate' : 'Join Us',
+      subOptions: [
+        { label: language === 'es' ? 'Vincula tu organización' : 'Link Your Organization', url: '#', arrow: true },
+        {
+          label: language === 'es' ? 'Tipos de organizaciones' : 'Types of Organizations',
+          subOptions: [
+            { label: language === 'es' ? 'Empresa' : 'Company', url: '#' },
+            { label: language === 'es' ? 'Programas académicos' : 'Academic Programs', url: '#' },
+            { label: language === 'es' ? 'Organismos internacionales y ONG' : 'International Organizations and NGOs', url: '#' },
+            { label: language === 'es' ? 'Entidades gubernamentales' : 'Government Entities', url: '#' },
+          ],
+        },
+        { label: language === 'es' ? 'Directorio de afiliados' : 'Affiliate Directory', url: '#' },
+      ],
+    },
+    {
+      label: language === 'es' ? 'Emprende' : 'Entrepreneurship',
+      subOptions: [
+        { label: language === 'es' ? 'Ir a Centro de Innovación' : 'Go to Innovation Center', url: '#', arrow: true },
+        { label: language === 'es' ? 'Conviértete en miembro' : 'Become a Member', url: '#' },
+        {
+          label: language === 'es' ? 'Programas de startups y emprendedores' : 'Startup and Entrepreneur Programs',
+          subOptions: [
+            { label: language === 'es' ? 'Programa Innovar' : 'Innovate Program', url: '#' },
+            { label: language === 'es' ? 'Canal de Empresarias' : 'Women Entrepreneurs Channel', url: '#' },
+            { label: language === 'es' ? 'Incubación de startups' : 'Startup Incubation', url: '#' },
+            { label: language === 'es' ? 'Aceleración de startups' : 'Startup Acceleration', url: '#' },
+            { label: language === 'es' ? 'Emprendimientos avanzados' : 'Advanced Ventures', url: '#' },
+          ],
+        },
+        { label: language === 'es' ? 'Directorio startups y emprendedores' : 'Startup and Entrepreneur Directory', url: '#' },
+        { label: language === 'es' ? 'Estudio Global de Emprendimiento' : 'Global Entrepreneurship Study', url: '#' },
+        { label: language === 'es' ? 'Portal Aprende en Ciudad del Saber' : 'Learn at Ciudad del Saber Portal', url: '#', external: true },
+      ],
+    },
+    {
+      label: language === 'es' ? 'Ven al Campus' : 'Visit the Campus',
+      subOptions: [
+        { label: language === 'es' ? 'Conoce el Campus' : 'Explore the Campus', url: '#' },
+        {
+          label: language === 'es' ? 'La Plaza' : 'The Plaza',
+          subOptions: [
+            { label: language === 'es' ? 'Ir a La Plaza' : 'Go to The Plaza', url: '#', arrow: true },
+            { label: language === 'es' ? 'Oferta gastronómica y servicios comerciales' : 'Gastronomic and Commercial Services', url: '#' },
+            { label: language === 'es' ? 'Mercado Urbano' : 'Urban Market', url: '#' },
+          ],
+        },
+        {
+          label: language === 'es' ? 'Parque Ciudad del Saber' : 'Ciudad del Saber Park',
+          subOptions: [
+            { label: language === 'es' ? 'Ir a Parque Ciudad del Saber' : 'Go to Ciudad del Saber Park', url: '#', arrow: true },
+            { label: language === 'es' ? 'Piscina' : 'Swimming Pool', url: '#' },
+            { label: language === 'es' ? 'Canchas de baloncesto' : 'Basketball Courts', url: '#' },
+            { label: language === 'es' ? 'Cancha de golf' : 'Golf Course', url: '#' },
+            { label: language === 'es' ? 'Cancha de ráquetbol' : 'Racquetball Court', url: '#' },
+            { label: language === 'es' ? 'Cancha de tenis' : 'Tennis Court', url: '#' },
+            { label: language === 'es' ? 'Cancha de voleibol' : 'Volleyball Court', url: '#' },
+            { label: language === 'es' ? 'Gimnasio' : 'Gym', url: '#' },
+            { label: language === 'es' ? 'Gazebos' : 'Gazebos', url: '#' },
+          ],
+        },
+        { label: language === 'es' ? 'Parque Los Lagos' : 'Los Lagos Park', url: '#' },
+        { label: language === 'es' ? 'Reserva Forestal' : 'Forest Reserve', url: '#' },
+        { label: language === 'es' ? 'Espacios convivies' : 'Gathering Spaces', url: '#' },
+        { label: language === 'es' ? 'Casa Museo' : 'Museum House', url: '#' },
+        { label: language === 'es' ? 'Centro de Reciclaje' : 'Recycling Center', url: '#' },
+      ],
+    },
+    {
+      label: language === 'es' ? 'Reserva Espacios' : 'Reserve Spaces',
+      subOptions: [
+        {
+          label: language === 'es' ? 'Espacios para eventos y reuniones' : 'Event and Meeting Spaces',
+          subOptions: [
+            { label: language === 'es' ? 'Ir a Espacios para eventos y reuniones' : 'Go to Event and Meeting Spaces', url: '#', arrow: true },
+            { label: language === 'es' ? 'Teatro Ateneo' : 'Ateneo Theater', url: '#' },
+            { label: language === 'es' ? 'Centro de Convenciones' : 'Convention Center', url: '#' },
+            { label: language === 'es' ? 'Salas de reuniones' : 'Meeting Rooms', url: '#' },
+            { label: language === 'es' ? 'Aulas' : 'Classrooms', url: '#' },
+            { label: language === 'es' ? 'Casa Museo' : 'Museum House', url: '#' },
+            { label: language === 'es' ? 'Casa 39' : 'House 39', url: '#' },
+            { label: language === 'es' ? 'Auditorio Innova' : 'Innova Auditorium', url: '#' },
+          ],
+        },
+        {
+          label: language === 'es' ? 'Espacios para recreación y deporte' : 'Recreation and Sports Spaces',
+          subOptions: [
+            { label: language === 'es' ? 'Ir a Parque Ciudad del Saber' : 'Go to Ciudad del Saber Park', url: '#', arrow: true },
+            { label: language === 'es' ? 'Piscina' : 'Swimming Pool', url: '#' },
+            { label: language === 'es' ? 'Canchas de baloncesto' : 'Basketball Courts', url: '#' },
+            { label: language === 'es' ? 'Cancha de golf' : 'Golf Course', url: '#' },
+            { label: language === 'es' ? 'Cancha de ráquetbol' : 'Racquetball Court', url: '#' },
+            { label: language === 'es' ? 'Cancha de tenis' : 'Tennis Court', url: '#' },
+            { label: language === 'es' ? 'Cancha de voleibol' : 'Volleyball Court', url: '#' },
+            { label: language === 'es' ? 'Gimnasio' : 'Gym', url: '#' },
+            { label: language === 'es' ? 'Gazebos' : 'Gazebos', url: '#' },
+          ],
+        },
+      ],
+    },
+    { label: language === 'es' ? 'Eventos' : 'Events', url: '#' },
+  ];
+
+  // Estados y lógica de manejo de menús
   const [openMenuIndex, setOpenMenuIndex] = useState(null);
-  
-  // Estado para rastrear qué submenú está abierto
   const [openSubMenuIndex, setOpenSubMenuIndex] = useState(null);
-  
-  // Referencia para el timeout que cierra el menú después de un tiempo
   const closeTimeoutRef = useRef(null);
-  
-  // Referencia al menú para ajustar la posición si se sale de la pantalla
   const menuRef = useRef(null);
-  
-  // Referencia al submenú para manejar su visibilidad
   const subMenuRef = useRef(null);
 
-  // Función que se llama cuando se hace clic en un menú
   const handleMenuClick = (index) => {
-    clearTimeout(closeTimeoutRef.current); // Limpiar cualquier timeout activo
+    clearTimeout(closeTimeoutRef.current);
     if (openMenuIndex === index) {
-      // Si se hace clic en un menú ya abierto, se cierra
       setOpenMenuIndex(null);
       setOpenSubMenuIndex(null);
     } else {
-      // Si se hace clic en un menú diferente, se abre
       setOpenMenuIndex(index);
       setOpenSubMenuIndex(null);
     }
   };
 
-  // Función que se llama cuando el mouse entra en un menú principal
   const handleMouseEnter = (index) => {
-    clearTimeout(closeTimeoutRef.current); // Limpiar cualquier timeout activo
-    setOpenMenuIndex(index); // Abrir el menú correspondiente
-    setOpenSubMenuIndex(null); // Cerrar cualquier submenú abierto
+    clearTimeout(closeTimeoutRef.current);
+    setOpenMenuIndex(index);
+    setOpenSubMenuIndex(null);
   };
 
-  // Función que se llama cuando el mouse sale del menú
   const handleMouseLeave = () => {
-    // Establecer un timeout para cerrar el menú después de un pequeño retraso
     closeTimeoutRef.current = setTimeout(() => {
       setOpenMenuIndex(null);
       setOpenSubMenuIndex(null);
-    }, 100); // 50 ms de retraso para permitir la navegación
+    }, 100);
   };
 
   const handleMouseLeave1 = () => {
-    
-      setOpenMenuIndex(null);
-      setOpenSubMenuIndex(null);
-
+    setOpenMenuIndex(null);
+    setOpenSubMenuIndex(null);
   };
 
-  // Función que se llama cuando el mouse entra en un submenú
   const handleSubMenuEnter = (index) => {
-    clearTimeout(closeTimeoutRef.current); // Limpiar cualquier timeout activo
-    setOpenSubMenuIndex(index); // Abrir el submenú correspondiente
+    clearTimeout(closeTimeoutRef.current);
+    setOpenSubMenuIndex(index);
   };
 
-  // Función que se llama cuando el mouse sale de un submenú
   const handleSubMenuLeave = () => {
-    // Establecer un timeout para cerrar el submenú después de un retraso
     closeTimeoutRef.current = setTimeout(() => {
       setOpenSubMenuIndex(null);
-    }, 100); // 100 ms de retraso
+    }, 100);
   };
 
-  // Efecto que ajusta la posición del menú si se sale de la pantalla
   useEffect(() => {
     if (menuRef.current) {
       const rect = menuRef.current.getBoundingClientRect();
       const overflowRight = rect.right > window.innerWidth - 40;
       if (overflowRight) {
-        // Si el menú se sale por la derecha, ajustarlo
         menuRef.current.style.left = `-${rect.right - window.innerWidth + 120}px`;
       } else {
-        // Posición normal del menú
         menuRef.current.style.left = `-80px`;
       }
     }
-  }, [openMenuIndex]); // Efecto se dispara cuando openMenuIndex cambia
+  }, [openMenuIndex]);
 
   return (
     <>
@@ -228,17 +226,25 @@ export default function NwpHeader() {
           <div className='nwp-container mx-auto h-full flex items-center justify-end gap-x-8 divide-x divide-white'>
             <ul className='flex gap-x-8'>
               <li>
-                <a className='text-white font-semibold ' href='#'>Directorio</a>
+                <a className='text-white font-semibold ' href='#'>
+                  {translations[language].directory}
+                </a>
               </li>
               <li>
-                <a className='text-white font-semibold ' href='#'>Noticias</a>
+                <a className='text-white font-semibold ' href='#'>
+                  {translations[language].news}
+                </a>
               </li>
               <li>
-                <a className='text-white font-semibold ' href='#'>Oportunidades</a>
+                <a className='text-white font-semibold ' href='#'>
+                  {translations[language].opportunities}
+                </a>
               </li>
             </ul>
-            <a className='text-white font-semibold  pl-8' href='#'>Portal de clientes</a>
-            <button className='text-white font-semibold  pl-8'>🌍</button>
+            <a className='text-white font-semibold pl-8' href='#'>
+              {translations[language].clientPortal}
+            </a>
+            <LanguageSelect />
           </div>
         </div>
         {/* Contenedor principal con logo y menú */}
@@ -290,10 +296,10 @@ export default function NwpHeader() {
                                   onMouseLeave={handleSubMenuLeave}
                                 >
                                   {subOption.url ? (
-                                    <a href={subOption.url} className="flex items-center justify-between px-4  hover:no-underline h-full w-full hover:text-black border-r-8 border-cdsgray700 hover:border-cdsblue">
+                                    <a href={subOption.url} className="flex items-center justify-between px-4 hover:no-underline h-full w-full hover:text-black border-r-8 border-cdsgray700 hover:border-cdsblue">
                                       {subOption.label}
                                       {subOption.arrow && <ArrowWhitBg className="rounded-full bg-cdsblue p-1 h-8 w-8" />}
-                                      {subOption.external && <RedirectArrow className=" h-6 w-6" />}
+                                      {subOption.external && <RedirectArrow className="h-6 w-6" />}
                                     </a>
                                   ) : (
                                     <div className='flex items-center justify-between px-4 h-full w-full hover:text-black border-r-8 border-cdsgray700 hover:border-cdsblue'>
@@ -314,7 +320,7 @@ export default function NwpHeader() {
                               {openSubMenuIndex !== null && option.subOptions[openSubMenuIndex].subOptions && (
                                 <ul>
                                   {option.subOptions[openSubMenuIndex].subOptions.map((subOption, subIndex) => (
-                                    <li key={subIndex} className="h-12 font-semibold bg-white  flex items-center justify-between">
+                                    <li key={subIndex} className="h-12 font-semibold bg-white flex items-center justify-between">
                                       <a href={subOption.url} className="flex items-center px-4 h-full w-full hover:bg-cdsgray600 hover:no-underline hover:text-black">
                                         {subOption.label}
                                         {subOption.arrow && <ArrowWhitBg className="ml-2 rounded-full bg-cdsblue p-1 h-8 w-8" />}
@@ -344,5 +350,9 @@ export default function NwpHeader() {
 const container = document.getElementById('nwp-header');
 if (container) {
   const root = createRoot(container);
-  root.render(<NwpHeader />);
+  root.render(
+    <LanguageProvider>
+      <NwpHeader />
+    </LanguageProvider>
+  );
 }
