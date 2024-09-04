@@ -1,13 +1,13 @@
 import React from 'react';
 
-const PublicSpaceHero2 = ({ title, content, buttonLabel, onButtonClick, image }) => {
+const ContentSectionWithAnImage = ({ title, content, buttonLabel, onButtonClick, image }) => {
   return (
     <>
       <div className='md:relative nwp-padding-x-container md:h-[600px] bg-white'>
-        <div className='mx-auto nwp-container md:grid md:grid-cols-2 md:h-full md:gap-x-8'>
-          <div className='flex flex-col md:col-span-1 gap-y-4 justify-center md:h-full pb-20 md:pb-0 pt-20'>
-            <h3 className='font-bold text-3xl md:text-4xl'>{title}</h3>
-            <p className='pb-2'>{content}</p>
+        <div className='mx-auto nwp-container grid grid-cols-1 md:grid-cols-2 md:h-full md:gap-x-8'>
+          <div className='flex flex-col md:col-span-1 gap-y-4 justify-center md:h-full pb-10 md:pb-0 pt-20'>
+            <h3 className='font-bold text-3xl md:text-5xl'>{title}</h3>
+            <p className='pb-2 text-lg'>{content}</p>
             <button className='font-semibold text-start flex gap-x-2 items-center' onClick={onButtonClick}>
               {buttonLabel}
               <div className="bg-cdsblue rounded-full h-8 w-8 grid place-content-center "> 
@@ -17,14 +17,18 @@ const PublicSpaceHero2 = ({ title, content, buttonLabel, onButtonClick, image })
               </div>
             </button>
           </div>
-          <div className='md:col-span-1 '></div>
+          <div className='md:col-span-1 '>
+          </div>
         </div>
         <div className='hidden  md:absolute md:left-1/2 md:top-0 col-span-1 text-white font-bold md:grid grid-cols-1 h-[600px]'>
           <img src={image} alt="Piscina" className='w-[1200px] h-[600px] object-cover' />
         </div>
       </div>
+      <div className=' md:hidden h-[374px]'>
+        <img src={image} alt="Piscina" className='w-full  h-[374px] object-cover' />
+      </div>
     </>
   );
 };
 
-export default PublicSpaceHero2;
+export default ContentSectionWithAnImage;

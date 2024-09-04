@@ -68,10 +68,10 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <h6 id="venues-title" class="font-bold md:w-1/2 text-4xl">
+                <h6 id="venues-title" class="font-bold md:w-1/2 text-3xl md:text-5xl">
                     Descubre un mundo de diversión y bienestar al aire libre
                 </h6>
-                <p id="venues-description" class="md:w-1/2 py-4">
+                <p id="venues-description" class="md:w-1/2 py-4 text-lg">
                     Lorem ipsum dolor sit amet consectetur. In elementum iaculis rhoncus pharetra
                     lectus fermentum. Ultrices felis condimentum nisi ullamcorper. Vel dictum faucibus
                     diam sed arcu diam nisi. 

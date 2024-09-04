@@ -33,43 +33,10 @@
 @if(request()->is('parque-cds/piscina'))
     <div id="nwp-hero-piscina"></div>
     <div id="nwp-piscina-section-1"></div>
+    <div id="nwp-piscina-content-whit-video-section"></div>
 @endif
 
-
-<div class="container" style="margin:0 auto; padding:0; position:relative">
-  <?php if ($images) : ?>
-    <?php foreach ($images as $image) : ?>
-      <?php $image_path = substr($image, 0, strrpos($image, '.')) . '_2048.' . substr($image, strrpos($image, '.') + 1) ?>
-      <a href="<?php echo $image_path ?>" data-lightbox="venue" title="<h1><?php echo $venueName ?></h1>
-      <!-- COVID <a href='#security-policies' data-bs-toggle='modal' data-bs-target='#security-policies'>Revisa la política COVID para este venue</a> -->
-      " <?php if ($image == $images[0]) : ?>class="gallery" <?php endif ?>><?php if ($image == $images[0]) : ?>FOTOGALERÍA <span>+</span><?php endif ?></a>
-    <?php endforeach ?>
-    @if($venueName == 'Ateneo')
-    <a href="https://izi.travel/es/91de-ateneo/es" target="_blank" class="gallery" style="transform:translate(-100px, 36px); background:#000000; color:#ffffff">AUDIOGUIA</a>
-    @endif
-  <?php endif ?>
-</div>
-<div id="home-carousel" class="carousel slide venue-main-image" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="container">
-        @if (session()->get('is-cds-user') == true)
-        <h3 style="top:330px;">Sección de Empleados</h3>
-        @endif
-        @if (session()->get('is-cds-customer') == true)
-        <h3 style="top:330px;">Sección de Clientes</h3>
-        @endif
-      </div>
-      <?php $rand = rand(0, count($images) - 1) ?>
-      <?php if (isset($images[$rand])) : ?>
-        <img src="<?php echo $images[$rand] ? substr($images[$rand], 0, strrpos($images[$rand], '.')) . '_2048.' . substr($images[$rand], strrpos($images[$rand], '.') + 1) : '/assets/images/placeholder-image.jpg' ?>" class="d-block" alt="...">
-      <?php endif ?>
-
-    </div>
-  </div>
-</div>
-
-<div class="container venue-detail">
+<div class=" venue-detail mt-40 nwp-padding-x-container">
   <div class="row">
     <div class="col-12">
       <h6>{{ $venueName }}</h6>
@@ -83,13 +50,13 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-12">
+  <div class="row mt-20 mx-auto nwp-container ">
+    <div class="col-12  px-0">
       <div class="venues-list" style="box-shadow:none">
         <div class="container">
           <div class="row">
-            <div class="col-12 col-md-9" style="padding-right:40px; padding-left:0">
-              <div class="row shortcuts">
+            <div class="col-12 col-md-12" style="padding-right:40px; padding-left:0">
+              <!--<div class="row shortcuts">
                 @if($show_shortcuts ?? true && $venueName != 'Ateneo')
                 <div class="col-12 col-md-4">
                   <a href="#description">
@@ -109,23 +76,40 @@
                   <a href="#venue-location">Ubicación</a>
                 </div>
                 @endif
-              </div>
-              <a name="description"></a>
-
-              <h3 style="color:#505152; margin:30px 0 5px">Venue: 
+              </div>-->
+              <!--<a name="description"></a>-->
+              @if(request()->is('parque-cds/piscina'))
+                  <p class="font-bold text-4xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar</p>
+              @endif
+              @if(request()->is('parque-cds/piscina'))
+                  <p class="text-lg md:w-3/5 py-3">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
+                  </p>
+              @endif
+              <h3 class="hidden" style="color:#505152; margin:30px 0 5px ">
                 @if ($parent->id == '02i3m0000092sJ1AAI')
                    La Casa
                 @endif
                 <?php echo ($parent && $parent->id != '02i3m0000092sJ1AAI') ? $parent->name : '' ?></h3>
               @if($show_not_included ?? true)
               <small>
-                <span style="color:#0088ff">/*
+                <span style="color:#0088ff">
                 @if($venueName != 'Parque Ciudad del Saber')
-                Los precios no incluyen catering ni impuestos locales
+                  <div class="rounded-lg bg-cdsgray700 font-semibold border-l-8 border-cdsblue flex gap-x-2 p-2 md:w-3/5">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="stroke-2" height="40px" viewBox="0 -960 960 960" width="40px" fill="#0088ff">
+                          <path d="M479.99-280q15.01 0 25.18-10.15 10.16-10.16 10.16-25.17 0-15.01-10.15-25.18-10.16-10.17-25.17-10.17-15.01 0-25.18 10.16-10.16 10.15-10.16 25.17 0 15.01 10.15 25.17Q464.98-280 479.99-280Zm-31.32-155.33h66.66V-684h-66.66v248.67ZM480.18-80q-82.83 0-155.67-31.5-72.84-31.5-127.18-85.83Q143-251.67 111.5-324.56T80-480.33q0-82.88 31.5-155.78Q143-709 197.33-763q54.34-54 127.23-85.5T480.33-880q82.88 0 155.78 31.5Q709-817 763-763t85.5 127Q880-563 880-480.18q0 82.83-31.5 155.67Q817-251.67 763-197.46q-54 54.21-127 85.84Q563-80 480.18-80Zm.15-66.67q139 0 236-97.33t97-236.33q0-139-96.87-236-96.88-97-236.46-97-138.67 0-236 96.87-97.33 96.88-97.33 236.46 0 138.67 97.33 236 97.33 97.33 236.33 97.33ZM480-480Z"/>
+                      </svg>
+                      <span class="text-black text-lg" id="venues-prices">Los precios no incluyen catering ni impuestos locales</span>
+                  </div>
                 @else
-                Los precios listados pueden variar de acuerdo a recargos por noche, fin de semana, y feriados
+                  <div class="rounded-lg bg-cdsgray700 font-semibold border-l-8 border-cdsblue flex gap-x-2 p-2 md:w-3/5">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="stroke-2" height="40px" viewBox="0 -960 960 960" width="40px" fill="#0088ff">
+                          <path d="M479.99-280q15.01 0 25.18-10.15 10.16-10.16 10.16-25.17 0-15.01-10.15-25.18-10.16-10.17-25.17-10.17-15.01 0-25.18 10.16-10.16 10.15-10.16 25.17 0 15.01 10.15 25.17Q464.98-280 479.99-280Zm-31.32-155.33h66.66V-684h-66.66v248.67ZM480.18-80q-82.83 0-155.67-31.5-72.84-31.5-127.18-85.83Q143-251.67 111.5-324.56T80-480.33q0-82.88 31.5-155.78Q143-709 197.33-763q54.34-54 127.23-85.5T480.33-880q82.88 0 155.78 31.5Q709-817 763-763t85.5 127Q880-563 880-480.18q0 82.83-31.5 155.67Q817-251.67 763-197.46q-54 54.21-127 85.84Q563-80 480.18-80Zm.15-66.67q139 0 236-97.33t97-236.33q0-139-96.87-236-96.88-97-236.46-97-138.67 0-236 96.87-97.33 96.88-97.33 236.46 0 138.67 97.33 236 97.33 97.33 236.33 97.33ZM480-480Z"/>
+                      </svg>
+                      <span class="text-black text-lg" id="venues-prices">Los precios listados pueden variar de acuerdo a recargos por noche, fin de semana y feriados</span>
+                  </div>
                 @endif
-                /</span>
+                </span>
               </small>
               @endif
               <?php $venueRoute = $venue; ?>

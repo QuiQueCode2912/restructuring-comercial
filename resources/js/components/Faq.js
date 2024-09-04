@@ -18,7 +18,7 @@ export default function Faq({ faqTitle, faqItems = [] }) {
               {faqItems.map((item, index) => (
                 <div className="accordion-item border-b border-gray-300" key={index}>
                   <button 
-                    className={`w-full font-bold text-left py-4  flex justify-between items-center focus:outline-none ${activeIndex === index ? 'text-cdsblue' : 'text-gray-800'}`}
+                    className={`w-full font-bold text-left text-lg py-4  flex justify-between items-center focus:outline-none ${activeIndex === index ? 'text-cdsblue' : 'text-gray-800'}`}
                     aria-expanded={activeIndex === index}
                     onClick={() => toggleAccordion(index)}
                   >
@@ -30,7 +30,7 @@ export default function Faq({ faqTitle, faqItems = [] }) {
                     />
                   </button>
                   <div className={`accordion-content ${activeIndex === index ? 'opacity-100 max-h-screen py-2' : 'opacity-0 max-h-0'} overflow-hidden transition-all duration-200`}>
-                    <p className="text-gray-600">{item.content}</p>
+                    <p className="text-gray-600 text-lg">{item.content}</p>
                   </div>
                 </div>
               ))}

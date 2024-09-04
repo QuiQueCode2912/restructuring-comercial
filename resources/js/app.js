@@ -8,12 +8,13 @@ require('./components/footer/NwpFooter')
 // React components parque
 require('./components/parque/NwpParqueHero')
 require('./components/parque/NwpParqueSection1')
-require('./components/parque/NwpParqueSection2')
+require('./components/parque/NwpParqueContentWithVideoSection')
 require('./components/parque/NwpHeadband')
 require('./components/parque/NwpFaq')
 
 require('./components/parque/piscina/NwpVenueHero')
-require('./components/parque/piscina/NwpPiscinaSection1')
+require('./components/parque/piscina/NwpPiscinaContentSectionWithAnImage')
+require('./components/parque/piscina/NwpPiscinaContentWithVideoSection')
 
 //common components
 require('./components/FeaturedSpaces')
