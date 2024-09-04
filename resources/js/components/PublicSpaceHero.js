@@ -24,8 +24,8 @@ const PublicSpaceHero = ({ title, content, buttonLabel, onButtonClick, images })
       <div className='md:relative nwp-padding-x-container md:h-[600px] bg-white'>
         <div className='mx-auto nwp-container md:grid md:grid-cols-2 md:h-full md:gap-x-8'>
           <div className='flex flex-col md:col-span-1 gap-y-4 justify-center md:h-full pb-20 md:pb-0 pt-20'>
-            <h3 className='font-bold text-3xl md:text-4xl'>{title}</h3>
-            <p className='pb-2'>{content}</p>
+            <h3 className='font-bold text-3xl md:text-5xl'>{title}</h3>
+            <p className='pb-2 text-lg'>{content}</p>
             <button className='font-semibold text-start flex gap-x-2 items-center' onClick={onButtonClick}>
               {buttonLabel}
               <div className="bg-cdsblue rounded-full h-8 w-8 grid place-content-center"> 

@@ -1804,11 +1804,12 @@ __webpack_require__(/*! ./components/footer/NwpFooter */ "./resources/js/compone
 // React components parque
 __webpack_require__(/*! ./components/parque/NwpParqueHero */ "./resources/js/components/parque/NwpParqueHero.js");
 __webpack_require__(/*! ./components/parque/NwpParqueSection1 */ "./resources/js/components/parque/NwpParqueSection1.js");
-__webpack_require__(/*! ./components/parque/NwpParqueSection2 */ "./resources/js/components/parque/NwpParqueSection2.js");
+__webpack_require__(/*! ./components/parque/NwpParqueContentWithVideoSection */ "./resources/js/components/parque/NwpParqueContentWithVideoSection.js");
 __webpack_require__(/*! ./components/parque/NwpHeadband */ "./resources/js/components/parque/NwpHeadband.js");
 __webpack_require__(/*! ./components/parque/NwpFaq */ "./resources/js/components/parque/NwpFaq.js");
 __webpack_require__(/*! ./components/parque/piscina/NwpVenueHero */ "./resources/js/components/parque/piscina/NwpVenueHero.js");
-__webpack_require__(/*! ./components/parque/piscina/NwpPiscinaSection1 */ "./resources/js/components/parque/piscina/NwpPiscinaSection1.js");
+__webpack_require__(/*! ./components/parque/piscina/NwpPiscinaContentSectionWithAnImage */ "./resources/js/components/parque/piscina/NwpPiscinaContentSectionWithAnImage.js");
+__webpack_require__(/*! ./components/parque/piscina/NwpPiscinaContentWithVideoSection */ "./resources/js/components/parque/piscina/NwpPiscinaContentWithVideoSection.js");
 
 //common components
 __webpack_require__(/*! ./components/FeaturedSpaces */ "./resources/js/components/FeaturedSpaces.js");
@@ -1921,12 +1922,13 @@ function Academics() {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: " col-span-2",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h4", {
-          className: "text-4xl lg:text-5xl font-bold py-4 text-black",
+          className: "text-3xl md:text-5xl font-bold py-4 text-black",
           children: content.title
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-          className: "pb-4",
+          className: "pb-4 text-lg",
           children: content.description
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
+          className: "text-lg",
           children: [content.contactText, " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
             className: "text-cdsblue font-semibold underline",
             href: "#",
@@ -1944,6 +1946,181 @@ if (container) {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Academics, {})
   }));
 }
+
+/***/ }),
+
+/***/ "./resources/js/components/ContentSectionWithAnImage.js":
+/*!**************************************************************!*\
+  !*** ./resources/js/components/ContentSectionWithAnImage.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+var ContentSectionWithAnImage = function ContentSectionWithAnImage(_ref) {
+  var title = _ref.title,
+    content = _ref.content,
+    buttonLabel = _ref.buttonLabel,
+    onButtonClick = _ref.onButtonClick,
+    image = _ref.image;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "md:relative nwp-padding-x-container md:h-[600px] bg-white",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "mx-auto nwp-container grid grid-cols-1 md:grid-cols-2 md:h-full md:gap-x-8",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "flex flex-col md:col-span-1 gap-y-4 justify-center md:h-full pb-10 md:pb-0 pt-20",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+            className: "font-bold text-3xl md:text-5xl",
+            children: title
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+            className: "pb-2 text-lg",
+            children: content
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
+            className: "font-semibold text-start flex gap-x-2 items-center",
+            onClick: onButtonClick,
+            children: [buttonLabel, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+              className: "bg-cdsblue rounded-full h-8 w-8 grid place-content-center ",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+                xmlns: "http://www.w3.org/2000/svg",
+                height: "28px",
+                viewBox: "0 -960 960 960",
+                width: "28px",
+                fill: "#FFFFFF",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                  d: "M480-315.33 284.67-510.67l47.33-48L446.67-444v-356h66.66v356L628-558.67l47.33 48L480-315.33ZM226.67-160q-27 0-46.84-19.83Q160-199.67 160-226.67V-362h66.67v135.33h506.66V-362H800v135.33q0 27-19.83 46.84Q760.33-160 733.33-160H226.67Z"
+                })
+              })
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "md:col-span-1 "
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "hidden  md:absolute md:left-1/2 md:top-0 col-span-1 text-white font-bold md:grid grid-cols-1 h-[600px]",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          src: image,
+          alt: "Piscina",
+          className: "w-[1200px] h-[600px] object-cover"
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: " md:hidden h-[374px]",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+        src: image,
+        alt: "Piscina",
+        className: "w-full  h-[374px] object-cover"
+      })
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ContentSectionWithAnImage);
+
+/***/ }),
+
+/***/ "./resources/js/components/ContentWithVideoSection.js":
+/*!************************************************************!*\
+  !*** ./resources/js/components/ContentWithVideoSection.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_player__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-player */ "./node_modules/react-player/lib/index.js");
+/* harmony import */ var react_player__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_player__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+var ContentWithVideoSection = function ContentWithVideoSection(_ref) {
+  var headed = _ref.headed,
+    title = _ref.title,
+    content = _ref.content,
+    backgroundImage = _ref.backgroundImage,
+    videoUrl = _ref.videoUrl,
+    activities = _ref.activities;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("section", {
+    className: "relative nwp-padding-x-container bg-cover bg-center z-10",
+    style: {
+      backgroundImage: "url('".concat(backgroundImage, "')")
+    },
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "absolute inset-0 bg-black opacity-80"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "relative nwp-container flex flex-col md:flex-row z-10 mx-auto py-16 md:gap-x-4 lg:py-24",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "text-white max-w-3xl md:w-1/2 flex flex-col justify-between",
+        children: [!headed && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "h-1 w-12 bg-cdsverde mb-4"
+        }), headed && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          className: "uppercase font-semibold text-cdsblue text-lg mb-4",
+          children: headed
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+          className: "text-3xl font-bold tracking-tight sm:text-5xl ",
+          children: title
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          className: "mt-4 text-lg leading-6",
+          children: content
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
+          className: "mt-8 space-y-4",
+          children: activities.map(function (activity, index) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
+              className: "flex items-center gap-x-1",
+              children: [activity.iconPath ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+                xmlns: "http://www.w3.org/2000/svg",
+                height: "40px",
+                viewBox: "0 -960 960 960",
+                width: "40px",
+                fill: "#FFFFFF",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                  d: activity.iconPath
+                })
+              }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                className: "text-white",
+                children: "\u2022"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                className: "text-lg",
+                children: activity.text
+              })]
+            }, index);
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "mt-8 hidden md:flex justify-center md:w-1/2 py-4 md:py-0",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)((react_player__WEBPACK_IMPORTED_MODULE_2___default()), {
+          url: videoUrl,
+          className: "w-full max-w-lg rounded-lg shadow-lg",
+          controls: true,
+          width: "100%",
+          height: "100%"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "mt-8 md:hidden justify-center h-64 py-4 md:py-0",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)((react_player__WEBPACK_IMPORTED_MODULE_2___default()), {
+          url: videoUrl,
+          className: "w-full max-w-lg rounded-lg shadow-lg",
+          controls: true,
+          width: "100%",
+          height: "100%"
+        })
+      })]
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ContentWithVideoSection);
 
 /***/ }),
 
@@ -1999,7 +2176,7 @@ function Faq(_ref) {
               return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
                 className: "accordion-item border-b border-gray-300",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
-                  className: "w-full font-bold text-left py-4  flex justify-between items-center focus:outline-none ".concat(activeIndex === index ? 'text-cdsblue' : 'text-gray-800'),
+                  className: "w-full font-bold text-left text-lg py-4  flex justify-between items-center focus:outline-none ".concat(activeIndex === index ? 'text-cdsblue' : 'text-gray-800'),
                   "aria-expanded": activeIndex === index,
                   onClick: function onClick() {
                     return toggleAccordion(index);
@@ -2015,7 +2192,7 @@ function Faq(_ref) {
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
                   className: "accordion-content ".concat(activeIndex === index ? 'opacity-100 max-h-screen py-2' : 'opacity-0 max-h-0', " overflow-hidden transition-all duration-200"),
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-                    className: "text-gray-600",
+                    className: "text-gray-600 text-lg",
                     children: item.content
                   })
                 })]
@@ -2582,10 +2759,10 @@ var ParkActivities = function ParkActivities(_ref) {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "text-white max-w-3xl md:w-1/2",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-          className: "text-3xl font-bold tracking-tight sm:text-4xl",
+          className: "text-3xl font-bold tracking-tight sm:text-5xl",
           children: title
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-          className: "mt-4 text-base leading-6",
+          className: "mt-4 text-lg leading-6",
           children: content
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
           className: "mt-8 space-y-4",
@@ -2602,6 +2779,7 @@ var ParkActivities = function ParkActivities(_ref) {
                   d: activity.iconPath
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                className: "text-lg",
                 children: activity.text
               })]
             }, index);
@@ -2681,10 +2859,10 @@ var PublicSpaceHero = function PublicSpaceHero(_ref) {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "flex flex-col md:col-span-1 gap-y-4 justify-center md:h-full pb-20 md:pb-0 pt-20",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-            className: "font-bold text-3xl md:text-4xl",
+            className: "font-bold text-3xl md:text-5xl",
             children: title
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-            className: "pb-2",
+            className: "pb-2 text-lg",
             children: content
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
             className: "font-semibold text-start flex gap-x-2 items-center",
@@ -2785,76 +2963,6 @@ var PublicSpaceHero = function PublicSpaceHero(_ref) {
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PublicSpaceHero);
-
-/***/ }),
-
-/***/ "./resources/js/components/PublicSpaceHero2.js":
-/*!*****************************************************!*\
-  !*** ./resources/js/components/PublicSpaceHero2.js ***!
-  \*****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-var PublicSpaceHero2 = function PublicSpaceHero2(_ref) {
-  var title = _ref.title,
-    content = _ref.content,
-    buttonLabel = _ref.buttonLabel,
-    onButtonClick = _ref.onButtonClick,
-    image = _ref.image;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      className: "md:relative nwp-padding-x-container md:h-[600px] bg-white",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "mx-auto nwp-container md:grid md:grid-cols-2 md:h-full md:gap-x-8",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "flex flex-col md:col-span-1 gap-y-4 justify-center md:h-full pb-20 md:pb-0 pt-20",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-            className: "font-bold text-3xl md:text-4xl",
-            children: title
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-            className: "pb-2",
-            children: content
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
-            className: "font-semibold text-start flex gap-x-2 items-center",
-            onClick: onButtonClick,
-            children: [buttonLabel, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-              className: "bg-cdsblue rounded-full h-8 w-8 grid place-content-center ",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
-                xmlns: "http://www.w3.org/2000/svg",
-                height: "28px",
-                viewBox: "0 -960 960 960",
-                width: "28px",
-                fill: "#FFFFFF",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                  d: "M480-315.33 284.67-510.67l47.33-48L446.67-444v-356h66.66v356L628-558.67l47.33 48L480-315.33ZM226.67-160q-27 0-46.84-19.83Q160-199.67 160-226.67V-362h66.67v135.33h506.66V-362H800v135.33q0 27-19.83 46.84Q760.33-160 733.33-160H226.67Z"
-                })
-              })
-            })]
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "md:col-span-1 "
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "hidden  md:absolute md:left-1/2 md:top-0 col-span-1 text-white font-bold md:grid grid-cols-1 h-[600px]",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-          src: image,
-          alt: "Piscina",
-          className: "w-[1200px] h-[600px] object-cover"
-        })
-      })]
-    })
-  });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PublicSpaceHero2);
 
 /***/ }),
 
@@ -3334,36 +3442,95 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _icons_Icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../icons/Icons */ "./resources/js/components/icons/Icons.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
 
 
 
 var LanguageSelect = function LanguageSelect() {
-  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_1__.useLanguage)(),
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.useLanguage)(),
     language = _useLanguage.language,
-    setLanguage = _useLanguage.setLanguage;
-  var handleLanguageChange = function handleLanguageChange(newLanguage) {
-    setLanguage(newLanguage);
-    window.location.reload(); // Recargar la página
+    setLanguage = _useLanguage.setLanguage; // Corrección aquí, asumiendo que useLanguage devuelve un objeto
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState2 = _slicedToArray(_useState, 2),
+    isOpen = _useState2[0],
+    setIsOpen = _useState2[1];
+  var menuRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var handleLanguageChange = function handleLanguageChange(lang) {
+    setLanguage(lang);
+    setIsOpen(false);
+    window.location.reload(); // Si es necesario recargar la página
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
-      children: ["Idioma seleccionado: ", language]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+  var labelButton = function labelButton(language) {
+    if (language === 'es') {
+      return 'ES';
+    }
+    if (language === 'en') {
+      return 'EN';
+    }
+  };
+
+  // Manejar clics fuera del menú para cerrarlo
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var handleClickOutside = function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return function () {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    ref: menuRef,
+    style: {
+      position: 'relative',
+      display: 'inline-block'
+    },
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "text-white font-semibold ml-4 flex gap-2 cursor-pointer",
       onClick: function onClick() {
-        return handleLanguageChange('es');
+        return setIsOpen(!isOpen);
       },
-      disabled: language === 'es' // Deshabilitar si ya está en español
-      ,
-      children: "Cambiar a Espa\xF1ol"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-      onClick: function onClick() {
-        return handleLanguageChange('en');
-      },
-      disabled: language === 'en' // Deshabilitar si ya está en inglés
-      ,
-      children: "Cambiar a Ingl\xE9s"
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_icons_Icons__WEBPACK_IMPORTED_MODULE_1__.IconLanguage, {
+        color: "#fff",
+        size: "24px",
+        rotate: 0
+      }), labelButton(language), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_icons_Icons__WEBPACK_IMPORTED_MODULE_1__.IconArrowDown, {
+        color: "#fff",
+        size: "20px",
+        rotate: isOpen ? 180 : 0,
+        className: "ml-2 transition-transform duration-200"
+      })]
+    }), isOpen && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
+      className: "absolute list-none right-0 overflow-hidden mt-1 w-[200px] rounded-lg bg-cdsgray700 font-semibold z-50 transition-opacity duration-200 opacity-100",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "px-4 py-3 cursor-pointer hover:bg-gray-200",
+          onClick: function onClick() {
+            return handleLanguageChange('es');
+          },
+          children: "Espa\xF1ol (spanish)"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "px-4 py-3 cursor-pointer hover:bg-gray-200",
+          onClick: function onClick() {
+            return handleLanguageChange('en');
+          },
+          children: "English"
+        })
+      })]
     })]
   });
 };
@@ -3390,13 +3557,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _NwpMobileHeader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./NwpMobileHeader */ "./resources/js/components/header/NwpMobileHeader.js");
 /* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
 /* harmony import */ var _LanguageSelect__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./LanguageSelect */ "./resources/js/components/header/LanguageSelect.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _icons_Icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../icons/Icons */ "./resources/js/components/icons/Icons.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 
@@ -3729,125 +3898,126 @@ function NwpHeader() {
       }
     }
   }, [openMenuIndex]);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("header", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("header", {
       className: "hidden lg:block fixed top-0 left-0 right-0 z-20 h-[120px]",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
         className: "mx-auto bg-cdsblue h-12 px-8",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
           className: "nwp-container mx-auto h-full flex items-center justify-end gap-x-8 divide-x divide-white",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("ul", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("ul", {
             className: "flex gap-x-8",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("li", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
-                className: "text-white font-semibold ",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("a", {
+                className: "text-white font-semibold hover:no-underline hover:text-cdsgray500 ",
                 href: "#",
                 children: translations[language].directory
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("li", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
-                className: "text-white font-semibold ",
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("a", {
+                className: "text-white font-semibold hover:no-underline hover:text-cdsgray500 ",
                 href: "#",
                 children: translations[language].news
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("li", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
-                className: "text-white font-semibold ",
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("a", {
+                className: "text-white font-semibold hover:no-underline hover:text-cdsgray500 ",
                 href: "#",
                 children: translations[language].opportunities
               })
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
-            className: "text-white font-semibold pl-8",
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("a", {
+            className: "text-white font-semibold pl-8 hover:no-underline hover:text-cdsgray500",
             href: "#",
             children: translations[language].clientPortal
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_LanguageSelect__WEBPACK_IMPORTED_MODULE_6__["default"], {})]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_LanguageSelect__WEBPACK_IMPORTED_MODULE_6__["default"], {})]
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
         className: "bg-white border-b border-cdsgray600 mx-auto h-[72px] px-8",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
           className: "nwp-container mx-auto bg-white h-full flex items-center justify-between z-20",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_icons_LogoCds__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_icons_LogoCds__WEBPACK_IMPORTED_MODULE_2__["default"], {
             width: 160,
             height: 48
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "flex h-full items-center gap-x-4 lg:gap-x-8",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("nav", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("ul", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("nav", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("ul", {
                 className: "flex gap-x-4",
                 children: menuOptions.map(function (option, index) {
-                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("li", {
+                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("li", {
                     className: "relative",
                     onMouseEnter: function onMouseEnter() {
                       return handleMouseEnter(index);
                     },
                     onMouseLeave: handleMouseLeave1,
-                    children: [option.subOptions ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("button", {
+                    children: [option.subOptions ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("button", {
                       onClick: function onClick() {
                         return handleMenuClick(index);
                       },
                       className: "focus:outline-none group font-semibold flex items-center transition-colors hover:text-cdsblue h-full duration-200 z-20 ".concat(openMenuIndex === index ? 'text-cdsblue ' : 'text-gray-800'),
-                      children: [option.label, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowIcon, {
+                      children: [option.label, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_icons_Icons__WEBPACK_IMPORTED_MODULE_7__.IconArrowDown, {
                         color: openMenuIndex === index ? '#0088ff' : '#000',
-                        className: "w-5 h-5 group-hover:fill-cdsblue",
-                        rotate: openMenuIndex === index
+                        size: "20px",
+                        rotate: openMenuIndex === index ? 180 : 0,
+                        className: "ml-2"
                       })]
-                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("a", {
                       href: option.url,
                       className: "text-gray-800 font-semibold hover:no-underline hover:text-cdsblue transition-colors duration-200 h-full flex items-center",
                       children: option.label
-                    }), openMenuIndex === index && option.subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+                    }), openMenuIndex === index && option.subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                       ref: menuRef,
                       onMouseEnter: function onMouseEnter() {
                         return clearTimeout(closeTimeoutRef.current);
                       },
                       onMouseLeave: handleMouseLeave,
                       className: "absolute z-10 pt-2",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                         className: "flex w-[800px] rounded-md overflow-hidden bg-white border border-cdsgray600 ",
-                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("ul", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("ul", {
                           className: "w-1/2 py-6 bg-cdsgray700",
                           children: option.subOptions.map(function (subOption, subIndex) {
-                            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("li", {
+                            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("li", {
                               className: "hover:bg-white h-12 font-semibold flex items-center justify-between group",
                               onMouseEnter: function onMouseEnter() {
                                 return handleSubMenuEnter(subIndex);
                               },
                               onMouseLeave: handleSubMenuLeave,
-                              children: subOption.url ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("a", {
+                              children: subOption.url ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("a", {
                                 href: subOption.url,
                                 className: "flex items-center justify-between px-4 hover:no-underline h-full w-full hover:text-black border-r-8 border-cdsgray700 hover:border-cdsblue",
-                                children: [subOption.label, subOption.arrow && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowWhitBg, {
+                                children: [subOption.label, subOption.arrow && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowWhitBg, {
                                   className: "rounded-full bg-cdsblue p-1 h-8 w-8"
-                                }), subOption.external && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.RedirectArrow, {
+                                }), subOption.external && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.RedirectArrow, {
                                   className: "h-6 w-6"
                                 })]
-                              }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                              }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                                 className: "flex items-center justify-between px-4 h-full w-full hover:text-black border-r-8 border-cdsgray700 hover:border-cdsblue",
-                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
                                   className: "",
                                   children: subOption.label
-                                }), subOption.subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowIconRight, {
+                                }), subOption.subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowIconRight, {
                                   className: "ml-2 h-6 w-6"
                                 })]
                               })
                             }, subIndex);
                           })
-                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                           className: "w-1/2 bg-cdsgray200 py-4",
                           onMouseEnter: function onMouseEnter() {
                             return clearTimeout(closeTimeoutRef.current);
                           },
                           onMouseLeave: handleSubMenuLeave,
                           ref: subMenuRef,
-                          children: openSubMenuIndex !== null && option.subOptions[openSubMenuIndex].subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("ul", {
+                          children: openSubMenuIndex !== null && option.subOptions[openSubMenuIndex].subOptions && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("ul", {
                             children: option.subOptions[openSubMenuIndex].subOptions.map(function (subOption, subIndex) {
-                              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("li", {
+                              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("li", {
                                 className: "h-12 font-semibold bg-white flex items-center justify-between",
-                                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("a", {
+                                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("a", {
                                   href: subOption.url,
                                   className: "flex items-center px-4 h-full w-full hover:bg-cdsgray600 hover:no-underline hover:text-black",
-                                  children: [subOption.label, subOption.arrow && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowWhitBg, {
+                                  children: [subOption.label, subOption.arrow && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_3__.ArrowWhitBg, {
                                     className: "ml-2 rounded-full bg-cdsblue p-1 h-8 w-8"
                                   })]
                                 })
@@ -3864,7 +4034,7 @@ function NwpHeader() {
           })]
         })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_NwpMobileHeader__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_NwpMobileHeader__WEBPACK_IMPORTED_MODULE_4__["default"], {
       menuOptions: menuOptions
     })]
   });
@@ -3872,8 +4042,8 @@ function NwpHeader() {
 var container = document.getElementById('nwp-header');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_5__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(NwpHeader, {})
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_5__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(NwpHeader, {})
   }));
 }
 
@@ -4257,12 +4427,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   IconArrowDown: () => (/* binding */ IconArrowDown),
 /* harmony export */   IconArrowRight: () => (/* binding */ IconArrowRight),
 /* harmony export */   IconHome: () => (/* binding */ IconHome),
+/* harmony export */   IconLanguage: () => (/* binding */ IconLanguage),
 /* harmony export */   RedirectArrow: () => (/* binding */ RedirectArrow)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
+
+//Icono de una casita
 
 var IconHome = function IconHome(_ref) {
   var _ref$className = _ref.className,
@@ -4404,6 +4577,36 @@ var RedirectArrow = function RedirectArrow(_ref5) {
     },
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
       d: "M18 19H6C5.45 19 5 18.55 5 18V6C5 5.45 5.45 5 6 5H11C11.55 5 12 4.55 12 4C12 3.45 11.55 3 11 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V13C21 12.45 20.55 12 20 12C19.45 12 19 12.45 19 13V18C19 18.55 18.55 19 18 19ZM14 4C14 4.55 14.45 5 15 5H17.59L8.46 14.13C8.07 14.52 8.07 15.15 8.46 15.54C8.85 15.93 9.48 15.93 9.87 15.54L19 6.41V9C19 9.55 19.45 10 20 10C20.55 10 21 9.55 21 9V3H15C14.45 3 14 3.45 14 4Z"
+    })
+  });
+};
+
+//Icono de lenguaje
+var IconLanguage = function IconLanguage(_ref6) {
+  var _ref6$className = _ref6.className,
+    className = _ref6$className === void 0 ? '' : _ref6$className,
+    _ref6$color = _ref6.color,
+    color = _ref6$color === void 0 ? '#e8eaed' : _ref6$color,
+    _ref6$size = _ref6.size,
+    size = _ref6$size === void 0 ? '24px' : _ref6$size,
+    _ref6$rotate = _ref6.rotate,
+    rotate = _ref6$rotate === void 0 ? 0 : _ref6$rotate,
+    _ref6$ariaLabel = _ref6.ariaLabel,
+    ariaLabel = _ref6$ariaLabel === void 0 ? 'language icon' : _ref6$ariaLabel;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: size,
+    viewBox: "0 -960 960 960",
+    width: size,
+    fill: color,
+    className: className,
+    "aria-label": ariaLabel,
+    role: "img",
+    style: {
+      transform: "rotate(".concat(rotate, "deg)")
+    },
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      d: "M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q83 0 155.5 31.5t127 86q54.5 54.5 86 127T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Zm0-82q26-36 45-75t31-83H404q12 44 31 83t45 75Zm-104-16q-18-33-31.5-68.5T322-320H204q29 50 72.5 87t99.5 55Zm208 0q56-18 99.5-55t72.5-87H638q-9 38-22.5 73.5T584-178ZM170-400h136q-3-20-4.5-39.5T300-480q0-21 1.5-40.5T306-560H170q-5 20-7.5 39.5T160-480q0 21 2.5 40.5T170-400Zm216 0h188q3-20 4.5-39.5T580-480q0-21-1.5-40.5T574-560H386q-3 20-4.5 39.5T380-480q0 21 1.5 40.5T386-400Zm268 0h136q5-20 7.5-39.5T800-480q0-21-2.5-40.5T790-560H654q3 20 4.5 39.5T660-480q0 21-1.5 40.5T654-400Zm-16-240h118q-29-50-72.5-87T584-782q18 33 31.5 68.5T638-640Zm-234 0h152q-12-44-31-83t-45-75q-26 36-45 75t-31 83Zm-200 0h118q9-38 22.5-73.5T376-782q-56 18-99.5 55T204-640Z"
     })
   });
 };
@@ -4837,6 +5040,107 @@ if (container) {
 
 /***/ }),
 
+/***/ "./resources/js/components/parque/NwpParqueContentWithVideoSection.js":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/parque/NwpParqueContentWithVideoSection.js ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ NwpParqueContentWithVideoSection)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _ParkActivities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../ParkActivities */ "./resources/js/components/ParkActivities.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var _ContentWithVideoSection__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ContentWithVideoSection */ "./resources/js/components/ContentWithVideoSection.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+
+
+function NwpParqueContentWithVideoSection() {
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
+    language = _useLanguage.language; // Acceder al idioma seleccionado
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState2 = _slicedToArray(_useState, 2),
+    content = _useState2[0],
+    setContent = _useState2[1]; // Estado para guardar el contenido traducido
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState4 = _slicedToArray(_useState3, 2),
+    activities = _useState4[0],
+    setActivities = _useState4[1]; // Estado para guardar las actividades traducidas
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
+    var translations = {
+      es: {
+        headed: "Entrada gratis",
+        title: "¿Qué hacer un día en el parque?",
+        content: "En el parque de Ciudad del Saber, encontrarás una variedad de actividades para disfrutar. Ofrecemos opciones gratuitas y abiertas a todo el público, perfectas para compartir con tu familia, amigos e incluso tu mascota.",
+        activities: [{
+          iconPath: "M281.33-40 403-660.67q5.33-25.66 24.33-39.16 19-13.5 40-13.5T506.5-704q18.17 9.33 29.5 27.33l39.33 64q18.67 31 50.5 55.5 31.84 24.5 74.17 37.5v-73.66h46.67V-40H700v-411.33q-50-11-93.67-37.67-43.66-26.67-77-65.67L502-418l84.67 80.67V-40H520v-242.67l-94.67-90L352-40h-70.67Zm17-400.33L220-455q-12-2.33-20-14.17-8-11.83-5.67-24.83l30-157q5.34-30 30.67-46.5 25.33-16.5 55.33-11.17l39.34 7.67-51.34 260.67Zm235-309q-31 0-53.16-22.17Q458-793.67 458-824.67t22.17-53.16Q502.33-900 533.33-900q31 0 53.17 22.17 22.17 22.16 22.17 53.16 0 31-22.17 53.17t-53.17 22.17Z",
+          text: "Recorre 21km de sendero en nuestra reserva forestal"
+        }, {
+          iconPath: "M720.05-724.67q-31.05 0-53.22-22.11-22.16-22.11-22.16-53.17 0-31.05 22.11-53.22 22.11-22.16 53.17-22.16 31.05 0 53.22 22.11 22.16 22.11 22.16 53.17 0 31.05-22.11 53.22-22.11 22.16-53.17 22.16ZM666.67-80v-330.67q0-33.33-16.84-60-16.83-26.66-46.83-40L642-625q8-25 29.5-40t48.5-15q27 0 48.5 15t29.5 40l102 298.33H793.33V-80H666.67Zm-170-420q-25 0-42.5-17.5t-17.5-42.5q0-25 17.5-42.5t42.5-17.5q25 0 42.5 17.5t17.5 42.5q0 25-17.5 42.5t-42.5 17.5ZM220.05-724.67q-31.05 0-53.22-22.11-22.16-22.11-22.16-53.17 0-31.05 22.11-53.22 22.11-22.16 53.17-22.16 31.05 0 53.22 22.11 22.16 22.11 22.16 53.17 0 31.05-22.11 53.22-22.11 22.16-53.17 22.16ZM146.67-80v-286.67H80v-246.66q0-27.5 19.58-47.09Q119.17-680 146.67-680h146.66q27.5 0 47.09 19.58Q360-640.83 360-613.33v246.66h-66.67V-80H146.67ZM440-80v-166.67h-46.67v-164q0-20.55 14.39-34.94Q422.11-460 442.67-460h108q20.55 0 34.94 14.39Q600-431.22 600-410.67v164h-46.67V-80H440Z",
+          text: "Diviértete en familia en el parque para niños y niñas"
+        }, {
+          iconPath: "M173.24-481.67q-39.24 0-66.24-27.09-27-27.09-27-66.33 0-39.24 27.09-66.24 27.1-27 66.34-27t66.24 27.09q27 27.09 27 66.33 0 39.24-27.1 66.24-27.09 27-66.33 27Zm183.33-166.66q-39.24 0-66.24-27.1-27-27.09-27-66.33 0-39.24 27.1-66.24 27.09-27 66.33-27Q396-835 423-807.91q27 27.1 27 66.34t-27.09 66.24q-27.1 27-66.34 27Zm246.67 0q-39.24 0-66.24-27.1-27-27.09-27-66.33Q510-781 537.09-808q27.1-27 66.34-27t66.24 27.09q27 27.1 27 66.34t-27.1 66.24q-27.09 27-66.33 27Zm183.33 166.66q-39.24 0-66.24-27.09-27-27.09-27-66.33 0-39.24 27.1-66.24 27.09-27 66.33-27 39.24 0 66.24 27.09 27 27.09 27 66.33 0 39.24-27.09 66.24-27.1 27-66.34 27ZM266-75q-43 0-71.17-32.52-28.16-32.51-28.16-76.81 0-45.34 28.83-80 28.83-34.67 59.83-67.34 24.34-25 44-53.5 19.67-28.5 40.67-56.5 26.67-38 60.33-69 33.67-31 79.67-31T560-511q34 30.67 60.67 69.34 20.66 27.99 40.16 56.33 19.5 28.33 43.84 53.66 31 32.67 59.83 67.34 28.83 34.66 28.83 80 0 44.3-28.16 76.81Q737-75 694-75q-54 0-107-9t-107-9q-54 0-107 9t-107 9Z",
+          text: "Disfruta de un espacio amigable en el parque para mascotas"
+        }]
+      },
+      en: {
+        headed: "Free entry",
+        title: "What to do on a day at the park?",
+        content: "At Ciudad del Saber Park, you'll find a variety of activities to enjoy. We offer free and open options for the public, perfect for sharing with your family, friends, and even your pet.",
+        activities: [{
+          iconPath: "M281.33-40 403-660.67q5.33-25.66 24.33-39.16 19-13.5 40-13.5T506.5-704q18.17 9.33 29.5 27.33l39.33 64q18.67 31 50.5 55.5 31.84 24.5 74.17 37.5v-73.66h46.67V-40H700v-411.33q-50-11-93.67-37.67-43.66-26.67-77-65.67L502-418l84.67 80.67V-40H520v-242.67l-94.67-90L352-40h-70.67Zm17-400.33L220-455q-12-2.33-20-14.17-8-11.83-5.67-24.83l30-157q5.34-30 30.67-46.5 25.33-16.5 55.33-11.17l39.34 7.67-51.34 260.67Zm235-309q-31 0-53.16-22.17Q458-793.67 458-824.67t22.17-53.16Q502.33-900 533.33-900q31 0 53.17 22.17 22.17 22.16 22.17 53.16 0 31-22.17 53.17t-53.17 22.17Z",
+          text: "Walk 21km of trail in our forest reserve"
+        }, {
+          iconPath: "M720.05-724.67q-31.05 0-53.22-22.11-22.16-22.11-22.16-53.17 0-31.05 22.11-53.22 22.11-22.16 53.17-22.16 31.05 0 53.22 22.11 22.16 22.11 22.16 53.17 0 31.05-22.11 53.22-22.11 22.16-53.17 22.16ZM666.67-80v-330.67q0-33.33-16.84-60-16.83-26.66-46.83-40L642-625q8-25 29.5-40t48.5-15q27 0 48.5 15t29.5 40l102 298.33H793.33V-80H666.67Zm-170-420q-25 0-42.5-17.5t-17.5-42.5q0-25 17.5-42.5t42.5-17.5q25 0 42.5 17.5t17.5 42.5q0 25-17.5 42.5t-42.5 17.5ZM220.05-724.67q-31.05 0-53.22-22.11-22.16-22.11-22.16-53.17 0-31.05 22.11-53.22 22.11-22.16 53.17-22.16 31.05 0 53.22 22.11 22.16 22.11 22.16 53.17 0 31.05-22.11 53.22-22.11 22.16-53.17 22.16ZM146.67-80v-286.67H80v-246.66q0-27.5 19.58-47.09Q119.17-680 146.67-680h146.66q27.5 0 47.09 19.58Q360-640.83 360-613.33v246.66h-66.67V-80H146.67ZM440-80v-166.67h-46.67v-164q0-20.55 14.39-34.94Q422.11-460 442.67-460h108q20.55 0 34.94 14.39Q600-431.22 600-410.67v164h-46.67V-80H440Z",
+          text: "Have fun with your family at the children's park"
+        }, {
+          iconPath: "M173.24-481.67q-39.24 0-66.24-27.09-27-27.09-27-66.33 0-39.24 27.09-66.24 27.1-27 66.34-27t66.24 27.09q27 27.09 27 66.33 0 39.24-27.1 66.24-27.09 27-66.33 27Zm183.33-166.66q-39.24 0-66.24-27.1-27-27.09-27-66.33 0-39.24 27.1-66.24 27.09-27 66.33-27Q396-835 423-807.91q27 27.1 27 66.34t-27.09 66.24q-27.1 27-66.34 27Zm246.67 0q-39.24 0-66.24-27.1-27-27.09-27-66.33Q510-781 537.09-808q27.1-27 66.34-27t66.24 27.09q27 27.1 27 66.34t-27.1 66.24q-27.09 27-66.33 27Zm183.33 166.66q-39.24 0-66.24-27.09-27-27.09-27-66.33 0-39.24 27.1-66.24 27.09-27 66.33-27 39.24 0 66.24 27.09 27 27.09 27 66.33 0 39.24-27.09 66.24-27.1 27-66.34 27ZM266-75q-43 0-71.17-32.52-28.16-32.51-28.16-76.81 0-45.34 28.83-80 28.83-34.67 59.83-67.34 24.34-25 44-53.5 19.67-28.5 40.67-56.5 26.67-38 60.33-69 33.67-31 79.67-31T560-511q34 30.67 60.67 69.34 20.66 27.99 40.16 56.33 19.5 28.33 43.84 53.66 31 32.67 59.83 67.34 28.83 34.66 28.83 80 0 44.3-28.16 76.81Q737-75 694-75q-54 0-107-9t-107-9q-54 0-107 9t-107 9Z",
+          text: "Enjoy a pet-friendly space at the pet park"
+        }]
+      }
+    };
+
+    // Actualizar el estado con el contenido traducido
+    setContent(translations[language]);
+    setActivities(translations[language].activities);
+  }, [language]); // Dependencia en el idioma
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_ContentWithVideoSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    headed: content.headed,
+    title: content.title,
+    content: content.content,
+    backgroundImage: "https://images.unsplash.com/photo-1498955472675-532cdee9d6b4?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cGFya3xlbnwwfHwwfHx8MA%3D%3D",
+    videoUrl: "https://www.youtube.com/watch?v=aRZ1W2apiDY",
+    activities: activities
+  });
+}
+var container = document.getElementById('nwp-parque-section02');
+if (container) {
+  var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(NwpParqueContentWithVideoSection, {})
+  }));
+}
+
+/***/ }),
+
 /***/ "./resources/js/components/parque/NwpParqueHero.js":
 /*!*********************************************************!*\
   !*** ./resources/js/components/parque/NwpParqueHero.js ***!
@@ -5000,22 +5304,22 @@ if (container) {
 
 /***/ }),
 
-/***/ "./resources/js/components/parque/NwpParqueSection2.js":
-/*!*************************************************************!*\
-  !*** ./resources/js/components/parque/NwpParqueSection2.js ***!
-  \*************************************************************/
+/***/ "./resources/js/components/parque/piscina/NwpPiscinaContentSectionWithAnImage.js":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/parque/piscina/NwpPiscinaContentSectionWithAnImage.js ***!
+  \***************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ NwpParqueSection2)
+/* harmony export */   "default": () => (/* binding */ NwpPiscinaContentSectionWithAnImage)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var _ParkActivities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../ParkActivities */ "./resources/js/components/ParkActivities.js");
-/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var _ContentSectionWithAnImage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../ContentSectionWithAnImage */ "./resources/js/components/ContentSectionWithAnImage.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -5028,8 +5332,84 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
-function NwpParqueSection2() {
+function NwpPiscinaContentSectionWithAnImage() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
+    language = _useLanguage.language; // Acceder al idioma seleccionado
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState2 = _slicedToArray(_useState, 2),
+    content = _useState2[0],
+    setContent = _useState2[1]; // Estado para guardar el contenido traducido
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
+    var translations = {
+      es: {
+        title: "La piscina más profunda de Panama",
+        content: "Construida en 1948, esta piscina ha sido testigo de innumerables momentos \n                  de entrenamiento y esparcimiento para generaciones de militares. Hoy, abre \n                  sus puertas a toda la comunidad para que disfrutes de sus aguas cristalinas \n                  y de un ambiente familiar y acogedor.",
+        buttonLabel: "Descarga el reglamento de uso"
+      },
+      en: {
+        title: "The deepest pool in Panama",
+        content: "Built in 1948, this pool has witnessed countless moments of training and \n                  recreation for generations of military personnel. Today, it opens its doors \n                  to the entire community to enjoy its crystal-clear waters and a family-friendly, \n                  welcoming atmosphere.",
+        buttonLabel: "Download the usage rules"
+      }
+    };
+
+    // Actualizar el estado con el contenido traducido
+    setContent(translations[language]);
+  }, [language]); // Dependencia en el idioma
+
+  var handleButtonClick = function handleButtonClick() {
+    console.log('Button clicked');
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ContentSectionWithAnImage__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: content.title,
+    content: content.content,
+    buttonLabel: content.buttonLabel,
+    onButtonClick: handleButtonClick,
+    image: "https://images.unsplash.com/photo-1691253104600-ccfd27782f3e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  });
+}
+var container = document.getElementById('nwp-piscina-section-1');
+if (container) {
+  var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NwpPiscinaContentSectionWithAnImage, {})
+  }));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/parque/piscina/NwpPiscinaContentWithVideoSection.js":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/components/parque/piscina/NwpPiscinaContentWithVideoSection.js ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   NwpPiscinaContentWithVideoSection: () => (/* binding */ NwpPiscinaContentWithVideoSection)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var _ContentWithVideoSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../ContentWithVideoSection */ "./resources/js/components/ContentWithVideoSection.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+
+var NwpPiscinaContentWithVideoSection = function NwpPiscinaContentWithVideoSection() {
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.useLanguage)(),
     language = _useLanguage.language; // Acceder al idioma seleccionado
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
     _useState2 = _slicedToArray(_useState, 2),
@@ -5047,13 +5427,10 @@ function NwpParqueSection2() {
         title: "¿Qué hacer un día en el parque?",
         content: "En el parque de Ciudad del Saber, encontrarás una variedad de actividades para disfrutar. Ofrecemos opciones gratuitas y abiertas a todo el público, perfectas para compartir con tu familia, amigos e incluso tu mascota.",
         activities: [{
-          iconPath: "M281.33-40 403-660.67q5.33-25.66 24.33-39.16 19-13.5 40-13.5T506.5-704q18.17 9.33 29.5 27.33l39.33 64q18.67 31 50.5 55.5 31.84 24.5 74.17 37.5v-73.66h46.67V-40H700v-411.33q-50-11-93.67-37.67-43.66-26.67-77-65.67L502-418l84.67 80.67V-40H520v-242.67l-94.67-90L352-40h-70.67Zm17-400.33L220-455q-12-2.33-20-14.17-8-11.83-5.67-24.83l30-157q5.34-30 30.67-46.5 25.33-16.5 55.33-11.17l39.34 7.67-51.34 260.67Zm235-309q-31 0-53.16-22.17Q458-793.67 458-824.67t22.17-53.16Q502.33-900 533.33-900q31 0 53.17 22.17 22.17 22.16 22.17 53.16 0 31-22.17 53.17t-53.17 22.17Z",
           text: "Recorre 21km de sendero en nuestra reserva forestal"
         }, {
-          iconPath: "M720.05-724.67q-31.05 0-53.22-22.11-22.16-22.11-22.16-53.17 0-31.05 22.11-53.22 22.11-22.16 53.17-22.16 31.05 0 53.22 22.11 22.16 22.11 22.16 53.17 0 31.05-22.11 53.22-22.11 22.16-53.17 22.16ZM666.67-80v-330.67q0-33.33-16.84-60-16.83-26.66-46.83-40L642-625q8-25 29.5-40t48.5-15q27 0 48.5 15t29.5 40l102 298.33H793.33V-80H666.67Zm-170-420q-25 0-42.5-17.5t-17.5-42.5q0-25 17.5-42.5t42.5-17.5q25 0 42.5 17.5t17.5 42.5q0 25-17.5 42.5t-42.5 17.5ZM220.05-724.67q-31.05 0-53.22-22.11-22.16-22.11-22.16-53.17 0-31.05 22.11-53.22 22.11-22.16 53.17-22.16 31.05 0 53.22 22.11 22.16 22.11 22.16 53.17 0 31.05-22.11 53.22-22.11 22.16-53.17 22.16ZM146.67-80v-286.67H80v-246.66q0-27.5 19.58-47.09Q119.17-680 146.67-680h146.66q27.5 0 47.09 19.58Q360-640.83 360-613.33v246.66h-66.67V-80H146.67ZM440-80v-166.67h-46.67v-164q0-20.55 14.39-34.94Q422.11-460 442.67-460h108q20.55 0 34.94 14.39Q600-431.22 600-410.67v164h-46.67V-80H440Z",
           text: "Diviértete en familia en el parque para niños y niñas"
         }, {
-          iconPath: "M173.24-481.67q-39.24 0-66.24-27.09-27-27.09-27-66.33 0-39.24 27.09-66.24 27.1-27 66.34-27t66.24 27.09q27 27.09 27 66.33 0 39.24-27.1 66.24-27.09 27-66.33 27Zm183.33-166.66q-39.24 0-66.24-27.1-27-27.09-27-66.33 0-39.24 27.1-66.24 27.09-27 66.33-27Q396-835 423-807.91q27 27.1 27 66.34t-27.09 66.24q-27.1 27-66.34 27Zm246.67 0q-39.24 0-66.24-27.1-27-27.09-27-66.33Q510-781 537.09-808q27.1-27 66.34-27t66.24 27.09q27 27.1 27 66.34t-27.1 66.24q-27.09 27-66.33 27Zm183.33 166.66q-39.24 0-66.24-27.09-27-27.09-27-66.33 0-39.24 27.1-66.24 27.09-27 66.33-27 39.24 0 66.24 27.09 27 27.09 27 66.33 0 39.24-27.09 66.24-27.1 27-66.34 27ZM266-75q-43 0-71.17-32.52-28.16-32.51-28.16-76.81 0-45.34 28.83-80 28.83-34.67 59.83-67.34 24.34-25 44-53.5 19.67-28.5 40.67-56.5 26.67-38 60.33-69 33.67-31 79.67-31T560-511q34 30.67 60.67 69.34 20.66 27.99 40.16 56.33 19.5 28.33 43.84 53.66 31 32.67 59.83 67.34 28.83 34.66 28.83 80 0 44.3-28.16 76.81Q737-75 694-75q-54 0-107-9t-107-9q-54 0-107 9t-107 9Z",
           text: "Disfruta de un espacio amigable en el parque para mascotas"
         }]
       },
@@ -5061,13 +5438,10 @@ function NwpParqueSection2() {
         title: "What to do on a day at the park?",
         content: "At Ciudad del Saber Park, you'll find a variety of activities to enjoy. We offer free and open options for the public, perfect for sharing with your family, friends, and even your pet.",
         activities: [{
-          iconPath: "M281.33-40 403-660.67q5.33-25.66 24.33-39.16 19-13.5 40-13.5T506.5-704q18.17 9.33 29.5 27.33l39.33 64q18.67 31 50.5 55.5 31.84 24.5 74.17 37.5v-73.66h46.67V-40H700v-411.33q-50-11-93.67-37.67-43.66-26.67-77-65.67L502-418l84.67 80.67V-40H520v-242.67l-94.67-90L352-40h-70.67Zm17-400.33L220-455q-12-2.33-20-14.17-8-11.83-5.67-24.83l30-157q5.34-30 30.67-46.5 25.33-16.5 55.33-11.17l39.34 7.67-51.34 260.67Zm235-309q-31 0-53.16-22.17Q458-793.67 458-824.67t22.17-53.16Q502.33-900 533.33-900q31 0 53.17 22.17 22.17 22.16 22.17 53.16 0 31-22.17 53.17t-53.17 22.17Z",
           text: "Walk 21km of trail in our forest reserve"
         }, {
-          iconPath: "M720.05-724.67q-31.05 0-53.22-22.11-22.16-22.11-22.16-53.17 0-31.05 22.11-53.22 22.11-22.16 53.17-22.16 31.05 0 53.22 22.11 22.16 22.11 22.16 53.17 0 31.05-22.11 53.22-22.11 22.16-53.17 22.16ZM666.67-80v-330.67q0-33.33-16.84-60-16.83-26.66-46.83-40L642-625q8-25 29.5-40t48.5-15q27 0 48.5 15t29.5 40l102 298.33H793.33V-80H666.67Zm-170-420q-25 0-42.5-17.5t-17.5-42.5q0-25 17.5-42.5t42.5-17.5q25 0 42.5 17.5t17.5 42.5q0 25-17.5 42.5t-42.5 17.5ZM220.05-724.67q-31.05 0-53.22-22.11-22.16-22.11-22.16-53.17 0-31.05 22.11-53.22 22.11-22.16 53.17-22.16 31.05 0 53.22 22.11 22.16 22.11 22.16 53.17 0 31.05-22.11 53.22-22.11 22.16-53.17 22.16ZM146.67-80v-286.67H80v-246.66q0-27.5 19.58-47.09Q119.17-680 146.67-680h146.66q27.5 0 47.09 19.58Q360-640.83 360-613.33v246.66h-66.67V-80H146.67ZM440-80v-166.67h-46.67v-164q0-20.55 14.39-34.94Q422.11-460 442.67-460h108q20.55 0 34.94 14.39Q600-431.22 600-410.67v164h-46.67V-80H440Z",
           text: "Have fun with your family at the children's park"
         }, {
-          iconPath: "M173.24-481.67q-39.24 0-66.24-27.09-27-27.09-27-66.33 0-39.24 27.09-66.24 27.1-27 66.34-27t66.24 27.09q27 27.09 27 66.33 0 39.24-27.1 66.24-27.09 27-66.33 27Zm183.33-166.66q-39.24 0-66.24-27.1-27-27.09-27-66.33 0-39.24 27.1-66.24 27.09-27 66.33-27Q396-835 423-807.91q27 27.1 27 66.34t-27.09 66.24q-27.1 27-66.34 27Zm246.67 0q-39.24 0-66.24-27.1-27-27.09-27-66.33Q510-781 537.09-808q27.1-27 66.34-27t66.24 27.09q27 27.1 27 66.34t-27.1 66.24q-27.09 27-66.33 27Zm183.33 166.66q-39.24 0-66.24-27.09-27-27.09-27-66.33 0-39.24 27.1-66.24 27.09-27 66.33-27 39.24 0 66.24 27.09 27 27.09 27 66.33 0 39.24-27.09 66.24-27.1 27-66.34 27ZM266-75q-43 0-71.17-32.52-28.16-32.51-28.16-76.81 0-45.34 28.83-80 28.83-34.67 59.83-67.34 24.34-25 44-53.5 19.67-28.5 40.67-56.5 26.67-38 60.33-69 33.67-31 79.67-31T560-511q34 30.67 60.67 69.34 20.66 27.99 40.16 56.33 19.5 28.33 43.84 53.66 31 32.67 59.83 67.34 28.83 34.66 28.83 80 0 44.3-28.16 76.81Q737-75 694-75q-54 0-107-9t-107-9q-54 0-107 9t-107 9Z",
           text: "Enjoy a pet-friendly space at the pet park"
         }]
       }
@@ -5078,60 +5452,21 @@ function NwpParqueSection2() {
     setActivities(translations[language].activities);
   }, [language]); // Dependencia en el idioma
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ParkActivities__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ContentWithVideoSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    headed: content.headed,
     title: content.title,
     content: content.content,
     backgroundImage: "https://images.unsplash.com/photo-1498955472675-532cdee9d6b4?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cGFya3xlbnwwfHwwfHx8MA%3D%3D",
     videoUrl: "https://www.youtube.com/watch?v=aRZ1W2apiDY",
     activities: activities
   });
-}
-var container = document.getElementById('nwp-parque-section02');
+};
+var container = document.getElementById('nwp-piscina-content-whit-video-section');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NwpParqueSection2, {})
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NwpPiscinaContentWithVideoSection, {})
   }));
-}
-
-/***/ }),
-
-/***/ "./resources/js/components/parque/piscina/NwpPiscinaSection1.js":
-/*!**********************************************************************!*\
-  !*** ./resources/js/components/parque/piscina/NwpPiscinaSection1.js ***!
-  \**********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ NwpPiscinaSection1)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var _PublicSpaceHero2__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../PublicSpaceHero2 */ "./resources/js/components/PublicSpaceHero2.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-function NwpPiscinaSection1() {
-  var handleButtonClick = function handleButtonClick() {
-    console.log('Botón clickeado');
-  };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_PublicSpaceHero2__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: "La piscina m\xE1s profunda de Panama",
-    content: "Construida en 1948, esta piscina ha sido testigo de\r innumerables momentos de entrenamiento y esparcimiento\r para generaciones de militares. Hoy, abre sus puertas a toda\r la comunidad para que disfrutes de sus aguas cristalinas y de\r un ambiente familiar y acogedor.",
-    buttonLabel: "Descarga el reglamento de uso",
-    onButtonClick: handleButtonClick,
-    image: "https://images.unsplash.com/photo-1691253104600-ccfd27782f3e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  });
-}
-var container = document.getElementById('nwp-piscina-section-1');
-if (container) {
-  var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(NwpPiscinaSection1, {}));
 }
 
 /***/ }),
@@ -5151,32 +5486,73 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _FirstHero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../FirstHero */ "./resources/js/components/FirstHero.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 
 
 function NwpVenueHero() {
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
+    language = _useLanguage.language; // Acceder al idioma seleccionado
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState2 = _slicedToArray(_useState, 2),
+    content = _useState2[0],
+    setContent = _useState2[1]; // Estado para guardar el contenido traducido
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
+    var translations = {
+      es: {
+        title: "La Piscina",
+        subtitle: "",
+        // Puedes agregar un subtítulo si lo necesitas
+        schedule: "6:30 am - 8:00 pm",
+        location: "C. Victor Garibaldo, Panamá",
+        buttonText: "Reserva tu espacio"
+      },
+      en: {
+        title: "The Pool",
+        subtitle: "",
+        // Puedes agregar un subtítulo si lo necesitas
+        schedule: "6:30 am - 8:00 pm",
+        location: "Victor Garibaldo St., Panama",
+        buttonText: "Book your spot"
+      }
+    };
+
+    // Actualizar el estado con el contenido traducido
+    setContent(translations[language]);
+  }, [language]); // Dependencia en el idioma
+
   var handleButtonClick = function handleButtonClick() {
-    // Lógica para descargar el mapa
-    console.log('Botón clickeado');
+    console.log('Button clicked');
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: "La Piscina",
-    subtitle: "",
-    schedule: "6:30 am - 8:00 pm",
-    location: "C. Victor Garibaldo, Panam\xE1",
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: content.title,
+    subtitle: content.subtitle,
+    schedule: content.schedule,
+    location: content.location,
     onButtonClick: handleButtonClick,
     gradientColor: "from-cdsverde via-cdsverde to-transparent",
     backgroundImageUrl: "https://plus.unsplash.com/premium_photo-1668623041724-c9b6c84c436b?q=80&w=1329&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    buttonText: "Reserva tu espacio",
+    buttonText: content.buttonText,
     isVenue: true
   });
 }
 var container = document.getElementById('nwp-hero-piscina');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(NwpVenueHero, {}));
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NwpVenueHero, {})
+  }));
 }
 
 /***/ }),

@@ -5,6 +5,7 @@ import { ArrowIcon, ArrowIconRight, ArrowWhitBg, RedirectArrow } from '../icons/
 import NwpMobileHeader from './NwpMobileHeader';
 import { LanguageProvider, useLanguage } from '../context/LanguageProvider';
 import LanguageSelect from './LanguageSelect';
+import { IconArrowDown } from '../icons/Icons';
 
 export default function NwpHeader() {
   const { language } = useLanguage();  // Acceder al idioma seleccionado
@@ -226,22 +227,22 @@ export default function NwpHeader() {
           <div className='nwp-container mx-auto h-full flex items-center justify-end gap-x-8 divide-x divide-white'>
             <ul className='flex gap-x-8'>
               <li>
-                <a className='text-white font-semibold ' href='#'>
+                <a className='text-white font-semibold hover:no-underline hover:text-cdsgray500 ' href='#'>
                   {translations[language].directory}
                 </a>
               </li>
               <li>
-                <a className='text-white font-semibold ' href='#'>
+                <a className='text-white font-semibold hover:no-underline hover:text-cdsgray500 ' href='#'>
                   {translations[language].news}
                 </a>
               </li>
               <li>
-                <a className='text-white font-semibold ' href='#'>
+                <a className='text-white font-semibold hover:no-underline hover:text-cdsgray500 ' href='#'>
                   {translations[language].opportunities}
                 </a>
               </li>
             </ul>
-            <a className='text-white font-semibold pl-8' href='#'>
+            <a className='text-white font-semibold pl-8 hover:no-underline hover:text-cdsgray500' href='#'>
               {translations[language].clientPortal}
             </a>
             <LanguageSelect />
@@ -267,7 +268,12 @@ export default function NwpHeader() {
                           className={`focus:outline-none group font-semibold flex items-center transition-colors hover:text-cdsblue h-full duration-200 z-20 ${openMenuIndex === index ? 'text-cdsblue ' : 'text-gray-800'}`}
                         >
                           {option.label}
-                          <ArrowIcon color={openMenuIndex === index ? '#0088ff' : '#000'} className='w-5 h-5 group-hover:fill-cdsblue' rotate={openMenuIndex === index} />
+                          <IconArrowDown 
+                            color={openMenuIndex === index ? '#0088ff' : '#000'} 
+                            size="20px" 
+                            rotate={openMenuIndex === index ? 180 : 0} 
+                            className='ml-2'
+                          />
                         </button>
                       ) : (
                         <a 

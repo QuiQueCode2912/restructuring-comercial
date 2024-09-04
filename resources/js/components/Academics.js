@@ -37,9 +37,9 @@ export default function Academics() {
           </img>
         </div>
         <div className=' col-span-2'>
-          <h4 className='text-4xl lg:text-5xl font-bold py-4 text-black'>{content.title}</h4>
-          <p className='pb-4'>{content.description}</p>
-          <p>{content.contactText} <a className='text-cdsblue font-semibold underline' href='#'>{content.contactEmail}</a></p>
+          <h4 className='text-3xl md:text-5xl font-bold py-4 text-black'>{content.title}</h4>
+          <p className='pb-4 text-lg'>{content.description}</p>
+          <p className='text-lg'>{content.contactText} <a className='text-cdsblue font-semibold underline' href='#'>{content.contactEmail}</a></p>
         </div>
       </div>
     </div>
