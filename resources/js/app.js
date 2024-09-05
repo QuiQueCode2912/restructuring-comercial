@@ -15,9 +15,14 @@ require('./components/parque/NwpFaq')
 require('./components/parque/piscina/NwpVenueHero')
 require('./components/parque/piscina/NwpPiscinaContentSectionWithAnImage')
 require('./components/parque/piscina/NwpPiscinaContentWithVideoSection')
+require('./components/parque/piscina/NwpPiscinaCampusFacilities')
+require('./components/parque/piscina/NwpPiscinaGallerySection')
+require('./components/parque/piscina/NwpFaqSection')
+require('./components/parque/piscina/NwpPiscinaHeadbandSection')
 
 //common components
 require('./components/FeaturedSpaces')
 require('./components/FeaturedVenues')
+require('./components/FeaturedEvents')
 require('./components/Academics')
 

@@ -3,7 +3,11 @@
     <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content ">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">HORARIOS PISCINA RECREATIVA</h5>
+                
+                <div class="" id="exampleModalLabel">
+                    <div class="text-2xl font-bold text-red-500">Para utilizar la piscina de manera recreativa debes realizar el pago al llegar a la piscina.</div>
+                    <div class="font-bold text-lg pt-4 text-zinc-600">HORARIOS PISCINA RECREATIVA</div>
+                </div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

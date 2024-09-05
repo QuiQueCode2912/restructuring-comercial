@@ -1845,3 +1845,42 @@ footer #twitter-timeline .twitter-embed-header {
   }
 }
 
+.swiper {
+  width: 100%;
+}
+
+
+
+@media (max-width: 768px) {
+  .swiper{
+    height: 500px;
+  }
+}
+
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 690px;
+  height: 440px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+/* Estilos generales */
+.swiper-slide-custom {
+  width: 690px;
+  height: 440px;
+  position: relative;
+}
+
+/* Estilos para pantallas móviles */
+@media (max-width: 768px) {
+  .swiper-slide-custom {
+    width: 100%;
+    height: auto; /* Ajuste si necesitas que la altura sea automática también */
+  }
+}
