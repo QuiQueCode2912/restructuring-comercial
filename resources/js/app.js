@@ -39,6 +39,24 @@ require('./components/parque/golf/GallerySection')
 require('./components/parque/golf/Faq')
 require('./components/parque/golf/HeadbandSection')
 
+//raquetbol components
+require('./components/parque/raquetbol/Hero')
+require('./components/parque/raquetbol/ContentSectionWithAnImage')
+require('./components/parque/raquetbol/ContentWithVideoSection')
+require('./components/parque/raquetbol/CampusFacilities')
+require('./components/parque/raquetbol/GallerySection')
+require('./components/parque/raquetbol/Faq')
+require('./components/parque/raquetbol/HeadbandSection')
+
+//tenis components
+require('./components/parque/tenis/Hero')
+require('./components/parque/tenis/ContentSectionWithAnImage')
+require('./components/parque/tenis/ContentWithVideoSection')
+require('./components/parque/tenis/CampusFacilities')
+require('./components/parque/tenis/GallerySection')
+require('./components/parque/tenis/Faq')
+require('./components/parque/tenis/HeadbandSection')
+
 
 
 
