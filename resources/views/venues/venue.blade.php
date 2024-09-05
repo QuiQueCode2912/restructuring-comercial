@@ -32,8 +32,13 @@
 
 @if(request()->is('parque-cds/piscina'))
     <div id="nwp-hero-piscina"></div>
-    <div id="nwp-piscina-section-1"></div>
+    <div id="nwp-piscina-content-section-whith-an-image"></div>
     <div id="nwp-piscina-content-whit-video-section"></div>
+@endif
+@if(request()->is('parque-cds/baloncesto'))
+    <div id="nwp-hero-baloncesto"></div>
+    <div id="nwp-baloncesto-content-section-whith-an-image"></div>
+    <div id="nwp-baloncesto-content-whit-video-section"></div>
 @endif
 
 <div class="nwp-padding-x-container">
@@ -84,6 +89,12 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
                   </p>
               @endif
+              @if(request()->is('parque-cds/baloncesto'))
+                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar</p>
+                  <p class=" text-base md:text-lg  md:w-3/5 py-3">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
+                  </p>
+              @endif
               <h3 class="hidden" style="color:#505152; margin:30px 0 5px ">
                 @if ($parent->id == '02i3m0000092sJ1AAI')
                    La Casa
@@ -110,7 +121,7 @@
                 </span>
               </small>
               @endif
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-10">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-10">
                 <?php $venueRoute = $venue; ?>
                 <?php if ($venues) : ?>
                   <?php foreach ($venues as $venue) : ?>
@@ -178,6 +189,12 @@
     <div id="nwp-piscina-gallery-section"></div>
     <div id="nwp-piscina-faq-section"></div>
     <div id="nwp-piscina-headband-section"></div>
+@endif
+@if(request()->is('parque-cds/baloncesto'))
+    <div id="nwp-baloncesto-campus-facilities"></div>
+    <div id="nwp-baloncesto-gallery-section"></div>
+    <div id="nwp-baloncesto-faq-section"></div>
+    <div id="nwp-baloncesto-headband-section"></div>
 @endif
 
 <div id="nwp-featured-spaces"></div>

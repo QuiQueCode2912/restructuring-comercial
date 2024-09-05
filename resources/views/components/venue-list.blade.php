@@ -252,20 +252,20 @@ $pvax = isset($parentVenue) ? $parentVenue : $venue['name'];
                         <!--Baloncesto individual -->
                         @if ($id == '02iRb0000009jcDIAQ')
                           <span class="text-sm font-normal">Para utilizar la cancha para tirar pelota debes realizar el pago por ventanilla en el Gimnasio, Edificio 183.<br>
-                              <br>Lunes a Viernes de 6:00 am a 9:00 pm.<br>Sábados y Domingos de 6:00 am a 6:00 pm.
+                            <!-- <br>Lunes a Viernes de 6:00 am a 9:00 pm.<br>Sábados y Domingos de 6:00 am a 6:00 pm. -->
                           </span>
                         @endif
                           <!--Boxeo -->
                         @if ($id == '02i3m00000D9GuWAAV')
                           <span class="text-sm font-normal">Para utilizar el Área de Boxeo debes realizar el pago por ventanilla en el Gimnasio, Edificio 183.<br>
-                              <br>Lunes a Viernes de 6:00 am a 9:00 pm.<br>Sábados y Domingos de 6:00 am a 6:00 pm.
+                            <!-- <br>Lunes a Viernes de 6:00 am a 9:00 pm.<br>Sábados y Domingos de 6:00 am a 6:00 pm. -->
                           </span>
                         @endif
                  
                     @else
                         <span class="text-sm font-normal">Para utilizar el Área
                             de Pesas debes realizar el pago por ventanilla en el Gimnasio, Edificio 183.<br>
-                            <br>Lunes a Viernes de 6:00 am a 9:00 pm.<br>Sábados y Domingos de 6:00 am a 6:00 pm.</span>
+                            <!-- <br>Lunes a Viernes de 6:00 am a 9:00 pm.<br>Sábados y Domingos de 6:00 am a 6:00 pm. --></span>
                     @endif
                 @else
                     <a href="/cotizacion/datos-contacto?id={{ $id }}"

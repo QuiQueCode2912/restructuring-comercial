@@ -46,7 +46,7 @@ const FirstHero = ({ title, subtitle, schedule, location, onButtonClick, gradien
                 )}
               </div>
 
-              <h1 className='pt-0 text-4xl w-full md:w-2/3 lg:w-1/2 md:text-6xl text-white font-bold'>
+              <h1 className='pt-0 text-4xl w-full md:w-2/3 md:text-6xl text-white font-bold'>
                 {title}
               </h1>
               {subtitle && (

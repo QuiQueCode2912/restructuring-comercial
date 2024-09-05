@@ -20,6 +20,15 @@ require('./components/parque/piscina/NwpPiscinaGallerySection')
 require('./components/parque/piscina/NwpFaqSection')
 require('./components/parque/piscina/NwpPiscinaHeadbandSection')
 
+// Baloncesto components
+require('./components/parque/baloncesto/NwpBaloncestoHero')
+require('./components/parque/baloncesto/NwpBaloncestoContentSectionWithAnImage')
+require('./components/parque/baloncesto/NwpBaloncestoContentWithVideoSection')
+require('./components/parque/baloncesto/NwpBaloncestoCampusFacilities')
+require('./components/parque/baloncesto/NwpBaloncestoGallerySection')
+require('./components/parque/baloncesto/NwpFaqSection')
+require('./components/parque/baloncesto/NwpBaloncestoHeadbandSection')
+
 //common components
 require('./components/FeaturedSpaces')
 require('./components/FeaturedVenues')
