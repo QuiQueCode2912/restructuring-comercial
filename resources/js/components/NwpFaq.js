@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowIcon } from './icons/Arrows';
 
-export default function Faq({ faqTitle, faqItems = [] }) {
+export function NwpFaq({ faqTitle, faqItems = [] }) {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleAccordion = (index) => {

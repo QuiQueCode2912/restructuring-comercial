@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import ContentSectionWithAnImage from '../../ContentSectionWithAnImage';
+import { NwpContentSectionWithAnImage } from '../../NwpContentSectionWithAnImage';
 import { LanguageProvider, useLanguage } from '../../context/LanguageProvider';
 
-export default function NwpBaloncestoContentSectionWithAnImage() {
+export default function ContentSectionWithAnImage() {
   const { language } = useLanguage();  // Acceder al idioma seleccionado
   const [content, setContent] = useState({});  // Estado para guardar el contenido traducido
 
@@ -37,7 +37,7 @@ export default function NwpBaloncestoContentSectionWithAnImage() {
   };
 
   return (
-    <ContentSectionWithAnImage
+    <NwpContentSectionWithAnImage
       title={content.title}
       content={content.content}
       buttonLabel={content.buttonLabel}
@@ -52,7 +52,7 @@ if (container) {
   const root = createRoot(container);
   root.render(
     <LanguageProvider>
-      <NwpBaloncestoContentSectionWithAnImage />
+      <ContentSectionWithAnImage />
     </LanguageProvider>
   );
 }

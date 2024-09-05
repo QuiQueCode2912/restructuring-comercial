@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import ParkActivities from '../ParkActivities';
 import { LanguageProvider, useLanguage } from '../context/LanguageProvider';
-import ContentWithVideoSection from '../ContentWithVideoSection';
+import {NwpContentWithVideoSection }from '../NwpContentWithVideoSection';
 
 export default function NwpParqueContentWithVideoSection() {
   const { language } = useLanguage(); // Acceder al idioma seleccionado
@@ -58,7 +58,7 @@ export default function NwpParqueContentWithVideoSection() {
   }, [language]); // Dependencia en el idioma
 
   return (
-    <ContentWithVideoSection
+    <NwpContentWithVideoSection
       headed={content.headed}
       title={content.title}
       content={content.content}

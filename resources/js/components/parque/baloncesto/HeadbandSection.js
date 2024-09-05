@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import Headband from '../../Headband';
 import { useLanguage, LanguageProvider } from '../../context/LanguageProvider';
 
-const NwpBaloncestoHeadbandSection = () => {
+const HeadbandSection = () => {
   const { language } = useLanguage();  // Acceder al idioma seleccionado
   const [content, setContent] = useState({});  // Estado para guardar el contenido traducido
 
@@ -46,7 +46,7 @@ if (container) {
   const root = createRoot(container);
   root.render(
     <LanguageProvider>
-      <NwpBaloncestoHeadbandSection />
+      <HeadbandSection />
     </LanguageProvider>
   );
 }

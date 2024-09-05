@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ContentSectionWithAnImage = ({ title, content, buttonLabel, onButtonClick, image }) => {
+export const NwpContentSectionWithAnImage = ({ title, content, buttonLabel, onButtonClick, image }) => {
   return (
     <>
       <div className='md:relative nwp-padding-x-container md:h-[600px] bg-white'>
@@ -31,4 +31,4 @@ const ContentSectionWithAnImage = ({ title, content, buttonLabel, onButtonClick,
   );
 };
 
-export default ContentSectionWithAnImage;
+

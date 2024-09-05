@@ -70,7 +70,7 @@ export default function FeaturedSpaces() {
   }, [language]);  // Dependencia en el idioma
 
   return (
-    <div className='nwp-padding-x-container bg-cdsgray700 py-20'>
+    <div className='nwp-padding-x-container bg-white py-20'>
       <div className='nwp-container mx-auto'>
         <h4 className='text-4xl lg:text-5xl font-bold text-black  pb-14'>{content.title}</h4>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>

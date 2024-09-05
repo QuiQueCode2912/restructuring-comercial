@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import Faq from '../../Faq';
-import { useLanguage, LanguageProvider } from '../../context/LanguageProvider';
+import { NwpFaq } from '../NwpFaq';
+import { useLanguage, LanguageProvider } from '../context/LanguageProvider';
 
-const NwpFaqSection = () => {
+export default function Faq() {
   const { language } = useLanguage();  // Acceder al idioma seleccionado
   const [content, setContent] = useState({});  // Estado para guardar el contenido traducido
 
@@ -11,7 +11,7 @@ const NwpFaqSection = () => {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     const translations = {
       es: {
-        faqTitle: "Preguntas frecuentes sobre la Cancha de Baloncesto",
+        faqTitle: "Preguntas frecuentes sobre el Parque Ciudad del Saber",
         faqItems: [
           { title: '¿Por qué a veces la luna está visible durante el día?', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.' },
           { title: '¿Por qué el cielo es azul?', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.' },
@@ -31,15 +31,14 @@ const NwpFaqSection = () => {
         ]
       }
     };
-    
+
     // Actualizar el estado con el contenido traducido
     setContent(translations[language]);
   }, [language]);  // Dependencia en el idioma
 
-
   return (
     <div className="App">
-      <Faq 
+      <NwpFaq 
         faqTitle={content.faqTitle}
         faqItems={content.faqItems}
       />
@@ -47,16 +46,12 @@ const NwpFaqSection = () => {
   );
 }
 
-export default NwpFaqSection
-
-
-
-const container = document.getElementById('nwp-baloncesto-faq-section');
+const container = document.getElementById('nwp-parque-faq');
 if (container){
   const root = createRoot(container);
   root.render(
     <LanguageProvider>
-      <NwpFaqSection />
+      <Faq />
     </LanguageProvider>
   );
 }

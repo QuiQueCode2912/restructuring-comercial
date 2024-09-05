@@ -40,6 +40,11 @@
     <div id="nwp-baloncesto-content-section-whith-an-image"></div>
     <div id="nwp-baloncesto-content-whit-video-section"></div>
 @endif
+@if(request()->is('parque-cds/golf'))
+    <div id="nwp-hero-golf"></div>
+    <div id="nwp-golf-content-section-whith-an-image"></div>
+    <div id="nwp-golf-content-whit-video-section"></div>
+@endif
 
 <div class="nwp-padding-x-container">
   <div class="row hidden">
@@ -90,7 +95,13 @@
                   </p>
               @endif
               @if(request()->is('parque-cds/baloncesto'))
-                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar</p>
+                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (baloncesto)</p>
+                  <p class=" text-base md:text-lg  md:w-3/5 py-3">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
+                  </p>
+              @endif
+              @if(request()->is('parque-cds/golf'))
+                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (golf)</p>
                   <p class=" text-base md:text-lg  md:w-3/5 py-3">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
                   </p>
@@ -195,6 +206,12 @@
     <div id="nwp-baloncesto-gallery-section"></div>
     <div id="nwp-baloncesto-faq-section"></div>
     <div id="nwp-baloncesto-headband-section"></div>
+@endif
+@if(request()->is('parque-cds/golf'))
+    <div id="nwp-golf-campus-facilities"></div>
+    <div id="nwp-golf-gallery-section"></div>
+    <div id="nwp-golf-faq-section"></div>
+    <div id="nwp-golf-headband-section"></div>
 @endif
 
 <div id="nwp-featured-spaces"></div>

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import Faq from '../Faq';
-import { useLanguage, LanguageProvider } from '../context/LanguageProvider';
+import {NwpFaq} from '../../NwpFaq';
+import { useLanguage, LanguageProvider } from '../../context/LanguageProvider';
 
-export default function NwpFaq() {
+export const Faq = () => {
   const { language } = useLanguage();  // Acceder al idioma seleccionado
   const [content, setContent] = useState({});  // Estado para guardar el contenido traducido
 
@@ -31,14 +31,15 @@ export default function NwpFaq() {
         ]
       }
     };
-
+    
     // Actualizar el estado con el contenido traducido
     setContent(translations[language]);
   }, [language]);  // Dependencia en el idioma
 
+
   return (
     <div className="App">
-      <Faq 
+      <NwpFaq 
         faqTitle={content.faqTitle}
         faqItems={content.faqItems}
       />
@@ -46,12 +47,14 @@ export default function NwpFaq() {
   );
 }
 
-const container = document.getElementById('nwp-parque-faq');
+
+
+const container = document.getElementById('nwp-piscina-faq-section');
 if (container){
   const root = createRoot(container);
   root.render(
     <LanguageProvider>
-      <NwpFaq />
+      <Faq />
     </LanguageProvider>
   );
 }

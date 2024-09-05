@@ -124,7 +124,7 @@ export const FeaturedEvents = () => {
   }, [language]);  // Dependencia en el idioma
 
   return (
-    <div className='nwp-padding-x-container bg-cdsgray700 pb-20'>
+    <div className='nwp-padding-x-container bg-white pb-20'>
       <div className='nwp-container mx-auto'>
         <h4 className='text-4xl lg:text-5xl font-bold pb-14 text-black'>{content.title}</h4>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>

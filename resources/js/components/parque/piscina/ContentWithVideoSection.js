@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { LanguageProvider, useLanguage } from '../../context/LanguageProvider';
-import ContentWithVideoSection from '../../ContentWithVideoSection';
+import { NwpContentWithVideoSection } from '../../NwpContentWithVideoSection';
 
-export const NwpPiscinaContentWithVideoSection = () => {
+export const ContentWithVideoSection = () => {
   const { language } = useLanguage(); // Acceder al idioma seleccionado
   const [content, setContent] = useState({}); // Estado para guardar el contenido traducido
   const [activities, setActivities] = useState([]); // Estado para guardar las actividades traducidas
@@ -50,7 +50,7 @@ export const NwpPiscinaContentWithVideoSection = () => {
   }, [language]); // Dependencia en el idioma
 
   return (
-    <ContentWithVideoSection 
+    <NwpContentWithVideoSection 
       headed={content.headed}
       title={content.title}
       content={content.content}
@@ -66,7 +66,7 @@ if (container) {
   const root = createRoot(container);
   root.render(
     <LanguageProvider>
-      <NwpPiscinaContentWithVideoSection />
+      <ContentWithVideoSection />
     </LanguageProvider>
   );
 }

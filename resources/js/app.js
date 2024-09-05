@@ -10,24 +10,37 @@ require('./components/parque/NwpParqueHero')
 require('./components/parque/NwpParqueSection1')
 require('./components/parque/NwpParqueContentWithVideoSection')
 require('./components/parque/NwpHeadband')
-require('./components/parque/NwpFaq')
+require('./components/parque/Faq')
 
-require('./components/parque/piscina/NwpVenueHero')
-require('./components/parque/piscina/NwpPiscinaContentSectionWithAnImage')
-require('./components/parque/piscina/NwpPiscinaContentWithVideoSection')
-require('./components/parque/piscina/NwpPiscinaCampusFacilities')
-require('./components/parque/piscina/NwpPiscinaGallerySection')
-require('./components/parque/piscina/NwpFaqSection')
-require('./components/parque/piscina/NwpPiscinaHeadbandSection')
+//piscina components
+require('./components/parque/piscina/Hero')
+require('./components/parque/piscina/ContentSectionWithAnImage')
+require('./components/parque/piscina/ContentWithVideoSection')
+require('./components/parque/piscina/CampusFacilities')
+require('./components/parque/piscina/GallerySection')
+require('./components/parque/piscina/Faq')
+require('./components/parque/piscina/HeadbandSection')
 
-// Baloncesto components
-require('./components/parque/baloncesto/NwpBaloncestoHero')
-require('./components/parque/baloncesto/NwpBaloncestoContentSectionWithAnImage')
-require('./components/parque/baloncesto/NwpBaloncestoContentWithVideoSection')
-require('./components/parque/baloncesto/NwpBaloncestoCampusFacilities')
-require('./components/parque/baloncesto/NwpBaloncestoGallerySection')
-require('./components/parque/baloncesto/NwpFaqSection')
-require('./components/parque/baloncesto/NwpBaloncestoHeadbandSection')
+//baloncesto components
+require('./components/parque/baloncesto/Hero')
+require('./components/parque/baloncesto/ContentSectionWithAnImage')
+require('./components/parque/baloncesto/ContentWithVideoSection')
+require('./components/parque/baloncesto/CampusFacilities')
+require('./components/parque/baloncesto/GallerySection')
+require('./components/parque/baloncesto/Faq')
+require('./components/parque/baloncesto/HeadbandSection')
+
+//golf components
+require('./components/parque/golf/Hero')
+require('./components/parque/golf/ContentSectionWithAnImage')
+require('./components/parque/golf/ContentWithVideoSection')
+require('./components/parque/golf/CampusFacilities')
+require('./components/parque/golf/GallerySection')
+require('./components/parque/golf/Faq')
+require('./components/parque/golf/HeadbandSection')
+
+
+
 
 //common components
 require('./components/FeaturedSpaces')

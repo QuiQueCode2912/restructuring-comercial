@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import FirstHero from '../../FirstHero';
 import { LanguageProvider, useLanguage } from '../../context/LanguageProvider';
 
-export default function NwpBaloncestoHero() {
+export default function Hero() {
   const { language } = useLanguage();  // Acceder al idioma seleccionado
   const [content, setContent] = useState({});  // Estado para guardar el contenido traducido
 
@@ -54,7 +54,7 @@ if (container) {
   const root = createRoot(container);
   root.render(
     <LanguageProvider>
-      <NwpBaloncestoHero />
+      <Hero />
     </LanguageProvider>
   );
 }

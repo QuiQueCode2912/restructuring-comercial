@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import ContentSectionWithAnImage from '../../ContentSectionWithAnImage';
+import { NwpContentSectionWithAnImage } from '../../NwpContentSectionWithAnImage';
 import { LanguageProvider, useLanguage } from '../../context/LanguageProvider';
 
-export default function NwpPiscinaContentSectionWithAnImage() {
+export default function ContentSectionWithAnImage() {
   const { language } = useLanguage();  // Acceder al idioma seleccionado
   const [content, setContent] = useState({});  // Estado para guardar el contenido traducido
 
@@ -11,7 +11,7 @@ export default function NwpPiscinaContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     const translations = {
       es: {
-        title: "La piscina más profunda de Panama",
+        title: "La cancha más jugable de Panama",
         content: `Construida en 1948, esta piscina ha sido testigo de innumerables momentos 
                   de entrenamiento y esparcimiento para generaciones de militares. Hoy, abre 
                   sus puertas a toda la comunidad para que disfrutes de sus aguas cristalinas 
@@ -37,7 +37,7 @@ export default function NwpPiscinaContentSectionWithAnImage() {
   };
 
   return (
-    <ContentSectionWithAnImage
+    <NwpContentSectionWithAnImage
       title={content.title}
       content={content.content}
       buttonLabel={content.buttonLabel}
@@ -47,12 +47,12 @@ export default function NwpPiscinaContentSectionWithAnImage() {
   );
 }
 
-const container = document.getElementById('nwp-piscina-content-section-whith-an-image');
+const container = document.getElementById('nwp-golf-content-section-whith-an-image');
 if (container) {
   const root = createRoot(container);
   root.render(
     <LanguageProvider>
-      <NwpPiscinaContentSectionWithAnImage />
+      <ContentSectionWithAnImage />
     </LanguageProvider>
   );
 }

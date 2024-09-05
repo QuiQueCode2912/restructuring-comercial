@@ -889,9 +889,6 @@ video {
 .gap-2 {
   gap: 0.5rem;
 }
-.gap-4 {
-  gap: 1rem;
-}
 .gap-6 {
   gap: 1.5rem;
 }
@@ -3631,10 +3628,6 @@ footer #twitter-timeline .twitter-embed-header {
 
   .lg\:h-\[120px\] {
     height: 120px;
-  }
-
-  .lg\:w-1\/2 {
-    width: 50%;
   }
 
   .lg\:gap-x-8 {

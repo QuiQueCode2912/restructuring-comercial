@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import Headband from '../../Headband';
 import { useLanguage, LanguageProvider } from '../../context/LanguageProvider';
 
-const NwpPiscinaHeadbandSection = () => {
+const HeadbandSection = () => {
   const { language } = useLanguage();  // Acceder al idioma seleccionado
   const [content, setContent] = useState({});  // Estado para guardar el contenido traducido
 
@@ -41,12 +41,12 @@ const NwpPiscinaHeadbandSection = () => {
   );
 }
 
-const container = document.getElementById('nwp-piscina-headband-section');
+const container = document.getElementById('nwp-golf-headband-section');
 if (container) {
   const root = createRoot(container);
   root.render(
     <LanguageProvider>
-      <NwpPiscinaHeadbandSection />
+      <HeadbandSection />
     </LanguageProvider>
   );
 }

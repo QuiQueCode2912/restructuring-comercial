@@ -1806,23 +1806,34 @@ __webpack_require__(/*! ./components/parque/NwpParqueHero */ "./resources/js/com
 __webpack_require__(/*! ./components/parque/NwpParqueSection1 */ "./resources/js/components/parque/NwpParqueSection1.js");
 __webpack_require__(/*! ./components/parque/NwpParqueContentWithVideoSection */ "./resources/js/components/parque/NwpParqueContentWithVideoSection.js");
 __webpack_require__(/*! ./components/parque/NwpHeadband */ "./resources/js/components/parque/NwpHeadband.js");
-__webpack_require__(/*! ./components/parque/NwpFaq */ "./resources/js/components/parque/NwpFaq.js");
-__webpack_require__(/*! ./components/parque/piscina/NwpVenueHero */ "./resources/js/components/parque/piscina/NwpVenueHero.js");
-__webpack_require__(/*! ./components/parque/piscina/NwpPiscinaContentSectionWithAnImage */ "./resources/js/components/parque/piscina/NwpPiscinaContentSectionWithAnImage.js");
-__webpack_require__(/*! ./components/parque/piscina/NwpPiscinaContentWithVideoSection */ "./resources/js/components/parque/piscina/NwpPiscinaContentWithVideoSection.js");
-__webpack_require__(/*! ./components/parque/piscina/NwpPiscinaCampusFacilities */ "./resources/js/components/parque/piscina/NwpPiscinaCampusFacilities.js");
-__webpack_require__(/*! ./components/parque/piscina/NwpPiscinaGallerySection */ "./resources/js/components/parque/piscina/NwpPiscinaGallerySection.js");
-__webpack_require__(/*! ./components/parque/piscina/NwpFaqSection */ "./resources/js/components/parque/piscina/NwpFaqSection.js");
-__webpack_require__(/*! ./components/parque/piscina/NwpPiscinaHeadbandSection */ "./resources/js/components/parque/piscina/NwpPiscinaHeadbandSection.js");
+__webpack_require__(/*! ./components/parque/Faq */ "./resources/js/components/parque/Faq.js");
 
-// Baloncesto components
-__webpack_require__(/*! ./components/parque/baloncesto/NwpBaloncestoHero */ "./resources/js/components/parque/baloncesto/NwpBaloncestoHero.js");
-__webpack_require__(/*! ./components/parque/baloncesto/NwpBaloncestoContentSectionWithAnImage */ "./resources/js/components/parque/baloncesto/NwpBaloncestoContentSectionWithAnImage.js");
-__webpack_require__(/*! ./components/parque/baloncesto/NwpBaloncestoContentWithVideoSection */ "./resources/js/components/parque/baloncesto/NwpBaloncestoContentWithVideoSection.js");
-__webpack_require__(/*! ./components/parque/baloncesto/NwpBaloncestoCampusFacilities */ "./resources/js/components/parque/baloncesto/NwpBaloncestoCampusFacilities.js");
-__webpack_require__(/*! ./components/parque/baloncesto/NwpBaloncestoGallerySection */ "./resources/js/components/parque/baloncesto/NwpBaloncestoGallerySection.js");
-__webpack_require__(/*! ./components/parque/baloncesto/NwpFaqSection */ "./resources/js/components/parque/baloncesto/NwpFaqSection.js");
-__webpack_require__(/*! ./components/parque/baloncesto/NwpBaloncestoHeadbandSection */ "./resources/js/components/parque/baloncesto/NwpBaloncestoHeadbandSection.js");
+//piscina components
+__webpack_require__(/*! ./components/parque/piscina/Hero */ "./resources/js/components/parque/piscina/Hero.js");
+__webpack_require__(/*! ./components/parque/piscina/ContentSectionWithAnImage */ "./resources/js/components/parque/piscina/ContentSectionWithAnImage.js");
+__webpack_require__(/*! ./components/parque/piscina/ContentWithVideoSection */ "./resources/js/components/parque/piscina/ContentWithVideoSection.js");
+__webpack_require__(/*! ./components/parque/piscina/CampusFacilities */ "./resources/js/components/parque/piscina/CampusFacilities.js");
+__webpack_require__(/*! ./components/parque/piscina/GallerySection */ "./resources/js/components/parque/piscina/GallerySection.js");
+__webpack_require__(/*! ./components/parque/piscina/Faq */ "./resources/js/components/parque/piscina/Faq.js");
+__webpack_require__(/*! ./components/parque/piscina/HeadbandSection */ "./resources/js/components/parque/piscina/HeadbandSection.js");
+
+//baloncesto components
+__webpack_require__(/*! ./components/parque/baloncesto/Hero */ "./resources/js/components/parque/baloncesto/Hero.js");
+__webpack_require__(/*! ./components/parque/baloncesto/ContentSectionWithAnImage */ "./resources/js/components/parque/baloncesto/ContentSectionWithAnImage.js");
+__webpack_require__(/*! ./components/parque/baloncesto/ContentWithVideoSection */ "./resources/js/components/parque/baloncesto/ContentWithVideoSection.js");
+__webpack_require__(/*! ./components/parque/baloncesto/CampusFacilities */ "./resources/js/components/parque/baloncesto/CampusFacilities.js");
+__webpack_require__(/*! ./components/parque/baloncesto/GallerySection */ "./resources/js/components/parque/baloncesto/GallerySection.js");
+__webpack_require__(/*! ./components/parque/baloncesto/Faq */ "./resources/js/components/parque/baloncesto/Faq.js");
+__webpack_require__(/*! ./components/parque/baloncesto/HeadbandSection */ "./resources/js/components/parque/baloncesto/HeadbandSection.js");
+
+//golf components
+__webpack_require__(/*! ./components/parque/golf/Hero */ "./resources/js/components/parque/golf/Hero.js");
+__webpack_require__(/*! ./components/parque/golf/ContentSectionWithAnImage */ "./resources/js/components/parque/golf/ContentSectionWithAnImage.js");
+__webpack_require__(/*! ./components/parque/golf/ContentWithVideoSection */ "./resources/js/components/parque/golf/ContentWithVideoSection.js");
+__webpack_require__(/*! ./components/parque/golf/CampusFacilities */ "./resources/js/components/parque/golf/CampusFacilities.js");
+__webpack_require__(/*! ./components/parque/golf/GallerySection */ "./resources/js/components/parque/golf/GallerySection.js");
+__webpack_require__(/*! ./components/parque/golf/Faq */ "./resources/js/components/parque/golf/Faq.js");
+__webpack_require__(/*! ./components/parque/golf/HeadbandSection */ "./resources/js/components/parque/golf/HeadbandSection.js");
 
 //common components
 __webpack_require__(/*! ./components/FeaturedSpaces */ "./resources/js/components/FeaturedSpaces.js");
@@ -1959,264 +1970,6 @@ if (container) {
   root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.LanguageProvider, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Academics, {})
   }));
-}
-
-/***/ }),
-
-/***/ "./resources/js/components/ContentSectionWithAnImage.js":
-/*!**************************************************************!*\
-  !*** ./resources/js/components/ContentSectionWithAnImage.js ***!
-  \**************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-var ContentSectionWithAnImage = function ContentSectionWithAnImage(_ref) {
-  var title = _ref.title,
-    content = _ref.content,
-    buttonLabel = _ref.buttonLabel,
-    onButtonClick = _ref.onButtonClick,
-    image = _ref.image;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      className: "md:relative nwp-padding-x-container md:h-[600px] bg-white",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "mx-auto nwp-container grid grid-cols-1 md:grid-cols-2 md:h-full md:gap-x-8",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "flex flex-col md:col-span-1 gap-y-4 justify-center md:h-full pb-10 md:pb-0 pt-20",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-            className: "font-bold text-3xl md:text-5xl",
-            children: title
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-            className: "pb-2 text-lg",
-            children: content
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
-            className: "font-semibold text-start flex gap-x-2 items-center",
-            onClick: onButtonClick,
-            children: [buttonLabel, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-              className: "bg-cdsblue rounded-full h-8 w-8 grid place-content-center ",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
-                xmlns: "http://www.w3.org/2000/svg",
-                height: "28px",
-                viewBox: "0 -960 960 960",
-                width: "28px",
-                fill: "#FFFFFF",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                  d: "M480-315.33 284.67-510.67l47.33-48L446.67-444v-356h66.66v356L628-558.67l47.33 48L480-315.33ZM226.67-160q-27 0-46.84-19.83Q160-199.67 160-226.67V-362h66.67v135.33h506.66V-362H800v135.33q0 27-19.83 46.84Q760.33-160 733.33-160H226.67Z"
-                })
-              })
-            })]
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "md:col-span-1 "
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "hidden  md:absolute md:left-1/2 md:top-0 col-span-1 text-white font-bold md:grid grid-cols-1 h-[600px]",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-          src: image,
-          alt: "Piscina",
-          className: "w-[1200px] h-[600px] object-cover"
-        })
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: " md:hidden h-[374px]",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-        src: image,
-        alt: "Piscina",
-        className: "w-full  h-[374px] object-cover"
-      })
-    })]
-  });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ContentSectionWithAnImage);
-
-/***/ }),
-
-/***/ "./resources/js/components/ContentWithVideoSection.js":
-/*!************************************************************!*\
-  !*** ./resources/js/components/ContentWithVideoSection.js ***!
-  \************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_player__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-player */ "./node_modules/react-player/lib/index.js");
-/* harmony import */ var react_player__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_player__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-var ContentWithVideoSection = function ContentWithVideoSection(_ref) {
-  var headed = _ref.headed,
-    title = _ref.title,
-    content = _ref.content,
-    backgroundImage = _ref.backgroundImage,
-    videoUrl = _ref.videoUrl,
-    activities = _ref.activities;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("section", {
-    className: "relative nwp-padding-x-container bg-cover bg-center z-10",
-    style: {
-      backgroundImage: "url('".concat(backgroundImage, "')")
-    },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "absolute inset-0 bg-black opacity-80"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      className: "relative nwp-container flex flex-col md:flex-row z-10 mx-auto py-16 md:gap-x-4 lg:py-24",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "text-white max-w-3xl md:w-1/2 flex flex-col justify-between",
-        children: [!headed && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "h-1 w-12 bg-cdsverde mb-4"
-        }), headed && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-          className: "uppercase font-semibold text-cdsblue text-lg mb-4",
-          children: headed
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-          className: "text-3xl font-bold tracking-tight sm:text-5xl ",
-          children: title
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-          className: "mt-4 text-lg leading-6",
-          children: content
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
-          className: "mt-8 space-y-4",
-          children: activities.map(function (activity, index) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
-              className: "flex items-center gap-x-1",
-              children: [activity.iconPath ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
-                xmlns: "http://www.w3.org/2000/svg",
-                height: "40px",
-                viewBox: "0 -960 960 960",
-                width: "40px",
-                fill: "#FFFFFF",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                  d: activity.iconPath
-                })
-              }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                className: "text-white",
-                children: "\u2022"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                className: "text-lg",
-                children: activity.text
-              })]
-            }, index);
-          })
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "mt-8 hidden md:flex justify-center md:w-1/2 py-4 md:py-0",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)((react_player__WEBPACK_IMPORTED_MODULE_2___default()), {
-          url: videoUrl,
-          className: "w-full max-w-lg rounded-lg shadow-lg",
-          controls: true,
-          width: "100%",
-          height: "100%"
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "mt-8 md:hidden justify-center h-64 py-4 md:py-0",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)((react_player__WEBPACK_IMPORTED_MODULE_2___default()), {
-          url: videoUrl,
-          className: "w-full max-w-lg rounded-lg shadow-lg",
-          controls: true,
-          width: "100%",
-          height: "100%"
-        })
-      })]
-    })]
-  });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ContentWithVideoSection);
-
-/***/ }),
-
-/***/ "./resources/js/components/Faq.js":
-/*!****************************************!*\
-  !*** ./resources/js/components/Faq.js ***!
-  \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Faq)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _icons_Arrows__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icons/Arrows */ "./resources/js/components/icons/Arrows.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
-function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
-function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
-function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
-
-
-
-function Faq(_ref) {
-  var faqTitle = _ref.faqTitle,
-    _ref$faqItems = _ref.faqItems,
-    faqItems = _ref$faqItems === void 0 ? [] : _ref$faqItems;
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
-    _useState2 = _slicedToArray(_useState, 2),
-    activeIndex = _useState2[0],
-    setActiveIndex = _useState2[1];
-  var toggleAccordion = function toggleAccordion(index) {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    className: "nwp-padding-x-container bg-white",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "nwp-container mx-auto py-20",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "max-w-[750px] mx-auto",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h6", {
-          className: " text-3xl md:text-5xl font-bold text-black text-center",
-          children: faqTitle
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: " mt-8",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "accordion",
-            children: faqItems.map(function (item, index) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                className: "accordion-item border-b border-gray-300",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
-                  className: "w-full font-bold text-left text-lg py-4  flex justify-between items-center focus:outline-none ".concat(activeIndex === index ? 'text-cdsblue' : 'text-gray-800'),
-                  "aria-expanded": activeIndex === index,
-                  onClick: function onClick() {
-                    return toggleAccordion(index);
-                  },
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-                    className: "accordion-title",
-                    children: item.title
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_1__.ArrowIcon, {
-                    color: activeIndex === index ? '#0088ff' : '#000',
-                    className: "w-8 h-8 group-hover:fill-cdsblue",
-                    rotate: activeIndex === index
-                  })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                  className: "accordion-content ".concat(activeIndex === index ? 'opacity-100 max-h-screen py-2' : 'opacity-0 max-h-0', " overflow-hidden transition-all duration-200"),
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-                    className: "text-gray-600 text-lg",
-                    children: item.content
-                  })
-                })]
-              }, index);
-            })
-          })
-        })]
-      })
-    })
-  });
 }
 
 /***/ }),
@@ -2389,7 +2142,7 @@ var FeaturedEvents = function FeaturedEvents() {
   }, [language]); // Dependencia en el idioma
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-    className: "nwp-padding-x-container bg-cdsgray700 pb-20",
+    className: "nwp-padding-x-container bg-white pb-20",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "nwp-container mx-auto",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h4", {
@@ -2570,7 +2323,7 @@ function FeaturedSpaces() {
   }, [language]); // Dependencia en el idioma
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-    className: "nwp-padding-x-container bg-cdsgray700 py-20",
+    className: "nwp-padding-x-container bg-white py-20",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "nwp-container mx-auto",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h4", {
@@ -2714,7 +2467,7 @@ function FeaturedVenues() {
   }, [language]); // Dependencia en el idioma
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-    className: "nwp-padding-x-container bg-cdsgray700 pb-20",
+    className: "nwp-padding-x-container bg-white pb-20",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "nwp-container mx-auto",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h4", {
@@ -2899,134 +2652,6 @@ var FirstHero = function FirstHero(_ref) {
 
 /***/ }),
 
-/***/ "./resources/js/components/GallerySection.js":
-/*!***************************************************!*\
-  !*** ./resources/js/components/GallerySection.js ***!
-  \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var swiper_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/react */ "./node_modules/swiper/swiper-react.mjs");
-/* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
-/* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper/css */ "./node_modules/swiper/swiper.css");
-/* harmony import */ var swiper_css_effect_coverflow__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! swiper/css/effect-coverflow */ "./node_modules/swiper/modules/effect-coverflow.css");
-/* harmony import */ var swiper_css_pagination__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! swiper/css/pagination */ "./node_modules/swiper/modules/pagination.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
- // Importa los módulos necesarios
- // Estilos básicos de Swiper
- // Estilos para el efecto Coverflow
- // Estilos para la paginación
-
-var GallerySection = function GallerySection(_ref) {
-  var backgroundImage = _ref.backgroundImage,
-    title = _ref.title,
-    carouselImages = _ref.carouselImages;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("section", {
-    className: "relative nwp-padding-x-container bg-cover bg-center z-10 h-[480px] md:h-auto",
-    style: {
-      backgroundImage: "url('".concat(backgroundImage, "')")
-    },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-      className: "absolute inset-0 bg-black opacity-80"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-      className: "relative nwp-container z-10 mx-auto py-20",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h6", {
-        className: "w-full text-center text-white font-bold text-3xl md:text-5xl pb-8",
-        children: title
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-        className: "swiper-container",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_1__.Swiper, {
-          effect: 'coverflow',
-          grabCursor: false,
-          centeredSlides: true,
-          slidesPerView: 'auto',
-          coverflowEffect: {
-            rotate: 0,
-            stretch: 10,
-            depth: 500,
-            modifier: 2,
-            slideShadows: false
-          },
-          pagination: false,
-          modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.EffectCoverflow, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Pagination] // Asegúrate de incluir los módulos
-          ,
-          breakpoints: {
-            // Configuración para pantallas pequeñas
-            640: {
-              slidesPerView: 1,
-              spaceBetween: 100,
-              coverflowEffect: {
-                stretch: 5,
-                depth: 10
-              }
-            },
-            // Configuración para pantallas medianas
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-              coverflowEffect: {
-                stretch: 10,
-                depth: 400
-              }
-            },
-            // Configuración para pantallas grandes
-            1024: {
-              slidesPerView: 'auto',
-              spaceBetween: 30,
-              coverflowEffect: {
-                stretch: 10,
-                depth: 500
-              }
-            }
-          },
-          className: "mySwiper",
-          children: carouselImages.map(function (imageData, index) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_1__.SwiperSlide, {
-              style: {
-                maxWidth: '690px',
-                maxHeight: '440px'
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-                className: "w-full h-60 md:h-[440px] relative mr-4 md:mr-0",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-                  className: "absolute bottom-0 left-0 right-0 p-4 text-white z-20",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
-                    className: "font-bold text-lg",
-                    children: imageData.title
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
-                    className: "text-sm",
-                    children: imageData.description
-                  })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-                  className: "absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
-                  className: "h-full object-cover",
-                  src: imageData.image,
-                  alt: "Slide ".concat(index + 1),
-                  style: {
-                    width: '100%'
-                  }
-                })]
-              })
-            }, index);
-          })
-        })
-      })]
-    })]
-  });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GallerySection);
-
-/***/ }),
-
 /***/ "./resources/js/components/Headband.js":
 /*!*********************************************!*\
   !*** ./resources/js/components/Headband.js ***!
@@ -3177,6 +2802,389 @@ var IconCardSection = function IconCardSection(_ref) {
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IconCardSection);
+
+/***/ }),
+
+/***/ "./resources/js/components/NwpContentSectionWithAnImage.js":
+/*!*****************************************************************!*\
+  !*** ./resources/js/components/NwpContentSectionWithAnImage.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   NwpContentSectionWithAnImage: () => (/* binding */ NwpContentSectionWithAnImage)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+var NwpContentSectionWithAnImage = function NwpContentSectionWithAnImage(_ref) {
+  var title = _ref.title,
+    content = _ref.content,
+    buttonLabel = _ref.buttonLabel,
+    onButtonClick = _ref.onButtonClick,
+    image = _ref.image;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "md:relative nwp-padding-x-container md:h-[600px] bg-white",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "mx-auto nwp-container grid grid-cols-1 md:grid-cols-2 md:h-full md:gap-x-8",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "flex flex-col md:col-span-1 gap-y-4 justify-center md:h-full pb-10 md:pb-0 pt-20",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+            className: "font-bold text-3xl md:text-5xl",
+            children: title
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+            className: "pb-2 text-lg",
+            children: content
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
+            className: "font-semibold text-start flex gap-x-2 items-center",
+            onClick: onButtonClick,
+            children: [buttonLabel, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+              className: "bg-cdsblue rounded-full h-8 w-8 grid place-content-center ",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+                xmlns: "http://www.w3.org/2000/svg",
+                height: "28px",
+                viewBox: "0 -960 960 960",
+                width: "28px",
+                fill: "#FFFFFF",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                  d: "M480-315.33 284.67-510.67l47.33-48L446.67-444v-356h66.66v356L628-558.67l47.33 48L480-315.33ZM226.67-160q-27 0-46.84-19.83Q160-199.67 160-226.67V-362h66.67v135.33h506.66V-362H800v135.33q0 27-19.83 46.84Q760.33-160 733.33-160H226.67Z"
+                })
+              })
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "md:col-span-1 "
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "hidden  md:absolute md:left-1/2 md:top-0 col-span-1 text-white font-bold md:grid grid-cols-1 h-[600px]",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          src: image,
+          alt: "Piscina",
+          className: "w-[1200px] h-[600px] object-cover"
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: " md:hidden h-[374px]",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+        src: image,
+        alt: "Piscina",
+        className: "w-full  h-[374px] object-cover"
+      })
+    })]
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/components/NwpContentWithVideoSection.js":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/NwpContentWithVideoSection.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   NwpContentWithVideoSection: () => (/* binding */ NwpContentWithVideoSection)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_player__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-player */ "./node_modules/react-player/lib/index.js");
+/* harmony import */ var react_player__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_player__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+var NwpContentWithVideoSection = function NwpContentWithVideoSection(_ref) {
+  var headed = _ref.headed,
+    title = _ref.title,
+    content = _ref.content,
+    backgroundImage = _ref.backgroundImage,
+    videoUrl = _ref.videoUrl,
+    activities = _ref.activities;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("section", {
+    className: "relative nwp-padding-x-container bg-cover bg-center z-10",
+    style: {
+      backgroundImage: "url('".concat(backgroundImage, "')")
+    },
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "absolute inset-0 bg-black opacity-80"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "relative nwp-container flex flex-col md:flex-row z-10 mx-auto py-16 md:gap-x-4 lg:py-24",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "text-white max-w-3xl md:w-1/2 flex flex-col justify-between",
+        children: [!headed && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "h-1 w-12 bg-cdsverde mb-4"
+        }), headed && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          className: "uppercase font-semibold text-cdsblue text-lg mb-4",
+          children: headed
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+          className: "text-3xl font-bold tracking-tight sm:text-5xl ",
+          children: title
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          className: "mt-4 text-lg leading-6",
+          children: content
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
+          className: "mt-8 space-y-4",
+          children: activities.map(function (activity, index) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
+              className: "flex items-center gap-x-1",
+              children: [activity.iconPath ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+                xmlns: "http://www.w3.org/2000/svg",
+                height: "40px",
+                viewBox: "0 -960 960 960",
+                width: "40px",
+                fill: "#FFFFFF",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                  d: activity.iconPath
+                })
+              }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                className: "text-white",
+                children: "\u2022"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                className: "text-lg",
+                children: activity.text
+              })]
+            }, index);
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "mt-8 hidden md:flex justify-center md:w-1/2 py-4 md:py-0",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)((react_player__WEBPACK_IMPORTED_MODULE_2___default()), {
+          url: videoUrl,
+          className: "w-full max-w-lg rounded-lg shadow-lg",
+          controls: true,
+          width: "100%",
+          height: "100%"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "mt-8 md:hidden justify-center h-64 py-4 md:py-0",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)((react_player__WEBPACK_IMPORTED_MODULE_2___default()), {
+          url: videoUrl,
+          className: "w-full max-w-lg rounded-lg shadow-lg",
+          controls: true,
+          width: "100%",
+          height: "100%"
+        })
+      })]
+    })]
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/components/NwpFaq.js":
+/*!*******************************************!*\
+  !*** ./resources/js/components/NwpFaq.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   NwpFaq: () => (/* binding */ NwpFaq)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _icons_Arrows__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icons/Arrows */ "./resources/js/components/icons/Arrows.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+function NwpFaq(_ref) {
+  var faqTitle = _ref.faqTitle,
+    _ref$faqItems = _ref.faqItems,
+    faqItems = _ref$faqItems === void 0 ? [] : _ref$faqItems;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState2 = _slicedToArray(_useState, 2),
+    activeIndex = _useState2[0],
+    setActiveIndex = _useState2[1];
+  var toggleAccordion = function toggleAccordion(index) {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "nwp-padding-x-container bg-white",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "nwp-container mx-auto py-20",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "max-w-[750px] mx-auto",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h6", {
+          className: " text-3xl md:text-5xl font-bold text-black text-center",
+          children: faqTitle
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: " mt-8",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: "accordion",
+            children: faqItems.map(function (item, index) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                className: "accordion-item border-b border-gray-300",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
+                  className: "w-full font-bold text-left text-lg py-4  flex justify-between items-center focus:outline-none ".concat(activeIndex === index ? 'text-cdsblue' : 'text-gray-800'),
+                  "aria-expanded": activeIndex === index,
+                  onClick: function onClick() {
+                    return toggleAccordion(index);
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                    className: "accordion-title",
+                    children: item.title
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons_Arrows__WEBPACK_IMPORTED_MODULE_1__.ArrowIcon, {
+                    color: activeIndex === index ? '#0088ff' : '#000',
+                    className: "w-8 h-8 group-hover:fill-cdsblue",
+                    rotate: activeIndex === index
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                  className: "accordion-content ".concat(activeIndex === index ? 'opacity-100 max-h-screen py-2' : 'opacity-0 max-h-0', " overflow-hidden transition-all duration-200"),
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                    className: "text-gray-600 text-lg",
+                    children: item.content
+                  })
+                })]
+              }, index);
+            })
+          })
+        })]
+      })
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/NwpGallerySection.js":
+/*!******************************************************!*\
+  !*** ./resources/js/components/NwpGallerySection.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   NwpGallerySection: () => (/* binding */ NwpGallerySection)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var swiper_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/react */ "./node_modules/swiper/swiper-react.mjs");
+/* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
+/* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper/css */ "./node_modules/swiper/swiper.css");
+/* harmony import */ var swiper_css_effect_coverflow__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! swiper/css/effect-coverflow */ "./node_modules/swiper/modules/effect-coverflow.css");
+/* harmony import */ var swiper_css_pagination__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! swiper/css/pagination */ "./node_modules/swiper/modules/pagination.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+ // Importa los módulos necesarios
+ // Estilos básicos de Swiper
+ // Estilos para el efecto Coverflow
+ // Estilos para la paginación
+
+var NwpGallerySection = function NwpGallerySection(_ref) {
+  var backgroundImage = _ref.backgroundImage,
+    title = _ref.title,
+    carouselImages = _ref.carouselImages;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("section", {
+    className: "relative nwp-padding-x-container bg-cover bg-center z-10 h-[480px] md:h-auto",
+    style: {
+      backgroundImage: "url('".concat(backgroundImage, "')")
+    },
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      className: "absolute inset-0 bg-black opacity-80"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      className: "relative nwp-container z-10 mx-auto py-20",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h6", {
+        className: "w-full text-center text-white font-bold text-3xl md:text-5xl pb-8",
+        children: title
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        className: "swiper-container",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_1__.Swiper, {
+          effect: 'coverflow',
+          grabCursor: false,
+          centeredSlides: true,
+          slidesPerView: 'auto',
+          coverflowEffect: {
+            rotate: 0,
+            stretch: 10,
+            depth: 500,
+            modifier: 2,
+            slideShadows: false
+          },
+          pagination: false,
+          modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.EffectCoverflow, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Pagination] // Asegúrate de incluir los módulos
+          ,
+          breakpoints: {
+            // Configuración para pantallas pequeñas
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 100,
+              coverflowEffect: {
+                stretch: 5,
+                depth: 10
+              }
+            },
+            // Configuración para pantallas medianas
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+              coverflowEffect: {
+                stretch: 10,
+                depth: 400
+              }
+            },
+            // Configuración para pantallas grandes
+            1024: {
+              slidesPerView: 'auto',
+              spaceBetween: 30,
+              coverflowEffect: {
+                stretch: 10,
+                depth: 500
+              }
+            }
+          },
+          className: "mySwiper",
+          children: carouselImages.map(function (imageData, index) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_1__.SwiperSlide, {
+              style: {
+                maxWidth: '690px',
+                maxHeight: '440px'
+              },
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                className: "w-full h-60 md:h-[440px] relative mr-4 md:mr-0",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                  className: "absolute bottom-0 left-0 right-0 p-4 text-white z-20",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
+                    className: "font-bold text-lg",
+                    children: imageData.title
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
+                    className: "text-sm",
+                    children: imageData.description
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                  className: "absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+                  className: "h-full object-cover",
+                  src: imageData.image,
+                  alt: "Slide ".concat(index + 1),
+                  style: {
+                    width: '100%'
+                  }
+                })]
+              })
+            }, index);
+          })
+        })
+      })]
+    })]
+  });
+};
 
 /***/ }),
 
@@ -5320,21 +5328,21 @@ var YouTubeIcon = function YouTubeIcon(_ref4) {
 
 /***/ }),
 
-/***/ "./resources/js/components/parque/NwpFaq.js":
-/*!**************************************************!*\
-  !*** ./resources/js/components/parque/NwpFaq.js ***!
-  \**************************************************/
+/***/ "./resources/js/components/parque/Faq.js":
+/*!***********************************************!*\
+  !*** ./resources/js/components/parque/Faq.js ***!
+  \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ NwpFaq)
+/* harmony export */   "default": () => (/* binding */ Faq)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var _Faq__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Faq */ "./resources/js/components/Faq.js");
+/* harmony import */ var _NwpFaq__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../NwpFaq */ "./resources/js/components/NwpFaq.js");
 /* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
@@ -5348,7 +5356,7 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
-function NwpFaq() {
+function Faq() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
     language = _useLanguage.language; // Acceder al idioma seleccionado
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
@@ -5405,7 +5413,7 @@ function NwpFaq() {
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
     className: "App",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Faq__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NwpFaq__WEBPACK_IMPORTED_MODULE_2__.NwpFaq, {
       faqTitle: content.faqTitle,
       faqItems: content.faqItems
     })
@@ -5415,7 +5423,7 @@ var container = document.getElementById('nwp-parque-faq');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
   root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NwpFaq, {})
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Faq, {})
   }));
 }
 
@@ -5514,7 +5522,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _ParkActivities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../ParkActivities */ "./resources/js/components/ParkActivities.js");
 /* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
-/* harmony import */ var _ContentWithVideoSection__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ContentWithVideoSection */ "./resources/js/components/ContentWithVideoSection.js");
+/* harmony import */ var _NwpContentWithVideoSection__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../NwpContentWithVideoSection */ "./resources/js/components/NwpContentWithVideoSection.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -5580,7 +5588,7 @@ function NwpParqueContentWithVideoSection() {
     setActivities(translations[language].activities);
   }, [language]); // Dependencia en el idioma
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_ContentWithVideoSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_NwpContentWithVideoSection__WEBPACK_IMPORTED_MODULE_4__.NwpContentWithVideoSection, {
     headed: content.headed,
     title: content.title,
     content: content.content,
@@ -5762,16 +5770,16 @@ if (container) {
 
 /***/ }),
 
-/***/ "./resources/js/components/parque/baloncesto/NwpBaloncestoCampusFacilities.js":
-/*!************************************************************************************!*\
-  !*** ./resources/js/components/parque/baloncesto/NwpBaloncestoCampusFacilities.js ***!
-  \************************************************************************************/
+/***/ "./resources/js/components/parque/baloncesto/CampusFacilities.js":
+/*!***********************************************************************!*\
+  !*** ./resources/js/components/parque/baloncesto/CampusFacilities.js ***!
+  \***********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   NwpBaloncestoCampusFacilities: () => (/* binding */ NwpBaloncestoCampusFacilities)
+/* harmony export */   CampusFacilities: () => (/* binding */ CampusFacilities)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -5790,7 +5798,7 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
-var NwpBaloncestoCampusFacilities = function NwpBaloncestoCampusFacilities() {
+var CampusFacilities = function CampusFacilities() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.useLanguage)(),
     language = _useLanguage.language; // Acceder al idioma seleccionado
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
@@ -5861,27 +5869,27 @@ var container = document.getElementById('nwp-baloncesto-campus-facilities');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
   root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NwpBaloncestoCampusFacilities, {})
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(CampusFacilities, {})
   }));
 }
 
 /***/ }),
 
-/***/ "./resources/js/components/parque/baloncesto/NwpBaloncestoContentSectionWithAnImage.js":
-/*!*********************************************************************************************!*\
-  !*** ./resources/js/components/parque/baloncesto/NwpBaloncestoContentSectionWithAnImage.js ***!
-  \*********************************************************************************************/
+/***/ "./resources/js/components/parque/baloncesto/ContentSectionWithAnImage.js":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/parque/baloncesto/ContentSectionWithAnImage.js ***!
+  \********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ NwpBaloncestoContentSectionWithAnImage)
+/* harmony export */   "default": () => (/* binding */ ContentSectionWithAnImage)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var _ContentSectionWithAnImage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../ContentSectionWithAnImage */ "./resources/js/components/ContentSectionWithAnImage.js");
+/* harmony import */ var _NwpContentSectionWithAnImage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../NwpContentSectionWithAnImage */ "./resources/js/components/NwpContentSectionWithAnImage.js");
 /* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
@@ -5895,7 +5903,7 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
-function NwpBaloncestoContentSectionWithAnImage() {
+function ContentSectionWithAnImage() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
     language = _useLanguage.language; // Acceder al idioma seleccionado
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
@@ -5925,7 +5933,7 @@ function NwpBaloncestoContentSectionWithAnImage() {
   var handleButtonClick = function handleButtonClick() {
     console.log('Button clicked');
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ContentSectionWithAnImage__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NwpContentSectionWithAnImage__WEBPACK_IMPORTED_MODULE_2__.NwpContentSectionWithAnImage, {
     title: content.title,
     content: content.content,
     buttonLabel: content.buttonLabel,
@@ -5937,28 +5945,28 @@ var container = document.getElementById('nwp-baloncesto-content-section-whith-an
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
   root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NwpBaloncestoContentSectionWithAnImage, {})
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(ContentSectionWithAnImage, {})
   }));
 }
 
 /***/ }),
 
-/***/ "./resources/js/components/parque/baloncesto/NwpBaloncestoContentWithVideoSection.js":
-/*!*******************************************************************************************!*\
-  !*** ./resources/js/components/parque/baloncesto/NwpBaloncestoContentWithVideoSection.js ***!
-  \*******************************************************************************************/
+/***/ "./resources/js/components/parque/baloncesto/ContentWithVideoSection.js":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/parque/baloncesto/ContentWithVideoSection.js ***!
+  \******************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   NwpBaloncestoContentWithVideoSection: () => (/* binding */ NwpBaloncestoContentWithVideoSection)
+/* harmony export */   ContentWithVideoSection: () => (/* binding */ ContentWithVideoSection)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
-/* harmony import */ var _ContentWithVideoSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../ContentWithVideoSection */ "./resources/js/components/ContentWithVideoSection.js");
+/* harmony import */ var _NwpContentWithVideoSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../NwpContentWithVideoSection */ "./resources/js/components/NwpContentWithVideoSection.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -5971,7 +5979,7 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
-var NwpBaloncestoContentWithVideoSection = function NwpBaloncestoContentWithVideoSection() {
+var ContentWithVideoSection = function ContentWithVideoSection() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.useLanguage)(),
     language = _useLanguage.language; // Acceder al idioma seleccionado
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
@@ -6015,7 +6023,7 @@ var NwpBaloncestoContentWithVideoSection = function NwpBaloncestoContentWithVide
     setActivities(translations[language].activities);
   }, [language]); // Dependencia en el idioma
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ContentWithVideoSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NwpContentWithVideoSection__WEBPACK_IMPORTED_MODULE_3__.NwpContentWithVideoSection, {
     headed: content.headed,
     title: content.title,
     content: content.content,
@@ -6028,28 +6036,129 @@ var container = document.getElementById('nwp-baloncesto-content-whit-video-secti
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
   root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NwpBaloncestoContentWithVideoSection, {})
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(ContentWithVideoSection, {})
   }));
 }
 
 /***/ }),
 
-/***/ "./resources/js/components/parque/baloncesto/NwpBaloncestoGallerySection.js":
-/*!**********************************************************************************!*\
-  !*** ./resources/js/components/parque/baloncesto/NwpBaloncestoGallerySection.js ***!
-  \**********************************************************************************/
+/***/ "./resources/js/components/parque/baloncesto/Faq.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/parque/baloncesto/Faq.js ***!
+  \**********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   NwpBaloncestoGallerySection: () => (/* binding */ NwpBaloncestoGallerySection)
+/* harmony export */   Faq: () => (/* binding */ Faq)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _NwpFaq__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../NwpFaq */ "./resources/js/components/NwpFaq.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+
+var Faq = function Faq() {
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
+    language = _useLanguage.language; // Acceder al idioma seleccionado
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState2 = _slicedToArray(_useState, 2),
+    content = _useState2[0],
+    setContent = _useState2[1]; // Estado para guardar el contenido traducido
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
+    var translations = {
+      es: {
+        faqTitle: "Preguntas frecuentes sobre el Parque Ciudad del Saber",
+        faqItems: [{
+          title: '¿Por qué a veces la luna está visible durante el día?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }, {
+          title: '¿Por qué el cielo es azul?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }, {
+          title: '¿Descubriremos alguna vez extraterrestres?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }, {
+          title: '¿Cuánto pesa la Tierra?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }, {
+          title: '¿Cómo se mantienen los aviones en el aire?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }]
+      },
+      en: {
+        faqTitle: "Frequently Asked Questions about Ciudad del Saber Park",
+        faqItems: [{
+          title: 'Why is the moon sometimes out during the day?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }, {
+          title: 'Why is the sky blue?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }, {
+          title: 'Will we ever discover aliens?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }, {
+          title: 'How much does the Earth weigh?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }, {
+          title: 'How do airplanes stay up?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }]
+      }
+    };
+
+    // Actualizar el estado con el contenido traducido
+    setContent(translations[language]);
+  }, [language]); // Dependencia en el idioma
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    className: "App",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NwpFaq__WEBPACK_IMPORTED_MODULE_2__.NwpFaq, {
+      faqTitle: content.faqTitle,
+      faqItems: content.faqItems
+    })
+  });
+};
+var container = document.getElementById('nwp-baloncesto-faq-section');
+if (container) {
+  var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Faq, {})
+  }));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/parque/baloncesto/GallerySection.js":
+/*!*********************************************************************!*\
+  !*** ./resources/js/components/parque/baloncesto/GallerySection.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   GallerySection: () => (/* binding */ GallerySection)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
-/* harmony import */ var _GallerySection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../GallerySection */ "./resources/js/components/GallerySection.js");
+/* harmony import */ var _NwpGallerySection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../NwpGallerySection */ "./resources/js/components/NwpGallerySection.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -6062,7 +6171,7 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
  // Importar el componente GallerySection
 
-var NwpBaloncestoGallerySection = function NwpBaloncestoGallerySection() {
+var GallerySection = function GallerySection() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.useLanguage)(),
     language = _useLanguage.language; // Acceder al idioma seleccionado
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
@@ -6132,7 +6241,7 @@ var NwpBaloncestoGallerySection = function NwpBaloncestoGallerySection() {
     setCarouselImages(translations[language].carouselImages);
   }, [language]); // Dependencia en el idioma
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_GallerySection__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NwpGallerySection__WEBPACK_IMPORTED_MODULE_3__.NwpGallerySection, {
     backgroundImage: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Imagen de fondo
     ,
     title: content.title // Título traducido
@@ -6144,16 +6253,16 @@ var container = document.getElementById('nwp-baloncesto-gallery-section');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
   root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NwpBaloncestoGallerySection, {})
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(GallerySection, {})
   }));
 }
 
 /***/ }),
 
-/***/ "./resources/js/components/parque/baloncesto/NwpBaloncestoHeadbandSection.js":
-/*!***********************************************************************************!*\
-  !*** ./resources/js/components/parque/baloncesto/NwpBaloncestoHeadbandSection.js ***!
-  \***********************************************************************************/
+/***/ "./resources/js/components/parque/baloncesto/HeadbandSection.js":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/parque/baloncesto/HeadbandSection.js ***!
+  \**********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -6175,7 +6284,7 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
-var NwpBaloncestoHeadbandSection = function NwpBaloncestoHeadbandSection() {
+var HeadbandSection = function HeadbandSection() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
     language = _useLanguage.language; // Acceder al idioma seleccionado
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
@@ -6218,22 +6327,22 @@ var container = document.getElementById('nwp-baloncesto-headband-section');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
   root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NwpBaloncestoHeadbandSection, {})
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(HeadbandSection, {})
   }));
 }
 
 /***/ }),
 
-/***/ "./resources/js/components/parque/baloncesto/NwpBaloncestoHero.js":
-/*!************************************************************************!*\
-  !*** ./resources/js/components/parque/baloncesto/NwpBaloncestoHero.js ***!
-  \************************************************************************/
+/***/ "./resources/js/components/parque/baloncesto/Hero.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/parque/baloncesto/Hero.js ***!
+  \***********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ NwpBaloncestoHero)
+/* harmony export */   "default": () => (/* binding */ Hero)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -6252,7 +6361,7 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
-function NwpBaloncestoHero() {
+function Hero() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
     language = _useLanguage.language; // Acceder al idioma seleccionado
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
@@ -6304,27 +6413,132 @@ var container = document.getElementById('nwp-hero-baloncesto');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
   root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NwpBaloncestoHero, {})
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Hero, {})
   }));
 }
 
 /***/ }),
 
-/***/ "./resources/js/components/parque/baloncesto/NwpFaqSection.js":
-/*!********************************************************************!*\
-  !*** ./resources/js/components/parque/baloncesto/NwpFaqSection.js ***!
-  \********************************************************************/
+/***/ "./resources/js/components/parque/golf/CampusFacilities.js":
+/*!*****************************************************************!*\
+  !*** ./resources/js/components/parque/golf/CampusFacilities.js ***!
+  \*****************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   CampusFacilities: () => (/* binding */ CampusFacilities)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var _Faq__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Faq */ "./resources/js/components/Faq.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var _IconCardSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../IconCardSection */ "./resources/js/components/IconCardSection.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+
+var CampusFacilities = function CampusFacilities() {
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.useLanguage)(),
+    language = _useLanguage.language; // Acceder al idioma seleccionado
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState2 = _slicedToArray(_useState, 2),
+    content = _useState2[0],
+    setContent = _useState2[1]; // Estado para guardar el contenido traducido
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState4 = _slicedToArray(_useState3, 2),
+    cards = _useState4[0],
+    setCards = _useState4[1]; // Estado para guardar las tarjetas traducidas
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
+    var translations = {
+      es: {
+        title: "Facilidades del campus baloncesto",
+        cards: [{
+          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          fillColor: '#0088ff',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        }, {
+          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          fillColor: '#ff8800',
+          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+        }, {
+          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          fillColor: '#ff8800',
+          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+        }, {
+          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          fillColor: '#ff8800',
+          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+        }]
+      },
+      en: {
+        title: "Campus Facilities",
+        cards: [{
+          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          fillColor: '#0088ff',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        }, {
+          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          fillColor: '#ff8800',
+          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+        }, {
+          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          fillColor: '#ff8800',
+          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+        }, {
+          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          fillColor: '#ff8800',
+          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+        }]
+      }
+    };
+
+    // Actualizar el estado con el contenido traducido
+    setContent(translations[language]);
+    setCards(translations[language].cards);
+  }, [language]); // Dependencia en el idioma
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_IconCardSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    title: content.title,
+    cards: cards
+  });
+};
+var container = document.getElementById('nwp-golf-campus-facilities');
+if (container) {
+  var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(CampusFacilities, {})
+  }));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/parque/golf/ContentSectionWithAnImage.js":
+/*!**************************************************************************!*\
+  !*** ./resources/js/components/parque/golf/ContentSectionWithAnImage.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ContentSectionWithAnImage)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _NwpContentSectionWithAnImage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../NwpContentSectionWithAnImage */ "./resources/js/components/NwpContentSectionWithAnImage.js");
 /* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
@@ -6338,7 +6552,7 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
-var NwpFaqSection = function NwpFaqSection() {
+function ContentSectionWithAnImage() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
     language = _useLanguage.language; // Acceder al idioma seleccionado
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
@@ -6350,42 +6564,14 @@ var NwpFaqSection = function NwpFaqSection() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        faqTitle: "Preguntas frecuentes sobre la Cancha de Baloncesto",
-        faqItems: [{
-          title: '¿Por qué a veces la luna está visible durante el día?',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
-        }, {
-          title: '¿Por qué el cielo es azul?',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
-        }, {
-          title: '¿Descubriremos alguna vez extraterrestres?',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
-        }, {
-          title: '¿Cuánto pesa la Tierra?',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
-        }, {
-          title: '¿Cómo se mantienen los aviones en el aire?',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
-        }]
+        title: "La cancha más jugable de Panama",
+        content: "Construida en 1948, esta piscina ha sido testigo de innumerables momentos \n                  de entrenamiento y esparcimiento para generaciones de militares. Hoy, abre \n                  sus puertas a toda la comunidad para que disfrutes de sus aguas cristalinas \n                  y de un ambiente familiar y acogedor.",
+        buttonLabel: "Descarga el reglamento de uso"
       },
       en: {
-        faqTitle: "Frequently Asked Questions about Ciudad del Saber Park",
-        faqItems: [{
-          title: 'Why is the moon sometimes out during the day?',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
-        }, {
-          title: 'Why is the sky blue?',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
-        }, {
-          title: 'Will we ever discover aliens?',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
-        }, {
-          title: 'How much does the Earth weigh?',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
-        }, {
-          title: 'How do airplanes stay up?',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
-        }]
+        title: "The deepest pool in Panama",
+        content: "Built in 1948, this pool has witnessed countless moments of training and \n                  recreation for generations of military personnel. Today, it opens its doors \n                  to the entire community to enjoy its crystal-clear waters and a family-friendly, \n                  welcoming atmosphere.",
+        buttonLabel: "Download the usage rules"
       }
     };
 
@@ -6393,40 +6579,133 @@ var NwpFaqSection = function NwpFaqSection() {
     setContent(translations[language]);
   }, [language]); // Dependencia en el idioma
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-    className: "App",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Faq__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      faqTitle: content.faqTitle,
-      faqItems: content.faqItems
-    })
+  var handleButtonClick = function handleButtonClick() {
+    console.log('Button clicked');
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NwpContentSectionWithAnImage__WEBPACK_IMPORTED_MODULE_2__.NwpContentSectionWithAnImage, {
+    title: content.title,
+    content: content.content,
+    buttonLabel: content.buttonLabel,
+    onButtonClick: handleButtonClick,
+    image: "https://images.unsplash.com/photo-1691253104600-ccfd27782f3e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NwpFaqSection);
-var container = document.getElementById('nwp-baloncesto-faq-section');
+}
+var container = document.getElementById('nwp-golf-content-section-whith-an-image');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
   root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NwpFaqSection, {})
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(ContentSectionWithAnImage, {})
   }));
 }
 
 /***/ }),
 
-/***/ "./resources/js/components/parque/piscina/NwpFaqSection.js":
-/*!*****************************************************************!*\
-  !*** ./resources/js/components/parque/piscina/NwpFaqSection.js ***!
-  \*****************************************************************/
+/***/ "./resources/js/components/parque/golf/ContentWithVideoSection.js":
+/*!************************************************************************!*\
+  !*** ./resources/js/components/parque/golf/ContentWithVideoSection.js ***!
+  \************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   ContentWithVideoSection: () => (/* binding */ ContentWithVideoSection)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var _Faq__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Faq */ "./resources/js/components/Faq.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var _NwpContentWithVideoSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../NwpContentWithVideoSection */ "./resources/js/components/NwpContentWithVideoSection.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+
+var ContentWithVideoSection = function ContentWithVideoSection() {
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.useLanguage)(),
+    language = _useLanguage.language; // Acceder al idioma seleccionado
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState2 = _slicedToArray(_useState, 2),
+    content = _useState2[0],
+    setContent = _useState2[1]; // Estado para guardar el contenido traducido
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState4 = _slicedToArray(_useState3, 2),
+    activities = _useState4[0],
+    setActivities = _useState4[1]; // Estado para guardar las actividades traducidas
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
+    var translations = {
+      es: {
+        title: "¿Qué hacer un día en el parque?",
+        content: "En el parque de Ciudad del Saber, encontrarás una variedad de actividades para disfrutar. Ofrecemos opciones gratuitas y abiertas a todo el público, perfectas para compartir con tu familia, amigos e incluso tu mascota.",
+        activities: [{
+          text: "Recorre 21km de sendero en nuestra reserva forestal"
+        }, {
+          text: "Diviértete en familia en el parque para niños y niñas"
+        }, {
+          text: "Disfruta de un espacio amigable en el parque para mascotas"
+        }]
+      },
+      en: {
+        title: "What to do on a day at the park?",
+        content: "At Ciudad del Saber Park, you'll find a variety of activities to enjoy. We offer free and open options for the public, perfect for sharing with your family, friends, and even your pet.",
+        activities: [{
+          text: "Walk 21km of trail in our forest reserve"
+        }, {
+          text: "Have fun with your family at the children's park"
+        }, {
+          text: "Enjoy a pet-friendly space at the pet park"
+        }]
+      }
+    };
+
+    // Actualizar el estado con el contenido traducido
+    setContent(translations[language]);
+    setActivities(translations[language].activities);
+  }, [language]); // Dependencia en el idioma
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NwpContentWithVideoSection__WEBPACK_IMPORTED_MODULE_3__.NwpContentWithVideoSection, {
+    headed: content.headed,
+    title: content.title,
+    content: content.content,
+    backgroundImage: "https://images.unsplash.com/photo-1498955472675-532cdee9d6b4?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cGFya3xlbnwwfHwwfHx8MA%3D%3D",
+    videoUrl: "https://www.youtube.com/watch?v=aRZ1W2apiDY",
+    activities: activities
+  });
+};
+var container = document.getElementById('nwp-golf-content-whit-video-section');
+if (container) {
+  var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(ContentWithVideoSection, {})
+  }));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/parque/golf/Faq.js":
+/*!****************************************************!*\
+  !*** ./resources/js/components/parque/golf/Faq.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Faq: () => (/* binding */ Faq)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _NwpFaq__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../NwpFaq */ "./resources/js/components/NwpFaq.js");
 /* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
@@ -6440,7 +6719,7 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
-var NwpFaqSection = function NwpFaqSection() {
+var Faq = function Faq() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
     language = _useLanguage.language; // Acceder al idioma seleccionado
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
@@ -6497,33 +6776,308 @@ var NwpFaqSection = function NwpFaqSection() {
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
     className: "App",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Faq__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NwpFaq__WEBPACK_IMPORTED_MODULE_2__.NwpFaq, {
       faqTitle: content.faqTitle,
       faqItems: content.faqItems
     })
   });
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NwpFaqSection);
-var container = document.getElementById('nwp-piscina-faq-section');
+var container = document.getElementById('nwp-golf-faq-section');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
   root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NwpFaqSection, {})
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Faq, {})
   }));
 }
 
 /***/ }),
 
-/***/ "./resources/js/components/parque/piscina/NwpPiscinaCampusFacilities.js":
-/*!******************************************************************************!*\
-  !*** ./resources/js/components/parque/piscina/NwpPiscinaCampusFacilities.js ***!
-  \******************************************************************************/
+/***/ "./resources/js/components/parque/golf/GallerySection.js":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/parque/golf/GallerySection.js ***!
+  \***************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   NwpPiscinaCampusFacilities: () => (/* binding */ NwpPiscinaCampusFacilities)
+/* harmony export */   GallerySection: () => (/* binding */ GallerySection)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var _NwpGallerySection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../NwpGallerySection */ "./resources/js/components/NwpGallerySection.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+ // Importar el componente GallerySection
+
+var GallerySection = function GallerySection() {
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.useLanguage)(),
+    language = _useLanguage.language; // Acceder al idioma seleccionado
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState2 = _slicedToArray(_useState, 2),
+    content = _useState2[0],
+    setContent = _useState2[1]; // Estado para guardar el contenido traducido
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState4 = _slicedToArray(_useState3, 2),
+    carouselImages = _useState4[0],
+    setCarouselImages = _useState4[1]; // Estado para guardar las imágenes traducidas del carrusel
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
+    var translations = {
+      es: {
+        title: "Explora nuestra cancha de baloncesto",
+        carouselImages: [{
+          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          title: "Imagen 1",
+          description: "Descripción de la imagen 1"
+        }, {
+          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          title: "Imagen 2",
+          description: "Descripción de la imagen 2"
+        }, {
+          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          title: "Imagen 1",
+          description: "Descripción de la imagen 1"
+        }, {
+          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          title: "Imagen 2",
+          description: "Descripción de la imagen 2"
+        }, {
+          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          title: "Imagen 2",
+          description: "Descripción de la imagen 2"
+        }]
+      },
+      en: {
+        title: "Explore our pool",
+        carouselImages: [{
+          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          title: "Imagen 1",
+          description: "Descripción de la imagen 1"
+        }, {
+          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          title: "Imagen 2",
+          description: "Descripción de la imagen 2"
+        }, {
+          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          title: "Imagen 1",
+          description: "Descripción de la imagen 1"
+        }, {
+          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          title: "Imagen 2",
+          description: "Descripción de la imagen 2"
+        }, {
+          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          title: "Imagen 2",
+          description: "Descripción de la imagen 2"
+        }]
+      }
+    };
+
+    // Actualizar el estado con el contenido traducido
+    setContent(translations[language]);
+    setCarouselImages(translations[language].carouselImages);
+  }, [language]); // Dependencia en el idioma
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NwpGallerySection__WEBPACK_IMPORTED_MODULE_3__.NwpGallerySection, {
+    backgroundImage: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Imagen de fondo
+    ,
+    title: content.title // Título traducido
+    ,
+    carouselImages: carouselImages // Imágenes del carrusel traducidas
+  });
+};
+var container = document.getElementById('nwp-golf-gallery-section');
+if (container) {
+  var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(GallerySection, {})
+  }));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/parque/golf/HeadbandSection.js":
+/*!****************************************************************!*\
+  !*** ./resources/js/components/parque/golf/HeadbandSection.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _Headband__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Headband */ "./resources/js/components/Headband.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+
+var HeadbandSection = function HeadbandSection() {
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
+    language = _useLanguage.language; // Acceder al idioma seleccionado
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState2 = _slicedToArray(_useState, 2),
+    content = _useState2[0],
+    setContent = _useState2[1]; // Estado para guardar el contenido traducido
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
+    var translations = {
+      es: {
+        mainTitle: "Vive el campus",
+        subtitle: "Un espacio para compartir, entrenar y divertirse",
+        instagramLink: "https://www.instagram.com/parquecds/?hl=es",
+        instagramHandle: "@parquecds",
+        imageSrc: 'https://comercial.ciudaddelsaber.org/storage/venues/7a7b41702666a764ed05d401a73da351248d2577d3b5e988c513954bc39ec680_2048.jpg'
+      },
+      en: {
+        mainTitle: "Experience the campus",
+        subtitle: "A space to share, train, and have fun",
+        instagramLink: "https://www.instagram.com/parquecds/?hl=en",
+        instagramHandle: "@parquecds",
+        imageSrc: 'https://comercial.ciudaddelsaber.org/storage/venues/7a7b41702666a764ed05d401a73da351248d2577d3b5e988c513954bc39ec680_2048.jpg'
+      }
+    };
+
+    // Actualizar el estado con el contenido traducido
+    setContent(translations[language]);
+  }, [language]); // Dependencia en el idioma
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Headband__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    imageSrc: content.imageSrc,
+    mainTitle: content.mainTitle,
+    subtitle: content.subtitle,
+    instagramLink: content.instagramLink,
+    instagramHandle: content.instagramHandle
+  });
+};
+var container = document.getElementById('nwp-golf-headband-section');
+if (container) {
+  var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(HeadbandSection, {})
+  }));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/parque/golf/Hero.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/parque/golf/Hero.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Hero)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _FirstHero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../FirstHero */ "./resources/js/components/FirstHero.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+
+function Hero() {
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
+    language = _useLanguage.language; // Acceder al idioma seleccionado
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState2 = _slicedToArray(_useState, 2),
+    content = _useState2[0],
+    setContent = _useState2[1]; // Estado para guardar el contenido traducido
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
+    var translations = {
+      es: {
+        title: "Cancha de baloncesto",
+        subtitle: "",
+        // Puedes agregar un subtítulo si lo necesitas
+        schedule: "6:30 am - 8:00 pm",
+        location: "C. Victor Garibaldo, Panamá",
+        buttonText: "Reserva tu espacio"
+      },
+      en: {
+        title: "basketball court",
+        subtitle: "",
+        // Puedes agregar un subtítulo si lo necesitas
+        schedule: "6:30 am - 8:00 pm",
+        location: "Victor Garibaldo St., Panama",
+        buttonText: "Book your spot"
+      }
+    };
+
+    // Actualizar el estado con el contenido traducido
+    setContent(translations[language]);
+  }, [language]); // Dependencia en el idioma
+
+  var handleButtonClick = function handleButtonClick() {
+    console.log('Button clicked');
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: content.title,
+    subtitle: content.subtitle,
+    schedule: content.schedule,
+    location: content.location,
+    onButtonClick: handleButtonClick,
+    gradientColor: "from-cdsverde via-cdsverde to-transparent",
+    backgroundImageUrl: "https://plus.unsplash.com/premium_photo-1668623041724-c9b6c84c436b?q=80&w=1329&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    buttonText: content.buttonText,
+    isVenue: true
+  });
+}
+var container = document.getElementById('nwp-hero-golf');
+if (container) {
+  var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Hero, {})
+  }));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/parque/piscina/CampusFacilities.js":
+/*!********************************************************************!*\
+  !*** ./resources/js/components/parque/piscina/CampusFacilities.js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CampusFacilities: () => (/* binding */ CampusFacilities)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -6542,7 +7096,7 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
-var NwpPiscinaCampusFacilities = function NwpPiscinaCampusFacilities() {
+var CampusFacilities = function CampusFacilities() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.useLanguage)(),
     language = _useLanguage.language; // Acceder al idioma seleccionado
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
@@ -6613,27 +7167,27 @@ var container = document.getElementById('nwp-piscina-campus-facilities');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
   root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NwpPiscinaCampusFacilities, {})
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(CampusFacilities, {})
   }));
 }
 
 /***/ }),
 
-/***/ "./resources/js/components/parque/piscina/NwpPiscinaContentSectionWithAnImage.js":
-/*!***************************************************************************************!*\
-  !*** ./resources/js/components/parque/piscina/NwpPiscinaContentSectionWithAnImage.js ***!
-  \***************************************************************************************/
+/***/ "./resources/js/components/parque/piscina/ContentSectionWithAnImage.js":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/parque/piscina/ContentSectionWithAnImage.js ***!
+  \*****************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ NwpPiscinaContentSectionWithAnImage)
+/* harmony export */   "default": () => (/* binding */ ContentSectionWithAnImage)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var _ContentSectionWithAnImage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../ContentSectionWithAnImage */ "./resources/js/components/ContentSectionWithAnImage.js");
+/* harmony import */ var _NwpContentSectionWithAnImage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../NwpContentSectionWithAnImage */ "./resources/js/components/NwpContentSectionWithAnImage.js");
 /* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
@@ -6647,7 +7201,7 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
-function NwpPiscinaContentSectionWithAnImage() {
+function ContentSectionWithAnImage() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
     language = _useLanguage.language; // Acceder al idioma seleccionado
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
@@ -6677,7 +7231,7 @@ function NwpPiscinaContentSectionWithAnImage() {
   var handleButtonClick = function handleButtonClick() {
     console.log('Button clicked');
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ContentSectionWithAnImage__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NwpContentSectionWithAnImage__WEBPACK_IMPORTED_MODULE_2__.NwpContentSectionWithAnImage, {
     title: content.title,
     content: content.content,
     buttonLabel: content.buttonLabel,
@@ -6689,28 +7243,28 @@ var container = document.getElementById('nwp-piscina-content-section-whith-an-im
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
   root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NwpPiscinaContentSectionWithAnImage, {})
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(ContentSectionWithAnImage, {})
   }));
 }
 
 /***/ }),
 
-/***/ "./resources/js/components/parque/piscina/NwpPiscinaContentWithVideoSection.js":
-/*!*************************************************************************************!*\
-  !*** ./resources/js/components/parque/piscina/NwpPiscinaContentWithVideoSection.js ***!
-  \*************************************************************************************/
+/***/ "./resources/js/components/parque/piscina/ContentWithVideoSection.js":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/parque/piscina/ContentWithVideoSection.js ***!
+  \***************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   NwpPiscinaContentWithVideoSection: () => (/* binding */ NwpPiscinaContentWithVideoSection)
+/* harmony export */   ContentWithVideoSection: () => (/* binding */ ContentWithVideoSection)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
-/* harmony import */ var _ContentWithVideoSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../ContentWithVideoSection */ "./resources/js/components/ContentWithVideoSection.js");
+/* harmony import */ var _NwpContentWithVideoSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../NwpContentWithVideoSection */ "./resources/js/components/NwpContentWithVideoSection.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -6723,7 +7277,7 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
-var NwpPiscinaContentWithVideoSection = function NwpPiscinaContentWithVideoSection() {
+var ContentWithVideoSection = function ContentWithVideoSection() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.useLanguage)(),
     language = _useLanguage.language; // Acceder al idioma seleccionado
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
@@ -6767,7 +7321,7 @@ var NwpPiscinaContentWithVideoSection = function NwpPiscinaContentWithVideoSecti
     setActivities(translations[language].activities);
   }, [language]); // Dependencia en el idioma
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ContentWithVideoSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NwpContentWithVideoSection__WEBPACK_IMPORTED_MODULE_3__.NwpContentWithVideoSection, {
     headed: content.headed,
     title: content.title,
     content: content.content,
@@ -6780,28 +7334,129 @@ var container = document.getElementById('nwp-piscina-content-whit-video-section'
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
   root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NwpPiscinaContentWithVideoSection, {})
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(ContentWithVideoSection, {})
   }));
 }
 
 /***/ }),
 
-/***/ "./resources/js/components/parque/piscina/NwpPiscinaGallerySection.js":
-/*!****************************************************************************!*\
-  !*** ./resources/js/components/parque/piscina/NwpPiscinaGallerySection.js ***!
-  \****************************************************************************/
+/***/ "./resources/js/components/parque/piscina/Faq.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/parque/piscina/Faq.js ***!
+  \*******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   NwpPiscinaGallerySection: () => (/* binding */ NwpPiscinaGallerySection)
+/* harmony export */   Faq: () => (/* binding */ Faq)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _NwpFaq__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../NwpFaq */ "./resources/js/components/NwpFaq.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+
+var Faq = function Faq() {
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
+    language = _useLanguage.language; // Acceder al idioma seleccionado
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState2 = _slicedToArray(_useState, 2),
+    content = _useState2[0],
+    setContent = _useState2[1]; // Estado para guardar el contenido traducido
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
+    var translations = {
+      es: {
+        faqTitle: "Preguntas frecuentes sobre el Parque Ciudad del Saber",
+        faqItems: [{
+          title: '¿Por qué a veces la luna está visible durante el día?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }, {
+          title: '¿Por qué el cielo es azul?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }, {
+          title: '¿Descubriremos alguna vez extraterrestres?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }, {
+          title: '¿Cuánto pesa la Tierra?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }, {
+          title: '¿Cómo se mantienen los aviones en el aire?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }]
+      },
+      en: {
+        faqTitle: "Frequently Asked Questions about Ciudad del Saber Park",
+        faqItems: [{
+          title: 'Why is the moon sometimes out during the day?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }, {
+          title: 'Why is the sky blue?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }, {
+          title: 'Will we ever discover aliens?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }, {
+          title: 'How much does the Earth weigh?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }, {
+          title: 'How do airplanes stay up?',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
+        }]
+      }
+    };
+
+    // Actualizar el estado con el contenido traducido
+    setContent(translations[language]);
+  }, [language]); // Dependencia en el idioma
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    className: "App",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NwpFaq__WEBPACK_IMPORTED_MODULE_2__.NwpFaq, {
+      faqTitle: content.faqTitle,
+      faqItems: content.faqItems
+    })
+  });
+};
+var container = document.getElementById('nwp-piscina-faq-section');
+if (container) {
+  var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Faq, {})
+  }));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/parque/piscina/GallerySection.js":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/parque/piscina/GallerySection.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   GallerySection: () => (/* binding */ GallerySection)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
-/* harmony import */ var _GallerySection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../GallerySection */ "./resources/js/components/GallerySection.js");
+/* harmony import */ var _NwpGallerySection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../NwpGallerySection */ "./resources/js/components/NwpGallerySection.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -6814,7 +7469,7 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
  // Importar el componente GallerySection
 
-var NwpPiscinaGallerySection = function NwpPiscinaGallerySection() {
+var GallerySection = function GallerySection() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.useLanguage)(),
     language = _useLanguage.language; // Acceder al idioma seleccionado
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
@@ -6884,7 +7539,7 @@ var NwpPiscinaGallerySection = function NwpPiscinaGallerySection() {
     setCarouselImages(translations[language].carouselImages);
   }, [language]); // Dependencia en el idioma
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_GallerySection__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NwpGallerySection__WEBPACK_IMPORTED_MODULE_3__.NwpGallerySection, {
     backgroundImage: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Imagen de fondo
     ,
     title: content.title // Título traducido
@@ -6896,16 +7551,16 @@ var container = document.getElementById('nwp-piscina-gallery-section');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
   root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NwpPiscinaGallerySection, {})
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(GallerySection, {})
   }));
 }
 
 /***/ }),
 
-/***/ "./resources/js/components/parque/piscina/NwpPiscinaHeadbandSection.js":
-/*!*****************************************************************************!*\
-  !*** ./resources/js/components/parque/piscina/NwpPiscinaHeadbandSection.js ***!
-  \*****************************************************************************/
+/***/ "./resources/js/components/parque/piscina/HeadbandSection.js":
+/*!*******************************************************************!*\
+  !*** ./resources/js/components/parque/piscina/HeadbandSection.js ***!
+  \*******************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -6927,7 +7582,7 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
-var NwpPiscinaHeadbandSection = function NwpPiscinaHeadbandSection() {
+var HeadbandSection = function HeadbandSection() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
     language = _useLanguage.language; // Acceder al idioma seleccionado
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
@@ -6970,22 +7625,22 @@ var container = document.getElementById('nwp-piscina-headband-section');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
   root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NwpPiscinaHeadbandSection, {})
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(HeadbandSection, {})
   }));
 }
 
 /***/ }),
 
-/***/ "./resources/js/components/parque/piscina/NwpVenueHero.js":
-/*!****************************************************************!*\
-  !*** ./resources/js/components/parque/piscina/NwpVenueHero.js ***!
-  \****************************************************************/
+/***/ "./resources/js/components/parque/piscina/Hero.js":
+/*!********************************************************!*\
+  !*** ./resources/js/components/parque/piscina/Hero.js ***!
+  \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ NwpVenueHero)
+/* harmony export */   "default": () => (/* binding */ Hero)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -7004,7 +7659,7 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
-function NwpVenueHero() {
+function Hero() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
     language = _useLanguage.language; // Acceder al idioma seleccionado
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
@@ -7056,7 +7711,7 @@ var container = document.getElementById('nwp-hero-piscina');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
   root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NwpVenueHero, {})
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Hero, {})
   }));
 }
 

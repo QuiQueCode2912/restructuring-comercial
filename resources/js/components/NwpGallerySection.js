@@ -5,7 +5,7 @@ import 'swiper/css'; // Estilos básicos de Swiper
 import 'swiper/css/effect-coverflow'; // Estilos para el efecto Coverflow
 import 'swiper/css/pagination'; // Estilos para la paginación
 
-const GallerySection = ({ backgroundImage, title, carouselImages }) => {
+export const NwpGallerySection = ({ backgroundImage, title, carouselImages }) => {
   return (
     <section 
       className="relative nwp-padding-x-container bg-cover bg-center z-10 h-[480px] md:h-auto" 
@@ -79,4 +79,3 @@ const GallerySection = ({ backgroundImage, title, carouselImages }) => {
   );
 };
 
-export default GallerySection;

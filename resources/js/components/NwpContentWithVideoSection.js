@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
 
-const ContentWithVideoSection = ({
+export const NwpContentWithVideoSection = ({
   headed,
   title, 
   content, 
@@ -64,4 +64,4 @@ const ContentWithVideoSection = ({
   )
 }
 
-export default ContentWithVideoSection;
+
