@@ -57,6 +57,15 @@ require('./components/parque/tenis/GallerySection')
 require('./components/parque/tenis/Faq')
 require('./components/parque/tenis/HeadbandSection')
 
+//voleibol components
+require('./components/parque/voleibol/Hero')
+require('./components/parque/voleibol/ContentSectionWithAnImage')
+require('./components/parque/voleibol/ContentWithVideoSection')
+require('./components/parque/voleibol/CampusFacilities')
+require('./components/parque/voleibol/GallerySection')
+require('./components/parque/voleibol/Faq')
+require('./components/parque/voleibol/HeadbandSection')
+
 
 
 

@@ -50,11 +50,12 @@
     <div id="nwp-raquetbol-content-section-whith-an-image"></div>
     <div id="nwp-raquetbol-content-whit-video-section"></div>
 @endif
-@if(request()->is('parque-cds/tenis'))
-    <div id="nwp-hero-tenis"></div>
-    <div id="nwp-tenis-content-section-whith-an-image"></div>
-    <div id="nwp-tenis-content-whit-video-section"></div>
+@if(request()->is('parque-cds/voleibol'))
+    <div id="nwp-hero-voleibol"></div>
+    <div id="nwp-voleibol-content-section-whith-an-image"></div>
+    <div id="nwp-voleibol-content-whit-video-section"></div>
 @endif
+
 
 <div class="nwp-padding-x-container">
   <div class="row hidden">
@@ -124,6 +125,12 @@
               @endif
               @if(request()->is('parque-cds/tenis'))
                   <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (tenis)</p>
+                  <p class=" text-base md:text-lg  md:w-3/5 py-3">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
+                  </p>
+              @endif
+              @if(request()->is('parque-cds/voleibol'))
+                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (voleibol)</p>
                   <p class=" text-base md:text-lg  md:w-3/5 py-3">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
                   </p>
@@ -246,6 +253,12 @@
     <div id="nwp-tenis-gallery-section"></div>
     <div id="nwp-tenis-faq-section"></div>
     <div id="nwp-tenis-headband-section"></div>
+@endif
+@if(request()->is('parque-cds/voleibol'))
+    <div id="nwp-voleibol-campus-facilities"></div>
+    <div id="nwp-voleibol-gallery-section"></div>
+    <div id="nwp-voleibol-faq-section"></div>
+    <div id="nwp-voleibol-headband-section"></div>
 @endif
 
 <div id="nwp-featured-spaces"></div>
