@@ -55,6 +55,31 @@
     <div id="nwp-voleibol-content-section-whith-an-image"></div>
     <div id="nwp-voleibol-content-whit-video-section"></div>
 @endif
+@if(request()->is('parque-cds/pesas'))
+    <div id="nwp-hero-pesas"></div>
+    <div id="nwp-pesas-content-section-whith-an-image"></div>
+    <div id="nwp-pesas-content-whit-video-section"></div>
+@endif
+@if(request()->is('parque-cds/boxeo'))
+    <div id="nwp-hero-boxeo"></div>
+    <div id="nwp-boxeo-content-section-whith-an-image"></div>
+    <div id="nwp-boxeo-content-whit-video-section"></div>
+@endif
+@if(request()->is('parque-cds/bohios'))
+    <div id="nwp-hero-bohios"></div>
+    <div id="nwp-bohios-content-section-whith-an-image"></div>
+    <div id="nwp-bohios-content-whit-video-section"></div>
+@endif
+@if(request()->is('parque-cds/futbol'))
+    <div id="nwp-hero-futbol"></div>
+    <div id="nwp-futbol-content-section-whith-an-image"></div>
+    <div id="nwp-futbol-content-whit-video-section"></div>
+@endif
+@if(request()->is('parque-cds/beisbol'))
+    <div id="nwp-hero-beisbol"></div>
+    <div id="nwp-beisbol-content-section-whith-an-image"></div>
+    <div id="nwp-beisbol-content-whit-video-section"></div>
+@endif
 
 
 <div class="nwp-padding-x-container">
@@ -131,6 +156,36 @@
               @endif
               @if(request()->is('parque-cds/voleibol'))
                   <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (voleibol)</p>
+                  <p class=" text-base md:text-lg  md:w-3/5 py-3">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
+                  </p>
+              @endif
+              @if(request()->is('parque-cds/pesas'))
+                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (pesas)</p>
+                  <p class=" text-base md:text-lg  md:w-3/5 py-3">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
+                  </p>
+              @endif
+              @if(request()->is('parque-cds/boxeo'))
+                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (boxeo)</p>
+                  <p class=" text-base md:text-lg  md:w-3/5 py-3">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
+                  </p>
+              @endif
+              @if(request()->is('parque-cds/bohios'))
+                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (bohios)</p>
+                  <p class=" text-base md:text-lg  md:w-3/5 py-3">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
+                  </p>
+              @endif
+              @if(request()->is('parque-cds/futbol'))
+                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (futbol)</p>
+                  <p class=" text-base md:text-lg  md:w-3/5 py-3">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
+                  </p>
+              @endif
+              @if(request()->is('parque-cds/beisbol'))
+                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (beisbol)</p>
                   <p class=" text-base md:text-lg  md:w-3/5 py-3">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
                   </p>
@@ -259,6 +314,36 @@
     <div id="nwp-voleibol-gallery-section"></div>
     <div id="nwp-voleibol-faq-section"></div>
     <div id="nwp-voleibol-headband-section"></div>
+@endif
+@if(request()->is('parque-cds/pesas'))
+    <div id="nwp-pesas-campus-facilities"></div>
+    <div id="nwp-pesas-gallery-section"></div>
+    <div id="nwp-pesas-faq-section"></div>
+    <div id="nwp-pesas-headband-section"></div>
+@endif
+@if(request()->is('parque-cds/boxeo'))
+    <div id="nwp-boxeo-campus-facilities"></div>
+    <div id="nwp-boxeo-gallery-section"></div>
+    <div id="nwp-boxeo-faq-section"></div>
+    <div id="nwp-boxeo-headband-section"></div>
+@endif
+@if(request()->is('parque-cds/bohios'))
+    <div id="nwp-bohios-campus-facilities"></div>
+    <div id="nwp-bohios-gallery-section"></div>
+    <div id="nwp-bohios-faq-section"></div>
+    <div id="nwp-bohios-headband-section"></div>
+@endif
+@if(request()->is('parque-cds/futbol'))
+    <div id="nwp-futbol-campus-facilities"></div>
+    <div id="nwp-futbol-gallery-section"></div>
+    <div id="nwp-futbol-faq-section"></div>
+    <div id="nwp-futbol-headband-section"></div>
+@endif
+@if(request()->is('parque-cds/beisbol'))
+    <div id="nwp-beisbol-campus-facilities"></div>
+    <div id="nwp-beisbol-gallery-section"></div>
+    <div id="nwp-beisbol-faq-section"></div>
+    <div id="nwp-beisbol-headband-section"></div>
 @endif
 
 <div id="nwp-featured-spaces"></div>

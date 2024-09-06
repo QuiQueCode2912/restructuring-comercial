@@ -66,7 +66,50 @@ require('./components/parque/voleibol/GallerySection')
 require('./components/parque/voleibol/Faq')
 require('./components/parque/voleibol/HeadbandSection')
 
+//pesas components
+require('./components/parque/pesas/Hero')
+require('./components/parque/pesas/ContentSectionWithAnImage')
+require('./components/parque/pesas/ContentWithVideoSection')
+require('./components/parque/pesas/CampusFacilities')
+require('./components/parque/pesas/GallerySection')
+require('./components/parque/pesas/Faq')
+require('./components/parque/pesas/HeadbandSection')
 
+//boxeo components
+require('./components/parque/boxeo/Hero')
+require('./components/parque/boxeo/ContentSectionWithAnImage')
+require('./components/parque/boxeo/ContentWithVideoSection')
+require('./components/parque/boxeo/CampusFacilities')
+require('./components/parque/boxeo/GallerySection')
+require('./components/parque/boxeo/Faq')
+require('./components/parque/boxeo/HeadbandSection')
+
+//bohios components
+require('./components/parque/bohios/Hero')
+require('./components/parque/bohios/ContentSectionWithAnImage')
+require('./components/parque/bohios/ContentWithVideoSection')
+require('./components/parque/bohios/CampusFacilities')
+require('./components/parque/bohios/GallerySection')
+require('./components/parque/bohios/Faq')
+require('./components/parque/bohios/HeadbandSection')
+
+//futbol components
+require('./components/parque/futbol/Hero')
+require('./components/parque/futbol/ContentSectionWithAnImage')
+require('./components/parque/futbol/ContentWithVideoSection')
+require('./components/parque/futbol/CampusFacilities')
+require('./components/parque/futbol/GallerySection')
+require('./components/parque/futbol/Faq')
+require('./components/parque/futbol/HeadbandSection')
+
+//beisbol components
+require('./components/parque/beisbol/Hero')
+require('./components/parque/beisbol/ContentSectionWithAnImage')
+require('./components/parque/beisbol/ContentWithVideoSection')
+require('./components/parque/beisbol/CampusFacilities')
+require('./components/parque/beisbol/GallerySection')
+require('./components/parque/beisbol/Faq')
+require('./components/parque/beisbol/HeadbandSection')
 
 
 //common components
