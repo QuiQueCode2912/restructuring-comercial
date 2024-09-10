@@ -27,34 +27,62 @@ export default function CustomIndex({ sections }) {
     setLabels(translations[language]);
   }, [language]);
 
+  const handleScroll = (sectionId) => {
+    const element = document.querySelector(sectionId);
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - 100; // Ajustar el desplazamiento a 40px antes
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <div className='nwp-padding-x-container bg-cdsgray700'>
       <nav className="nwp-container mx-auto">
         <ul className="py-3 -ml-0 md:-ml-6 flex flex-col md:flex-row md:divide-x divide-cdsgray500 gap-y-2 md:gap-y-0">
           <li>
-            <a className="md:px-6 hover:no-underline hover:text-black font-semibold" href={sections.tenEnCuenta}>
+            <button
+              className="md:px-6 hover:no-underline hover:text-black font-semibold focus:outline-0"
+              onClick={() => handleScroll(sections.tenEnCuenta)}
+            >
               {labels.tenEnCuenta}
-            </a>
+            </button>
           </li>
           <li>
-            <a className="md:px-6 hover:no-underline hover:text-black font-semibold" href={sections.reservas}>
+            <button
+              className="md:px-6 hover:no-underline hover:text-black font-semibold focus:outline-0"
+              onClick={() => handleScroll(sections.reservas)}
+            >
               {labels.reservas}
-            </a>
+            </button>
           </li>
           <li>
-            <a className="md:px-6 hover:no-underline hover:text-black font-semibold" href={sections.facilidades}>
+            <button
+              className="md:px-6 hover:no-underline hover:text-black font-semibold focus:outline-0"
+              onClick={() => handleScroll(sections.facilidades)}
+            >
               {labels.facilidades}
-            </a>
+            </button>
           </li>
           <li>
-            <a className="md:px-6 hover:no-underline hover:text-black font-semibold" href={sections.historia}>
+            <button
+              className="md:px-6 hover:no-underline hover:text-black font-semibold focus:outline-0"
+              onClick={() => handleScroll(sections.historia)}
+            >
               {labels.historia}
-            </a>
+            </button>
           </li>
           <li>
-            <a className="md:px-6 hover:no-underline hover:text-black font-semibold" href={sections.preguntasFrecuentes}>
+            <button
+              className="md:px-6 hover:no-underline hover:text-black font-semibold focus:outline-0"
+              onClick={() => handleScroll(sections.preguntasFrecuentes)}
+            >
               {labels.preguntasFrecuentes}
-            </a>
+            </button>
           </li>
         </ul>
       </nav>

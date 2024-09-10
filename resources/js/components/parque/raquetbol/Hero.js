@@ -31,8 +31,17 @@ export default function RaquetbolHero() {
     setContent(translations[language]);
   }, [language]);  // Dependencia en el idioma
 
-  const handleButtonClick = () => {
-    console.log('Button clicked');
+  const handleButtonClick = (sectionId) => {
+    const element = document.getElementById('reservasss');
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - 100; // Ajustar el desplazamiento a 40px antes
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
   };
 
   return (

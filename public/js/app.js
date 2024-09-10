@@ -2098,6 +2098,18 @@ function CustomIndex(_ref) {
     };
     setLabels(translations[language]);
   }, [language]);
+  var handleScroll = function handleScroll(sectionId) {
+    var element = document.querySelector(sectionId);
+    if (element) {
+      var elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      var offsetPosition = elementPosition - 100; // Ajustar el desplazamiento a 40px antes
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     className: "nwp-padding-x-container bg-cdsgray700",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("nav", {
@@ -2105,33 +2117,43 @@ function CustomIndex(_ref) {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ul", {
         className: "py-3 -ml-0 md:-ml-6 flex flex-col md:flex-row md:divide-x divide-cdsgray500 gap-y-2 md:gap-y-0",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-            className: "md:px-6 hover:no-underline hover:text-black font-semibold",
-            href: sections.tenEnCuenta,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            className: "md:px-6 hover:no-underline hover:text-black font-semibold focus:outline-0",
+            onClick: function onClick() {
+              return handleScroll(sections.tenEnCuenta);
+            },
             children: labels.tenEnCuenta
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-            className: "md:px-6 hover:no-underline hover:text-black font-semibold",
-            href: sections.reservas,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            className: "md:px-6 hover:no-underline hover:text-black font-semibold focus:outline-0",
+            onClick: function onClick() {
+              return handleScroll(sections.reservas);
+            },
             children: labels.reservas
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-            className: "md:px-6 hover:no-underline hover:text-black font-semibold",
-            href: sections.facilidades,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            className: "md:px-6 hover:no-underline hover:text-black font-semibold focus:outline-0",
+            onClick: function onClick() {
+              return handleScroll(sections.facilidades);
+            },
             children: labels.facilidades
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-            className: "md:px-6 hover:no-underline hover:text-black font-semibold",
-            href: sections.historia,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            className: "md:px-6 hover:no-underline hover:text-black font-semibold focus:outline-0",
+            onClick: function onClick() {
+              return handleScroll(sections.historia);
+            },
             children: labels.historia
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-            className: "md:px-6 hover:no-underline hover:text-black font-semibold",
-            href: sections.preguntasFrecuentes,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            className: "md:px-6 hover:no-underline hover:text-black font-semibold focus:outline-0",
+            onClick: function onClick() {
+              return handleScroll(sections.preguntasFrecuentes);
+            },
             children: labels.preguntasFrecuentes
           })
         })]
@@ -3045,12 +3067,12 @@ var NwpContentSectionWithAnImage = function NwpContentSectionWithAnImage(_ref) {
             className: "pb-2 text-lg",
             children: content
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
-            className: "font-semibold text-start flex gap-x-2 items-center",
+            className: "font-semibold text-start flex gap-x-2 items-center focus:outline-0",
             onClick: function onClick() {
               return openModal(1);
             },
             children: [buttonLabel, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-              className: "bg-cdsblue rounded-full min-w-8 min-h-8 h-8 w-8 grid place-content-center",
+              className: "bg-cdsblue rounded-full min-w-8 min-h-8 h-8 w-8 grid place-content-center focus:outline-0",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
                 xmlns: "http://www.w3.org/2000/svg",
                 height: "24px",
@@ -3097,7 +3119,7 @@ var NwpContentSectionWithAnImage = function NwpContentSectionWithAnImage(_ref) {
               children: modalTitle
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-            className: "bg-white rounded",
+            className: "bg-white rounded  outline-0 focus:outline-0 active:outline-0",
             onClick: closeModal,
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
               xmlns: "http://www.w3.org/2000/svg",
@@ -3686,7 +3708,7 @@ var PublicSpaceHero = function PublicSpaceHero(_ref) {
             className: "pb-2 text-lg",
             children: content
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
-            className: "font-semibold text-start flex gap-x-2 items-center",
+            className: "font-semibold text-start flex gap-x-2 items-center focus:outline-0",
             onClick: function onClick() {
               return openModal(1);
             },
@@ -3704,7 +3726,7 @@ var PublicSpaceHero = function PublicSpaceHero(_ref) {
               })
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
-            className: "font-semibold text-start flex gap-x-2 items-center",
+            className: "font-semibold text-start flex gap-x-2 items-center focus:outline-0",
             onClick: function onClick() {
               return openModal(2);
             },
@@ -3814,7 +3836,7 @@ var PublicSpaceHero = function PublicSpaceHero(_ref) {
               children: translations[language].modalTitle1
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-            className: "bg-white rounded",
+            className: "bg-white rounded focus:outline-0",
             onClick: closeModal,
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
               xmlns: "http://www.w3.org/2000/svg",
@@ -3848,7 +3870,7 @@ var PublicSpaceHero = function PublicSpaceHero(_ref) {
               children: translations[language].modalTitle2
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-            className: "bg-white rounded",
+            className: "bg-white rounded focus:outline-0",
             onClick: closeModal,
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
               xmlns: "http://www.w3.org/2000/svg",
@@ -6886,10 +6908,19 @@ function BaloncestoHero() {
 
     // Actualizar el estado con el contenido traducido
     setContent(translations[language]);
-  }, [language]); // Dependencia en el idioma
+  }, [language]); // Dependencia en el idiomar
 
-  var handleButtonClick = function handleButtonClick() {
-    console.log('Button clicked');
+  var handleButtonClick = function handleButtonClick(sectionId) {
+    var element = document.getElementById('reservasss');
+    if (element) {
+      var elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      var offsetPosition = elementPosition - 100; // Ajustar el desplazamiento a 40px antes
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -7605,8 +7636,17 @@ function BeisbolHero() {
     setContent(translations[language]);
   }, [language]); // Dependencia en el idioma
 
-  var handleButtonClick = function handleButtonClick() {
-    console.log('Button clicked');
+  var handleButtonClick = function handleButtonClick(sectionId) {
+    var element = document.getElementById('reservasss');
+    if (element) {
+      var elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      var offsetPosition = elementPosition - 100; // Ajustar el desplazamiento a 40px antes
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -8307,8 +8347,17 @@ function BohiosHero() {
     setContent(translations[language]);
   }, [language]); // Dependencia en el idioma
 
-  var handleButtonClick = function handleButtonClick() {
-    console.log('Button clicked');
+  var handleButtonClick = function handleButtonClick(sectionId) {
+    var element = document.getElementById('reservasss');
+    if (element) {
+      var elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      var offsetPosition = elementPosition - 100; // Ajustar el desplazamiento a 40px antes
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -9016,8 +9065,17 @@ function Hero() {
     setContent(translations[language]);
   }, [language]); // Dependencia en el idioma
 
-  var handleButtonClick = function handleButtonClick() {
-    console.log('Button clicked');
+  var handleButtonClick = function handleButtonClick(sectionId) {
+    var element = document.getElementById('reservasss');
+    if (element) {
+      var elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      var offsetPosition = elementPosition - 100; // Ajustar el desplazamiento a 40px antes
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -9734,8 +9792,17 @@ function FutbolHero() {
     setContent(translations[language]);
   }, [language]); // Dependencia en el idioma
 
-  var handleButtonClick = function handleButtonClick() {
-    console.log('Button clicked');
+  var handleButtonClick = function handleButtonClick(sectionId) {
+    var element = document.getElementById('reservasss');
+    if (element) {
+      var elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      var offsetPosition = elementPosition - 100; // Ajustar el desplazamiento a 40px antes
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -10427,8 +10494,17 @@ function GolfHero() {
     setContent(translations[language]);
   }, [language]); // Dependencia en el idioma
 
-  var handleButtonClick = function handleButtonClick() {
-    console.log('Button clicked');
+  var handleButtonClick = function handleButtonClick(sectionId) {
+    var element = document.getElementById('reservasss');
+    if (element) {
+      var elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      var offsetPosition = elementPosition - 100; // Ajustar el desplazamiento a 40px antes
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -11144,8 +11220,17 @@ function Hero() {
     setContent(translations[language]);
   }, [language]); // Dependencia en el idioma
 
-  var handleButtonClick = function handleButtonClick() {
-    console.log('Button clicked');
+  var handleButtonClick = function handleButtonClick(sectionId) {
+    var element = document.getElementById('reservasss');
+    if (element) {
+      var elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      var offsetPosition = elementPosition - 100; // Ajustar el desplazamiento a 40px antes
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -11874,8 +11959,17 @@ function Hero() {
     setContent(translations[language]);
   }, [language]); // Dependencia en el idioma
 
-  var handleButtonClick = function handleButtonClick() {
-    console.log('Button clicked');
+  var handleButtonClick = function handleButtonClick(sectionId) {
+    var element = document.getElementById('reservasss');
+    if (element) {
+      var elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      var offsetPosition = elementPosition - 100; // Ajustar el desplazamiento a 40px antes
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -12555,8 +12649,17 @@ function RaquetbolHero() {
     setContent(translations[language]);
   }, [language]); // Dependencia en el idioma
 
-  var handleButtonClick = function handleButtonClick() {
-    console.log('Button clicked');
+  var handleButtonClick = function handleButtonClick(sectionId) {
+    var element = document.getElementById('reservasss');
+    if (element) {
+      var elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      var offsetPosition = elementPosition - 100; // Ajustar el desplazamiento a 40px antes
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -13258,7 +13361,13 @@ function TenisHero() {
   }, [language]); // Dependencia en el idioma
 
   var handleButtonClick = function handleButtonClick() {
-    console.log('Button clicked');
+    // Obtener el elemento con el id "reservasss" y hacer scroll hacia él
+    var reservasSection = document.getElementById('reservasss');
+    if (reservasSection) {
+      reservasSection.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -13975,8 +14084,17 @@ function VoleibolHero() {
     setContent(translations[language]);
   }, [language]); // Dependencia en el idioma
 
-  var handleButtonClick = function handleButtonClick() {
-    console.log('Button clicked');
+  var handleButtonClick = function handleButtonClick(sectionId) {
+    var element = document.getElementById('reservasss');
+    if (element) {
+      var elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      var offsetPosition = elementPosition - 100; // Ajustar el desplazamiento a 40px antes
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {

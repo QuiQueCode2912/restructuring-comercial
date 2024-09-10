@@ -32,7 +32,11 @@ export default function TenisHero() {
   }, [language]);  // Dependencia en el idioma
 
   const handleButtonClick = () => {
-    console.log('Button clicked');
+    // Obtener el elemento con el id "reservasss" y hacer scroll hacia él
+    const reservasSection = document.getElementById('reservasss');
+    if (reservasSection) {
+      reservasSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (

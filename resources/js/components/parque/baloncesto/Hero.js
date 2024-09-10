@@ -29,10 +29,19 @@ export default function BaloncestoHero() {
 
     // Actualizar el estado con el contenido traducido
     setContent(translations[language]);
-  }, [language]);  // Dependencia en el idioma
+  }, [language]);  // Dependencia en el idiomar
 
-  const handleButtonClick = () => {
-    console.log('Button clicked');
+  const handleButtonClick = (sectionId) => {
+    const element = document.getElementById('reservasss');
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - 100; // Ajustar el desplazamiento a 40px antes
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
   };
 
   return (

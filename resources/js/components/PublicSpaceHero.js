@@ -95,13 +95,13 @@ const PublicSpaceHero = ({ title, content, buttonLabel, buttonLabel2, images }) 
           <div className='flex flex-col md:col-span-1 gap-y-4 justify-center md:h-full pb-20 md:pb-0 pt-20'>
             <h3 className='font-bold text-3xl md:text-5xl'>{title}</h3>
             <p className='pb-2 text-lg'>{content}</p>
-            <button className='font-semibold text-start flex gap-x-2 items-center' onClick={() => openModal(1)}>
+            <button className='font-semibold text-start flex gap-x-2 items-center focus:outline-0' onClick={() => openModal(1)}>
               {buttonLabel}
               <div className="bg-cdsblue rounded-full min-w-8 min-h-8 h-8 w-8 grid place-content-center"> 
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/></svg>
               </div>
             </button>
-            <button className='font-semibold text-start flex gap-x-2 items-center' onClick={() => openModal(2)}>
+            <button className='font-semibold text-start flex gap-x-2 items-center focus:outline-0' onClick={() => openModal(2)}>
               {buttonLabel2}
               <div className="bg-cdsblue rounded-full min-w-8 min-h-8 h-8 w-8 grid place-content-center"> 
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/></svg>
@@ -160,7 +160,7 @@ const PublicSpaceHero = ({ title, content, buttonLabel, buttonLabel2, images }) 
                   <div className='h-1 w-12 bg-cdsblue rounded-full'></div>
                   <h2 className="text-2xl md:text-4xl font-bold py-2">{translations[language].modalTitle1}</h2>
                 </div>
-                <button className="bg-white rounded" onClick={closeModal}>
+                <button className="bg-white rounded focus:outline-0" onClick={closeModal}>
                   <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="#000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
                 </button>
               </div>
@@ -184,7 +184,7 @@ const PublicSpaceHero = ({ title, content, buttonLabel, buttonLabel2, images }) 
                   <div className='h-1 w-12 bg-cdsblue rounded-full'></div>
                   <h2 className="text-2xl md:text-4xl font-bold py-2">{translations[language].modalTitle2}</h2>
                 </div>
-                <button className="bg-white rounded" onClick={closeModal}>
+                <button className="bg-white rounded focus:outline-0" onClick={closeModal}>
                   <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="#000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
                 </button>
               </div>

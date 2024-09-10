@@ -9,17 +9,17 @@
         <!-- Tabla de contenidos -->
         <nav class="nwp-container mx-auto"> 
             <ul class="py-3 -ml-0 md:-ml-6 flex flex-col md:flex-row md:divide-x divide-cdsgray500 gap-y-2 md:gap-y-0">
-                <li><a class="md:px-6 hover:no-underline hover:text-black font-semibold" href="#nwp-parque-section02">Qué hacer</a></li>
-                <li><a class="md:px-6 hover:no-underline hover:text-black font-semibold" href="#nwp-venues-table">Espacios del parque</a></li>
-                <li><a class="md:px-6 hover:no-underline hover:text-black font-semibold" href="#nwp-parque-headband">Conéctate</a></li>
-                <li><a class="md:px-6 hover:no-underline hover:text-black font-semibold" href="#nwp-parque-faq">Preguntas frecuentes</a></li>
+                <li><a class="md:px-6 hover:no-underline hover:text-black font-semibold focus:outline-0" href="#nwp-parque-section02">Qué hacer</a></li>
+                <li><a class="md:px-6 hover:no-underline hover:text-black font-semibold focus:outline-0" href="#nwp-venues-table">Espacios del parque</a></li>
+                <li><a class="md:px-6 hover:no-underline hover:text-black font-semibold focus:outline-0" href="#nwp-parque-headband">Conéctate</a></li>
+                <li><a class="md:px-6 hover:no-underline hover:text-black font-semibold focus:outline-0" href="#nwp-parque-faq">Preguntas frecuentes</a></li>
             </ul>
         </nav>
     </div>
     <div id="nwp-parque-section01"></div>
     <div id="nwp-parque-section02"></div>
 
-    <!-- Script para cambiar el contenido basado en el idioma -->
+    <!-- Script para cambiar el contenido basado en el idioma y habilitar scroll suave -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const language = localStorage.getItem('language') || 'es';
@@ -36,6 +36,26 @@
                 document.querySelector('a[href="#nwp-parque-headband"]').textContent = 'Connect';
                 document.querySelector('a[href="#nwp-parque-faq"]').textContent = 'FAQs';
             }
+
+            // Scroll suave
+            const smoothScroll = (event) => {
+                event.preventDefault();
+                const targetId = event.currentTarget.getAttribute("href");
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = elementPosition - 100; // Ajustar el desplazamiento
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            };
+
+            // Asignar la función de scroll suave a cada enlace
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', smoothScroll);
+            });
         });
     </script>
 @endif
