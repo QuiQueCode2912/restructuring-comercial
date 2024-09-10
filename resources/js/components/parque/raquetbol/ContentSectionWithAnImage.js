@@ -11,23 +11,33 @@ export default function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     const translations = {
       es: {
-        title: "La piscina más profunda de Panama",
-        content: `Construida en 1948, esta piscina ha sido testigo de innumerables momentos 
-                  de entrenamiento y esparcimiento para generaciones de militares. Hoy, abre 
-                  sus puertas a toda la comunidad para que disfrutes de sus aguas cristalinas 
-                  y de un ambiente familiar y acogedor.`,
+        title: "Canchas de Ráquetbol del Parque Ciudad del Saber",
+        content: `Nuestras canchas de ráquetbol proporcionan el espacio perfecto para disfrutar de este deporte, 
+                  asegurando un entorno seguro y bien equipado.`,
         buttonLabel: "Descarga el reglamento de uso",
+        modalTitle: "Reglamentos de uso de Canchas de Ráquetbol",
+        modalDesc: (
+          <ol className="list-decimal list-inside">
+            <li>El cliente debe traer su raqueta y pelotas para jugar.</li>
+            <li>Es obligatorio el uso de lentes de protección para ingresar a las canchas.</li>
+          </ol>
+        ),
       },
       en: {
-        title: "The deepest pool in Panama",
-        content: `Built in 1948, this pool has witnessed countless moments of training and 
-                  recreation for generations of military personnel. Today, it opens its doors 
-                  to the entire community to enjoy its crystal-clear waters and a family-friendly, 
-                  welcoming atmosphere.`,
+        title: "Racquetball Courts at Ciudad del Saber Park",
+        content: `Our racquetball courts provide the perfect space to enjoy the sport, 
+                  ensuring a safe and well-equipped environment.`,
         buttonLabel: "Download the usage rules",
+        modalTitle: "Racquetball Court Usage Rules",
+        modalDesc: (
+          <ol className="list-decimal list-inside">
+            <li>The customer must bring their own racquet and balls to play.</li>
+            <li>Protective eyewear is mandatory to enter the courts.</li>
+          </ol>
+        ),
       },
     };
-
+  
     // Actualizar el estado con el contenido traducido
     setContent(translations[language]);
   }, [language]);  // Dependencia en el idioma
@@ -41,8 +51,10 @@ export default function ContentSectionWithAnImage() {
       title={content.title}
       content={content.content}
       buttonLabel={content.buttonLabel}
+      modalTitle={content.modalTitle}
+      modalDesc={content.modalDesc}
       onButtonClick={handleButtonClick}
-      image="https://images.unsplash.com/photo-1691253104600-ccfd27782f3e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      image="https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     />
   );
 }

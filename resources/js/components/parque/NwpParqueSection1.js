@@ -13,12 +13,14 @@ export default function NwpParqueSection1() {
       es: {
         title: "Un espacio abierto al público",
         content: "El corazón verde del campus, ideal para realizar actividades recreativas, deportivas o de esparcimiento. Parque Ciudad del Saber está abierto a sus visitantes de forma gratuita todos los días del año.",
-        buttonLabel: "Descarga el reglamento de uso",
+        buttonLabel: "Reglamento de uso del Parque Ciudad del Saber",
+        buttonLabel2: "Políticas de reserva y cancelación de espacios de CDS",
       },
       en: {
         title: "A public open space",
         content: "The green heart of the campus, ideal for recreational, sports, or leisure activities. Ciudad del Saber Park is open to visitors free of charge every day of the year.",
-        buttonLabel: "Download the usage regulations",
+        buttonLabel: "Regulation for use of the City of Knowledge Park",
+        buttonLabel2: "CDS space reservation and cancellation policies",
       },
     };
 
@@ -41,6 +43,7 @@ export default function NwpParqueSection1() {
       title={content.title}
       content={content.content}
       buttonLabel={content.buttonLabel}
+      buttonLabel2={content.buttonLabel2}
       onButtonClick={handleButtonClick}
       images={images}
     />

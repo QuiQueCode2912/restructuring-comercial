@@ -11,23 +11,39 @@ export default function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     const translations = {
       es: {
-        title: "La cancha más jugable de Panama",
-        content: `Construida en 1948, esta piscina ha sido testigo de innumerables momentos 
-                  de entrenamiento y esparcimiento para generaciones de militares. Hoy, abre 
-                  sus puertas a toda la comunidad para que disfrutes de sus aguas cristalinas 
-                  y de un ambiente familiar y acogedor.`,
+        title: "Campo de Golf en el Parque Ciudad del Saber",
+        content: `Disfruta de nuestras instalaciones de golf con zonas dedicadas para practicar tus tiros. 
+                  Trae tus propios implementos y aprovecha nuestras canastas de bolas reservadas.`,
         buttonLabel: "Descarga el reglamento de uso",
+        modalTitle: "Reglamentos de uso de Golf",
+        modalDesc: (
+          <ol className="list-decimal list-inside">
+            <li>Traer sus propios implementos de golf. La Administración solo proporciona la canasta con la cantidad reservada.</li>
+            <li>No se permite más de una persona por zona.</li>
+            <li>Deben cumplir con el horario reservado.</li>
+            <li>Las bolas reservadas deben utilizarse en su totalidad, no se realizará reembolso por el uso parcial de las bolas reservadas.</li>
+            <li>Se permite un máximo de 200 bolas por cliente.</li>
+          </ol>
+        ),
       },
       en: {
-        title: "The deepest pool in Panama",
-        content: `Built in 1948, this pool has witnessed countless moments of training and 
-                  recreation for generations of military personnel. Today, it opens its doors 
-                  to the entire community to enjoy its crystal-clear waters and a family-friendly, 
-                  welcoming atmosphere.`,
+        title: "Golf Course at Ciudad del Saber Park",
+        content: `Enjoy our golf facilities with dedicated areas for practicing your shots. 
+                  Bring your own equipment and take advantage of our reserved ball baskets.`,
         buttonLabel: "Download the usage rules",
+        modalTitle: "Golf Usage Rules",
+        modalDesc: (
+          <ol className="list-decimal list-inside">
+            <li>Bring your own golf equipment. The administration only provides the basket with the reserved quantity.</li>
+            <li>Only one person is allowed per zone.</li>
+            <li>You must adhere to the reserved schedule.</li>
+            <li>The reserved balls must be used in their entirety; no refunds will be issued for partial use of the reserved balls.</li>
+            <li>A maximum of 200 balls per customer is allowed.</li>
+          </ol>
+        ),
       },
     };
-
+  
     // Actualizar el estado con el contenido traducido
     setContent(translations[language]);
   }, [language]);  // Dependencia en el idioma
@@ -41,8 +57,10 @@ export default function ContentSectionWithAnImage() {
       title={content.title}
       content={content.content}
       buttonLabel={content.buttonLabel}
+      modalTitle={content.modalTitle}
+      modalDesc={content.modalDesc}
       onButtonClick={handleButtonClick}
-      image="https://images.unsplash.com/photo-1691253104600-ccfd27782f3e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      image="https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     />
   );
 }

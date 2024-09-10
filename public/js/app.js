@@ -2046,6 +2046,102 @@ if (container) {
 
 /***/ }),
 
+/***/ "./resources/js/components/CustomIndex.js":
+/*!************************************************!*\
+  !*** ./resources/js/components/CustomIndex.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ CustomIndex)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+function CustomIndex(_ref) {
+  var sections = _ref.sections;
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_1__.useLanguage)(),
+    language = _useLanguage.language; // Acceder al idioma seleccionado
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState2 = _slicedToArray(_useState, 2),
+    labels = _useState2[0],
+    setLabels = _useState2[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Traducciones según el idioma
+    var translations = {
+      es: {
+        tenEnCuenta: 'Ten en cuenta',
+        reservas: 'Reservas',
+        facilidades: 'Facilidades del campus',
+        historia: 'Historia',
+        preguntasFrecuentes: 'Preguntas frecuentes'
+      },
+      en: {
+        tenEnCuenta: 'Take into account',
+        reservas: 'Reservations',
+        facilidades: 'Campus Facilities',
+        historia: 'History',
+        preguntasFrecuentes: 'FAQs'
+      }
+    };
+    setLabels(translations[language]);
+  }, [language]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "nwp-padding-x-container bg-cdsgray700",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("nav", {
+      className: "nwp-container mx-auto",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ul", {
+        className: "py-3 -ml-0 md:-ml-6 flex flex-col md:flex-row md:divide-x divide-cdsgray500 gap-y-2 md:gap-y-0",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+            className: "md:px-6 hover:no-underline hover:text-black font-semibold",
+            href: sections.tenEnCuenta,
+            children: labels.tenEnCuenta
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+            className: "md:px-6 hover:no-underline hover:text-black font-semibold",
+            href: sections.reservas,
+            children: labels.reservas
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+            className: "md:px-6 hover:no-underline hover:text-black font-semibold",
+            href: sections.facilidades,
+            children: labels.facilidades
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+            className: "md:px-6 hover:no-underline hover:text-black font-semibold",
+            href: sections.historia,
+            children: labels.historia
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+            className: "md:px-6 hover:no-underline hover:text-black font-semibold",
+            href: sections.preguntasFrecuentes,
+            children: labels.preguntasFrecuentes
+          })
+        })]
+      })
+    })
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/components/FeaturedEvents.js":
 /*!***************************************************!*\
   !*** ./resources/js/components/FeaturedEvents.js ***!
@@ -2890,7 +2986,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 var NwpContentSectionWithAnImage = function NwpContentSectionWithAnImage(_ref) {
@@ -2898,54 +3002,118 @@ var NwpContentSectionWithAnImage = function NwpContentSectionWithAnImage(_ref) {
     content = _ref.content,
     buttonLabel = _ref.buttonLabel,
     onButtonClick = _ref.onButtonClick,
-    image = _ref.image;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    image = _ref.image,
+    modalTitle = _ref.modalTitle,
+    modalDesc = _ref.modalDesc;
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_1__.useLanguage)(),
+    language = _useLanguage.language;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      isOpen: false,
+      modalId: null
+    }),
+    _useState2 = _slicedToArray(_useState, 2),
+    modalState = _useState2[0],
+    setModalState = _useState2[1];
+  var openModal = function openModal(id) {
+    setModalState({
+      isOpen: true,
+      modalId: id
+    });
+  };
+  var closeModal = function closeModal() {
+    setModalState({
+      isOpen: false,
+      modalId: null
+    });
+  };
+  var handleCloseClickOutside = function handleCloseClickOutside(e) {
+    if (e.target.id === 'modal-background') {
+      closeModal();
+    }
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "md:relative nwp-padding-x-container md:h-[600px] bg-white",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "mx-auto nwp-container grid grid-cols-1 md:grid-cols-2 md:h-full md:gap-x-8",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "flex flex-col md:col-span-1 gap-y-4 justify-center md:h-full pb-10 md:pb-0 pt-20",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
             className: "font-bold text-3xl md:text-5xl",
             children: title
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
             className: "pb-2 text-lg",
             children: content
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
             className: "font-semibold text-start flex gap-x-2 items-center",
-            onClick: onButtonClick,
-            children: [buttonLabel, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-              className: "bg-cdsblue rounded-full h-8 w-8 grid place-content-center ",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+            onClick: function onClick() {
+              return openModal(1);
+            },
+            children: [buttonLabel, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "bg-cdsblue rounded-full min-w-8 min-h-8 h-8 w-8 grid place-content-center",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
                 xmlns: "http://www.w3.org/2000/svg",
-                height: "28px",
+                height: "24px",
                 viewBox: "0 -960 960 960",
-                width: "28px",
-                fill: "#FFFFFF",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                  d: "M480-315.33 284.67-510.67l47.33-48L446.67-444v-356h66.66v356L628-558.67l47.33 48L480-315.33ZM226.67-160q-27 0-46.84-19.83Q160-199.67 160-226.67V-362h66.67v135.33h506.66V-362H800v135.33q0 27-19.83 46.84Q760.33-160 733.33-160H226.67Z"
+                width: "24px",
+                fill: "#e8eaed",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                  d: "M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"
                 })
               })
             })]
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "md:col-span-1 "
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "hidden  md:absolute md:left-1/2 md:top-0 col-span-1 text-white font-bold md:grid grid-cols-1 h-[600px]",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
           src: image,
           alt: "Piscina",
           className: "w-[1200px] h-[600px] object-cover"
         })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: " md:hidden h-[374px]",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
         src: image,
         alt: "Piscina",
         className: "w-full  h-[374px] object-cover"
+      })
+    }), modalState.isOpen && modalState.modalId === 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      id: "modal-background",
+      className: "fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50",
+      onClick: handleCloseClickOutside,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "bg-white p-8 mx-2 rounded-lg shadow-lg max-w-5xl w-full max-h-[90vh] overflow-y-auto",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "flex items-center justify-between pb-2",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "h-1 w-12 bg-cdsblue rounded-full"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+              className: "text-2xl md:text-4xl font-bold py-2",
+              children: modalTitle
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            className: "bg-white rounded",
+            onClick: closeModal,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+              xmlns: "http://www.w3.org/2000/svg",
+              height: "28px",
+              viewBox: "0 -960 960 960",
+              width: "28px",
+              fill: "#000",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                d: "m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+              })
+            })
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "text-base md:text-lg mb-4 max-h-[60vh] overflow-y-auto",
+          children: modalDesc
+        })]
       })
     })]
   });
@@ -3364,6 +3532,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
@@ -3371,30 +3545,139 @@ var PublicSpaceHero = function PublicSpaceHero(_ref) {
   var title = _ref.title,
     content = _ref.content,
     buttonLabel = _ref.buttonLabel,
-    onButtonClick = _ref.onButtonClick,
+    buttonLabel2 = _ref.buttonLabel2,
     images = _ref.images;
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_1__.useLanguage)(),
     language = _useLanguage.language;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      isOpen: false,
+      modalId: null
+    }),
+    _useState2 = _slicedToArray(_useState, 2),
+    modalState = _useState2[0],
+    setModalState = _useState2[1];
   var translations = {
     es: {
       exploreText: "Explora",
       paceText: "A tu ritmo",
       familyText: "Con familia",
-      petText: "O tu mascota"
+      petText: "O tu mascota",
+      modalTitle1: "Reglamentos de uso del Parque Ciudad del Saber",
+      modalDesc1: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ol", {
+        className: "list-decimal list-inside",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "No se permite el consumo y venta de bebidas alcoh\xF3licas."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "No se permite la venta de comida y bebidas (sodas, aguas, bebidas energizantes, etc.)."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "No se permite fumar."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "Cumplir con el uso apropiado de los estacionamientos. No se pueden estacionar en los laterales de la v\xEDa principal del Parque."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "No se permite el uso de murgas, troneras, parlantes, bocinas, micr\xF3fonos y otros instrumentos de ruido excesivo."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "Se le solicita depositar los desechos de basura que se produzcan durante el uso de la instalaci\xF3n en los cestos de basura. Se le har\xE1 un cargo de B/. 100.00 en caso de encontrar alg\xFAn tipo de desecho en el \xE1rea asignada."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "LA FUNDACI\xD3N por condiciones climatol\xF3gicas se reserva el derecho de uso de las instalaciones para preservar el buen estado de estas."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "LA FUNDACI\xD3N no se har\xE1 responsable por la p\xE9rdida de objetos de valor (prendas, celulares, equipos deportivos, etc.) durante el desarrollo de las actividades."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "El Cliente exonera a LA FUNDACI\xD3N de cualquier imprevisto, lesi\xF3n o accidente que ocurra con alg\xFAn participante durante las actividades del evento."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "Respetar y obedecer las instrucciones del personal del Parque Ciudad del Saber y agentes de Seguridad de CdS."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "Se proh\xEDben los actos de violencia, ri\xF1a y palabras ofensivas durante las actividades. De ocurrir algunos de estos hechos, El Cliente deber\xE1 expulsar al equipo o persona que incurri\xF3 en la falta y, de tratarse de la barra, esta deber\xE1 abandonar las instalaciones."
+        })]
+      }),
+      modalTitle2: "Políticas de reserva y cancelación de espacios de CDS",
+      modalDesc2: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Las reservas realizadas a trav\xE9s de la p\xE1gina web recibir\xE1n un correo de confirmaci\xF3n."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Para cancelar una reserva se debe acceder al correo de confirmaci\xF3n para desde all\xED cancelar la reserva."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Las cancelaciones realizadas 12 horas antes de la fecha reservada recibir\xE1n un reembolso del 100%."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Las cancelaciones realizadas dentro de las 12 horas antes de la fecha reservada recibir\xE1n un reembolso del 50%."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Por favor, tenga en cuenta que los reembolsos s\xF3lo se tramitar\xE1n por ACH."
+        })]
+      }),
+      closeButtonText: "Cerrar"
     },
     en: {
       exploreText: "Explore",
       paceText: "At your pace",
       familyText: "With family",
-      petText: "Or your pet"
+      petText: "Or your pet",
+      modalTitle1: "Rules for the use of Ciudad del Saber Park",
+      modalDesc1: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ol", {
+        className: "list-decimal list-inside",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "Alcohol consumption and sale are not allowed."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "Food and beverage (sodas, water, energy drinks, etc.) sales are not allowed."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "Smoking is not allowed."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "Proper use of parking is required. Parking on the sides of the main road of the Park is not allowed."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "The use of loud instruments (murgas, drums, speakers, horns, microphones, etc.) is not allowed."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "Please dispose of any trash generated during the use of the facility in the trash bins. A charge of B/. 100.00 will be applied if any type of waste is found in the assigned area."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "LA FUNDACI\xD3N reserves the right to close the facilities due to weather conditions to preserve their condition."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "LA FUNDACI\xD3N is not responsible for the loss of valuable items (jewelry, phones, sports equipment, etc.) during the event."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "The client releases LA FUNDACI\xD3N from any unforeseen events, injuries, or accidents that occur with participants during the event."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "Please respect and follow the instructions of Ciudad del Saber Park staff and Security agents."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "Acts of violence, fighting, and offensive language are prohibited during activities. If any of these occur, the client must remove the team or person involved, and if it is the audience, they must leave the premises."
+        })]
+      }),
+      modalTitle2: "Reservation and Cancellation Policies for CDS Spaces",
+      modalDesc2: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ol", {
+        className: "list-decimal list-inside",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "Reservations made through the website will receive a confirmation email."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "To cancel a reservation, you must access the confirmation email and cancel the reservation from there."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "Cancellations made 12 hours before the reserved date will receive a 100% refund."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "Cancellations made within 12 hours of the reserved date will receive a 50% refund."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "Please note that refunds will only be processed via ACH."
+        })]
+      }),
+      closeButtonText: "Close"
+    }
+  };
+  var openModal = function openModal(id) {
+    setModalState({
+      isOpen: true,
+      modalId: id
+    });
+  };
+  var closeModal = function closeModal() {
+    setModalState({
+      isOpen: false,
+      modalId: null
+    });
+  };
+  var handleCloseClickOutside = function handleCloseClickOutside(e) {
+    if (e.target.id === 'modal-background') {
+      closeModal();
     }
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "md:relative nwp-padding-x-container md:h-[600px] bg-white",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "mx-auto nwp-container md:grid md:grid-cols-2 md:h-full md:gap-x-8",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "flex flex-col md:col-span-1 gap-y-4 justify-center md:h-full pb-20 md:pb-0 pt-20",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
             className: "font-bold text-3xl md:text-5xl",
@@ -3404,24 +3687,42 @@ var PublicSpaceHero = function PublicSpaceHero(_ref) {
             children: content
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
             className: "font-semibold text-start flex gap-x-2 items-center",
-            onClick: onButtonClick,
+            onClick: function onClick() {
+              return openModal(1);
+            },
             children: [buttonLabel, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-              className: "bg-cdsblue rounded-full h-8 w-8 grid place-content-center",
+              className: "bg-cdsblue rounded-full min-w-8 min-h-8 h-8 w-8 grid place-content-center",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
                 xmlns: "http://www.w3.org/2000/svg",
-                height: "28px",
+                height: "24px",
                 viewBox: "0 -960 960 960",
-                width: "28px",
-                fill: "#FFFFFF",
+                width: "24px",
+                fill: "#e8eaed",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
-                  d: "M480-315.33 284.67-510.67l47.33-48L446.67-444v-356h66.66v356L628-558.67l47.33 48L480-315.33ZM226.67-160q-27 0-46.84-19.83Q160-199.67 160-226.67V-362h66.67v135.33h506.66V-362H800v135.33q0 27-19.83 46.84Q760.33-160 733.33-160H226.67Z"
+                  d: "M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"
+                })
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
+            className: "font-semibold text-start flex gap-x-2 items-center",
+            onClick: function onClick() {
+              return openModal(2);
+            },
+            children: [buttonLabel2, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "bg-cdsblue rounded-full min-w-8 min-h-8 h-8 w-8 grid place-content-center",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+                xmlns: "http://www.w3.org/2000/svg",
+                height: "24px",
+                viewBox: "0 -960 960 960",
+                width: "24px",
+                fill: "#e8eaed",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                  d: "M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"
                 })
               })
             })]
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "md:col-span-1 "
-        })]
+        })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "hidden md:absolute md:left-1/2 md:top-0 col-span-1 text-white font-bold md:grid grid-cols-2 h-[600px]",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
@@ -3497,6 +3798,74 @@ var PublicSpaceHero = function PublicSpaceHero(_ref) {
           children: translations[language].petText
         })]
       })]
+    }), modalState.isOpen && modalState.modalId === 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      id: "modal-background",
+      className: "fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50",
+      onClick: handleCloseClickOutside,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "bg-white p-8 mx-2 rounded-lg shadow-lg max-w-5xl w-full max-h-[90vh] overflow-y-auto",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "flex items-center justify-between pb-2",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "h-1 w-12 bg-cdsblue rounded-full"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+              className: "text-2xl md:text-4xl font-bold py-2",
+              children: translations[language].modalTitle1
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            className: "bg-white rounded",
+            onClick: closeModal,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+              xmlns: "http://www.w3.org/2000/svg",
+              height: "28px",
+              viewBox: "0 -960 960 960",
+              width: "28px",
+              fill: "#000",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                d: "m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+              })
+            })
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "text-base md:text-lg mb-4 max-h-[60vh] overflow-y-auto",
+          children: translations[language].modalDesc1
+        })]
+      })
+    }), modalState.isOpen && modalState.modalId === 2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      id: "modal-background",
+      className: "fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50",
+      onClick: handleCloseClickOutside,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "bg-white p-8 mx-2 rounded-lg shadow-lg max-w-5xl w-full max-h-[90vh] overflow-y-auto",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "flex items-center justify-between pb-2",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "h-1 w-12 bg-cdsblue rounded-full"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+              className: "text-2xl md:text-4xl font-bold py-2",
+              children: translations[language].modalTitle2
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            className: "bg-white rounded",
+            onClick: closeModal,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+              xmlns: "http://www.w3.org/2000/svg",
+              height: "28px",
+              viewBox: "0 -960 960 960",
+              width: "28px",
+              fill: "#000",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                d: "m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+              })
+            })
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "text-base md:text-lg mb-4 max-h-[60vh] overflow-y-auto",
+          children: translations[language].modalDesc2
+        })]
+      })
     })]
   });
 };
@@ -5806,12 +6175,14 @@ function NwpParqueSection1() {
       es: {
         title: "Un espacio abierto al público",
         content: "El corazón verde del campus, ideal para realizar actividades recreativas, deportivas o de esparcimiento. Parque Ciudad del Saber está abierto a sus visitantes de forma gratuita todos los días del año.",
-        buttonLabel: "Descarga el reglamento de uso"
+        buttonLabel: "Reglamento de uso del Parque Ciudad del Saber",
+        buttonLabel2: "Políticas de reserva y cancelación de espacios de CDS"
       },
       en: {
         title: "A public open space",
         content: "The green heart of the campus, ideal for recreational, sports, or leisure activities. Ciudad del Saber Park is open to visitors free of charge every day of the year.",
-        buttonLabel: "Download the usage regulations"
+        buttonLabel: "Regulation for use of the City of Knowledge Park",
+        buttonLabel2: "CDS space reservation and cancellation policies"
       }
     };
 
@@ -5828,6 +6199,7 @@ function NwpParqueSection1() {
     title: content.title,
     content: content.content,
     buttonLabel: content.buttonLabel,
+    buttonLabel2: content.buttonLabel2,
     onButtonClick: handleButtonClick,
     images: images
   });
@@ -5987,14 +6359,60 @@ function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "La cancha más jugable de Panama",
-        content: "Construida en 1948, esta piscina ha sido testigo de innumerables momentos \n                  de entrenamiento y esparcimiento para generaciones de militares. Hoy, abre \n                  sus puertas a toda la comunidad para que disfrutes de sus aguas cristalinas \n                  y de un ambiente familiar y acogedor.",
-        buttonLabel: "Descarga el reglamento de uso"
+        title: "Canchas de Baloncesto del Parque Ciudad del Saber",
+        content: "Las canchas de baloncesto del Parque Ciudad del Saber ofrecen instalaciones de alta calidad para \n                  que disfrutes de un buen juego, tanto en la cancha techada como al aire libre.",
+        buttonLabel: "Descarga el reglamento de uso",
+        modalTitle: "Reglamentos de uso de Canchas de Baloncesto",
+        modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
+          className: "list-decimal list-inside",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "En la cancha de tabloncillo s\xF3lo se permite calzado con suela de goma."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Para la cancha al aire libre debes utilizar calzado deportivo."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No se permite quitarse la camisa dentro de la instalaci\xF3n."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Al momento del partido s\xF3lo pueden estar los 10 jugadores dentro de la cancha."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "El uso de la cancha es exclusivo solamente para jugar baloncesto."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Est\xE1 prohibido el consumo de alimentos, salvo agua o bebidas hidratantes."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No est\xE1n permitidos los envases sin tapa o de vidrio."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Se permite reproducir m\xFAsica a bajo volumen, de manera que no incomodes o afectes el entrenamiento de las dem\xE1s personas."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Cada persona usa estas instalaciones bajo su propia responsabilidad, teniendo en cuenta sus condiciones y limitaciones f\xEDsicas y de salud."
+          })]
+        })
       },
       en: {
-        title: "The deepest pool in Panama",
-        content: "Built in 1948, this pool has witnessed countless moments of training and \n                  recreation for generations of military personnel. Today, it opens its doors \n                  to the entire community to enjoy its crystal-clear waters and a family-friendly, \n                  welcoming atmosphere.",
-        buttonLabel: "Download the usage rules"
+        title: "Basketball Courts at Ciudad del Saber Park",
+        content: "The basketball courts at Ciudad del Saber Park provide high-quality facilities for you to \n                  enjoy a great game, both in the indoor and outdoor courts.",
+        buttonLabel: "Download the usage rules",
+        modalTitle: "Basketball Court Usage Rules",
+        modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
+          className: "list-decimal list-inside",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Only rubber-soled shoes are allowed on the indoor court."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Sports shoes must be worn on the outdoor court."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Removing your shirt inside the facility is not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "During the game, only the 10 players are allowed on the court."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The court is exclusively for playing basketball."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The consumption of food is prohibited, except for water or sports drinks."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Unsealed or glass containers are not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Music may be played at a low volume, ensuring it does not disturb or affect others' training."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Each person uses these facilities at their own risk, taking into account their physical and health conditions and limitations."
+          })]
+        })
       }
     };
 
@@ -6009,8 +6427,10 @@ function ContentSectionWithAnImage() {
     title: content.title,
     content: content.content,
     buttonLabel: content.buttonLabel,
+    modalTitle: content.modalTitle,
+    modalDesc: content.modalDesc,
     onButtonClick: handleButtonClick,
-    image: "https://images.unsplash.com/photo-1691253104600-ccfd27782f3e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   });
 }
 var container = document.getElementById('nwp-baloncesto-content-section-whith-an-image');
@@ -6414,14 +6834,15 @@ if (container) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Hero)
+/* harmony export */   "default": () => (/* binding */ BaloncestoHero)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _FirstHero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../FirstHero */ "./resources/js/components/FirstHero.js");
 /* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _CustomIndex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../CustomIndex */ "./resources/js/components/CustomIndex.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -6432,8 +6853,9 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
+ // Asegúrate de importar el índice personalizado
 
-function Hero() {
+function BaloncestoHero() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
     language = _useLanguage.language; // Acceder al idioma seleccionado
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
@@ -6445,7 +6867,7 @@ function Hero() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "Cancha de baloncesto",
+        title: "Cancha de Baloncesto",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
         schedule: "6:30 am - 8:00 pm",
@@ -6453,7 +6875,7 @@ function Hero() {
         buttonText: "Reserva tu espacio"
       },
       en: {
-        title: "basketball court",
+        title: "Basketball Court",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
         schedule: "6:30 am - 8:00 pm",
@@ -6469,23 +6891,33 @@ function Hero() {
   var handleButtonClick = function handleButtonClick() {
     console.log('Button clicked');
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: content.title,
-    subtitle: content.subtitle,
-    schedule: content.schedule,
-    location: content.location,
-    onButtonClick: handleButtonClick,
-    gradientColor: "from-cdsverde via-cdsverde to-transparent",
-    backgroundImageUrl: "https://plus.unsplash.com/premium_photo-1668623041724-c9b6c84c436b?q=80&w=1329&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    buttonText: content.buttonText,
-    isVenue: true
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      title: content.title,
+      subtitle: content.subtitle,
+      schedule: content.schedule,
+      location: content.location,
+      onButtonClick: handleButtonClick,
+      gradientColor: "from-cdsverde via-cdsverde to-transparent",
+      backgroundImageUrl: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      buttonText: content.buttonText,
+      isVenue: true
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CustomIndex__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      sections: {
+        tenEnCuenta: '#nwp-baloncesto-content-whit-video-section',
+        reservas: '#reservasss',
+        facilidades: '#nwp-baloncesto-campus-facilities',
+        historia: '#nwp-baloncesto-gallery-section',
+        preguntasFrecuentes: '#nwp-baloncesto-faq-section'
+      }
+    })]
   });
 }
 var container = document.getElementById('nwp-hero-baloncesto');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Hero, {})
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(BaloncestoHero, {})
   }));
 }
 
@@ -6636,14 +7068,68 @@ function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "La piscina más profunda de Panama",
-        content: "Construida en 1948, esta piscina ha sido testigo de innumerables momentos \n                  de entrenamiento y esparcimiento para generaciones de militares. Hoy, abre \n                  sus puertas a toda la comunidad para que disfrutes de sus aguas cristalinas \n                  y de un ambiente familiar y acogedor.",
-        buttonLabel: "Descarga el reglamento de uso"
+        title: "Reglamentos del Parque Ciudad del Saber",
+        content: "El Parque Ciudad del Saber ofrece un entorno seguro y agradable para todos los visitantes. \n                  Por favor, cumpla con las siguientes normas para garantizar una experiencia positiva para todos.",
+        buttonLabel: "Descarga el reglamento de uso",
+        modalTitle: "Reglamentos de uso del Parque Ciudad del Saber",
+        modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
+          className: "list-decimal list-inside",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No se permite el consumo y venta de bebidas alcoh\xF3licas."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No se permite la venta de comida y bebidas (sodas, aguas, bebidas energizantes, etc.)."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No se permite fumar."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Cumplir con el uso apropiado de los estacionamientos. No se pueden estacionar en los laterales de la v\xEDa principal del Parque."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No se permite el uso de murgas, troneras, parlantes, bocinas, micr\xF3fonos y otros instrumentos de ruido excesivo."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Se le solicita depositar los desechos de basura que se produzcan durante el uso de la instalaci\xF3n en los cestos de basura. Se le har\xE1 un cargo de B/. 100.00 en caso de encontrar alg\xFAn tipo de desecho en el \xE1rea asignada."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "LA FUNDACI\xD3N por condiciones climatol\xF3gicas se reserva el derecho de uso de las instalaciones para preservar el buen estado de estas."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "LA FUNDACI\xD3N no se har\xE1 responsable por la p\xE9rdida de objetos de valor (prendas, celulares, equipos deportivos, etc.) durante el desarrollo de las actividades."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "El Cliente exonera a LA FUNDACI\xD3N de cualquier imprevisto, lesi\xF3n o accidente que ocurra con alg\xFAn participante durante las actividades del evento."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Respetar y obedecer las instrucciones del personal del Parque Ciudad del Saber y agentes de Seguridad de CdS."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Se proh\xEDben los actos de violencia, ri\xF1a y palabras ofensivas durante las actividades. De ocurrir algunos de estos hechos, El Cliente deber\xE1 expulsar al equipo o persona que incurri\xF3 en la falta y, de tratarse de la barra, esta deber\xE1 abandonar las instalaciones."
+          })]
+        })
       },
       en: {
-        title: "The deepest pool in Panama",
-        content: "Built in 1948, this pool has witnessed countless moments of training and \n                  recreation for generations of military personnel. Today, it opens its doors \n                  to the entire community to enjoy its crystal-clear waters and a family-friendly, \n                  welcoming atmosphere.",
-        buttonLabel: "Download the usage rules"
+        title: "Ciudad del Saber Park Regulations",
+        content: "Ciudad del Saber Park provides a safe and enjoyable environment for all visitors. \n                  Please follow the regulations to ensure a positive experience for everyone.",
+        buttonLabel: "Download the usage rules",
+        modalTitle: "Ciudad del Saber Park Usage Regulations",
+        modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
+          className: "list-decimal list-inside",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The consumption and sale of alcoholic beverages are not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The sale of food and beverages (sodas, water, energy drinks, etc.) is not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Smoking is not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Use parking areas properly. Parking on the sides of the main road of the Park is not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The use of loud instruments (murgas, drums, speakers, horns, microphones, etc.) is not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Please dispose of any trash generated during the use of the facility in the trash bins. A charge of B/. 100.00 will be applied if any type of waste is found in the assigned area."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "LA FUNDACI\xD3N reserves the right to close facilities due to weather conditions to preserve their condition."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "LA FUNDACI\xD3N is not responsible for the loss of valuable items (jewelry, phones, sports equipment, etc.) during activities."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The client releases LA FUNDACI\xD3N from any unforeseen events, injuries, or accidents involving participants during activities."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Respect and follow the instructions of Ciudad del Saber Park staff and Security agents."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Violence, fighting, and offensive language are prohibited during activities. If any such incidents occur, the client must remove the offending team or person, and in the case of spectators, they must leave the premises."
+          })]
+        })
       }
     };
 
@@ -6658,8 +7144,10 @@ function ContentSectionWithAnImage() {
     title: content.title,
     content: content.content,
     buttonLabel: content.buttonLabel,
+    modalTitle: content.modalTitle,
+    modalDesc: content.modalDesc,
     onButtonClick: handleButtonClick,
-    image: "https://images.unsplash.com/photo-1691253104600-ccfd27782f3e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   });
 }
 var container = document.getElementById('nwp-beisbol-content-section-whith-an-image');
@@ -7063,14 +7551,15 @@ if (container) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Hero)
+/* harmony export */   "default": () => (/* binding */ BeisbolHero)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _FirstHero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../FirstHero */ "./resources/js/components/FirstHero.js");
 /* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _CustomIndex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../CustomIndex */ "./resources/js/components/CustomIndex.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -7081,8 +7570,9 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
+ // Asegúrate de importar el índice personalizado
 
-function Hero() {
+function BeisbolHero() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
     language = _useLanguage.language; // Acceder al idioma seleccionado
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
@@ -7094,18 +7584,18 @@ function Hero() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "La Piscina",
+        title: "Campo de Béisbol",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
-        schedule: "6:30 am - 8:00 pm",
+        schedule: "8:00 am - 6:00 pm",
         location: "C. Victor Garibaldo, Panamá",
         buttonText: "Reserva tu espacio"
       },
       en: {
-        title: "The Pool",
+        title: "Baseball Field",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
-        schedule: "6:30 am - 8:00 pm",
+        schedule: "8:00 am - 6:00 pm",
         location: "Victor Garibaldo St., Panama",
         buttonText: "Book your spot"
       }
@@ -7118,23 +7608,34 @@ function Hero() {
   var handleButtonClick = function handleButtonClick() {
     console.log('Button clicked');
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: content.title,
-    subtitle: content.subtitle,
-    schedule: content.schedule,
-    location: content.location,
-    onButtonClick: handleButtonClick,
-    gradientColor: "from-cdsverde via-cdsverde to-transparent",
-    backgroundImageUrl: "https://plus.unsplash.com/premium_photo-1668623041724-c9b6c84c436b?q=80&w=1329&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    buttonText: content.buttonText,
-    isVenue: true
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      title: content.title,
+      subtitle: content.subtitle,
+      schedule: content.schedule,
+      location: content.location,
+      onButtonClick: handleButtonClick,
+      gradientColor: "from-cdsverde via-cdsverde to-transparent",
+      backgroundImageUrl: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Reemplaza con la URL correcta
+      ,
+      buttonText: content.buttonText,
+      isVenue: true
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CustomIndex__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      sections: {
+        tenEnCuenta: '#nwp-beisbol-content-whit-video-section',
+        reservas: '#reservasss',
+        facilidades: '#nwp-beisbol-campus-facilities',
+        historia: '#nwp-beisbol-gallery-section',
+        preguntasFrecuentes: '#nwp-beisbol-faq-section'
+      }
+    })]
   });
 }
 var container = document.getElementById('nwp-hero-beisbol');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Hero, {})
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(BeisbolHero, {})
   }));
 }
 
@@ -7285,14 +7786,52 @@ function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "La piscina más profunda de Panama",
-        content: "Construida en 1948, esta piscina ha sido testigo de innumerables momentos \n                  de entrenamiento y esparcimiento para generaciones de militares. Hoy, abre \n                  sus puertas a toda la comunidad para que disfrutes de sus aguas cristalinas \n                  y de un ambiente familiar y acogedor.",
-        buttonLabel: "Descarga el reglamento de uso"
+        title: "Gazebos en el Parque Ciudad del Saber",
+        content: "Los gazebos del Parque Ciudad del Saber ofrecen un espacio amplio y c\xF3modo para actividades \n                  al aire libre, ideales para reuniones familiares, eventos corporativos y celebraciones.",
+        buttonLabel: "Descarga el reglamento de uso",
+        modalTitle: "Reglamentos de uso de Gazebos",
+        modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
+          className: "list-decimal list-inside",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Aplican todos los reglamentos de uso del Parque Ciudad del Saber."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No se permite juegos acu\xE1ticos ni granja de animales."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No se permite el uso de barbacoas. Todos los alimentos deben venir preparados."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Si desea traer inflables o trampolines, debe proporcionar su propio generador de energ\xEDa (planta el\xE9ctrica)."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Si no cumple con la cantidad de personas estipuladas de los gazebos, el Parque Ciudad del Saber podr\xE1 proceder con la cancelaci\xF3n de su actividad por incumplimiento."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "La FUNDACI\xD3N, por condiciones climatol\xF3gicas, se reserva el derecho de uso de las \xE1reas verdes para preservar el buen estado de estas."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Para revelaciones de g\xE9nero no se permite el uso de pirotecnia, bombas de humo, serpentinas, confeti y similares."
+          })]
+        })
       },
       en: {
-        title: "The deepest pool in Panama",
-        content: "Built in 1948, this pool has witnessed countless moments of training and \n                  recreation for generations of military personnel. Today, it opens its doors \n                  to the entire community to enjoy its crystal-clear waters and a family-friendly, \n                  welcoming atmosphere.",
-        buttonLabel: "Download the usage rules"
+        title: "Gazebos at Ciudad del Saber Park",
+        content: "The gazebos at Ciudad del Saber Park provide spacious and comfortable outdoor areas, \n                  perfect for family gatherings, corporate events, and celebrations.",
+        buttonLabel: "Download the usage rules",
+        modalTitle: "Gazebo usage rules",
+        modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
+          className: "list-decimal list-inside",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "All Ciudad del Saber Park rules apply."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Water games and petting zoos are not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The use of barbecues is not allowed. All food must be pre-prepared."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "If you wish to bring inflatables or trampolines, you must provide your own power generator (electric plant)."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "If the stipulated number of people for the gazebos is not met, Ciudad del Saber Park may proceed with the cancellation of your activity for non-compliance."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "LA FUNDACI\xD3N reserves the right to restrict the use of green areas in the event of weather conditions to preserve their condition."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "For gender reveals, the use of pyrotechnics, smoke bombs, streamers, confetti, and similar items is not allowed."
+          })]
+        })
       }
     };
 
@@ -7307,8 +7846,10 @@ function ContentSectionWithAnImage() {
     title: content.title,
     content: content.content,
     buttonLabel: content.buttonLabel,
+    modalTitle: content.modalTitle,
+    modalDesc: content.modalDesc,
     onButtonClick: handleButtonClick,
-    image: "https://images.unsplash.com/photo-1691253104600-ccfd27782f3e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   });
 }
 var container = document.getElementById('nwp-bohios-content-section-whith-an-image');
@@ -7712,14 +8253,15 @@ if (container) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Hero)
+/* harmony export */   "default": () => (/* binding */ BohiosHero)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _FirstHero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../FirstHero */ "./resources/js/components/FirstHero.js");
 /* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _CustomIndex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../CustomIndex */ "./resources/js/components/CustomIndex.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -7730,8 +8272,9 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
+ // Asegurarse de importar el índice personalizado
 
-function Hero() {
+function BohiosHero() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
     language = _useLanguage.language; // Acceder al idioma seleccionado
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
@@ -7743,18 +8286,18 @@ function Hero() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "La Piscina",
+        title: "Los Gazebos",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
-        schedule: "6:30 am - 8:00 pm",
+        schedule: "9:00 am - 6:00 pm",
         location: "C. Victor Garibaldo, Panamá",
         buttonText: "Reserva tu espacio"
       },
       en: {
-        title: "The Pool",
+        title: "The Gazebos",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
-        schedule: "6:30 am - 8:00 pm",
+        schedule: "9:00 am - 6:00 pm",
         location: "Victor Garibaldo St., Panama",
         buttonText: "Book your spot"
       }
@@ -7767,23 +8310,33 @@ function Hero() {
   var handleButtonClick = function handleButtonClick() {
     console.log('Button clicked');
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: content.title,
-    subtitle: content.subtitle,
-    schedule: content.schedule,
-    location: content.location,
-    onButtonClick: handleButtonClick,
-    gradientColor: "from-cdsverde via-cdsverde to-transparent",
-    backgroundImageUrl: "https://plus.unsplash.com/premium_photo-1668623041724-c9b6c84c436b?q=80&w=1329&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    buttonText: content.buttonText,
-    isVenue: true
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      title: content.title,
+      subtitle: content.subtitle,
+      schedule: content.schedule,
+      location: content.location,
+      onButtonClick: handleButtonClick,
+      gradientColor: "from-cdsverde via-cdsverde to-transparent",
+      backgroundImageUrl: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      buttonText: content.buttonText,
+      isVenue: true
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CustomIndex__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      sections: {
+        tenEnCuenta: '#nwp-bohios-content-whit-video-section',
+        reservas: '#reservasss',
+        facilidades: '#nwp-bohios-campus-facilities',
+        historia: '#nwp-bohios-gallery-section',
+        preguntasFrecuentes: '#nwp-bohios-faq-section'
+      }
+    })]
   });
 }
 var container = document.getElementById('nwp-hero-bohios');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Hero, {})
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(BohiosHero, {})
   }));
 }
 
@@ -7934,14 +8487,60 @@ function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "La piscina más profunda de Panama",
-        content: "Construida en 1948, esta piscina ha sido testigo de innumerables momentos \n                  de entrenamiento y esparcimiento para generaciones de militares. Hoy, abre \n                  sus puertas a toda la comunidad para que disfrutes de sus aguas cristalinas \n                  y de un ambiente familiar y acogedor.",
-        buttonLabel: "Descarga el reglamento de uso"
+        title: "Reglamentos de uso de Boxeo en el Parque Ciudad del Saber",
+        content: "Nuestras instalaciones de boxeo ofrecen un espacio ideal para entrenar de manera segura y eficiente, \n                  cumpliendo con todas las normas de seguridad y uso.",
+        buttonLabel: "Descarga el reglamento de uso",
+        modalTitle: "Reglamentos de uso de Boxeo",
+        modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
+          className: "list-decimal list-inside",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Deben utilizar calzado deportivo dentro de la instalaci\xF3n con suela de goma o lisa."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Es obligatorio el uso de guantes y toalla."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No se permite quitarse la camisa dentro de la instalaci\xF3n."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "El uso del espacio es exclusivo solamente para boxeo."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No se permite guindarse sobre en los sacos o mover las peras."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Est\xE1 prohibido el consumo de alimentos, salvo agua o bebidas hidratantes."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No est\xE1n permitidos los envases sin tapa o de vidrio."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Se permite reproducir m\xFAsica a bajo volumen, de manera que no incomodes o afectes el entrenamiento de las dem\xE1s personas."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Cada persona usa estas instalaciones bajo su propia responsabilidad, teniendo en cuenta sus condiciones y limitaciones f\xEDsicas y de salud."
+          })]
+        })
       },
       en: {
-        title: "The deepest pool in Panama",
-        content: "Built in 1948, this pool has witnessed countless moments of training and \n                  recreation for generations of military personnel. Today, it opens its doors \n                  to the entire community to enjoy its crystal-clear waters and a family-friendly, \n                  welcoming atmosphere.",
-        buttonLabel: "Download the usage rules"
+        title: "Boxing Regulations at Ciudad del Saber Park",
+        content: "Our boxing facilities provide an ideal space for safe and efficient training, \n                  complying with all safety and usage regulations.",
+        buttonLabel: "Download the usage rules",
+        modalTitle: "Boxing Usage Rules",
+        modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
+          className: "list-decimal list-inside",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Sports shoes with rubber or smooth soles must be worn inside the facility."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Wearing gloves and a towel is mandatory."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Removing your shirt inside the facility is not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The space is exclusively for boxing."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Hanging on the punching bags or moving the speed bags is not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The consumption of food is prohibited, except for water or sports drinks."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Unsealed or glass containers are not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Music may be played at a low volume, ensuring it does not disturb or affect others' training."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Each person uses these facilities at their own risk, taking into account their physical and health conditions and limitations."
+          })]
+        })
       }
     };
 
@@ -7956,8 +8555,10 @@ function ContentSectionWithAnImage() {
     title: content.title,
     content: content.content,
     buttonLabel: content.buttonLabel,
+    modalTitle: content.modalTitle,
+    modalDesc: content.modalDesc,
     onButtonClick: handleButtonClick,
-    image: "https://images.unsplash.com/photo-1691253104600-ccfd27782f3e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   });
 }
 var container = document.getElementById('nwp-boxeo-content-section-whith-an-image');
@@ -8368,7 +8969,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _FirstHero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../FirstHero */ "./resources/js/components/FirstHero.js");
 /* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _CustomIndex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../CustomIndex */ "./resources/js/components/CustomIndex.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -8379,6 +8981,7 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
+ // Asegúrate de importar el índice personalizado
 
 function Hero() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
@@ -8392,18 +8995,18 @@ function Hero() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "La Piscina",
+        title: "Sala de Boxeo",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
-        schedule: "6:30 am - 8:00 pm",
+        schedule: "6:00 am - 9:00 pm",
         location: "C. Victor Garibaldo, Panamá",
         buttonText: "Reserva tu espacio"
       },
       en: {
-        title: "The Pool",
+        title: "Boxing Room",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
-        schedule: "6:30 am - 8:00 pm",
+        schedule: "6:00 am - 9:00 pm",
         location: "Victor Garibaldo St., Panama",
         buttonText: "Book your spot"
       }
@@ -8416,23 +9019,34 @@ function Hero() {
   var handleButtonClick = function handleButtonClick() {
     console.log('Button clicked');
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: content.title,
-    subtitle: content.subtitle,
-    schedule: content.schedule,
-    location: content.location,
-    onButtonClick: handleButtonClick,
-    gradientColor: "from-cdsverde via-cdsverde to-transparent",
-    backgroundImageUrl: "https://plus.unsplash.com/premium_photo-1668623041724-c9b6c84c436b?q=80&w=1329&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    buttonText: content.buttonText,
-    isVenue: true
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      title: content.title,
+      subtitle: content.subtitle,
+      schedule: content.schedule,
+      location: content.location,
+      onButtonClick: handleButtonClick,
+      gradientColor: "from-cdsverde via-cdsverde to-transparent",
+      backgroundImageUrl: "https://example.com/boxing-room-image.jpg" // Reemplaza con la URL correcta
+      ,
+      buttonText: content.buttonText,
+      isVenue: true
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CustomIndex__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      sections: {
+        tenEnCuenta: '#nwp-boxeo-content-whit-video-section',
+        reservas: '#reservasss',
+        facilidades: '#nwp-boxeo-campus-facilities',
+        historia: '#nwp-boxeo-gallery-section',
+        preguntasFrecuentes: '#nwp-boxeo-faq-section'
+      }
+    })]
   });
 }
-var container = document.getElementById('nwp-hero-pesas');
+var container = document.getElementById('nwp-hero-boxeo');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Hero, {})
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(Hero, {})
   }));
 }
 
@@ -8583,14 +9197,68 @@ function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "La piscina más profunda de Panama",
-        content: "Construida en 1948, esta piscina ha sido testigo de innumerables momentos \n                  de entrenamiento y esparcimiento para generaciones de militares. Hoy, abre \n                  sus puertas a toda la comunidad para que disfrutes de sus aguas cristalinas \n                  y de un ambiente familiar y acogedor.",
-        buttonLabel: "Descarga el reglamento de uso"
+        title: "Reglamentos del Parque Ciudad del Saber",
+        content: "El Parque Ciudad del Saber ofrece un entorno seguro y agradable para todos los visitantes. \n                  Por favor, cumpla con las siguientes normas para garantizar una experiencia positiva para todos.",
+        buttonLabel: "Descarga el reglamento de uso",
+        modalTitle: "Reglamentos de uso del Parque Ciudad del Saber",
+        modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
+          className: "list-decimal list-inside",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No se permite el consumo y venta de bebidas alcoh\xF3licas."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No se permite la venta de comida y bebidas (sodas, aguas, bebidas energizantes, etc.)."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No se permite fumar."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Cumplir con el uso apropiado de los estacionamientos. No se pueden estacionar en los laterales de la v\xEDa principal del Parque."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No se permite el uso de murgas, troneras, parlantes, bocinas, micr\xF3fonos y otros instrumentos de ruido excesivo."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Se le solicita depositar los desechos de basura que se produzcan durante el uso de la instalaci\xF3n en los cestos de basura. Se le har\xE1 un cargo de B/. 100.00 en caso de encontrar alg\xFAn tipo de desecho en el \xE1rea asignada."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "LA FUNDACI\xD3N por condiciones climatol\xF3gicas se reserva el derecho de uso de las instalaciones para preservar el buen estado de estas."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "LA FUNDACI\xD3N no se har\xE1 responsable por la p\xE9rdida de objetos de valor (prendas, celulares, equipos deportivos, etc.) durante el desarrollo de las actividades."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "El Cliente exonera a LA FUNDACI\xD3N de cualquier imprevisto, lesi\xF3n o accidente que ocurra con alg\xFAn participante durante las actividades del evento."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Respetar y obedecer las instrucciones del personal del Parque Ciudad del Saber y agentes de Seguridad de CdS."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Se proh\xEDben los actos de violencia, ri\xF1a y palabras ofensivas durante las actividades. De ocurrir algunos de estos hechos, El Cliente deber\xE1 expulsar al equipo o persona que incurri\xF3 en la falta y, de tratarse de la barra, esta deber\xE1 abandonar las instalaciones."
+          })]
+        })
       },
       en: {
-        title: "The deepest pool in Panama",
-        content: "Built in 1948, this pool has witnessed countless moments of training and \n                  recreation for generations of military personnel. Today, it opens its doors \n                  to the entire community to enjoy its crystal-clear waters and a family-friendly, \n                  welcoming atmosphere.",
-        buttonLabel: "Download the usage rules"
+        title: "Ciudad del Saber Park Regulations",
+        content: "Ciudad del Saber Park provides a safe and enjoyable environment for all visitors. \n                  Please follow the regulations to ensure a positive experience for everyone.",
+        buttonLabel: "Download the usage rules",
+        modalTitle: "Ciudad del Saber Park Usage Regulations",
+        modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
+          className: "list-decimal list-inside",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The consumption and sale of alcoholic beverages are not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The sale of food and beverages (sodas, water, energy drinks, etc.) is not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Smoking is not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Use parking areas properly. Parking on the sides of the main road of the Park is not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The use of loud instruments (murgas, drums, speakers, horns, microphones, etc.) is not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Please dispose of any trash generated during the use of the facility in the trash bins. A charge of B/. 100.00 will be applied if any type of waste is found in the assigned area."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "LA FUNDACI\xD3N reserves the right to close facilities due to weather conditions to preserve their condition."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "LA FUNDACI\xD3N is not responsible for the loss of valuable items (jewelry, phones, sports equipment, etc.) during activities."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The client releases LA FUNDACI\xD3N from any unforeseen events, injuries, or accidents involving participants during activities."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Respect and follow the instructions of Ciudad del Saber Park staff and Security agents."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Violence, fighting, and offensive language are prohibited during activities. If any such incidents occur, the client must remove the offending team or person, and in the case of spectators, they must leave the premises."
+          })]
+        })
       }
     };
 
@@ -8605,8 +9273,10 @@ function ContentSectionWithAnImage() {
     title: content.title,
     content: content.content,
     buttonLabel: content.buttonLabel,
+    modalTitle: content.modalTitle,
+    modalDesc: content.modalDesc,
     onButtonClick: handleButtonClick,
-    image: "https://images.unsplash.com/photo-1691253104600-ccfd27782f3e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   });
 }
 var container = document.getElementById('nwp-futbol-content-section-whith-an-image');
@@ -9010,14 +9680,15 @@ if (container) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Hero)
+/* harmony export */   "default": () => (/* binding */ FutbolHero)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _FirstHero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../FirstHero */ "./resources/js/components/FirstHero.js");
 /* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _CustomIndex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../CustomIndex */ "./resources/js/components/CustomIndex.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -9028,8 +9699,9 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
+ // Asegúrate de importar el índice personalizado
 
-function Hero() {
+function FutbolHero() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
     language = _useLanguage.language; // Acceder al idioma seleccionado
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
@@ -9041,18 +9713,18 @@ function Hero() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "La Piscina",
+        title: "La Cancha de Fútbol",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
-        schedule: "6:30 am - 8:00 pm",
+        schedule: "7:00 am - 10:00 pm",
         location: "C. Victor Garibaldo, Panamá",
         buttonText: "Reserva tu espacio"
       },
       en: {
-        title: "The Pool",
+        title: "The Football Field",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
-        schedule: "6:30 am - 8:00 pm",
+        schedule: "7:00 am - 10:00 pm",
         location: "Victor Garibaldo St., Panama",
         buttonText: "Book your spot"
       }
@@ -9065,23 +9737,33 @@ function Hero() {
   var handleButtonClick = function handleButtonClick() {
     console.log('Button clicked');
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: content.title,
-    subtitle: content.subtitle,
-    schedule: content.schedule,
-    location: content.location,
-    onButtonClick: handleButtonClick,
-    gradientColor: "from-cdsverde via-cdsverde to-transparent",
-    backgroundImageUrl: "https://plus.unsplash.com/premium_photo-1668623041724-c9b6c84c436b?q=80&w=1329&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    buttonText: content.buttonText,
-    isVenue: true
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      title: content.title,
+      subtitle: content.subtitle,
+      schedule: content.schedule,
+      location: content.location,
+      onButtonClick: handleButtonClick,
+      gradientColor: "from-cdsverde via-cdsverde to-transparent",
+      backgroundImageUrl: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      buttonText: content.buttonText,
+      isVenue: true
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CustomIndex__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      sections: {
+        tenEnCuenta: '#nwp-futbol-content-whit-video-section',
+        reservas: '#reservasss',
+        facilidades: '#nwp-futbol-campus-facilities',
+        historia: '#nwp-futbol-gallery-section',
+        preguntasFrecuentes: '#nwp-futbol-faq-section'
+      }
+    })]
   });
 }
 var container = document.getElementById('nwp-hero-futbol');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Hero, {})
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(FutbolHero, {})
   }));
 }
 
@@ -9232,14 +9914,44 @@ function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "La cancha más jugable de Panama",
-        content: "Construida en 1948, esta piscina ha sido testigo de innumerables momentos \n                  de entrenamiento y esparcimiento para generaciones de militares. Hoy, abre \n                  sus puertas a toda la comunidad para que disfrutes de sus aguas cristalinas \n                  y de un ambiente familiar y acogedor.",
-        buttonLabel: "Descarga el reglamento de uso"
+        title: "Campo de Golf en el Parque Ciudad del Saber",
+        content: "Disfruta de nuestras instalaciones de golf con zonas dedicadas para practicar tus tiros. \n                  Trae tus propios implementos y aprovecha nuestras canastas de bolas reservadas.",
+        buttonLabel: "Descarga el reglamento de uso",
+        modalTitle: "Reglamentos de uso de Golf",
+        modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
+          className: "list-decimal list-inside",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Traer sus propios implementos de golf. La Administraci\xF3n solo proporciona la canasta con la cantidad reservada."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No se permite m\xE1s de una persona por zona."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Deben cumplir con el horario reservado."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Las bolas reservadas deben utilizarse en su totalidad, no se realizar\xE1 reembolso por el uso parcial de las bolas reservadas."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Se permite un m\xE1ximo de 200 bolas por cliente."
+          })]
+        })
       },
       en: {
-        title: "The deepest pool in Panama",
-        content: "Built in 1948, this pool has witnessed countless moments of training and \n                  recreation for generations of military personnel. Today, it opens its doors \n                  to the entire community to enjoy its crystal-clear waters and a family-friendly, \n                  welcoming atmosphere.",
-        buttonLabel: "Download the usage rules"
+        title: "Golf Course at Ciudad del Saber Park",
+        content: "Enjoy our golf facilities with dedicated areas for practicing your shots. \n                  Bring your own equipment and take advantage of our reserved ball baskets.",
+        buttonLabel: "Download the usage rules",
+        modalTitle: "Golf Usage Rules",
+        modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
+          className: "list-decimal list-inside",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Bring your own golf equipment. The administration only provides the basket with the reserved quantity."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Only one person is allowed per zone."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "You must adhere to the reserved schedule."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The reserved balls must be used in their entirety; no refunds will be issued for partial use of the reserved balls."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "A maximum of 200 balls per customer is allowed."
+          })]
+        })
       }
     };
 
@@ -9254,8 +9966,10 @@ function ContentSectionWithAnImage() {
     title: content.title,
     content: content.content,
     buttonLabel: content.buttonLabel,
+    modalTitle: content.modalTitle,
+    modalDesc: content.modalDesc,
     onButtonClick: handleButtonClick,
-    image: "https://images.unsplash.com/photo-1691253104600-ccfd27782f3e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   });
 }
 var container = document.getElementById('nwp-golf-content-section-whith-an-image');
@@ -9659,14 +10373,15 @@ if (container) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Hero)
+/* harmony export */   "default": () => (/* binding */ GolfHero)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _FirstHero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../FirstHero */ "./resources/js/components/FirstHero.js");
 /* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _CustomIndex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../CustomIndex */ "./resources/js/components/CustomIndex.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -9677,8 +10392,9 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
+ // Asegúrate de importar el índice personalizado
 
-function Hero() {
+function GolfHero() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
     language = _useLanguage.language; // Acceder al idioma seleccionado
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
@@ -9690,18 +10406,18 @@ function Hero() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "Cancha de baloncesto",
+        title: "Cancha de Golf",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
-        schedule: "6:30 am - 8:00 pm",
+        schedule: "7:00 am - 6:00 pm",
         location: "C. Victor Garibaldo, Panamá",
         buttonText: "Reserva tu espacio"
       },
       en: {
-        title: "basketball court",
+        title: "Golf Course",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
-        schedule: "6:30 am - 8:00 pm",
+        schedule: "7:00 am - 6:00 pm",
         location: "Victor Garibaldo St., Panama",
         buttonText: "Book your spot"
       }
@@ -9714,23 +10430,33 @@ function Hero() {
   var handleButtonClick = function handleButtonClick() {
     console.log('Button clicked');
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: content.title,
-    subtitle: content.subtitle,
-    schedule: content.schedule,
-    location: content.location,
-    onButtonClick: handleButtonClick,
-    gradientColor: "from-cdsverde via-cdsverde to-transparent",
-    backgroundImageUrl: "https://plus.unsplash.com/premium_photo-1668623041724-c9b6c84c436b?q=80&w=1329&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    buttonText: content.buttonText,
-    isVenue: true
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      title: content.title,
+      subtitle: content.subtitle,
+      schedule: content.schedule,
+      location: content.location,
+      onButtonClick: handleButtonClick,
+      gradientColor: "from-cdsverde via-cdsverde to-transparent",
+      backgroundImageUrl: "https://example.com/golf-course-image.jpg",
+      buttonText: content.buttonText,
+      isVenue: true
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CustomIndex__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      sections: {
+        tenEnCuenta: '#nwp-golf-content-whit-video-section',
+        reservas: '#reservasss',
+        facilidades: '#nwp-golf-campus-facilities',
+        historia: '#nwp-golf-gallery-section',
+        preguntasFrecuentes: '#nwp-golf-faq-section'
+      }
+    })]
   });
 }
 var container = document.getElementById('nwp-hero-golf');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Hero, {})
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(GolfHero, {})
   }));
 }
 
@@ -9881,14 +10607,68 @@ function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "La piscina más profunda de Panama",
-        content: "Construida en 1948, esta piscina ha sido testigo de innumerables momentos \n                  de entrenamiento y esparcimiento para generaciones de militares. Hoy, abre \n                  sus puertas a toda la comunidad para que disfrutes de sus aguas cristalinas \n                  y de un ambiente familiar y acogedor.",
-        buttonLabel: "Descarga el reglamento de uso"
+        title: "Reglamentos del Parque Ciudad del Saber",
+        content: "El Parque Ciudad del Saber ofrece un entorno seguro y agradable para todos los visitantes. \n                  Por favor, cumpla con las siguientes normas para garantizar una experiencia positiva para todos.",
+        buttonLabel: "Descarga el reglamento de uso",
+        modalTitle: "Reglamentos de uso del Parque Ciudad del Saber",
+        modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
+          className: "list-decimal list-inside",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No se permite el consumo y venta de bebidas alcoh\xF3licas."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No se permite la venta de comida y bebidas (sodas, aguas, bebidas energizantes, etc.)."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No se permite fumar."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Cumplir con el uso apropiado de los estacionamientos. No se pueden estacionar en los laterales de la v\xEDa principal del Parque."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No se permite el uso de murgas, troneras, parlantes, bocinas, micr\xF3fonos y otros instrumentos de ruido excesivo."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Se le solicita depositar los desechos de basura que se produzcan durante el uso de la instalaci\xF3n en los cestos de basura. Se le har\xE1 un cargo de B/. 100.00 en caso de encontrar alg\xFAn tipo de desecho en el \xE1rea asignada."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "LA FUNDACI\xD3N por condiciones climatol\xF3gicas se reserva el derecho de uso de las instalaciones para preservar el buen estado de estas."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "LA FUNDACI\xD3N no se har\xE1 responsable por la p\xE9rdida de objetos de valor (prendas, celulares, equipos deportivos, etc.) durante el desarrollo de las actividades."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "El Cliente exonera a LA FUNDACI\xD3N de cualquier imprevisto, lesi\xF3n o accidente que ocurra con alg\xFAn participante durante las actividades del evento."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Respetar y obedecer las instrucciones del personal del Parque Ciudad del Saber y agentes de Seguridad de CdS."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Se proh\xEDben los actos de violencia, ri\xF1a y palabras ofensivas durante las actividades. De ocurrir algunos de estos hechos, El Cliente deber\xE1 expulsar al equipo o persona que incurri\xF3 en la falta y, de tratarse de la barra, esta deber\xE1 abandonar las instalaciones."
+          })]
+        })
       },
       en: {
-        title: "The deepest pool in Panama",
-        content: "Built in 1948, this pool has witnessed countless moments of training and \n                  recreation for generations of military personnel. Today, it opens its doors \n                  to the entire community to enjoy its crystal-clear waters and a family-friendly, \n                  welcoming atmosphere.",
-        buttonLabel: "Download the usage rules"
+        title: "Ciudad del Saber Park Regulations",
+        content: "Ciudad del Saber Park provides a safe and enjoyable environment for all visitors. \n                  Please follow the regulations to ensure a positive experience for everyone.",
+        buttonLabel: "Download the usage rules",
+        modalTitle: "Ciudad del Saber Park Usage Regulations",
+        modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
+          className: "list-decimal list-inside",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The consumption and sale of alcoholic beverages are not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The sale of food and beverages (sodas, water, energy drinks, etc.) is not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Smoking is not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Use parking areas properly. Parking on the sides of the main road of the Park is not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The use of loud instruments (murgas, drums, speakers, horns, microphones, etc.) is not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Please dispose of any trash generated during the use of the facility in the trash bins. A charge of B/. 100.00 will be applied if any type of waste is found in the assigned area."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "LA FUNDACI\xD3N reserves the right to close facilities due to weather conditions to preserve their condition."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "LA FUNDACI\xD3N is not responsible for the loss of valuable items (jewelry, phones, sports equipment, etc.) during activities."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The client releases LA FUNDACI\xD3N from any unforeseen events, injuries, or accidents involving participants during activities."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Respect and follow the instructions of Ciudad del Saber Park staff and Security agents."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Violence, fighting, and offensive language are prohibited during activities. If any such incidents occur, the client must remove the offending team or person, and in the case of spectators, they must leave the premises."
+          })]
+        })
       }
     };
 
@@ -9903,8 +10683,10 @@ function ContentSectionWithAnImage() {
     title: content.title,
     content: content.content,
     buttonLabel: content.buttonLabel,
+    modalTitle: content.modalTitle,
+    modalDesc: content.modalDesc,
     onButtonClick: handleButtonClick,
-    image: "https://images.unsplash.com/photo-1691253104600-ccfd27782f3e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   });
 }
 var container = document.getElementById('nwp-pesas-content-section-whith-an-image');
@@ -10315,7 +11097,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _FirstHero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../FirstHero */ "./resources/js/components/FirstHero.js");
 /* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _CustomIndex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../CustomIndex */ "./resources/js/components/CustomIndex.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -10326,6 +11109,7 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
+ // Asegúrate de importar el índice personalizado
 
 function Hero() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
@@ -10339,18 +11123,18 @@ function Hero() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "La Piscina",
+        title: "Sala de Pesas",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
-        schedule: "6:30 am - 8:00 pm",
+        schedule: "6:00 am - 10:00 pm",
         location: "C. Victor Garibaldo, Panamá",
         buttonText: "Reserva tu espacio"
       },
       en: {
-        title: "The Pool",
+        title: "Weight Room",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
-        schedule: "6:30 am - 8:00 pm",
+        schedule: "6:00 am - 10:00 pm",
         location: "Victor Garibaldo St., Panama",
         buttonText: "Book your spot"
       }
@@ -10363,23 +11147,34 @@ function Hero() {
   var handleButtonClick = function handleButtonClick() {
     console.log('Button clicked');
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: content.title,
-    subtitle: content.subtitle,
-    schedule: content.schedule,
-    location: content.location,
-    onButtonClick: handleButtonClick,
-    gradientColor: "from-cdsverde via-cdsverde to-transparent",
-    backgroundImageUrl: "https://plus.unsplash.com/premium_photo-1668623041724-c9b6c84c436b?q=80&w=1329&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    buttonText: content.buttonText,
-    isVenue: true
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      title: content.title,
+      subtitle: content.subtitle,
+      schedule: content.schedule,
+      location: content.location,
+      onButtonClick: handleButtonClick,
+      gradientColor: "from-cdsverde via-cdsverde to-transparent",
+      backgroundImageUrl: "https://example.com/weight-room-image.jpg" // Reemplaza con la URL correcta
+      ,
+      buttonText: content.buttonText,
+      isVenue: true
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CustomIndex__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      sections: {
+        tenEnCuenta: '#nwp-pesas-content-whit-video-section',
+        reservas: '#reservasss',
+        facilidades: '#nwp-pesas-campus-facilities',
+        historia: '#nwp-pesas-gallery-section',
+        preguntasFrecuentes: '#nwp-pesas-faq-section'
+      }
+    })]
   });
 }
-var container = document.getElementById('nwp-hero-bohios');
+var container = document.getElementById('nwp-hero-pesas');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Hero, {})
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(Hero, {})
   }));
 }
 
@@ -10532,12 +11327,78 @@ function ContentSectionWithAnImage() {
       es: {
         title: "La piscina más profunda de Panama",
         content: "Construida en 1948, esta piscina ha sido testigo de innumerables momentos \n                  de entrenamiento y esparcimiento para generaciones de militares. Hoy, abre \n                  sus puertas a toda la comunidad para que disfrutes de sus aguas cristalinas \n                  y de un ambiente familiar y acogedor.",
-        buttonLabel: "Descarga el reglamento de uso"
+        buttonLabel: "Reglamentos de uso de Piscina",
+        modalTitle: "Reglamentos de uso de Piscina",
+        modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
+          className: "list-decimal list-inside",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "La entrada y salida de la piscina es a trav\xE9s de los ba\xF1os y deber\xE1n ducharse antes de hacer uso de esta."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No se permitir\xE1 el uso inadecuado de vestidos de ba\xF1o. Est\xE1 permitido tambi\xE9n vestir prendas de fibras sint\xE9ticas como lycra, dry fit, neopreno u otras especiales para el agua. Deben utilizar gorro de nataci\xF3n."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No se permite comer fuera del \xE1rea designada o en los alrededores de la piscina."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No est\xE1 permitido actos afectivos e inmorales."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Est\xE1 prohibido sentarse en las carrileras."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Se proh\xEDbe el uso de lenguaje obsceno y abusivo."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No se permitir\xE1 el uso de la piscina a personas que tengan cortaduras abiertas, ampollas, alg\xFAn tipo de infecci\xF3n o uso de curitas."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Las personas menores de edad deber\xE1n estar siempre acompa\xF1adas y supervisadas por una persona adulta responsable, que sepa nadar y permanezca en el \xE1rea de la piscina."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "El uso del trampol\xEDn s\xF3lo se dar\xE1 cuando el guardavida lo autorice."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No est\xE1 permitido correr ni realizar pr\xE1cticas o juegos peligrosos ni en el per\xEDmetro ni dentro de la piscina."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Despu\xE9s de comer, esperar el tiempo correspondiente para hacer uso de la piscina."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "La presencia del guardavida es para minimizar accidentes; todo adulto es responsable de sus dependientes e invitados."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No se permite el ingreso de mascotas."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Cada persona usa estas instalaciones bajo su propia responsabilidad, teniendo en cuenta sus condiciones y limitaciones f\xEDsicas y de salud."
+          })]
+        })
       },
       en: {
         title: "The deepest pool in Panama",
         content: "Built in 1948, this pool has witnessed countless moments of training and \n                  recreation for generations of military personnel. Today, it opens its doors \n                  to the entire community to enjoy its crystal-clear waters and a family-friendly, \n                  welcoming atmosphere.",
-        buttonLabel: "Download the usage rules"
+        buttonLabel: "Pool use regulations",
+        modalTitle: "Pool use regulations",
+        modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
+          className: "list-decimal list-inside",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Entry and exit to the pool is through the bathrooms, and you must shower before using it."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Inappropriate swimwear is not allowed. You may wear synthetic fiber garments such as lycra, dry fit, neoprene, or other water-appropriate materials. Swim caps must be worn."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Eating is not allowed outside the designated area or around the pool."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Affectionate and immoral acts are not permitted."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Sitting on the lane dividers is prohibited."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Obscene and abusive language is prohibited."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Persons with open cuts, blisters, any type of infection, or wearing bandages will not be allowed to use the pool."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Minors must always be accompanied and supervised by a responsible adult who knows how to swim and remains in the pool area."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The diving board may only be used when authorized by the lifeguard."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Running or engaging in dangerous practices or games in or around the pool is not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "After eating, you must wait the appropriate time before using the pool."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The lifeguard's presence is to minimize accidents; all adults are responsible for their dependents and guests."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Pets are not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Each person uses these facilities at their own risk, taking into account their physical and health conditions and limitations."
+          })]
+        })
       }
     };
 
@@ -10552,6 +11413,8 @@ function ContentSectionWithAnImage() {
     title: content.title,
     content: content.content,
     buttonLabel: content.buttonLabel,
+    modalTitle: content.modalTitle,
+    modalDesc: content.modalDesc,
     onButtonClick: handleButtonClick,
     image: "https://images.unsplash.com/photo-1691253104600-ccfd27782f3e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   });
@@ -10957,20 +11820,22 @@ if (container) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Hero)
+/* harmony export */   Hero: () => (/* binding */ Hero)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _FirstHero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../FirstHero */ "./resources/js/components/FirstHero.js");
 /* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _CustomIndex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../CustomIndex */ "./resources/js/components/CustomIndex.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 
@@ -10988,7 +11853,7 @@ function Hero() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "La Piscina",
+        title: "La Pisc",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
         schedule: "6:30 am - 8:00 pm",
@@ -11012,23 +11877,33 @@ function Hero() {
   var handleButtonClick = function handleButtonClick() {
     console.log('Button clicked');
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: content.title,
-    subtitle: content.subtitle,
-    schedule: content.schedule,
-    location: content.location,
-    onButtonClick: handleButtonClick,
-    gradientColor: "from-cdsverde via-cdsverde to-transparent",
-    backgroundImageUrl: "https://plus.unsplash.com/premium_photo-1668623041724-c9b6c84c436b?q=80&w=1329&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    buttonText: content.buttonText,
-    isVenue: true
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      title: content.title,
+      subtitle: content.subtitle,
+      schedule: content.schedule,
+      location: content.location,
+      onButtonClick: handleButtonClick,
+      gradientColor: "from-cdsverde via-cdsverde to-transparent",
+      backgroundImageUrl: "https://plus.unsplash.com/premium_photo-1668623041724-c9b6c84c436b?q=80&w=1329&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      buttonText: content.buttonText,
+      isVenue: true
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CustomIndex__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      sections: {
+        tenEnCuenta: '#nwp-piscina-content-whit-video-section',
+        reservas: '#reservasss',
+        facilidades: '#nwp-piscina-campus-facilities',
+        historia: '#nwp-piscina-gallery-section',
+        preguntasFrecuentes: '#nwp-piscina-faq-section'
+      }
+    })]
   });
 }
 var container = document.getElementById('nwp-hero-piscina');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Hero, {})
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(Hero, {})
   }));
 }
 
@@ -11179,14 +12054,32 @@ function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "La piscina más profunda de Panama",
-        content: "Construida en 1948, esta piscina ha sido testigo de innumerables momentos \n                  de entrenamiento y esparcimiento para generaciones de militares. Hoy, abre \n                  sus puertas a toda la comunidad para que disfrutes de sus aguas cristalinas \n                  y de un ambiente familiar y acogedor.",
-        buttonLabel: "Descarga el reglamento de uso"
+        title: "Canchas de Ráquetbol del Parque Ciudad del Saber",
+        content: "Nuestras canchas de r\xE1quetbol proporcionan el espacio perfecto para disfrutar de este deporte, \n                  asegurando un entorno seguro y bien equipado.",
+        buttonLabel: "Descarga el reglamento de uso",
+        modalTitle: "Reglamentos de uso de Canchas de Ráquetbol",
+        modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
+          className: "list-decimal list-inside",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "El cliente debe traer su raqueta y pelotas para jugar."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Es obligatorio el uso de lentes de protecci\xF3n para ingresar a las canchas."
+          })]
+        })
       },
       en: {
-        title: "The deepest pool in Panama",
-        content: "Built in 1948, this pool has witnessed countless moments of training and \n                  recreation for generations of military personnel. Today, it opens its doors \n                  to the entire community to enjoy its crystal-clear waters and a family-friendly, \n                  welcoming atmosphere.",
-        buttonLabel: "Download the usage rules"
+        title: "Racquetball Courts at Ciudad del Saber Park",
+        content: "Our racquetball courts provide the perfect space to enjoy the sport, \n                  ensuring a safe and well-equipped environment.",
+        buttonLabel: "Download the usage rules",
+        modalTitle: "Racquetball Court Usage Rules",
+        modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
+          className: "list-decimal list-inside",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The customer must bring their own racquet and balls to play."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Protective eyewear is mandatory to enter the courts."
+          })]
+        })
       }
     };
 
@@ -11201,8 +12094,10 @@ function ContentSectionWithAnImage() {
     title: content.title,
     content: content.content,
     buttonLabel: content.buttonLabel,
+    modalTitle: content.modalTitle,
+    modalDesc: content.modalDesc,
     onButtonClick: handleButtonClick,
-    image: "https://images.unsplash.com/photo-1691253104600-ccfd27782f3e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   });
 }
 var container = document.getElementById('nwp-raquetbol-content-section-whith-an-image');
@@ -11606,14 +12501,15 @@ if (container) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Hero)
+/* harmony export */   "default": () => (/* binding */ RaquetbolHero)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _FirstHero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../FirstHero */ "./resources/js/components/FirstHero.js");
 /* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _CustomIndex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../CustomIndex */ "./resources/js/components/CustomIndex.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -11624,8 +12520,9 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
+ // Asegúrate de importar el índice personalizado
 
-function Hero() {
+function RaquetbolHero() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
     language = _useLanguage.language; // Acceder al idioma seleccionado
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
@@ -11637,18 +12534,18 @@ function Hero() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "La Piscina",
+        title: "Cancha de Raquetbol",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
-        schedule: "6:30 am - 8:00 pm",
+        schedule: "7:00 am - 9:00 pm",
         location: "C. Victor Garibaldo, Panamá",
         buttonText: "Reserva tu espacio"
       },
       en: {
-        title: "The Pool",
+        title: "Raquetball Court",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
-        schedule: "6:30 am - 8:00 pm",
+        schedule: "7:00 am - 9:00 pm",
         location: "Victor Garibaldo St., Panama",
         buttonText: "Book your spot"
       }
@@ -11661,23 +12558,34 @@ function Hero() {
   var handleButtonClick = function handleButtonClick() {
     console.log('Button clicked');
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: content.title,
-    subtitle: content.subtitle,
-    schedule: content.schedule,
-    location: content.location,
-    onButtonClick: handleButtonClick,
-    gradientColor: "from-cdsverde via-cdsverde to-transparent",
-    backgroundImageUrl: "https://plus.unsplash.com/premium_photo-1668623041724-c9b6c84c436b?q=80&w=1329&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    buttonText: content.buttonText,
-    isVenue: true
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      title: content.title,
+      subtitle: content.subtitle,
+      schedule: content.schedule,
+      location: content.location,
+      onButtonClick: handleButtonClick,
+      gradientColor: "from-cdsverde via-cdsverde to-transparent",
+      backgroundImageUrl: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Reemplaza con la URL correcta
+      ,
+      buttonText: content.buttonText,
+      isVenue: true
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CustomIndex__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      sections: {
+        tenEnCuenta: '#nwp-raquetbol-content-whit-video-section',
+        reservas: '#reservasss',
+        facilidades: '#nwp-raquetbol-campus-facilities',
+        historia: '#nwp-raquetbol-gallery-section',
+        preguntasFrecuentes: '#nwp-raquetbol-faq-section'
+      }
+    })]
   });
 }
 var container = document.getElementById('nwp-hero-raquetbol');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Hero, {})
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(RaquetbolHero, {})
   }));
 }
 
@@ -11828,14 +12736,52 @@ function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "La piscina más profunda de Panama",
-        content: "Construida en 1948, esta piscina ha sido testigo de innumerables momentos \n                  de entrenamiento y esparcimiento para generaciones de militares. Hoy, abre \n                  sus puertas a toda la comunidad para que disfrutes de sus aguas cristalinas \n                  y de un ambiente familiar y acogedor.",
-        buttonLabel: "Descarga el reglamento de uso"
+        title: "Canchas de Tenis del Parque Ciudad del Saber",
+        content: "Nuestras canchas de tenis est\xE1n dise\xF1adas para ofrecer un espacio \xF3ptimo para el entrenamiento \n                  y el disfrute de este deporte, con todas las comodidades necesarias.",
+        buttonLabel: "Descarga el reglamento de uso",
+        modalTitle: "Reglamentos de uso de Canchas de Tenis",
+        modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
+          className: "list-decimal list-inside",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Deben utilizar calzado deportivo dentro de la instalaci\xF3n con suela de goma o lisa."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No se permite quitarse la camisa dentro de la instalaci\xF3n."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "El uso de la cancha es exclusivo solamente para tenis."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No se permite el ingreso de mascotas, dentro solo pueden estar los jugadores."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Se permite reproducir m\xFAsica a bajo volumen, de manera que no incomodes o afectes el entrenamiento de las dem\xE1s personas."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "El empleo de canastas con bolas o m\xE1quinas lanzadoras est\xE1 reservado exclusivamente para instructores autorizados por la Administraci\xF3n. Los usuarios habituales deben restringirse al uso de un m\xE1ximo de seis (6) pelotas por cancha."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Cada persona usa estas instalaciones bajo su propia responsabilidad, teniendo en cuenta sus condiciones y limitaciones f\xEDsicas y de salud."
+          })]
+        })
       },
       en: {
-        title: "The deepest pool in Panama",
-        content: "Built in 1948, this pool has witnessed countless moments of training and \n                  recreation for generations of military personnel. Today, it opens its doors \n                  to the entire community to enjoy its crystal-clear waters and a family-friendly, \n                  welcoming atmosphere.",
-        buttonLabel: "Download the usage rules"
+        title: "Tennis Courts at Ciudad del Saber Park",
+        content: "Our tennis courts are designed to provide an optimal space for training \n                  and enjoying the sport, with all the necessary amenities.",
+        buttonLabel: "Download the usage rules",
+        modalTitle: "Tennis Court Usage Rules",
+        modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
+          className: "list-decimal list-inside",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Sports shoes with rubber or smooth soles must be worn inside the facility."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Removing your shirt inside the facility is not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The court is exclusively for playing tennis."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No pets are allowed inside, only players are permitted."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Music may be played at a low volume, ensuring it does not disturb or affect others' training."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The use of ball baskets or ball machines is reserved exclusively for instructors authorized by the Administration. Regular users are limited to using a maximum of six (6) balls per court."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Each person uses these facilities at their own risk, taking into account their physical and health conditions and limitations."
+          })]
+        })
       }
     };
 
@@ -11850,8 +12796,10 @@ function ContentSectionWithAnImage() {
     title: content.title,
     content: content.content,
     buttonLabel: content.buttonLabel,
+    modalTitle: content.modalTitle,
+    modalDesc: content.modalDesc,
     onButtonClick: handleButtonClick,
-    image: "https://images.unsplash.com/photo-1691253104600-ccfd27782f3e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   });
 }
 var container = document.getElementById('nwp-tenis-content-section-whith-an-image');
@@ -12255,14 +13203,15 @@ if (container) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Hero)
+/* harmony export */   "default": () => (/* binding */ TenisHero)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _FirstHero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../FirstHero */ "./resources/js/components/FirstHero.js");
 /* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _CustomIndex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../CustomIndex */ "./resources/js/components/CustomIndex.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -12273,8 +13222,9 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
+ // Asegúrate de importar el índice personalizado
 
-function Hero() {
+function TenisHero() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
     language = _useLanguage.language; // Acceder al idioma seleccionado
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
@@ -12286,18 +13236,18 @@ function Hero() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "La Piscina",
+        title: "Cancha de Tenis",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
-        schedule: "6:30 am - 8:00 pm",
+        schedule: "7:00 am - 9:00 pm",
         location: "C. Victor Garibaldo, Panamá",
         buttonText: "Reserva tu espacio"
       },
       en: {
-        title: "The Pool",
+        title: "Tennis Court",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
-        schedule: "6:30 am - 8:00 pm",
+        schedule: "7:00 am - 9:00 pm",
         location: "Victor Garibaldo St., Panama",
         buttonText: "Book your spot"
       }
@@ -12310,23 +13260,34 @@ function Hero() {
   var handleButtonClick = function handleButtonClick() {
     console.log('Button clicked');
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: content.title,
-    subtitle: content.subtitle,
-    schedule: content.schedule,
-    location: content.location,
-    onButtonClick: handleButtonClick,
-    gradientColor: "from-cdsverde via-cdsverde to-transparent",
-    backgroundImageUrl: "https://plus.unsplash.com/premium_photo-1668623041724-c9b6c84c436b?q=80&w=1329&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    buttonText: content.buttonText,
-    isVenue: true
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      title: content.title,
+      subtitle: content.subtitle,
+      schedule: content.schedule,
+      location: content.location,
+      onButtonClick: handleButtonClick,
+      gradientColor: "from-cdsverde via-cdsverde to-transparent",
+      backgroundImageUrl: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Reemplaza con la URL correcta
+      ,
+      buttonText: content.buttonText,
+      isVenue: true
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CustomIndex__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      sections: {
+        tenEnCuenta: '#nwp-tenis-content-whit-video-section',
+        reservas: '#reservasss',
+        facilidades: '#nwp-tenis-campus-facilities',
+        historia: '#nwp-tenis-gallery-section',
+        preguntasFrecuentes: '#nwp-tenis-faq-section'
+      }
+    })]
   });
 }
 var container = document.getElementById('nwp-hero-tenis');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Hero, {})
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(TenisHero, {})
   }));
 }
 
@@ -12477,14 +13438,68 @@ function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "La piscina más profunda de Panama",
-        content: "Construida en 1948, esta piscina ha sido testigo de innumerables momentos \n                  de entrenamiento y esparcimiento para generaciones de militares. Hoy, abre \n                  sus puertas a toda la comunidad para que disfrutes de sus aguas cristalinas \n                  y de un ambiente familiar y acogedor.",
-        buttonLabel: "Descarga el reglamento de uso"
+        title: "Canchas de Voleibol del Parque Ciudad del Saber",
+        content: "Nuestras canchas de voleibol, tanto en tabloncillo como en arena, ofrecen un espacio excelente para entrenar \n                  y disfrutar de este deporte en un ambiente seguro y c\xF3modo.",
+        buttonLabel: "Descarga el reglamento de uso",
+        modalTitle: "Reglamentos de uso de Canchas de Voleibol",
+        modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
+          className: "list-decimal list-inside",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "En la cancha de tabloncillo s\xF3lo se permite calzado con suela de goma."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "En la cancha de arena debe utilizar calzado deportivo."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No se permite quitarse la camisa dentro de la instalaci\xF3n."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "En la cancha de tabloncillo s\xF3lo pueden estar los 12 jugadores dentro de la cancha al momento del partido."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "En la cancha de arena s\xF3lo pueden estar los 4 jugadores dentro de la cancha al momento del partido."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "El uso de la cancha es exclusivo solamente para jugar voleibol."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Se proh\xEDbe mover, guindarse y manipular la red."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Est\xE1 prohibido el consumo de alimentos, salvo agua o bebidas hidratantes."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No est\xE1n permitidos los envases sin tapa o de vidrio."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Se permite reproducir m\xFAsica a bajo volumen, de manera que no incomodes o afectes el entrenamiento de las dem\xE1s personas."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Cada persona usa estas instalaciones bajo su propia responsabilidad, teniendo en cuenta sus condiciones y limitaciones f\xEDsicas y de salud."
+          })]
+        })
       },
       en: {
-        title: "The deepest pool in Panama",
-        content: "Built in 1948, this pool has witnessed countless moments of training and \n                  recreation for generations of military personnel. Today, it opens its doors \n                  to the entire community to enjoy its crystal-clear waters and a family-friendly, \n                  welcoming atmosphere.",
-        buttonLabel: "Download the usage rules"
+        title: "Volleyball Courts at Ciudad del Saber Park",
+        content: "Our volleyball courts, both indoor and sand, provide an excellent space for training \n                  and enjoying the sport in a safe and comfortable environment.",
+        buttonLabel: "Download the usage rules",
+        modalTitle: "Volleyball Court Usage Rules",
+        modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
+          className: "list-decimal list-inside",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Only rubber-soled shoes are allowed on the indoor court."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Sports shoes must be worn on the sand court."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Removing your shirt inside the facility is not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Only 12 players are allowed on the indoor court during the game."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Only 4 players are allowed on the sand court during the game."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The court is exclusively for playing volleyball."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Moving, hanging on, or manipulating the net is prohibited."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The consumption of food is prohibited, except for water or sports drinks."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Unsealed or glass containers are not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Music may be played at a low volume, ensuring it does not disturb or affect others' training."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Each person uses these facilities at their own risk, taking into account their physical and health conditions and limitations."
+          })]
+        })
       }
     };
 
@@ -12499,8 +13514,10 @@ function ContentSectionWithAnImage() {
     title: content.title,
     content: content.content,
     buttonLabel: content.buttonLabel,
+    modalTitle: content.modalTitle,
+    modalDesc: content.modalDesc,
     onButtonClick: handleButtonClick,
-    image: "https://images.unsplash.com/photo-1691253104600-ccfd27782f3e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   });
 }
 var container = document.getElementById('nwp-voleibol-content-section-whith-an-image');
@@ -12904,14 +13921,15 @@ if (container) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Hero)
+/* harmony export */   "default": () => (/* binding */ VoleibolHero)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _FirstHero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../FirstHero */ "./resources/js/components/FirstHero.js");
 /* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _CustomIndex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../CustomIndex */ "./resources/js/components/CustomIndex.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -12922,8 +13940,9 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
+ // Asegúrate de importar el índice personalizado
 
-function Hero() {
+function VoleibolHero() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
     language = _useLanguage.language; // Acceder al idioma seleccionado
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
@@ -12935,18 +13954,18 @@ function Hero() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "La Piscina",
+        title: "Cancha de Voleibol",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
-        schedule: "6:30 am - 8:00 pm",
+        schedule: "7:00 am - 9:00 pm",
         location: "C. Victor Garibaldo, Panamá",
         buttonText: "Reserva tu espacio"
       },
       en: {
-        title: "The Pool",
+        title: "Volleyball Court",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
-        schedule: "6:30 am - 8:00 pm",
+        schedule: "7:00 am - 9:00 pm",
         location: "Victor Garibaldo St., Panama",
         buttonText: "Book your spot"
       }
@@ -12959,23 +13978,34 @@ function Hero() {
   var handleButtonClick = function handleButtonClick() {
     console.log('Button clicked');
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: content.title,
-    subtitle: content.subtitle,
-    schedule: content.schedule,
-    location: content.location,
-    onButtonClick: handleButtonClick,
-    gradientColor: "from-cdsverde via-cdsverde to-transparent",
-    backgroundImageUrl: "https://plus.unsplash.com/premium_photo-1668623041724-c9b6c84c436b?q=80&w=1329&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    buttonText: content.buttonText,
-    isVenue: true
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      title: content.title,
+      subtitle: content.subtitle,
+      schedule: content.schedule,
+      location: content.location,
+      onButtonClick: handleButtonClick,
+      gradientColor: "from-cdsverde via-cdsverde to-transparent",
+      backgroundImageUrl: "https://example.com/volleyball-court-image.jpg" // Reemplaza con la URL correcta
+      ,
+      buttonText: content.buttonText,
+      isVenue: true
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CustomIndex__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      sections: {
+        tenEnCuenta: '#nwp-voleibol-content-whit-video-section',
+        reservas: '#reservasss',
+        facilidades: '#nwp-voleibol-campus-facilities',
+        historia: '#nwp-voleibol-gallery-section',
+        preguntasFrecuentes: '#nwp-voleibol-faq-section'
+      }
+    })]
   });
 }
 var container = document.getElementById('nwp-hero-voleibol');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Hero, {})
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(VoleibolHero, {})
   }));
 }
 
