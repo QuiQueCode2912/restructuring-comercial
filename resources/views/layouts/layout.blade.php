@@ -35,7 +35,7 @@
   </head>
   <body class="antialiased">
     <div class="main-container">
-      <div class=" h-20 lg:h-[120px]"></div>
+      <div class=" h-16 lg:h-[120px]"></div>
       @yield('content')
     
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

@@ -582,6 +582,24 @@ video {
 .top-0 {
   top: 0px;
 }
+.top-\[-120px\] {
+  top: -120px;
+}
+.top-\[0px\] {
+  top: 0px;
+}
+.top-40 {
+  top: 10rem;
+}
+.bottom-2 {
+  bottom: 0.5rem;
+}
+.top-28 {
+  top: 7rem;
+}
+.-top-28 {
+  top: -7rem;
+}
 .z-10 {
   z-index: 10;
 }
@@ -668,6 +686,30 @@ video {
 }
 .mt-8 {
   margin-top: 2rem;
+}
+.-mt-1 {
+  margin-top: -0.25rem;
+}
+.-ml-1 {
+  margin-left: -0.25rem;
+}
+.-ml-2 {
+  margin-left: -0.5rem;
+}
+.-mt-2 {
+  margin-top: -0.5rem;
+}
+.ml-0 {
+  margin-left: 0px;
+}
+.-mt-4 {
+  margin-top: -1rem;
+}
+.-mt-7 {
+  margin-top: -1.75rem;
+}
+.-mt-8 {
+  margin-top: -2rem;
 }
 .block {
   display: block;
@@ -774,6 +816,9 @@ video {
 .h-full {
   height: 100%;
 }
+.h-16 {
+  height: 4rem;
+}
 .max-h-0 {
   max-height: 0px;
 }
@@ -797,6 +842,12 @@ video {
 }
 .min-h-8 {
   min-height: 2rem;
+}
+.min-h-6 {
+  min-height: 1.5rem;
+}
+.min-h-12 {
+  min-height: 3rem;
 }
 .w-1\/2 {
   width: 50%;
@@ -840,11 +891,20 @@ video {
 .w-full {
   width: 100%;
 }
+.w-\[134px\] {
+  width: 134px;
+}
 .min-w-10 {
   min-width: 2.5rem;
 }
 .min-w-8 {
   min-width: 2rem;
+}
+.min-w-6 {
+  min-width: 1.5rem;
+}
+.min-w-12 {
+  min-width: 3rem;
 }
 .max-w-3xl {
   max-width: 48rem;
@@ -989,6 +1049,9 @@ video {
 }
 .rounded-xl {
   border-radius: 0.75rem;
+}
+.rounded-\[8px\] {
+  border-radius: 8px;
 }
 .border {
   border-width: 1px;
@@ -1247,6 +1310,14 @@ video {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+.px-\[20px\] {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .pb-10 {
   padding-bottom: 2.5rem;
@@ -3460,6 +3531,38 @@ footer #twitter-timeline .twitter-embed-header {
     top: 0px;
   }
 
+  .md\:right-0 {
+    right: 0px;
+  }
+
+  .md\:bottom-\[-50px\] {
+    bottom: -50px;
+  }
+
+  .md\:top-auto {
+    top: auto;
+  }
+
+  .md\:bottom-\[-10px\] {
+    bottom: -10px;
+  }
+
+  .md\:bottom-\[-100px\] {
+    bottom: -100px;
+  }
+
+  .md\:bottom-\[-140px\] {
+    bottom: -140px;
+  }
+
+  .md\:bottom-\[-110px\] {
+    bottom: -110px;
+  }
+
+  .md\:bottom-\[-120px\] {
+    bottom: -120px;
+  }
+
   .md\:col-span-1 {
     grid-column: span 1 / span 1;
   }
@@ -3483,6 +3586,14 @@ footer #twitter-timeline .twitter-embed-header {
 
   .md\:mt-14 {
     margin-top: 3.5rem;
+  }
+
+  .md\:ml-4 {
+    margin-left: 1rem;
+  }
+
+  .md\:-mt-1 {
+    margin-top: -0.25rem;
   }
 
   .md\:inline-block {
@@ -3604,6 +3715,11 @@ footer #twitter-timeline .twitter-embed-header {
     row-gap: 0px;
   }
 
+  .md\:gap-x-6 {
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+  }
+
   .md\:divide-x > :not([hidden]) ~ :not([hidden]) {
     --tw-divide-x-reverse: 0;
     border-right-width: calc(1px * var(--tw-divide-x-reverse));
@@ -3631,6 +3747,11 @@ footer #twitter-timeline .twitter-embed-header {
   .md\:py-0 {
     padding-top: 0px;
     padding-bottom: 0px;
+  }
+
+  .md\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .md\:pb-0 {

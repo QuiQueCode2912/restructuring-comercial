@@ -131,67 +131,67 @@
               <!--<a name="description"></a>-->
               @if(request()->is('parque-cds/piscina'))
                   <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar</p>
-                  <p class=" text-base md:text-lg  md:w-3/5 py-3">
+                  <p class="text-lg  md:w-3/5 py-3">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
                   </p>
               @endif
               @if(request()->is('parque-cds/baloncesto'))
                   <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (baloncesto)</p>
-                  <p class=" text-base md:text-lg  md:w-3/5 py-3">
+                  <p class="text-lg  md:w-3/5 py-3">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
                   </p>
               @endif
               @if(request()->is('parque-cds/golf'))
                   <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (golf)</p>
-                  <p class=" text-base md:text-lg  md:w-3/5 py-3">
+                  <p class="text-lg  md:w-3/5 py-3">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
                   </p>
               @endif
               @if(request()->is('parque-cds/raquetbol'))
                   <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (raquetbol)</p>
-                  <p class=" text-base md:text-lg  md:w-3/5 py-3">
+                  <p class="text-lg  md:w-3/5 py-3">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
                   </p>
               @endif
               @if(request()->is('parque-cds/tenis'))
                   <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (tenis)</p>
-                  <p class=" text-base md:text-lg  md:w-3/5 py-3">
+                  <p class="text-lg  md:w-3/5 py-3">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
                   </p>
               @endif
               @if(request()->is('parque-cds/voleibol'))
                   <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (voleibol)</p>
-                  <p class=" text-base md:text-lg  md:w-3/5 py-3">
+                  <p class="text-lg  md:w-3/5 py-3">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
                   </p>
               @endif
               @if(request()->is('parque-cds/pesas'))
                   <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (pesas)</p>
-                  <p class=" text-base md:text-lg  md:w-3/5 py-3">
+                  <p class="text-lg  md:w-3/5 py-3">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
                   </p>
               @endif
               @if(request()->is('parque-cds/boxeo'))
                   <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (boxeo)</p>
-                  <p class=" text-base md:text-lg  md:w-3/5 py-3">
+                  <p class="text-lg  md:w-3/5 py-3">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
                   </p>
               @endif
               @if(request()->is('parque-cds/bohios'))
                   <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (bohios)</p>
-                  <p class=" text-base md:text-lg  md:w-3/5 py-3">
+                  <p class="text-lg  md:w-3/5 py-3">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
                   </p>
               @endif
               @if(request()->is('parque-cds/futbol'))
                   <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (futbol)</p>
-                  <p class=" text-base md:text-lg  md:w-3/5 py-3">
+                  <p class="text-lg  md:w-3/5 py-3">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
                   </p>
               @endif
               @if(request()->is('parque-cds/beisbol'))
                   <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (beisbol)</p>
-                  <p class=" text-base md:text-lg  md:w-3/5 py-3">
+                  <p class="text-lg  md:w-3/5 py-3">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
                   </p>
               @endif
@@ -203,21 +203,21 @@
               @if($show_not_included ?? true)
               <small>
                 <span style="color:#0088ff">
-                @if($venueName != 'Parque Ciudad del Saber')
-                  <div class="rounded-lg bg-cdsgray700 font-semibold border-l-8 border-cdsblue flex gap-x-2 p-2 md:w-3/5">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="stroke-2 min-h-10 min-w-10" height="40px" viewBox="0 -960 960 960" width="40px" fill="#0088ff">
-                          <path d="M479.99-280q15.01 0 25.18-10.15 10.16-10.16 10.16-25.17 0-15.01-10.15-25.18-10.16-10.17-25.17-10.17-15.01 0-25.18 10.16-10.16 10.15-10.16 25.17 0 15.01 10.15 25.17Q464.98-280 479.99-280Zm-31.32-155.33h66.66V-684h-66.66v248.67ZM480.18-80q-82.83 0-155.67-31.5-72.84-31.5-127.18-85.83Q143-251.67 111.5-324.56T80-480.33q0-82.88 31.5-155.78Q143-709 197.33-763q54.34-54 127.23-85.5T480.33-880q82.88 0 155.78 31.5Q709-817 763-763t85.5 127Q880-563 880-480.18q0 82.83-31.5 155.67Q817-251.67 763-197.46q-54 54.21-127 85.84Q563-80 480.18-80Zm.15-66.67q139 0 236-97.33t97-236.33q0-139-96.87-236-96.88-97-236.46-97-138.67 0-236 96.87-97.33 96.88-97.33 236.46 0 138.67 97.33 236 97.33 97.33 236.33 97.33ZM480-480Z"/>
-                      </svg>
-                      <span class="text-black text-lg" id="venues-prices">Los precios no incluyen catering ni impuestos locales</span>
-                  </div>
-                @else
-                  <div class="rounded-lg bg-cdsgray700 font-semibold border-l-8 border-cdsblue flex gap-x-2 p-2 md:w-3/5">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="stroke-2" height="40px" viewBox="0 -960 960 960" width="40px" fill="#0088ff">
-                          <path d="M479.99-280q15.01 0 25.18-10.15 10.16-10.16 10.16-25.17 0-15.01-10.15-25.18-10.16-10.17-25.17-10.17-15.01 0-25.18 10.16-10.16 10.15-10.16 25.17 0 15.01 10.15 25.17Q464.98-280 479.99-280Zm-31.32-155.33h66.66V-684h-66.66v248.67ZM480.18-80q-82.83 0-155.67-31.5-72.84-31.5-127.18-85.83Q143-251.67 111.5-324.56T80-480.33q0-82.88 31.5-155.78Q143-709 197.33-763q54.34-54 127.23-85.5T480.33-880q82.88 0 155.78 31.5Q709-817 763-763t85.5 127Q880-563 880-480.18q0 82.83-31.5 155.67Q817-251.67 763-197.46q-54 54.21-127 85.84Q563-80 480.18-80Zm.15-66.67q139 0 236-97.33t97-236.33q0-139-96.87-236-96.88-97-236.46-97-138.67 0-236 96.87-97.33 96.88-97.33 236.46 0 138.67 97.33 236 97.33 97.33 236.33 97.33ZM480-480Z"/>
-                      </svg>
-                      <span class="text-black text-lg" id="venues-prices">Los precios listados pueden variar de acuerdo a recargos por noche, fin de semana y feriados</span>
-                  </div>
-                @endif
+                  @if($venueName != 'Parque Ciudad del Saber')
+                    <div class="rounded-lg bg-cdsgray700 font-semibold border-l-8 border-cdsblue flex gap-x-2 p-2 md:w-3/5">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-2 min-h-10 min-w-10" height="40px" viewBox="0 -960 960 960" width="40px" fill="#0088ff">
+                            <path d="M479.99-280q15.01 0 25.18-10.15 10.16-10.16 10.16-25.17 0-15.01-10.15-25.18-10.16-10.17-25.17-10.17-15.01 0-25.18 10.16-10.16 10.15-10.16 25.17 0 15.01 10.15 25.17Q464.98-280 479.99-280Zm-31.32-155.33h66.66V-684h-66.66v248.67ZM480.18-80q-82.83 0-155.67-31.5-72.84-31.5-127.18-85.83Q143-251.67 111.5-324.56T80-480.33q0-82.88 31.5-155.78Q143-709 197.33-763q54.34-54 127.23-85.5T480.33-880q82.88 0 155.78 31.5Q709-817 763-763t85.5 127Q880-563 880-480.18q0 82.83-31.5 155.67Q817-251.67 763-197.46q-54 54.21-127 85.84Q563-80 480.18-80Zm.15-66.67q139 0 236-97.33t97-236.33q0-139-96.87-236-96.88-97-236.46-97-138.67 0-236 96.87-97.33 96.88-97.33 236.46 0 138.67 97.33 236 97.33 97.33 236.33 97.33ZM480-480Z"/>
+                        </svg>
+                        <span class="text-black text-lg" id="venues-prices">Los precios no incluyen catering ni impuestos locales</span>
+                    </div>
+                  @else
+                    <div class="rounded-lg bg-cdsgray700 font-semibold border-l-8 border-cdsblue flex gap-x-2 p-2 md:w-3/5">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-2 min-h-10 min-w-10" height="40px" viewBox="0 -960 960 960" width="40px" fill="#0088ff">
+                            <path d="M479.99-280q15.01 0 25.18-10.15 10.16-10.16 10.16-25.17 0-15.01-10.15-25.18-10.16-10.17-25.17-10.17-15.01 0-25.18 10.16-10.16 10.15-10.16 25.17 0 15.01 10.15 25.17Q464.98-280 479.99-280Zm-31.32-155.33h66.66V-684h-66.66v248.67ZM480.18-80q-82.83 0-155.67-31.5-72.84-31.5-127.18-85.83Q143-251.67 111.5-324.56T80-480.33q0-82.88 31.5-155.78Q143-709 197.33-763q54.34-54 127.23-85.5T480.33-880q82.88 0 155.78 31.5Q709-817 763-763t85.5 127Q880-563 880-480.18q0 82.83-31.5 155.67Q817-251.67 763-197.46q-54 54.21-127 85.84Q563-80 480.18-80Zm.15-66.67q139 0 236-97.33t97-236.33q0-139-96.87-236-96.88-97-236.46-97-138.67 0-236 96.87-97.33 96.88-97.33 236.46 0 138.67 97.33 236 97.33 97.33 236.33 97.33ZM480-480Z"/>
+                        </svg>
+                        <span class="text-black text-lg" id="venues-prices">Los precios listados pueden variar de acuerdo a recargos por noche, fin de semana y feriados</span>
+                    </div>
+                  @endif
                 </span>
               </small>
               @endif

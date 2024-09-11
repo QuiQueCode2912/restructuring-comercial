@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ArrowIcon } from './icons/Arrows';
+import { IconArrowDown } from './icons/Icons';
+
 
 export function NwpFaq({ faqTitle, faqItems = [] }) {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -23,10 +24,10 @@ export function NwpFaq({ faqTitle, faqItems = [] }) {
                     onClick={() => toggleAccordion(index)}
                   >
                     <span className="accordion-title">{item.title}</span>
-                    <ArrowIcon 
+                    <IconArrowDown
                       color={activeIndex === index ? '#0088ff' : '#000'} 
-                      className='w-8 h-8 group-hover:fill-cdsblue' 
-                      rotate={activeIndex === index} 
+                      className='w-8 h-8 min-h-8 min-w-8 group-hover:fill-cdsblue' 
+                      rotate={activeIndex === index ? '180' : '0'} 
                     />
                   </button>
                   <div className={`accordion-content ${activeIndex === index ? 'opacity-100 max-h-screen py-2' : 'opacity-0 max-h-0'} overflow-hidden transition-all duration-200`}>

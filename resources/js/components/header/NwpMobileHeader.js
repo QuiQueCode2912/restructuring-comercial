@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import LogoCds from '../icons/LogoCds';
 import { ArrowIcon, ArrowIconRight, ArrowWhitBg, RedirectArrow } from '../icons/Arrows';
 import MenuIcon, { CloseIcon } from '../icons/MenuIcon';
+import { IconArrowDown } from '../icons/Icons';
+import LanguageSelect from './LanguageSelect';
 
 export default function NwpMobileHeader({ menuOptions }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -34,10 +36,10 @@ export default function NwpMobileHeader({ menuOptions }) {
 
   return (
     <header className='fixed top-0 left-0 right-0 z-40 bg-white lg:hidden'>
-      <div className='flex justify-between items-center border-b border-gray-300 py-2 px-4 h-20'>
-        <div className='h-full'>
-          <LogoCds className="h-12" width={170} height={60} />
-        </div>
+      <div className='flex justify-between items-center border-b border-gray-300 px-[20px] h-16'>
+        
+        <LogoCds className="h-12" width={150} height={60} />
+        
         <button onClick={toggleMenu} className='outline-none focus:outline-none'>
           {menuOpen ? (
             <CloseIcon className="h-7 w-7 text-black transition-transform duration-300 transform rotate-180" />
@@ -66,7 +68,11 @@ export default function NwpMobileHeader({ menuOptions }) {
                       onClick={() => handleMenuClick(index)}
                     >
                       <span className={`text-start font-semibold ${openMenuIndex === index ? 'text-cdsblue' : 'text-black'}`}>{option.label}</span>
-                      <ArrowIcon color={`${openMenuIndex === index ? '#0088ff' : 'black'}`} rotate={openMenuIndex === index} />
+                      <IconArrowDown
+                        color={openMenuIndex === index ? '#0088ff' : 'black'}
+                        rotate={openMenuIndex === index ? 180 : 0} // Rotación en función del estado del menú
+                        className="transition-transform duration-300 transform min-h-8 min-w-8"
+                      />
                     </button>
                   )}
                   <div className={`overflow-hidden transition-max-height duration-500 ease-in-out ${openMenuIndex === index ? 'max-h-screen' : 'max-h-0'}`}>
@@ -88,7 +94,11 @@ export default function NwpMobileHeader({ menuOptions }) {
                                 onClick={() => handleSubMenuClick(subIndex)}
                               >
                                 <span className={`text-start font-semibold ${openSubMenuIndex === subIndex ? 'text-cdsblue' : 'text-black'}`}>{subOption.label}</span>
-                                <ArrowIcon color={`${openSubMenuIndex === subIndex ? '#0088ff' : 'black'}`} rotate={openSubMenuIndex === subIndex} />
+                                <ArrowIcon 
+                                  color={`${openSubMenuIndex === subIndex ? '#0088ff' : 'black'}`} 
+                                  rotate={openSubMenuIndex === subIndex ? 180 : 0} // Rotación en función del estado del menú
+                                  className="transition-transform duration-300 transform min-h-8 min-w-8"
+                                />
                               </button>
                             )}
                             <div className={`overflow-hidden transition-max-height duration-500 ease-in-out ${openSubMenuIndex === subIndex ? 'max-h-screen' : 'max-h-0'}`}>
@@ -101,8 +111,8 @@ export default function NwpMobileHeader({ menuOptions }) {
                                           <div className="flex items-center h-full">
                                             {subSubOption.label}
                                             {subSubOption.arrow && (
-                                              <div className="h-8 w-8 ml-2 bg-cdsblue rounded-full grid place-content-center">
-                                                <ArrowWhitBg className="h-6 w-6" />
+                                              <div className="h-8 w-8 min-h-8 min-w-8 ml-2 bg-cdsblue rounded-full grid place-content-center">
+                                                <ArrowWhitBg className="h-6 w-6 " />
                                               </div>
                                             )}
                                             {subSubOption.external && <RedirectArrow className="h-5 w-5 ml-2" />}
@@ -144,7 +154,7 @@ export default function NwpMobileHeader({ menuOptions }) {
                 <a className='text-white font-semibold w-full' href='#'>Portal de clientes</a>
               </li>
               <li className='w-full'>
-                <a className='text-white py-2 font-semibold w-full' href='#'>Idioma</a>
+                <LanguageSelect />
               </li>
             </ul>
           </div>

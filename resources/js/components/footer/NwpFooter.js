@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { LogoCdsBlueWhite } from '../icons/LogoCds';
-import { FacebookIcon, InstagramIcon, YouTubeIcon } from '../icons/SocialNetworks';
 import { ArrowIcon } from '../icons/Arrows';
 import { useLanguage, LanguageProvider } from '../context/LanguageProvider';
+import { InstagramIcon, FacebookIcon, YouTubeIcon } from '../icons/Icons';
 
 export default function NwpFooter() {
   const { language } = useLanguage();  // Acceder al idioma seleccionado
@@ -169,22 +169,40 @@ export default function NwpFooter() {
         <div className='col-span-1 h-full bg-cdsrojo'></div>
       </div>
       <div className='nwp-padding-x-container'>
-        <div className='md:pt-14 pt-6 pb-8 grid grid-flow-row md:grid-flow-col md:grid-cols-11 gap-y-6 md:gap-y-0 md:gap-x-4 nwp-container mx-auto'>
-          <div className='col-span-2 -mt-6 '>
+        <div className='md:pt-14 pt-6 pb-8 grid grid-flow-row md:grid-flow-col md:grid-cols-11 gap-y-6 md:gap-y-0 md:gap-x-8 nwp-container mx-auto'>
+          <div className='col-span-2 -mt-8 '>
             <LogoCdsBlueWhite width={160} />
-            <div className='w-full flex gap-x-4 mx-auto pl-2'>
+            <div className='w-full flex items-center gap-x-4 mx-auto pl-2 -mt-6'>
               <a href='#'>
-                <FacebookIcon className='fill-white w-10 h-10'/>
+                <FacebookIcon
+                  className="fill-white"   // Clase CSS personalizada
+                  color="#fff"               // Color del ícono
+                  size="32px"                   // Tamaño del ícono
+                  rotate={0}                   // Rotación del ícono (45 grados)
+                  ariaLabel="social media instagram icon"  // Etiqueta aria personalizada
+                /> 
               </a>
               <a href='#'>
-                <InstagramIcon className='fill-black w-10 h-10 hover:stroke-white stroke-white' />
+                <InstagramIcon
+                  className="fill-white"   // Clase CSS personalizada
+                  color="#fff"               // Color del ícono
+                  size="36px"                   // Tamaño del ícono
+                  rotate={0}                   // Rotación del ícono (45 grados)
+                  ariaLabel="social media instagram icon"  // Etiqueta aria personalizada
+                />              
               </a>
               <a href='#'>
-                <YouTubeIcon className='fill-white w-10 h-10'/>
+                <YouTubeIcon
+                  className="fill-white"   // Clase CSS personalizada
+                  color="#fff"               // Color del ícono
+                  size="38px"                   // Tamaño del ícono
+                  rotate={0}                   // Rotación del ícono (45 grados)
+                  ariaLabel="social media instagram icon"  // Etiqueta aria personalizada
+                />   
               </a>
             </div>
           </div>
-          <div className='col-span-3 text-base text-gray-200 nwp-container'>
+          <div className='col-span-3 text-base text-white nwp-container'>
             <h6 className='font-semibold text-cdsblue'>{content.contactTitle}</h6>
             <div className='pt-4 flex flex-col gap-y-2'>
               <p>{content.phone1}</p>
@@ -192,23 +210,23 @@ export default function NwpFooter() {
               <p>{content.email}</p>
             </div>
           </div>
-          <div className='col-span-3 text-base text-gray-200'>
+          <div className='col-span-3 text-base text-white'>
             <h6 className='font-semibold text-cdsblue'>{content.visitTitle}</h6>
             <div className='pt-4 flex flex-col gap-y-2'>
               <p>{content.address}</p>
             </div>
           </div>
-          <div className='col-span-3 text-base text-gray-200'>
+          <div className='col-span-3 text-base text-white'>
             <h6 className='font-semibold text-cdsblue'>{content.subscribeTitle}</h6>
             <div className='pt-4 flex flex-col gap-y-2'>
               <p>{content.subscribeText}</p>
-              <button className='px-4 py-3 w-40 font-semibold rounded-xl bg-white hover:bg-gray-200 duration-150 text-black'>{content.subscribeButton}</button>
+              <button className=' h-12 w-[134px] font-semibold rounded-[8px] bg-white hover:bg-gray-200 duration-150 text-black'>{content.subscribeButton}</button>
             </div>
           </div>
         </div>
         <div className='hidden md:grid grid-cols-5 nwp-container gap-x-4 nwpcontainer mx-auto py-8 border-t border-zinc-800'>
           {content.menuOptions && content.menuOptions.map((option, index) => (
-            <div key={index} className='col-span-1 text-base text-gray-200'>
+            <div key={index} className='col-span-1 text-base text-white'>
               <h6 className='font-semibold text-cdsblue '>{option.label}</h6>
               <div className='pt-4 flex flex-col gap-y-2'>
                 {option.subOptions.map((subOption, subIndex) => (
