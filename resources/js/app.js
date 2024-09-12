@@ -111,6 +111,14 @@ require('./components/parque/beisbol/GallerySection')
 require('./components/parque/beisbol/Faq')
 require('./components/parque/beisbol/HeadbandSection')
 
+//Event Spaces components
+require('./components/eventSpaces/Hero')
+require('./components/eventSpaces/ContentSectionWithAnImage')
+require('./components/eventSpaces/ContentWithVideoSection')
+require('./components/eventSpaces/CampusFacilities')
+require('./components/eventSpaces/NwpHeadBand')
+require('./components/eventSpaces/Faq')
+
 
 //common components
 require('./components/FeaturedSpaces')

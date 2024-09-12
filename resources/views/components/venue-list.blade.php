@@ -35,6 +35,12 @@ $pvax = isset($parentVenue) ? $parentVenue : $venue['name'];
                 @endif
             </p>
 
+            @if ($parentid != '02i3m00000Fx0PJAAZ' && $id !='02i3m00000D9GuWAAV')
+                    <div class="font-semibold text-gray-700 text-base md:text-lg">
+                        Capacidad máxima: <?php echo $configuration ? max($configuration) : 0; ?> personas
+                    </div>
+            @endif
+
             <p class="text-base md:text-lg">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
             </p>
@@ -117,50 +123,38 @@ $pvax = isset($parentVenue) ? $parentVenue : $venue['name'];
                 <?php
           if ($parentVenue != 'Parque Ciudad del Saber') {
           ?>
-                <dl>
+                <!--<dl>
                     <dt>Configuración</dt>
                     <dd><?php echo count($configuration) > 0 ? (count($configuration) > 1 ? 'Múltiple' : 'Única') : 'No registra'; ?></dd>
-                </dl>
+                </dl>-->
                 <?php
           }
           ?>
-                @if ($parentid != '02i3m00000Fx0PJAAZ' && $id !='02i3m00000D9GuWAAV')
-                    <div class="font-semibold text-base md:text-lg">
-                        Capacidad máxima: <?php echo $configuration ? max($configuration) : 0; ?> personas
-                    </div>
-                @endif
+                
                 @if ($pvax != 'parque-cds' && $pvax != 'Parque Ciudad del Saber' )
                     @if ($parentid != '02i3m0000092sJ1AAI')
-                        
-                        <dl>
-                            <dt>Precio por medio día</dt>
-                            <dd>
-                                desde
-                                @if ($seasonalmiddayfee > 0 && $seasonalmiddayfee < $middayfee)
+                        <div class="font-semibold text-gray-700 text-base md:text-lg">
+                            Desde 
+                            @if ($seasonalmiddayfee > 0 && $seasonalmiddayfee < $middayfee)
                                     <span class="strike">$<?php echo $middayfee; ?></span>
                                     <span class="text-danger">$<?php echo $seasonalmiddayfee < $middayfee ? $seasonalmiddayfee : $middayfee; ?></span>
-                                @else
+                            @else
                                     $<?php echo $seasonalmiddayfee > 0 && $seasonalmiddayfee < $middayfee ? $seasonalmiddayfee : $middayfee; ?>
-                                @endif
-                                <span style="color:#0088ff">/*</span>
-                            </dd>
-                        </dl>
+                            @endif
+                             por medio día*
+                        </div>
                     @endif
-               
-                    <dl>
-                        <dt>Precio por día entero</dt>
-                        <dd>
-                            desde
-                            @if ($seasonalalldayfee > 0 && $seasonalalldayfee < $alldayfee)
+                    <div class="font-semibold text-gray-700 text-base md:text-lg">
+                        Desde 
+                        @if ($seasonalalldayfee > 0 && $seasonalalldayfee < $alldayfee)
                                 <span class="strike">
                                     $<?php echo $alldayfee; ?></span>
                                 <span class="text-danger">$<?php echo $seasonalalldayfee < $alldayfee ? $seasonalalldayfee : $alldayfee; ?></span>
-                            @else
+                        @else
                                 $<?php echo $seasonalalldayfee > 0 && $seasonalalldayfee < $alldayfee ? $seasonalalldayfee : $alldayfee; ?>
-                            @endif
-                            <span style="color:#0088ff">/*</span>
-                        </dd>
-                    </dl>
+                        @endif 
+                        por día*
+                    </div>
                 @else
                     <div class="font-semibold text-base md:text-lg">
                         Desde $<?php echo $hourfee; ?> por hora*
@@ -274,7 +268,7 @@ $pvax = isset($parentVenue) ? $parentVenue : $venue['name'];
             </div>
         </div>
     </div>
-    @if ($configuration && $parentVenue != 'Parque Ciudad del Saber')
+    <!--@if ($configuration && $parentVenue != 'Parque Ciudad del Saber')
         <div class="row" style="margin-top:20px; margin-bottom:0 !important">
             <div class="col-12">
                 <strong>Configuración del Aula / Salón</strong>
@@ -302,5 +296,5 @@ $pvax = isset($parentVenue) ? $parentVenue : $venue['name'];
                 </ul>
             </div>
         </div>
-    @endif
+    @endif-->
 </div>

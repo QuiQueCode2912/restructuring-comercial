@@ -2,7 +2,7 @@ import React from 'react';
 
 const IconCardSection = ({ title, cards }) => {
   return (
-    <div className='nwp-padding-x-container bg-cdsgray700'>
+    <div className='nwp-padding-x-container bg-cdsgray700 relative z-10'>
       <div className='mx-auto nwp-container py-20'>
         <h6 className='font-bold text-3xl md:text-5xl'>{title}</h6>
         <div className='grid grid-cols-1 md:grid-cols-4 gap-8 pt-12'>

@@ -46,28 +46,32 @@ const FirstHero = ({ title, subtitle, schedule, location, onButtonClick, gradien
                 )}
               </div>
 
-              <h1 className='pt-0 text-4xl w-full md:w-2/3 md:text-6xl text-white font-bold'>
-                {title}
-              </h1>
-              {subtitle && (
-                <p className='text-lg md:text-2xl font-bold text-white pt-2 pb-4 md:pb-0 lg:pb-0'>
-                  {subtitle}
-                </p>
-              )}
-              <div className='md:mt-14'>
-                <div className='border-t py-4 border-white flex flex-col md:flex-row gap-y-4 md:gap-y-0 md:items-center md:justify-between text-white font-semibold'>
-                  <div className='flex flex-col md:flex-row gap-y-4 md:gap-y-0 md:gap-x-8'>
-                    <p>{translations[language].scheduleLabel}: <span className='font-normal'>{schedule}</span></p>
-                    <p>{translations[language].locationLabel}: <span className='font-normal'>{location}</span></p>
-                  </div>
-                  <button
-                    className='px-4 py-2 bg-white flex gap-x-4 justify-center rounded-lg font-semibold text-black hover:bg-cdsgray600 duration-150 ease-in-out focus:outline-none focus:scale-95'
-                    onClick={onButtonClick}
-                  >
-                    {buttonText}
-                  </button>
-                </div>
+              <div className='flex flex-col justify-center md:justify-start h-full gap-y-4'>
+                <h1 className='pt-0 text-5xl w-full md:w-2/3 md:text-6xl text-white font-bold'>
+                  {title}
+                </h1>
+                {subtitle && (
+                  <p className='text-xl md:text-2xl font-bold text-white pb-4 md:pb-0 lg:pb-0'>
+                    {subtitle}
+                  </p>
+                )}
               </div>
+              {schedule && location && buttonText && (
+                <div className='md:mt-14'>
+                  <div className='border-t py-4 border-white flex flex-col md:flex-row gap-y-4 md:gap-y-0 md:items-center md:justify-between text-white font-semibold'>
+                    <div className='flex flex-col md:flex-row gap-y-4 md:gap-y-0 md:gap-x-8'>
+                      <p>{translations[language].scheduleLabel}: <span className='font-normal'>{schedule}</span></p>
+                      <p>{translations[language].locationLabel}: <span className='font-normal'>{location}</span></p>
+                    </div>
+                    <button
+                      className='px-4 py-2 bg-white flex gap-x-4 justify-center rounded-lg font-semibold text-black hover:bg-cdsgray600 duration-150 ease-in-out focus:outline-none focus:scale-95'
+                      onClick={onButtonClick}
+                    >
+                      {buttonText}
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
