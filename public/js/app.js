@@ -6784,7 +6784,7 @@ var VisitUs = function VisitUs() {
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (VisitUs);
-var container = document.getElementById('nwp-e-109-visit-us');
+var container = document.getElementById('nwp-centro-convenciones-visit-us');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_2__.createRoot)(container);
   root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
