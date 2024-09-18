@@ -134,6 +134,12 @@
     <div id="nwp-l-173-gallery-section"></div>
     <div id="nwp-l-173-campus-facilities"></div>
 @endif
+@if(request()->is('g-214abc'))
+    <div id="nwp-g-214abc-hero"></div>
+    <div id="nwp-g-214abc-content-section-whith-an-image"></div>
+    <div id="nwp-g-214abc-gallery-section"></div>
+    <div id="nwp-g-214abc-campus-facilities"></div>
+@endif
 
 <div class="nwp-padding-x-container">
   <div class="row hidden">
@@ -293,6 +299,12 @@
               @endif
               @if(request()->is('l-173'))
                   <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">El escenario ideal para tus encuentros académicos y empresariales l-173</p>
+                  <p class="text-lg  md:w-3/5 py-3">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
+                  </p>
+              @endif
+              @if(request()->is('g-214abc'))
+                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">El escenario ideal para tus encuentros académicos y empresariales g-214abc</p>
                   <p class="text-lg  md:w-3/5 py-3">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
                   </p>
@@ -483,6 +495,10 @@
 @if(request()->is('l-173'))
     <div id="nwp-l-173-aditional-services"></div>
     <div id="nwp-l-173-visit-us"></div>
+@endif
+@if(request()->is('g-214abc'))
+    <div id="nwp-g-214abc-aditional-services"></div>
+    <div id="nwp-g-214abc-visit-us"></div>
 @endif
 
 <div id="nwp-featured-spaces"></div>
