@@ -50,7 +50,7 @@ const VisitUs = () => {
 
 export default VisitUs;
 
-const container = document.getElementById('nwp-centro-convenciones-visit-us');
+const container = document.getElementById('nwp-ateneo-visit-us');
 if (container) {
   const root = createRoot(container);
   root.render(
