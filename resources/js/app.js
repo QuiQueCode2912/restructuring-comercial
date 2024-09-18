@@ -135,6 +135,13 @@ require('./components/eventSpaces/ateneo/CampusFacilities')
 require('./components/eventSpaces/ateneo/AditionalServicesParent')
 require('./components/eventSpaces/ateneo/VisitUs')
 
+//Aulas 105 components
+require('./components/eventSpaces/aulas-105/Hero')
+require('./components/eventSpaces/aulas-105/ContentSectionWithAnImage')
+require('./components/eventSpaces/aulas-105/GallerySection')
+require('./components/eventSpaces/aulas-105/CampusFacilities')
+require('./components/eventSpaces/aulas-105/AditionalServicesParent')
+require('./components/eventSpaces/aulas-105/VisitUs')
 
 //common components
 require('./components/FeaturedSpaces')
