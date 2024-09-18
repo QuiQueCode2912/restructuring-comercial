@@ -36,12 +36,12 @@ $pvax = isset($parentVenue) ? $parentVenue : $venue['name'];
             </p>
 
             @if ($parentid != '02i3m00000Fx0PJAAZ' && $id !='02i3m00000D9GuWAAV')
-                    <div class="font-semibold text-gray-700 text-base md:text-lg">
+                    <div class="font-semibold text-gray-700 text-base">
                         Capacidad máxima: <?php echo $configuration ? max($configuration) : 0; ?> personas
                     </div>
             @endif
 
-            <p class="text-base md:text-lg">
+            <p class="text-base">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
             </p>
             
@@ -133,7 +133,7 @@ $pvax = isset($parentVenue) ? $parentVenue : $venue['name'];
                 
                 @if ($pvax != 'parque-cds' && $pvax != 'Parque Ciudad del Saber' )
                     @if ($parentid != '02i3m0000092sJ1AAI')
-                        <div class="font-semibold text-gray-700 text-base md:text-lg">
+                        <div class="font-semibold text-gray-700 text-base">
                             Desde 
                             @if ($seasonalmiddayfee > 0 && $seasonalmiddayfee < $middayfee)
                                     <span class="strike">$<?php echo $middayfee; ?></span>
@@ -144,7 +144,7 @@ $pvax = isset($parentVenue) ? $parentVenue : $venue['name'];
                              por medio día*
                         </div>
                     @endif
-                    <div class="font-semibold text-gray-700 text-base md:text-lg">
+                    <div class="font-semibold text-gray-700 text-base">
                         Desde 
                         @if ($seasonalalldayfee > 0 && $seasonalalldayfee < $alldayfee)
                                 <span class="strike">
@@ -156,12 +156,12 @@ $pvax = isset($parentVenue) ? $parentVenue : $venue['name'];
                         por día*
                     </div>
                 @else
-                    <div class="font-semibold text-base md:text-lg">
+                    <div class="font-semibold text-base">
                         Desde $<?php echo $hourfee; ?> por hora*
                     </div>
                 @endif
                 @if ($parentid == '02i3m00000Fx0PJAAZ')
-                    <div class="font-semibold text-base md:text-lg">
+                    <div class="font-semibold text-base">
                         Desde $<?php echo $monthlyfee; ?> por mes
                     </div>
                 @endif

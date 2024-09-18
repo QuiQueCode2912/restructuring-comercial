@@ -127,6 +127,14 @@ require('./components/eventSpaces/lacasa/CampusFacilities')
 require('./components/eventSpaces/lacasa/AditionalServicesParent')
 require('./components/eventSpaces/lacasa/VisitUs')
 
+//Ateneo components
+require('./components/eventSpaces/ateneo/Hero')
+require('./components/eventSpaces/ateneo/ContentSectionWithAnImage')
+require('./components/eventSpaces/ateneo/GallerySection')
+require('./components/eventSpaces/ateneo/CampusFacilities')
+require('./components/eventSpaces/ateneo/AditionalServicesParent')
+require('./components/eventSpaces/ateneo/VisitUs')
+
 
 //common components
 require('./components/FeaturedSpaces')
