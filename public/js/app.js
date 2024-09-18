@@ -1939,6 +1939,14 @@ __webpack_require__(/*! ./components/eventSpaces/aulas-105/CampusFacilities */ "
 __webpack_require__(/*! ./components/eventSpaces/aulas-105/AditionalServicesParent */ "./resources/js/components/eventSpaces/aulas-105/AditionalServicesParent.js");
 __webpack_require__(/*! ./components/eventSpaces/aulas-105/VisitUs */ "./resources/js/components/eventSpaces/aulas-105/VisitUs.js");
 
+//Centro convenciones components
+__webpack_require__(/*! ./components/eventSpaces/centro-convenciones/Hero */ "./resources/js/components/eventSpaces/centro-convenciones/Hero.js");
+__webpack_require__(/*! ./components/eventSpaces/centro-convenciones/ContentSectionWithAnImage */ "./resources/js/components/eventSpaces/centro-convenciones/ContentSectionWithAnImage.js");
+__webpack_require__(/*! ./components/eventSpaces/centro-convenciones/GallerySection */ "./resources/js/components/eventSpaces/centro-convenciones/GallerySection.js");
+__webpack_require__(/*! ./components/eventSpaces/centro-convenciones/CampusFacilities */ "./resources/js/components/eventSpaces/centro-convenciones/CampusFacilities.js");
+__webpack_require__(/*! ./components/eventSpaces/centro-convenciones/AditionalServicesParent */ "./resources/js/components/eventSpaces/centro-convenciones/AditionalServicesParent.js");
+__webpack_require__(/*! ./components/eventSpaces/centro-convenciones/VisitUs */ "./resources/js/components/eventSpaces/centro-convenciones/VisitUs.js");
+
 //common components
 __webpack_require__(/*! ./components/FeaturedSpaces */ "./resources/js/components/FeaturedSpaces.js");
 __webpack_require__(/*! ./components/FeaturedVenues */ "./resources/js/components/FeaturedVenues.js");
@@ -5364,7 +5372,7 @@ var VisitUs = function VisitUs() {
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (VisitUs);
-var container = document.getElementById('nwp-ateneo-visit-us');
+var container = document.getElementById('nwp-centro-convenciones-visit-us');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_2__.createRoot)(container);
   root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
@@ -6067,6 +6075,708 @@ var VisitUs = function VisitUs() {
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (VisitUs);
 var container = document.getElementById('nwp-aulas-105-visit-us');
+if (container) {
+  var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_2__.createRoot)(container);
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(VisitUs, {})
+  }));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/eventSpaces/centro-convenciones/AditionalServicesParent.js":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/components/eventSpaces/centro-convenciones/AditionalServicesParent.js ***!
+  \********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ AditionalServicesParent)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var _AditionalServicesChild__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../AditionalServicesChild */ "./resources/js/components/AditionalServicesChild.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+
+function AditionalServicesParent() {
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.useLanguage)(),
+    language = _useLanguage.language; // Acceder al idioma seleccionado
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState2 = _slicedToArray(_useState, 2),
+    content = _useState2[0],
+    setContent = _useState2[1]; // Estado para guardar el contenido traducido
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
+    var translations = {
+      es: {
+        services: [{
+          id: 1,
+          title: "Catering para eventos",
+          description: "Servicio de catering para eventos, excelente calidad.",
+          modalTitle: "Catering para eventos",
+          modalDesc: "Detalles completos sobre el servicio de catering para eventos.",
+          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        }, {
+          id: 2,
+          title: "Alquiler de equipos",
+          description: "Ofrecemos equipos para eventos.",
+          modalTitle: "Alquiler de equipos",
+          modalDesc: "Detalles sobre el alquiler de equipos disponibles.",
+          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        }, {
+          id: 3,
+          title: "Servicios de decoración",
+          description: "Decoración personalizada para eventos.",
+          modalTitle: "Servicios de decoración",
+          modalDesc: "Información sobre los servicios de decoración para eventos.",
+          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        }]
+      },
+      en: {
+        services: [{
+          id: 1,
+          title: "Event Catering",
+          description: "Catering service for events, excellent quality.",
+          modalTitle: "Event Catering",
+          modalDesc: "Complete details about catering services for events.",
+          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        }, {
+          id: 2,
+          title: "Equipment Rental",
+          description: "We offer equipment for events.",
+          modalTitle: "Equipment Rental",
+          modalDesc: "Details about available equipment rental services.",
+          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        }, {
+          id: 3,
+          title: "Decoration Services",
+          description: "Personalized decoration for events.",
+          modalTitle: "Decoration Services",
+          modalDesc: "Information about decoration services for events.",
+          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        }]
+      }
+    };
+
+    // Actualizar el estado con el contenido traducido
+    setContent(translations[language]);
+  }, [language]); // Dependencia en el idioma
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    className: "nwp-padding-x-container bg-black",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      className: "nwp-container mx-auto text-white py-20 flex flex-col gap-y-8",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: "flex flex-col gap-y-6",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: "h-1 w-20 bg-cdsblue rounded-full"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h6", {
+          className: "text-3xl md:text-5xl font-bold",
+          children: "Servicios adicionales ateneo"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+          className: "text-lg w-full md:w-2/3",
+          children: "Lorem ipsum dolor sit amet consectetur. Rhoncus egestas sed sollicitudin vel commodo pharetra consequat. Sem libero habitasse in ultrices amet sed tempor sed vitae mi id molestie proin ac sollicitudin"
+        })]
+      }), content.services && content.services.map(function (service) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AditionalServicesChild__WEBPACK_IMPORTED_MODULE_3__.AditionalServicesChild, {
+          title: service.title,
+          description: service.description,
+          modalTitle: service.modalTitle,
+          modalDesc: service.modalDesc,
+          image: service.image // Pasar la imagen como prop
+        }, service.id);
+      })]
+    })
+  });
+}
+var container = document.getElementById('nwp-centro-convenciones-aditional-services');
+if (container) {
+  var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(AditionalServicesParent, {})
+  }));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/eventSpaces/centro-convenciones/CampusFacilities.js":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/components/eventSpaces/centro-convenciones/CampusFacilities.js ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CampusFacilities: () => (/* binding */ CampusFacilities)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var _IconCardSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../IconCardSection */ "./resources/js/components/IconCardSection.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+
+var CampusFacilities = function CampusFacilities() {
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.useLanguage)(),
+    language = _useLanguage.language; // Acceder al idioma seleccionado
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState2 = _slicedToArray(_useState, 2),
+    content = _useState2[0],
+    setContent = _useState2[1]; // Estado para guardar el contenido traducido
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState4 = _slicedToArray(_useState3, 2),
+    cards = _useState4[0],
+    setCards = _useState4[1]; // Estado para guardar las tarjetas traducidas
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
+    var translations = {
+      es: {
+        title: "Facilidades del campus ateneo",
+        cards: [{
+          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          fillColor: '#0088ff',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        }, {
+          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          fillColor: '#ff8800',
+          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+        }, {
+          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          fillColor: '#ff8800',
+          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+        }, {
+          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          fillColor: '#ff8800',
+          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+        }, {
+          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          fillColor: '#ff8800',
+          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+        }, {
+          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          fillColor: '#ff8800',
+          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+        }]
+      },
+      en: {
+        title: "Campus Facilities",
+        cards: [{
+          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          fillColor: '#0088ff',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        }, {
+          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          fillColor: '#ff8800',
+          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+        }, {
+          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          fillColor: '#ff8800',
+          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+        }, {
+          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          fillColor: '#ff8800',
+          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+        }, {
+          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          fillColor: '#ff8800',
+          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+        }, {
+          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          fillColor: '#ff8800',
+          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+        }]
+      }
+    };
+
+    // Actualizar el estado con el contenido traducido
+    setContent(translations[language]);
+    setCards(translations[language].cards);
+  }, [language]); // Dependencia en el idioma
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_IconCardSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    title: content.title,
+    cards: cards
+  });
+};
+var container = document.getElementById('nwp-centro-convenciones-campus-facilities');
+if (container) {
+  var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(CampusFacilities, {})
+  }));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/eventSpaces/centro-convenciones/ContentSectionWithAnImage.js":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/components/eventSpaces/centro-convenciones/ContentSectionWithAnImage.js ***!
+  \**********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ContentSectionWithAnImage)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _NwpContentSectionWithAnImage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../NwpContentSectionWithAnImage */ "./resources/js/components/NwpContentSectionWithAnImage.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+
+function ContentSectionWithAnImage() {
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
+    language = _useLanguage.language; // Acceder al idioma seleccionado
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState2 = _slicedToArray(_useState, 2),
+    content = _useState2[0],
+    setContent = _useState2[1]; // Estado para guardar el contenido traducido
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
+    var translations = {
+      es: {
+        title: "Un espacio para el desarrollo profesional ateneo",
+        content: "Las Aulas 105 est\xE1n pensadas para realizar actividades de negocios y formaci\xF3n acad\xE9mica, adem\xE1s de ofrecer capacitaciones originadas por institutos de educaci\xF3n superior, entidades gubernamentales, organismos internacionales y empresas.",
+        buttonLabel: "Ver el folleto",
+        modalTitle: "Reglamentos de uso de Canchas de Voleibol",
+        modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
+          className: "list-decimal list-inside",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "En la cancha de tabloncillo s\xF3lo se permite calzado con suela de goma."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "En la cancha de arena debe utilizar calzado deportivo."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No se permite quitarse la camisa dentro de la instalaci\xF3n."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "En la cancha de tabloncillo s\xF3lo pueden estar los 12 jugadores dentro de la cancha al momento del partido."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "En la cancha de arena s\xF3lo pueden estar los 4 jugadores dentro de la cancha al momento del partido."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "El uso de la cancha es exclusivo solamente para jugar voleibol."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Se proh\xEDbe mover, guindarse y manipular la red."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Est\xE1 prohibido el consumo de alimentos, salvo agua o bebidas hidratantes."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "No est\xE1n permitidos los envases sin tapa o de vidrio."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Se permite reproducir m\xFAsica a bajo volumen, de manera que no incomodes o afectes el entrenamiento de las dem\xE1s personas."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Cada persona usa estas instalaciones bajo su propia responsabilidad, teniendo en cuenta sus condiciones y limitaciones f\xEDsicas y de salud."
+          })]
+        })
+      },
+      en: {
+        title: "Volleyball Courts at Ciudad del Saber Park",
+        content: "Our volleyball courts, both indoor and sand, provide an excellent space for training \n                  and enjoying the sport in a safe and comfortable environment.",
+        buttonLabel: "Download the usage rules",
+        modalTitle: "Volleyball Court Usage Rules",
+        modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
+          className: "list-decimal list-inside",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Only rubber-soled shoes are allowed on the indoor court."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Sports shoes must be worn on the sand court."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Removing your shirt inside the facility is not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Only 12 players are allowed on the indoor court during the game."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Only 4 players are allowed on the sand court during the game."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The court is exclusively for playing volleyball."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Moving, hanging on, or manipulating the net is prohibited."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "The consumption of food is prohibited, except for water or sports drinks."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Unsealed or glass containers are not allowed."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Music may be played at a low volume, ensuring it does not disturb or affect others' training."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: "Each person uses these facilities at their own risk, taking into account their physical and health conditions and limitations."
+          })]
+        })
+      }
+    };
+
+    // Actualizar el estado con el contenido traducido
+    setContent(translations[language]);
+  }, [language]); // Dependencia en el idioma
+
+  var handleButtonClick = function handleButtonClick() {
+    console.log('Button clicked');
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NwpContentSectionWithAnImage__WEBPACK_IMPORTED_MODULE_2__.NwpContentSectionWithAnImage, {
+    title: content.title,
+    content: content.content,
+    buttonLabel: content.buttonLabel,
+    modalTitle: content.modalTitle,
+    modalDesc: content.modalDesc,
+    onButtonClick: handleButtonClick,
+    image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  });
+}
+var container = document.getElementById('nwp-centro-convenciones-content-section-whith-an-image');
+if (container) {
+  var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(ContentSectionWithAnImage, {})
+  }));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/eventSpaces/centro-convenciones/GallerySection.js":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/eventSpaces/centro-convenciones/GallerySection.js ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   GallerySection: () => (/* binding */ GallerySection)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var _NwpGallerySection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../NwpGallerySection */ "./resources/js/components/NwpGallerySection.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+ // Importar el componente GallerySection
+
+var GallerySection = function GallerySection() {
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.useLanguage)(),
+    language = _useLanguage.language; // Acceder al idioma seleccionado
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState2 = _slicedToArray(_useState, 2),
+    content = _useState2[0],
+    setContent = _useState2[1]; // Estado para guardar el contenido traducido
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState4 = _slicedToArray(_useState3, 2),
+    carouselImages = _useState4[0],
+    setCarouselImages = _useState4[1]; // Estado para guardar las imágenes traducidas del carrusel
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
+    var translations = {
+      es: {
+        title: "Explora el Ateneo",
+        carouselImages: [{
+          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          title: "Imagen 1",
+          description: "Descripción de la imagen 1"
+        }, {
+          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          title: "Imagen 2",
+          description: "Descripción de la imagen 2"
+        }, {
+          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          title: "Imagen 1",
+          description: "Descripción de la imagen 1"
+        }, {
+          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          title: "Imagen 2",
+          description: "Descripción de la imagen 2"
+        }, {
+          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          title: "Imagen 2",
+          description: "Descripción de la imagen 2"
+        }]
+      },
+      en: {
+        title: "Explore our pool",
+        carouselImages: [{
+          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          title: "Imagen 1",
+          description: "Descripción de la imagen 1"
+        }, {
+          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          title: "Imagen 2",
+          description: "Descripción de la imagen 2"
+        }, {
+          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          title: "Imagen 1",
+          description: "Descripción de la imagen 1"
+        }, {
+          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          title: "Imagen 2",
+          description: "Descripción de la imagen 2"
+        }, {
+          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          title: "Imagen 2",
+          description: "Descripción de la imagen 2"
+        }]
+      }
+    };
+
+    // Actualizar el estado con el contenido traducido
+    setContent(translations[language]);
+    setCarouselImages(translations[language].carouselImages);
+  }, [language]); // Dependencia en el idioma
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NwpGallerySection__WEBPACK_IMPORTED_MODULE_3__.NwpGallerySection, {
+    backgroundImage: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Imagen de fondo
+    ,
+    title: content.title // Título traducido
+    ,
+    carouselImages: carouselImages // Imágenes del carrusel traducidas
+  });
+};
+var container = document.getElementById('nwp-centro-convenciones-gallery-section');
+if (container) {
+  var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(GallerySection, {})
+  }));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/eventSpaces/centro-convenciones/Hero.js":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/eventSpaces/centro-convenciones/Hero.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Hero)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _FirstHero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../FirstHero */ "./resources/js/components/FirstHero.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var _CustomIndex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../CustomIndex */ "./resources/js/components/CustomIndex.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+ // Asegúrate de importar el índice personalizado
+
+function Hero() {
+  var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.useLanguage)(),
+    language = _useLanguage.language; // Acceder al idioma seleccionado
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState2 = _slicedToArray(_useState, 2),
+    content = _useState2[0],
+    setContent = _useState2[1]; // Estado para guardar el contenido traducido
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
+    var translations = {
+      es: {
+        title: "Ateneo",
+        subtitle: "",
+        // Puedes agregar un subtítulo si lo necesitas
+        schedule: "7:00 am - 9:00 pm",
+        location: "C. Victor Garibaldo, Panamá",
+        buttonText: "Conoce nuestro portafolio"
+      },
+      en: {
+        title: "The House",
+        subtitle: "",
+        // Puedes agregar un subtítulo si lo necesitas
+        schedule: "7:00 am - 9:00 pm",
+        location: "Victor Garibaldo St., Panama",
+        buttonText: "Get to know our portfolio"
+      }
+    };
+
+    // Actualizar el estado con el contenido traducido
+    setContent(translations[language]);
+  }, [language]); // Dependencia en el idioma
+
+  var handleButtonClick = function handleButtonClick(sectionId) {
+    var element = document.getElementById('reservasss');
+    if (element) {
+      var elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      var offsetPosition = elementPosition - 100; // Ajustar el desplazamiento a 40px antes
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FirstHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      title: content.title,
+      subtitle: content.subtitle,
+      schedule: content.schedule,
+      location: content.location,
+      onButtonClick: handleButtonClick,
+      gradientColor: "from-verde-oscuro-campus via-verde-oscuro-campus to-transparent",
+      backgroundImageUrl: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Reemplaza con la URL correcta
+      ,
+      buttonText: content.buttonText,
+      isVenue: true
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CustomIndex__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      sections: {
+        tenEnCuenta: '#nwp-voleibol-content-whit-video-section',
+        reservas: '#reservasss',
+        facilidades: '#nwp-voleibol-campus-facilities',
+        historia: '#nwp-voleibol-gallery-section',
+        preguntasFrecuentes: '#nwp-voleibol-faq-section'
+      }
+    })]
+  });
+}
+var container = document.getElementById('nwp-centro-convenciones-hero');
+if (container) {
+  var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(Hero, {})
+  }));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/eventSpaces/centro-convenciones/VisitUs.js":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/eventSpaces/centro-convenciones/VisitUs.js ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _GoogleMap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../GoogleMap */ "./resources/js/components/GoogleMap.js");
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var VisitUs = function VisitUs() {
+  var placeMap = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.7091297978693!2d-79.5939517!3d9.0001067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca7b0a46a3bd1%3A0x93b801d16c74cc5c!2sCiudad%20del%20Saber!5e0!3m2!1sen!2spa!4v1694723436887!5m2!1sen!2spa';
+  var buttonUrl = 'https://www.google.com/maps/place/Cd+del+Saber,+Panam%C3%A1,+Provincia+de+Panam%C3%A1/@9.0050237,-79.5931363,15z/data=!4m6!3m5!1s0x8faca7b0a46a3bd1:0x93b801d16c74cc5c!8m2!3d9.0014031!4d-79.5814145!16zL20vMDk1dzc0?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D';
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: "md:relative",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        className: "nwp-padding-x-container",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "nwp-container mx-auto flex flex-col md:flex-row h-[600px]",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            className: "absolute right-1/2 w-1/2",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_GoogleMap__WEBPACK_IMPORTED_MODULE_1__.GoogleMap, {
+              placeMap: placeMap
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            className: "md:w-1/2"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "w-full md:w-1/2 flex flex-col items-start justify-center md:px-8 md:gap-y-8",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
+              className: "text-3xl md:text-5xl font-bold",
+              children: "\xA1Vis\xEDtanos! ateneo"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+              className: "text-lg",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
+                className: "font-semibold",
+                children: ["Ubicaci\xF3n: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {})]
+              }), " Fundaci\xF3n Ciudad del Saber, edificio 104, calle Luis Bonilla, Ciudad del Saber, Clayton, Panam\xE1."]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+              className: "text-lg",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                className: "font-semibold",
+                children: "Contacto: "
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+                href: "mailto:ciudaddelsaber@cdspanama.org",
+                className: "text-blue-500 hover:underline",
+                children: "ciudaddelsaber@cdspanama.org"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
+              href: buttonUrl,
+              "class": "flex gap-x-2 font-semibold text-lg items-center hover:no-underline hover:text-cdsblue duration-150 transition-all",
+              target: "_blank",
+              children: ["Conoce c\xF3mo llegar", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                "class": "h-8 w-8 bg-cdsblue rounded-full grid place-content-center",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
+                  xmlns: "http://www.w3.org/2000/svg",
+                  height: "24px",
+                  viewBox: "0 -960 960 960",
+                  width: "32px",
+                  fill: "#e8eaed",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
+                    d: "M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z"
+                  })
+                })
+              })]
+            })]
+          })]
+        })
+      })
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (VisitUs);
+var container = document.getElementById('nwp-ateneo-visit-us');
 if (container) {
   var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_2__.createRoot)(container);
   root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_3__.LanguageProvider, {

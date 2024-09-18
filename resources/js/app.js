@@ -143,6 +143,14 @@ require('./components/eventSpaces/aulas-105/CampusFacilities')
 require('./components/eventSpaces/aulas-105/AditionalServicesParent')
 require('./components/eventSpaces/aulas-105/VisitUs')
 
+//Centro convenciones components
+require('./components/eventSpaces/centro-convenciones/Hero')
+require('./components/eventSpaces/centro-convenciones/ContentSectionWithAnImage')
+require('./components/eventSpaces/centro-convenciones/GallerySection')
+require('./components/eventSpaces/centro-convenciones/CampusFacilities')
+require('./components/eventSpaces/centro-convenciones/AditionalServicesParent')
+require('./components/eventSpaces/centro-convenciones/VisitUs')
+
 //common components
 require('./components/FeaturedSpaces')
 require('./components/FeaturedVenues')
