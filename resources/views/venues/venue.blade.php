@@ -86,6 +86,13 @@
     <div id="nwp-beisbol-content-whit-video-section"></div>
 @endif
 
+@if(request()->is('e-108'))
+    <div id="nwp-hero-la-casa"></div>
+    <div id="nwp-event-spaces-content-section-whith-an-image"></div>
+    <div id="nwp-event-spaces-gallery-section"></div>
+    <div id="nwp-event-spaces-campus-facilities"></div>
+@endif
+
 
 <div class="nwp-padding-x-container">
   <div class="row hidden">
@@ -101,7 +108,13 @@
     </div>
   </div>
 
-  <div id="reservasss" class="row py-20 mx-auto nwp-container ">
+  <div id="reservasss" class="row relative py-20 mx-auto nwp-container ">
+      <div class="  hidden md:inline-block md:absolute -top-32 right-0 ">
+        <svg width="379" height="405" viewBox="0 0 379 405" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M352.84 84.2C352.84 86.53 350.97 88.4 348.65 88.4C347.53 88.4 346.52 87.96 345.77 87.25C309.75 54.12 259.35 32.85 202.95 36.36C122.1 41.4 64.1001 84.57 67.9201 145.71C68.7401 158.61 72.4601 171.27 79.0601 182.81C90.3701 202.65 108.74 216.86 130.74 222.87C152.77 228.9 175.82 225.96 195.65 214.66C212.33 205.11 227.55 204.25 241.5 208.05C256.48 212.14 268.95 221.81 276.68 235.29C280.87 242.63 283.58 250.57 284.1 258.75C287.42 312.12 225.56 338.19 173.45 341.18C155.73 342.2 137.76 340.33 120.13 335.53C77.4401 323.87 41.8101 296.28 19.8601 257.82C10.4301 241.27 4.04012 223.56 0.710117 205.36C0.650117 205.07 0.620117 204.76 0.620117 204.44C0.620117 202.13 2.49012 200.23 4.81012 200.23C6.56012 200.23 8.04012 201.28 8.67012 202.8C8.69012 202.86 8.76012 202.9 8.79012 202.95C11.0501 208.2 13.5801 213.36 16.4901 218.39C56.9401 289.22 151.15 323.23 232.98 276.01C239.54 272.24 241.83 263.92 238.08 257.34C234.34 250.77 226 248.5 219.43 252.25C151.1 291.23 73.7001 263.03 40.4601 204.87C23.2801 174.73 18.8401 139.7 27.9601 106.24C37.1101 72.79 58.7201 44.86 88.8401 27.67C136.47 0.479963 189.72 -7.41003 243.32 7.26997C287.51 19.35 325.43 45.59 352.18 82.01C352.59 82.63 352.84 83.37 352.84 84.2Z" fill="#F2F2F2"/>
+          <path d="M378.64 200.11C378.64 202.42 376.74 204.31 374.42 204.31C372.69 204.31 371.19 203.24 370.56 201.74C370.54 201.66 370.49 201.63 370.44 201.55C368.17 196.31 365.61 191.15 362.76 186.13C322.1 114.96 228.39 81.1197 146.26 128.51C139.7 132.28 137.38 140.64 141.16 147.18C144.9 153.73 153.24 156.02 159.78 152.29C228.15 113.3 305.51 141.47 338.77 199.66C355.95 229.78 360.4 264.84 351.27 298.29C342.12 331.75 320.52 359.66 290.4 376.86C242.76 404.07 189.52 411.96 135.89 397.27C91.6103 385.14 53.6403 358.85 26.8903 322.29C26.5203 321.66 26.2803 320.95 26.2803 320.16C26.2803 317.85 28.1203 315.97 30.4703 315.97C31.4703 315.97 32.4103 316.34 33.1403 316.96C69.1703 350.25 119.7 371.67 176.3 368.14C257.14 363.12 315.12 319.95 311.31 258.79C310.53 245.89 306.79 233.25 300.19 221.69C288.89 201.85 270.52 187.64 248.49 181.63C226.46 175.62 203.43 178.54 183.6 189.86C166.92 199.4 151.68 200.27 137.75 196.46C122.76 192.39 110.29 182.72 102.56 169.22C98.4703 162.04 95.8703 154.28 95.1903 146.3C90.6603 91.3498 156.85 66.1497 205.79 63.3597C223.51 62.3297 241.46 64.1797 259.09 68.9997C301.8 80.6597 337.42 108.25 359.35 146.71C368.86 163.35 375.29 181.16 378.57 199.49C378.62 199.69 378.64 199.9 378.64 200.11Z" fill="#F2F2F2"/>
+        </svg>
+      </div>
     <div class="col-12  px-0">
       <div class="" >
         <div class="">
@@ -195,6 +208,12 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
                   </p>
               @endif
+              @if(request()->is('e-108'))
+                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">El escenario ideal para tus encuentros académicos y empresariales</p>
+                  <p class="text-lg  md:w-3/5 py-3">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
+                  </p>
+              @endif
               <h3 class="hidden" style="color:#505152; margin:30px 0 5px ">
                 @if ($parent->id == '02i3m0000092sJ1AAI')
                    La Casa
@@ -244,7 +263,7 @@
     </div>
   </div>
 
-  @if($show_menu ?? true && $venueName != 'Ateneo')
+  <!--@if($show_menu ?? true && $venueName != 'Ateneo')
   <a name="menu"></a><br />
   <div class="row">
     <div class="col-12 col-md-9">
@@ -256,7 +275,7 @@
       </div>
     </div>
   </div>
-  @endif
+  @endif-->
 
   <!--
   <br /><br /><br />
@@ -349,6 +368,10 @@
     <div id="nwp-beisbol-gallery-section"></div>
     <div id="nwp-beisbol-faq-section"></div>
     <div id="nwp-beisbol-headband-section"></div>
+@endif
+@if(request()->is('e-108'))
+    <div id="nwp-la-casa-aditional-services"></div>
+    <div id="nwp-la-casa-visit-us"></div>
 @endif
 
 <div id="nwp-featured-spaces"></div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLanguage } from './context/LanguageProvider';
 
 export const NwpContentSectionWithAnImage = ({ title, content, buttonLabel, onButtonClick, image, modalTitle, modalDesc }) => {
+  
   const { language } = useLanguage();
   const [modalState, setModalState] = useState({ isOpen: false, modalId: null });
 

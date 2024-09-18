@@ -237,7 +237,7 @@ $pvax = isset($parentVenue) ? $parentVenue : $venue['name'];
                                 <div class="flex gap-x-2 items-center hover:no-underline hover:text-cdsblue duration-150 transition-all">
                                     Ver horarios
                                     <div class="h-8 w-8 bg-cdsblue rounded-full grid place-content-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="32px" fill="#e8eaed"><path d="M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="32px" fill="#e8eaed"><path d="M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z"/></svg>
                                     </div>
                                 </div>
                             </button>

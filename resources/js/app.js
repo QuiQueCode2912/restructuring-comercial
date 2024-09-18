@@ -119,6 +119,14 @@ require('./components/eventSpaces/CampusFacilities')
 require('./components/eventSpaces/NwpHeadBand')
 require('./components/eventSpaces/Faq')
 
+//La Casa components
+require('./components/eventSpaces/lacasa/LaCasaHero')
+require('./components/eventSpaces/lacasa/ContentSectionWithAnImage')
+require('./components/eventSpaces/lacasa/GallerySection')
+require('./components/eventSpaces/lacasa/CampusFacilities')
+require('./components/eventSpaces/lacasa/AditionalServicesParent')
+require('./components/eventSpaces/lacasa/VisitUs')
+
 
 //common components
 require('./components/FeaturedSpaces')

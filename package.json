@@ -24,7 +24,9 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "@react-google-maps/api": "^2.19.3",
         "react-player": "^2.16.0",
+        "simple-react-google-maps": "^1.1.2",
         "swiper": "^11.1.12"
     }
 }
