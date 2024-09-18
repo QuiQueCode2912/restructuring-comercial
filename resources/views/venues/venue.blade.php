@@ -122,6 +122,12 @@
     <div id="nwp-parque-de-los-lagos-gallery-section"></div>
     <div id="nwp-parque-de-los-lagos-campus-facilities"></div>
 @endif
+@if(request()->is('e-104'))
+    <div id="nwp-e-104-hero"></div>
+    <div id="nwp-e-104-content-section-whith-an-image"></div>
+    <div id="nwp-e-104-gallery-section"></div>
+    <div id="nwp-e-104-campus-facilities"></div>
+@endif
 
 <div class="nwp-padding-x-container">
   <div class="row hidden">
@@ -269,6 +275,12 @@
               @endif
               @if(request()->is('parque-de-los-lagos'))
                   <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">El escenario ideal para tus encuentros académicos y empresariales parque-de-los-lagos</p>
+                  <p class="text-lg  md:w-3/5 py-3">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
+                  </p>
+              @endif
+              @if(request()->is('e-104'))
+                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">El escenario ideal para tus encuentros académicos y empresariales e-104</p>
                   <p class="text-lg  md:w-3/5 py-3">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
                   </p>
@@ -451,6 +463,10 @@
 @if(request()->is('parque-de-los-lagos'))
     <div id="nwp-parque-de-los-lagos-aditional-services"></div>
     <div id="nwp-parque-de-los-lagos-visit-us"></div>
+@endif
+@if(request()->is('e-104'))
+    <div id="nwp-e-104-aditional-services"></div>
+    <div id="nwp-e-104-visit-us"></div>
 @endif
 
 <div id="nwp-featured-spaces"></div>

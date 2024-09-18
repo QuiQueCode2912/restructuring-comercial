@@ -159,6 +159,22 @@ require('./components/eventSpaces/e-109/CampusFacilities')
 require('./components/eventSpaces/e-109/AditionalServicesParent')
 require('./components/eventSpaces/e-109/VisitUs')
 
+//Parque los lagos components
+require('./components/eventSpaces/parque-de-los-lagos/Hero')
+require('./components/eventSpaces/parque-de-los-lagos/ContentSectionWithAnImage')
+require('./components/eventSpaces/parque-de-los-lagos/GallerySection')
+require('./components/eventSpaces/parque-de-los-lagos/CampusFacilities')
+require('./components/eventSpaces/parque-de-los-lagos/AditionalServicesParent')
+require('./components/eventSpaces/parque-de-los-lagos/VisitUs')
+
+//E 104 components
+require('./components/eventSpaces/e-104/Hero')
+require('./components/eventSpaces/e-104/ContentSectionWithAnImage')
+require('./components/eventSpaces/e-104/GallerySection')
+require('./components/eventSpaces/e-104/CampusFacilities')
+require('./components/eventSpaces/e-104/AditionalServicesParent')
+require('./components/eventSpaces/e-104/VisitUs')
+
 //common components
 require('./components/FeaturedSpaces')
 require('./components/FeaturedVenues')
