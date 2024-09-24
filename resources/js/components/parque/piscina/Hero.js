@@ -61,11 +61,20 @@ export function Hero() {
       {/* Añadir el índice personalizado */}
       <CustomIndex
         sections={{
-          tenEnCuenta: '#nwp-piscina-content-whit-video-section',
-          reservas: '#reservasss',
-          facilidades: '#nwp-piscina-campus-facilities',
-          historia: '#nwp-piscina-gallery-section',
-          preguntasFrecuentes: '#nwp-piscina-faq-section',
+          es: [
+            { id: '#nwp-piscina-content-whit-video-section', label: 'Ten en cuenta' },
+            { id: '#reservasss', label: 'Reservas' },
+            { id: '#nwp-piscina-campus-facilities', label: 'Facilidades del campus' },
+            { id: '#nwp-piscina-gallery-section', label: 'Historia' },
+            { id: '#nwp-piscina-faq-section', label: 'Preguntas frecuentes' },
+          ],
+          en: [
+            { id: '#nwp-piscina-content-whit-video-section', label: 'Take into account' },
+            { id: '#reservasss', label: 'Reservations' },
+            { id: '#nwp-piscina-campus-facilities', label: 'Campus Facilities' },
+            { id: '#nwp-piscina-gallery-section', label: 'History' },
+            { id: '#nwp-piscina-faq-section', label: 'FAQs' },
+          ],
         }}
       />
     </div>

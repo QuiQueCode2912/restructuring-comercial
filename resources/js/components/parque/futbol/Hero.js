@@ -61,13 +61,23 @@ export default function FutbolHero() {
       {/* Añadir el índice personalizado */}
       <CustomIndex
         sections={{
-          tenEnCuenta: '#nwp-futbol-content-whit-video-section',
-          reservas: '#reservasss',
-          facilidades: '#nwp-futbol-campus-facilities',
-          historia: '#nwp-futbol-gallery-section',
-          preguntasFrecuentes: '#nwp-futbol-faq-section',
+          es: [
+            { id: '#nwp-futbol-content-whit-video-section', label: 'Ten en cuenta' },
+            { id: '#reservasss', label: 'Reservas' },
+            { id: '#nwp-futbol-campus-facilities', label: 'Facilidades del campus' },
+            { id: '#nwp-futbol-gallery-section', label: 'Historia' },
+            { id: '#nwp-futbol-faq-section', label: 'Preguntas frecuentes' },
+          ],
+          en: [
+            { id: '#nwp-futbol-content-whit-video-section', label: 'Take into account' },
+            { id: '#reservasss', label: 'Reservations' },
+            { id: '#nwp-futbol-campus-facilities', label: 'Campus Facilities' },
+            { id: '#nwp-futbol-gallery-section', label: 'History' },
+            { id: '#nwp-futbol-faq-section', label: 'FAQs' },
+          ],
         }}
       />
+
     </div>
   );
 }

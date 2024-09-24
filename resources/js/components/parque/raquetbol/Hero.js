@@ -61,13 +61,23 @@ export default function RaquetbolHero() {
       {/* Añadir el índice personalizado */}
       <CustomIndex
         sections={{
-          tenEnCuenta: '#nwp-raquetbol-content-whit-video-section',
-          reservas: '#reservasss',
-          facilidades: '#nwp-raquetbol-campus-facilities',
-          historia: '#nwp-raquetbol-gallery-section',
-          preguntasFrecuentes: '#nwp-raquetbol-faq-section',
+          es: [
+            { id: '#nwp-raquetbol-content-whit-video-section', label: 'Ten en cuenta' },
+            { id: '#reservasss', label: 'Reservas' },
+            { id: '#nwp-raquetbol-campus-facilities', label: 'Facilidades del campus' },
+            { id: '#nwp-raquetbol-gallery-section', label: 'Historia' },
+            { id: '#nwp-raquetbol-faq-section', label: 'Preguntas frecuentes' },
+          ],
+          en: [
+            { id: '#nwp-raquetbol-content-whit-video-section', label: 'Take into account' },
+            { id: '#reservasss', label: 'Reservations' },
+            { id: '#nwp-raquetbol-campus-facilities', label: 'Campus Facilities' },
+            { id: '#nwp-raquetbol-gallery-section', label: 'History' },
+            { id: '#nwp-raquetbol-faq-section', label: 'FAQs' },
+          ],
         }}
       />
+
     </div>
   );
 }

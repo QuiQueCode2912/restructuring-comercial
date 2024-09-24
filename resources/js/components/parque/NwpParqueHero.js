@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import FirstHero from '../FirstHero';
 import { LanguageProvider, useLanguage } from '../context/LanguageProvider';
+import CustomIndex from '../CustomIndex';
 
 export default function NwpParqueHero() {
   const { language } = useLanguage();  // Acceder al idioma seleccionado
@@ -37,6 +38,7 @@ export default function NwpParqueHero() {
   };
 
   return (
+    <>
       <FirstHero 
         title={content.title}
         subtitle={content.subtitle}
@@ -48,6 +50,23 @@ export default function NwpParqueHero() {
         buttonText={content.buttonText}
         isVenue={false}
       />
+      <CustomIndex
+        sections={{
+          es: [
+            { id: '#nwp-parque-section02', label: 'Qué hacer' },
+            { id: '#nwp-venues-table', label: 'Espacios del parque' },
+            { id: '#nwp-parque-headband', label: 'Conéctate' },
+            { id: '#nwp-parque-faq', label: 'Preguntas frecuentes' },
+          ],
+          en: [
+            { id: '#nwp-parque-section02', label: 'What to do' },
+            { id: '#nwp-venues-table', label: 'Park Spaces' },
+            { id: '#nwp-parque-headband', label: 'Connect' },
+            { id: '#nwp-parque-faq', label: 'FAQs' },
+          ],
+        }}
+      />
+    </>
   );
 }
 

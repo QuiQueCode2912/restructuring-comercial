@@ -12,7 +12,7 @@ export default function Hero() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     const translations = {
       es: {
-        title: "Ateneo",
+        title: "109",
         subtitle: "",  // Puedes agregar un subtítulo si lo necesitas
         schedule: "7:00 am - 9:00 pm",
         location: "C. Victor Garibaldo, Panamá",
@@ -61,11 +61,22 @@ export default function Hero() {
       {/* Añadir el índice personalizado */}
       <CustomIndex
         sections={{
-          tenEnCuenta: '#nwp-voleibol-content-whit-video-section',
-          reservas: '#reservasss',
-          facilidades: '#nwp-voleibol-campus-facilities',
-          historia: '#nwp-voleibol-gallery-section',
-          preguntasFrecuentes: '#nwp-voleibol-faq-section',
+          es: [
+            { id: '#nwp-e-109-content-section-whith-an-image', label: 'Ten en cuenta' },
+            { id: '#nwp-e-109-gallery-section', label: 'Historia' },
+            { id: '#nwp-e-109-campus-facilities', label: 'Facilidades del campus' },
+            { id: '#reservasss', label: 'Reservas' },
+            { id: '#nwp-e-109-aditional-services', label: 'Servicios adicionales' }, // Añadido 'Servicios adicionales' en español
+            { id: '#nwp-e-109-visit-us', label: 'Visítanos' },
+          ],
+          en: [
+            { id: '#nwp-e-109-content-section-whith-an-image', label: 'Take into account' },
+            { id: '#nwp-e-109-gallery-section', label: 'History' },
+            { id: '#nwp-e-109-campus-facilities', label: 'Campus Facilities' },
+            { id: '#reservasss', label: 'Reservations' },
+            { id: '#nwp-e-109-aditional-services', label: 'Additional services' }, // Añadido 'Additional services' en inglés
+            { id: '#nwp-e-109-visit-us', label: 'Visit us' },
+          ],
         }}
       />
     </div>

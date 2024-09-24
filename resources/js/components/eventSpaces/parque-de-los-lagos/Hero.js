@@ -61,13 +61,25 @@ export default function Hero() {
       {/* Añadir el índice personalizado */}
       <CustomIndex
         sections={{
-          tenEnCuenta: '#nwp-voleibol-content-whit-video-section',
-          reservas: '#reservasss',
-          facilidades: '#nwp-voleibol-campus-facilities',
-          historia: '#nwp-voleibol-gallery-section',
-          preguntasFrecuentes: '#nwp-voleibol-faq-section',
+          es: [
+            { id: '#nwp-parque-de-los-lagos-content-section-whith-an-image', label: 'Ten en cuenta' },
+            { id: '#nwp-parque-de-los-lagos-gallery-section', label: 'Historia' },
+            { id: '#nwp-parque-de-los-lagos-campus-facilities', label: 'Facilidades del campus' },
+            { id: '#reservasss', label: 'Reservas' },
+            { id: '#nwp-parque-de-los-lagos-aditional-services', label: 'Servicios adicionales' }, // Añadido 'Servicios adicionales' en español
+            { id: '#nwp-parque-de-los-lagos-visit-us', label: 'Visítanos' },
+          ],
+          en: [
+            { id: '#nwp-parque-de-los-lagos-content-section-whith-an-image', label: 'Take into account' },
+            { id: '#nwp-parque-de-los-lagos-gallery-section', label: 'History' },
+            { id: '#nwp-parque-de-los-lagos-campus-facilities', label: 'Campus Facilities' },
+            { id: '#reservasss', label: 'Reservations' },
+            { id: '#nwp-parque-de-los-lagos-aditional-services', label: 'Additional services' }, // Añadido 'Additional services' en inglés
+            { id: '#nwp-parque-de-los-lagos-visit-us', label: 'Visit us' },
+          ],
         }}
       />
+
     </div>
   );
 }

@@ -61,11 +61,20 @@ export default function BeisbolHero() {
       {/* Añadir el índice personalizado */}
       <CustomIndex
         sections={{
-          tenEnCuenta: '#nwp-beisbol-content-whit-video-section',
-          reservas: '#reservasss',
-          facilidades: '#nwp-beisbol-campus-facilities',
-          historia: '#nwp-beisbol-gallery-section',
-          preguntasFrecuentes: '#nwp-beisbol-faq-section',
+          es: [
+            { id: '#nwp-beisbol-content-whit-video-section', label: 'Ten en cuenta' },
+            { id: '#reservasss', label: 'Reservas' },
+            { id: '#nwp-beisbol-campus-facilities', label: 'Facilidades del campus' },
+            { id: '#nwp-beisbol-gallery-section', label: 'Historia' },
+            { id: '#nwp-beisbol-faq-section', label: 'Preguntas frecuentes' },
+          ],
+          en: [
+            { id: '#nwp-beisbol-content-whit-video-section', label: 'Take into account' },
+            { id: '#reservasss', label: 'Reservations' },
+            { id: '#nwp-beisbol-campus-facilities', label: 'Campus Facilities' },
+            { id: '#nwp-beisbol-gallery-section', label: 'History' },
+            { id: '#nwp-beisbol-faq-section', label: 'FAQs' },
+          ],
         }}
       />
     </div>

@@ -219,25 +219,45 @@ export default function NwpHeader() {
     }
   }, [openMenuIndex]);
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      // Puedes ajustar el valor 100 a la distancia que quieres que el primer contenedor se contraiga
+      if (scrollTop > 100) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <header className='hidden lg:block fixed top-0 left-0 right-0 z-20 h-[120px]'>
-        {/* Contenedor superior con opciones de navegación y portal */}
-        <div className='mx-auto bg-cdsblue h-12 px-8'>
+      <header className={`hidden lg:block fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'h-[60px]' : 'h-[120px]'}`}>
+        <div className={`mx-auto bg-cdsblue duration-75 transition-all px-8 ${isScrolled ? 'h-0' : 'h-12'}`}>
           <div className='nwp-container mx-auto h-full flex items-center justify-end gap-x-8 divide-x divide-white'>
             <ul className='flex gap-x-8'>
+              {/* Opciones de menú */}
               <li>
-                <a className='text-white font-semibold hover:no-underline hover:text-cdsgray500 ' href='#'>
+                <a className='text-white font-semibold hover:no-underline hover:text-cdsgray500' href='#'>
                   {translations[language].directory}
                 </a>
               </li>
               <li>
-                <a className='text-white font-semibold hover:no-underline hover:text-cdsgray500 ' href='#'>
+                <a className='text-white font-semibold hover:no-underline hover:text-cdsgray500' href='#'>
                   {translations[language].news}
                 </a>
               </li>
               <li>
-                <a className='text-white font-semibold hover:no-underline hover:text-cdsgray500 ' href='#'>
+                <a className='text-white font-semibold hover:no-underline hover:text-cdsgray500' href='#'>
                   {translations[language].opportunities}
                 </a>
               </li>
@@ -245,11 +265,11 @@ export default function NwpHeader() {
             <a className='text-white font-semibold pl-8 hover:no-underline hover:text-cdsgray500' href='#'>
               {translations[language].clientPortal}
             </a>
-            <LanguageSelect />
+            <LanguageSelect isScrolled={isScrolled} />
           </div>
         </div>
         {/* Contenedor principal con logo y menú */}
-        <div className='bg-white border-b border-cdsgray600 mx-auto h-[72px] px-8'>
+        <div className={`bg-white  mx-auto transition-all duration-300 ${isScrolled ? 'h-[72px]' : 'h-[72px]'} px-8`}>
           <div className='nwp-container mx-auto bg-white h-full flex items-center justify-between z-20'>
             <LogoCds width={160} height={48} />
             <div className="flex h-full items-center gap-x-4 lg:gap-x-8">

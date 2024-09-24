@@ -191,6 +191,14 @@ require('./components/eventSpaces/g-214abc/CampusFacilities')
 require('./components/eventSpaces/g-214abc/AditionalServicesParent')
 require('./components/eventSpaces/g-214abc/VisitUs')
 
+//e-300 components
+require('./components/eventSpaces/e-300/Hero')
+require('./components/eventSpaces/e-300/ContentSectionWithAnImage')
+require('./components/eventSpaces/e-300/GallerySection')
+require('./components/eventSpaces/e-300/CampusFacilities')
+require('./components/eventSpaces/e-300/AditionalServicesParent')
+require('./components/eventSpaces/e-300/VisitUs')
+
 //common components
 require('./components/FeaturedSpaces')
 require('./components/FeaturedVenues')

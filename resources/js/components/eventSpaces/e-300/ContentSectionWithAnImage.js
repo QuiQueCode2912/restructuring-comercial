@@ -11,7 +11,7 @@ export default function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     const translations = {
       es: {
-        title: "Un espacio para el desarrollo profesional",
+        title: "Un espacio para el desarrollo profesional ateneo",
         content: `Las Aulas 105 están pensadas para realizar actividades de negocios y formación académica, además de ofrecer capacitaciones originadas por institutos de educación superior, entidades gubernamentales, organismos internacionales y empresas.`,
         buttonLabel: "Ver el folleto",
         modalTitle: "Reglamentos de uso de Canchas de Voleibol",
@@ -76,7 +76,7 @@ export default function ContentSectionWithAnImage() {
   );
 }
 
-const container = document.getElementById('nwp-la-casa-content-section-whith-an-image');
+const container = document.getElementById('nwp-e-300-content-section-whith-an-image');
 if (container) {
   const root = createRoot(container);
   root.render(

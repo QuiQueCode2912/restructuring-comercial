@@ -61,11 +61,22 @@ export default function Hero() {
       {/* Añadir el índice personalizado */}
       <CustomIndex
         sections={{
-          tenEnCuenta: '#nwp-voleibol-content-whit-video-section',
-          reservas: '#reservasss',
-          facilidades: '#nwp-voleibol-campus-facilities',
-          historia: '#nwp-voleibol-gallery-section',
-          preguntasFrecuentes: '#nwp-voleibol-faq-section',
+          es: [
+            { id: '#nwp-g-214abc-content-section-whith-an-image', label: 'Ten en cuenta' },
+            { id: '#nwp-g-214abc-gallery-section', label: 'Historia' },
+            { id: '#nwp-g-214abc-campus-facilities', label: 'Facilidades del campus' },
+            { id: '#reservasss', label: 'Reservas' },
+            { id: '#nwp-g-214abc-aditional-services', label: 'Servicios adicionales' }, // Añadido 'Servicios adicionales' en español
+            { id: '#nwp-g-214abc-visit-us', label: 'Visítanos' },
+          ],
+          en: [
+            { id: '#nwp-g-214abc-content-section-whith-an-image', label: 'Take into account' },
+            { id: '#nwp-g-214abc-gallery-section', label: 'History' },
+            { id: '#nwp-g-214abc-campus-facilities', label: 'Campus Facilities' },
+            { id: '#reservasss', label: 'Reservations' },
+            { id: '#nwp-g-214abc-aditional-services', label: 'Additional services' }, // Añadido 'Additional services' en inglés
+            { id: '#nwp-g-214abc-visit-us', label: 'Visit us' },
+          ],
         }}
       />
     </div>

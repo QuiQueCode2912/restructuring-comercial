@@ -61,11 +61,20 @@ export default function VoleibolHero() {
       {/* Añadir el índice personalizado */}
       <CustomIndex
         sections={{
-          tenEnCuenta: '#nwp-voleibol-content-whit-video-section',
-          reservas: '#reservasss',
-          facilidades: '#nwp-voleibol-campus-facilities',
-          historia: '#nwp-voleibol-gallery-section',
-          preguntasFrecuentes: '#nwp-voleibol-faq-section',
+          es: [
+            { id: '#nwp-voleibol-content-whit-video-section', label: 'Ten en cuenta' },
+            { id: '#reservasss', label: 'Reservas' },
+            { id: '#nwp-voleibol-campus-facilities', label: 'Facilidades del campus' },
+            { id: '#nwp-voleibol-gallery-section', label: 'Historia' },
+            { id: '#nwp-voleibol-faq-section', label: 'Preguntas frecuentes' },
+          ],
+          en: [
+            { id: '#nwp-voleibol-content-whit-video-section', label: 'Take into account' },
+            { id: '#reservasss', label: 'Reservations' },
+            { id: '#nwp-voleibol-campus-facilities', label: 'Campus Facilities' },
+            { id: '#nwp-voleibol-gallery-section', label: 'History' },
+            { id: '#nwp-voleibol-faq-section', label: 'FAQs' },
+          ],
         }}
       />
     </div>

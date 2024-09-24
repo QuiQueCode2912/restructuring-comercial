@@ -61,13 +61,23 @@ export default function BaloncestoHero() {
       {/* Añadir el índice personalizado */}
       <CustomIndex
         sections={{
-          tenEnCuenta: '#nwp-baloncesto-content-whit-video-section',
-          reservas: '#reservasss',
-          facilidades: '#nwp-baloncesto-campus-facilities',
-          historia: '#nwp-baloncesto-gallery-section',
-          preguntasFrecuentes: '#nwp-baloncesto-faq-section',
+          es: [
+            { id: '#nwp-baloncesto-content-whit-video-section', label: 'Ten en cuenta' },
+            { id: '#reservasss', label: 'Reservas' },
+            { id: '#nwp-baloncesto-campus-facilities', label: 'Facilidades del campus' },
+            { id: '#nwp-baloncesto-gallery-section', label: 'Historia' },
+            { id: '#nwp-baloncesto-faq-section', label: 'Preguntas frecuentes' },
+          ],
+          en: [
+            { id: '#nwp-baloncesto-content-whit-video-section', label: 'Take into account' },
+            { id: '#reservasss', label: 'Reservations' },
+            { id: '#nwp-baloncesto-campus-facilities', label: 'Campus Facilities' },
+            { id: '#nwp-baloncesto-gallery-section', label: 'History' },
+            { id: '#nwp-baloncesto-faq-section', label: 'FAQs' },
+          ],
         }}
       />
+
     </div>
   );
 }

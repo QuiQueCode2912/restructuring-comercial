@@ -61,13 +61,25 @@ export default function LaCasaHero() {
       {/* Añadir el índice personalizado */}
       <CustomIndex
         sections={{
-          tenEnCuenta: '#nwp-voleibol-content-whit-video-section',
-          reservas: '#reservasss',
-          facilidades: '#nwp-voleibol-campus-facilities',
-          historia: '#nwp-voleibol-gallery-section',
-          preguntasFrecuentes: '#nwp-voleibol-faq-section',
+          es: [
+            { id: '#nwp-la-casa-content-section-whith-an-image', label: 'Ten en cuenta' },
+            { id: '#nwp-la-casa-gallery-section', label: 'Historia' },
+            { id: '#nwp-la-casa-campus-facilities', label: 'Facilidades del campus' },
+            { id: '#reservasss', label: 'Reservas' },
+            { id: '#nwp-la-casa-aditional-services', label: 'Servicios adicionales' }, // Añadido 'Servicios adicionales' en español
+            { id: '#nwp-la-casa-visit-us', label: 'Visítanos' },
+          ],
+          en: [
+            { id: '#nwp-la-casa-content-section-whith-an-image', label: 'Take into account' },
+            { id: '#nwp-la-casa-gallery-section', label: 'History' },
+            { id: '#nwp-la-casa-campus-facilities', label: 'Campus Facilities' },
+            { id: '#reservasss', label: 'Reservations' },
+            { id: '#nwp-la-casa-aditional-services', label: 'Additional services' }, // Añadido 'Additional services' en inglés
+            { id: '#nwp-la-casa-visit-us', label: 'Visit us' },
+          ],
         }}
       />
+
     </div>
   );
 }

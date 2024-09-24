@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import FirstHero from '../FirstHero';
 import { LanguageProvider, useLanguage } from '../context/LanguageProvider';
 import { divide } from 'lodash';
+import CustomIndex from '../CustomIndex';
 
 export default function Hero() {
   const { language } = useLanguage();  // Acceder al idioma seleccionado
@@ -32,6 +33,7 @@ export default function Hero() {
   };
 
   return (
+    <>
       <FirstHero 
         title={content.title}
         subtitle={content.subtitle}
@@ -40,6 +42,25 @@ export default function Hero() {
         backgroundImageUrl="https://images.unsplash.com/photo-1663622438610-00a72c139d8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         isVenue={false}
       />
+      <CustomIndex
+        sections={{
+          es: [
+            { id: '#nwp-event-spaces-content-section-whith-an-image', label: 'Descripción' },
+            { id: '#nwp-event-spaces-content-whit-video-section', label: 'Qué hacer' },
+            { id: '#nwp-venues-table', label: 'Espacios del parque' },
+            { id: '#nwp-event-spaces-headband', label: 'Conéctate' },
+            { id: '#nwp-event-spaces-faq', label: 'Preguntas frecuentes' },
+          ],
+          en: [
+            { id: '#nwp-event-spaces-content-section-whith-an-image', label: 'Description' },
+            { id: '#nwp-event-spaces-content-whit-video-section', label: 'What to do' },
+            { id: '#nwp-venues-table', label: 'Park Spaces' },
+            { id: '#nwp-event-spaces-headband', label: 'Connect' },
+            { id: '#nwp-event-spaces-faq', label: 'FAQs' },
+          ],
+        }}
+      />
+    </>
   );
 }
 

@@ -56,11 +56,20 @@ export default function TenisHero() {
       {/* Añadir el índice personalizado */}
       <CustomIndex
         sections={{
-          tenEnCuenta: '#nwp-tenis-content-whit-video-section',
-          reservas: '#reservasss',
-          facilidades: '#nwp-tenis-campus-facilities',
-          historia: '#nwp-tenis-gallery-section',
-          preguntasFrecuentes: '#nwp-tenis-faq-section',
+          es: [
+            { id: '#nwp-tenis-content-whit-video-section', label: 'Ten en cuenta' },
+            { id: '#reservasss', label: 'Reservas' },
+            { id: '#nwp-tenis-campus-facilities', label: 'Facilidades del campus' },
+            { id: '#nwp-tenis-gallery-section', label: 'Historia' },
+            { id: '#nwp-tenis-faq-section', label: 'Preguntas frecuentes' },
+          ],
+          en: [
+            { id: '#nwp-tenis-content-whit-video-section', label: 'Take into account' },
+            { id: '#reservasss', label: 'Reservations' },
+            { id: '#nwp-tenis-campus-facilities', label: 'Campus Facilities' },
+            { id: '#nwp-tenis-gallery-section', label: 'History' },
+            { id: '#nwp-tenis-faq-section', label: 'FAQs' },
+          ],
         }}
       />
     </div>

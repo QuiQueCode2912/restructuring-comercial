@@ -3,7 +3,7 @@ import { IconLanguage } from '../icons/Icons';
 import { IconArrowDown } from '../icons/Icons';
 import { useLanguage } from '../context/LanguageProvider';
 
-const LanguageSelect = () => {
+const LanguageSelect = ({isScrolled}) => {
   const { language, setLanguage } = useLanguage(); // Corrección aquí, asumiendo que useLanguage devuelve un objeto
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
@@ -29,17 +29,26 @@ const LanguageSelect = () => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         setIsOpen(false);
       }
+
     };
+    
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
+    
   }, []);
+
+  useEffect(() => {
+    if (isScrolled) {
+      setIsOpen(false);
+    }
+  }, [isScrolled]);
 
   return (
     <div ref={menuRef} className='flex items-center' style={{ position: 'relative', display: 'inline-block' }}>
       <div
-        className='text-white font-semibold  md:ml-4 flex gap-2 cursor-pointer items-center'
+        className={`text-white font-semibold  md:ml-4 flex gap-2 cursor-pointer items-center`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <IconLanguage color="#fff" size="24px" rotate={0} />
@@ -53,13 +62,13 @@ const LanguageSelect = () => {
       </div>
       {isOpen && (
         <ul
-          className={`absolute list-none md:-mt-1 w-[200px] rounded-lg bg-cdsgray700 font-semibold z-50 transition-opacity duration-200 opacity-100 
+          className={`absolute list-none md:-mt-1 w-[200px] rounded-lg bg-cdsgray700 font-semibold z-50 transition-opacity opacity-100 
             ${isOpen ? 'opacity-100' : 'opacity-0'} 
              -top-32 md:top-auto md:right-0 md:bottom-[-120px]`} // Ajuste para que en móviles se abra arriba y en desktop abajo
         >
           <li>
             <div
-              className='px-4 py-3 cursor-pointer hover:bg-gray-200'
+              className='px-4 py-3 cursor-pointer hover:bg-gray-200 rounded-lg'
               onClick={() => handleLanguageChange('es')}
             >
               Español (spanish)
@@ -67,7 +76,7 @@ const LanguageSelect = () => {
           </li>
           <li>
             <div
-              className='px-4 py-3 cursor-pointer hover:bg-gray-200'
+              className='px-4 py-3 cursor-pointer hover:bg-gray-200 rounded-lg'
               onClick={() => handleLanguageChange('en')}
             >
               English

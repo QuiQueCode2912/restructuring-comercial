@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import FirstHero from '../../FirstHero';
 import { LanguageProvider, useLanguage } from '../../context/LanguageProvider';
-import CustomIndex from '../../CustomIndex'; // Asegurarse de importar el índice personalizado
+import CustomIndex from '../../CustomIndex'; // Asegúrate de importar el índice personalizado
 
-export default function BohiosHero() {
+export default function Hero() {
   const { language } = useLanguage();  // Acceder al idioma seleccionado
   const [content, setContent] = useState({});  // Estado para guardar el contenido traducido
 
@@ -12,18 +12,18 @@ export default function BohiosHero() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     const translations = {
       es: {
-        title: "Los Gazebos",
+        title: "Ateneo",
         subtitle: "",  // Puedes agregar un subtítulo si lo necesitas
-        schedule: "9:00 am - 6:00 pm",
+        schedule: "7:00 am - 9:00 pm",
         location: "C. Victor Garibaldo, Panamá",
-        buttonText: "Reserva tu espacio",
+        buttonText: "Conoce nuestro portafolio",
       },
       en: {
-        title: "The Gazebos",
+        title: "The House",
         subtitle: "",  // Puedes agregar un subtítulo si lo necesitas
-        schedule: "9:00 am - 6:00 pm",
+        schedule: "7:00 am - 9:00 pm",
         location: "Victor Garibaldo St., Panama",
-        buttonText: "Book your spot",
+        buttonText: "Get to know our portfolio",
       },
     };
 
@@ -53,8 +53,8 @@ export default function BohiosHero() {
         schedule={content.schedule}
         location={content.location}
         onButtonClick={handleButtonClick}
-        gradientColor="from-cdsverde via-cdsverde to-transparent"
-        backgroundImageUrl="https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        gradientColor="from-verde-oscuro-campus via-verde-oscuro-campus to-transparent"
+        backgroundImageUrl="https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Reemplaza con la URL correcta
         buttonText={content.buttonText}
         isVenue={true}
       />
@@ -62,18 +62,20 @@ export default function BohiosHero() {
       <CustomIndex
         sections={{
           es: [
-            { id: '#nwp-bohios-content-whit-video-section', label: 'Ten en cuenta' },
+            { id: '#nwp-e-300-content-section-whith-an-image', label: 'Ten en cuenta' },
+            { id: '#nwp-e-300-gallery-section', label: 'Historia' },
+            { id: '#nwp-e-300-campus-facilities', label: 'Facilidades del campus' },
             { id: '#reservasss', label: 'Reservas' },
-            { id: '#nwp-bohios-campus-facilities', label: 'Facilidades del campus' },
-            { id: '#nwp-bohios-gallery-section', label: 'Historia' },
-            { id: '#nwp-bohios-faq-section', label: 'Preguntas frecuentes' },
+            { id: '#nwp-e-300-aditional-services', label: 'Servicios adicionales' }, // Añadido 'Servicios adicionales' en español
+            { id: '#nwp-e-300-visit-us', label: 'Visítanos' },
           ],
           en: [
-            { id: '#nwp-bohios-content-whit-video-section', label: 'Take into account' },
+            { id: '#nwp-e-300-content-section-whith-an-image', label: 'Take into account' },
+            { id: '#nwp-e-300-gallery-section', label: 'History' },
+            { id: '#nwp-e-300-campus-facilities', label: 'Campus Facilities' },
             { id: '#reservasss', label: 'Reservations' },
-            { id: '#nwp-bohios-campus-facilities', label: 'Campus Facilities' },
-            { id: '#nwp-bohios-gallery-section', label: 'History' },
-            { id: '#nwp-bohios-faq-section', label: 'FAQs' },
+            { id: '#nwp-e-300-aditional-services', label: 'Additional services' }, // Añadido 'Additional services' en inglés
+            { id: '#nwp-e-300-visit-us', label: 'Visit us' },
           ],
         }}
       />
@@ -81,12 +83,12 @@ export default function BohiosHero() {
   );
 }
 
-const container = document.getElementById('nwp-hero-bohios');
+const container = document.getElementById('nwp-e-300-hero');
 if (container) {
   const root = createRoot(container);
   root.render(
     <LanguageProvider>
-      <BohiosHero />
+      <Hero />
     </LanguageProvider>
   );
 }

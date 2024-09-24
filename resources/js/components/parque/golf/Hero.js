@@ -61,13 +61,23 @@ export default function GolfHero() {
       {/* Añadir el índice personalizado */}
       <CustomIndex
         sections={{
-          tenEnCuenta: '#nwp-golf-content-whit-video-section',
-          reservas: '#reservasss',
-          facilidades: '#nwp-golf-campus-facilities',
-          historia: '#nwp-golf-gallery-section',
-          preguntasFrecuentes: '#nwp-golf-faq-section',
+          es: [
+            { id: '#nwp-golf-content-whit-video-section', label: 'Ten en cuenta' },
+            { id: '#reservasss', label: 'Reservas' },
+            { id: '#nwp-golf-campus-facilities', label: 'Facilidades del campus' },
+            { id: '#nwp-golf-gallery-section', label: 'Historia' },
+            { id: '#nwp-golf-faq-section', label: 'Preguntas frecuentes' },
+          ],
+          en: [
+            { id: '#nwp-golf-content-whit-video-section', label: 'Take into account' },
+            { id: '#reservasss', label: 'Reservations' },
+            { id: '#nwp-golf-campus-facilities', label: 'Campus Facilities' },
+            { id: '#nwp-golf-gallery-section', label: 'History' },
+            { id: '#nwp-golf-faq-section', label: 'FAQs' },
+          ],
         }}
       />
+
     </div>
   );
 }

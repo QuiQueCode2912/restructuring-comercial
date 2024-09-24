@@ -61,13 +61,23 @@ export default function Hero() {
       {/* Añadir el índice personalizado */}
       <CustomIndex
         sections={{
-          tenEnCuenta: '#nwp-pesas-content-whit-video-section',
-          reservas: '#reservasss',
-          facilidades: '#nwp-pesas-campus-facilities',
-          historia: '#nwp-pesas-gallery-section',
-          preguntasFrecuentes: '#nwp-pesas-faq-section',
+          es: [
+            { id: '#nwp-pesas-content-whit-video-section', label: 'Ten en cuenta' },
+            { id: '#reservasss', label: 'Reservas' },
+            { id: '#nwp-pesas-campus-facilities', label: 'Facilidades del campus' },
+            { id: '#nwp-pesas-gallery-section', label: 'Historia' },
+            { id: '#nwp-pesas-faq-section', label: 'Preguntas frecuentes' },
+          ],
+          en: [
+            { id: '#nwp-pesas-content-whit-video-section', label: 'Take into account' },
+            { id: '#reservasss', label: 'Reservations' },
+            { id: '#nwp-pesas-campus-facilities', label: 'Campus Facilities' },
+            { id: '#nwp-pesas-gallery-section', label: 'History' },
+            { id: '#nwp-pesas-faq-section', label: 'FAQs' },
+          ],
         }}
       />
+
     </div>
   );
 }

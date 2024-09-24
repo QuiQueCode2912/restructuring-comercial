@@ -61,11 +61,20 @@ export default function Hero() {
       {/* Añadir el índice personalizado */}
       <CustomIndex
         sections={{
-          tenEnCuenta: '#nwp-boxeo-content-whit-video-section',
-          reservas: '#reservasss',
-          facilidades: '#nwp-boxeo-campus-facilities',
-          historia: '#nwp-boxeo-gallery-section',
-          preguntasFrecuentes: '#nwp-boxeo-faq-section',
+          es: [
+            { id: '#nwp-boxeo-content-whit-video-section', label: 'Ten en cuenta' },
+            { id: '#reservasss', label: 'Reservas' },
+            { id: '#nwp-boxeo-campus-facilities', label: 'Facilidades del campus' },
+            { id: '#nwp-boxeo-gallery-section', label: 'Historia' },
+            { id: '#nwp-boxeo-faq-section', label: 'Preguntas frecuentes' },
+          ],
+          en: [
+            { id: '#nwp-boxeo-content-whit-video-section', label: 'Take into account' },
+            { id: '#reservasss', label: 'Reservations' },
+            { id: '#nwp-boxeo-campus-facilities', label: 'Campus Facilities' },
+            { id: '#nwp-boxeo-gallery-section', label: 'History' },
+            { id: '#nwp-boxeo-faq-section', label: 'FAQs' },
+          ],
         }}
       />
     </div>
