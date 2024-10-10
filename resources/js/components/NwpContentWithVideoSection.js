@@ -8,15 +8,14 @@ export const NwpContentWithVideoSection = ({
   backgroundImage, 
   videoUrl, 
   activities 
-  }) => {
-
+}) => {
   return (
     <section 
-      className="relative nwp-padding-x-container bg-cover bg-center z-10" 
+      className="relative nwp-padding-x-container bg-cover bg-center z-10 min-h-[644px] flex items-center" 
       style={{ backgroundImage: `url('${backgroundImage}')` }}
     >
-      <div className="absolute inset-0 bg-black opacity-80"></div>
-      <div className="relative nwp-container flex flex-col md:flex-row z-10 mx-auto py-16 md:gap-x-4 lg:py-24">
+      <div className="absolute inset-0 bg-black opacity-80 "></div>
+      <div className="relative nwp-container flex flex-col md:flex-row z-10 mx-auto py-16 md:gap-x-4 lg:py-24 min-h-[600px]">
         <div className="text-white max-w-3xl md:w-1/2 flex flex-col justify-between">
           {!headed && (
             <div className="h-1 w-12 bg-cdsverde mb-4"></div>
@@ -25,7 +24,13 @@ export const NwpContentWithVideoSection = ({
             <p className='uppercase font-semibold text-cdsblue text-lg mb-4'>{headed}</p>
           )}
           <h2 className="text-3xl font-bold tracking-tight sm:text-5xl ">{title}</h2>
-          <p className="mt-4 text-lg leading-6">{content}</p>
+          
+          {/* Utilizar dangerouslySetInnerHTML para procesar HTML en content */}
+          <p 
+            className="mt-4 text-lg leading-6"
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
+          
           <ul className="mt-8 space-y-4">
             {activities.map((activity, index) => (
               <li key={index} className="flex items-center gap-x-1">
@@ -61,7 +66,7 @@ export const NwpContentWithVideoSection = ({
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 

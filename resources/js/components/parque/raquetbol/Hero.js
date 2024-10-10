@@ -12,7 +12,7 @@ export default function RaquetbolHero() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     const translations = {
       es: {
-        title: "Cancha de Raquetbol",
+        title: "Cancha de ráquetbol",
         subtitle: "",  // Puedes agregar un subtítulo si lo necesitas
         schedule: "7:00 am - 9:00 pm",
         location: "C. Victor Garibaldo, Panamá",

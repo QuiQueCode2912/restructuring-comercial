@@ -12,10 +12,10 @@ export const GallerySection = () => {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     const translations = {
       es: {
-        title: "Explora nuestra piscina",
+        title: "Revive un poco de su historia",
         carouselImages: [
           {
-            image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            image: "/assets/nwp-images/piscina/gallery1.jpg",
             title: "Imagen 1",
             description: "Descripción de la imagen 1"
           },
@@ -45,7 +45,7 @@ export const GallerySection = () => {
         title: "Explore our pool",
         carouselImages: [
           {
-            image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            image: "/assets/nwp-images/piscina/gallery1.jpg",
             title: "Imagen 1",
             description: "Descripción de la imagen 1"
           },

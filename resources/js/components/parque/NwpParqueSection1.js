@@ -34,8 +34,8 @@ export default function NwpParqueSection1() {
   };
 
   const images = [
-    'https://images.unsplash.com/photo-1498955472675-532cdee9d6b4?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cGFya3xlbnwwfHwwfHx8MA%3D%3D',
-    'https://images.unsplash.com/photo-1564409972016-2825589beaed?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGFya3xlbnwwfHwwfHx8MA%3D%3D',
+    '/assets/nwp-images/niña-en-columpio.jpg',
+    '/assets/nwp-images/campo-naturaleza.jpg',
   ];
 
   return (

@@ -11,10 +11,13 @@ export default function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     const translations = {
       es: {
-        title: "Canchas de Ráquetbol del Parque Ciudad del Saber",
-        content: `Nuestras canchas de ráquetbol proporcionan el espacio perfecto para disfrutar de este deporte, 
-                  asegurando un entorno seguro y bien equipado.`,
-        buttonLabel: "Descarga el reglamento de uso",
+        title: "¡Ven a Jugar Ráquetbol! Diversión y Competencia Te Esperan",
+        content: `Juega ráquetbol en Ciudad del Saber y vive una experiencia llena de emoción y competencia.
+
+                  Nuestras canchas están listas para recibirte, ya sea que busques entrenar, divertirte con amigos o desafiar a otros jugadores. 
+
+                  Disfruta de un ambiente amigable y motivador, donde cada punto cuenta y la diversión nunca termina. ¡No esperes más, ven y únete a la acción en nuestras canchas de ráquetbol!`,
+        buttonLabel: "Ver el reglamento de uso",
         modalTitle: "Reglamentos de uso de Canchas de Ráquetbol",
         modalDesc: (
           <ol className="list-decimal list-inside">

@@ -11,15 +11,15 @@ export default function Academics() {
     const translations = {
       es: {
         title: "Conoce las academias que brindan sus servicios en el parque",
-        description: "Lorem ipsum dolor sit amet consectetur. Cursus amet nunc massa aliquam malesuada. At turpis eu laoreet fames scelerisque interdum. Blandit consequat mi euismod habitant nec quis faucibus lorem. Ut eget netus metus at et enim adipiscing fermentum lectus.",
+        description: "Descubre las academias que forman parte de la comunidad del parque. Aquí, la creatividad, el aprendizaje y la innovación se combinan para ofrecerte experiencias únicas que te ayudarán a crecer y desarrollar nuevas habilidades. Ya sea que busques perfeccionar tu talento, aprender algo nuevo o conectar con una comunidad apasionada, nuestras academias te ofrecen un camino diseñado a tu medida.",
         contactText: "Contáctanos:",
-        contactEmail: "studyabroad@cdspanama.org",
+        contactEmail: "parque@cdspanama.org",
       },
       en: {
         title: "Learn about the academies offering their services in the park",
-        description: "Lorem ipsum dolor sit amet consectetur. Cursus amet nunc massa aliquam malesuada. At turpis eu laoreet fames scelerisque interdum. Blandit consequat mi euismod habitant nec quis faucibus lorem. Ut eget netus metus at et enim adipiscing fermentum lectus.",
+        description: "Discover the academies that are part of the park's community. Here, creativity, learning, and innovation come together to offer you unique experiences that will help you grow and develop new skills. Whether you're looking to refine your talent, learn something new, or connect with a passionate community, our academies offer a path tailored to you.",
         contactText: "Contact us:",
-        contactEmail: "studyabroad@cdspanama.org",
+        contactEmail: "parque@cdspanama.org",
       },
     };
 
@@ -32,7 +32,7 @@ export default function Academics() {
       <div className='nwp-container mx-auto grid grid-cols-1 md:grid-cols-3 gap-y-4 lg:gap-x-8'>
         <div className=' col-span-1 h-80 md:h-[400px] w-full'>
           <img 
-          className='object-cover h-full w-full'
+            className='object-cover h-full w-full'
             src='https://images.unsplash.com/photo-1663622438610-00a72c139d8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>
           </img>
         </div>

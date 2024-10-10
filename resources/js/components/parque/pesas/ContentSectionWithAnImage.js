@@ -11,10 +11,10 @@ export default function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     const translations = {
       es: {
-        title: "Reglamentos del Parque Ciudad del Saber",
-        content: `El Parque Ciudad del Saber ofrece un entorno seguro y agradable para todos los visitantes. 
-                  Por favor, cumpla con las siguientes normas para garantizar una experiencia positiva para todos.`,
-        buttonLabel: "Descarga el reglamento de uso",
+        title: "Conoce nuestras instalaciones y área de pesas",
+        content: `Conoce nuestras instalaciones y el área de pesas, diseñadas en tu comunidad y  bienestar.Aquí encontrarás una amplia variedad de equipos de última generación, desde máquinas de pesas hasta pesos libres, todo en un ambiente amigable y motivador. 
+                  Ya seas principiante o experimentado, nuestro espacio está preparado para adaptarse a tus necesidades. Además, contarás con el apoyo de entrenadores calificados que te guiarán en tu rutina. `,
+        buttonLabel: "Ver el reglamento de uso",
         modalTitle: "Reglamentos de uso del Parque Ciudad del Saber",
         modalDesc: (
           <ol className="list-decimal list-inside">

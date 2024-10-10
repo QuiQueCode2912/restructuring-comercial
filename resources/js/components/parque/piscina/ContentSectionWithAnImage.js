@@ -11,11 +11,8 @@ export default function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     const translations = {
       es: {
-        title: "La piscina más profunda de Panama",
-        content: `Construida en 1948, esta piscina ha sido testigo de innumerables momentos 
-                  de entrenamiento y esparcimiento para generaciones de militares. Hoy, abre 
-                  sus puertas a toda la comunidad para que disfrutes de sus aguas cristalinas 
-                  y de un ambiente familiar y acogedor.`,
+        title: "La piscina más profunda de Panamá",
+        content: `Construida en 1948, esta piscina ha sido testigo de innumerables momentos de entrenamiento y esparcimiento para generaciones de militares. Hoy, abre sus puertas a toda la comunidad para que disfrutes de sus aguas cristalinas y de un ambiente familiar y acogedor.`,
         buttonLabel: "Reglamentos de uso de Piscina",
         modalTitle: "Reglamentos de uso de Piscina",
         modalDesc: (
@@ -82,7 +79,7 @@ export default function ContentSectionWithAnImage() {
       modalTitle={content.modalTitle}
       modalDesc={content.modalDesc}
       onButtonClick={handleButtonClick}
-      image="https://images.unsplash.com/photo-1691253104600-ccfd27782f3e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      image="/assets/nwp-images/piscina/gallery1.jpg"
     />
   );
 }

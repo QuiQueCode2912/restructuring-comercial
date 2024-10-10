@@ -11,10 +11,15 @@ export default function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     const translations = {
       es: {
-        title: "Canchas de Tenis del Parque Ciudad del Saber",
-        content: `Nuestras canchas de tenis están diseñadas para ofrecer un espacio óptimo para el entrenamiento 
-                  y el disfrute de este deporte, con todas las comodidades necesarias.`,
-        buttonLabel: "Descarga el reglamento de uso",
+        title: "¡Ven a Jugar Tenis! Diversión y Competencia Te Esperan",
+        content: `¡Ven a disfrutar de nuestras canchas de tenis, donde la diversión y el deporte se encuentran! Aquí, podrás mejorar tu técnica, jugar un partido amistoso con amigos o simplemente pasar un buen rato en un ambiente amigable y único.
+
+                  Nuestras instalaciones están diseñadas para todos los niveles, desde principiantes hasta jugadores experimentados. 
+
+                  No importa si quieres competir o relajarte, nuestras canchas te ofrecen el espacio perfecto.
+
+                  ¡No esperes más y ven a servir, golpear y disfrutar del tenis en Ciudad del Saber!`,
+        buttonLabel: "Ver el reglamento de uso",
         modalTitle: "Reglamentos de uso de Canchas de Tenis",
         modalDesc: (
           <ol className="list-decimal list-inside">

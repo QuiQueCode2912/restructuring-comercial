@@ -11,9 +11,10 @@ export default function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     const translations = {
       es: {
-        title: "Gazebos en el Parque Ciudad del Saber",
-        content: `Los gazebos del Parque Ciudad del Saber ofrecen un espacio amplio y cómodo para actividades 
-                  al aire libre, ideales para reuniones familiares, eventos corporativos y celebraciones.`,
+        title: "Disfruta de espacios para tus eventos y actividades al aire libre",
+        content: `¡Descubre nuestros gazebos al aire libre en el área del parque, un espacio ideal para relajarte y disfrutar de la naturaleza! Aquí puedes organizar un picnic con amigos, celebrar un cumpleaños o simplemente disfrutar con tu familia un momento diferente.
+                  Con su diseño acogedor y rodeados de hermosos paisajes, nuestros gazebos son el lugar perfecto para compartir momentos especiales.
+                  Ven y aprovecha este rincón encantador, donde la tranquilidad y la diversión se unen en un solo lugar. `,
         buttonLabel: "Descarga el reglamento de uso",
         modalTitle: "Reglamentos de uso de Gazebos",
         modalDesc: (

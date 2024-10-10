@@ -11,9 +11,10 @@ export default function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     const translations = {
       es: {
-        title: "Canchas de Voleibol del Parque Ciudad del Saber",
-        content: `Nuestras canchas de voleibol, tanto en tabloncillo como en arena, ofrecen un espacio excelente para entrenar 
-                  y disfrutar de este deporte en un ambiente seguro y cómodo.`,
+        title: "¡Ven a Jugar Voleibol! Diversión y Competencia Te Esperan",
+        content: `¡Ven a reservar y disfruta de nuestras canchas de voleibol, el lugar perfecto para divertirte y hacer ejercicio! 
+                  Ya sea que quieras organizar un partido amistoso con amigos o participar en un torneo, nuestras instalaciones están diseñadas para ofrecerte una experiencia increíble. Siente la emoción del juego, comparte risas y desafíos en un ambiente amigable.
+                  ¡No esperes más, ven y eleva tu juego de voleibol con nosotros en Ciudad del Saber!`,
         buttonLabel: "Descarga el reglamento de uso",
         modalTitle: "Reglamentos de uso de Canchas de Voleibol",
         modalDesc: (

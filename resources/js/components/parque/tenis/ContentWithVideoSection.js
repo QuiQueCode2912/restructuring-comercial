@@ -13,34 +13,17 @@ export const ContentWithVideoSection = () => {
     const translations = {
       es: {
 
-        title: "¿Qué hacer un día en el parque?",
-        content: "En el parque de Ciudad del Saber, encontrarás una variedad de actividades para disfrutar. Ofrecemos opciones gratuitas y abiertas a todo el público, perfectas para compartir con tu familia, amigos e incluso tu mascota.",
-        activities: [
-          {
-            text: "Recorre 21km de sendero en nuestra reserva forestal"
-          },
-          {
-            text: "Diviértete en familia en el parque para niños y niñas"
-          },
-          {
-            text: "Disfruta de un espacio amigable en el parque para mascotas"
-          },
-        ],
+        title: "Ten en cuenta para tu visita",
+        content: `Ten en cuenta que para aprovechar al máximo tu visita a nuestras canchas de tenis, es importante hacer tu reserva con anticipación y llegar unos minutos antes para calentar adecuadamente.  <br /><br />
+                  Recuerda traer tu raqueta y pelotas, así como usar ropa cómoda y calzado adecuado para moverte con libertad.
+                  Además, respeta las normas del juego y el horario de uso para garantizar una experiencia agradable para todos los jugadores.<br /><br />
+                  ¡Prepárate para disfrutar de un gran partido en un entorno como ningún otro!`,
+        activities: [],
       },
       en: {
         title: "What to do on a day at the park?",
         content: "At Ciudad del Saber Park, you'll find a variety of activities to enjoy. We offer free and open options for the public, perfect for sharing with your family, friends, and even your pet.",
-        activities: [
-          {
-            text: "Walk 21km of trail in our forest reserve"
-          },
-          {
-            text: "Have fun with your family at the children's park"
-          },
-          {
-            text: "Enjoy a pet-friendly space at the pet park"
-          },
-        ],
+        activities: [],
       },
     };
 

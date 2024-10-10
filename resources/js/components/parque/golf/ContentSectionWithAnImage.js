@@ -11,10 +11,12 @@ export default function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     const translations = {
       es: {
-        title: "Campo de Golf en el Parque Ciudad del Saber",
-        content: `Disfruta de nuestras instalaciones de golf con zonas dedicadas para practicar tus tiros. 
-                  Trae tus propios implementos y aprovecha nuestras canastas de bolas reservadas.`,
-        buttonLabel: "Descarga el reglamento de uso",
+        title: "¡Disfruta y Relájate! Vive una Experiencia Única de Golf",
+        content: `¡Ven y descubre nuestras canchas de golf, un lugar donde la naturaleza se encuentra con el deporte! 
+                  Aquí, podrás disfrutar de un entorno hermoso mientras mejoras tu técnica y pasas un rato agradable con amigos o familiares. Ya seas un principiante o experto, nuestras canchas están diseñadas para todos los niveles.
+                  ¡No esperes más, ven a jugar y siente la emoción del golf en Ciudad del Saber!`,
+
+        buttonLabel: "Ver el reglamento de uso",
         modalTitle: "Reglamentos de uso de Golf",
         modalDesc: (
           <ol className="list-decimal list-inside">

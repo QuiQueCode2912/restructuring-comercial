@@ -12,7 +12,7 @@ export default function Hero() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     const translations = {
       es: {
-        title: "Sala de Pesas",
+        title: "Gimnasio - área de pesas",
         subtitle: "",  // Puedes agregar un subtítulo si lo necesitas
         schedule: "6:00 am - 10:00 pm",
         location: "C. Victor Garibaldo, Panamá",

@@ -2078,15 +2078,15 @@ function Academics() {
     var translations = {
       es: {
         title: "Conoce las academias que brindan sus servicios en el parque",
-        description: "Lorem ipsum dolor sit amet consectetur. Cursus amet nunc massa aliquam malesuada. At turpis eu laoreet fames scelerisque interdum. Blandit consequat mi euismod habitant nec quis faucibus lorem. Ut eget netus metus at et enim adipiscing fermentum lectus.",
+        description: "Descubre las academias que forman parte de la comunidad del parque. Aquí, la creatividad, el aprendizaje y la innovación se combinan para ofrecerte experiencias únicas que te ayudarán a crecer y desarrollar nuevas habilidades. Ya sea que busques perfeccionar tu talento, aprender algo nuevo o conectar con una comunidad apasionada, nuestras academias te ofrecen un camino diseñado a tu medida.",
         contactText: "Contáctanos:",
-        contactEmail: "studyabroad@cdspanama.org"
+        contactEmail: "parque@cdspanama.org"
       },
       en: {
         title: "Learn about the academies offering their services in the park",
-        description: "Lorem ipsum dolor sit amet consectetur. Cursus amet nunc massa aliquam malesuada. At turpis eu laoreet fames scelerisque interdum. Blandit consequat mi euismod habitant nec quis faucibus lorem. Ut eget netus metus at et enim adipiscing fermentum lectus.",
+        description: "Discover the academies that are part of the park's community. Here, creativity, learning, and innovation come together to offer you unique experiences that will help you grow and develop new skills. Whether you're looking to refine your talent, learn something new, or connect with a passionate community, our academies offer a path tailored to you.",
         contactText: "Contact us:",
-        contactEmail: "studyabroad@cdspanama.org"
+        contactEmail: "parque@cdspanama.org"
       }
     };
 
@@ -3325,7 +3325,9 @@ var NwpContentSectionWithAnImage = function NwpContentSectionWithAnImage(_ref) {
             children: title
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
             className: "pb-2 text-lg",
-            children: content
+            dangerouslySetInnerHTML: {
+              __html: content
+            }
           }), buttonLabel && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
             className: "font-semibold text-start flex gap-x-2 items-center focus:outline-0",
             onClick: function onClick() {
@@ -3430,14 +3432,14 @@ var NwpContentWithVideoSection = function NwpContentWithVideoSection(_ref) {
     videoUrl = _ref.videoUrl,
     activities = _ref.activities;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("section", {
-    className: "relative nwp-padding-x-container bg-cover bg-center z-10",
+    className: "relative nwp-padding-x-container bg-cover bg-center z-10 min-h-[644px] flex items-center",
     style: {
       backgroundImage: "url('".concat(backgroundImage, "')")
     },
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "absolute inset-0 bg-black opacity-80"
+      className: "absolute inset-0 bg-black opacity-80 "
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      className: "relative nwp-container flex flex-col md:flex-row z-10 mx-auto py-16 md:gap-x-4 lg:py-24",
+      className: "relative nwp-container flex flex-col md:flex-row z-10 mx-auto py-16 md:gap-x-4 lg:py-24 min-h-[600px]",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "text-white max-w-3xl md:w-1/2 flex flex-col justify-between",
         children: [!headed && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
@@ -3450,7 +3452,9 @@ var NwpContentWithVideoSection = function NwpContentWithVideoSection(_ref) {
           children: title
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
           className: "mt-4 text-lg leading-6",
-          children: content
+          dangerouslySetInnerHTML: {
+            __html: content
+          }
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
           className: "mt-8 space-y-4",
           children: activities.map(function (activity, index) {
@@ -4008,7 +4012,7 @@ var PublicSpaceHero = function PublicSpaceHero(_ref) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "hidden md:absolute md:left-1/2 md:top-0 col-span-1 text-white font-bold md:grid grid-cols-2 h-[600px]",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "col-span-1 w-full bg-verde-habitat-accesible grid place-content-center",
+          className: "col-span-1 h-[300px] w-full bg-verde-habitat-accesible grid place-content-center",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
               className: "text-xl",
@@ -4019,21 +4023,21 @@ var PublicSpaceHero = function PublicSpaceHero(_ref) {
             })]
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "col-span-1",
+          className: "col-span-1 h-[300px]",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
             src: images[0],
             alt: "Image 2",
             className: "w-full h-full object-cover"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "col-span-1",
+          className: "col-span-1 h-[300px]",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
             src: images[1],
             alt: "Image 3",
             className: "w-full h-full object-cover"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "col-span-1 bg-verde-habitat-accesible grid place-content-center",
+          className: "col-span-1 h-[300px] bg-verde-habitat-accesible grid place-content-center",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
               className: "text-xl",
@@ -4048,7 +4052,7 @@ var PublicSpaceHero = function PublicSpaceHero(_ref) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "md:col-span-1 md:hidden h-[374px] text-white font-bold grid grid-cols-2",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "col-span-1 bg-verde-habitat-accesible grid place-content-center",
+        className: "col-span-1 h-[187px] bg-verde-habitat-accesible grid place-content-center",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
           className: "text-base",
           children: translations[language].exploreText
@@ -4057,21 +4061,21 @@ var PublicSpaceHero = function PublicSpaceHero(_ref) {
           children: translations[language].paceText
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "col-span-1",
+        className: "col-span-1 h-[187px]",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
           src: images[0],
           alt: "Image 2",
           className: "w-full h-full object-cover"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "col-span-1",
+        className: "col-span-1 h-[187px]",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
           src: images[1],
           alt: "Image 3",
           className: "w-full h-full object-cover"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "col-span-1 bg-verde-habitat-accesible grid place-content-center",
+        className: "col-span-1 h-[187px] bg-verde-habitat-accesible grid place-content-center",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
           className: "text-base",
           children: translations[language].familyText
@@ -14389,10 +14393,10 @@ function NwpParqueContentWithVideoSection() {
       es: {
         headed: "Entrada gratis",
         title: "¿Qué hacer un día en el parque?",
-        content: "En el parque de Ciudad del Saber, encontrarás una variedad de actividades para disfrutar. Ofrecemos opciones gratuitas y abiertas a todo el público, perfectas para compartir con tu familia, amigos e incluso tu mascota.",
+        content: "En el parque Ciudad del Saber, encontrarás una variedad de actividades para disfrutar. Ofrecemos opciones gratuitas y abiertas a todo el público, perfectas para compartir con tu familia, amigos y  tu mascota.",
         activities: [{
           iconPath: "M281.33-40 403-660.67q5.33-25.66 24.33-39.16 19-13.5 40-13.5T506.5-704q18.17 9.33 29.5 27.33l39.33 64q18.67 31 50.5 55.5 31.84 24.5 74.17 37.5v-73.66h46.67V-40H700v-411.33q-50-11-93.67-37.67-43.66-26.67-77-65.67L502-418l84.67 80.67V-40H520v-242.67l-94.67-90L352-40h-70.67Zm17-400.33L220-455q-12-2.33-20-14.17-8-11.83-5.67-24.83l30-157q5.34-30 30.67-46.5 25.33-16.5 55.33-11.17l39.34 7.67-51.34 260.67Zm235-309q-31 0-53.16-22.17Q458-793.67 458-824.67t22.17-53.16Q502.33-900 533.33-900q31 0 53.17 22.17 22.17 22.16 22.17 53.16 0 31-22.17 53.17t-53.17 22.17Z",
-          text: "Recorre 21km de sendero en nuestra reserva forestal"
+          text: "Recorre 2km de sendero en nuestra reserva forestal"
         }, {
           iconPath: "M720.05-724.67q-31.05 0-53.22-22.11-22.16-22.11-22.16-53.17 0-31.05 22.11-53.22 22.11-22.16 53.17-22.16 31.05 0 53.22 22.11 22.16 22.11 22.16 53.17 0 31.05-22.11 53.22-22.11 22.16-53.17 22.16ZM666.67-80v-330.67q0-33.33-16.84-60-16.83-26.66-46.83-40L642-625q8-25 29.5-40t48.5-15q27 0 48.5 15t29.5 40l102 298.33H793.33V-80H666.67Zm-170-420q-25 0-42.5-17.5t-17.5-42.5q0-25 17.5-42.5t42.5-17.5q25 0 42.5 17.5t17.5 42.5q0 25-17.5 42.5t-42.5 17.5ZM220.05-724.67q-31.05 0-53.22-22.11-22.16-22.11-22.16-53.17 0-31.05 22.11-53.22 22.11-22.16 53.17-22.16 31.05 0 53.22 22.11 22.16 22.11 22.16 53.17 0 31.05-22.11 53.22-22.11 22.16-53.17 22.16ZM146.67-80v-286.67H80v-246.66q0-27.5 19.58-47.09Q119.17-680 146.67-680h146.66q27.5 0 47.09 19.58Q360-640.83 360-613.33v246.66h-66.67V-80H146.67ZM440-80v-166.67h-46.67v-164q0-20.55 14.39-34.94Q422.11-460 442.67-460h108q20.55 0 34.94 14.39Q600-431.22 600-410.67v164h-46.67V-80H440Z",
           text: "Diviértete en familia en el parque para niños y niñas"
@@ -14407,7 +14411,7 @@ function NwpParqueContentWithVideoSection() {
         content: "At Ciudad del Saber Park, you'll find a variety of activities to enjoy. We offer free and open options for the public, perfect for sharing with your family, friends, and even your pet.",
         activities: [{
           iconPath: "M281.33-40 403-660.67q5.33-25.66 24.33-39.16 19-13.5 40-13.5T506.5-704q18.17 9.33 29.5 27.33l39.33 64q18.67 31 50.5 55.5 31.84 24.5 74.17 37.5v-73.66h46.67V-40H700v-411.33q-50-11-93.67-37.67-43.66-26.67-77-65.67L502-418l84.67 80.67V-40H520v-242.67l-94.67-90L352-40h-70.67Zm17-400.33L220-455q-12-2.33-20-14.17-8-11.83-5.67-24.83l30-157q5.34-30 30.67-46.5 25.33-16.5 55.33-11.17l39.34 7.67-51.34 260.67Zm235-309q-31 0-53.16-22.17Q458-793.67 458-824.67t22.17-53.16Q502.33-900 533.33-900q31 0 53.17 22.17 22.17 22.16 22.17 53.16 0 31-22.17 53.17t-53.17 22.17Z",
-          text: "Walk 21km of trail in our forest reserve"
+          text: "Walk 2km of trail in our forest reserve"
         }, {
           iconPath: "M720.05-724.67q-31.05 0-53.22-22.11-22.16-22.11-22.16-53.17 0-31.05 22.11-53.22 22.11-22.16 53.17-22.16 31.05 0 53.22 22.11 22.16 22.11 22.16 53.17 0 31.05-22.11 53.22-22.11 22.16-53.17 22.16ZM666.67-80v-330.67q0-33.33-16.84-60-16.83-26.66-46.83-40L642-625q8-25 29.5-40t48.5-15q27 0 48.5 15t29.5 40l102 298.33H793.33V-80H666.67Zm-170-420q-25 0-42.5-17.5t-17.5-42.5q0-25 17.5-42.5t42.5-17.5q25 0 42.5 17.5t17.5 42.5q0 25-17.5 42.5t-42.5 17.5ZM220.05-724.67q-31.05 0-53.22-22.11-22.16-22.11-22.16-53.17 0-31.05 22.11-53.22 22.11-22.16 53.17-22.16 31.05 0 53.22 22.11 22.16 22.11 22.16 53.17 0 31.05-22.11 53.22-22.11 22.16-53.17 22.16ZM146.67-80v-286.67H80v-246.66q0-27.5 19.58-47.09Q119.17-680 146.67-680h146.66q27.5 0 47.09 19.58Q360-640.83 360-613.33v246.66h-66.67V-80H146.67ZM440-80v-166.67h-46.67v-164q0-20.55 14.39-34.94Q422.11-460 442.67-460h108q20.55 0 34.94 14.39Q600-431.22 600-410.67v164h-46.67V-80H440Z",
           text: "Have fun with your family at the children's park"
@@ -14427,7 +14431,7 @@ function NwpParqueContentWithVideoSection() {
     headed: content.headed,
     title: content.title,
     content: content.content,
-    backgroundImage: "https://images.unsplash.com/photo-1498955472675-532cdee9d6b4?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cGFya3xlbnwwfHwwfHx8MA%3D%3D",
+    backgroundImage: "/assets/nwp-images/parque-vista-aerea.png",
     videoUrl: "https://www.youtube.com/watch?v=aRZ1W2apiDY",
     activities: activities
   });
@@ -14515,7 +14519,7 @@ function NwpParqueHero() {
       location: content.location,
       onButtonClick: handleButtonClick,
       gradientColor: "from-cdsverde via-cdsverde to-transparent",
-      backgroundImageUrl: "https://images.unsplash.com/photo-1663622438610-00a72c139d8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      backgroundImageUrl: "/assets/nwp-images/parque-vista-aerea.png",
       buttonText: content.buttonText,
       isVenue: false
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CustomIndex__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -14621,7 +14625,7 @@ function NwpParqueSection1() {
     // Lógica para descargar el reglamento de uso
     console.log('Button clicked');
   };
-  var images = ['https://images.unsplash.com/photo-1498955472675-532cdee9d6b4?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cGFya3xlbnwwfHwwfHx8MA%3D%3D', 'https://images.unsplash.com/photo-1564409972016-2825589beaed?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGFya3xlbnwwfHwwfHx8MA%3D%3D'];
+  var images = ['/assets/nwp-images/niña-en-columpio.jpg', '/assets/nwp-images/campo-naturaleza.jpg'];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_PublicSpaceHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
     title: content.title,
     content: content.content,
@@ -14685,23 +14689,23 @@ var CampusFacilities = function CampusFacilities() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "Facilidades del campus baloncesto",
+        title: "Facilidades del campus",
         cards: [{
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          svgPath: 'M240-120v-720h280q100 0 170 70t70 170q0 100-70 170t-170 70H400v240H240Zm160-400h128q33 0 56.5-23.5T608-600q0-33-23.5-56.5T528-680H400v160Z',
           fillColor: '#0088ff',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+          description: 'Estacionamiento gratis'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+          svgPath: 'M120-80v-400l63-185q8-26 30-40.5t47-14.5q8 0 16 1.5t16 5.5l166 73h102v80H440l-108-47-52 157v370H120Zm240-120v-80h480v80H360Zm420-120q-25 0-42.5-17.5T720-380q0-25 17.5-42.5T780-440q25 0 42.5 17.5T840-380q0 25-17.5 42.5T780-320Zm-260 0q-33 0-56.5-23.5T440-400v-40h-80v-80h120q17 0 28.5 11.5T520-480v40h80v-80h80v120q0 33-23.5 56.5T600-320h-80ZM320-760q-33 0-56.5-23.5T240-840q0-33 23.5-56.5T320-920q33 0 56.5 23.5T400-840q0 33-23.5 56.5T320-760Z',
+          fillColor: '#0088ff',
+          description: 'Disponibilidad de baños, vestidores, duchas y casilleros.'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+          svgPath: 'M240-120q-17 0-28.5-11.5T200-160v-82q-18-20-29-44.5T160-340v-380q0-83 77-121.5T480-880q172 0 246 37t74 123v380q0 29-11 53.5T760-242v82q0 17-11.5 28.5T720-120h-40q-17 0-28.5-11.5T640-160v-40H320v40q0 17-11.5 28.5T280-120h-40Zm242-640h224-448 224Zm158 280H240h480-80Zm-400-80h480v-120H240v120Zm100 240q25 0 42.5-17.5T400-380q0-25-17.5-42.5T340-440q-25 0-42.5 17.5T280-380q0 25 17.5 42.5T340-320Zm280 0q25 0 42.5-17.5T680-380q0-25-17.5-42.5T620-440q-25 0-42.5 17.5T560-380q0 25 17.5 42.5T620-320ZM258-760h448q-15-17-64.5-28.5T482-800q-107 0-156.5 12.5T258-760Zm62 480h320q33 0 56.5-23.5T720-360v-120H240v120q0 33 23.5 56.5T320-280Z',
+          fillColor: '#0088ff',
+          description: 'Conectado con la Terminal de Transporte de Albrook'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+          svgPath: 'M280-80v-366q-51-14-85.5-56T160-600v-280h80v280h40v-280h80v280h40v-280h80v280q0 56-34.5 98T360-446v366h-80Zm400 0v-320H560v-280q0-83 58.5-141.5T760-880v800h-80Z',
+          fillColor: '#0088ff',
+          description: 'Oferta gastronómica y tiendas  para complementar tu visita.'
         }]
       },
       en: {
@@ -14786,9 +14790,9 @@ function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "Canchas de Baloncesto del Parque Ciudad del Saber",
-        content: "Las canchas de baloncesto del Parque Ciudad del Saber ofrecen instalaciones de alta calidad para \n                  que disfrutes de un buen juego, tanto en la cancha techada como al aire libre.",
-        buttonLabel: "Descarga el reglamento de uso",
+        title: "Juega, entrena y gana ",
+        content: "\xA1Ven y disfruta de nuestras canchas! Ya sea que busques un partido amistoso, mejorar tus habilidades o simplemente pasar un buen rato, nuestras instalaciones est\xE1n listas para ti. Con espacios c\xF3modos y bien equipados, te invitamos a compartir con amigos, entrenar y, sobre todo, divertirte. \xA1Reserva tu cancha y haz que cada juego cuente!",
+        buttonLabel: "Ver el reglamento de uso",
         modalTitle: "Reglamentos de uso de Canchas de Baloncesto",
         modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
           className: "list-decimal list-inside",
@@ -14914,15 +14918,9 @@ var ContentWithVideoSection = function ContentWithVideoSection() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "¿Qué hacer un día en el parque?",
-        content: "En el parque de Ciudad del Saber, encontrarás una variedad de actividades para disfrutar. Ofrecemos opciones gratuitas y abiertas a todo el público, perfectas para compartir con tu familia, amigos e incluso tu mascota.",
-        activities: [{
-          text: "Recorre 21km de sendero en nuestra reserva forestal"
-        }, {
-          text: "Diviértete en familia en el parque para niños y niñas"
-        }, {
-          text: "Disfruta de un espacio amigable en el parque para mascotas"
-        }]
+        title: "Ten en cuenta para tu visita",
+        content: "Ten en cuenta que para disfrutar al m\xE1ximo de nuestras canchas, es fundamental hacer tu reserva con anticipaci\xF3n, ya que as\xED aseguramos que el espacio est\xE9 disponible para ti en el momento que lo necesites.<br/><br/>\n\n                  Adem\xE1s, recuerda traer el equipo adecuado para la actividad que vas a realizar y respetar los horarios establecidos para el uso de las canchas.<br/><br/>\n\n                  Esto no solo garantiza que todos los usuarios puedan disfrutar de un entorno ordenado, sino que tambi\xE9n permite mantener la calidad de nuestras instalaciones.<br/><br/>\n\n                  \xA1Te esperamos para que aproveches al m\xE1ximo tu tiempo de juego y entrenamiento!",
+        activities: []
       },
       en: {
         title: "What to do on a day at the park?",
@@ -15001,7 +14999,7 @@ var Faq = function Faq() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        faqTitle: "Preguntas frecuentes sobre el Parque Ciudad del Saber",
+        faqTitle: "Preguntas frecuentes",
         faqItems: [{
           title: '¿Por qué a veces la luna está visible durante el día?',
           content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
@@ -15106,7 +15104,7 @@ var GallerySection = function GallerySection() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "Explora nuestra cancha de baloncesto",
+        title: "Revive un poco de su historia",
         carouselImages: [{
           image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           title: "Imagen 1",
@@ -15294,7 +15292,7 @@ function BaloncestoHero() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "Cancha de Baloncesto",
+        title: "Cancha de baloncesto",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
         schedule: "6:30 am - 8:00 pm",
@@ -16186,21 +16184,21 @@ var CampusFacilities = function CampusFacilities() {
       es: {
         title: "Facilidades del campus",
         cards: [{
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          svgPath: 'M240-120v-720h280q100 0 170 70t70 170q0 100-70 170t-170 70H400v240H240Zm160-400h128q33 0 56.5-23.5T608-600q0-33-23.5-56.5T528-680H400v160Z',
           fillColor: '#0088ff',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+          description: 'Estacionamiento gratis'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+          svgPath: 'M120-80v-400l63-185q8-26 30-40.5t47-14.5q8 0 16 1.5t16 5.5l166 73h102v80H440l-108-47-52 157v370H120Zm240-120v-80h480v80H360Zm420-120q-25 0-42.5-17.5T720-380q0-25 17.5-42.5T780-440q25 0 42.5 17.5T840-380q0 25-17.5 42.5T780-320Zm-260 0q-33 0-56.5-23.5T440-400v-40h-80v-80h120q17 0 28.5 11.5T520-480v40h80v-80h80v120q0 33-23.5 56.5T600-320h-80ZM320-760q-33 0-56.5-23.5T240-840q0-33 23.5-56.5T320-920q33 0 56.5 23.5T400-840q0 33-23.5 56.5T320-760Z',
+          fillColor: '#0088ff',
+          description: 'Disponibilidad de baños, vestidores, duchas y casilleros.'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+          svgPath: 'M240-120q-17 0-28.5-11.5T200-160v-82q-18-20-29-44.5T160-340v-380q0-83 77-121.5T480-880q172 0 246 37t74 123v380q0 29-11 53.5T760-242v82q0 17-11.5 28.5T720-120h-40q-17 0-28.5-11.5T640-160v-40H320v40q0 17-11.5 28.5T280-120h-40Zm242-640h224-448 224Zm158 280H240h480-80Zm-400-80h480v-120H240v120Zm100 240q25 0 42.5-17.5T400-380q0-25-17.5-42.5T340-440q-25 0-42.5 17.5T280-380q0 25 17.5 42.5T340-320Zm280 0q25 0 42.5-17.5T680-380q0-25-17.5-42.5T620-440q-25 0-42.5 17.5T560-380q0 25 17.5 42.5T620-320ZM258-760h448q-15-17-64.5-28.5T482-800q-107 0-156.5 12.5T258-760Zm62 480h320q33 0 56.5-23.5T720-360v-120H240v120q0 33 23.5 56.5T320-280Z',
+          fillColor: '#0088ff',
+          description: 'Conectado con la Terminal de Transporte de Albrook'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+          svgPath: 'M280-80v-366q-51-14-85.5-56T160-600v-280h80v280h40v-280h80v280h40v-280h80v280q0 56-34.5 98T360-446v366h-80Zm400 0v-320H560v-280q0-83 58.5-141.5T760-880v800h-80Z',
+          fillColor: '#0088ff',
+          description: 'Oferta gastronómica y tiendas  para complementar tu visita.'
         }]
       },
       en: {
@@ -16285,8 +16283,8 @@ function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "Gazebos en el Parque Ciudad del Saber",
-        content: "Los gazebos del Parque Ciudad del Saber ofrecen un espacio amplio y c\xF3modo para actividades \n                  al aire libre, ideales para reuniones familiares, eventos corporativos y celebraciones.",
+        title: "Disfruta de espacios para tus eventos y actividades al aire libre",
+        content: "\xA1Descubre nuestros gazebos al aire libre en el \xE1rea del parque, un espacio ideal para relajarte y disfrutar de la naturaleza! Aqu\xED puedes organizar un picnic con amigos, celebrar un cumplea\xF1os o simplemente disfrutar con tu familia un momento diferente.\n                  Con su dise\xF1o acogedor y rodeados de hermosos paisajes, nuestros gazebos son el lugar perfecto para compartir momentos especiales.\n                  Ven y aprovecha este rinc\xF3n encantador, donde la tranquilidad y la diversi\xF3n se unen en un solo lugar. ",
         buttonLabel: "Descarga el reglamento de uso",
         modalTitle: "Reglamentos de uso de Gazebos",
         modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
@@ -16405,26 +16403,14 @@ var ContentWithVideoSection = function ContentWithVideoSection() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "¿Qué hacer un día en el parque?",
-        content: "En el parque de Ciudad del Saber, encontrarás una variedad de actividades para disfrutar. Ofrecemos opciones gratuitas y abiertas a todo el público, perfectas para compartir con tu familia, amigos e incluso tu mascota.",
-        activities: [{
-          text: "Recorre 21km de sendero en nuestra reserva forestal"
-        }, {
-          text: "Diviértete en familia en el parque para niños y niñas"
-        }, {
-          text: "Disfruta de un espacio amigable en el parque para mascotas"
-        }]
+        title: "Ten en cuenta para tu visita ",
+        content: "Ten en cuenta que, al utilizar nuestros gazebos al aire libre, es importante hacer tu reserva con anticipaci\xF3n para garantizar disponibilidad, especialmente durante los fines de semana y d\xEDas festivos.  <br /><br />\n                  Aseg\xFArate de llegar con tiempo para preparar tu espacio y disfrutar de tu actividad sin prisas. Recuerda llevar todo lo necesario, como manteles, comida y bebida, as\xED como utensilios para mantener el \xE1rea limpia y ordenada.<br /><br />\n                  Adem\xE1s, respeta las normas de convivencia y el entorno del parque, para que todos puedan disfrutar de un espacio agradable y seguro. ",
+        activities: []
       },
       en: {
         title: "What to do on a day at the park?",
         content: "At Ciudad del Saber Park, you'll find a variety of activities to enjoy. We offer free and open options for the public, perfect for sharing with your family, friends, and even your pet.",
-        activities: [{
-          text: "Walk 21km of trail in our forest reserve"
-        }, {
-          text: "Have fun with your family at the children's park"
-        }, {
-          text: "Enjoy a pet-friendly space at the pet park"
-        }]
+        activities: []
       }
     };
 
@@ -16492,7 +16478,7 @@ var Faq = function Faq() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        faqTitle: "Preguntas frecuentes sobre el Parque Ciudad del Saber",
+        faqTitle: "Preguntas frecuentes ",
         faqItems: [{
           title: '¿Por qué a veces la luna está visible durante el día?',
           content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
@@ -16597,7 +16583,7 @@ var GallerySection = function GallerySection() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "Explora nuestra piscina",
+        title: "Revive un poco de su historia",
         carouselImages: [{
           image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           title: "Imagen 1",
@@ -16785,7 +16771,7 @@ function BohiosHero() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "Los Gazebos",
+        title: "Gazebos",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
         schedule: "9:00 am - 6:00 pm",
@@ -18420,23 +18406,23 @@ var CampusFacilities = function CampusFacilities() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "Facilidades del campus baloncesto",
+        title: "Facilidades del campus",
         cards: [{
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          svgPath: 'M240-120v-720h280q100 0 170 70t70 170q0 100-70 170t-170 70H400v240H240Zm160-400h128q33 0 56.5-23.5T608-600q0-33-23.5-56.5T528-680H400v160Z',
           fillColor: '#0088ff',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+          description: 'Estacionamiento gratis'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+          svgPath: 'M120-80v-400l63-185q8-26 30-40.5t47-14.5q8 0 16 1.5t16 5.5l166 73h102v80H440l-108-47-52 157v370H120Zm240-120v-80h480v80H360Zm420-120q-25 0-42.5-17.5T720-380q0-25 17.5-42.5T780-440q25 0 42.5 17.5T840-380q0 25-17.5 42.5T780-320Zm-260 0q-33 0-56.5-23.5T440-400v-40h-80v-80h120q17 0 28.5 11.5T520-480v40h80v-80h80v120q0 33-23.5 56.5T600-320h-80ZM320-760q-33 0-56.5-23.5T240-840q0-33 23.5-56.5T320-920q33 0 56.5 23.5T400-840q0 33-23.5 56.5T320-760Z',
+          fillColor: '#0088ff',
+          description: 'Disponibilidad de baños, vestidores, duchas y casilleros.'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+          svgPath: 'M240-120q-17 0-28.5-11.5T200-160v-82q-18-20-29-44.5T160-340v-380q0-83 77-121.5T480-880q172 0 246 37t74 123v380q0 29-11 53.5T760-242v82q0 17-11.5 28.5T720-120h-40q-17 0-28.5-11.5T640-160v-40H320v40q0 17-11.5 28.5T280-120h-40Zm242-640h224-448 224Zm158 280H240h480-80Zm-400-80h480v-120H240v120Zm100 240q25 0 42.5-17.5T400-380q0-25-17.5-42.5T340-440q-25 0-42.5 17.5T280-380q0 25 17.5 42.5T340-320Zm280 0q25 0 42.5-17.5T680-380q0-25-17.5-42.5T620-440q-25 0-42.5 17.5T560-380q0 25 17.5 42.5T620-320ZM258-760h448q-15-17-64.5-28.5T482-800q-107 0-156.5 12.5T258-760Zm62 480h320q33 0 56.5-23.5T720-360v-120H240v120q0 33 23.5 56.5T320-280Z',
+          fillColor: '#0088ff',
+          description: 'Conectado con la Terminal de Transporte de Albrook'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+          svgPath: 'M280-80v-366q-51-14-85.5-56T160-600v-280h80v280h40v-280h80v280h40v-280h80v280q0 56-34.5 98T360-446v366h-80Zm400 0v-320H560v-280q0-83 58.5-141.5T760-880v800h-80Z',
+          fillColor: '#0088ff',
+          description: 'Oferta gastronómica y tiendas  para complementar tu visita.'
         }]
       },
       en: {
@@ -18521,9 +18507,9 @@ function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "Campo de Golf en el Parque Ciudad del Saber",
-        content: "Disfruta de nuestras instalaciones de golf con zonas dedicadas para practicar tus tiros. \n                  Trae tus propios implementos y aprovecha nuestras canastas de bolas reservadas.",
-        buttonLabel: "Descarga el reglamento de uso",
+        title: "¡Disfruta y Relájate! Vive una Experiencia Única de Golf",
+        content: "\xA1Ven y descubre nuestras canchas de golf, un lugar donde la naturaleza se encuentra con el deporte! \n                  Aqu\xED, podr\xE1s disfrutar de un entorno hermoso mientras mejoras tu t\xE9cnica y pasas un rato agradable con amigos o familiares. Ya seas un principiante o experto, nuestras canchas est\xE1n dise\xF1adas para todos los niveles.\n                  \xA1No esperes m\xE1s, ven a jugar y siente la emoci\xF3n del golf en Ciudad del Saber!",
+        buttonLabel: "Ver el reglamento de uso",
         modalTitle: "Reglamentos de uso de Golf",
         modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
           className: "list-decimal list-inside",
@@ -18633,26 +18619,14 @@ var ContentWithVideoSection = function ContentWithVideoSection() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "¿Qué hacer un día en el parque?",
-        content: "En el parque de Ciudad del Saber, encontrarás una variedad de actividades para disfrutar. Ofrecemos opciones gratuitas y abiertas a todo el público, perfectas para compartir con tu familia, amigos e incluso tu mascota.",
-        activities: [{
-          text: "Recorre 21km de sendero en nuestra reserva forestal"
-        }, {
-          text: "Diviértete en familia en el parque para niños y niñas"
-        }, {
-          text: "Disfruta de un espacio amigable en el parque para mascotas"
-        }]
+        title: "Ten en cuenta para tu visita",
+        content: "Ten en cuenta que para disfrutar al m\xE1ximo de tu visita a nuestras canchas de golf, es recomendable hacer tu reserva con anticipaci\xF3n. <br /><br />\n\n                  Aseg\xFArate de traer tu equipo adecuado y revisar las condiciones clim\xE1ticas antes de salir. Recuerda seguir las normas del campo para garantizar una experiencia placentera para todos. <br /><br />\n\n                  \xA1Prep\xE1rate para disfrutar de un d\xEDa lleno de golf y buena compa\xF1\xEDa en un entorno \xFAnico!",
+        activities: []
       },
       en: {
         title: "What to do on a day at the park?",
         content: "At Ciudad del Saber Park, you'll find a variety of activities to enjoy. We offer free and open options for the public, perfect for sharing with your family, friends, and even your pet.",
-        activities: [{
-          text: "Walk 21km of trail in our forest reserve"
-        }, {
-          text: "Have fun with your family at the children's park"
-        }, {
-          text: "Enjoy a pet-friendly space at the pet park"
-        }]
+        activities: []
       }
     };
 
@@ -18720,7 +18694,7 @@ var Faq = function Faq() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        faqTitle: "Preguntas frecuentes sobre el Parque Ciudad del Saber",
+        faqTitle: "Preguntas frecuentes",
         faqItems: [{
           title: '¿Por qué a veces la luna está visible durante el día?',
           content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
@@ -18825,7 +18799,7 @@ var GallerySection = function GallerySection() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "Explora nuestra cancha de baloncesto",
+        title: "Revive un poco de su historia",
         carouselImages: [{
           image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           title: "Imagen 1",
@@ -19013,7 +18987,7 @@ function GolfHero() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "Cancha de Golf",
+        title: "Cancha de golf",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
         schedule: "7:00 am - 6:00 pm",
@@ -19151,40 +19125,40 @@ var CampusFacilities = function CampusFacilities() {
       es: {
         title: "Facilidades del campus",
         cards: [{
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          svgPath: 'M240-120v-720h280q100 0 170 70t70 170q0 100-70 170t-170 70H400v240H240Zm160-400h128q33 0 56.5-23.5T608-600q0-33-23.5-56.5T528-680H400v160Z',
           fillColor: '#0088ff',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+          description: 'Estacionamiento gratis'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+          svgPath: 'M120-80v-400l63-185q8-26 30-40.5t47-14.5q8 0 16 1.5t16 5.5l166 73h102v80H440l-108-47-52 157v370H120Zm240-120v-80h480v80H360Zm420-120q-25 0-42.5-17.5T720-380q0-25 17.5-42.5T780-440q25 0 42.5 17.5T840-380q0 25-17.5 42.5T780-320Zm-260 0q-33 0-56.5-23.5T440-400v-40h-80v-80h120q17 0 28.5 11.5T520-480v40h80v-80h80v120q0 33-23.5 56.5T600-320h-80ZM320-760q-33 0-56.5-23.5T240-840q0-33 23.5-56.5T320-920q33 0 56.5 23.5T400-840q0 33-23.5 56.5T320-760Z',
+          fillColor: '#0088ff',
+          description: 'Disponibilidad de baños, vestidores, duchas y casilleros.'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+          svgPath: 'M240-120q-17 0-28.5-11.5T200-160v-82q-18-20-29-44.5T160-340v-380q0-83 77-121.5T480-880q172 0 246 37t74 123v380q0 29-11 53.5T760-242v82q0 17-11.5 28.5T720-120h-40q-17 0-28.5-11.5T640-160v-40H320v40q0 17-11.5 28.5T280-120h-40Zm242-640h224-448 224Zm158 280H240h480-80Zm-400-80h480v-120H240v120Zm100 240q25 0 42.5-17.5T400-380q0-25-17.5-42.5T340-440q-25 0-42.5 17.5T280-380q0 25 17.5 42.5T340-320Zm280 0q25 0 42.5-17.5T680-380q0-25-17.5-42.5T620-440q-25 0-42.5 17.5T560-380q0 25 17.5 42.5T620-320ZM258-760h448q-15-17-64.5-28.5T482-800q-107 0-156.5 12.5T258-760Zm62 480h320q33 0 56.5-23.5T720-360v-120H240v120q0 33 23.5 56.5T320-280Z',
+          fillColor: '#0088ff',
+          description: 'Conectado con la Terminal de Transporte de Albrook'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+          svgPath: 'M280-80v-366q-51-14-85.5-56T160-600v-280h80v280h40v-280h80v280h40v-280h80v280q0 56-34.5 98T360-446v366h-80Zm400 0v-320H560v-280q0-83 58.5-141.5T760-880v800h-80Z',
+          fillColor: '#0088ff',
+          description: 'Oferta gastronómica y tiendas  para complementar tu visita.'
         }]
       },
       en: {
         title: "Campus Facilities",
         cards: [{
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          svgPath: 'M240-120v-720h280q100 0 170 70t70 170q0 100-70 170t-170 70H400v240H240Zm160-400h128q33 0 56.5-23.5T608-600q0-33-23.5-56.5T528-680H400v160Z',
           fillColor: '#0088ff',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
+          svgPath: 'M120-80v-400l63-185q8-26 30-40.5t47-14.5q8 0 16 1.5t16 5.5l166 73h102v80H440l-108-47-52 157v370H120Zm240-120v-80h480v80H360Zm420-120q-25 0-42.5-17.5T720-380q0-25 17.5-42.5T780-440q25 0 42.5 17.5T840-380q0 25-17.5 42.5T780-320Zm-260 0q-33 0-56.5-23.5T440-400v-40h-80v-80h120q17 0 28.5 11.5T520-480v40h80v-80h80v120q0 33-23.5 56.5T600-320h-80ZM320-760q-33 0-56.5-23.5T240-840q0-33 23.5-56.5T320-920q33 0 56.5 23.5T400-840q0 33-23.5 56.5T320-760Z',
+          fillColor: '#0088ff',
           description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
+          svgPath: 'M240-120q-17 0-28.5-11.5T200-160v-82q-18-20-29-44.5T160-340v-380q0-83 77-121.5T480-880q172 0 246 37t74 123v380q0 29-11 53.5T760-242v82q0 17-11.5 28.5T720-120h-40q-17 0-28.5-11.5T640-160v-40H320v40q0 17-11.5 28.5T280-120h-40Zm242-640h224-448 224Zm158 280H240h480-80Zm-400-80h480v-120H240v120Zm100 240q25 0 42.5-17.5T400-380q0-25-17.5-42.5T340-440q-25 0-42.5 17.5T280-380q0 25 17.5 42.5T340-320Zm280 0q25 0 42.5-17.5T680-380q0-25-17.5-42.5T620-440q-25 0-42.5 17.5T560-380q0 25 17.5 42.5T620-320ZM258-760h448q-15-17-64.5-28.5T482-800q-107 0-156.5 12.5T258-760Zm62 480h320q33 0 56.5-23.5T720-360v-120H240v120q0 33 23.5 56.5T320-280Z',
+          fillColor: '#0088ff',
           description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
+          svgPath: 'M280-80v-366q-51-14-85.5-56T160-600v-280h80v280h40v-280h80v280h40v-280h80v280q0 56-34.5 98T360-446v366h-80Zm400 0v-320H560v-280q0-83 58.5-141.5T760-880v800h-80Z',
+          fillColor: '#0088ff',
           description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
         }]
       }
@@ -19250,9 +19224,9 @@ function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "Reglamentos del Parque Ciudad del Saber",
-        content: "El Parque Ciudad del Saber ofrece un entorno seguro y agradable para todos los visitantes. \n                  Por favor, cumpla con las siguientes normas para garantizar una experiencia positiva para todos.",
-        buttonLabel: "Descarga el reglamento de uso",
+        title: "Conoce nuestras instalaciones y área de pesas",
+        content: "Conoce nuestras instalaciones y el \xE1rea de pesas, dise\xF1adas en tu comunidad y  bienestar.Aqu\xED encontrar\xE1s una amplia variedad de equipos de \xFAltima generaci\xF3n, desde m\xE1quinas de pesas hasta pesos libres, todo en un ambiente amigable y motivador. \n                  Ya seas principiante o experimentado, nuestro espacio est\xE1 preparado para adaptarse a tus necesidades. Adem\xE1s, contar\xE1s con el apoyo de entrenadores calificados que te guiar\xE1n en tu rutina. ",
+        buttonLabel: "Ver el reglamento de uso",
         modalTitle: "Reglamentos de uso del Parque Ciudad del Saber",
         modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
           className: "list-decimal list-inside",
@@ -19386,26 +19360,14 @@ var ContentWithVideoSection = function ContentWithVideoSection() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "¿Qué hacer un día en el parque?",
-        content: "En el parque de Ciudad del Saber, encontrarás una variedad de actividades para disfrutar. Ofrecemos opciones gratuitas y abiertas a todo el público, perfectas para compartir con tu familia, amigos e incluso tu mascota.",
-        activities: [{
-          text: "Recorre 21km de sendero en nuestra reserva forestal"
-        }, {
-          text: "Diviértete en familia en el parque para niños y niñas"
-        }, {
-          text: "Disfruta de un espacio amigable en el parque para mascotas"
-        }]
+        title: "Ten en cuenta para tu visita ",
+        content: "Ten en cuenta que para disfrutar al m\xE1ximo de tu experiencia en nuestro gimnasio, es importante que llegues con tiempo suficiente para calentar antes de comenzar tu entrenamiento. <br /><br />\n                  Aseg\xFArate de llevar ropa c\xF3moda y calzado adecuado, as\xED como tu propia botella de agua para mantenerte hidratado durante el ejercicio. Si eres nuevo en el uso de equipos, no dudes en preguntar a nuestros entrenadores, quienes estar\xE1n encantados de guiarte y ofrecerte consejos para una rutina segura y efectiva. <br /><br /> \n                  Adem\xE1s, recuerda respetar las normas de convivencia y mantener el \xE1rea limpia para que todos puedan disfrutar de un ambiente agradable. <br /><br /> \n                  ",
+        activities: []
       },
       en: {
         title: "What to do on a day at the park?",
         content: "At Ciudad del Saber Park, you'll find a variety of activities to enjoy. We offer free and open options for the public, perfect for sharing with your family, friends, and even your pet.",
-        activities: [{
-          text: "Walk 21km of trail in our forest reserve"
-        }, {
-          text: "Have fun with your family at the children's park"
-        }, {
-          text: "Enjoy a pet-friendly space at the pet park"
-        }]
+        activities: []
       }
     };
 
@@ -19473,7 +19435,7 @@ var Faq = function Faq() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        faqTitle: "Preguntas frecuentes sobre el Parque Ciudad del Saber",
+        faqTitle: "Preguntas frecuentes",
         faqItems: [{
           title: '¿Por qué a veces la luna está visible durante el día?',
           content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
@@ -19578,7 +19540,7 @@ var GallerySection = function GallerySection() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "Explora nuestra piscina",
+        title: "Revive un poco de su historia",
         carouselImages: [{
           image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           title: "Imagen 1",
@@ -19766,7 +19728,7 @@ function Hero() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "Sala de Pesas",
+        title: "Gimnasio - área de pesas",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
         schedule: "6:00 am - 10:00 pm",
@@ -19905,40 +19867,40 @@ var CampusFacilities = function CampusFacilities() {
       es: {
         title: "Facilidades del campus",
         cards: [{
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          svgPath: 'M240-120v-720h280q100 0 170 70t70 170q0 100-70 170t-170 70H400v240H240Zm160-400h128q33 0 56.5-23.5T608-600q0-33-23.5-56.5T528-680H400v160Z',
           fillColor: '#0088ff',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+          description: 'Estacionamiento gratis'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+          svgPath: 'M120-80v-400l63-185q8-26 30-40.5t47-14.5q8 0 16 1.5t16 5.5l166 73h102v80H440l-108-47-52 157v370H120Zm240-120v-80h480v80H360Zm420-120q-25 0-42.5-17.5T720-380q0-25 17.5-42.5T780-440q25 0 42.5 17.5T840-380q0 25-17.5 42.5T780-320Zm-260 0q-33 0-56.5-23.5T440-400v-40h-80v-80h120q17 0 28.5 11.5T520-480v40h80v-80h80v120q0 33-23.5 56.5T600-320h-80ZM320-760q-33 0-56.5-23.5T240-840q0-33 23.5-56.5T320-920q33 0 56.5 23.5T400-840q0 33-23.5 56.5T320-760Z',
+          fillColor: '#0088ff',
+          description: 'Disponibilidad de baños, vestidores, duchas y casilleros.'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+          svgPath: 'M240-120q-17 0-28.5-11.5T200-160v-82q-18-20-29-44.5T160-340v-380q0-83 77-121.5T480-880q172 0 246 37t74 123v380q0 29-11 53.5T760-242v82q0 17-11.5 28.5T720-120h-40q-17 0-28.5-11.5T640-160v-40H320v40q0 17-11.5 28.5T280-120h-40Zm242-640h224-448 224Zm158 280H240h480-80Zm-400-80h480v-120H240v120Zm100 240q25 0 42.5-17.5T400-380q0-25-17.5-42.5T340-440q-25 0-42.5 17.5T280-380q0 25 17.5 42.5T340-320Zm280 0q25 0 42.5-17.5T680-380q0-25-17.5-42.5T620-440q-25 0-42.5 17.5T560-380q0 25 17.5 42.5T620-320ZM258-760h448q-15-17-64.5-28.5T482-800q-107 0-156.5 12.5T258-760Zm62 480h320q33 0 56.5-23.5T720-360v-120H240v120q0 33 23.5 56.5T320-280Z',
+          fillColor: '#0088ff',
+          description: 'Conectado con la Terminal de Transporte de Albrook'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+          svgPath: 'M280-80v-366q-51-14-85.5-56T160-600v-280h80v280h40v-280h80v280h40v-280h80v280q0 56-34.5 98T360-446v366h-80Zm400 0v-320H560v-280q0-83 58.5-141.5T760-880v800h-80Z',
+          fillColor: '#0088ff',
+          description: 'Oferta gastronómica y tiendas  para complementar tu visita.'
         }]
       },
       en: {
         title: "Campus Facilities",
         cards: [{
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          svgPath: 'M240-120v-720h280q100 0 170 70t70 170q0 100-70 170t-170 70H400v240H240Zm160-400h128q33 0 56.5-23.5T608-600q0-33-23.5-56.5T528-680H400v160Z',
           fillColor: '#0088ff',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
+          svgPath: 'M120-80v-400l63-185q8-26 30-40.5t47-14.5q8 0 16 1.5t16 5.5l166 73h102v80H440l-108-47-52 157v370H120Zm240-120v-80h480v80H360Zm420-120q-25 0-42.5-17.5T720-380q0-25 17.5-42.5T780-440q25 0 42.5 17.5T840-380q0 25-17.5 42.5T780-320Zm-260 0q-33 0-56.5-23.5T440-400v-40h-80v-80h120q17 0 28.5 11.5T520-480v40h80v-80h80v120q0 33-23.5 56.5T600-320h-80ZM320-760q-33 0-56.5-23.5T240-840q0-33 23.5-56.5T320-920q33 0 56.5 23.5T400-840q0 33-23.5 56.5T320-760Z',
+          fillColor: '#0088ff',
           description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
+          svgPath: 'M240-120q-17 0-28.5-11.5T200-160v-82q-18-20-29-44.5T160-340v-380q0-83 77-121.5T480-880q172 0 246 37t74 123v380q0 29-11 53.5T760-242v82q0 17-11.5 28.5T720-120h-40q-17 0-28.5-11.5T640-160v-40H320v40q0 17-11.5 28.5T280-120h-40Zm242-640h224-448 224Zm158 280H240h480-80Zm-400-80h480v-120H240v120Zm100 240q25 0 42.5-17.5T400-380q0-25-17.5-42.5T340-440q-25 0-42.5 17.5T280-380q0 25 17.5 42.5T340-320Zm280 0q25 0 42.5-17.5T680-380q0-25-17.5-42.5T620-440q-25 0-42.5 17.5T560-380q0 25 17.5 42.5T620-320ZM258-760h448q-15-17-64.5-28.5T482-800q-107 0-156.5 12.5T258-760Zm62 480h320q33 0 56.5-23.5T720-360v-120H240v120q0 33 23.5 56.5T320-280Z',
+          fillColor: '#0088ff',
           description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
+          svgPath: 'M280-80v-366q-51-14-85.5-56T160-600v-280h80v280h40v-280h80v280h40v-280h80v280q0 56-34.5 98T360-446v366h-80Zm400 0v-320H560v-280q0-83 58.5-141.5T760-880v800h-80Z',
+          fillColor: '#0088ff',
           description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
         }]
       }
@@ -20004,8 +19966,8 @@ function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "La piscina más profunda de Panama",
-        content: "Construida en 1948, esta piscina ha sido testigo de innumerables momentos \n                  de entrenamiento y esparcimiento para generaciones de militares. Hoy, abre \n                  sus puertas a toda la comunidad para que disfrutes de sus aguas cristalinas \n                  y de un ambiente familiar y acogedor.",
+        title: "La piscina más profunda de Panamá",
+        content: "Construida en 1948, esta piscina ha sido testigo de innumerables momentos de entrenamiento y esparcimiento para generaciones de militares. Hoy, abre sus puertas a toda la comunidad para que disfrutes de sus aguas cristalinas y de un ambiente familiar y acogedor.",
         buttonLabel: "Reglamentos de uso de Piscina",
         modalTitle: "Reglamentos de uso de Piscina",
         modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
@@ -20095,7 +20057,7 @@ function ContentSectionWithAnImage() {
     modalTitle: content.modalTitle,
     modalDesc: content.modalDesc,
     onButtonClick: handleButtonClick,
-    image: "https://images.unsplash.com/photo-1691253104600-ccfd27782f3e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "/assets/nwp-images/piscina/gallery1.jpg"
   });
 }
 var container = document.getElementById('nwp-piscina-content-section-whith-an-image');
@@ -20152,26 +20114,14 @@ var ContentWithVideoSection = function ContentWithVideoSection() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "¿Qué hacer un día en el parque?",
-        content: "En el parque de Ciudad del Saber, encontrarás una variedad de actividades para disfrutar. Ofrecemos opciones gratuitas y abiertas a todo el público, perfectas para compartir con tu familia, amigos e incluso tu mascota.",
-        activities: [{
-          text: "Recorre 21km de sendero en nuestra reserva forestal"
-        }, {
-          text: "Diviértete en familia en el parque para niños y niñas"
-        }, {
-          text: "Disfruta de un espacio amigable en el parque para mascotas"
-        }]
+        title: "Ten en cuenta para tu visita ",
+        content: "Ten en cuenta que para disfrutar al máximo de tu visita a la piscina, es importante traer tu equipo de natación e ingresar a la piscina con ropa adecuada, lentes y gorra. Es importante respetar los horarios y seguir las normas de seguridad. Así garantizamos un espacio cómodo y seguro para todos. ¡Prepárate para un día refrescante!",
+        activities: []
       },
       en: {
         title: "What to do on a day at the park?",
         content: "At Ciudad del Saber Park, you'll find a variety of activities to enjoy. We offer free and open options for the public, perfect for sharing with your family, friends, and even your pet.",
-        activities: [{
-          text: "Walk 21km of trail in our forest reserve"
-        }, {
-          text: "Have fun with your family at the children's park"
-        }, {
-          text: "Enjoy a pet-friendly space at the pet park"
-        }]
+        activities: []
       }
     };
 
@@ -20239,7 +20189,7 @@ var Faq = function Faq() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        faqTitle: "Preguntas frecuentes sobre el Parque Ciudad del Saber",
+        faqTitle: "Preguntas frecuentes",
         faqItems: [{
           title: '¿Por qué a veces la luna está visible durante el día?',
           content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
@@ -20344,9 +20294,9 @@ var GallerySection = function GallerySection() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "Explora nuestra piscina",
+        title: "Revive un poco de su historia",
         carouselImages: [{
-          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          image: "/assets/nwp-images/piscina/gallery1.jpg",
           title: "Imagen 1",
           description: "Descripción de la imagen 1"
         }, {
@@ -20370,7 +20320,7 @@ var GallerySection = function GallerySection() {
       en: {
         title: "Explore our pool",
         carouselImages: [{
-          image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          image: "/assets/nwp-images/piscina/gallery1.jpg",
           title: "Imagen 1",
           description: "Descripción de la imagen 1"
         }, {
@@ -20532,7 +20482,7 @@ function Hero() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "La Pisc",
+        title: "La Piscina",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
         schedule: "6:30 am - 8:00 pm",
@@ -20573,7 +20523,7 @@ function Hero() {
       location: content.location,
       onButtonClick: handleButtonClick,
       gradientColor: "from-cdsverde via-cdsverde to-transparent",
-      backgroundImageUrl: "https://plus.unsplash.com/premium_photo-1668623041724-c9b6c84c436b?q=80&w=1329&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      backgroundImageUrl: "/assets/nwp-images/piscina/hero.jpg",
       buttonText: content.buttonText,
       isVenue: true
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CustomIndex__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -20670,21 +20620,21 @@ var CampusFacilities = function CampusFacilities() {
       es: {
         title: "Facilidades del campus",
         cards: [{
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          svgPath: 'M240-120v-720h280q100 0 170 70t70 170q0 100-70 170t-170 70H400v240H240Zm160-400h128q33 0 56.5-23.5T608-600q0-33-23.5-56.5T528-680H400v160Z',
           fillColor: '#0088ff',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+          description: 'Estacionamiento gratis'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+          svgPath: 'M120-80v-400l63-185q8-26 30-40.5t47-14.5q8 0 16 1.5t16 5.5l166 73h102v80H440l-108-47-52 157v370H120Zm240-120v-80h480v80H360Zm420-120q-25 0-42.5-17.5T720-380q0-25 17.5-42.5T780-440q25 0 42.5 17.5T840-380q0 25-17.5 42.5T780-320Zm-260 0q-33 0-56.5-23.5T440-400v-40h-80v-80h120q17 0 28.5 11.5T520-480v40h80v-80h80v120q0 33-23.5 56.5T600-320h-80ZM320-760q-33 0-56.5-23.5T240-840q0-33 23.5-56.5T320-920q33 0 56.5 23.5T400-840q0 33-23.5 56.5T320-760Z',
+          fillColor: '#0088ff',
+          description: 'Disponibilidad de baños, vestidores, duchas y casilleros.'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+          svgPath: 'M240-120q-17 0-28.5-11.5T200-160v-82q-18-20-29-44.5T160-340v-380q0-83 77-121.5T480-880q172 0 246 37t74 123v380q0 29-11 53.5T760-242v82q0 17-11.5 28.5T720-120h-40q-17 0-28.5-11.5T640-160v-40H320v40q0 17-11.5 28.5T280-120h-40Zm242-640h224-448 224Zm158 280H240h480-80Zm-400-80h480v-120H240v120Zm100 240q25 0 42.5-17.5T400-380q0-25-17.5-42.5T340-440q-25 0-42.5 17.5T280-380q0 25 17.5 42.5T340-320Zm280 0q25 0 42.5-17.5T680-380q0-25-17.5-42.5T620-440q-25 0-42.5 17.5T560-380q0 25 17.5 42.5T620-320ZM258-760h448q-15-17-64.5-28.5T482-800q-107 0-156.5 12.5T258-760Zm62 480h320q33 0 56.5-23.5T720-360v-120H240v120q0 33 23.5 56.5T320-280Z',
+          fillColor: '#0088ff',
+          description: 'Conectado con la Terminal de Transporte de Albrook'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+          svgPath: 'M280-80v-366q-51-14-85.5-56T160-600v-280h80v280h40v-280h80v280h40v-280h80v280q0 56-34.5 98T360-446v366h-80Zm400 0v-320H560v-280q0-83 58.5-141.5T760-880v800h-80Z',
+          fillColor: '#0088ff',
+          description: 'Oferta gastronómica y tiendas  para complementar tu visita.'
         }]
       },
       en: {
@@ -20769,9 +20719,9 @@ function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "Canchas de Ráquetbol del Parque Ciudad del Saber",
-        content: "Nuestras canchas de r\xE1quetbol proporcionan el espacio perfecto para disfrutar de este deporte, \n                  asegurando un entorno seguro y bien equipado.",
-        buttonLabel: "Descarga el reglamento de uso",
+        title: "¡Ven a Jugar Ráquetbol! Diversión y Competencia Te Esperan",
+        content: "Juega r\xE1quetbol en Ciudad del Saber y vive una experiencia llena de emoci\xF3n y competencia.\n\n                  Nuestras canchas est\xE1n listas para recibirte, ya sea que busques entrenar, divertirte con amigos o desafiar a otros jugadores. \n\n                  Disfruta de un ambiente amigable y motivador, donde cada punto cuenta y la diversi\xF3n nunca termina. \xA1No esperes m\xE1s, ven y \xFAnete a la acci\xF3n en nuestras canchas de r\xE1quetbol!",
+        buttonLabel: "Ver el reglamento de uso",
         modalTitle: "Reglamentos de uso de Canchas de Ráquetbol",
         modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
           className: "list-decimal list-inside",
@@ -20869,26 +20819,14 @@ var ContentWithVideoSection = function ContentWithVideoSection() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "¿Qué hacer un día en el parque?",
-        content: "En el parque de Ciudad del Saber, encontrarás una variedad de actividades para disfrutar. Ofrecemos opciones gratuitas y abiertas a todo el público, perfectas para compartir con tu familia, amigos e incluso tu mascota.",
-        activities: [{
-          text: "Recorre 21km de sendero en nuestra reserva forestal"
-        }, {
-          text: "Diviértete en familia en el parque para niños y niñas"
-        }, {
-          text: "Disfruta de un espacio amigable en el parque para mascotas"
-        }]
+        title: "Ten en cuenta para tu visita",
+        content: "Ten en cuenta que para disfrutar al m\xE1ximo de tu visita a nuestras canchas de raquetbol, es fundamental hacer tu reserva con anticipaci\xF3n y llegar unos minutos antes para calentar. <br /><br />\n                  No olvides traer tu equipo, como raquetas y pelotas, y usar ropa c\xF3moda para moverte con libertad.  <br /><br />\n                  Adem\xE1s, respeta las normas del juego y el espacio para asegurar que todos tengan una experiencia divertida y segura.  <br /><br />\n                  \xA1Prep\xE1rate para un buen rato lleno de acci\xF3n y deporte!",
+        activities: []
       },
       en: {
         title: "What to do on a day at the park?",
         content: "At Ciudad del Saber Park, you'll find a variety of activities to enjoy. We offer free and open options for the public, perfect for sharing with your family, friends, and even your pet.",
-        activities: [{
-          text: "Walk 21km of trail in our forest reserve"
-        }, {
-          text: "Have fun with your family at the children's park"
-        }, {
-          text: "Enjoy a pet-friendly space at the pet park"
-        }]
+        activities: []
       }
     };
 
@@ -20956,7 +20894,7 @@ var Faq = function Faq() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        faqTitle: "Preguntas frecuentes sobre el Parque Ciudad del Saber",
+        faqTitle: "Preguntas frecuentes",
         faqItems: [{
           title: '¿Por qué a veces la luna está visible durante el día?',
           content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
@@ -21061,7 +20999,7 @@ var GallerySection = function GallerySection() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "Explora nuestra piscina",
+        title: "Revive un poco de su historia",
         carouselImages: [{
           image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           title: "Imagen 1",
@@ -21249,7 +21187,7 @@ function RaquetbolHero() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "Cancha de Raquetbol",
+        title: "Cancha de ráquetbol",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
         schedule: "7:00 am - 9:00 pm",
@@ -21388,21 +21326,21 @@ var CampusFacilities = function CampusFacilities() {
       es: {
         title: "Facilidades del campus",
         cards: [{
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          svgPath: 'M240-120v-720h280q100 0 170 70t70 170q0 100-70 170t-170 70H400v240H240Zm160-400h128q33 0 56.5-23.5T608-600q0-33-23.5-56.5T528-680H400v160Z',
           fillColor: '#0088ff',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+          description: 'Estacionamiento gratis'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+          svgPath: 'M120-80v-400l63-185q8-26 30-40.5t47-14.5q8 0 16 1.5t16 5.5l166 73h102v80H440l-108-47-52 157v370H120Zm240-120v-80h480v80H360Zm420-120q-25 0-42.5-17.5T720-380q0-25 17.5-42.5T780-440q25 0 42.5 17.5T840-380q0 25-17.5 42.5T780-320Zm-260 0q-33 0-56.5-23.5T440-400v-40h-80v-80h120q17 0 28.5 11.5T520-480v40h80v-80h80v120q0 33-23.5 56.5T600-320h-80ZM320-760q-33 0-56.5-23.5T240-840q0-33 23.5-56.5T320-920q33 0 56.5 23.5T400-840q0 33-23.5 56.5T320-760Z',
+          fillColor: '#0088ff',
+          description: 'Disponibilidad de baños, vestidores, duchas y casilleros.'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+          svgPath: 'M240-120q-17 0-28.5-11.5T200-160v-82q-18-20-29-44.5T160-340v-380q0-83 77-121.5T480-880q172 0 246 37t74 123v380q0 29-11 53.5T760-242v82q0 17-11.5 28.5T720-120h-40q-17 0-28.5-11.5T640-160v-40H320v40q0 17-11.5 28.5T280-120h-40Zm242-640h224-448 224Zm158 280H240h480-80Zm-400-80h480v-120H240v120Zm100 240q25 0 42.5-17.5T400-380q0-25-17.5-42.5T340-440q-25 0-42.5 17.5T280-380q0 25 17.5 42.5T340-320Zm280 0q25 0 42.5-17.5T680-380q0-25-17.5-42.5T620-440q-25 0-42.5 17.5T560-380q0 25 17.5 42.5T620-320ZM258-760h448q-15-17-64.5-28.5T482-800q-107 0-156.5 12.5T258-760Zm62 480h320q33 0 56.5-23.5T720-360v-120H240v120q0 33 23.5 56.5T320-280Z',
+          fillColor: '#0088ff',
+          description: 'Conectado con la Terminal de Transporte de Albrook'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+          svgPath: 'M280-80v-366q-51-14-85.5-56T160-600v-280h80v280h40v-280h80v280h40v-280h80v280q0 56-34.5 98T360-446v366h-80Zm400 0v-320H560v-280q0-83 58.5-141.5T760-880v800h-80Z',
+          fillColor: '#0088ff',
+          description: 'Oferta gastronómica y tiendas  para complementar tu visita.'
         }]
       },
       en: {
@@ -21487,9 +21425,9 @@ function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "Canchas de Tenis del Parque Ciudad del Saber",
-        content: "Nuestras canchas de tenis est\xE1n dise\xF1adas para ofrecer un espacio \xF3ptimo para el entrenamiento \n                  y el disfrute de este deporte, con todas las comodidades necesarias.",
-        buttonLabel: "Descarga el reglamento de uso",
+        title: "¡Ven a Jugar Tenis! Diversión y Competencia Te Esperan",
+        content: "\xA1Ven a disfrutar de nuestras canchas de tenis, donde la diversi\xF3n y el deporte se encuentran! Aqu\xED, podr\xE1s mejorar tu t\xE9cnica, jugar un partido amistoso con amigos o simplemente pasar un buen rato en un ambiente amigable y \xFAnico.\n\n                  Nuestras instalaciones est\xE1n dise\xF1adas para todos los niveles, desde principiantes hasta jugadores experimentados. \n\n                  No importa si quieres competir o relajarte, nuestras canchas te ofrecen el espacio perfecto.\n\n                  \xA1No esperes m\xE1s y ven a servir, golpear y disfrutar del tenis en Ciudad del Saber!",
+        buttonLabel: "Ver el reglamento de uso",
         modalTitle: "Reglamentos de uso de Canchas de Tenis",
         modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
           className: "list-decimal list-inside",
@@ -21607,26 +21545,14 @@ var ContentWithVideoSection = function ContentWithVideoSection() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "¿Qué hacer un día en el parque?",
-        content: "En el parque de Ciudad del Saber, encontrarás una variedad de actividades para disfrutar. Ofrecemos opciones gratuitas y abiertas a todo el público, perfectas para compartir con tu familia, amigos e incluso tu mascota.",
-        activities: [{
-          text: "Recorre 21km de sendero en nuestra reserva forestal"
-        }, {
-          text: "Diviértete en familia en el parque para niños y niñas"
-        }, {
-          text: "Disfruta de un espacio amigable en el parque para mascotas"
-        }]
+        title: "Ten en cuenta para tu visita",
+        content: "Ten en cuenta que para aprovechar al m\xE1ximo tu visita a nuestras canchas de tenis, es importante hacer tu reserva con anticipaci\xF3n y llegar unos minutos antes para calentar adecuadamente.  <br /><br />\n                  Recuerda traer tu raqueta y pelotas, as\xED como usar ropa c\xF3moda y calzado adecuado para moverte con libertad.\n                  Adem\xE1s, respeta las normas del juego y el horario de uso para garantizar una experiencia agradable para todos los jugadores.<br /><br />\n                  \xA1Prep\xE1rate para disfrutar de un gran partido en un entorno como ning\xFAn otro!",
+        activities: []
       },
       en: {
         title: "What to do on a day at the park?",
         content: "At Ciudad del Saber Park, you'll find a variety of activities to enjoy. We offer free and open options for the public, perfect for sharing with your family, friends, and even your pet.",
-        activities: [{
-          text: "Walk 21km of trail in our forest reserve"
-        }, {
-          text: "Have fun with your family at the children's park"
-        }, {
-          text: "Enjoy a pet-friendly space at the pet park"
-        }]
+        activities: []
       }
     };
 
@@ -21694,7 +21620,7 @@ var Faq = function Faq() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        faqTitle: "Preguntas frecuentes sobre el Parque Ciudad del Saber",
+        faqTitle: "Preguntas frecuentes",
         faqItems: [{
           title: '¿Por qué a veces la luna está visible durante el día?',
           content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
@@ -21799,7 +21725,7 @@ var GallerySection = function GallerySection() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "Explora nuestra piscina",
+        title: "Revive un poco de su historia",
         carouselImages: [{
           image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           title: "Imagen 1",
@@ -21987,7 +21913,7 @@ function TenisHero() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "Cancha de Tenis",
+        title: "Cancha de tenis ",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
         schedule: "7:00 am - 9:00 pm",
@@ -22123,21 +22049,21 @@ var CampusFacilities = function CampusFacilities() {
       es: {
         title: "Facilidades del campus",
         cards: [{
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
+          svgPath: 'M240-120v-720h280q100 0 170 70t70 170q0 100-70 170t-170 70H400v240H240Zm160-400h128q33 0 56.5-23.5T608-600q0-33-23.5-56.5T528-680H400v160Z',
           fillColor: '#0088ff',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+          description: 'Estacionamiento gratis'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+          svgPath: 'M120-80v-400l63-185q8-26 30-40.5t47-14.5q8 0 16 1.5t16 5.5l166 73h102v80H440l-108-47-52 157v370H120Zm240-120v-80h480v80H360Zm420-120q-25 0-42.5-17.5T720-380q0-25 17.5-42.5T780-440q25 0 42.5 17.5T840-380q0 25-17.5 42.5T780-320Zm-260 0q-33 0-56.5-23.5T440-400v-40h-80v-80h120q17 0 28.5 11.5T520-480v40h80v-80h80v120q0 33-23.5 56.5T600-320h-80ZM320-760q-33 0-56.5-23.5T240-840q0-33 23.5-56.5T320-920q33 0 56.5 23.5T400-840q0 33-23.5 56.5T320-760Z',
+          fillColor: '#0088ff',
+          description: 'Disponibilidad de baños, vestidores, duchas y casilleros.'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+          svgPath: 'M240-120q-17 0-28.5-11.5T200-160v-82q-18-20-29-44.5T160-340v-380q0-83 77-121.5T480-880q172 0 246 37t74 123v380q0 29-11 53.5T760-242v82q0 17-11.5 28.5T720-120h-40q-17 0-28.5-11.5T640-160v-40H320v40q0 17-11.5 28.5T280-120h-40Zm242-640h224-448 224Zm158 280H240h480-80Zm-400-80h480v-120H240v120Zm100 240q25 0 42.5-17.5T400-380q0-25-17.5-42.5T340-440q-25 0-42.5 17.5T280-380q0 25 17.5 42.5T340-320Zm280 0q25 0 42.5-17.5T680-380q0-25-17.5-42.5T620-440q-25 0-42.5 17.5T560-380q0 25 17.5 42.5T620-320ZM258-760h448q-15-17-64.5-28.5T482-800q-107 0-156.5 12.5T258-760Zm62 480h320q33 0 56.5-23.5T720-360v-120H240v120q0 33 23.5 56.5T320-280Z',
+          fillColor: '#0088ff',
+          description: 'Conectado con la Terminal de Transporte de Albrook'
         }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+          svgPath: 'M280-80v-366q-51-14-85.5-56T160-600v-280h80v280h40v-280h80v280h40v-280h80v280q0 56-34.5 98T360-446v366h-80Zm400 0v-320H560v-280q0-83 58.5-141.5T760-880v800h-80Z',
+          fillColor: '#0088ff',
+          description: 'Oferta gastronómica y tiendas  para complementar tu visita.'
         }]
       },
       en: {
@@ -22222,8 +22148,8 @@ function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "Canchas de Voleibol del Parque Ciudad del Saber",
-        content: "Nuestras canchas de voleibol, tanto en tabloncillo como en arena, ofrecen un espacio excelente para entrenar \n                  y disfrutar de este deporte en un ambiente seguro y c\xF3modo.",
+        title: "¡Ven a Jugar Voleibol! Diversión y Competencia Te Esperan",
+        content: "\xA1Ven a reservar y disfruta de nuestras canchas de voleibol, el lugar perfecto para divertirte y hacer ejercicio! \n                  Ya sea que quieras organizar un partido amistoso con amigos o participar en un torneo, nuestras instalaciones est\xE1n dise\xF1adas para ofrecerte una experiencia incre\xEDble. Siente la emoci\xF3n del juego, comparte risas y desaf\xEDos en un ambiente amigable.\n                  \xA1No esperes m\xE1s, ven y eleva tu juego de voleibol con nosotros en Ciudad del Saber!",
         buttonLabel: "Descarga el reglamento de uso",
         modalTitle: "Reglamentos de uso de Canchas de Voleibol",
         modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
@@ -22358,15 +22284,9 @@ var ContentWithVideoSection = function ContentWithVideoSection() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "¿Qué hacer un día en el parque?",
-        content: "En el parque de Ciudad del Saber, encontrarás una variedad de actividades para disfrutar. Ofrecemos opciones gratuitas y abiertas a todo el público, perfectas para compartir con tu familia, amigos e incluso tu mascota.",
-        activities: [{
-          text: "Recorre 21km de sendero en nuestra reserva forestal"
-        }, {
-          text: "Diviértete en familia en el parque para niños y niñas"
-        }, {
-          text: "Disfruta de un espacio amigable en el parque para mascotas"
-        }]
+        title: "Ten en cuenta para tu visita ",
+        content: "Ten en cuenta que para disfrutar al m\xE1ximo de tu visita a nuestras canchas de voleibol, es recomendable hacer tu reserva con anticipaci\xF3n y llegar unos minutos antes para calentar y familiarizarte con el espacio. \n                  No olvides llevar tu equipo, como pelotas y calzado adecuado, para asegurarte de tener una experiencia segura y divertida. \n                  Adem\xE1s, respeta las reglas del juego y el horario asignado para que todos puedan disfrutar de su tiempo en la cancha. <br /><br />\n                  \xA1Prep\xE1rate para un gran partido lleno de energ\xEDa! ",
+        activities: []
       },
       en: {
         title: "What to do on a day at the park?",
@@ -22445,7 +22365,7 @@ var Faq = function Faq() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        faqTitle: "Preguntas frecuentes sobre el Parque Ciudad del Saber",
+        faqTitle: "Preguntas frecuentes",
         faqItems: [{
           title: '¿Por qué a veces la luna está visible durante el día?',
           content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.'
@@ -22550,7 +22470,7 @@ var GallerySection = function GallerySection() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "Explora nuestra piscina",
+        title: "Revive un poco de su historia",
         carouselImages: [{
           image: "https://plus.unsplash.com/premium_photo-1722686516461-46770349c814?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           title: "Imagen 1",
@@ -22738,7 +22658,7 @@ function VoleibolHero() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     var translations = {
       es: {
-        title: "Cancha de Voleibol",
+        title: "Canchas de voleibol ",
         subtitle: "",
         // Puedes agregar un subtítulo si lo necesitas
         schedule: "7:00 am - 9:00 pm",

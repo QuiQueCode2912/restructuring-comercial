@@ -203,37 +203,37 @@
                   </p>
               @endif
               @if(request()->is('parque-cds/baloncesto'))
-                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (baloncesto)</p>
+                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Una cancha para cada ocasión</p>
                   <p class="text-lg  md:w-3/5 py-3">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
                   </p>
               @endif
               @if(request()->is('parque-cds/golf'))
-                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (golf)</p>
+                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Golf al Aire Libre</p>
                   <p class="text-lg  md:w-3/5 py-3">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
                   </p>
               @endif
               @if(request()->is('parque-cds/raquetbol'))
-                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (raquetbol)</p>
+                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Reserva tu cancha</p>
                   <p class="text-lg  md:w-3/5 py-3">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
                   </p>
               @endif
               @if(request()->is('parque-cds/tenis'))
-                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (tenis)</p>
+                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Reserva tu cancha</p>
                   <p class="text-lg  md:w-3/5 py-3">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
                   </p>
               @endif
               @if(request()->is('parque-cds/voleibol'))
-                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (voleibol)</p>
+                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Reserva tu cancha</p>
                   <p class="text-lg  md:w-3/5 py-3">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
                   </p>
               @endif
               @if(request()->is('parque-cds/pesas'))
-                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (pesas)</p>
+                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Reserva o adquiere tu plan mensual </p>
                   <p class="text-lg  md:w-3/5 py-3">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
                   </p>
@@ -245,7 +245,7 @@
                   </p>
               @endif
               @if(request()->is('parque-cds/bohios'))
-                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar (bohios)</p>
+                  <p class="font-bold text-3xl md:text-5xl text-black md:w-3/5">Un espacio abierto: </br>Recreacion y deporte en un mismo lugar</p>
                   <p class="text-lg  md:w-3/5 py-3">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
                   </p>
@@ -348,7 +348,7 @@
                 </span>
               </small>
               @endif
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-10">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-10">
                 <?php $venueRoute = $venue; ?>
                 <?php if ($venues) : ?>
                   <?php foreach ($venues as $venue) : ?>

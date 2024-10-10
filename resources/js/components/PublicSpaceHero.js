@@ -110,19 +110,19 @@ const PublicSpaceHero = ({ title, content, buttonLabel, buttonLabel2, images }) 
           </div>
         </div>
         <div className='hidden md:absolute md:left-1/2 md:top-0 col-span-1 text-white font-bold md:grid grid-cols-2 h-[600px]'>
-          <div className='col-span-1 w-full bg-verde-habitat-accesible grid place-content-center'>
+          <div className='col-span-1 h-[300px] w-full bg-verde-habitat-accesible grid place-content-center'>
             <div>
               <p className='text-xl'>{translations[language].exploreText}</p>
               <p className='text-3xl'>{translations[language].paceText}</p>
             </div>
           </div>
-          <div className='col-span-1'>
+          <div className='col-span-1 h-[300px]'>
             <img src={images[0]} alt="Image 2" className='w-full h-full object-cover' />
           </div>
-          <div className='col-span-1'>
+          <div className='col-span-1 h-[300px]'>
             <img src={images[1]} alt="Image 3" className='w-full h-full object-cover' />
           </div>
-          <div className='col-span-1 bg-verde-habitat-accesible grid place-content-center'>
+          <div className='col-span-1 h-[300px] bg-verde-habitat-accesible grid place-content-center'>
             <div>
               <p className='text-xl'>{translations[language].familyText}</p>
               <p className='text-3xl'>{translations[language].petText}</p>
@@ -131,17 +131,17 @@ const PublicSpaceHero = ({ title, content, buttonLabel, buttonLabel2, images }) 
         </div>
       </div>
       <div className='md:col-span-1 md:hidden h-[374px] text-white font-bold grid grid-cols-2'>
-        <div className='col-span-1 bg-verde-habitat-accesible grid place-content-center'>
+        <div className='col-span-1 h-[187px] bg-verde-habitat-accesible grid place-content-center'>
           <p className='text-base'>{translations[language].exploreText}</p>
           <p className='text-xl'>{translations[language].paceText}</p>
         </div>
-        <div className='col-span-1'>
+        <div className='col-span-1 h-[187px]'>
           <img src={images[0]} alt="Image 2" className='w-full h-full object-cover' />
         </div>
-        <div className='col-span-1'>
+        <div className='col-span-1 h-[187px]'>
           <img src={images[1]} alt="Image 3" className='w-full h-full object-cover' />
         </div>
-        <div className='col-span-1 bg-verde-habitat-accesible grid place-content-center'>
+        <div className='col-span-1 h-[187px] bg-verde-habitat-accesible grid place-content-center'>
           <p className='text-base'>{translations[language].familyText}</p>
           <p className='text-xl'>{translations[language].petText}</p>
         </div>

@@ -12,7 +12,7 @@ export default function TenisHero() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     const translations = {
       es: {
-        title: "Cancha de Tenis",
+        title: "Cancha de tenis ",
         subtitle: "",  // Puedes agregar un subtítulo si lo necesitas
         schedule: "7:00 am - 9:00 pm",
         location: "C. Victor Garibaldo, Panamá",

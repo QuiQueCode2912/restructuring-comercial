@@ -11,10 +11,9 @@ export default function ContentSectionWithAnImage() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     const translations = {
       es: {
-        title: "Canchas de Baloncesto del Parque Ciudad del Saber",
-        content: `Las canchas de baloncesto del Parque Ciudad del Saber ofrecen instalaciones de alta calidad para 
-                  que disfrutes de un buen juego, tanto en la cancha techada como al aire libre.`,
-        buttonLabel: "Descarga el reglamento de uso",
+        title: "Juega, entrena y gana ",
+        content: `¡Ven y disfruta de nuestras canchas! Ya sea que busques un partido amistoso, mejorar tus habilidades o simplemente pasar un buen rato, nuestras instalaciones están listas para ti. Con espacios cómodos y bien equipados, te invitamos a compartir con amigos, entrenar y, sobre todo, divertirte. ¡Reserva tu cancha y haz que cada juego cuente!`,
+        buttonLabel: "Ver el reglamento de uso",
         modalTitle: "Reglamentos de uso de Canchas de Baloncesto",
         modalDesc: (
           <ol className="list-decimal list-inside">

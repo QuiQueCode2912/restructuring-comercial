@@ -20,14 +20,19 @@ export const NwpContentSectionWithAnImage = ({ title, content, buttonLabel, onBu
     }
   };
 
-
   return (
     <>
       <div className='md:relative nwp-padding-x-container md:h-[600px] bg-white'>
         <div className='mx-auto nwp-container grid grid-cols-1 md:grid-cols-2 md:h-full md:gap-x-8'>
           <div className='flex flex-col md:col-span-1 gap-y-4 justify-center md:h-full pb-10 md:pb-0 pt-20'>
             <h3 className='font-bold text-3xl md:text-5xl'>{title}</h3>
-            <p className='pb-2 text-lg'>{content}</p>
+            
+            {/* Usar dangerouslySetInnerHTML para procesar el contenido con etiquetas HTML */}
+            <p
+              className='pb-2 text-lg'
+              dangerouslySetInnerHTML={{ __html: content }}
+            />
+            
             {buttonLabel && 
               <button className='font-semibold text-start flex gap-x-2 items-center focus:outline-0' onClick={() => openModal(1)}>
                 {buttonLabel}

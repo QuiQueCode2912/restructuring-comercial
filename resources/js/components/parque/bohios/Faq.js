@@ -11,7 +11,7 @@ export const Faq = () => {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     const translations = {
       es: {
-        faqTitle: "Preguntas frecuentes sobre el Parque Ciudad del Saber",
+        faqTitle: "Preguntas frecuentes ",
         faqItems: [
           { title: '¿Por qué a veces la luna está visible durante el día?', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.' },
           { title: '¿Por qué el cielo es azul?', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.' },

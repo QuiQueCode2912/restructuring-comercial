@@ -13,19 +13,15 @@ export const ContentWithVideoSection = () => {
     const translations = {
       es: {
 
-        title: "¿Qué hacer un día en el parque?",
-        content: "En el parque de Ciudad del Saber, encontrarás una variedad de actividades para disfrutar. Ofrecemos opciones gratuitas y abiertas a todo el público, perfectas para compartir con tu familia, amigos e incluso tu mascota.",
-        activities: [
-          {
-            text: "Recorre 21km de sendero en nuestra reserva forestal"
-          },
-          {
-            text: "Diviértete en familia en el parque para niños y niñas"
-          },
-          {
-            text: "Disfruta de un espacio amigable en el parque para mascotas"
-          },
-        ],
+        title: "Ten en cuenta para tu visita",
+        content: `Ten en cuenta que para disfrutar al máximo de nuestras canchas, es fundamental hacer tu reserva con anticipación, ya que así aseguramos que el espacio esté disponible para ti en el momento que lo necesites.<br/><br/>
+
+                  Además, recuerda traer el equipo adecuado para la actividad que vas a realizar y respetar los horarios establecidos para el uso de las canchas.<br/><br/>
+
+                  Esto no solo garantiza que todos los usuarios puedan disfrutar de un entorno ordenado, sino que también permite mantener la calidad de nuestras instalaciones.<br/><br/>
+
+                  ¡Te esperamos para que aproveches al máximo tu tiempo de juego y entrenamiento!`,
+        activities: [],
       },
       en: {
         title: "What to do on a day at the park?",

@@ -12,7 +12,7 @@ export default function BaloncestoHero() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     const translations = {
       es: {
-        title: "Cancha de Baloncesto",
+        title: "Cancha de baloncesto",
         subtitle: "",  // Puedes agregar un subtítulo si lo necesitas
         schedule: "6:30 am - 8:00 pm",
         location: "C. Victor Garibaldo, Panamá",

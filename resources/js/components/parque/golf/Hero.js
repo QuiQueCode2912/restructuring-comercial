@@ -12,7 +12,7 @@ export default function GolfHero() {
     // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
     const translations = {
       es: {
-        title: "Cancha de Golf",
+        title: "Cancha de golf",
         subtitle: "",  // Puedes agregar un subtítulo si lo necesitas
         schedule: "7:00 am - 6:00 pm",
         location: "C. Victor Garibaldo, Panamá",
