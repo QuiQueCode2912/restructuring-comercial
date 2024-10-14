@@ -67,7 +67,6 @@ export default function ContentSectionWithAnImage() {
     <NwpContentSectionWithAnImage
       title={content.title}
       content={content.content}
-      buttonLabel={content.buttonLabel}
       modalTitle={content.modalTitle}
       modalDesc={content.modalDesc}
       onButtonClick={handleButtonClick}

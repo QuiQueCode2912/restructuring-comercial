@@ -792,6 +792,9 @@ video {
 .h-full {
   height: 100%;
 }
+.h-40 {
+  height: 10rem;
+}
 .max-h-0 {
   max-height: 0px;
 }
@@ -946,6 +949,9 @@ video {
 }
 .flex-col {
   flex-direction: column;
+}
+.flex-col-reverse {
+  flex-direction: column-reverse;
 }
 .place-content-center {
   place-content: center;
@@ -1373,6 +1379,9 @@ video {
 }
 .pt-8 {
   padding-top: 2rem;
+}
+.pt-16 {
+  padding-top: 4rem;
 }
 .text-left {
   text-align: left;
@@ -3562,6 +3571,10 @@ footer #twitter-timeline .twitter-embed-header {
     top: auto;
   }
 
+  .md\:right-1\/2 {
+    right: 50%;
+  }
+
   .md\:col-span-1 {
     grid-column: span 1 / span 1;
   }
@@ -3778,6 +3791,10 @@ footer #twitter-timeline .twitter-embed-header {
 
   .md\:pt-20 {
     padding-top: 5rem;
+  }
+
+  .md\:pt-0 {
+    padding-top: 0px;
   }
 
   .md\:text-2xl {

@@ -88,9 +88,9 @@
 
 @if(request()->is('e-108'))
     <div id="nwp-hero-la-casa"></div>
-    <div id="nwp-event-spaces-content-section-whith-an-image"></div>
-    <div id="nwp-event-spaces-gallery-section"></div>
-    <div id="nwp-event-spaces-campus-facilities"></div>
+    <div id="nwp-la-casa-content-section-whith-an-image"></div>
+    <div id="nwp-la-casa-gallery-section"></div>
+    <div id="nwp-la-casa-campus-facilities"></div>
 @endif
 @if(request()->is('ateneo'))
     <div id="nwp-ateneo-hero"></div>

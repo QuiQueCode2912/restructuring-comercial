@@ -4,124 +4,85 @@ import { useLanguage, LanguageProvider } from './context/LanguageProvider';
 
 export const FeaturedEvents = () => {
   const { language } = useLanguage();  // Acceder al idioma seleccionado
-  const [content, setContent] = useState({});  // Estado para guardar el contenido traducido
+  const [content, setContent] = useState({ title: '', cards: [] });  // Estado para guardar el contenido traducido
+  const [loading, setLoading] = useState(true);  // Para manejar el estado de carga
+
+  // Función para formatear la fecha y hora en el formato "Dom 14 abril 10:00 pm"
+  const formatDateAndTime = (date) => {
+    const eventDate = new Date(date);
+    
+    const daysOfWeek = language === 'es' 
+      ? ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb']
+      : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+    const months = language === 'es' 
+      ? ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
+      : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    const dayOfWeek = daysOfWeek[eventDate.getDay()];
+    const day = eventDate.getDate();
+    const month = months[eventDate.getMonth()];
+    
+    const optionsTime = { hour: 'numeric', minute: 'numeric', hour12: true };
+    const formattedTime = eventDate.toLocaleTimeString(language === 'es' ? 'es-ES' : 'en-US', optionsTime);
+
+    return `${dayOfWeek} ${day} ${month} ${formattedTime}`;
+  };
 
   useEffect(() => {
-    // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
-    const translations = {
-      es: {
-        title: "Eventos",
-        moreInfoText: "Reserva tu lugar",
-        cards: [
-          {
-            title: "Feroz Craft Brewery",
-            description: "Descubre sabores únicos, con amigos, después del trabajo",
-            label: "Cultura y comunidad",
-            openingTime: "7:30 PM",
-            closingTime: "9:00 PM",
-            access: "Entrada libre",
-            activity: "Degustación de cervezas artesanales",
-            organizer: "Cervecería Feroz",
-            dateAndTime: "Fecha y hora", // Agregado
-            accessText: "Acceso", // Agregado
-            activityText: "Actividad", // Agregado
-            organizerText: "Organizado por", // Agregado
-            imageUrl: "https://images.unsplash.com/photo-1663622438610-00a72c139d8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            link: "#"
-          },
-          {
-            title: "Clayton Bowling",
-            description: "Regresa en el tiempo y diviértete con familia y amigos",
-            label: "Cultura y comunidad",
-            openingTime: "7:30 PM",
-            closingTime: "9:00 PM",
-            access: "Entrada con reserva",
-            activity: "Juego de bolos clásico",
-            organizer: "Bowling de Clayton",
-            dateAndTime: "Fecha y hora", // Agregado
-            accessText: "Acceso", // Agregado
-            activityText: "Actividad", // Agregado
-            organizerText: "Organizado por", // Agregado
-            imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            link: "#"
-          },
-          {
-            title: "Noche Retro",
-            description: "Viaja al pasado con música y entretenimiento clásico",
-            label: "Cultura y comunidad",
-            openingTime: "8:00 PM",
-            closingTime: "11:00 PM",
-            access: "Entrada con boletos",
-            activity: "Fiesta temática retro",
-            organizer: "Club Retro",
-            dateAndTime: "Fecha y hora", // Agregado
-            accessText: "Acceso", // Agregado
-            activityText: "Actividad", // Agregado
-            organizerText: "Organizado por", // Agregado
-            imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            link: "#"
-          }
-        ]
-      },
-      en: {
-        title: "Events",
-        moreInfoText: "Learn more",
-        cards: [
-          {
-            title: "Feroz Craft Brewery",
-            description: "Discover unique flavors, with friends, after work",
-            label: "Cultura y comunidad",
-            openingTime: "7:30 PM",
-            closingTime: "9:00 PM",
-            access: "Free entrance",
-            activity: "Craft beer tasting",
-            organizer: "Feroz Brewery",
-            dateAndTime: "Date and time", // Agregado
-            accessText: "Access", // Agregado
-            activityText: "Activity", // Agregado
-            organizerText: "Organized by", // Agregado
-            imageUrl: "https://images.unsplash.com/photo-1663622438610-00a72c139d8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            link: "#"
-          },
-          {
-            title: "Clayton Bowling",
-            description: "Step back in time and have fun with family and friends",
-            label: "Cultura y comunidad",
-            openingTime: "7:30 PM",
-            closingTime: "9:00 PM",
-            access: "Reservation required",
-            activity: "Classic bowling game",
-            organizer: "Clayton Bowling",
-            dateAndTime: "Date and time", // Agregado
-            accessText: "Access", // Agregado
-            activityText: "Activity", // Agregado
-            organizerText: "Organized by", // Agregado
-            imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            link: "#"
-          },
-          {
-            title: "Retro Night",
-            description: "Travel back in time with classic music and entertainment",
-            label: "Cultura y comunidad",
-            openingTime: "8:00 PM",
-            closingTime: "11:00 PM",
-            access: "Ticketed entrance",
-            activity: "Retro-themed party",
-            organizer: "Retro Club",
-            dateAndTime: "Date and time", // Agregado
-            accessText: "Access", // Agregado
-            activityText: "Activity", // Agregado
-            organizerText: "Organized by", // Agregado
-            imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            link: "#"
-          }
-        ]
+    // Seleccionar la URL correcta basada en el idioma
+    const apiUrl = language === 'es'
+      ? 'https://backend-newsite.ciudaddelsaber.org/api/events?locale=es&populate[event_type]=tag&populate[eventOrganizer]=displayName&populate[image]=url&fields[0]=title&fields[1]=slug&fields[2]=startDate&fields[3]=endDate&fields[4]=eventValue'
+      : 'https://backend-newsite.ciudaddelsaber.org/api/events?locale=en&populate[event_type]=tag&populate[eventOrganizer]=displayName&populate[image]=url&fields[0]=title&fields[1]=slug&fields[2]=startDate&fields[3]=endDate&fields[4]=eventValue';
+
+    // Función para obtener los eventos desde la API
+    const fetchEvents = async () => {
+      try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        
+        // Procesar los datos de la API
+        let events = data.data.map(event => ({
+          title: event.attributes.title,
+          description: '',  // Placeholder para descripción
+          label: event.attributes.event_type?.data?.attributes?.tag || 'Sin categoría',
+          openingTime: formatDateAndTime(event.attributes.startDate),
+          closingTime: formatDateAndTime(event.attributes.endDate),
+          access: event.attributes.eventValue || 'No especificado',
+          activity: 'Actividad del evento',  // Placeholder, depende del dato que quieras mostrar
+          organizer: event.attributes.eventOrganizer.displayName,
+          dateAndTime: language === 'es' ? 'Fecha y hora' : 'Date and time',
+          accessText: language === 'es' ? 'Acceso' : 'Access',
+          activityText: language === 'es' ? 'Actividad' : 'Activity',
+          organizerText: language === 'es' ? 'Organizado por' : 'Organized by',
+          imageUrl: `https://backend-newsite.ciudaddelsaber.org${event.attributes.image?.data?.attributes?.url}` || 'default-image-url',
+          link: `https://frontend-newsite.ciudaddelsaber.org/eventos/${event.attributes.slug}`,  // Puedes configurar el enlace adecuado aquí
+        }));
+
+        console.log(events);
+
+        // Mostrar solo los 3 últimos eventos
+        events = events.slice(-3);
+
+        // Establecer los datos traducidos en el estado
+        setContent({
+          title: language === 'es' ? 'Eventos' : 'Events',
+          moreInfoText: language === 'es' ? 'Reserva tu lugar' : 'Learn more',
+          cards: events
+        });
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching events:', error);
+        setLoading(false);
       }
     };
 
-    // Actualizar el estado con el contenido traducido
-    setContent(translations[language]);
+    fetchEvents();
   }, [language]);  // Dependencia en el idioma
+
+  if (loading) {
+    return <div>Loading...</div>;  // Mostrar un mensaje de carga mientras se obtienen los datos
+  }
 
   return (
     <div className='nwp-padding-x-container bg-white pb-20'>
@@ -142,7 +103,7 @@ export const FeaturedEvents = () => {
                   </div>
                   <div className='flex flex-col gap-y-2'>
                     <p className='text-2xl font-bold'>{card.title}</p>
-                    <p className='text-base'>{card.dateAndTime}: <span className='font-semibold'>{card.openingTime} - {card.closingTime}</span></p>
+                    <p className='text-base'>{card.dateAndTime}: <span className='font-semibold'>{card.openingTime}</span></p>
                     <p className='text-base'>{card.accessText}: <span className='font-semibold'>{card.access}</span></p>
                     <p className='text-base'>{card.activityText}: <span className='font-semibold'>{card.activity}</span></p>
                     <p className='text-base'>{card.organizerText}: <span className='font-semibold'>{card.organizer}</span></p>
@@ -161,7 +122,7 @@ export const FeaturedEvents = () => {
       </div>
     </div>
   );
-}
+};
 
 const container = document.getElementById('nwp-featured-events');
 if (container){

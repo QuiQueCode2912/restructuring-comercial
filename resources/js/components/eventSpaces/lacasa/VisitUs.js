@@ -12,15 +12,15 @@ const VisitUs = () => {
     <>
       <div className='md:relative'>
         <div className="nwp-padding-x-container">
-          <div className='nwp-container mx-auto flex flex-col md:flex-row h-[600px]'>
+          <div className='nwp-container mx-auto flex flex-col-reverse justify-between md:flex-row h-[600px]'>
             {/* Mapa */}
-            <div className="absolute right-1/2 w-1/2">
+            <div className="md:absolute h-60 md:h-full  md:right-1/2 w-full md:w-1/2">
               <GoogleMap placeMap={placeMap} />
             </div>
-            <div className='md:w-1/2'></div>
+            <div className='hidden md:block md:w-1/2'></div>
             {/* Información de Visítanos */}
             <div className="w-full md:w-1/2 flex flex-col items-start justify-center md:px-8 md:gap-y-8">
-              <h1 className="text-3xl md:text-5xl font-bold">¡Visítanos!</h1>
+              <h1 className="text-3xl md:text-5xl font-bold pt-16 md:pt-0">¡Visítanos!</h1>
               <p className="text-lg">
                 <span className="font-semibold">Ubicación: <br></br></span> Fundación Ciudad del Saber, edificio 104, calle Luis Bonilla, Ciudad del Saber, Clayton, Panamá.
               </p>

@@ -2402,6 +2402,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./context/LanguageProvider */ "./resources/js/components/context/LanguageProvider.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -2415,144 +2419,113 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 var FeaturedEvents = function FeaturedEvents() {
   var _useLanguage = (0,_context_LanguageProvider__WEBPACK_IMPORTED_MODULE_2__.useLanguage)(),
     language = _useLanguage.language; // Acceder al idioma seleccionado
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      title: '',
+      cards: []
+    }),
     _useState2 = _slicedToArray(_useState, 2),
     content = _useState2[0],
     setContent = _useState2[1]; // Estado para guardar el contenido traducido
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+    _useState4 = _slicedToArray(_useState3, 2),
+    loading = _useState4[0],
+    setLoading = _useState4[1]; // Para manejar el estado de carga
 
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    // Definir los textos en ambos idiomas dentro del useEffect para actualizar cuando el idioma cambie
-    var translations = {
-      es: {
-        title: "Eventos",
-        moreInfoText: "Reserva tu lugar",
-        cards: [{
-          title: "Feroz Craft Brewery",
-          description: "Descubre sabores únicos, con amigos, después del trabajo",
-          label: "Cultura y comunidad",
-          openingTime: "7:30 PM",
-          closingTime: "9:00 PM",
-          access: "Entrada libre",
-          activity: "Degustación de cervezas artesanales",
-          organizer: "Cervecería Feroz",
-          dateAndTime: "Fecha y hora",
-          // Agregado
-          accessText: "Acceso",
-          // Agregado
-          activityText: "Actividad",
-          // Agregado
-          organizerText: "Organizado por",
-          // Agregado
-          imageUrl: "https://images.unsplash.com/photo-1663622438610-00a72c139d8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          link: "#"
-        }, {
-          title: "Clayton Bowling",
-          description: "Regresa en el tiempo y diviértete con familia y amigos",
-          label: "Cultura y comunidad",
-          openingTime: "7:30 PM",
-          closingTime: "9:00 PM",
-          access: "Entrada con reserva",
-          activity: "Juego de bolos clásico",
-          organizer: "Bowling de Clayton",
-          dateAndTime: "Fecha y hora",
-          // Agregado
-          accessText: "Acceso",
-          // Agregado
-          activityText: "Actividad",
-          // Agregado
-          organizerText: "Organizado por",
-          // Agregado
-          imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          link: "#"
-        }, {
-          title: "Noche Retro",
-          description: "Viaja al pasado con música y entretenimiento clásico",
-          label: "Cultura y comunidad",
-          openingTime: "8:00 PM",
-          closingTime: "11:00 PM",
-          access: "Entrada con boletos",
-          activity: "Fiesta temática retro",
-          organizer: "Club Retro",
-          dateAndTime: "Fecha y hora",
-          // Agregado
-          accessText: "Acceso",
-          // Agregado
-          activityText: "Actividad",
-          // Agregado
-          organizerText: "Organizado por",
-          // Agregado
-          imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          link: "#"
-        }]
-      },
-      en: {
-        title: "Events",
-        moreInfoText: "Learn more",
-        cards: [{
-          title: "Feroz Craft Brewery",
-          description: "Discover unique flavors, with friends, after work",
-          label: "Cultura y comunidad",
-          openingTime: "7:30 PM",
-          closingTime: "9:00 PM",
-          access: "Free entrance",
-          activity: "Craft beer tasting",
-          organizer: "Feroz Brewery",
-          dateAndTime: "Date and time",
-          // Agregado
-          accessText: "Access",
-          // Agregado
-          activityText: "Activity",
-          // Agregado
-          organizerText: "Organized by",
-          // Agregado
-          imageUrl: "https://images.unsplash.com/photo-1663622438610-00a72c139d8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          link: "#"
-        }, {
-          title: "Clayton Bowling",
-          description: "Step back in time and have fun with family and friends",
-          label: "Cultura y comunidad",
-          openingTime: "7:30 PM",
-          closingTime: "9:00 PM",
-          access: "Reservation required",
-          activity: "Classic bowling game",
-          organizer: "Clayton Bowling",
-          dateAndTime: "Date and time",
-          // Agregado
-          accessText: "Access",
-          // Agregado
-          activityText: "Activity",
-          // Agregado
-          organizerText: "Organized by",
-          // Agregado
-          imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          link: "#"
-        }, {
-          title: "Retro Night",
-          description: "Travel back in time with classic music and entertainment",
-          label: "Cultura y comunidad",
-          openingTime: "8:00 PM",
-          closingTime: "11:00 PM",
-          access: "Ticketed entrance",
-          activity: "Retro-themed party",
-          organizer: "Retro Club",
-          dateAndTime: "Date and time",
-          // Agregado
-          accessText: "Access",
-          // Agregado
-          activityText: "Activity",
-          // Agregado
-          organizerText: "Organized by",
-          // Agregado
-          imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          link: "#"
-        }]
-      }
+  // Función para formatear la fecha y hora en el formato "Dom 14 abril 10:00 pm"
+  var formatDateAndTime = function formatDateAndTime(date) {
+    var eventDate = new Date(date);
+    var daysOfWeek = language === 'es' ? ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'] : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    var months = language === 'es' ? ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'] : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    var dayOfWeek = daysOfWeek[eventDate.getDay()];
+    var day = eventDate.getDate();
+    var month = months[eventDate.getMonth()];
+    var optionsTime = {
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: true
     };
+    var formattedTime = eventDate.toLocaleTimeString(language === 'es' ? 'es-ES' : 'en-US', optionsTime);
+    return "".concat(dayOfWeek, " ").concat(day, " ").concat(month, " ").concat(formattedTime);
+  };
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Seleccionar la URL correcta basada en el idioma
+    var apiUrl = language === 'es' ? 'https://backend-newsite.ciudaddelsaber.org/api/events?locale=es&populate[event_type]=tag&populate[eventOrganizer]=displayName&populate[image]=url&fields[0]=title&fields[1]=slug&fields[2]=startDate&fields[3]=endDate&fields[4]=eventValue' : 'https://backend-newsite.ciudaddelsaber.org/api/events?locale=en&populate[event_type]=tag&populate[eventOrganizer]=displayName&populate[image]=url&fields[0]=title&fields[1]=slug&fields[2]=startDate&fields[3]=endDate&fields[4]=eventValue';
 
-    // Actualizar el estado con el contenido traducido
-    setContent(translations[language]);
+    // Función para obtener los eventos desde la API
+    var fetchEvents = /*#__PURE__*/function () {
+      var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+        var response, data, events;
+        return _regeneratorRuntime().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              _context.prev = 0;
+              _context.next = 3;
+              return fetch(apiUrl);
+            case 3:
+              response = _context.sent;
+              _context.next = 6;
+              return response.json();
+            case 6:
+              data = _context.sent;
+              // Procesar los datos de la API
+              events = data.data.map(function (event) {
+                var _event$attributes$eve, _event$attributes$ima;
+                return {
+                  title: event.attributes.title,
+                  description: '',
+                  // Placeholder para descripción
+                  label: ((_event$attributes$eve = event.attributes.event_type) === null || _event$attributes$eve === void 0 || (_event$attributes$eve = _event$attributes$eve.data) === null || _event$attributes$eve === void 0 || (_event$attributes$eve = _event$attributes$eve.attributes) === null || _event$attributes$eve === void 0 ? void 0 : _event$attributes$eve.tag) || 'Sin categoría',
+                  openingTime: formatDateAndTime(event.attributes.startDate),
+                  closingTime: formatDateAndTime(event.attributes.endDate),
+                  access: event.attributes.eventValue || 'No especificado',
+                  activity: 'Actividad del evento',
+                  // Placeholder, depende del dato que quieras mostrar
+                  organizer: event.attributes.eventOrganizer.displayName,
+                  dateAndTime: language === 'es' ? 'Fecha y hora' : 'Date and time',
+                  accessText: language === 'es' ? 'Acceso' : 'Access',
+                  activityText: language === 'es' ? 'Actividad' : 'Activity',
+                  organizerText: language === 'es' ? 'Organizado por' : 'Organized by',
+                  imageUrl: "https://backend-newsite.ciudaddelsaber.org".concat((_event$attributes$ima = event.attributes.image) === null || _event$attributes$ima === void 0 || (_event$attributes$ima = _event$attributes$ima.data) === null || _event$attributes$ima === void 0 || (_event$attributes$ima = _event$attributes$ima.attributes) === null || _event$attributes$ima === void 0 ? void 0 : _event$attributes$ima.url) || 0,
+                  link: "https://frontend-newsite.ciudaddelsaber.org/eventos/".concat(event.attributes.slug) // Puedes configurar el enlace adecuado aquí
+                };
+              });
+              console.log(events);
+
+              // Mostrar solo los 3 últimos eventos
+              events = events.slice(-3);
+
+              // Establecer los datos traducidos en el estado
+              setContent({
+                title: language === 'es' ? 'Eventos' : 'Events',
+                moreInfoText: language === 'es' ? 'Reserva tu lugar' : 'Learn more',
+                cards: events
+              });
+              setLoading(false);
+              _context.next = 18;
+              break;
+            case 14:
+              _context.prev = 14;
+              _context.t0 = _context["catch"](0);
+              console.error('Error fetching events:', _context.t0);
+              setLoading(false);
+            case 18:
+            case "end":
+              return _context.stop();
+          }
+        }, _callee, null, [[0, 14]]);
+      }));
+      return function fetchEvents() {
+        return _ref.apply(this, arguments);
+      };
+    }();
+    fetchEvents();
   }, [language]); // Dependencia en el idioma
 
+  if (loading) {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      children: "Loading..."
+    }); // Mostrar un mensaje de carga mientras se obtienen los datos
+  }
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
     className: "nwp-padding-x-container bg-white pb-20",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
@@ -2588,9 +2561,9 @@ var FeaturedEvents = function FeaturedEvents() {
                     children: card.title
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
                     className: "text-base",
-                    children: [card.dateAndTime, ": ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
+                    children: [card.dateAndTime, ": ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
                       className: "font-semibold",
-                      children: [card.openingTime, " - ", card.closingTime]
+                      children: card.openingTime
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
                     className: "text-base",
@@ -5155,7 +5128,6 @@ function ContentSectionWithAnImage() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NwpContentSectionWithAnImage__WEBPACK_IMPORTED_MODULE_2__.NwpContentSectionWithAnImage, {
     title: content.title,
     content: content.content,
-    buttonLabel: content.buttonLabel,
     modalTitle: content.modalTitle,
     modalDesc: content.modalDesc,
     onButtonClick: handleButtonClick,
@@ -5894,7 +5866,6 @@ function ContentSectionWithAnImage() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NwpContentSectionWithAnImage__WEBPACK_IMPORTED_MODULE_2__.NwpContentSectionWithAnImage, {
     title: content.title,
     content: content.content,
-    buttonLabel: content.buttonLabel,
     modalTitle: content.modalTitle,
     modalDesc: content.modalDesc,
     onButtonClick: handleButtonClick,
@@ -6633,7 +6604,6 @@ function ContentSectionWithAnImage() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NwpContentSectionWithAnImage__WEBPACK_IMPORTED_MODULE_2__.NwpContentSectionWithAnImage, {
     title: content.title,
     content: content.content,
-    buttonLabel: content.buttonLabel,
     modalTitle: content.modalTitle,
     modalDesc: content.modalDesc,
     onButtonClick: handleButtonClick,
@@ -7372,7 +7342,6 @@ function ContentSectionWithAnImage() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NwpContentSectionWithAnImage__WEBPACK_IMPORTED_MODULE_2__.NwpContentSectionWithAnImage, {
     title: content.title,
     content: content.content,
-    buttonLabel: content.buttonLabel,
     modalTitle: content.modalTitle,
     modalDesc: content.modalDesc,
     onButtonClick: handleButtonClick,
@@ -8111,7 +8080,6 @@ function ContentSectionWithAnImage() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NwpContentSectionWithAnImage__WEBPACK_IMPORTED_MODULE_2__.NwpContentSectionWithAnImage, {
     title: content.title,
     content: content.content,
-    buttonLabel: content.buttonLabel,
     modalTitle: content.modalTitle,
     modalDesc: content.modalDesc,
     onButtonClick: handleButtonClick,
@@ -8850,7 +8818,6 @@ function ContentSectionWithAnImage() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NwpContentSectionWithAnImage__WEBPACK_IMPORTED_MODULE_2__.NwpContentSectionWithAnImage, {
     title: content.title,
     content: content.content,
-    buttonLabel: content.buttonLabel,
     modalTitle: content.modalTitle,
     modalDesc: content.modalDesc,
     onButtonClick: handleButtonClick,
@@ -9589,7 +9556,6 @@ function ContentSectionWithAnImage() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NwpContentSectionWithAnImage__WEBPACK_IMPORTED_MODULE_2__.NwpContentSectionWithAnImage, {
     title: content.title,
     content: content.content,
-    buttonLabel: content.buttonLabel,
     modalTitle: content.modalTitle,
     modalDesc: content.modalDesc,
     onButtonClick: handleButtonClick,
@@ -10328,7 +10294,6 @@ function ContentSectionWithAnImage() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NwpContentSectionWithAnImage__WEBPACK_IMPORTED_MODULE_2__.NwpContentSectionWithAnImage, {
     title: content.title,
     content: content.content,
-    buttonLabel: content.buttonLabel,
     modalTitle: content.modalTitle,
     modalDesc: content.modalDesc,
     onButtonClick: handleButtonClick,
@@ -10892,14 +10857,6 @@ var CampusFacilities = function CampusFacilities() {
           svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
           fillColor: '#ff8800',
           description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
-        }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
-        }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
         }]
       },
       en: {
@@ -10908,14 +10865,6 @@ var CampusFacilities = function CampusFacilities() {
           svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
           fillColor: '#0088ff',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-        }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
-        }, {
-          svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
-          fillColor: '#ff8800',
-          description: 'Ut enim ad minim veniam, quis nostrud exercitation.'
         }, {
           svgPath: 'M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z',
           fillColor: '#ff8800',
@@ -10996,64 +10945,14 @@ function ContentSectionWithAnImage() {
         content: "Las Aulas 105 est\xE1n pensadas para realizar actividades de negocios y formaci\xF3n acad\xE9mica, adem\xE1s de ofrecer capacitaciones originadas por institutos de educaci\xF3n superior, entidades gubernamentales, organismos internacionales y empresas.",
         buttonLabel: "Ver el folleto",
         modalTitle: "Reglamentos de uso de Canchas de Voleibol",
-        modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
-          className: "list-decimal list-inside",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-            children: "En la cancha de tabloncillo s\xF3lo se permite calzado con suela de goma."
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-            children: "En la cancha de arena debe utilizar calzado deportivo."
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-            children: "No se permite quitarse la camisa dentro de la instalaci\xF3n."
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-            children: "En la cancha de tabloncillo s\xF3lo pueden estar los 12 jugadores dentro de la cancha al momento del partido."
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-            children: "En la cancha de arena s\xF3lo pueden estar los 4 jugadores dentro de la cancha al momento del partido."
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-            children: "El uso de la cancha es exclusivo solamente para jugar voleibol."
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-            children: "Se proh\xEDbe mover, guindarse y manipular la red."
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-            children: "Est\xE1 prohibido el consumo de alimentos, salvo agua o bebidas hidratantes."
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-            children: "No est\xE1n permitidos los envases sin tapa o de vidrio."
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-            children: "Se permite reproducir m\xFAsica a bajo volumen, de manera que no incomodes o afectes el entrenamiento de las dem\xE1s personas."
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-            children: "Cada persona usa estas instalaciones bajo su propia responsabilidad, teniendo en cuenta sus condiciones y limitaciones f\xEDsicas y de salud."
-          })]
-        })
+        modalDesc: ""
       },
       en: {
         title: "Volleyball Courts at Ciudad del Saber Park",
         content: "Our volleyball courts, both indoor and sand, provide an excellent space for training \n                  and enjoying the sport in a safe and comfortable environment.",
         buttonLabel: "Download the usage rules",
         modalTitle: "Volleyball Court Usage Rules",
-        modalDesc: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ol", {
-          className: "list-decimal list-inside",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-            children: "Only rubber-soled shoes are allowed on the indoor court."
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-            children: "Sports shoes must be worn on the sand court."
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-            children: "Removing your shirt inside the facility is not allowed."
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-            children: "Only 12 players are allowed on the indoor court during the game."
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-            children: "Only 4 players are allowed on the sand court during the game."
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-            children: "The court is exclusively for playing volleyball."
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-            children: "Moving, hanging on, or manipulating the net is prohibited."
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-            children: "The consumption of food is prohibited, except for water or sports drinks."
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-            children: "Unsealed or glass containers are not allowed."
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-            children: "Music may be played at a low volume, ensuring it does not disturb or affect others' training."
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-            children: "Each person uses these facilities at their own risk, taking into account their physical and health conditions and limitations."
-          })]
-        })
+        modalDesc: ""
       }
     };
 
@@ -11067,7 +10966,6 @@ function ContentSectionWithAnImage() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NwpContentSectionWithAnImage__WEBPACK_IMPORTED_MODULE_2__.NwpContentSectionWithAnImage, {
     title: content.title,
     content: content.content,
-    buttonLabel: content.buttonLabel,
     modalTitle: content.modalTitle,
     modalDesc: content.modalDesc,
     onButtonClick: handleButtonClick,
@@ -11376,18 +11274,18 @@ var VisitUs = function VisitUs() {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "nwp-padding-x-container",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "nwp-container mx-auto flex flex-col md:flex-row h-[600px]",
+          className: "nwp-container mx-auto flex flex-col-reverse justify-between md:flex-row h-[600px]",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "absolute right-1/2 w-1/2",
+            className: "md:absolute h-60 md:h-full  md:right-1/2 w-full md:w-1/2",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_GoogleMap__WEBPACK_IMPORTED_MODULE_1__.GoogleMap, {
               placeMap: placeMap
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "md:w-1/2"
+            className: "hidden md:block md:w-1/2"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
             className: "w-full md:w-1/2 flex flex-col items-start justify-center md:px-8 md:gap-y-8",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
-              className: "text-3xl md:text-5xl font-bold",
+              className: "text-3xl md:text-5xl font-bold pt-16 md:pt-0",
               children: "\xA1Vis\xEDtanos!"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
               className: "text-lg",
@@ -11806,7 +11704,6 @@ function ContentSectionWithAnImage() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NwpContentSectionWithAnImage__WEBPACK_IMPORTED_MODULE_2__.NwpContentSectionWithAnImage, {
     title: content.title,
     content: content.content,
-    buttonLabel: content.buttonLabel,
     modalTitle: content.modalTitle,
     modalDesc: content.modalDesc,
     onButtonClick: handleButtonClick,
