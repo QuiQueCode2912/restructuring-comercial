@@ -17,7 +17,7 @@ export const NwpGallerySection = ({ backgroundImage, title, carouselImages }) =>
         <div className="swiper-container">
           <Swiper
             effect={'coverflow'}
-            grabCursor={false}
+            grabCursor={true}
             centeredSlides={true}
             slidesPerView={'auto'}
             coverflowEffect={{
@@ -27,7 +27,7 @@ export const NwpGallerySection = ({ backgroundImage, title, carouselImages }) =>
               modifier: 2,
               slideShadows: false,
             }}
-            pagination={false}
+            pagination={true}
             modules={[EffectCoverflow, Pagination]} // Asegúrate de incluir los módulos
             breakpoints={{
               // Configuración para pantallas pequeñas

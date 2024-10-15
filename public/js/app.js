@@ -3057,16 +3057,62 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var GoogleMap = function GoogleMap(_ref) {
-  var placeMap = _ref.placeMap;
+  var placeMap = _ref.placeMap,
+    title = _ref.title,
+    description = _ref.description,
+    contactEmail = _ref.contactEmail,
+    buttonUrl = _ref.buttonUrl;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("section", {
-    className: "relative flex flex-col lg:flex-row items-center h-full w-full",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("iframe", {
-      src: placeMap,
-      width: "100%",
-      height: "600",
-      allowFullScreen: false,
-      loading: "lazy",
-      referrerPolicy: "no-referrer-when-downgrade"
+    className: "relative nwp-padding-x-container  ",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "mx-auto nwp-container flex",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "md:w-1/2",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("iframe", {
+          src: placeMap,
+          width: "100%",
+          height: "600",
+          allowFullScreen: false,
+          loading: "lazy",
+          referrerPolicy: "no-referrer-when-downgrade"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "w-full  md:w-1/2 flex flex-col items-start justify-center lg:px-8 lg:gap-y-8 p-4",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+          className: "text-3xl lg:text-5xl font-bold pt-16 lg:pt-0",
+          children: title
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          className: "text-lg",
+          children: description
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
+          className: "text-lg",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+            className: "font-semibold",
+            children: "Contacto: "
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+            href: "mailto:".concat(contactEmail),
+            className: "text-blue-500 hover:underline",
+            children: contactEmail
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+          href: buttonUrl,
+          className: "flex gap-x-2 font-semibold text-lg items-center hover:no-underline hover:text-cdsblue duration-150 transition-all",
+          target: "_blank",
+          children: ["Conoce c\xF3mo llegar", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "h-8 w-8 bg-cdsblue rounded-full grid place-content-center",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+              xmlns: "http://www.w3.org/2000/svg",
+              height: "24px",
+              viewBox: "0 -960 960 960",
+              width: "32px",
+              fill: "#e8eaed",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                d: "M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z"
+              })
+            })
+          })]
+        })]
+      })]
     })
   });
 };
@@ -3606,7 +3652,7 @@ var NwpGallerySection = function NwpGallerySection(_ref) {
         className: "swiper-container",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_1__.Swiper, {
           effect: 'coverflow',
-          grabCursor: false,
+          grabCursor: true,
           centeredSlides: true,
           slidesPerView: 'auto',
           coverflowEffect: {
@@ -3616,7 +3662,7 @@ var NwpGallerySection = function NwpGallerySection(_ref) {
             modifier: 2,
             slideShadows: false
           },
-          pagination: false,
+          pagination: true,
           modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.EffectCoverflow, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Pagination] // Asegúrate de incluir los módulos
           ,
           breakpoints: {
@@ -5430,63 +5476,15 @@ __webpack_require__.r(__webpack_exports__);
 var VisitUs = function VisitUs() {
   var placeMap = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.7091297978693!2d-79.5939517!3d9.0001067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca7b0a46a3bd1%3A0x93b801d16c74cc5c!2sCiudad%20del%20Saber!5e0!3m2!1sen!2spa!4v1694723436887!5m2!1sen!2spa';
   var buttonUrl = 'https://www.google.com/maps/place/Cd+del+Saber,+Panam%C3%A1,+Provincia+de+Panam%C3%A1/@9.0050237,-79.5931363,15z/data=!4m6!3m5!1s0x8faca7b0a46a3bd1:0x93b801d16c74cc5c!8m2!3d9.0014031!4d-79.5814145!16zL20vMDk1dzc0?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D';
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "md:relative",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "nwp-padding-x-container",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "nwp-container mx-auto flex flex-col md:flex-row h-[600px]",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "absolute right-1/2 w-1/2",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_GoogleMap__WEBPACK_IMPORTED_MODULE_1__.GoogleMap, {
-              placeMap: placeMap
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "md:w-1/2"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-            className: "w-full md:w-1/2 flex flex-col items-start justify-center md:px-8 md:gap-y-8",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
-              className: "text-3xl md:text-5xl font-bold",
-              children: "\xA1Vis\xEDtanos! ateneo"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
-              className: "text-lg",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
-                className: "font-semibold",
-                children: ["Ubicaci\xF3n: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {})]
-              }), " Fundaci\xF3n Ciudad del Saber, edificio 104, calle Luis Bonilla, Ciudad del Saber, Clayton, Panam\xE1."]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
-              className: "text-lg",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-                className: "font-semibold",
-                children: "Contacto: "
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
-                href: "mailto:ciudaddelsaber@cdspanama.org",
-                className: "text-blue-500 hover:underline",
-                children: "ciudaddelsaber@cdspanama.org"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
-              href: buttonUrl,
-              "class": "flex gap-x-2 font-semibold text-lg items-center hover:no-underline hover:text-cdsblue duration-150 transition-all",
-              target: "_blank",
-              children: ["Conoce c\xF3mo llegar", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                "class": "h-8 w-8 bg-cdsblue rounded-full grid place-content-center",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
-                  xmlns: "http://www.w3.org/2000/svg",
-                  height: "24px",
-                  viewBox: "0 -960 960 960",
-                  width: "32px",
-                  fill: "#e8eaed",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
-                    d: "M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z"
-                  })
-                })
-              })]
-            })]
-          })]
-        })
-      })
-    })
+  var title = '¡Visítanos!';
+  var description = 'Ubicación: Fundación Ciudad del Saber, edificio 104, calle Luis Bonilla, Ciudad del Saber, Clayton, Panamá.';
+  var contactEmail = 'ciudaddelsaber@cdspanama.org';
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_GoogleMap__WEBPACK_IMPORTED_MODULE_1__.GoogleMap, {
+    placeMap: placeMap,
+    title: title,
+    description: description,
+    contactEmail: contactEmail,
+    buttonUrl: buttonUrl
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (VisitUs);
@@ -6168,63 +6166,15 @@ __webpack_require__.r(__webpack_exports__);
 var VisitUs = function VisitUs() {
   var placeMap = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.7091297978693!2d-79.5939517!3d9.0001067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca7b0a46a3bd1%3A0x93b801d16c74cc5c!2sCiudad%20del%20Saber!5e0!3m2!1sen!2spa!4v1694723436887!5m2!1sen!2spa';
   var buttonUrl = 'https://www.google.com/maps/place/Cd+del+Saber,+Panam%C3%A1,+Provincia+de+Panam%C3%A1/@9.0050237,-79.5931363,15z/data=!4m6!3m5!1s0x8faca7b0a46a3bd1:0x93b801d16c74cc5c!8m2!3d9.0014031!4d-79.5814145!16zL20vMDk1dzc0?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D';
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "md:relative",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "nwp-padding-x-container",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "nwp-container mx-auto flex flex-col md:flex-row h-[600px]",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "absolute right-1/2 w-1/2",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_GoogleMap__WEBPACK_IMPORTED_MODULE_1__.GoogleMap, {
-              placeMap: placeMap
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "md:w-1/2"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-            className: "w-full md:w-1/2 flex flex-col items-start justify-center md:px-8 md:gap-y-8",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
-              className: "text-3xl md:text-5xl font-bold",
-              children: "\xA1Vis\xEDtanos! ateneo"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
-              className: "text-lg",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
-                className: "font-semibold",
-                children: ["Ubicaci\xF3n: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {})]
-              }), " Fundaci\xF3n Ciudad del Saber, edificio 104, calle Luis Bonilla, Ciudad del Saber, Clayton, Panam\xE1."]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
-              className: "text-lg",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-                className: "font-semibold",
-                children: "Contacto: "
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
-                href: "mailto:ciudaddelsaber@cdspanama.org",
-                className: "text-blue-500 hover:underline",
-                children: "ciudaddelsaber@cdspanama.org"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
-              href: buttonUrl,
-              "class": "flex gap-x-2 font-semibold text-lg items-center hover:no-underline hover:text-cdsblue duration-150 transition-all",
-              target: "_blank",
-              children: ["Conoce c\xF3mo llegar", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                "class": "h-8 w-8 bg-cdsblue rounded-full grid place-content-center",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
-                  xmlns: "http://www.w3.org/2000/svg",
-                  height: "24px",
-                  viewBox: "0 -960 960 960",
-                  width: "32px",
-                  fill: "#e8eaed",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
-                    d: "M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z"
-                  })
-                })
-              })]
-            })]
-          })]
-        })
-      })
-    })
+  var title = '¡Visítanos!';
+  var description = 'Ubicación: Fundación Ciudad del Saber, edificio 104, calle Luis Bonilla, Ciudad del Saber, Clayton, Panamá.';
+  var contactEmail = 'ciudaddelsaber@cdspanama.org';
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_GoogleMap__WEBPACK_IMPORTED_MODULE_1__.GoogleMap, {
+    placeMap: placeMap,
+    title: title,
+    description: description,
+    contactEmail: contactEmail,
+    buttonUrl: buttonUrl
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (VisitUs);
@@ -6906,63 +6856,15 @@ __webpack_require__.r(__webpack_exports__);
 var VisitUs = function VisitUs() {
   var placeMap = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.7091297978693!2d-79.5939517!3d9.0001067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca7b0a46a3bd1%3A0x93b801d16c74cc5c!2sCiudad%20del%20Saber!5e0!3m2!1sen!2spa!4v1694723436887!5m2!1sen!2spa';
   var buttonUrl = 'https://www.google.com/maps/place/Cd+del+Saber,+Panam%C3%A1,+Provincia+de+Panam%C3%A1/@9.0050237,-79.5931363,15z/data=!4m6!3m5!1s0x8faca7b0a46a3bd1:0x93b801d16c74cc5c!8m2!3d9.0014031!4d-79.5814145!16zL20vMDk1dzc0?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D';
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "md:relative",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "nwp-padding-x-container",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "nwp-container mx-auto flex flex-col md:flex-row h-[600px]",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "absolute right-1/2 w-1/2",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_GoogleMap__WEBPACK_IMPORTED_MODULE_1__.GoogleMap, {
-              placeMap: placeMap
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "md:w-1/2"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-            className: "w-full md:w-1/2 flex flex-col items-start justify-center md:px-8 md:gap-y-8",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
-              className: "text-3xl md:text-5xl font-bold",
-              children: "\xA1Vis\xEDtanos! ateneo"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
-              className: "text-lg",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
-                className: "font-semibold",
-                children: ["Ubicaci\xF3n: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {})]
-              }), " Fundaci\xF3n Ciudad del Saber, edificio 104, calle Luis Bonilla, Ciudad del Saber, Clayton, Panam\xE1."]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
-              className: "text-lg",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-                className: "font-semibold",
-                children: "Contacto: "
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
-                href: "mailto:ciudaddelsaber@cdspanama.org",
-                className: "text-blue-500 hover:underline",
-                children: "ciudaddelsaber@cdspanama.org"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
-              href: buttonUrl,
-              "class": "flex gap-x-2 font-semibold text-lg items-center hover:no-underline hover:text-cdsblue duration-150 transition-all",
-              target: "_blank",
-              children: ["Conoce c\xF3mo llegar", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                "class": "h-8 w-8 bg-cdsblue rounded-full grid place-content-center",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
-                  xmlns: "http://www.w3.org/2000/svg",
-                  height: "24px",
-                  viewBox: "0 -960 960 960",
-                  width: "32px",
-                  fill: "#e8eaed",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
-                    d: "M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z"
-                  })
-                })
-              })]
-            })]
-          })]
-        })
-      })
-    })
+  var title = '¡Visítanos!';
+  var description = 'Ubicación: Fundación Ciudad del Saber, edificio 104, calle Luis Bonilla, Ciudad del Saber, Clayton, Panamá.';
+  var contactEmail = 'ciudaddelsaber@cdspanama.org';
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_GoogleMap__WEBPACK_IMPORTED_MODULE_1__.GoogleMap, {
+    placeMap: placeMap,
+    title: title,
+    description: description,
+    contactEmail: contactEmail,
+    buttonUrl: buttonUrl
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (VisitUs);
@@ -7644,63 +7546,15 @@ __webpack_require__.r(__webpack_exports__);
 var VisitUs = function VisitUs() {
   var placeMap = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.7091297978693!2d-79.5939517!3d9.0001067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca7b0a46a3bd1%3A0x93b801d16c74cc5c!2sCiudad%20del%20Saber!5e0!3m2!1sen!2spa!4v1694723436887!5m2!1sen!2spa';
   var buttonUrl = 'https://www.google.com/maps/place/Cd+del+Saber,+Panam%C3%A1,+Provincia+de+Panam%C3%A1/@9.0050237,-79.5931363,15z/data=!4m6!3m5!1s0x8faca7b0a46a3bd1:0x93b801d16c74cc5c!8m2!3d9.0014031!4d-79.5814145!16zL20vMDk1dzc0?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D';
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "md:relative",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "nwp-padding-x-container",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "nwp-container mx-auto flex flex-col md:flex-row h-[600px]",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "absolute right-1/2 w-1/2",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_GoogleMap__WEBPACK_IMPORTED_MODULE_1__.GoogleMap, {
-              placeMap: placeMap
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "md:w-1/2"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-            className: "w-full md:w-1/2 flex flex-col items-start justify-center md:px-8 md:gap-y-8",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
-              className: "text-3xl md:text-5xl font-bold",
-              children: "\xA1Vis\xEDtanos! ateneo"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
-              className: "text-lg",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
-                className: "font-semibold",
-                children: ["Ubicaci\xF3n: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {})]
-              }), " Fundaci\xF3n Ciudad del Saber, edificio 104, calle Luis Bonilla, Ciudad del Saber, Clayton, Panam\xE1."]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
-              className: "text-lg",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-                className: "font-semibold",
-                children: "Contacto: "
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
-                href: "mailto:ciudaddelsaber@cdspanama.org",
-                className: "text-blue-500 hover:underline",
-                children: "ciudaddelsaber@cdspanama.org"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
-              href: buttonUrl,
-              "class": "flex gap-x-2 font-semibold text-lg items-center hover:no-underline hover:text-cdsblue duration-150 transition-all",
-              target: "_blank",
-              children: ["Conoce c\xF3mo llegar", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                "class": "h-8 w-8 bg-cdsblue rounded-full grid place-content-center",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
-                  xmlns: "http://www.w3.org/2000/svg",
-                  height: "24px",
-                  viewBox: "0 -960 960 960",
-                  width: "32px",
-                  fill: "#e8eaed",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
-                    d: "M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z"
-                  })
-                })
-              })]
-            })]
-          })]
-        })
-      })
-    })
+  var title = '¡Visítanos!';
+  var description = 'Ubicación: Fundación Ciudad del Saber, edificio 104, calle Luis Bonilla, Ciudad del Saber, Clayton, Panamá.';
+  var contactEmail = 'ciudaddelsaber@cdspanama.org';
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_GoogleMap__WEBPACK_IMPORTED_MODULE_1__.GoogleMap, {
+    placeMap: placeMap,
+    title: title,
+    description: description,
+    contactEmail: contactEmail,
+    buttonUrl: buttonUrl
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (VisitUs);
@@ -8382,63 +8236,15 @@ __webpack_require__.r(__webpack_exports__);
 var VisitUs = function VisitUs() {
   var placeMap = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.7091297978693!2d-79.5939517!3d9.0001067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca7b0a46a3bd1%3A0x93b801d16c74cc5c!2sCiudad%20del%20Saber!5e0!3m2!1sen!2spa!4v1694723436887!5m2!1sen!2spa';
   var buttonUrl = 'https://www.google.com/maps/place/Cd+del+Saber,+Panam%C3%A1,+Provincia+de+Panam%C3%A1/@9.0050237,-79.5931363,15z/data=!4m6!3m5!1s0x8faca7b0a46a3bd1:0x93b801d16c74cc5c!8m2!3d9.0014031!4d-79.5814145!16zL20vMDk1dzc0?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D';
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "md:relative",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "nwp-padding-x-container",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "nwp-container mx-auto flex flex-col md:flex-row h-[600px]",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "absolute right-1/2 w-1/2",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_GoogleMap__WEBPACK_IMPORTED_MODULE_1__.GoogleMap, {
-              placeMap: placeMap
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "md:w-1/2"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-            className: "w-full md:w-1/2 flex flex-col items-start justify-center md:px-8 md:gap-y-8",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
-              className: "text-3xl md:text-5xl font-bold",
-              children: "\xA1Vis\xEDtanos! ateneo"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
-              className: "text-lg",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
-                className: "font-semibold",
-                children: ["Ubicaci\xF3n: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {})]
-              }), " Fundaci\xF3n Ciudad del Saber, edificio 104, calle Luis Bonilla, Ciudad del Saber, Clayton, Panam\xE1."]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
-              className: "text-lg",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-                className: "font-semibold",
-                children: "Contacto: "
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
-                href: "mailto:ciudaddelsaber@cdspanama.org",
-                className: "text-blue-500 hover:underline",
-                children: "ciudaddelsaber@cdspanama.org"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
-              href: buttonUrl,
-              "class": "flex gap-x-2 font-semibold text-lg items-center hover:no-underline hover:text-cdsblue duration-150 transition-all",
-              target: "_blank",
-              children: ["Conoce c\xF3mo llegar", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                "class": "h-8 w-8 bg-cdsblue rounded-full grid place-content-center",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
-                  xmlns: "http://www.w3.org/2000/svg",
-                  height: "24px",
-                  viewBox: "0 -960 960 960",
-                  width: "32px",
-                  fill: "#e8eaed",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
-                    d: "M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z"
-                  })
-                })
-              })]
-            })]
-          })]
-        })
-      })
-    })
+  var title = '¡Visítanos!';
+  var description = 'Ubicación: Fundación Ciudad del Saber, edificio 104, calle Luis Bonilla, Ciudad del Saber, Clayton, Panamá.';
+  var contactEmail = 'ciudaddelsaber@cdspanama.org';
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_GoogleMap__WEBPACK_IMPORTED_MODULE_1__.GoogleMap, {
+    placeMap: placeMap,
+    title: title,
+    description: description,
+    contactEmail: contactEmail,
+    buttonUrl: buttonUrl
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (VisitUs);
@@ -9120,63 +8926,15 @@ __webpack_require__.r(__webpack_exports__);
 var VisitUs = function VisitUs() {
   var placeMap = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.7091297978693!2d-79.5939517!3d9.0001067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca7b0a46a3bd1%3A0x93b801d16c74cc5c!2sCiudad%20del%20Saber!5e0!3m2!1sen!2spa!4v1694723436887!5m2!1sen!2spa';
   var buttonUrl = 'https://www.google.com/maps/place/Cd+del+Saber,+Panam%C3%A1,+Provincia+de+Panam%C3%A1/@9.0050237,-79.5931363,15z/data=!4m6!3m5!1s0x8faca7b0a46a3bd1:0x93b801d16c74cc5c!8m2!3d9.0014031!4d-79.5814145!16zL20vMDk1dzc0?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D';
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "md:relative",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "nwp-padding-x-container",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "nwp-container mx-auto flex flex-col md:flex-row h-[600px]",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "absolute right-1/2 w-1/2",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_GoogleMap__WEBPACK_IMPORTED_MODULE_1__.GoogleMap, {
-              placeMap: placeMap
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "md:w-1/2"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-            className: "w-full md:w-1/2 flex flex-col items-start justify-center md:px-8 md:gap-y-8",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
-              className: "text-3xl md:text-5xl font-bold",
-              children: "\xA1Vis\xEDtanos! ateneo"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
-              className: "text-lg",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
-                className: "font-semibold",
-                children: ["Ubicaci\xF3n: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {})]
-              }), " Fundaci\xF3n Ciudad del Saber, edificio 104, calle Luis Bonilla, Ciudad del Saber, Clayton, Panam\xE1."]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
-              className: "text-lg",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-                className: "font-semibold",
-                children: "Contacto: "
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
-                href: "mailto:ciudaddelsaber@cdspanama.org",
-                className: "text-blue-500 hover:underline",
-                children: "ciudaddelsaber@cdspanama.org"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
-              href: buttonUrl,
-              "class": "flex gap-x-2 font-semibold text-lg items-center hover:no-underline hover:text-cdsblue duration-150 transition-all",
-              target: "_blank",
-              children: ["Conoce c\xF3mo llegar", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                "class": "h-8 w-8 bg-cdsblue rounded-full grid place-content-center",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
-                  xmlns: "http://www.w3.org/2000/svg",
-                  height: "24px",
-                  viewBox: "0 -960 960 960",
-                  width: "32px",
-                  fill: "#e8eaed",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
-                    d: "M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z"
-                  })
-                })
-              })]
-            })]
-          })]
-        })
-      })
-    })
+  var title = '¡Visítanos!';
+  var description = 'Ubicación: Fundación Ciudad del Saber, edificio 104, calle Luis Bonilla, Ciudad del Saber, Clayton, Panamá.';
+  var contactEmail = 'ciudaddelsaber@cdspanama.org';
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_GoogleMap__WEBPACK_IMPORTED_MODULE_1__.GoogleMap, {
+    placeMap: placeMap,
+    title: title,
+    description: description,
+    contactEmail: contactEmail,
+    buttonUrl: buttonUrl
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (VisitUs);
@@ -9858,63 +9616,15 @@ __webpack_require__.r(__webpack_exports__);
 var VisitUs = function VisitUs() {
   var placeMap = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.7091297978693!2d-79.5939517!3d9.0001067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca7b0a46a3bd1%3A0x93b801d16c74cc5c!2sCiudad%20del%20Saber!5e0!3m2!1sen!2spa!4v1694723436887!5m2!1sen!2spa';
   var buttonUrl = 'https://www.google.com/maps/place/Cd+del+Saber,+Panam%C3%A1,+Provincia+de+Panam%C3%A1/@9.0050237,-79.5931363,15z/data=!4m6!3m5!1s0x8faca7b0a46a3bd1:0x93b801d16c74cc5c!8m2!3d9.0014031!4d-79.5814145!16zL20vMDk1dzc0?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D';
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "md:relative",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "nwp-padding-x-container",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "nwp-container mx-auto flex flex-col md:flex-row h-[600px]",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "absolute right-1/2 w-1/2",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_GoogleMap__WEBPACK_IMPORTED_MODULE_1__.GoogleMap, {
-              placeMap: placeMap
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "md:w-1/2"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-            className: "w-full md:w-1/2 flex flex-col items-start justify-center md:px-8 md:gap-y-8",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
-              className: "text-3xl md:text-5xl font-bold",
-              children: "\xA1Vis\xEDtanos!"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
-              className: "text-lg",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
-                className: "font-semibold",
-                children: ["Ubicaci\xF3n: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {})]
-              }), " Fundaci\xF3n Ciudad del Saber, edificio 104, calle Luis Bonilla, Ciudad del Saber, Clayton, Panam\xE1."]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
-              className: "text-lg",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-                className: "font-semibold",
-                children: "Contacto: "
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
-                href: "mailto:ciudaddelsaber@cdspanama.org",
-                className: "text-blue-500 hover:underline",
-                children: "ciudaddelsaber@cdspanama.org"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
-              href: buttonUrl,
-              "class": "flex gap-x-2 font-semibold text-lg items-center hover:no-underline hover:text-cdsblue duration-150 transition-all",
-              target: "_blank",
-              children: ["Conoce c\xF3mo llegar", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                "class": "h-8 w-8 bg-cdsblue rounded-full grid place-content-center",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
-                  xmlns: "http://www.w3.org/2000/svg",
-                  height: "24px",
-                  viewBox: "0 -960 960 960",
-                  width: "32px",
-                  fill: "#e8eaed",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
-                    d: "M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z"
-                  })
-                })
-              })]
-            })]
-          })]
-        })
-      })
-    })
+  var title = '¡Visítanos!';
+  var description = 'Ubicación: Fundación Ciudad del Saber, edificio 104, calle Luis Bonilla, Ciudad del Saber, Clayton, Panamá.';
+  var contactEmail = 'ciudaddelsaber@cdspanama.org';
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_GoogleMap__WEBPACK_IMPORTED_MODULE_1__.GoogleMap, {
+    placeMap: placeMap,
+    title: title,
+    description: description,
+    contactEmail: contactEmail,
+    buttonUrl: buttonUrl
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (VisitUs);
@@ -10596,63 +10306,15 @@ __webpack_require__.r(__webpack_exports__);
 var VisitUs = function VisitUs() {
   var placeMap = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.7091297978693!2d-79.5939517!3d9.0001067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca7b0a46a3bd1%3A0x93b801d16c74cc5c!2sCiudad%20del%20Saber!5e0!3m2!1sen!2spa!4v1694723436887!5m2!1sen!2spa';
   var buttonUrl = 'https://www.google.com/maps/place/Cd+del+Saber,+Panam%C3%A1,+Provincia+de+Panam%C3%A1/@9.0050237,-79.5931363,15z/data=!4m6!3m5!1s0x8faca7b0a46a3bd1:0x93b801d16c74cc5c!8m2!3d9.0014031!4d-79.5814145!16zL20vMDk1dzc0?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D';
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "md:relative",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "nwp-padding-x-container",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "nwp-container mx-auto flex flex-col md:flex-row h-[600px]",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "absolute right-1/2 w-1/2",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_GoogleMap__WEBPACK_IMPORTED_MODULE_1__.GoogleMap, {
-              placeMap: placeMap
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "md:w-1/2"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-            className: "w-full md:w-1/2 flex flex-col items-start justify-center md:px-8 md:gap-y-8",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
-              className: "text-3xl md:text-5xl font-bold",
-              children: "\xA1Vis\xEDtanos! ateneo"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
-              className: "text-lg",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
-                className: "font-semibold",
-                children: ["Ubicaci\xF3n: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {})]
-              }), " Fundaci\xF3n Ciudad del Saber, edificio 104, calle Luis Bonilla, Ciudad del Saber, Clayton, Panam\xE1."]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
-              className: "text-lg",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-                className: "font-semibold",
-                children: "Contacto: "
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
-                href: "mailto:ciudaddelsaber@cdspanama.org",
-                className: "text-blue-500 hover:underline",
-                children: "ciudaddelsaber@cdspanama.org"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
-              href: buttonUrl,
-              "class": "flex gap-x-2 font-semibold text-lg items-center hover:no-underline hover:text-cdsblue duration-150 transition-all",
-              target: "_blank",
-              children: ["Conoce c\xF3mo llegar", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                "class": "h-8 w-8 bg-cdsblue rounded-full grid place-content-center",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
-                  xmlns: "http://www.w3.org/2000/svg",
-                  height: "24px",
-                  viewBox: "0 -960 960 960",
-                  width: "32px",
-                  fill: "#e8eaed",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
-                    d: "M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z"
-                  })
-                })
-              })]
-            })]
-          })]
-        })
-      })
-    })
+  var title = '¡Visítanos!';
+  var description = 'Ubicación: Fundación Ciudad del Saber, edificio 104, calle Luis Bonilla, Ciudad del Saber, Clayton, Panamá.';
+  var contactEmail = 'ciudaddelsaber@cdspanama.org';
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_GoogleMap__WEBPACK_IMPORTED_MODULE_1__.GoogleMap, {
+    placeMap: placeMap,
+    title: title,
+    description: description,
+    contactEmail: contactEmail,
+    buttonUrl: buttonUrl
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (VisitUs);
@@ -11268,63 +10930,15 @@ __webpack_require__.r(__webpack_exports__);
 var VisitUs = function VisitUs() {
   var placeMap = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.7091297978693!2d-79.5939517!3d9.0001067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca7b0a46a3bd1%3A0x93b801d16c74cc5c!2sCiudad%20del%20Saber!5e0!3m2!1sen!2spa!4v1694723436887!5m2!1sen!2spa';
   var buttonUrl = 'https://www.google.com/maps/place/Cd+del+Saber,+Panam%C3%A1,+Provincia+de+Panam%C3%A1/@9.0050237,-79.5931363,15z/data=!4m6!3m5!1s0x8faca7b0a46a3bd1:0x93b801d16c74cc5c!8m2!3d9.0014031!4d-79.5814145!16zL20vMDk1dzc0?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D';
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "md:relative",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "nwp-padding-x-container",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "nwp-container mx-auto flex flex-col-reverse justify-between md:flex-row h-[600px]",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "md:absolute h-60 md:h-full  md:right-1/2 w-full md:w-1/2",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_GoogleMap__WEBPACK_IMPORTED_MODULE_1__.GoogleMap, {
-              placeMap: placeMap
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "hidden md:block md:w-1/2"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-            className: "w-full md:w-1/2 flex flex-col items-start justify-center md:px-8 md:gap-y-8",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
-              className: "text-3xl md:text-5xl font-bold pt-16 md:pt-0",
-              children: "\xA1Vis\xEDtanos!"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
-              className: "text-lg",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
-                className: "font-semibold",
-                children: ["Ubicaci\xF3n: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {})]
-              }), " Fundaci\xF3n Ciudad del Saber, edificio 104, calle Luis Bonilla, Ciudad del Saber, Clayton, Panam\xE1."]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
-              className: "text-lg",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-                className: "font-semibold",
-                children: "Contacto: "
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
-                href: "mailto:ciudaddelsaber@cdspanama.org",
-                className: "text-blue-500 hover:underline",
-                children: "ciudaddelsaber@cdspanama.org"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
-              href: buttonUrl,
-              "class": "flex gap-x-2 font-semibold text-lg items-center hover:no-underline hover:text-cdsblue duration-150 transition-all",
-              target: "_blank",
-              children: ["Conoce c\xF3mo llegar", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                "class": "h-8 w-8 bg-cdsblue rounded-full grid place-content-center",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
-                  xmlns: "http://www.w3.org/2000/svg",
-                  height: "24px",
-                  viewBox: "0 -960 960 960",
-                  width: "32px",
-                  fill: "#e8eaed",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
-                    d: "M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z"
-                  })
-                })
-              })]
-            })]
-          })]
-        })
-      })
-    })
+  var title = '¡Visítanos!';
+  var description = 'Ubicación: Fundación Ciudad del Saber, edificio 104, calle Luis Bonilla, Ciudad del Saber, Clayton, Panamá.';
+  var contactEmail = 'ciudaddelsaber@cdspanama.org';
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_GoogleMap__WEBPACK_IMPORTED_MODULE_1__.GoogleMap, {
+    placeMap: placeMap,
+    title: title,
+    description: description,
+    contactEmail: contactEmail,
+    buttonUrl: buttonUrl
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (VisitUs);
@@ -12006,63 +11620,15 @@ __webpack_require__.r(__webpack_exports__);
 var VisitUs = function VisitUs() {
   var placeMap = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.7091297978693!2d-79.5939517!3d9.0001067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca7b0a46a3bd1%3A0x93b801d16c74cc5c!2sCiudad%20del%20Saber!5e0!3m2!1sen!2spa!4v1694723436887!5m2!1sen!2spa';
   var buttonUrl = 'https://www.google.com/maps/place/Cd+del+Saber,+Panam%C3%A1,+Provincia+de+Panam%C3%A1/@9.0050237,-79.5931363,15z/data=!4m6!3m5!1s0x8faca7b0a46a3bd1:0x93b801d16c74cc5c!8m2!3d9.0014031!4d-79.5814145!16zL20vMDk1dzc0?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D';
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "md:relative",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "nwp-padding-x-container",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "nwp-container mx-auto flex flex-col md:flex-row h-[600px]",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "absolute right-1/2 w-1/2",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_GoogleMap__WEBPACK_IMPORTED_MODULE_1__.GoogleMap, {
-              placeMap: placeMap
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "md:w-1/2"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-            className: "w-full md:w-1/2 flex flex-col items-start justify-center md:px-8 md:gap-y-8",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
-              className: "text-3xl md:text-5xl font-bold",
-              children: "\xA1Vis\xEDtanos! ateneo"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
-              className: "text-lg",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
-                className: "font-semibold",
-                children: ["Ubicaci\xF3n: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {})]
-              }), " Fundaci\xF3n Ciudad del Saber, edificio 104, calle Luis Bonilla, Ciudad del Saber, Clayton, Panam\xE1."]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
-              className: "text-lg",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-                className: "font-semibold",
-                children: "Contacto: "
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
-                href: "mailto:ciudaddelsaber@cdspanama.org",
-                className: "text-blue-500 hover:underline",
-                children: "ciudaddelsaber@cdspanama.org"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
-              href: buttonUrl,
-              "class": "flex gap-x-2 font-semibold text-lg items-center hover:no-underline hover:text-cdsblue duration-150 transition-all",
-              target: "_blank",
-              children: ["Conoce c\xF3mo llegar", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                "class": "h-8 w-8 bg-cdsblue rounded-full grid place-content-center",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
-                  xmlns: "http://www.w3.org/2000/svg",
-                  height: "24px",
-                  viewBox: "0 -960 960 960",
-                  width: "32px",
-                  fill: "#e8eaed",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
-                    d: "M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z"
-                  })
-                })
-              })]
-            })]
-          })]
-        })
-      })
-    })
+  var title = '¡Visítanos!';
+  var description = 'Ubicación: Fundación Ciudad del Saber, edificio 104, calle Luis Bonilla, Ciudad del Saber, Clayton, Panamá.';
+  var contactEmail = 'ciudaddelsaber@cdspanama.org';
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_GoogleMap__WEBPACK_IMPORTED_MODULE_1__.GoogleMap, {
+    placeMap: placeMap,
+    title: title,
+    description: description,
+    contactEmail: contactEmail,
+    buttonUrl: buttonUrl
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (VisitUs);
