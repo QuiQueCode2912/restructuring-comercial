@@ -116,36 +116,6 @@
     <div id="nwp-e-109-gallery-section"></div>
     <div id="nwp-e-109-campus-facilities"></div>
 @endif
-@if(request()->is('parque-de-los-lagos'))
-    <div id="nwp-parque-de-los-lagos-hero"></div>
-    <div id="nwp-parque-de-los-lagos-content-section-whith-an-image"></div>
-    <div id="nwp-parque-de-los-lagos-gallery-section"></div>
-    <div id="nwp-parque-de-los-lagos-campus-facilities"></div>
-@endif
-@if(request()->is('e-104'))
-    <div id="nwp-e-104-hero"></div>
-    <div id="nwp-e-104-content-section-whith-an-image"></div>
-    <div id="nwp-e-104-gallery-section"></div>
-    <div id="nwp-e-104-campus-facilities"></div>
-@endif
-@if(request()->is('l-173'))
-    <div id="nwp-l-173-hero"></div>
-    <div id="nwp-l-173-content-section-whith-an-image"></div>
-    <div id="nwp-l-173-gallery-section"></div>
-    <div id="nwp-l-173-campus-facilities"></div>
-@endif
-@if(request()->is('g-214abc'))
-    <div id="nwp-g-214abc-hero"></div>
-    <div id="nwp-g-214abc-content-section-whith-an-image"></div>
-    <div id="nwp-g-214abc-gallery-section"></div>
-    <div id="nwp-g-214abc-campus-facilities"></div>
-@endif
-@if(request()->is('e-300'))
-    <div id="nwp-e-300-hero"></div>
-    <div id="nwp-e-300-content-section-whith-an-image"></div>
-    <div id="nwp-e-300-gallery-section"></div>
-    <div id="nwp-e-300-campus-facilities"></div>
-@endif
 
 
 <div class="nwp-padding-x-container">
@@ -496,26 +466,6 @@
 @if(request()->is('e-109'))
     <div id="nwp-e-109-aditional-services"></div>
     <div id="nwp-e-109-visit-us"></div>
-@endif
-@if(request()->is('parque-de-los-lagos'))
-    <div id="nwp-parque-de-los-lagos-aditional-services"></div>
-    <div id="nwp-parque-de-los-lagos-visit-us"></div>
-@endif
-@if(request()->is('e-104'))
-    <div id="nwp-e-104-aditional-services"></div>
-    <div id="nwp-e-104-visit-us"></div>
-@endif
-@if(request()->is('l-173'))
-    <div id="nwp-l-173-aditional-services"></div>
-    <div id="nwp-l-173-visit-us"></div>
-@endif
-@if(request()->is('g-214abc'))
-    <div id="nwp-g-214abc-aditional-services"></div>
-    <div id="nwp-g-214abc-visit-us"></div>
-@endif
-@if(request()->is('e-300'))
-    <div id="nwp-e-300-aditional-services"></div>
-    <div id="nwp-e-300-visit-us"></div>
 @endif
 
 <div id="nwp-featured-spaces"></div>
